@@ -1,0 +1,134 @@
+/*
+ * ============================================================================
+ * SOULO VISUAL DESIGN SYSTEM — Drop-in Theme File
+ * ============================================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+:root {
+  --soulo-blue:             #0F1A42;
+  --soulo-purple:           #3B2163;
+  --soulo-light:            #E8EBE3;
+  --soulo-teal:             #80D0C7;
+  --soulo-green-muted:      #3A605A;
+  --glass-bg:               rgba(255, 255, 255, 0.2);
+  --glass-bg-dark:          rgba(15, 26, 66, 0.6);
+  --glass-border:           rgba(255, 255, 255, 0.4);
+  --glass-blur:             12px;
+  --glass-shadow:           0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --surface-inner-light:    rgba(255, 255, 255, 0.3);
+  --surface-inner-medium:   rgba(255, 255, 255, 0.4);
+  --gradient-cta-primary:   linear-gradient(to bottom, #3a1961, #250d42);
+  --gradient-dark-teal:     linear-gradient(135deg, #0d2746, #417f7d);
+  --gradient-archive:       linear-gradient(135deg, #260a4e, #3e1256);
+  --gradient-progress-arc:  linear-gradient(to bottom right, #80D0C7, #0F1A42);
+  --gradient-icon-blue:     linear-gradient(to bottom right, #1d4ed8, #0F1A42);
+  --gradient-body:
+    radial-gradient(circle at 10% 20%, rgba(255, 248, 220, 0.5) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(152, 251, 152, 0.3) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(255, 182, 193, 0.2) 0%, transparent 50%),
+    linear-gradient(170deg, #F4F5EE 0%, #D4E0D9 30%, #8FA5AA 60%, #15254A 100%);
+  --gradient-cta-secondary: linear-gradient(to bottom right,
+    rgba(15, 23, 42, 0.4),
+    rgba(30, 27, 75, 0.3),
+    rgba(15, 23, 42, 0.4));
+  --cta-secondary-border:   rgba(34, 211, 238, 0.2);
+  --shadow-glass:           0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --shadow-glow:            0 0 20px rgba(255, 255, 255, 0.4);
+  --shadow-cta-primary:     0 0 20px rgba(76, 45, 122, 0.6);
+  --shadow-cta-secondary:   0 25px 50px -12px rgba(30, 27, 75, 0.5);
+  --shadow-glossy-inset:    inset 0 2px 4px rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0, 0, 0, 0.2);
+  --flare-white:            rgba(255, 255, 255, 0.4);
+  --flare-teal:             rgba(128, 208, 199, 0.2);
+  --flare-purple:           rgba(128, 0, 128, 0.2);
+  --font-display:           'Playfair Display', serif;
+  --font-body:              'Inter', sans-serif;
+  --tag-bg:                 rgba(255, 255, 255, 0.3);
+  --tag-border:             #bbf7d0;
+  --tag-text:               #166534;
+  --toggle-active-bg:       #C6F6D5;
+  --toggle-active-border:   #68D391;
+  --toggle-inactive-bg:     #D1D5DB;
+  --toggle-knob:            #FFFFFF;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-panel-dark {
+  background: var(--glass-bg-dark);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  color: white;
+}
+
+.soulo-flare-white {
+  position: absolute; width: 8rem; height: 8rem;
+  background: var(--flare-white); filter: blur(48px);
+  border-radius: 9999px; pointer-events: none;
+}
+
+.soulo-flare-teal {
+  position: absolute; width: 8rem; height: 8rem;
+  background: var(--flare-teal); filter: blur(32px);
+  border-radius: 9999px; pointer-events: none;
+}
+
+.btn-glossy {
+  position: relative; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-glossy-inset);
+}
+.btn-glossy::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 40%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), transparent);
+  border-radius: 999px 999px 0 0; pointer-events: none;
+}
+
+.btn-soulo-primary {
+  background: var(--gradient-cta-primary); color: white;
+  border-radius: 1rem; padding: 1rem;
+  font-family: var(--font-body); font-weight: 500;
+  box-shadow: var(--shadow-glossy-inset), var(--shadow-cta-primary);
+  transition: opacity 0.2s ease;
+}
+.btn-soulo-primary:hover { opacity: 0.95; }
+
+.btn-soulo-secondary {
+  background: var(--gradient-cta-secondary);
+  backdrop-filter: blur(64px); -webkit-backdrop-filter: blur(64px);
+  border: 1px solid var(--cta-secondary-border);
+  color: rgba(255, 255, 255, 0.9); border-radius: 1rem; padding: 1rem;
+  font-family: var(--font-display); font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  box-shadow: var(--shadow-cta-secondary); transition: all 0.3s ease;
+}
+.btn-soulo-secondary:hover { transform: scale(1.02); }
+.btn-soulo-secondary:active { transform: scale(0.98); }
+
+.soulo-tag {
+  display: inline-block; padding: 0.375rem 1rem; border-radius: 9999px;
+  border: 1px solid var(--tag-border); background: var(--tag-bg);
+  font-family: var(--font-body); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--tag-text);
+}
+
+.soulo-heading-hero { font-family: var(--font-display); font-size: 3rem; line-height: 1.1; color: var(--soulo-blue); }
+.soulo-heading-section { font-family: var(--font-display); font-size: 1.875rem; line-height: 1.2; color: var(--soulo-blue); }
+.soulo-heading-card { font-family: var(--font-display); font-size: 1.25rem; color: var(--soulo-blue); }
+.soulo-emphasis { font-style: italic; font-weight: 300; }
+.soulo-body { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; line-height: 1.625; color: #374151; }
+.soulo-caption { font-family: var(--font-body); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280; }
+.soulo-stat-large { font-family: var(--font-display); font-size: 1.875rem; color: var(--soulo-green-muted); }
+
+.soulo-rounded-card  { border-radius: 2rem; }
+.soulo-rounded-panel { border-radius: 1.5rem; }
+.soulo-rounded-btn   { border-radius: 1rem; }
+.soulo-rounded-full  { border-radius: 9999px; }
