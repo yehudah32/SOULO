@@ -3,12 +3,95 @@
 import { useEffect, useState, useRef, Suspense, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import ResultsReveal from '@/components/assessment/ResultsReveal';
+import EnneagramLoader from '@/components/assessment/EnneagramLoader';
 
 // Check if results are real (not empty/broken Type 0 data)
 function isValidResults(r: Record<string, unknown>): boolean {
   const coreType = (r.leading_type || r.core_type) as number;
   if (!coreType || coreType === 0) return false;
   return true;
+}
+
+const LOADING_PHASES = [
+  { text: 'Reading your responses\u2026', duration: 3000 },
+  { text: 'Analyzing patterns across all nine energies\u2026', duration: 3000 },
+  { text: 'Finding your core pattern\u2026', duration: 4000 },
+  { text: 'Crafting your Defiant Spirit report\u2026', duration: 0 },
+];
+
+const LOADING_QUOTES = [
+  'Between stimulus and response, there is a space.',
+  'The wound and the gift are the same energy.',
+  'You are not a number. You are a defiant spirit.',
+  'The circle is wholeness. The work is return.',
+  'Liberation, not classification.',
+];
+
+function ResultsLoadingScreen() {
+  const [phase, setPhase] = useState(0);
+  const [quoteIdx, setQuoteIdx] = useState(0);
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+    const advancePhase = (current: number) => {
+      if (current < LOADING_PHASES.length - 1 && LOADING_PHASES[current].duration > 0) {
+        timeout = setTimeout(() => {
+          setPhase(current + 1);
+          advancePhase(current + 1);
+        }, LOADING_PHASES[current].duration);
+      }
+    };
+    advancePhase(0);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setQuoteIdx(i => (i + 1) % LOADING_QUOTES.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const progress = Math.min(95, ((phase + 1) / LOADING_PHASES.length) * 100);
+
+  return (
+    <div className="flex min-h-screen items-center justify-center" style={{ background: 'linear-gradient(145deg, #0F172A 0%, #1E293B 50%, #0F172A 100%)' }}>
+      <style>{`
+        @keyframes results-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes results-quote { 0% { opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; } }
+      `}</style>
+      <div className="flex flex-col items-center gap-8 px-6 max-w-md text-center">
+        {/* Enneagram animation */}
+        <EnneagramLoader size={200} active={true} hideStatus={true} />
+
+        {/* Phase text */}
+        <div key={`phase-${phase}`} style={{ animation: 'results-fade 0.6s ease-out forwards' }}>
+          <p className="font-sans text-[0.9rem] text-white/70 tracking-wide">
+            {LOADING_PHASES[phase].text}
+          </p>
+        </div>
+
+        {/* Progress bar */}
+        <div className="w-full max-w-[280px]">
+          <div className="h-1 rounded-full bg-white/10 overflow-hidden">
+            <div
+              className="h-full rounded-full bg-[#2563EB] transition-all duration-1000 ease-out"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+        </div>
+
+        {/* Rotating Baruch quote */}
+        <p
+          key={`quote-${quoteIdx}`}
+          className="font-serif italic text-[0.85rem] text-white/30 max-w-sm leading-relaxed"
+          style={{ animation: 'results-quote 5s ease-in-out forwards' }}
+        >
+          {LOADING_QUOTES[quoteIdx]}
+        </p>
+      </div>
+    </div>
+  );
 }
 
 function ResultsContent() {
@@ -18,6 +101,7 @@ function ResultsContent() {
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [needsLogin, setNeedsLogin] = useState(false);
+  const [revealCompleted, setRevealCompleted] = useState(false);
   const loadedRef = useRef(false);
 
   // Multiple sessions
@@ -39,6 +123,8 @@ function ResultsContent() {
         if (data.results && isValidResults(data.results)) {
           setSessionId(data.sessionId || sid);
           setResults(data.results);
+          const clientFlag = typeof window !== 'undefined' && localStorage.getItem('soulo_reveal_complete_' + (data.sessionId || sid)) === 'true';
+          if (data.revealCompleted || clientFlag) setRevealCompleted(true);
           setLoading(false);
           setNeedsLogin(false);
           setShowPicker(false);
@@ -75,6 +161,10 @@ function ResultsContent() {
         if (data.results && isValidResults(data.results)) {
           setSessionId(data.sessionId);
           setResults(data.results);
+          // Check reveal_completed from DB response AND localStorage
+          const sid = data.sessionId;
+          const clientFlag = typeof window !== 'undefined' && sid && localStorage.getItem('soulo_reveal_complete_' + sid) === 'true';
+          if (data.revealCompleted || clientFlag) setRevealCompleted(true);
           setLoading(false);
           setNeedsLogin(false);
           return true;
@@ -85,14 +175,16 @@ function ResultsContent() {
   }, []);
 
   useEffect(() => {
-    if (loadedRef.current) return;
+    // Allow re-loading on strict mode remount
+    const alreadyLoaded = loadedRef.current;
     loadedRef.current = true;
+    if (alreadyLoaded && results) return; // Skip only if we already have results
 
     async function loadResults() {
-      // Strategy 1: sessionId from URL or sessionStorage
+      // Strategy 1: sessionId from URL or localStorage
       const sid =
         searchParams.get('sessionId') ||
-        (typeof window !== 'undefined' ? sessionStorage.getItem('soulo_session_id') : null);
+        (typeof window !== 'undefined' ? localStorage.getItem('soulo_active_session_id') : null);
 
       if (sid) {
         setSessionId(sid);
@@ -104,6 +196,9 @@ function ResultsContent() {
             if (byUserData.results && isValidResults(byUserData.results)) {
               setSessionId(byUserData.sessionId || sid);
               setResults(byUserData.results);
+              // Check DB flag OR localStorage flag for portal mode
+              const clientFlag = typeof window !== 'undefined' && localStorage.getItem('soulo_reveal_complete_' + sid) === 'true';
+              if (byUserData.revealCompleted || clientFlag) setRevealCompleted(true);
               setLoading(false);
               return;
             }
@@ -121,15 +216,17 @@ function ResultsContent() {
             const data = await res.json();
             if (data.results && isValidResults(data.results)) {
               setResults(data.results);
+              const clientFlag = typeof window !== 'undefined' && localStorage.getItem('soulo_reveal_complete_' + sid) === 'true';
+              if (clientFlag) setRevealCompleted(true);
               setLoading(false);
               return;
             }
           }
         } catch { /* fall through */ }
 
-        // Session doesn't have results — clear stale sessionStorage
+        // Session doesn't have results — clear stale localStorage
         if (typeof window !== 'undefined' && !searchParams.get('sessionId')) {
-          sessionStorage.removeItem('soulo_session_id');
+          localStorage.removeItem('soulo_active_session_id');
         }
       }
 
@@ -137,6 +234,12 @@ function ResultsContent() {
       const uid = searchParams.get('userId');
       if (uid) {
         if (await loadResultsByUser(uid)) return;
+      }
+
+      // Strategy 2.5: userId from localStorage (bare /results via "My Portal" nav link)
+      const storedUid = typeof window !== 'undefined' ? localStorage.getItem('soulo_user_id') : null;
+      if (!uid && storedUid) {
+        if (await loadResultsByUser(storedUid)) return;
       }
 
       // Strategy 3: sessionId exists but in-memory session gone — try Supabase
@@ -159,8 +262,8 @@ function ResultsContent() {
 
       // No valid results found — clear stale session data and prompt login
       if (typeof window !== 'undefined') {
-        sessionStorage.removeItem('soulo_session_id');
-        sessionStorage.removeItem('soulo_email');
+        localStorage.removeItem('soulo_active_session_id');
+        localStorage.removeItem('soulo_email');
       }
       setNeedsLogin(true);
       setLoading(false);
@@ -190,30 +293,31 @@ function ResultsContent() {
         return;
       }
 
+      // Check if they have an in-progress but incomplete session
+      if (data.sessions?.length === 0 && data.inProgressSession) {
+        setLoginError('Your assessment is still in progress. Complete it first, then come back here for your results.');
+        setLoginLoading(false);
+        return;
+      }
+
       // Try loading results for this user
       setLoading(true);
       const found = await loadResultsByUser(data.userId);
       if (!found) {
-        setLoginError('No completed assessments found for this account.');
+        setLoginError('No completed assessments found for this email. Complete an assessment first to see your results.');
         setLoading(false);
         setNeedsLogin(true);
       }
-    } catch {
-      setLoginError('Something went wrong. Please try again.');
+    } catch (err) {
+      console.error('[results] Login error:', err);
+      setLoginError('Connection error. Please check your internet and try again.');
     } finally {
       setLoginLoading(false);
     }
   }
 
   if (loading) {
-    return (
-      <div className="flex min-h-screen bg-[#FAF8F5] items-center justify-center">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 rounded-full border-2 border-[#2563EB] border-t-transparent animate-spin" />
-          <p className="font-sans text-sm text-[#6B6B6B]">Preparing your results…</p>
-        </div>
-      </div>
-    );
+    return <ResultsLoadingScreen />;
   }
 
   // Session picker — user has multiple completed assessments
@@ -342,7 +446,7 @@ function ResultsContent() {
     );
   }
 
-  return <ResultsReveal results={results} sessionId={sessionId} />;
+  return <ResultsReveal results={results} sessionId={sessionId} revealCompleted={revealCompleted} />;
 }
 
 export default function ResultsPage() {

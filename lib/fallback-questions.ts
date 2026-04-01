@@ -12,6 +12,7 @@ export interface Question {
   target_types: number[];
   times_used: number;
   avg_information_yield: number;
+  is_baruch_sourced?: boolean;
 }
 
 export const FALLBACK_QUESTIONS: Question[] = [

@@ -170,58 +170,45 @@ export async function POST(req: NextRequest) {
       if (session.internalState?.defiant_spirit) cached.defiant_spirit = session.internalState.defiant_spirit;
       if (session.domainSignals) cached.domain_signals = session.domainSignals;
 
-      // Patch missing domain insights with a fast, targeted LLM call
+      // Patch missing domain insights — fire-and-forget (non-blocking, don't delay results)
       const cachedDI = cached.domain_insights as Record<string, { react?: string; respond?: string }> | undefined;
       const diEmpty = !cachedDI || (typeof cachedDI === 'object' && !Array.isArray(cachedDI) &&
         Object.values(cachedDI).every(
           v => typeof v === 'object' && !((v?.react ?? '').trim() || (v?.respond ?? '').trim())
         ));
+
+      // Return results IMMEDIATELY — patch domain insights in background
       if (diEmpty && (cached.leading_type || cached.core_type)) {
-        console.log('[results/generate] Domain insights empty — running fast patch for session:', sessionId);
-        try {
-          const patchType = (cached.leading_type || cached.core_type) as number;
-          const patchWing = (cached.wing as string) || '';
-          const patchVariant = (cached.instinctual_variant as string) || '';
-          const patchTritype = (cached.tritype as string) || '';
-          const patchRes = await client.messages.create({
-            model: 'claude-sonnet-4-6',
-            max_tokens: 1500,
-            system: `You generate Enneagram domain insights in Dr. Baruch HaLevi's Defiant Spirit voice. Return ONLY valid JSON. No markdown.`,
-            messages: [{
-              role: 'user',
-              content: `Generate domain insights for Enneagram Type ${patchType}, wing ${patchWing}, variant ${patchVariant}, tritype ${patchTritype}.
-
-For each of the 4 life domains, write how this type's pattern shows up as an automatic "react" pattern and a conscious "respond" pathway. 1-2 sentences each, grounded and specific.
-
-Return this exact JSON:
-{
-  "relationships": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},
-  "wealth": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},
-  "leadership": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},
-  "transformation": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"}
-}`
-            }],
-          });
-          const patchText = patchRes.content
-            .filter((b) => b.type === 'text')
-            .map((b) => (b as { type: 'text'; text: string }).text)
-            .join('')
-            .replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-          const patchedDI = JSON.parse(patchText);
-          cached.domain_insights = patchedDI;
-
-          // Persist the patch to cached results
-          const updatedGenerated = { ...(session.generatedResults as Record<string, unknown>), domain_insights: patchedDI };
-          setSession(sessionId, { generatedResults: updatedGenerated });
-          adminClient.from('assessment_results')
-            .update({ generated_results: updatedGenerated })
-            .eq('session_id', sessionId)
-            .then(() => console.log('[results/generate] Domain insights patch persisted'));
-        } catch (patchErr) {
-          console.warn('[results/generate] Domain insights patch failed:', patchErr);
-        }
+        console.log('[results/generate] Domain insights empty — will patch in background for:', sessionId);
+        // Fire-and-forget background patch — does NOT block the response
+        const bgPatchType = (cached.leading_type || cached.core_type) as number;
+        const bgPatchWing = (cached.wing as string) || '';
+        const bgPatchVariant = (cached.instinctual_variant as string) || '';
+        const bgPatchTritype = (cached.tritype as string) || '';
+        Promise.resolve().then(async () => {
+          try {
+            const patchRes = await client.messages.create({
+              model: 'claude-sonnet-4-6',
+              max_tokens: 1500,
+              system: `You generate Enneagram domain insights in Dr. Baruch HaLevi's Defiant Spirit voice. Return ONLY valid JSON. No markdown.`,
+              messages: [{
+                role: 'user',
+                content: `Generate domain insights for Enneagram Type ${bgPatchType}, wing ${bgPatchWing}, variant ${bgPatchVariant}, tritype ${bgPatchTritype}.\n\nReturn this exact JSON:\n{\n  "relationships": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},\n  "wealth": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},\n  "leadership": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},\n  "transformation": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"}\n}`
+              }],
+            });
+            const patchText = patchRes.content.filter((b) => b.type === 'text').map((b) => (b as { type: 'text'; text: string }).text).join('').replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+            const patchedDI = JSON.parse(patchText);
+            const updatedGenerated = { ...(session.generatedResults as Record<string, unknown>), domain_insights: patchedDI };
+            setSession(sessionId, { generatedResults: updatedGenerated });
+            await adminClient.from('assessment_results').update({ generated_results: updatedGenerated }).eq('session_id', sessionId);
+            console.log('[results/generate] Domain insights background patch completed');
+          } catch (err) {
+            console.warn('[results/generate] Domain insights background patch failed:', err);
+          }
+        });
       }
 
+      // Return cached results IMMEDIATELY — no waiting for patches
       return NextResponse.json({ results: cached });
     }
 
@@ -364,11 +351,29 @@ ${historyText}
 RESULTS LANGUAGE PHILOSOPHY:
 Every section of these results must move the person toward liberation, not classification.
 
+TONE BALANCE — CRITICAL:
+The results must feel like a gift, not a diagnosis. Follow the 60/40 rule:
+- 60% of the emotional weight should be on STRENGTH, GIFT, POSSIBILITY, and WHAT'S POSSIBLE
+- 40% on PATTERN, SHADOW, COST, and WHAT'S BEEN RUNNING THEM
+The person should finish reading and feel MORE powerful, not less. If any section reads like a list of flaws, rewrite it. The wound is real — name it honestly. But always in service of revealing the gift it's been protecting.
+
+SUPERPOWER MUST BE LONGER AND MORE VIVID THAN KRYPTONITE:
+- superpower: 3-4 sentences minimum. Specific. Grounded. Make them feel extraordinary.
+- kryptonite: 2-3 sentences. Honest but brief. Always connected back to the superpower.
+- respond_pathway: 3-4 sentences. This is the VISION of what's possible. Make it compelling.
+- react_pattern: 2-3 sentences. Name it clearly, move on.
+
+The person should feel: "I have real power, AND I can see what gets in the way."
+NOT: "Here are all the ways I'm broken, and here's a nicer way to say it."
+
 The primary type reveal must follow this arc:
-1. Open with what it feels like to live inside this pattern — in plain human language, not psychological terminology. Speak from inside their experience. Make them feel seen before anything else.
-2. Name what the survival strategy has cost them. Be honest. Do not soften it.
-3. Reveal that their kryptonite and their superpower are the same energy. The passion (wound) and the virtue (gift) are not opposites. They are one force — unconscious or chosen.
-4. Point toward what was always there — their Holy Idea, their calling, the thing the survival strategy buried. This is not something to build. It is something to remember.
+1. Open with their GIFT — what makes this person extraordinary. Name the superpower first. Make them feel powerful before anything else. "There's something about the way you move through the world that most people can't do..."
+2. Name the cost — briefly. What happens when the gift runs on autopilot. One sentence of honest shadow, not a paragraph. "But that same force, when it's running you instead of the other way around..."
+3. Reveal the unity — the wound and the gift are the same energy. This is the Defiant Spirit insight. Not two things. One thing, conscious or unconscious.
+4. Point toward liberation — what becomes possible when they choose. Not something to build. Something to remember. End with power, not pain.
+
+The overall emotional arc: STRONG → honest → unified → FREE.
+NOT: seen → wounded → explained → slightly hopeful.
 
 LANGUAGE RULES:
 - Never write "you are a Type X" or "as a [type name]"
@@ -413,10 +418,71 @@ You MUST generate meaningful, non-empty "react" and "respond" content for ALL fo
 - "respond" = the conscious, liberated alternative.
 - Never return empty strings for any domain insight field.
 
+COMBINATION SPECIFICITY — CRITICAL:
+This person is one of 1,350+ possible profiles. Make the output SPECIFIC to their exact combination, not just their core type number.
+- The WING must be mentioned by name in superpower, kryptonite, and core_type_description. A ${leadingType}w${wingDominant} is different from a ${leadingType}w${wingDominant === getWingTypes(leadingType)[0] ? getWingTypes(leadingType)[1] : getWingTypes(leadingType)[0]}. Show how.
+- The VARIANT (${dominantVariant}) must shape the react_pattern and respond_pathway. SP patterns focus on security/resources/self-preservation. SX patterns focus on intensity/bonds/chemistry. SO patterns focus on belonging/groups/social role.
+- The TRITYPE (${tritypeResult.tritype}) must be referenced in tritype_life_purpose and center_insights. Show how Body ${tritypeResult.body}, Heart ${tritypeResult.heart}, and Head ${tritypeResult.head} interact.
+
+FAMOUS EXAMPLES RULES:
+Generate EXACTLY 8 famous examples. ${session.demographics ? `User demographics: age=${session.demographics.ageRange}, gender=${session.demographics.gender}, ethnicity=${session.demographics.ethnicity}, country=${session.demographics.country}, religion=${session.demographics.religion}. Demographic relevance takes top priority — include at least one figure matching EACH demographic they provided.` : ''} AIM FOR WIDE REPRESENTATION across different fields — the list should feel like a cross-section of how this type shows up in the world, not just one industry. After filling demographic matches, actively diversify: science/medicine/technology, politics/activism/social change, sports/athletics, business/entrepreneurship, literature/philosophy/academia, music, art, spiritual leadership, military, journalism. Avoid clustering — if you already have 2+ from entertainment, look elsewhere. Both historical and contemporary figures should be represented. Leave photo_url as empty string — photos are handled separately.
+
+RELATIONSHIP DESCRIPTIONS — ALL 9 REQUIRED:
+You MUST generate a relationship_descriptions entry for EVERY type (1 through 9). Each entry needs label, description (2-3 sentences), embodiment (1-2 sentences), and own_it (1 sentence). Never skip any type.
+
+OUTPUT COMPLETENESS — CRITICAL:
+Every single field in the JSON template must have substantive content. No empty strings. No placeholder text. If you're unsure about a field, write the best type-informed response you can. Err on the side of MORE content, not less. The person is paying attention to every word.
+
 KNOWLEDGE BASE CONTEXT (prioritize this):
 ${ragContext}
 
 ${demoContext}
+
+WRITING QUALITY — MANDATORY FOR ALL TEXT FIELDS:
+
+Write like a human: varied, imperfect, specific. These rules apply to ALL text fields (superpower, kryptonite, react_pattern, respond_pathway, oyn dimensions, domain insights, scenarios, closing messages, stress/release descriptions, tritype insights, everything).
+
+BANNED — Word choice:
+- "Quietly" and magic adverbs: No "quietly", "deeply", "fundamentally", "remarkably", "arguably" used to inflate ordinary descriptions.
+- "Delve" and friends: Never use "delve", "certainly", "utilize", "leverage" (as verb), "robust", "streamline", "harness", "navigate".
+- Ornate nouns: No "tapestry", "landscape", "paradigm", "synergy", "ecosystem" where simpler words work.
+- The "serves as" dodge: Say "is", not "serves as" or "stands as".
+- Personality writing clichés: No "journey" for growth, no "dance" or "dance between" for opposing forces, no "at its core", "at the end of the day", "when all is said and done".
+
+BANNED — Sentence structure:
+- Negative parallelism: "It's not X — it's Y." Maximum ONE across the entire results.
+- Dramatic countdowns: "Not X. Not Y. Just Z." Never.
+- Self-posed rhetorical questions: "The result? Devastating." Never.
+- Anaphora: Don't start consecutive sentences with the same word.
+- Tricolon abuse: Max two three-part lists across ALL fields combined.
+- Filler transitions: No "It's worth noting", "Importantly", "Interestingly", "Notably". Just say it.
+- Superficial -ing analyses: Don't tack "-ing" phrases onto sentences for false depth ("highlighting the importance of", "reflecting a broader pattern of", "contributing to a sense of"). If the -ing clause adds no specific information, delete it.
+- False ranges: Don't use "from X to Y" where X and Y aren't on a real spectrum. "From intimacy to self-worth" — what's in between? Nothing.
+- Listicle in a trench coat: Don't disguise a list as prose ("The first pattern is... The second pattern is..."). Either use real bullets or write real paragraphs with varied openings.
+- Signposted conclusions: Never write "In conclusion", "To sum up", "In summary", "And so we return to...". Just conclude.
+- Em dashes: Max 3 across ALL fields combined.
+
+BANNED — Tone:
+- Grandiose stakes inflation: This is one person's pattern, not the fate of humanity.
+- "Imagine..." openings: Never.
+- "The truth is simple" / "The reality is clear": Show, don't assert.
+- False vulnerability: "And yes, this is the hard part..." Never.
+- "Think of it as..." / "It's like a..." — patronizing analogies.
+- "Despite these patterns..." dismissals: Never end a section by waving away what you just said.
+- Invented concept labels: Don't coin compound labels like "the validation paradox", "the control trap", "the intimacy divide" as if they're established terms. Describe the pattern plainly.
+- Dead metaphor: Don't latch onto one metaphor and repeat it across multiple fields. Use it once, move on.
+- Don't start superpower and kryptonite with the same sentence structure.
+
+BANNED — Composition:
+- Content duplication: No field should repeat content from another field.
+- One-point dilution: Don't restate the same point in different words across fields. Each field must add NEW information.
+- Fractal summaries: Don't restate in closing_charge what was already said in superpower or headline.
+
+REQUIRED:
+- Vary sentence length within every field. At least one sentence under 8 words per field.
+- Be concrete. "You reorganize the kitchen when you're anxious" beats "You seek control through environmental management."
+- Trust the reader. Don't explain what you just said in different words.
+- Each field should sound like it was written fresh — not copy-pasted from a template.
 
 Return ONLY valid JSON with double quotes. No markdown. No backticks. No explanation.`;
 
@@ -451,21 +517,11 @@ Return this exact JSON structure:
   "tritype_growing_edge": "<1-2 sentences>",
   "tritype_core_triggers": "<1-2 sentences>",
   "headline": "<one powerful sentence about this person's core gift>",
-  "superpower": "<2-3 sentences — the GIFT: the positive, conscious expression of this type's core energy. What makes them powerful, trustworthy, effective. The thing people admire about them. This is the LIGHT side.>",
-  "superpower_description": "<expanded 2-3 sentences of the superpower>",
-  "kryptonite": "<2-3 sentences — the WOUND: the unconscious, fear-driven shadow of the same energy. What happens when the superpower runs on autopilot. The inner critic, the compulsion, the thing that exhausts them. This is the SHADOW side.>",
-  "kryptonite_description": "<expanded 2-3 sentences of the kryptonite>",
+  "superpower": "<3-4 sentences — the GIFT: the positive, conscious expression of this type's core energy. What makes them powerful, trustworthy, effective. Mention the ${wingDominant}-wing flavor. This is the LIGHT side.>",
+  "kryptonite": "<2-3 sentences — the WOUND: the unconscious, fear-driven shadow of the same energy. What happens when the superpower runs on autopilot. Mention how the ${dominantVariant} variant shapes WHERE this shows up. This is the SHADOW side.>",
   "react_pattern": "<2-3 sentences — BEHAVIORAL: what they DO automatically under stress. Specific actions and habits, not the wound itself. Different from kryptonite.>",
   "respond_pathway": "<2-3 sentences — BEHAVIORAL: what becomes possible when they catch the reaction. The conscious choice. Different from superpower.>",
   "defiant_spirit_message": "<2-3 sentences — the closing truth for this person>",
-  "oyn_summary": {
-    "who": "<1-2 sentences>",
-    "what": "<1-2 sentences>",
-    "why": "<1-2 sentences>",
-    "how": "<1-2 sentences>",
-    "when": "<1-2 sentences>",
-    "where": "<1-2 sentences>"
-  },
   "oyn_dimensions": {
     "who": "<1-2 sentences>",
     "what": "<1-2 sentences>",
@@ -507,26 +563,24 @@ Return this exact JSON structure:
       "name": "<real person>",
       "profession": "<their field>",
       "type_evidence": "<why they exemplify this pattern — frame through Defiant Spirit lens: wound/gift dynamic, how they defy their type's limitations>",
-      "what_you_share": "<what the person shares with this example>",
-      "photo_url": "<Wikipedia Commons image URL for this person — MUST be a real, working Wikimedia URL. If you cannot find one, leave empty string.>",
-      "source_note": "Community observation — not an official assessment."
+      "what_you_share": "<A punchy, vivid one-liner about THIS person's type energy — like a movie tagline. Not a generic type description. Example: 'Gave everything to be irreplaceable — then learned love isn't earned.' or 'Built an empire by outrunning the void — then had to sit still.' Make it specific to the person, not the type.>",
+      "photo_url": "",
+      "source_note": "<Enneagram typing source if known — e.g. 'Riso-Hudson', 'Palmer', 'Enneagram Institute', or 'Community consensus'. Always include the person even if the source is community consensus — variety and demographic relevance matter more than academic certainty.>",
+      "relevance_tag": "<if this person matches a user demographic, state which one — e.g. 'Jewish', 'Israeli', 'Korean'. Empty string if no demographic match.>"
     }
   ],
-  "_famous_examples_rules": "MANDATORY: Generate EXACTLY 6 famous examples. If the user provided demographics, you MUST include at least one figure matching EACH demographic they submitted. For example: if religion=Jewish, include at least one Jewish figure. If country=Brazil, include at least one Brazilian. If ethnicity=South Asian, include one South Asian figure. The remaining slots should be filled with universally recognized figures of this type from established Enneagram sources (Riso-Hudson, Palmer, Enneagram Institute). Diverse fields: athletes, musicians, historical figures, entrepreneurs, activists, authors — not just Hollywood actors.",
   "relationship_descriptions": {
-    "1": {"label": "<relationship label>", "description": "<2-3 sentences: how this energy relates to the person analytically>", "embodiment": "<1-2 sentences: what this energy CONCRETELY looks like showing up in this person's life — specific behaviors, moments, situations>", "own_it": "<1 sentence in Baruch's Defiant Spirit voice: how to defy the pattern and access this type's energy as a gift. Frame as: 'To own this energy means...' or 'The gift here is...' — practical, direct, no jargon>"},
-    "2": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>"},
-    "3": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>"},
-    "4": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>"},
-    "5": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>"},
-    "6": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>"},
-    "7": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>"},
-    "8": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>"},
-    "9": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>"}
+    "1": {"label": "<label>", "description": "<2-3 sentences: analytical>", "embodiment": "<1-2 sentences: concrete behaviors>", "own_it": "<1 sentence: Defiant Spirit framing>", "defy_practice": "<2-3 sentences: SPECIFIC practical advice for this person. Based on their score for this energy — if high (>0.3), how to channel it consciously instead of being run by it. If low (<0.15), what this energy offers that they're missing and one concrete way to practice it. Reference their specific type. Actionable and grounded.>"},
+    "2": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
+    "3": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
+    "4": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
+    "5": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
+    "6": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
+    "7": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
+    "8": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
+    "9": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"}
   },
-  "famous_examples_disclaimer": "Enneagram typing of public figures is interpretive — community observations only.",
-  "variant_signals": ${JSON.stringify(variantSignals)},
-  "wing_signals": ${JSON.stringify(wingSignals)}
+  "famous_examples_disclaimer": "Enneagram typing of public figures is interpretive — community observations only."
 }
 
 Make the content deeply personal, specific, and grounded in the actual conversation. Use the person's own language and examples where possible. This is their mirror — make it accurate and transformative. Every section should leave the person feeling more free, not more labeled.`;
@@ -538,7 +592,7 @@ Make the content deeply personal, specific, and grounded in the actual conversat
       rawText = await generateWithTools(client, {
         system: systemPrompt,
         messages: [{ role: 'user', content: userPrompt }],
-        maxTokens: 4000,
+        maxTokens: 16000,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         tools: [{ type: 'web_search_20250305' as any, name: 'web_search' }],
       });
@@ -546,7 +600,7 @@ Make the content deeply personal, specific, and grounded in the actual conversat
       console.warn('[generate] web search failed — RAG only:', err);
       const fallback = await client.messages.create({
         model: 'claude-sonnet-4-6',
-        max_tokens: 8000,
+        max_tokens: 16000,
         system: systemPrompt,
         messages: [{ role: 'user', content: userPrompt }],
       });
@@ -629,6 +683,102 @@ Make the content deeply personal, specific, and grounded in the actual conversat
       };
     }
 
+    // ── Completeness check — log which critical fields are missing ──
+    const criticalFields = ['superpower', 'kryptonite', 'react_pattern', 'respond_pathway', 'headline', 'core_type_description', 'defy_your_number', 'closing_charge'];
+    const emptyFields = criticalFields.filter(f => !(results[f] as string)?.trim());
+    if (emptyFields.length > 0) {
+      console.warn(`[results/generate] WARNING: ${emptyFields.length} critical fields empty after generation:`, emptyFields.join(', '));
+    }
+    const domainInsightsCheck = results.domain_insights as Record<string, { react?: string; respond?: string }> | undefined;
+    if (domainInsightsCheck) {
+      const emptyDomains = Object.entries(domainInsightsCheck).filter(([, v]) => !(v?.react?.trim()) && !(v?.respond?.trim())).map(([k]) => k);
+      if (emptyDomains.length > 0) {
+        console.warn('[results/generate] Empty domain insights:', emptyDomains.join(', '));
+      }
+    }
+    const relDescs = results.relationship_descriptions as Record<string, unknown> | undefined;
+    if (!relDescs || Object.keys(relDescs).length < 9) {
+      console.warn('[results/generate] Incomplete relationship_descriptions:', Object.keys(relDescs || {}).length, '/9');
+    }
+
+    // ── DOMAIN INSIGHTS GUARANTEE — inline patch if empty ──
+    const diCheck = results.domain_insights as Record<string, { react?: string; respond?: string }> | undefined;
+    const diEmpty = !diCheck || (typeof diCheck === 'object' && !Array.isArray(diCheck) &&
+      Object.values(diCheck).every(v => typeof v === 'object' && !((v?.react ?? '').trim() || (v?.respond ?? '').trim())));
+    if (diEmpty) {
+      console.log('[results/generate] Domain insights empty — attempting inline patch');
+      try {
+        const diPatchRes = await client.messages.create({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 2000,
+          system: `You generate Enneagram domain insights in Dr. Baruch HaLevi's Defiant Spirit voice. Lead with the gift, name the cost briefly. Return ONLY valid JSON. No markdown.`,
+          messages: [{
+            role: 'user',
+            content: `Generate domain insights for Enneagram Type ${leadingType}, wing ${leadingType}w${wingDominant}, variant ${dominantVariant}. For each domain, write a "react" pattern (automatic, unconscious) and "respond" pathway (conscious, chosen). 2-3 sentences each.\n\nReturn:\n{"relationships":{"react":"...","respond":"..."},"wealth":{"react":"...","respond":"..."},"leadership":{"react":"...","respond":"..."},"transformation":{"react":"...","respond":"..."}}`
+          }],
+        });
+        const diPatchText = diPatchRes.content.filter((b) => b.type === 'text').map((b) => (b as { type: 'text'; text: string }).text).join('').replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+        results.domain_insights = JSON.parse(diPatchText);
+        console.log('[results/generate] Domain insights patched successfully');
+      } catch (diErr) {
+        console.warn('[results/generate] Domain insights patch failed — client fallback will handle:', diErr);
+      }
+    }
+
+    // ── RELATIONSHIP DESCRIPTIONS REPAIR — if fewer than 9 entries ──
+    const relCheck = results.relationship_descriptions as Record<string, unknown> | undefined;
+    if (!relCheck || Object.keys(relCheck).length < 9) {
+      console.log(`[results/generate] Relationship descriptions incomplete (${Object.keys(relCheck || {}).length}/9) — repairing`);
+      try {
+        const relRepairRes = await client.messages.create({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 4000,
+          system: `You generate Enneagram relationship energy descriptions in Dr. Baruch HaLevi's Defiant Spirit voice. Return ONLY valid JSON. No markdown.`,
+          messages: [{
+            role: 'user',
+            content: `Generate relationship_descriptions for Enneagram Type ${leadingType} (${leadingType}w${wingDominant}, ${dominantVariant}) showing how this person relates to each of the 9 energies. For each type 1-9, include: label (short name), description (2-3 sentences), embodiment (1-2 sentences of concrete behaviors), own_it (1 sentence in Defiant Spirit voice).\n\nReturn:\n{"1":{"label":"...","description":"...","embodiment":"...","own_it":"..."},"2":{...},...,"9":{...}}`
+          }],
+        });
+        const relText = relRepairRes.content.filter((b) => b.type === 'text').map((b) => (b as { type: 'text'; text: string }).text).join('').replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+        const repaired = JSON.parse(relText);
+        // Merge: keep existing entries, fill missing ones
+        const existing = (results.relationship_descriptions || {}) as Record<string, unknown>;
+        results.relationship_descriptions = { ...repaired, ...existing };
+        console.log(`[results/generate] Relationship descriptions repaired — now ${Object.keys(results.relationship_descriptions as Record<string, unknown>).length}/9`);
+      } catch (relErr) {
+        console.warn('[results/generate] Relationship descriptions repair failed:', relErr);
+      }
+    }
+
+    // ── FAMOUS EXAMPLES REPAIR — if fewer than 4 entries ──
+    const fameCheck = results.famous_examples as Array<unknown> | undefined;
+    if (!fameCheck || fameCheck.length < 4) {
+      console.log(`[results/generate] Famous examples incomplete (${(fameCheck || []).length}/6) — repairing`);
+      try {
+        const fameRepairRes = await client.messages.create({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 2000,
+          system: `You generate famous example lists for Enneagram types. Return ONLY valid JSON array. No markdown.`,
+          messages: [{
+            role: 'user',
+            content: `Generate 6 famous examples of Enneagram Type ${leadingType}. ${session.demographics ? `User demographics: age=${session.demographics.ageRange}, gender=${session.demographics.gender}, ethnicity=${session.demographics.ethnicity}, country=${session.demographics.country}, religion=${session.demographics.religion}. Include at least one figure matching each demographic provided.` : ''} Diverse fields. Each: name, profession, type_evidence (Defiant Spirit framing), what_you_share (connection to user), source_note.\n\nReturn: [{"name":"...","profession":"...","type_evidence":"...","what_you_share":"...","photo_url":"","source_note":"Community observation."},...]`
+          }],
+        });
+        const fameText = fameRepairRes.content.filter((b) => b.type === 'text').map((b) => (b as { type: 'text'; text: string }).text).join('').replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+        const repairedFame = JSON.parse(fameText);
+        if (Array.isArray(repairedFame) && repairedFame.length > 0) {
+          results.famous_examples = repairedFame;
+          console.log(`[results/generate] Famous examples repaired — now ${repairedFame.length} entries`);
+        }
+      } catch (fameErr) {
+        console.warn('[results/generate] Famous examples repair failed:', fameErr);
+      }
+    }
+
+    // Pre-fill variant_signals and wing_signals (removed from generation template)
+    if (!results.variant_signals) results.variant_signals = variantSignals;
+    if (!results.wing_signals) results.wing_signals = wingSignals;
+
     // Ensure critical fields are populated — fill from session data if AI left them empty
     if (!results.leading_type) results.leading_type = leadingType;
     if (!results.core_type) results.core_type = leadingType;
@@ -655,7 +805,20 @@ Make the content deeply personal, specific, and grounded in the actual conversat
       results.oyn_dimensions = session.internalState.oyn_dimensions;
     }
 
-    console.log('[results/generate] Critical field check — superpower:', !!(results.superpower as string)?.trim(), '| core_type_description:', !!(results.core_type_description as string)?.trim());
+    // Flag low-confidence results from the confidence gate
+    results.lowConfidenceFlag = session.clarificationState?.completedWithLowConfidence ?? false;
+    results.demographics = session.demographics ?? null;
+
+    // ── COMPLETENESS REPORT ──
+    const _allFields = ['core_type_description', 'headline', 'superpower', 'kryptonite', 'react_pattern', 'respond_pathway', 'wing_description', 'subtype_description', 'defy_your_number', 'closing_charge', 'oyn_dimensions', 'domain_insights', 'real_world_scenarios', 'relationship_descriptions', 'famous_examples', 'stress_line_description', 'release_line_description'];
+    const _emptyFields = _allFields.filter(f => {
+      const val = results[f];
+      if (typeof val === 'string') return !val.trim();
+      if (Array.isArray(val)) return val.length === 0;
+      if (typeof val === 'object' && val !== null) return Object.keys(val).length === 0;
+      return !val;
+    });
+    console.log(`[results/generate] COMPLETENESS: ${_allFields.length - _emptyFields.length}/${_allFields.length} fields | Empty: ${_emptyFields.join(', ') || 'none'} | Profile: ${leadingType}w${wingDominant} ${dominantVariant} ${tritypeResult.tritype}`);
 
     // ── Personality Systems Analysis (sequential, after main results) ──
     const existingPS = (session.generatedResults as Record<string, unknown>)?.personality_systems;
@@ -672,6 +835,63 @@ Make the content deeply personal, specific, and grounded in the actual conversat
       } catch (psErr) {
         console.warn('[results/generate] Personality systems analysis failed:', psErr);
         results.personality_systems = null;
+      }
+    }
+
+    // ── Relationship Context Descriptions (pre-generate all 32 for instant UI) ──
+    const existingRelCtx = (session.generatedResults as Record<string, unknown>)?.relationship_context_descriptions;
+    if (existingRelCtx && Object.keys(existingRelCtx as Record<string, unknown>).length >= 28) {
+      console.log('[results/generate] relationship contexts cache hit — skipping');
+      results.relationship_context_descriptions = existingRelCtx;
+    } else {
+      try {
+        const otherTypes = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(t => t !== leadingType);
+        const contexts = ['friends', 'family', 'romantic', 'professional'];
+        const typeName = TYPE_NAMES[leadingType] || `Type ${leadingType}`;
+        const keys = otherTypes.flatMap(t => contexts.map(c => `${t}-${c}`));
+
+        const relPrompt = `Generate relationship descriptions for Type ${leadingType} (${typeName}, ${leadingType}w${wingDominant}, ${dominantVariant}) paired with each of the other 8 types across 4 contexts.
+
+For EACH of these 32 combinations, write concise, context-specific content (2-3 sentences per field):
+${keys.map(k => `"${k}"`).join(', ')}
+
+The key format is "{otherType}-{context}". The person reading is Type ${leadingType} — address them as "you."
+
+Rules:
+- Each context (friends/family/romantic/professional) must describe a GENUINELY DIFFERENT dynamic
+- Frame every pairing as having gifts and growth edges — no pairing is "bad"
+- Use Dr. Baruch HaLevi's Defiant Spirit voice — plain language, grounded, direct
+- Keep each field to 2-3 punchy sentences
+
+Return ONLY valid JSON with this structure:
+{
+${keys.slice(0, 4).map(k => `  "${k}": {"title":"<engaging title>","how_you_show_up":"<2-3 sentences>","the_dynamic":"<2-3 sentences>","growth_edge":"<2-3 sentences>","watch_out_for":"<2-3 sentences>"}`).join(',\n')},
+  ... (all 32 keys)
+}`;
+
+        console.log('[results/generate] generating 32 relationship context descriptions...');
+        const relResult = await client.messages.create({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 12000,
+          system: 'You generate Enneagram relationship insights in Dr. Baruch HaLevi\'s Defiant Spirit voice. Return ONLY valid JSON. No markdown. No backticks.',
+          messages: [{ role: 'user', content: relPrompt }],
+        });
+
+        const relRaw = relResult.content
+          .filter((b) => b.type === 'text')
+          .map((b) => (b as { type: 'text'; text: string }).text)
+          .join('');
+        const relCleaned = relRaw.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+        const relJsonStart = relCleaned.indexOf('{');
+        const relJsonEnd = relCleaned.lastIndexOf('}');
+        if (relJsonStart !== -1 && relJsonEnd !== -1) {
+          const relParsed = JSON.parse(relCleaned.slice(relJsonStart, relJsonEnd + 1));
+          results.relationship_context_descriptions = relParsed;
+          console.log(`[results/generate] relationship contexts generated — ${Object.keys(relParsed).length} entries`);
+        }
+      } catch (relErr) {
+        console.warn('[results/generate] relationship contexts generation failed:', relErr);
+        results.relationship_context_descriptions = null;
       }
     }
 

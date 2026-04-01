@@ -1,6 +1,6 @@
 'use client';
 
-import SouloOrb from './SouloOrb';
+import SouloOrb from '@/components/ui/soulo-orb';
 
 interface WelcomeCardProps {
   onReady: () => void;

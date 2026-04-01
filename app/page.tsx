@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { AnimatedGroup } from '@/components/ui/animated-group';
+import SouloOrb from '@/components/ui/soulo-orb';
+import SouloNav from '@/components/ui/soulo-nav';
 
 interface UserSession {
   session_id: string;
@@ -19,9 +22,18 @@ export default function Home() {
   const [userId, setUserId] = useState<string | null>(null);
   const [sessions, setSessions] = useState<UserSession[]>([]);
 
-  // Hydration guard — only show interactive elements after mount
+  // Hydration guard + restore login from localStorage
   const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    setMounted(true);
+    const storedUserId = localStorage.getItem('soulo_user_id');
+    const storedEmail = localStorage.getItem('soulo_email');
+    if (storedUserId && storedEmail) {
+      setLoggedIn(true);
+      setUserId(storedUserId);
+      setUserEmail(storedEmail);
+    }
+  }, []);
 
   // Sign-in form state
   const [showLogin, setShowLogin] = useState(false);
@@ -48,9 +60,19 @@ export default function Home() {
         setLoginError(data.error || 'Login failed.');
         return;
       }
+      // Persist login to localStorage on ANY successful auth
+      localStorage.setItem('soulo_user_id', data.userId);
+      localStorage.setItem('soulo_email', data.email);
+
       // Priority 1: Has completed sessions → go to results
       if (data.sessions && data.sessions.length > 0) {
-        router.push(`/results?userId=${encodeURIComponent(data.userId)}`);
+        // If latest session has reveal_completed, store sessionId for fast portal load
+        const latest = data.sessions[0];
+        if (latest?.session_id) {
+          localStorage.setItem('soulo_active_session_id', latest.session_id);
+        }
+        // Route with sessionId so results page can check reveal_completed properly
+        router.push(`/results?sessionId=${encodeURIComponent(latest?.session_id || '')}&userId=${encodeURIComponent(data.userId)}`);
         return;
       }
 
@@ -66,6 +88,8 @@ export default function Home() {
       }
 
       // Priority 3: No sessions at all — stay on page
+      localStorage.setItem('soulo_user_id', data.userId);
+      localStorage.setItem('soulo_email', data.email);
       setLoggedIn(true);
       setUserEmail(data.email);
       setUserId(data.userId);
@@ -98,36 +122,51 @@ export default function Home() {
       <div className="landing-drift landing-drift--d" />
 
       {/* Nav */}
-      <nav className="relative z-10 w-full px-6 py-4 border-b border-black/5 bg-white/80 backdrop-blur-sm flex items-center justify-between">
-        <span className="font-serif text-xl font-semibold text-[#2563EB] tracking-tight">
-          Soulo
-        </span>
-        <div className="flex items-center gap-4">
-          {loggedIn && hasCompletedSession && (
-            <button
-              onClick={handleViewResults}
-              className="font-sans text-sm text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
-            >
-              My Results
-            </button>
-          )}
-          {loggedIn && (
-            <span className="font-sans text-xs text-[#9B9590]">{userEmail}</span>
-          )}
-          {mounted && !loggedIn && (
-            <button
-              onClick={() => setShowLogin(true)}
-              className="font-sans text-sm text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
-            >
-              Sign In
-            </button>
-          )}
-        </div>
-      </nav>
+      <SouloNav
+        loggedIn={loggedIn}
+        userEmail={userEmail}
+        hasResults={hasCompletedSession}
+      />
 
       {/* Hero */}
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-20">
-        <div className="max-w-xl w-full text-center flex flex-col items-center gap-6">
+        {/* Decorative radial gradient overlay — adds depth */}
+        <div aria-hidden className="absolute inset-0 pointer-events-none isolate opacity-40 hidden lg:block">
+          <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(30,40%,75%,.08)_0,hsla(30,30%,55%,.02)_50%,hsla(30,20%,45%,0)_80%)]" />
+          <div className="h-[80rem] absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(30,40%,75%,.06)_0,hsla(30,20%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
+        </div>
+        <AnimatedGroup
+          variants={{
+            container: {
+              visible: {
+                transition: {
+                  staggerChildren: 0.12,
+                  delayChildren: 0.2,
+                },
+              },
+            },
+            item: {
+              hidden: {
+                opacity: 0,
+                filter: 'blur(10px)',
+                y: 16,
+              },
+              visible: {
+                opacity: 1,
+                filter: 'blur(0px)',
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  bounce: 0.25,
+                  duration: 1.4,
+                },
+              },
+            },
+          }}
+          className="max-w-xl w-full text-center flex flex-col items-center gap-6"
+        >
+          <SouloOrb size={140} />
+
           <h1 className="font-serif text-5xl font-bold leading-tight text-[#2C2C2C]">
             Defy Your Number
           </h1>
@@ -230,7 +269,7 @@ export default function Home() {
               </div>
             </div>
           )}
-        </div>
+        </AnimatedGroup>
       </div>
 
       {/* Footer */}

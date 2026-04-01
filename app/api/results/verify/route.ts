@@ -29,13 +29,30 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ themes: [] });
     }
 
-    const prompt = `You are analyzing someone's Enneagram assessment responses. Extract 4-6 key themes that authentically emerged from what THIS SPECIFIC PERSON said — use their own words and concepts where possible.
+    const prompt = `You are summarizing someone's Enneagram assessment for a verification screen. Extract 4-6 themes from what this person shared. Each theme must name a PATTERN and the STRENGTH or VALUE it reveals — never just the wound.
+
+CRITICAL RULES:
+- Every theme must feel like being SEEN, not diagnosed
+- Pair every shadow with the gift driving it — they are the same energy
+- Use the person's own language where possible
+- Frame patterns as survival strategies, not flaws
+- The person should read these and think "yes, that's me" with recognition, not shame
+
+WRONG (deficit-only):
+- "Seeks external validation before trusting own judgment"
+- "Avoids conflict by pleasing others"
+- "Fears rejection"
+
+RIGHT (balanced — pattern + strength):
+- "Deeply attuned to what others need — sometimes at the cost of your own voice"
+- "Holds yourself to a standard most people don't even see — and it drives excellence, but it also never lets you rest"
+- "Loyalty runs deep — you'd rather carry doubt silently than risk the relationship"
+- "Plans three steps ahead because you've learned that preparation is how you stay safe"
 
 Their responses:
 ${userMessages}
 
-Return ONLY a JSON array of 4-6 short theme strings (5-10 words each). No explanation, no code fences.
-Example: ["Values deep one-on-one connection over group settings", "Tends to plan before acting"]`;
+Return ONLY a JSON array of 4-6 theme strings (8-15 words each). No explanation, no code fences.`;
 
     const result = await client.messages.create({
       model: 'claude-sonnet-4-6',

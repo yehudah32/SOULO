@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
-import { ENNEAGRAM_SYSTEM_PROMPT } from '@/lib/system-prompt';
+import { ENNEAGRAM_SYSTEM_PROMPT_V2, STAGE_FORMAT_RULES, DEFIANT_SPIRIT_RAG_CONTEXT } from '@/lib/system-prompt-v2';
+import { validateAssessmentResponse } from '@/lib/response-validator';
+import { compressHistory } from '@/lib/history-compressor';
 import { getSession, setSession } from '@/lib/session-store';
 import { adminClient } from '@/lib/supabase';
 import { parseAIResponse } from '@/lib/parse-response';
@@ -9,8 +11,97 @@ import { getQuestionBank, updateQuestionYield, type Question } from '@/lib/quest
 import { supervisorCheck } from '@/lib/supervisor';
 import { runPostAssessmentEvaluation } from '@/lib/evaluator';
 import { selectTritype } from '@/lib/enneagram-lines';
+import { findPairForTypes, getTopTwoTypes } from '@/lib/differentiation-pairs';
+import type { SessionData } from '@/lib/session-store';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+// ── Confidence Gate ──
+// Enforces 0.85 confidence threshold for close type pairs before allowing completion.
+function evaluateConfidenceGate(
+  session: SessionData,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  finalInternal: any
+): { isComplete: boolean; clarificationState: SessionData['clarificationState'] } {
+  if (session.isComplete) {
+    return { isComplete: true, clarificationState: session.clarificationState };
+  }
+
+  const closeNext = finalInternal?.conversation?.close_next === true;
+  const confidence = finalInternal?.hypothesis?.confidence ?? 0;
+  const typeScores = finalInternal?.hypothesis?.type_scores ?? {};
+
+  // Not closing yet — check if active clarification should end
+  if (!closeNext) {
+    if (session.clarificationState?.active) {
+      if (confidence >= 0.85) {
+        console.log('[confidence-gate] Confidence reached 0.85 during clarification — releasing gate');
+        return {
+          isComplete: false,
+          clarificationState: { ...session.clarificationState, active: false },
+        };
+      }
+      if (session.clarificationState.questionsAsked >= session.clarificationState.maxQuestions) {
+        console.log('[confidence-gate] Max clarification questions reached — releasing gate with low-confidence flag');
+        return {
+          isComplete: false,
+          clarificationState: {
+            ...session.clarificationState,
+            active: false,
+            completedWithLowConfidence: true,
+          },
+        };
+      }
+    }
+    return { isComplete: false, clarificationState: session.clarificationState };
+  }
+
+  // AI says close_next = true — evaluate the gate
+  if (confidence >= 0.85) {
+    return { isComplete: true, clarificationState: session.clarificationState };
+  }
+
+  // Low confidence — check if types are close
+  const { first, second, gap } = getTopTwoTypes(typeScores);
+
+  // Clear leader (gap > 15 points) — allow completion
+  if (gap > 15) {
+    console.log(`[confidence-gate] Gap ${gap} > 15 — allowing completion despite ${Math.round(confidence * 100)}% confidence`);
+    return { isComplete: true, clarificationState: session.clarificationState };
+  }
+
+  // Already in clarification and maxed out? Allow completion.
+  if (session.clarificationState?.active &&
+      session.clarificationState.questionsAsked >= session.clarificationState.maxQuestions) {
+    console.log('[confidence-gate] Clarification maxed out — allowing completion with low-confidence flag');
+    return {
+      isComplete: true,
+      clarificationState: {
+        ...session.clarificationState,
+        active: false,
+        completedWithLowConfidence: true,
+      },
+    };
+  }
+
+  // BLOCK completion — enter clarification mode
+  const pair = findPairForTypes(first, second);
+  const maxQ = pair ? Math.min(pair.questions.length, 4) : 3;
+  console.log(`[confidence-gate] BLOCKING completion — confidence ${Math.round(confidence * 100)}%, gap ${gap}, pair ${first}v${second}, entering clarification (max ${maxQ} questions)`);
+
+  return {
+    isComplete: false,
+    clarificationState: {
+      active: true,
+      pair: [first, second],
+      pairKey: pair?.key ?? `${first}v${second}`,
+      questionsAsked: session.clarificationState?.questionsAsked ?? 0,
+      maxQuestions: maxQ,
+      confidenceAtEntry: confidence,
+      completedWithLowConfidence: false,
+    },
+  };
+}
 
 function getMaxTokens(stage: number, format?: string): number {
   // INTERNAL block alone can be 1500+ tokens — minimum must accommodate it + RESPONSE
@@ -23,11 +114,11 @@ function getMaxTokens(stage: number, format?: string): number {
 
 function deriveStage(exchangeCount: number): number {
   if (exchangeCount <= 2) return 1;
-  if (exchangeCount <= 5) return 2;
-  if (exchangeCount <= 8) return 3;
-  if (exchangeCount <= 11) return 4;
-  if (exchangeCount <= 13) return 5;
-  if (exchangeCount <= 15) return 6;
+  if (exchangeCount <= 4) return 2;
+  if (exchangeCount <= 6) return 3;
+  if (exchangeCount <= 8) return 4;
+  if (exchangeCount <= 10) return 5;
+  if (exchangeCount <= 12) return 6;
   return 7;
 }
 
@@ -58,8 +149,9 @@ async function updateSessionFromParsed(
       ? finalInternal.defiant_spirit.domain_signals
       : session.domainSignals;
 
-  const isComplete =
-    session.isComplete || (finalInternal?.conversation?.close_next === true);
+  // Confidence gate — may block completion and enter clarification mode
+  const gateResult = evaluateConfidenceGate(session, finalInternal);
+  const isComplete = gateResult.isComplete;
 
   const newLastFormat: string =
     finalInternal?.conversation?.last_question_format ??
@@ -67,6 +159,17 @@ async function updateSessionFromParsed(
     lastFormat;
   const supervisorScores = [...(session.supervisorScores ?? []), supervisorResult.score];
   const selectedQuestionId: number | null = finalInternal?.selected_question_id ?? null;
+
+  // Track question asked this turn for yield optimization
+  const allQuestionsAsked = [...(session.allQuestionsAsked || [])];
+  if (selectedQuestionId && selectedQuestionId > 0) {
+    allQuestionsAsked.push({
+      exchange: session.exchangeCount + 1,
+      questionId: selectedQuestionId,
+      questionText: ((finalInternal as Record<string, unknown>)?.response_parts as Record<string, unknown>)?.question_text as string || '',
+    });
+  }
+
   // Calculate tritype from type_scores using center-based algorithm (one per center)
   // Do NOT trust the AI's tritype — it may use top-3 overall instead of top-per-center
   const rawScores = finalInternal?.hypothesis?.type_scores ?? {};
@@ -163,13 +266,19 @@ async function updateSessionFromParsed(
       else console.log('[chat] Results persisted to Supabase:', sessionId);
     });
 
-    if (selectedQuestionId !== null) {
-      updateQuestionYield(selectedQuestionId, true).catch(() => {});
-    }
+    // Removed: unconditional updateQuestionYield(selectedQuestionId, true)
+    // Yield updates now happen in the evaluator with per-question contribution measurement
 
     console.log('[evaluator] Post-assessment evaluation triggered for session:', sessionId);
     runPostAssessmentEvaluation(sessionId).catch(() => {});
   }
+
+  // Increment clarification questionsAsked if we were in active clarification this turn
+  const updatedClarificationState = gateResult.clarificationState
+    ? (session.clarificationState?.active && gateResult.clarificationState.active
+        ? { ...gateResult.clarificationState, questionsAsked: gateResult.clarificationState.questionsAsked + 1 }
+        : gateResult.clarificationState)
+    : null;
 
   setSession(sessionId, {
     internalState: finalInternal,
@@ -194,6 +303,8 @@ async function updateSessionFromParsed(
     lexiconSignals,
     lexiconContext,
     resultsData,
+    clarificationState: updatedClarificationState,
+    allQuestionsAsked,
   });
 
   // Persist progress to Supabase — fire-and-forget (non-blocking for speed)
@@ -259,19 +370,11 @@ export async function POST(req: NextRequest) {
       : null;
     const allowedFormats = getAllowedFormats(stage);
 
-    // ── Conversation history windowing ──
-    // Send last 10 messages to keep token count flat, plus a summary of earlier context
-    const MAX_HISTORY_MESSAGES = 10;
-    let anthropicMessages: Anthropic.MessageParam[];
-    if (messages.length <= MAX_HISTORY_MESSAGES) {
-      anthropicMessages = messages as Anthropic.MessageParam[];
-    } else {
-      const recentMessages = messages.slice(-MAX_HISTORY_MESSAGES);
-      // Ensure first message is from user (Anthropic requirement)
-      if (recentMessages[0].role === 'assistant') {
-        recentMessages.shift();
-      }
-      anthropicMessages = recentMessages as Anthropic.MessageParam[];
+    // ── Conversation history compression ──
+    const compressed = compressHistory(messages, session.internalState);
+    const anthropicMessages: Anthropic.MessageParam[] = compressed.messages as Anthropic.MessageParam[];
+    if (compressed.summaryInjected) {
+      console.log(`[chat] History compressed: ${messages.length} messages → ${compressed.messages.length} (summary injected)`);
     }
 
     // ── Parallel RAG + Question Bank ──
@@ -307,17 +410,59 @@ export async function POST(req: NextRequest) {
         `\n\nIf one of these fits your current hypothesis and information needs, use it (rephrase freely to match your voice) and report its ID in selected_question_id. CRITICAL: If you select a candidate question, you MUST use the format specified in its [format:] tag. An agree_disagree question MUST use agree_disagree format. A forced_choice question MUST use forced_choice format. Do NOT change the format of a selected question. If none fit, generate your own and set selected_question_id to null. REMEMBER: only ${allowedFormats} formats are allowed at stage ${stage}.`
       : '';
 
+    // ── Build V2 system prompt: core + stage rules + RAG ──
+    const stageRules = STAGE_FORMAT_RULES[stage] || STAGE_FORMAT_RULES[1];
+    const ragBlock = ragResults
+      ? `\n\nRELEVANT DEFIANT SPIRIT KNOWLEDGE BASE CONTEXT:\n${ragResults}\n\nUse Baruch's voice and framing from this content.`
+      : `\n\n${DEFIANT_SPIRIT_RAG_CONTEXT}`;
+
     let systemPrompt =
-      ENNEAGRAM_SYSTEM_PROMPT +
-      (ragResults ? `\n\nRELEVANT DEFIANT SPIRIT KNOWLEDGE BASE CONTEXT:\n${ragResults}\n\nThis is Dr. Baruch HaLevi's proprietary work. USE THIS CONTENT AS YOUR PRIMARY SOURCE. When this content covers the topic at hand, use Baruch's exact language, his specific metaphors, his frameworks, his terminology. Do not paraphrase into generic enneagram language. Speak AS Baruch would — his voice, his framing, his logotherapeutic lens. If the retrieved content describes a type pattern, use THAT description, not a generic one.` : '') +
+      ENNEAGRAM_SYSTEM_PROMPT_V2 +
+      `\n\n${stageRules}` +
+      ragBlock +
       candidateQsBlock;
 
-    if (stage > lastStage && stage > 1) {
-      systemPrompt += `\n\nCRITICAL TRANSITION OVERRIDE: The user has just completed a major stage (moving to stage ${stage}). For this ONE turn, output a "Mirror Moment" — a beautifully crafted short reflection on the patterns you are sensing. Put the ENTIRE reflection in guide_text. Set question_text to an empty string. Set question_format to "open". Leave answer_options as null. The mirror moment lives in the guide zone ABOVE the question card — the question card will be empty/hidden for this turn. Do not end with a question mark. Just reflect.`;
-    }
 
     if ((body as { clarifying?: boolean }).clarifying === true) {
       systemPrompt += `\n\nCLARIFYING MODE: The user has reviewed the themes identified from their responses and indicated they feel inaccurate. Your task is to gently probe one more time, asking a short open-ended question that invites correction. Acknowledge their feedback without being defensive. Update your hypothesis accordingly.`;
+    }
+
+    // ── Confidence gate: differentiation prompt injection ──
+    if (session.clarificationState?.active && session.clarificationState.pair) {
+      const diffPair = findPairForTypes(session.clarificationState.pair[0], session.clarificationState.pair[1]);
+      const qIdx = session.clarificationState.questionsAsked;
+      const remaining = session.clarificationState.maxQuestions - qIdx;
+
+      let diffBlock = `\n\nCONFIDENCE GATE — DIFFERENTIATION MODE ACTIVE:
+Your top two type hypotheses (Types ${session.clarificationState.pair[0]} and ${session.clarificationState.pair[1]}) are too close to call with confidence below 85%.
+You have ${remaining} question(s) remaining to differentiate between these types.
+DO NOT set close_next to true. Focus entirely on distinguishing between these two types.`;
+
+      if (diffPair) {
+        diffBlock += `\n\nCORE DISTINCTION: ${diffPair.coreDifference}`;
+        if (diffPair.questions[qIdx]) {
+          diffBlock += `\n\nSUGGESTED DIFFERENTIATION QUESTION (rephrase naturally in your voice):
+"${diffPair.questions[qIdx].text}"
+Format: ${diffPair.questions[qIdx].format}`;
+          if (diffPair.questions[qIdx].answerOptions) {
+            diffBlock += `\nOptions: ${diffPair.questions[qIdx].answerOptions!.join(' | ')}`;
+          }
+        }
+      } else {
+        diffBlock += `\n\nNo pre-defined pair data exists for Types ${session.clarificationState.pair[0]} and ${session.clarificationState.pair[1]}. Use your Enneagram expertise to ask a question that targets the specific behavioral or motivational difference between these two types.`;
+      }
+
+      systemPrompt += diffBlock;
+
+      // Fire targeted RAG query for this pair
+      if (diffPair?.questions[qIdx]?.ragQuery) {
+        try {
+          const diffRag = await queryKnowledgeBase(diffPair.questions[qIdx].ragQuery);
+          if (diffRag) {
+            systemPrompt += `\n\nDIFFERENTIATION KNOWLEDGE BASE CONTEXT:\n${diffRag}`;
+          }
+        } catch { /* non-blocking */ }
+      }
     }
 
     // ── Previous question context — so AI knows what format/scale it used ──
@@ -331,8 +476,6 @@ export async function POST(req: NextRequest) {
       model: 'claude-sonnet-4-6',
       max_tokens: getMaxTokens(stage, session.lastQuestionFormat ?? undefined),
       system: systemPrompt,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      tools: [{ type: 'web_search_20250305' as any, name: 'web_search' }],
       messages: anthropicMessages,
     });
     const t4 = performance.now();
@@ -349,89 +492,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
     }
 
-    // ── ABSOLUTE RULE: No reflections in question_text, no questions in guide_text ──
-    // This is a multi-pass enforcer that guarantees separation before sending to client.
+    // ── Response Validator — runs BEFORE sending to client ──
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const rp = (internal as any)?.response_parts;
-    if (rp?.question_text) {
-      const qt = rp.question_text.trim();
-
-      // Pass 1: No question mark → entire text is commentary
-      if (!qt.includes('?')) {
-        console.warn('[chat/enforcer] question_text has no question mark — moving ALL to guide_text');
-        rp.guide_text = ((rp.guide_text || '') + ' ' + qt).trim();
-        rp.question_text = '';
-      } else {
-        // Pass 2: Split sentences — move non-question sentences to guide_text
-        // Split on sentence boundaries (period followed by space/newline)
-        const sentences = qt.split(/(?<=[.!])\s+/);
-        if (sentences.length > 1) {
-          const firstQuestionIdx = sentences.findIndex((s: string) => s.includes('?'));
-          if (firstQuestionIdx > 0) {
-            const bridgePart = sentences.slice(0, firstQuestionIdx).join(' ');
-            const questionPart = sentences.slice(firstQuestionIdx).join(' ');
-            console.log('[chat/enforcer] Pass 2: Split bridge from question_text:', bridgePart.substring(0, 60));
-            rp.guide_text = ((rp.guide_text || '') + ' ' + bridgePart).trim();
-            rp.question_text = questionPart;
-          }
-        }
-
-        // Pass 3: Pattern-based detection — catch reflection phrases even within question sentences
-        // These phrases are NEVER part of a question — they are always commentary/bridge
-        const REFLECTION_PATTERNS = [
-          /^that('s| is) (interesting|telling|revealing|significant|notable|important)/i,
-          /^i notice/i,
-          /^i can (see|hear|feel|sense|tell)/i,
-          /^(interesting|notable|telling|revealing)\b/i,
-          /^(the way|what) you (described|said|shared|mentioned|expressed)/i,
-          /^you (said|mentioned|described|shared|noted|expressed)/i,
-          /^that (impulse|pull|drive|instinct|pattern|tension|gap|space|hesitation|resistance)/i,
-          /^(something|there's something) (in|about) (you|that|what|the way)/i,
-          /^(building|based) on (what|that)/i,
-          /^that tells me/i,
-          /^(owning|carrying|holding|bearing) .{3,30} — that/i,
-          /^the fact that you/i,
-          /^(so|and|but) you/i,
-          /^it (sounds|seems|feels|looks) like/i,
-        ];
-
-        const currentQt = (rp.question_text || '').trim();
-        if (currentQt) {
-          // Check if question_text STARTS with a reflection pattern
-          const startsWithReflection = REFLECTION_PATTERNS.some(p => p.test(currentQt));
-          if (startsWithReflection) {
-            // Find where the actual question starts (first sentence with ?)
-            const reSentences = currentQt.split(/(?<=[.!])\s+/);
-            const qIdx = reSentences.findIndex((s: string) => s.includes('?'));
-            if (qIdx > 0) {
-              const reflPart = reSentences.slice(0, qIdx).join(' ');
-              const cleanQ = reSentences.slice(qIdx).join(' ');
-              console.log('[chat/enforcer] Pass 3: Reflection pattern detected at start:', reflPart.substring(0, 60));
-              rp.guide_text = ((rp.guide_text || '') + ' ' + reflPart).trim();
-              rp.question_text = cleanQ;
-            } else if (qIdx === 0 && reSentences.length === 1) {
-              // Single sentence that starts with reflection but contains '?'
-              // e.g. "That gap is interesting — when you go out of your way, which is more true?"
-              // Split on the em dash or " — " or " – "
-              const dashSplit = currentQt.split(/\s*[—–]\s*/);
-              if (dashSplit.length >= 2) {
-                const lastPart = dashSplit[dashSplit.length - 1];
-                if (lastPart.includes('?')) {
-                  const reflDash = dashSplit.slice(0, -1).join(' — ');
-                  console.log('[chat/enforcer] Pass 3: Dash-split reflection:', reflDash.substring(0, 60));
-                  rp.guide_text = ((rp.guide_text || '') + ' ' + reflDash).trim();
-                  rp.question_text = lastPart.charAt(0).toUpperCase() + lastPart.slice(1);
-                }
-              }
-            }
-          }
-        }
-      }
-
-      // Final log
-      if (rp.question_text) {
-        console.log('[chat/enforcer] Final question_text:', rp.question_text.substring(0, 80));
-        console.log('[chat/enforcer] Final guide_text:', (rp.guide_text || '').substring(0, 80));
+    const isClosing = (internal as any)?.conversation?.close_next === true;
+    if (rp) {
+      const validation = validateAssessmentResponse(
+        rp, response, stage, lastFormat, session.exchangeCount, isClosing
+      );
+      console.log(`[validator] Score: ${validation.score}/10 | Valid: ${validation.valid} | AutoFixed: ${validation.autoFixed} | Issues: ${validation.issues.map(i => i.rule).join(', ') || 'none'}`);
+      if (validation.autoFixed && validation.fixedParts) {
+        if (validation.fixedParts.guide_text !== undefined) rp.guide_text = validation.fixedParts.guide_text;
+        if (validation.fixedParts.question_text !== undefined) rp.question_text = validation.fixedParts.question_text;
+        console.log('[validator] Auto-fix applied — question_text:', (rp.question_text || '').substring(0, 60));
       }
     }
 
@@ -502,6 +575,7 @@ export async function POST(req: NextRequest) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       thinking_display: (finalInternal as any)?.thinking_display ?? '',
       progressSaved: !!(session.userId && session.userId.length > 0),
+      clarificationActive: updatedSession?.clarificationState?.active ?? false,
       ...(isComplete && resultsData ? { resultsData } : {}),
     });
   } catch (err) {

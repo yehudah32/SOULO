@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
+import DebugPanel from "@/components/ui/debug-panel";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className={`${lora.variable} ${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-[#FAF8F5] text-[#2C2C2C] font-sans antialiased" suppressHydrationWarning>
         {children}
+        <DebugPanel />
       </body>
     </html>
   );

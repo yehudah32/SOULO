@@ -19,6 +19,8 @@ interface RelationshipWheelProps {
   relationshipDescriptions: Record<string, { label: string; description: string }>;
   onTypeHover: (type: number | null) => void;
   hoveredType: number | null;
+  selectedType?: number | null;
+  onTypeSelect?: (type: number | null) => void;
   size?: number;
   typeScores?: Record<string, number>;
 }
@@ -42,6 +44,8 @@ export default function RelationshipWheel({
   relationshipDescriptions,
   onTypeHover,
   hoveredType,
+  selectedType = null,
+  onTypeSelect,
   size = 360,
   typeScores = {},
 }: RelationshipWheelProps) {
@@ -82,16 +86,18 @@ export default function RelationshipWheel({
     sweepTimersRef.current = [];
 
     const order = getSweepOrder(leadingType);
+    // Slower, more elegant sweep — each type lingers 500ms with smooth transitions
     order.forEach((type, i) => {
       const t1 = setTimeout(() => {
         onTypeHover(type);
-        const t2 = setTimeout(() => {
-          onTypeHover(null);
-        }, 250);
-        sweepTimersRef.current.push(t2);
-      }, i * 350);
+      }, i * 600);
       sweepTimersRef.current.push(t1);
     });
+    // Clear hover after the full sweep
+    const clearTimer = setTimeout(() => {
+      onTypeHover(null);
+    }, order.length * 600 + 400);
+    sweepTimersRef.current.push(clearTimer);
   }
 
   function getLineColor(targetType: number): string {
@@ -157,7 +163,7 @@ export default function RelationshipWheel({
         width={size}
         height={size}
         style={{ overflow: 'visible' }}
-        onMouseLeave={() => onTypeHover(null)}
+        onMouseLeave={() => { if (selectedType === null) onTypeHover(null); }}
       >
         {/* Outer circle */}
         <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(0,0,0,0.06)" strokeWidth="0.5" />
@@ -195,34 +201,35 @@ export default function RelationshipWheel({
 
           return (
             <g key={typeNum}>
-              {/* Touch/hover target */}
+              {/* Touch/hover/click target */}
               <circle
                 cx={pos.x} cy={pos.y} r={12}
                 fill="transparent"
                 style={{ cursor: isLeading ? 'default' : 'pointer', touchAction: 'manipulation' }}
-                onMouseEnter={() => { if (!isLeading) onTypeHover(typeNum); }}
+                onMouseEnter={() => { if (!isLeading && selectedType !== typeNum) onTypeHover(typeNum); }}
+                onMouseLeave={() => { if (selectedType === null) onTypeHover(null); }}
+                onClick={() => {
+                  if (isLeading) return;
+                  if (onTypeSelect) {
+                    onTypeSelect(selectedType === typeNum ? null : typeNum);
+                    onTypeHover(selectedType === typeNum ? null : typeNum);
+                  } else {
+                    onTypeHover(hoveredType === typeNum ? null : typeNum);
+                  }
+                }}
                 onTouchStart={(e) => {
                   e.preventDefault();
                   if (isLeading) return;
-                  onTypeHover(hoveredType === typeNum ? null : typeNum);
+                  if (onTypeSelect) {
+                    onTypeSelect(selectedType === typeNum ? null : typeNum);
+                    onTypeHover(selectedType === typeNum ? null : typeNum);
+                  } else {
+                    onTypeHover(hoveredType === typeNum ? null : typeNum);
+                  }
                 }}
               />
 
-              {/* Score ring — size reflects type strength */}
-              {(() => {
-                const score = typeScores[String(typeNum)] ?? 0;
-                const ringR = 3 + score * 8; // 3px min, 11px max
-                return score > 0 ? (
-                  <circle
-                    cx={pos.x} cy={pos.y} r={ringR}
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="0.4"
-                    opacity={isLeading ? 0.3 : 0.15}
-                    style={{ pointerEvents: 'none', transition: 'r 300ms ease, opacity 300ms ease' }}
-                  />
-                ) : null;
-              })()}
+              {/* Score ring removed — was creating messy overlapping circles */}
 
               {/* Visible point */}
               <circle

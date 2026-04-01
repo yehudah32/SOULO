@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
   if (listMode && validUserId) {
     const { data: sessions, error: listErr } = await adminClient
       .from('assessment_results')
-      .select('session_id, leading_type, confidence, tritype, exchange_count, created_at')
+      .select('session_id, leading_type, confidence, tritype, exchange_count, created_at, reveal_completed')
       .eq('user_id', validUserId)
       .order('created_at', { ascending: false });
 
@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
   // Get the assessment — by userId (latest) or by specific sessionId
   let query = adminClient
     .from('assessment_results')
-    .select('session_id, leading_type, confidence, tritype, type_scores, wing_signals, variant_signals, whole_type_signals, oyn_dimensions, defiant_spirit, domain_signals, supervisor_scores, exchange_count, generated_results, created_at');
+    .select('session_id, leading_type, confidence, tritype, type_scores, wing_signals, variant_signals, whole_type_signals, oyn_dimensions, defiant_spirit, domain_signals, supervisor_scores, exchange_count, generated_results, created_at, reveal_completed');
 
   if (validSessionId) {
     query = query.eq('session_id', validSessionId);
@@ -92,6 +92,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({
       sessionId: result.session_id,
       results: cached,
+      revealCompleted: result.reveal_completed === true,
     });
   }
 

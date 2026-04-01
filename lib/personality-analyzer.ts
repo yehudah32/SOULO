@@ -235,6 +235,50 @@ WHAT MAKES ANALYSIS GOOD:
 3. Shows how THIS person differs from the average of their type
 4. Human Design always clearly marked exploratory
 
+WRITING QUALITY — ALL TEXT FIELDS:
+
+Write like a clinical psychologist who also writes well, not like an AI summarizer. These rules apply to ALL fields (reasoning, personalEvidence, descriptions, shadowNote, growthEdge, healthNote, personalVariance, blend).
+
+BANNED — Word choice:
+- "Quietly" and magic adverbs: No "quietly", "deeply", "fundamentally", "remarkably" to inflate descriptions.
+- "Delve" and friends: Never "delve", "utilize", "leverage" (as verb), "robust", "streamline", "harness", "navigate".
+- Ornate nouns: No "tapestry", "landscape", "paradigm", "ecosystem" where simpler words work.
+- The "serves as" dodge: Say "is", not "serves as" or "stands as".
+- Personality clichés: No "journey" for growth, no "dance between" for opposing forces, no "at its core".
+- "Think of it as..." / "It's like a..." — don't patronize with analogies.
+
+BANNED — Sentence structure:
+- Negative parallelism: "It's not X — it's Y." Never across any system.
+- Dramatic countdowns: "Not X. Not Y. Just Z." Never.
+- Self-posed rhetorical questions: "The result? A pattern of..." Never.
+- Anaphora: Don't start consecutive sentences with the same word.
+- Tricolon abuse: Max one three-part list across all six systems combined.
+- Filler: No "Importantly", "Notably", "Interestingly", "It's worth noting".
+- Superficial -ing analyses: Cut "-ing" phrases that add no specific information.
+- Listicle in a trench coat: Don't write "The first observation... The second observation..." Write real prose with varied openings.
+- Em dashes: Max two per system.
+- No repeating the same sentence structure across systems.
+
+BANNED — Tone:
+- Grandiose stakes inflation: These are observations about one person, not declarations about human nature.
+- "Imagine..." openings: Never.
+- "The truth is simple" / "The reality is clear": Show, don't assert.
+- False vulnerability: "And yes, this is the hard part..." Never.
+- "Despite these patterns..." dismissals: Never.
+- Invented concept labels: Don't coin "the validation paradox", "the intimacy trap" as if they're established terms. Describe the pattern plainly.
+- Dead metaphor: Don't repeat the same metaphor across systems.
+
+BANNED — Composition:
+- Content duplication: If MBTI reasoning already covered a point, Attachment cannot repeat it.
+- One-point dilution: Each sentence must add new information.
+- Signposted conclusions: No "In summary", "To conclude", "In short".
+
+REQUIRED:
+- Vary sentence openings across systems.
+- Be specific to the person's pattern, not generic to the type.
+- One short punchy sentence (under 8 words) per field minimum.
+- Trust the reader's intelligence.
+
 Return ONLY valid JSON with double quotes. No markdown. No backticks. No preamble.`
 
   const userPrompt = `Analyze this specific person across six personality systems.
@@ -267,14 +311,25 @@ ${correlationContext}
 IMPLAUSIBLE MBTI for Type ${input.coreType}: ${implausibleMBTI.join(', ')}
 Only suggest these with specific compelling evidence.
 
-Return this exact JSON structure. Every field required. personalEvidence must reference their actual words.
+Return this exact JSON structure. Every field required.
+
+CRITICAL — rules for ALL text fields (personalEvidence, reasoning, growthEdge, shadowNote, personalVariance, blend, description):
+- Do NOT quote or paraphrase the user's actual assessment responses
+- Do NOT use phrases like "you said", "your words", "you mentioned", "in your responses", "her literal words"
+- NEVER reference specific people the user mentioned (boyfriend, mother, boss, friend, etc.)
+- NEVER reference specific situations they described
+- Instead, describe the PATTERN you observed — the behavioral tendency, not the specific thing they said
+- Write about patterns, not episodes
+- Write as an insight about who they ARE, not an analysis of what they TYPED
+- Example BAD: "Her literal words 'I ask 10 people' show Fe+Si processing"
+- Example GOOD: "The instinct to seek external consensus before trusting your own judgment is a hallmark of Fe-dominant processing"
 
 {
   "mbti": {
     "types": ["PRIMARY_TYPE", "SECONDARY_IF_APPLICABLE"],
     "primary": "SINGLE_MOST_LIKELY_TYPE",
     "reasoning": "Compound reasoning with cognitive functions.",
-    "personalEvidence": "Specific language patterns from their responses.",
+    "personalEvidence": "Behavioral pattern observed — do NOT quote their words.",
     "confidence": "high|medium|low"
   },
   "bigFive": {
@@ -289,7 +344,7 @@ Return this exact JSON structure. Every field required. personalEvidence must re
   "attachment": {
     "style": "secure|anxious|avoidant|fearful_avoidant",
     "reasoning": "How does the compound type produce this attachment pattern?",
-    "personalEvidence": "Specific patterns from their responses.",
+    "personalEvidence": "Relational pattern observed — do NOT quote their words.",
     "healthNote": "Where on the health spectrum based on React pattern?",
     "growthEdge": "What would shifting look like? Ground in Respond pathway.",
     "confidence": "high|medium|low"
@@ -298,7 +353,7 @@ Return this exact JSON structure. Every field required. personalEvidence must re
     "profile": "Letter combination e.g. CD",
     "blend": "Name and brief description",
     "reasoning": "How does this compound type present in behavioral contexts?",
-    "personalEvidence": "Specific evidence from responses.",
+    "personalEvidence": "Behavioral tendency observed — do NOT quote their words.",
     "confidence": "high|medium|low"
   },
   "jungian": {
@@ -307,13 +362,13 @@ Return this exact JSON structure. Every field required. personalEvidence must re
     "shadowArchetype": "Most suppressed archetype",
     "shadowNote": "How does their shadow manifest? Ground in kryptonite and React pattern.",
     "reasoning": "Compound Jungian reasoning.",
-    "personalEvidence": "Patterns from responses revealing archetypes and shadow.",
+    "personalEvidence": "Archetypal pattern observed — do NOT quote their words.",
     "confidence": "high|medium|low"
   },
   "humanDesign": {
-    "likelyType": "Most plausible HD type",
-    "reasoning": "Community-based reasoning only.",
-    "disclaimer": "Human Design has no peer-reviewed research base. These correlations come from community observation only and should be treated as speculative and exploratory.",
+    "likelyType": "Most plausible HD type (one of: Generator, Manifesting Generator, Projector, Manifestor, Reflector)",
+    "reasoning": "Write 2-3 SHORT, digestible sentences. NO jargon like 'defined Sacral center' or 'Sacral defined energy'. Instead, translate HD concepts into plain language: 'You seem to thrive when responding to what life brings you rather than forcing things to happen' instead of 'defined Sacral center that responds'. Keep it warm, intuitive, accessible. This is exploratory — write like a wise friend, not a textbook.",
+    "disclaimer": "Human Design is a community-based framework without peer-reviewed research. These observations are exploratory — take what resonates and leave the rest.",
     "confidence": "low"
   }
 }`

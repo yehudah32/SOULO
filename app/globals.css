@@ -157,7 +157,53 @@ body {
   }
 }
 
+/* ── Relationship Explorer Animations ── */
+@keyframes rel-line-draw {
+  from { stroke-dashoffset: var(--line-length, 100); }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes rel-panel-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes rel-content-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* ── Personality Systems Animations ── */
+/* ── Living Data: Section Enhancements ── */
+@keyframes warmGlow {
+  0%, 100% { transform: scale(1); opacity: 0.06; }
+  50% { transform: scale(1.08); opacity: 0.09; }
+}
+@keyframes accentBarEnter {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes shimmerSlide {
+  from { background-position: -200% center; }
+  to { background-position: 200% center; }
+}
+@keyframes radiateOut {
+  from { stroke-dashoffset: 40; opacity: 0.3; }
+  to { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes ctaPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* ── Relationship Ambient ── */
+@keyframes rel-ambient-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(4px, -3px) scale(1.02); }
+}
+@keyframes rel-ambient-pulse {
+  0%, 100% { opacity: 0.06; }
+  50% { opacity: 0.10; }
+}
+
 @keyframes radarDraw {
   from { stroke-dashoffset: 600; }
   to { stroke-dashoffset: 0; }
@@ -173,4 +219,78 @@ body {
 @keyframes psSlideUp {
   from { transform: translateY(16px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+/* ═══ Dark Systems Card Animations ═══ */
+@keyframes darkCardEnter {
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.05); }
+}
+@keyframes spectrumDotGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(255,255,255,0.6); }
+  50% { box-shadow: 0 0 24px rgba(255,255,255,0.9); }
+}
+@keyframes archPrimaryPulse {
+  0%, 100% { r: 30; opacity: 0.08; }
+  50% { r: 36; opacity: 0.15; }
+}
+@keyframes archPrimaryRing {
+  0%, 100% { stroke-opacity: 0.2; stroke-dashoffset: 0; }
+  50% { stroke-opacity: 0.5; stroke-dashoffset: 12; }
+}
+@keyframes archSupportGlow {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.12; }
+}
+/* Jungian reveal: segment highlight fades in */
+@keyframes archSegReveal {
+  0%, 70% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/* Jungian: dim text disappears */
+@keyframes archDimOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+/* ═══ Organic Card Atmosphere ═══ */
+@keyframes meshDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  33% { transform: translate(20px, -15px) scale(1.15); opacity: 0.7; }
+  66% { transform: translate(-15px, 10px) scale(0.95); opacity: 0.4; }
+}
+@keyframes meshDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.35; }
+  40% { transform: translate(-18px, 20px) scale(1.2); opacity: 0.55; }
+  70% { transform: translate(12px, -8px) scale(0.9); opacity: 0.3; }
+}
+@keyframes meshDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+  50% { transform: translate(14px, 14px) scale(1.25); opacity: 0.45; }
+}
+@keyframes darkBarFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes darkFadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes darkDotAppear {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes radarShapeDraw {
+  from { stroke-dashoffset: 600; opacity: 0; }
+  to { stroke-dashoffset: 0; opacity: 1; }
+}
+@keyframes peekBob {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+@keyframes peekBobLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-6px); }
 }

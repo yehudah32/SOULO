@@ -4,9 +4,17 @@ export interface CelebrityProfile {
   profession: string;
   hook: string;
   description: string;
-  photoUrl: string;  // Computed via /api/wiki-image proxy at runtime
-  wikiSlug?: string; // Optional — auto-derived from name if not set
+  photoUrl: string;
+  wikiSlug?: string;
   source: string;
+  // Demographic tags for personalized matching
+  gender?: 'male' | 'female';
+  ageAppeal?: 'young' | 'mid' | 'elder' | 'universal';
+  ethnicity?: string[];
+  religion?: string[];
+  nationality?: string[];
+  relevantToYou?: boolean; // Set dynamically by scoring
+  matchReasons?: string[]; // e.g. ['Jewish', 'Israeli'] — shown on card
 }
 
 // All type assignments cross-referenced from Riso-Hudson, Palmer, Enneagram Institute, and Fauvre.
@@ -485,6 +493,89 @@ export const CELEBRITY_DATABASE: CelebrityProfile[] = [
   { name: 'Audrey Hepburn', type: 9, profession: 'Actress & Humanitarian', hook: 'Radiated grace so naturally it looked like she wasn\'t even trying.', description: 'Hepburn\'s Nine energy is visible in the effortless elegance, the peace she brought to every room, the humanitarian work that felt like an extension of who she was. Her gift was making goodness look beautiful. Her wound was the childhood of war and hunger she never fully left behind.', photoUrl: '', source: 'Enneagram Institute' },
 ];
 
+// ═══ DEMOGRAPHIC TAGS — applied at runtime via lookup ═══
+const DEMO_TAGS: Record<string, Partial<CelebrityProfile>> = {
+  // TYPE 1
+  'Mahatma Gandhi': { gender: 'male', ageAppeal: 'universal', ethnicity: ['South Asian', 'Indian'], religion: ['Hindu'], nationality: ['Indian'] },
+  'Michelle Obama': { gender: 'female', ageAppeal: 'universal', ethnicity: ['Black', 'African American'], nationality: ['American'] },
+  'Martha Stewart': { gender: 'female', ageAppeal: 'elder', ethnicity: ['White'], nationality: ['American'] },
+  'Nelson Mandela': { gender: 'male', ageAppeal: 'universal', ethnicity: ['Black', 'South African'], nationality: ['South African'] },
+  'Tina Fey': { gender: 'female', ageAppeal: 'mid', ethnicity: ['White', 'Greek American'], nationality: ['American'] },
+  'Ruth Bader Ginsburg': { gender: 'female', ageAppeal: 'universal', ethnicity: ['White', 'Ashkenazi'], religion: ['Jewish'], nationality: ['American'] },
+  'Confucius': { gender: 'male', ageAppeal: 'universal', ethnicity: ['East Asian', 'Chinese'], nationality: ['Chinese'] },
+  'Greta Thunberg': { gender: 'female', ageAppeal: 'young', ethnicity: ['White', 'Scandinavian'], nationality: ['Swedish'] },
+  // TYPE 2
+  'Mother Teresa': { gender: 'female', ageAppeal: 'universal', ethnicity: ['White', 'Albanian'], religion: ['Catholic', 'Christian'], nationality: ['Albanian', 'Indian'] },
+  'Dolly Parton': { gender: 'female', ageAppeal: 'universal', ethnicity: ['White'], religion: ['Christian'], nationality: ['American'] },
+  'Desmond Tutu': { gender: 'male', ageAppeal: 'elder', ethnicity: ['Black', 'South African'], religion: ['Christian', 'Anglican'], nationality: ['South African'] },
+  'Stevie Wonder': { gender: 'male', ageAppeal: 'universal', ethnicity: ['Black', 'African American'], nationality: ['American'] },
+  'Eleanor Roosevelt': { gender: 'female', ageAppeal: 'elder', ethnicity: ['White'], nationality: ['American'] },
+  'Princess Diana': { gender: 'female', ageAppeal: 'universal', ethnicity: ['White', 'British'], nationality: ['British'] },
+  'Fred Rogers': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White'], religion: ['Christian', 'Presbyterian'], nationality: ['American'] },
+  'Malala Yousafzai': { gender: 'female', ageAppeal: 'young', ethnicity: ['South Asian', 'Pakistani'], religion: ['Muslim'], nationality: ['Pakistani', 'British'] },
+  // TYPE 3
+  'Oprah Winfrey': { gender: 'female', ageAppeal: 'universal', ethnicity: ['Black', 'African American'], nationality: ['American'] },
+  'Muhammad Ali': { gender: 'male', ageAppeal: 'universal', ethnicity: ['Black', 'African American'], religion: ['Muslim'], nationality: ['American'] },
+  'Taylor Swift': { gender: 'female', ageAppeal: 'young', ethnicity: ['White'], nationality: ['American'] },
+  'Dwayne Johnson': { gender: 'male', ageAppeal: 'mid', ethnicity: ['Black', 'Samoan', 'Pacific Islander'], nationality: ['American'] },
+  'Beyonce': { gender: 'female', ageAppeal: 'universal', ethnicity: ['Black', 'African American'], nationality: ['American'] },
+  'Cristiano Ronaldo': { gender: 'male', ageAppeal: 'young', ethnicity: ['White', 'Portuguese'], nationality: ['Portuguese'] },
+  'Sheryl Sandberg': { gender: 'female', ageAppeal: 'mid', ethnicity: ['White', 'Ashkenazi'], religion: ['Jewish'], nationality: ['American'] },
+  'Jay-Z': { gender: 'male', ageAppeal: 'mid', ethnicity: ['Black', 'African American'], nationality: ['American'] },
+  // TYPE 4
+  'Frida Kahlo': { gender: 'female', ageAppeal: 'universal', ethnicity: ['Latino', 'Mexican'], religion: ['Jewish'], nationality: ['Mexican'] },
+  'Prince': { gender: 'male', ageAppeal: 'universal', ethnicity: ['Black', 'African American'], nationality: ['American'] },
+  'Virginia Woolf': { gender: 'female', ageAppeal: 'elder', ethnicity: ['White', 'British'], nationality: ['British'] },
+  'Amy Winehouse': { gender: 'female', ageAppeal: 'mid', ethnicity: ['White', 'Ashkenazi'], religion: ['Jewish'], nationality: ['British'] },
+  'Rumi': { gender: 'male', ageAppeal: 'universal', ethnicity: ['Persian', 'Middle Eastern'], religion: ['Muslim', 'Sufi'], nationality: ['Persian', 'Turkish'] },
+  'Leonard Cohen': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White', 'Ashkenazi'], religion: ['Jewish', 'Buddhist'], nationality: ['Canadian'] },
+  'Billie Eilish': { gender: 'female', ageAppeal: 'young', ethnicity: ['White'], nationality: ['American'] },
+  'Fyodor Dostoevsky': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White', 'Russian'], religion: ['Christian', 'Orthodox'], nationality: ['Russian'] },
+  // TYPE 5
+  'Albert Einstein': { gender: 'male', ageAppeal: 'universal', ethnicity: ['White', 'Ashkenazi'], religion: ['Jewish'], nationality: ['German', 'American', 'Swiss'] },
+  'Jane Goodall': { gender: 'female', ageAppeal: 'universal', ethnicity: ['White', 'British'], nationality: ['British'] },
+  'Stephen Hawking': { gender: 'male', ageAppeal: 'universal', ethnicity: ['White', 'British'], nationality: ['British'] },
+  'Bill Gates': { gender: 'male', ageAppeal: 'mid', ethnicity: ['White'], nationality: ['American'] },
+  'Emily Dickinson': { gender: 'female', ageAppeal: 'elder', ethnicity: ['White'], nationality: ['American'] },
+  'Marie Curie': { gender: 'female', ageAppeal: 'universal', ethnicity: ['White', 'Polish'], nationality: ['Polish', 'French'] },
+  'Mark Zuckerberg': { gender: 'male', ageAppeal: 'young', ethnicity: ['White', 'Ashkenazi'], religion: ['Jewish'], nationality: ['American'] },
+  'Nikola Tesla': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White', 'Serbian'], religion: ['Christian', 'Orthodox'], nationality: ['Serbian', 'American'] },
+  // TYPE 6
+  'Bruce Springsteen': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White', 'Italian American', 'Irish American'], nationality: ['American'] },
+  'Tom Hanks': { gender: 'male', ageAppeal: 'universal', ethnicity: ['White'], nationality: ['American'] },
+  'Mark Twain': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White'], nationality: ['American'] },
+  'Sigmund Freud': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White', 'Ashkenazi'], religion: ['Jewish'], nationality: ['Austrian'] },
+  'Ellen DeGeneres': { gender: 'female', ageAppeal: 'mid', ethnicity: ['White'], nationality: ['American'] },
+  'J.R.R. Tolkien': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White', 'British'], religion: ['Catholic', 'Christian'], nationality: ['British'] },
+  // TYPE 7
+  'Robin Williams': { gender: 'male', ageAppeal: 'universal', ethnicity: ['White'], nationality: ['American'] },
+  'Amelia Earhart': { gender: 'female', ageAppeal: 'universal', ethnicity: ['White'], nationality: ['American'] },
+  'Richard Branson': { gender: 'male', ageAppeal: 'mid', ethnicity: ['White', 'British'], nationality: ['British'] },
+  'Mozart': { gender: 'male', ageAppeal: 'universal', ethnicity: ['White', 'Austrian'], nationality: ['Austrian'] },
+  'Jim Carrey': { gender: 'male', ageAppeal: 'mid', ethnicity: ['White', 'Canadian'], nationality: ['Canadian', 'American'] },
+  'Walt Disney': { gender: 'male', ageAppeal: 'universal', ethnicity: ['White'], nationality: ['American'] },
+  'Freddie Mercury': { gender: 'male', ageAppeal: 'universal', ethnicity: ['South Asian', 'Parsi', 'Indian'], religion: ['Zoroastrian'], nationality: ['British', 'Tanzanian'] },
+  'Sadhguru': { gender: 'male', ageAppeal: 'mid', ethnicity: ['South Asian', 'Indian'], religion: ['Hindu'], nationality: ['Indian'] },
+  // TYPE 8
+  'Martin Luther King Jr.': { gender: 'male', ageAppeal: 'universal', ethnicity: ['Black', 'African American'], religion: ['Christian', 'Baptist'], nationality: ['American'] },
+  'Serena Williams': { gender: 'female', ageAppeal: 'universal', ethnicity: ['Black', 'African American'], nationality: ['American'] },
+  'Winston Churchill': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White', 'British'], nationality: ['British'] },
+  'Toni Morrison': { gender: 'female', ageAppeal: 'elder', ethnicity: ['Black', 'African American'], nationality: ['American'] },
+  'Cleopatra': { gender: 'female', ageAppeal: 'universal', ethnicity: ['North African', 'Egyptian', 'Greek'], nationality: ['Egyptian'] },
+  'Indira Gandhi': { gender: 'female', ageAppeal: 'elder', ethnicity: ['South Asian', 'Indian'], religion: ['Hindu'], nationality: ['Indian'] },
+  'Rosa Parks': { gender: 'female', ageAppeal: 'universal', ethnicity: ['Black', 'African American'], nationality: ['American'] },
+  'Gordon Ramsay': { gender: 'male', ageAppeal: 'mid', ethnicity: ['White', 'British', 'Scottish'], nationality: ['British'] },
+  // TYPE 9
+  'Abraham Lincoln': { gender: 'male', ageAppeal: 'universal', ethnicity: ['White'], nationality: ['American'] },
+  'Bob Marley': { gender: 'male', ageAppeal: 'universal', ethnicity: ['Black', 'Jamaican'], nationality: ['Jamaican'] },
+  'Queen Elizabeth II': { gender: 'female', ageAppeal: 'universal', ethnicity: ['White', 'British'], nationality: ['British'] },
+  'Dalai Lama': { gender: 'male', ageAppeal: 'universal', ethnicity: ['East Asian', 'Tibetan'], religion: ['Buddhist'], nationality: ['Tibetan'] },
+  'Keanu Reeves': { gender: 'male', ageAppeal: 'universal', ethnicity: ['White', 'Hawaiian', 'Chinese', 'multiracial'], nationality: ['Canadian', 'American'] },
+  'Barack Obama': { gender: 'male', ageAppeal: 'universal', ethnicity: ['Black', 'African American', 'multiracial'], nationality: ['American'] },
+  'Carl Jung': { gender: 'male', ageAppeal: 'elder', ethnicity: ['White', 'Swiss'], nationality: ['Swiss'] },
+  'Audrey Hepburn': { gender: 'female', ageAppeal: 'universal', ethnicity: ['White', 'British', 'Dutch', 'Belgian'], nationality: ['British', 'Belgian'] },
+};
+
 // Map celebrity names to Wikipedia slugs for the image proxy
 const WIKI_SLUGS: Record<string, string> = {
   'Mahatma Gandhi': 'Mahatma_Gandhi',
@@ -568,11 +659,174 @@ export function getPhotoUrl(name: string): string {
   return `/api/wiki-image?person=${encodeURIComponent(getWikiSlug(name))}`;
 }
 
-export function getCelebritiesByType(type: number): CelebrityProfile[] {
-  return CELEBRITY_DATABASE
+// ── Age Gate: eliminates age-inappropriate celebrities ──
+function passesAgeGate(celeb: CelebrityProfile, demographics?: { ageRange?: string; country?: string }): boolean {
+  const tags = DEMO_TAGS[celeb.name];
+  if (!tags) return true; // untagged = universal fallback
+  const ageAppeal = tags.ageAppeal;
+  const ageRange = demographics?.ageRange;
+  if (!ageRange || !ageAppeal) return true;
+  if (ageAppeal === 'universal') return true;
+
+  const isYoung = ['Under 25', '25\u201334'].includes(ageRange);
+  const isElder = ['55+'].includes(ageRange);
+  const isMid4554 = ageRange === '45\u201354';
+
+  if (isYoung) {
+    if (ageAppeal === 'young') return true;
+    // Mid/elder allowed only if shares nationality
+    if ((ageAppeal === 'mid' || ageAppeal === 'elder') && demographics?.country && tags.nationality?.length) {
+      return tags.nationality.some(n => demographics.country!.toLowerCase().includes(n.toLowerCase()));
+    }
+    return false;
+  }
+  if (isElder) {
+    return ageAppeal !== 'young';
+  }
+  if (isMid4554 && ageAppeal === 'young') {
+    // Young-only might not resonate for 45-54 — allow if nationality matches
+    if (demographics?.country && tags.nationality?.length) {
+      return tags.nationality.some(n => demographics.country!.toLowerCase().includes(n.toLowerCase()));
+    }
+    return false;
+  }
+  return true;
+}
+
+export function getCelebritiesByType(
+  type: number,
+  demographics?: {
+    ageRange?: string;
+    gender?: string;
+    ethnicity?: string;
+    country?: string;
+    religion?: string;
+  }
+): CelebrityProfile[] {
+  // Step 1: Get all celebrities for this type, merge demographic tags
+  const allForType = CELEBRITY_DATABASE
     .filter(c => c.type === type)
-    .map(c => ({
-      ...c,
-      photoUrl: getPhotoUrl(c.name),  // Override with proxy URL
-    }));
+    .map(c => ({ ...c, photoUrl: getPhotoUrl(c.name), ...(DEMO_TAGS[c.name] || {}) }));
+
+  if (!demographics || (!demographics.ageRange && !demographics.gender && !demographics.ethnicity && !demographics.country && !demographics.religion)) {
+    return allForType.slice(0, 8);
+  }
+
+  // Step 2: HARD GATE — remove everyone who fails age relevance
+  const ageFiltered = allForType.filter(c => passesAgeGate(c, demographics));
+
+  // Step 3: Score by demographic match + collect match reasons
+  const scored = ageFiltered.map(celeb => {
+    let score = 0;
+    const reasons: string[] = [];
+
+    if (demographics.religion && celeb.religion?.length) {
+      if (celeb.religion.some(r => demographics.religion!.toLowerCase().includes(r.toLowerCase()))) {
+        score += 3;
+        reasons.push(demographics.religion);
+      }
+    }
+    if (demographics.ethnicity && celeb.ethnicity?.length) {
+      if (celeb.ethnicity.some(e => demographics.ethnicity!.toLowerCase().includes(e.toLowerCase()))) {
+        score += 3;
+        reasons.push(demographics.ethnicity);
+      }
+    }
+    if (demographics.country && celeb.nationality?.length) {
+      if (celeb.nationality.some(n => demographics.country!.toLowerCase().includes(n.toLowerCase()))) {
+        score += 3;
+        reasons.push(demographics.country);
+      }
+    }
+
+    return { celeb, score, reasons };
+  });
+
+  scored.sort((a, b) => b.score - a.score);
+
+  // Step 4: Determine how many demographic slots needed
+  const demoFields = [demographics.religion, demographics.ethnicity, demographics.country].filter(Boolean);
+  const requiredDemoSlots = demoFields.length; // 0-3
+
+  // Step 5: Select demographic matches + universals
+  const demoMatches = scored.filter(s => s.score > 0).slice(0, Math.max(requiredDemoSlots, 3));
+  const universals = scored.filter(s => s.score === 0);
+  let pool = [
+    ...demoMatches.map(s => ({ ...s.celeb, relevantToYou: true, matchReasons: s.reasons })),
+    ...universals.map(s => s.celeb),
+  ];
+
+  // Step 6: Enforce gender balance — min 3 same gender, min 2 opposite
+  const userGender = demographics.gender;
+  if (userGender && userGender !== 'Prefer not to say') {
+    const gMap: Record<string, 'male' | 'female'> = { 'Man': 'male', 'Woman': 'female' };
+    const sameGender = gMap[userGender];
+    const oppGender = sameGender === 'male' ? 'female' : 'male';
+
+    const sameCount = pool.filter(c => c.gender === sameGender).length;
+    const oppCount = pool.filter(c => c.gender === oppGender).length;
+
+    // If not enough same gender, pull from unselected same-gender entries
+    if (sameCount < 3) {
+      const moreSame = ageFiltered.filter(c => c.gender === sameGender && !pool.some(p => p.name === c.name));
+      pool.push(...moreSame.slice(0, 3 - sameCount));
+    }
+    // If not enough opposite gender, pull from unselected opposite-gender entries
+    if (oppCount < 2) {
+      const moreOpp = ageFiltered.filter(c => c.gender === oppGender && !pool.some(p => p.name === c.name));
+      pool.push(...moreOpp.slice(0, 2 - oppCount));
+    }
+
+    // Reorder: put same-gender demographic matches first, then opposite demographic matches, then fill
+    const sameGenderMatched = pool.filter(c => c.gender === sameGender && c.relevantToYou);
+    const oppGenderMatched = pool.filter(c => c.gender === oppGender && c.relevantToYou);
+    const sameGenderUnmatched = pool.filter(c => c.gender === sameGender && !c.relevantToYou);
+    const oppGenderUnmatched = pool.filter(c => c.gender === oppGender && !c.relevantToYou);
+    const noGender = pool.filter(c => !c.gender);
+
+    pool = [...sameGenderMatched, ...oppGenderMatched, ...sameGenderUnmatched, ...oppGenderUnmatched, ...noGender];
+  }
+
+  // Step 7: Deduplicate and return 6-8
+  const seen = new Set<string>();
+  const result: CelebrityProfile[] = [];
+  for (const c of pool) {
+    if (seen.has(c.name)) continue;
+    seen.add(c.name);
+    result.push(c);
+    if (result.length >= 8) break;
+  }
+
+  // Minimum 6 guarantee — progressive relaxation if not enough
+  if (result.length < 6) {
+    // Relaxation 1: allow 'mid' appeal for all ages
+    const relaxed = CELEBRITY_DATABASE
+      .filter(c => c.type === type)
+      .map(c => ({ ...c, photoUrl: getPhotoUrl(c.name), ...(DEMO_TAGS[c.name] || {}) }))
+      .filter(c => {
+        const tags = DEMO_TAGS[c.name];
+        if (!tags?.ageAppeal) return true;
+        return tags.ageAppeal === 'universal' || tags.ageAppeal === 'mid' || tags.ageAppeal === 'young';
+      })
+      .filter(c => !seen.has(c.name));
+    for (const c of relaxed) {
+      if (result.length >= 6) break;
+      seen.add(c.name);
+      result.push(c);
+    }
+  }
+  if (result.length < 6) {
+    // Relaxation 2: drop ALL filters, just get any entry for this type
+    const anyType = CELEBRITY_DATABASE
+      .filter(c => c.type === type)
+      .map(c => ({ ...c, photoUrl: getPhotoUrl(c.name), ...(DEMO_TAGS[c.name] || {}) }))
+      .filter(c => !seen.has(c.name));
+    for (const c of anyType) {
+      if (result.length >= 6) break;
+      seen.add(c.name);
+      result.push(c);
+    }
+  }
+
+  return result;
 }

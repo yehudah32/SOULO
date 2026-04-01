@@ -7,10 +7,12 @@ import ProgressPanel from '@/components/assessment/ProgressPanel';
 import QuestionCard from '@/components/assessment/QuestionCard';
 import EnneagramLoader from '@/components/assessment/EnneagramLoader';
 import EnneagramSymbol from '@/components/assessment/EnneagramSymbol';
-import SouloOrb from '@/components/assessment/SouloOrb';
+import SouloOrb from '@/components/ui/soulo-orb';
 import LoadingProgress from '@/components/assessment/LoadingProgress';
 import WelcomeCard from '@/components/assessment/WelcomeCard';
 import MarkdownText from '@/components/ui/MarkdownText';
+import { TypingAnimation } from '@/components/ui/typing-animation';
+import SouloNav from '@/components/ui/soulo-nav';
 
 // ── Types ──
 
@@ -49,11 +51,11 @@ interface QuestionEntry {
 
 function deriveStage(questionCount: number): number {
   if (questionCount <= 2) return 1;
-  if (questionCount <= 5) return 2;
-  if (questionCount <= 8) return 3;
-  if (questionCount <= 11) return 4;
-  if (questionCount <= 13) return 5;
-  if (questionCount <= 15) return 6;
+  if (questionCount <= 4) return 2;
+  if (questionCount <= 6) return 3;
+  if (questionCount <= 8) return 4;
+  if (questionCount <= 10) return 5;
+  if (questionCount <= 12) return 6;
   return 7;
 }
 
@@ -117,6 +119,8 @@ function AssessmentContent() {
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [email, setEmail] = useState('');
   const [passkey, setPasskey] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [userId, setUserId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isInitLoading, setIsInitLoading] = useState(false);
@@ -213,12 +217,12 @@ function AssessmentContent() {
     if (isFreshStart) {
       // User clicked "Begin" from home page — clear old session, start fresh
       sessionStorage.removeItem('soulo_fresh_start');
-      sessionStorage.removeItem('soulo_session_id');
-      sessionStorage.removeItem('soulo_email');
-      sessionStorage.removeItem('soulo_user_id');
+      localStorage.removeItem('soulo_active_session_id');
+      localStorage.removeItem('soulo_email');
+      localStorage.removeItem('soulo_user_id');
     } else if (!hasUrlParams) {
-      const storedSid = sessionStorage.getItem('soulo_session_id');
-      const storedEmail = sessionStorage.getItem('soulo_email');
+      const storedSid = localStorage.getItem('soulo_active_session_id');
+      const storedEmail = localStorage.getItem('soulo_email');
 
       if (storedSid) {
         // Genuine page reload with active session — show resume screen
@@ -268,7 +272,7 @@ function AssessmentContent() {
       setSessionId(pendingResumeSessionId);
       setUserId(authData.userId);
       setEmail(resumeEmail.trim());
-      sessionStorage.setItem('soulo_user_id', authData.userId);
+      localStorage.setItem('soulo_user_id', authData.userId);
 
       // Rebuild questions from conversation history
       const history: Array<{ role: string; content: string }> = data.conversationHistory || [];
@@ -340,7 +344,7 @@ function AssessmentContent() {
           setSessionId(paramResume);
           setUserId(paramUserId);
           if (paramEmail) setEmail(paramEmail);
-          sessionStorage.setItem('soulo_session_id', paramResume);
+          localStorage.setItem('soulo_active_session_id', paramResume);
 
           // Rebuild questions from conversation history
           const history: Array<{ role: string; content: string }> = data.conversationHistory || [];
@@ -386,9 +390,9 @@ function AssessmentContent() {
     } else if (paramUserId && paramEmail && !paramResume) {
       // Pre-authenticated — skip welcome, auto-start new session
       // Clear any stale session from previous assessment
-      sessionStorage.removeItem('soulo_session_id');
-      sessionStorage.removeItem('soulo_email');
-      sessionStorage.removeItem('soulo_user_id');
+      localStorage.removeItem('soulo_active_session_id');
+      localStorage.removeItem('soulo_email');
+      localStorage.removeItem('soulo_user_id');
       autoStartedRef.current = true;
       setEmail(paramEmail);
       setUserId(paramUserId);
@@ -420,8 +424,8 @@ function AssessmentContent() {
           
           const sid = data.sessionId;
           setSessionId(sid);
-          sessionStorage.setItem('soulo_session_id', sid);
-          sessionStorage.setItem('soulo_email', paramEmail);
+          localStorage.setItem('soulo_active_session_id', sid);
+          localStorage.setItem('soulo_email', paramEmail);
           const initEntry: QuestionEntry = {
             id: crypto.randomUUID(),
             question: '',
@@ -481,10 +485,16 @@ function AssessmentContent() {
       const authRes = await fetch('/api/auth/user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim(), passkey: passkey.trim() }),
+        body: JSON.stringify({ email: email.trim(), passkey: passkey.trim(), firstName: firstName.trim(), lastName: lastName.trim() }),
       });
 
       const authData = await authRes.json();
+      // Store first name in localStorage for personalization
+      if (authData.firstName) {
+        localStorage.setItem('soulo_first_name', authData.firstName);
+      } else if (firstName.trim()) {
+        localStorage.setItem('soulo_first_name', firstName.trim());
+      }
       if (!authRes.ok) {
         setError(authData.error || 'Authentication failed.');
         setAvatarState('idle');
@@ -523,9 +533,9 @@ function AssessmentContent() {
 
       const sid = data.sessionId;
       setSessionId(sid);
-      sessionStorage.setItem('soulo_session_id', sid);
-      sessionStorage.setItem('soulo_email', email.trim());
-      sessionStorage.setItem('soulo_user_id', authenticatedUserId);
+      localStorage.setItem('soulo_active_session_id', sid);
+      localStorage.setItem('soulo_email', email.trim());
+      localStorage.setItem('soulo_user_id', authenticatedUserId);
 
       // Opening message from init is shown as the welcome card
       const initEntry: QuestionEntry = {
@@ -675,10 +685,39 @@ function AssessmentContent() {
         };
       }
 
-      // Fallback: parse from full response text
-      const msgText: string = data.message || data.response || '';
-      const parsed = parseQuestionFormat(msgText);
+      // Fallback A: response_parts exists but question_text is empty (mirror moment or truncation)
+      if (rp?.guide_text && !rp.question_text) {
+        return {
+          question: 'What comes to mind as you sit with that?',
+          guidanceText: rp.guide_text,
+          format: 'open' as QuestionFormat,
+          isComplete: data.isComplete ?? false,
+          progressSaved: data.progressSaved ?? false,
+          currentStage: data.currentStage,
+        };
+      }
 
+      // Fallback B: no response_parts at all — parse from raw text
+      const msgText: string = data.message || data.response || '';
+
+      // Try to separate commentary from actual questions
+      const allSentences = msgText.split(/(?<=[.!?])\s+/);
+      const questionSentences = allSentences.filter(s => s.includes('?'));
+      const commentarySentences = allSentences.filter(s => !s.includes('?'));
+
+      if (questionSentences.length > 0) {
+        return {
+          question: questionSentences.join(' '),
+          guidanceText: commentarySentences.length > 0 ? commentarySentences.join(' ') : '',
+          format: 'open' as QuestionFormat,
+          isComplete: data.isComplete ?? false,
+          progressSaved: data.progressSaved ?? false,
+          currentStage: data.currentStage,
+        };
+      }
+
+      // Absolute last resort
+      const parsed = parseQuestionFormat(msgText);
       return {
         question: msgText,
         format: parsed.format,
@@ -825,9 +864,22 @@ function AssessmentContent() {
 
   const handleVerifyYes = useCallback(async () => {
     setIsLoading(true);
-    await fetchResults();
-    setIsLoading(false);
-  }, [fetchResults]);
+    try {
+      if (sessionId) {
+        // Start generation and redirect — results page handles the loading UI
+        fetch('/api/results/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId }),
+        }).catch(() => {});
+        // Brief delay to let the request start, then redirect
+        await new Promise(r => setTimeout(r, 500));
+        router.push(`/results?sessionId=${encodeURIComponent(sessionId)}`);
+      }
+    } catch {
+      if (sessionId) router.push(`/results?sessionId=${encodeURIComponent(sessionId)}`);
+    }
+  }, [sessionId, router]);
 
   const handleVerifyNo = useCallback(() => {
     setShowFeedbackBox(true);
@@ -836,14 +888,38 @@ function AssessmentContent() {
   const handleFeedbackSubmit = useCallback(async () => {
     if (!feedbackText.trim()) return;
     setIsLoading(true);
-    setPhase('clarifying');
-    setShowFeedbackBox(false);
 
-    // Submit feedback as a message, then fetch results
-    await sendMessage(feedbackText.trim());
-    await fetchResults();
-    setIsLoading(false);
-  }, [feedbackText, sendMessage, fetchResults]);
+    try {
+      // Send feedback as a message (don't block on failure)
+      await sendMessage(feedbackText.trim()).catch(() => {});
+
+      // Go to results — redirect even if generate takes time
+      setPhase('clarifying');
+      setShowFeedbackBox(false);
+
+      if (sessionId) {
+        // Try to generate, but redirect regardless after a timeout
+        const generatePromise = fetch('/api/results/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId }),
+        });
+
+        // Race: either generate completes or we redirect after 3s
+        const timeout = new Promise(resolve => setTimeout(resolve, 3000));
+        await Promise.race([generatePromise, timeout]);
+
+        router.push(`/results?sessionId=${encodeURIComponent(sessionId)}`);
+      }
+    } catch {
+      // Even on error, try to go to results
+      if (sessionId) {
+        router.push(`/results?sessionId=${encodeURIComponent(sessionId)}`);
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  }, [feedbackText, sendMessage, sessionId, router]);
 
   // Navigate back
   const handleBack = useCallback(() => {
@@ -871,7 +947,9 @@ function AssessmentContent() {
 
   if (phase === 'resuming') {
     return (
-      <div className="flex min-h-screen bg-[#FAF8F5] items-center justify-center p-5">
+      <div className="flex flex-col min-h-screen bg-[#FAF8F5]">
+      <SouloNav loggedIn={!!userId} userEmail={email || undefined} hasResults={false} showPortalTabs={false} />
+      <div className="flex flex-1 items-center justify-center p-5">
         <div className="bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] max-w-[420px] w-full flex flex-col gap-5 p-8">
           <div className="flex flex-col items-center gap-3">
             <SouloAvatar state="idle" activeCenter="Body" size="md" />
@@ -916,9 +994,9 @@ function AssessmentContent() {
 
           <button
             onClick={() => {
-              sessionStorage.removeItem('soulo_session_id');
-              sessionStorage.removeItem('soulo_email');
-              sessionStorage.removeItem('soulo_user_id');
+              localStorage.removeItem('soulo_active_session_id');
+              localStorage.removeItem('soulo_email');
+              localStorage.removeItem('soulo_user_id');
               setPendingResumeSessionId(null);
               setPhase('welcome');
               setError(null);
@@ -929,13 +1007,16 @@ function AssessmentContent() {
           </button>
         </div>
       </div>
+      </div>
     );
   }
 
   if (phase === 'welcome') {
     return (
+      <div className="flex flex-col min-h-screen" style={{ background: '#FAF8F5' }}>
+      <SouloNav loggedIn={!!userId} userEmail={email || undefined} hasResults={false} showPortalTabs={false} />
       <div
-        className="flex min-h-screen items-center justify-center p-5"
+        className="flex flex-1 items-center justify-center p-5"
         style={{
           backgroundImage: 'url(/enneagramsymbol.png)',
           backgroundSize: 'cover',
@@ -950,27 +1031,45 @@ function AssessmentContent() {
           }
           .animate-fadeUp { animation: fadeUp 0.45s ease forwards; }
         `}</style>
-        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] max-w-[520px] w-full flex flex-col gap-6 p-8 animate-fadeUp">
+        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.1)] max-w-[560px] w-full flex flex-col gap-6 p-8 animate-fadeUp relative overflow-hidden">
+          {/* Gradient accent bar at top */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #7C3AED, #2563EB, #0EA5E9, #2563EB, #7C3AED)' }} />
 
-          {/* Enneagram symbol + branding */}
-          <div className="flex flex-col items-center gap-2">
-            <EnneagramSymbol size={120} />
-            <h1 className="font-serif text-[2rem] font-bold text-[#2C2C2C] leading-tight">
-              Soulo Enneagram
+          {/* SouloOrb + branding */}
+          <div className="flex flex-col items-center gap-3 pt-2">
+            <SouloOrb size={100} />
+            <h1 className="font-serif text-[2.5rem] font-bold tracking-tight leading-tight" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #2563EB 40%, #0EA5E9 70%, #7C3AED 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              Soulo
             </h1>
-            <p className="font-serif italic text-[0.85rem] text-[#2563EB]">
+            <p className="font-serif italic text-[0.95rem] text-[#2563EB]/80 tracking-wide">
               Defy Your Number. Live Your Spirit.
             </p>
           </div>
 
-          <div className="h-px bg-[#E8E4E0]" />
+          <div className="h-px bg-gradient-to-r from-transparent via-[#E8E4E0] to-transparent" />
 
           <p className="font-sans text-[0.88rem] text-[#6B6B6B] text-center">
             Enter your email and create a save key to begin.
           </p>
 
-          {/* Email & Save Key — primary focus */}
+          {/* Name, Email & Save Key */}
           <div className="flex flex-col gap-3">
+            <div className="flex gap-3">
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="First name"
+                className="flex-1 rounded-xl px-5 py-3 border border-[#E0DAD4] font-sans text-sm text-[#2C2C2C] placeholder-[#9B9590] bg-[#FAF8F5] focus:border-[#2563EB] focus:outline-none transition-colors"
+              />
+              <input
+                type="text"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                placeholder="Last name"
+                className="flex-1 rounded-xl px-5 py-3 border border-[#E0DAD4] font-sans text-sm text-[#2C2C2C] placeholder-[#9B9590] bg-[#FAF8F5] focus:border-[#2563EB] focus:outline-none transition-colors"
+              />
+            </div>
             <input
               type="email"
               value={email}
@@ -1079,7 +1178,7 @@ function AssessmentContent() {
           <button
             onClick={handleBegin}
             disabled={isLoading || !email.trim() || passkey.trim().length < 4}
-            className="relative w-full overflow-hidden font-serif text-white bg-[#2563EB] rounded-2xl py-[0.875rem] text-base font-semibold hover:bg-[#1D4ED8] active:bg-[#1E40AF] transition-colors disabled:opacity-50"
+            className="relative w-full overflow-hidden font-sans text-white bg-[#2563EB] rounded-2xl py-4 text-[1.05rem] font-semibold hover:bg-[#1D4ED8] active:bg-[#1E40AF] transition-all disabled:opacity-50 shadow-lg hover:shadow-[0_0_24px_rgba(37,99,235,0.3)]"
           >
             {isLoading && (
               <div
@@ -1097,12 +1196,15 @@ function AssessmentContent() {
           )}
         </div>
       </div>
+      </div>
     );
   }
 
   if (phase === 'verifying') {
     return (
-      <div className="flex min-h-screen bg-[#FAF8F5] items-center justify-center p-5">
+      <div className="flex flex-col min-h-screen bg-[#FAF8F5]">
+      <SouloNav loggedIn={!!userId} userEmail={email || undefined} hasResults={false} showPortalTabs={false} />
+      <div className="flex flex-1 items-center justify-center p-5">
         <style>{`
           @keyframes fadeUp {
             from { opacity: 0; transform: translateY(12px); }
@@ -1186,12 +1288,15 @@ function AssessmentContent() {
           )}
         </div>
       </div>
+      </div>
     );
   }
 
   // ── Assessing / Clarifying phase ──
   return (
-    <div className={`flex h-[100dvh] transition-colors duration-[800ms] overflow-hidden ${isFocusMode ? 'bg-[#F2EFEA]' : 'bg-[#FAF8F5]'}`}>
+    <div className={`flex flex-col h-[100dvh] transition-colors duration-[800ms] overflow-hidden ${isFocusMode ? 'bg-[#F2EFEA]' : 'bg-[#FAF8F5]'}`}>
+      <SouloNav loggedIn={!!userId} userEmail={email || undefined} hasResults={false} showPortalTabs={false} />
+      <div className="flex flex-1 overflow-hidden">
       <style>{`
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(12px); }
@@ -1300,9 +1405,12 @@ function AssessmentContent() {
                 <div className="flex flex-col gap-1">
                   <span className="font-sans text-[0.65rem] uppercase tracking-[0.08em] text-[#2563EB] font-semibold">Soulo</span>
                   {currentQ.guidanceText ? (
-                    <p className="font-serif italic text-[1rem] text-[#4B5563] leading-[1.7]">
-                      <MarkdownText>{currentQ.guidanceText}</MarkdownText>
-                    </p>
+                    <div className="min-h-[1.7rem]">
+                      <TypingAnimation
+                        text={currentQ.guidanceText}
+                        duration={35}
+                      />
+                    </div>
                   ) : (
                     <p className="font-serif italic text-[0.9rem] text-[#9B9590]">
                     {didResumeRef.current && questions.filter(q => !q.isInitMessage && !q.answer).length <= 1
@@ -1425,6 +1533,7 @@ function AssessmentContent() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }

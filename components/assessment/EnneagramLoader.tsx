@@ -16,9 +16,10 @@ function getPoint(typeNum: number): { x: number; y: number } {
   if (idx === -1) return { x: 50, y: 50 };
   const angleDeg = idx * 40;
   const angleRad = (angleDeg * Math.PI) / 180;
+  // Round to 4 decimal places to prevent SSR/client hydration mismatch
   return {
-    x: 50 + 40 * Math.sin(angleRad),
-    y: 50 - 40 * Math.cos(angleRad),
+    x: Math.round((50 + 40 * Math.sin(angleRad)) * 10000) / 10000,
+    y: Math.round((50 - 40 * Math.cos(angleRad)) * 10000) / 10000,
   };
 }
 
@@ -99,6 +100,18 @@ export default function EnneagramLoader({ size = 280, active = true, hideStatus 
   const activeTo = toType;
   const trianglePath = buildPath(TRIANGLE_ORDER);
 
+  // Prevent SSR hydration mismatch from floating-point trig differences
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
+  if (!mounted) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 24 }}>
+        <div style={{ width: size, height: size }} />
+      </div>
+    );
+  }
+
   return (
     <div
       style={{
@@ -139,6 +152,7 @@ export default function EnneagramLoader({ size = 280, active = true, hideStatus 
         width={size}
         height={size}
         style={{ overflow: 'visible' }}
+        suppressHydrationWarning
       >
         <defs>
           <radialGradient id="ennea-center-glow" cx="50%" cy="50%" r="50%">

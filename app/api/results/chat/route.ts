@@ -39,12 +39,29 @@ VOICE RULES:
 - If they ask about a specific section (Type Scores, Center Activation, etc.), answer specifically about what those numbers mean for THEIR type.
 - Never say "as a Type X" — speak to the pattern, not the label.`;
 
-    const result = await client.messages.create({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 300,
-      system: systemPrompt,
-      messages: messages as Anthropic.MessageParam[],
-    });
+    // Retry up to 2 times on overloaded errors
+    let result;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        result = await client.messages.create({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 300,
+          system: systemPrompt,
+          messages: messages as Anthropic.MessageParam[],
+        });
+        break;
+      } catch (retryErr) {
+        const msg = String(retryErr);
+        if (msg.includes('529') || msg.includes('overloaded')) {
+          if (attempt < 2) {
+            await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
+            continue;
+          }
+        }
+        throw retryErr;
+      }
+    }
+    if (!result) throw new Error('Failed after retries');
 
     const reply = result.content
       .filter((b) => b.type === 'text')
@@ -53,7 +70,8 @@ VOICE RULES:
 
     return NextResponse.json({ response: reply });
   } catch (err) {
-    console.error('[results/chat] Error:', err);
-    return NextResponse.json({ error: 'Failed to generate response' }, { status: 500 });
+    const errMsg = err instanceof Error ? err.message : String(err);
+    console.error('[results/chat] Error:', errMsg, err);
+    return NextResponse.json({ error: 'Failed to generate response', detail: errMsg }, { status: 500 });
   }
 }

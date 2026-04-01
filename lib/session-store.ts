@@ -90,6 +90,20 @@ export interface SessionData {
   lowestScoringType: number | null;
   stressLineType: number | null;
   releaseLineType: number | null;
+
+  // Confidence gate — differentiation clarification
+  clarificationState: {
+    active: boolean;
+    pair: [number, number] | null;
+    pairKey: string | null;
+    questionsAsked: number;
+    maxQuestions: number;
+    confidenceAtEntry: number;
+    completedWithLowConfidence: boolean;
+  } | null;
+
+  // Per-session question tracking for yield optimization
+  allQuestionsAsked?: Array<{ exchange: number; questionId: number; questionText: string }>;
 }
 
 // Persist the store across Hot Module Replacement in development.
@@ -131,6 +145,8 @@ export function initSession(id: string): void {
     lowestScoringType: null,
     stressLineType: null,
     releaseLineType: null,
+    clarificationState: null,
+    allQuestionsAsked: [],
   });
 }
 

@@ -5,20 +5,26 @@ import { useRouter } from 'next/navigation';
 import ShareCard from './ShareCard';
 import RelationshipWheel from './RelationshipWheel';
 import SouloChat from './SouloChat';
-import SouloOrb from './SouloOrb';
+import SouloOrb from '@/components/ui/soulo-orb';
+import SouloNav from '@/components/ui/soulo-nav';
 import { STRESS_LINES, RELEASE_LINES, TYPE_NAMES, CENTER_MAP, getWingTypes, getLowestType } from '@/lib/enneagram-lines';
 import { getCelebritiesByType } from '@/lib/celebrity-data';
 import TypewriterText from '@/components/ui/TypewriterText';
 import AnimatedBar from '@/components/ui/AnimatedBar';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MarkdownText from '@/components/ui/MarkdownText';
+import { TypingAnimation } from '@/components/ui/typing-animation';
 import type { PersonalitySystemsOutput } from '@/lib/personality-analyzer';
 import type { ConfidenceLevel } from '@/lib/personality-correlations';
+import { CONTEXT_META, TYPE_NAMES as REL_TYPE_NAMES, type RelationshipContext, type RelationshipDescription } from '@/lib/relationship-contexts';
+import { AnimatedNavigationTabs, type NavTab } from '@/components/ui/animated-navigation-tabs';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ResultsRevealProps {
   results: Record<string, unknown>;
   sessionId: string;
   onComplete?: () => void;
+  revealCompleted?: boolean;
 }
 
 // Type-specific color palettes — shared across hero card and sendoff
@@ -91,14 +97,17 @@ function SectionFade({ children, sectionIndex, activeSection }: {
   activeSection: number;
 }) {
   const [visible, setVisible] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
 
   useEffect(() => {
     if (sectionIndex !== activeSection) {
       setVisible(false);
+      setContentVisible(false);
       return;
     }
-    const t = setTimeout(() => setVisible(true), 50);
-    return () => clearTimeout(t);
+    const t1 = setTimeout(() => setVisible(true), 50);
+    const t2 = setTimeout(() => setContentVisible(true), 300);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [sectionIndex, activeSection]);
 
   if (sectionIndex !== activeSection) return null;
@@ -123,12 +132,14 @@ function SectionFade({ children, sectionIndex, activeSection }: {
         .domain-glow-respond { animation: domain-glow-blue 3s ease-in-out infinite; }
         .mode-content { animation: mode-slide 0.3s ease-out forwards; }
       `}</style>
-      {children}
+      <div style={{ opacity: contentVisible ? 1 : 0.6, transition: 'opacity 0.3s ease' }}>
+        {children}
+      </div>
     </div>
   );
 }
 
-export default function ResultsReveal({ results: initialResults, sessionId, onComplete }: ResultsRevealProps) {
+export default function ResultsReveal({ results: initialResults, sessionId, onComplete, revealCompleted }: ResultsRevealProps) {
   const router = useRouter();
   const [r, setR] = useState<Record<string, unknown>>(initialResults);
   const [section, setSection] = useState(0);
@@ -138,8 +149,16 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
   const [openCelebCard, setOpenCelebCard] = useState<number | null>(null);
   const [exploreTab, setExploreTab] = useState<'famous' | 'relationships' | 'systems'>('famous');
   const [hoveredRelType, setHoveredRelType] = useState<number | null>(null);
+  const [selectedRelType, setSelectedRelType] = useState<number | null>(null);
   const [isRegenerating, setIsRegenerating] = useState(false);
   const [chatSection, setChatSection] = useState<string>('General');
+  const [sharedChatMessages, setSharedChatMessages] = useState<Array<{ role: 'user' | 'assistant'; content: string }>>([]);
+
+  // Portal mode state
+  const [portalMode, setPortalMode] = useState(revealCompleted === true);
+  const [portalTab, setPortalTab] = useState(0);
+  const portalScrollRef = useRef<HTMLDivElement>(null);
+  const [showSouloHint, setShowSouloHint] = useState(false);
 
   // Domain Insights interactive state
   const [activeDomain, setActiveDomain] = useState<number | null>(null);
@@ -149,6 +168,44 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
   // Personality Systems state
   const [expandedSystem, setExpandedSystem] = useState<string | null>(null);
   const [systemsRevealed, setSystemsRevealed] = useState(false);
+  // Relationship Explorer state
+  const [relSelectedType, setRelSelectedType] = useState<number | null>(null);
+  const [relHoveredType, setRelHoveredType] = useState<number | null>(null);
+  const [relContext, setRelContext] = useState<RelationshipContext>('friends');
+  const [relBatchData, setRelBatchData] = useState<Record<string, RelationshipDescription> | null>(null);
+  const [relBatchLoading, setRelBatchLoading] = useState(false);
+  const relBatchFetched = useRef(false);
+
+  // Trigger systems entrance animations + reset to grid view
+  useEffect(() => {
+    if (exploreTab === 'systems') {
+      setExpandedSystem(null);
+      setSystemsRevealed(false);
+      const t = setTimeout(() => setSystemsRevealed(true), 80);
+      return () => clearTimeout(t);
+    } else {
+      setSystemsRevealed(false);
+    }
+  }, [exploreTab]);
+
+  // Portal mode: scroll to top when tab changes
+  useEffect(() => {
+    if (!portalMode) return;
+    if (portalScrollRef.current) {
+      portalScrollRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [portalTab, portalMode]);
+
+  // Soulo hint — show for 12 seconds on overview tab
+  useEffect(() => {
+    if (portalTab === 0 && portalMode) {
+      setShowSouloHint(true);
+      const t = setTimeout(() => setShowSouloHint(false), 12000);
+      return () => clearTimeout(t);
+    } else {
+      setShowSouloHint(false);
+    }
+  }, [portalTab, portalMode]);
 
   // Check if key content is missing (failed generation)
   const contentMissing = !(r.superpower as string)?.trim() && !(r.core_type_description as string)?.trim();
@@ -190,7 +247,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
     }
   }
 
-  const totalSections = 12;
+  const totalSections = 11;
 
   const advance = () => {
     if (section < totalSections - 1) {
@@ -272,7 +329,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
   const respondPathway = (r.respond_pathway as string) ?? '';
   const defy = (r.defy_your_number as string) ?? '';
   const closing = (r.closing_charge as string) ?? 'Defy Your Number. Live Your Spirit.';
-  const oynSummary = (r.oyn_summary as Record<string, string>) ?? {};
+  const oynSummary = (r.oyn_summary as Record<string, string>) ?? (r.oyn_dimensions as Record<string, string>) ?? {};
   const centerInsights = (r.center_insights as Record<string, string>) ?? {};
   // domain_insights can be array [{domain, insight}] or object {domain: {react, respond}}
   const rawDomainInsights = r.domain_insights;
@@ -316,33 +373,79 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
     who: 'WHO', what: 'WHAT', why: 'WHY', how: 'HOW', when: 'WHEN', where: 'WHERE',
   };
 
+  const portalTabs: NavTab[] = [
+    { id: 0, tile: 'Overview' },
+    { id: 1, tile: 'Powers' },
+    { id: 2, tile: 'React & Respond' },
+    { id: 3, tile: 'OYN' },
+    { id: 4, tile: 'Wing & Variant' },
+    { id: 11, tile: 'Soulo', special: true },
+    { id: 5, tile: 'Tritype' },
+    { id: 6, tile: 'Domains' },
+    { id: 7, tile: 'Energies' },
+    { id: 8, tile: 'Lines' },
+    { id: 9, tile: 'Explore' },
+    { id: 10, tile: 'Takeaways' },
+  ];
+
   // ── Personality Systems data ──
   const personalitySystems = r.personality_systems as PersonalitySystemsOutput | null | undefined;
+
+  // ── Relationship batch-load ──
+  const relPregenerated = (r.relationship_context_descriptions || {}) as Record<string, RelationshipDescription>;
+  const hasPregenerated = Object.keys(relPregenerated).length > 0;
+  useEffect(() => {
+    if (exploreTab !== 'relationships') return;
+    if (hasPregenerated || relBatchData || relBatchFetched.current) return;
+    if (!leadingType) return;
+    relBatchFetched.current = true;
+    setRelBatchLoading(true);
+    fetch('/api/results/relationships/batch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId, userType: leadingType }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.descriptions) {
+          setRelBatchData(data.descriptions);
+          setR(prev => ({ ...prev, relationship_context_descriptions: data.descriptions }));
+        }
+        setRelBatchLoading(false);
+      })
+      .catch(() => setRelBatchLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [exploreTab, hasPregenerated, leadingType, sessionId]);
 
   // ── Shared Explore Area — used in case 11 (standalone) and case 14 (embedded) ──
   const renderExploreArea = () => {
     const apiExamples = Array.isArray(r.famous_examples)
-      ? (r.famous_examples as Array<{ name?: string; profession?: string; type_evidence?: string; what_you_share?: string; photo_url?: string; source_note?: string }>)
-        .map(ex => ({
-          name: (ex.name as string) || '',
-          profession: (ex.profession as string) || '',
-          hook: (ex.what_you_share as string) || '',
-          description: (ex.type_evidence as string) || '',
-          photoUrl: (ex.photo_url as string) || '',
-          source: (ex.source_note as string) || 'Community observation',
-          type: leadingType,
-        }))
+      ? (r.famous_examples as Array<{ name?: string; profession?: string; type_evidence?: string; what_you_share?: string; photo_url?: string; source_note?: string; relevance_tag?: string }>)
+        .map(ex => {
+          const name = (ex.name as string) || '';
+          // Always use wiki-image proxy instead of LLM-hallucinated Wikimedia URLs
+          const wikiSlug = name.trim().replace(/\s+/g, '_');
+          return {
+            name,
+            profession: (ex.profession as string) || '',
+            hook: (ex.what_you_share as string) || '',
+            description: (ex.type_evidence as string) || '',
+            photoUrl: wikiSlug ? `/api/wiki-image?person=${encodeURIComponent(wikiSlug)}` : '',
+            source: (ex.source_note as string) || 'Community observation',
+            type: leadingType,
+          };
+        })
       : [];
     // Get curated celebrities for this type (8 per type in database)
     const curatedFallback = getCelebritiesByType(leadingType);
     // Merge: API-generated first (personalized), then curated padding. Dedupe by name.
     const apiNames = new Set(apiExamples.map(c => c.name.toLowerCase()));
     const padding = curatedFallback.filter(c => !apiNames.has(c.name.toLowerCase()));
-    const allCelebrities = [...apiExamples, ...padding].slice(0, 6);
+    const allCelebrities = [...apiExamples, ...padding].slice(0, 8);
 
     const EXPLORE_TABS = [
       { id: 'famous' as const, label: 'Famous Figures', ready: true },
-      { id: 'relationships' as const, label: 'Relationships', ready: false },
+      { id: 'relationships' as const, label: 'Relationships', ready: true },
       { id: 'systems' as const, label: 'Other Systems', ready: true },
     ];
 
@@ -423,249 +526,925 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
               })}
             </div>
           )}
-          {exploreTab === 'relationships' && (
-            <div className="flex flex-col items-center justify-center py-16 text-center">
-              <div className="w-16 h-16 rounded-full bg-[#EFF6FF] flex items-center justify-center mb-4"><span className="text-2xl">&#10084;</span></div>
-              <p className="font-serif text-[1.1rem] font-semibold text-[#2C2C2C] mb-2">Relationships</p>
-              <p className="font-sans text-[0.88rem] text-[#6B6B6B] max-w-sm leading-relaxed">Coming soon — how your type connects in love, family, and friendship. What you bring, what you need, and where growth lives.</p>
-            </div>
-          )}
+          {exploreTab === 'relationships' && (() => {
+            const lt = leadingType as number;
+            const CLOCKWISE = [9, 1, 2, 3, 4, 5, 6, 7, 8];
+            const gp = (typeNum: number) => {
+              const idx = CLOCKWISE.indexOf(typeNum);
+              if (idx === -1) return { x: 50, y: 50 };
+              const a = (idx * 40 * Math.PI) / 180;
+              return { x: 50 + 42 * Math.sin(a), y: 50 - 42 * Math.cos(a) };
+            };
+            const ctxColor = CONTEXT_META[relContext].color;
+            const allRelData = { ...relPregenerated, ...(relBatchData || {}) };
+            const currentKey = relSelectedType ? `${relSelectedType}-${relContext}` : null;
+            const currentRel = currentKey ? (allRelData[currentKey] || null) : null;
+            const lineTarget = relSelectedType || relHoveredType;
+            const userPt = gp(lt);
+            const lineTgt = lineTarget ? gp(lineTarget) : null;
+            const lineLen = lineTgt ? Math.sqrt((lineTgt.x - userPt.x) ** 2 + (lineTgt.y - userPt.y) ** 2) : 0;
+
+            // Context-specific atmosphere
+            const ctxAtmo: Record<RelationshipContext, { bg: string; glow: string; lineColor: string; label: string }> = {
+              friends: { bg: 'linear-gradient(160deg, #EFF6FF 0%, #F5F3F0 50%, #DBEAFE 100%)', glow: 'rgba(37,99,235,0.08)', lineColor: '#93C5FD', label: 'Friendship' },
+              family: { bg: 'linear-gradient(160deg, #F5F0FF 0%, #F5F3F0 50%, #EDE9FE 100%)', glow: 'rgba(124,58,237,0.08)', lineColor: '#C4B5FD', label: 'Family' },
+              romantic: { bg: 'linear-gradient(160deg, #FFF1F2 0%, #F5F3F0 50%, #FCE7F3 100%)', glow: 'rgba(225,29,72,0.07)', lineColor: '#FDA4AF', label: 'Romance' },
+              professional: { bg: 'linear-gradient(160deg, #FFFBEB 0%, #F5F3F0 50%, #FEF3C7 100%)', glow: 'rgba(217,119,6,0.07)', lineColor: '#FCD34D', label: 'Work' },
+            };
+            const atmo = ctxAtmo[relContext];
+
+            return (
+              <div className="flex flex-col items-center gap-4 rounded-2xl transition-all duration-500 -mx-4 px-4 py-6 relative overflow-hidden"
+                style={{ background: atmo.bg }}>
+
+                {/* Context-specific ambient visuals — fills the entire section */}
+                <div className="absolute inset-0 pointer-events-none" style={{ animation: 'rel-ambient-drift 22s ease-in-out infinite' }}>
+                  {/* Friends: scattered constellation */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice"
+                    style={{ opacity: relContext === 'friends' ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+                    {[[40,80],[320,50],[360,320],[50,450],[180,30],[380,180],[25,250],[280,520],[100,530],[220,100],[160,400],[300,400]].map(([cx,cy], i) => (
+                      <circle key={`fd-${i}`} cx={cx} cy={cy} r={1.5 + (i % 3)} fill="#93C5FD" opacity={0.15 + (i % 4) * 0.03} />
+                    ))}
+                    {[[40,80,320,50],[320,50,360,320],[50,450,180,30],[380,180,25,250],[280,520,220,100],[160,400,300,400]].map(([x1,y1,x2,y2], i) => (
+                      <line key={`fl-${i}`} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#93C5FD" strokeWidth="0.5" opacity={0.08} />
+                    ))}
+                  </svg>
+                  {/* Family: concentric rings */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice"
+                    style={{ opacity: relContext === 'family' ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+                    {[60, 100, 150, 200, 260].map((r, i) => (
+                      <circle key={`fr-${i}`} cx="200" cy="300" r={r} fill="none" stroke="#C4B5FD" strokeWidth={0.6} opacity={0.08 - i * 0.01} />
+                    ))}
+                  </svg>
+                  {/* Romantic: flowing curves */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice"
+                    style={{ opacity: relContext === 'romantic' ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+                    <path d="M0 350 Q200 150 400 350" fill="none" stroke="#FDA4AF" strokeWidth="0.8" opacity="0.10" />
+                    <path d="M0 400 Q200 200 400 400" fill="none" stroke="#FDA4AF" strokeWidth="0.5" opacity="0.06" />
+                    <path d="M50 500 Q200 250 350 500" fill="none" stroke="#FDA4AF" strokeWidth="0.6" opacity="0.08" />
+                    <path d="M0 200 Q200 350 400 200" fill="none" stroke="#FECDD3" strokeWidth="0.4" opacity="0.06" />
+                  </svg>
+                  {/* Professional: ascending diagonals */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice"
+                    style={{ opacity: relContext === 'professional' ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+                    {[0, 70, 140, 210, 280, 350].map((offset, i) => (
+                      <line key={`pl-${i}`} x1={offset} y1="600" x2={offset + 200} y2="0" stroke="#FCD34D" strokeWidth="0.5" opacity={0.07 - i * 0.008} />
+                    ))}
+                  </svg>
+                  {/* Positioned glows */}
+                  {relContext === 'friends' && <>
+                    <div className="absolute top-[5%] left-[5%] w-[40%] h-[30%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%)' }} />
+                    <div className="absolute bottom-[5%] right-[5%] w-[40%] h-[30%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.04) 0%, transparent 70%)' }} />
+                  </>}
+                  {relContext === 'family' && (
+                    <div className="absolute inset-[10%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%)', animation: 'rel-ambient-pulse 8s ease-in-out infinite' }} />
+                  )}
+                  {relContext === 'romantic' && <>
+                    <div className="absolute top-[3%] left-[25%] w-[50%] h-[25%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(225,29,72,0.05) 0%, transparent 70%)' }} />
+                    <div className="absolute bottom-[3%] left-[25%] w-[50%] h-[30%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(225,29,72,0.06) 0%, transparent 70%)' }} />
+                  </>}
+                  {relContext === 'professional' && (
+                    <div className="absolute top-[3%] right-[3%] w-[55%] h-[35%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(217,119,6,0.06) 0%, transparent 70%)' }} />
+                  )}
+                </div>
+
+                {/* Context Lever */}
+                <div className="flex gap-1.5 p-1 bg-white/60 backdrop-blur-sm rounded-2xl shadow-sm">
+                  {(Object.keys(CONTEXT_META) as RelationshipContext[]).map(ctx => (
+                    <button key={ctx}
+                      onClick={() => { setRelContext(ctx); setRelSelectedType(null); }}
+                      className="px-3.5 py-2 rounded-xl font-sans text-[0.72rem] font-medium transition-all duration-300"
+                      style={{
+                        background: relContext === ctx ? CONTEXT_META[ctx].color : 'transparent',
+                        color: relContext === ctx ? 'white' : '#6B6B6B',
+                        boxShadow: relContext === ctx ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
+                      }}>
+                      {CONTEXT_META[ctx].label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Enneagram Diagram */}
+                <div className="relative w-full max-w-[300px] z-10" style={{ aspectRatio: '1/1' }}>
+                  <svg viewBox="-5 -5 110 110" className="w-full relative">
+                    {/* Outer circle — tinted by context */}
+                    <circle cx="50" cy="50" r="42" fill="none" stroke={atmo.lineColor} strokeWidth="0.6" opacity={0.5} className="transition-all duration-500" />
+                    {/* Triangle — tinted */}
+                    {[[3,6],[6,9],[9,3]].map(([a,b]) => { const pa = gp(a), pb = gp(b); return <line key={`t-${a}-${b}`} x1={pa.x} y1={pa.y} x2={pb.x} y2={pb.y} stroke={atmo.lineColor} strokeWidth="0.35" opacity={0.35} className="transition-all duration-500" />; })}
+                    {/* Hexad — tinted */}
+                    {[[1,4],[4,2],[2,8],[8,5],[5,7],[7,1]].map(([a,b]) => { const pa = gp(a), pb = gp(b); return <line key={`h-${a}-${b}`} x1={pa.x} y1={pa.y} x2={pb.x} y2={pb.y} stroke={atmo.lineColor} strokeWidth="0.3" opacity={0.25} className="transition-all duration-500" />; })}
+                    {lineTgt && (
+                      <line x1={userPt.x} y1={userPt.y} x2={lineTgt.x} y2={lineTgt.y}
+                        stroke={ctxColor} strokeWidth={relSelectedType ? 1.2 : 0.8} strokeLinecap="round"
+                        opacity={relSelectedType ? 0.7 : 0.35}
+                        strokeDasharray={lineLen} strokeDashoffset={0}
+                        style={{ animation: 'rel-line-draw 0.3s ease-out', ['--line-length' as string]: lineLen }}
+                        className="transition-opacity duration-200" />
+                    )}
+                    {CLOCKWISE.map(typeNum => {
+                      const p = gp(typeNum);
+                      const isUser = typeNum === lt;
+                      const isSel = typeNum === relSelectedType;
+                      const isHov = typeNum === relHoveredType;
+                      const ptR = isUser ? 6 : isSel ? 5.5 : isHov ? 5 : 3.5;
+                      const fill = isUser ? '#2563EB' : isSel ? ctxColor : isHov ? ctxColor + 'BB' : '#9B9590';
+                      return (
+                        <g key={typeNum}>
+                          <circle cx={p.x} cy={p.y} r={10} fill={isUser ? '#2563EB' : ctxColor}
+                            opacity={(isUser || isSel || isHov) ? (isUser ? 0.10 : isSel ? 0.15 : 0.08) : 0}
+                            style={{ pointerEvents: 'none' }} className="transition-all duration-200" />
+                          <circle cx={p.x} cy={p.y} r={ptR} fill={fill}
+                            style={{ pointerEvents: 'none' }} className="transition-all duration-200" />
+                          <text x={p.x} y={p.y + 12} textAnchor="middle" fontSize="4.5" fontFamily="sans-serif"
+                            fill={isUser ? '#2563EB' : isSel ? ctxColor : isHov ? '#2C2C2C' : '#9B9590'}
+                            fontWeight={isUser || isSel || isHov ? '700' : '400'}
+                            style={{ pointerEvents: 'none' }} className="transition-all duration-200">
+                            {typeNum}
+                          </text>
+                          {isUser && (
+                            <text x={p.x} y={p.y + 17} textAnchor="middle" fontSize="3" fontFamily="monospace"
+                              fill="#2563EB" opacity={0.6} fontWeight="600" style={{ pointerEvents: 'none' }}>YOU</text>
+                          )}
+                          {!isUser && (
+                            <circle cx={p.x} cy={p.y} r={14} fill="rgba(0,0,0,0)"
+                              style={{ cursor: 'pointer' }}
+                              onClick={() => setRelSelectedType(relSelectedType === typeNum ? null : typeNum)}
+                              onMouseEnter={() => setRelHoveredType(typeNum)}
+                              onMouseLeave={() => setRelHoveredType(null)}
+                              onTouchStart={(e) => { e.preventDefault(); setRelSelectedType(relSelectedType === typeNum ? null : typeNum); }} />
+                          )}
+                        </g>
+                      );
+                    })}
+                  </svg>
+                </div>
+
+                {/* Content area — min-height prevents layout jump on context switch */}
+                <div className="min-h-[60px]">
+                {relBatchLoading && (
+                  <div className="flex items-center gap-2 justify-center py-2">
+                    <div className="w-3.5 h-3.5 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: ctxColor + '40', borderTopColor: 'transparent' }} />
+                    <p className="font-sans text-[0.75rem] text-[#9B9590]">Preparing relationship insights...</p>
+                  </div>
+                )}
+
+                {!relSelectedType && !relHoveredType && !relBatchLoading && (
+                  <p className="font-sans text-[0.82rem] text-[#9B9590] italic text-center">Tap any type to explore how you relate</p>
+                )}
+                {!relSelectedType && relHoveredType && (
+                  <div className="w-full max-w-lg mt-2" style={{ animation: 'rel-content-fade 0.15s ease-out' }}>
+                    <p className="font-serif text-[0.95rem] font-semibold text-center" style={{ color: ctxColor }}>
+                      You &amp; {REL_TYPE_NAMES[relHoveredType] || 'Type ' + relHoveredType}
+                    </p>
+                    <p className="font-sans text-[0.72rem] text-[#9B9590] italic text-center mt-1">Tap to explore as {CONTEXT_META[relContext].label.toLowerCase()}</p>
+                  </div>
+                )}
+                {relSelectedType && !currentRel && !relBatchLoading && (
+                  <div className="w-full max-w-lg mt-2 text-center" style={{ animation: 'rel-panel-enter 0.3s ease-out' }}>
+                    <p className="font-serif text-[1.05rem] font-bold text-[#2C2C2C] mb-3">
+                      You &amp; {REL_TYPE_NAMES[relSelectedType] || 'Type ' + relSelectedType} as {CONTEXT_META[relContext].label}
+                    </p>
+                    <div className="flex items-center gap-2 justify-center py-3">
+                      <div className="w-4 h-4 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: ctxColor + '50', borderTopColor: 'transparent' }} />
+                      <p className="font-sans text-[0.78rem] text-[#9B9590]">Generating insights...</p>
+                    </div>
+                  </div>
+                )}
+                {relSelectedType && currentRel && (
+                  <div className="w-full max-w-lg mt-2" style={{ animation: 'rel-panel-enter 0.35s ease-out' }} key={currentKey}>
+                    <p className="font-serif text-[1.05rem] font-bold text-[#2C2C2C] mb-4 text-center">{currentRel.title}</p>
+                    {[
+                      { label: 'How You Show Up', text: currentRel.how_you_show_up },
+                      { label: 'The Dynamic', text: currentRel.the_dynamic },
+                      { label: 'Growth Edge', text: currentRel.growth_edge },
+                      { label: 'Watch Out For', text: currentRel.watch_out_for },
+                    ].map(sec => (
+                      <div key={sec.label} className="mb-4 pl-4 py-2.5" style={{ borderLeft: '3px solid ' + ctxColor + '40', animation: 'rel-content-fade 0.3s ease-out' }}>
+                        <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.06em] mb-1.5" style={{ color: ctxColor }}>{sec.label}</p>
+                        <p className="font-sans text-[0.93rem] text-[#1a1a1a] leading-[1.75]">{sec.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                </div>
+              </div>
+            );
+          })()}
           {exploreTab === 'systems' && (() => {
             const ps = personalitySystems;
-
-            // ── Null state ──
             if (!ps) {
               return (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
                   <div className="w-16 h-16 rounded-full bg-[#EFF6FF] flex items-center justify-center mb-4"><span className="text-2xl">&#9878;</span></div>
                   <p className="font-serif text-[1.1rem] font-semibold text-[#2C2C2C] mb-2">Other Personality Systems</p>
-                  <p className="font-sans text-[0.88rem] text-[#6B6B6B] max-w-sm leading-relaxed">Coming soon — see your type through the lens of MBTI, Big Five, and other frameworks. Same you, different maps.</p>
+                  <p className="font-sans text-[0.88rem] text-[#6B6B6B] max-w-sm leading-relaxed">Coming soon — see your type through the lens of MBTI, Big Five, and other frameworks.</p>
                 </div>
               );
             }
 
+
             // ── Data prep ──
-            const confPct: Record<string, number> = { high: 0.92, medium: 0.62, low: 0.32 };
             const scoreVal: Record<string, number> = { very_low: 0.12, low: 0.30, medium: 0.52, high: 0.76, very_high: 0.95 };
             const scoreLbl: Record<string, string> = { very_low: 'Very Low', low: 'Low', medium: 'Medium', high: 'High', very_high: 'Very High' };
-            const confLabel: Record<string, string> = { high: 'Research-backed', medium: 'Consensus-based', low: 'Exploratory' };
+            const confLabel: Record<string, string> = { high: 'Strong correlation', medium: 'Consensus-based', low: 'Exploratory' };
+            const MBTI_NAMES: Record<string, string> = { INTJ: 'The Architect', INTP: 'The Logician', ENTJ: 'The Commander', ENTP: 'The Debater', INFJ: 'The Advocate', INFP: 'The Mediator', ENFJ: 'The Protagonist', ENFP: 'The Campaigner', ISTJ: 'The Logistician', ISFJ: 'The Defender', ESTJ: 'The Executive', ESFJ: 'The Consul', ISTP: 'The Virtuoso', ISFP: 'The Adventurer', ESTP: 'The Entrepreneur', ESFP: 'The Entertainer' };
 
-            const chips = [
-              { key: 'mbti', color: '#2563EB', label: 'MBTI', icon: 'M', result: ps.mbti.primary, conf: confPct[ps.mbti.confidence] || 0.5 },
-              { key: 'bigFive', color: '#7C3AED', label: 'Big Five', icon: 'O', result: 'OCEAN', conf: confPct[ps.bigFive.confidence] || 0.5 },
-              { key: 'attachment', color: '#D97706', label: 'Attach.', icon: 'A', result: (ps.attachment.style || '').replace(/_/g, ' '), conf: confPct[ps.attachment.confidence] || 0.5 },
-              { key: 'disc', color: '#DC2626', label: 'DISC', icon: 'D', result: ps.disc.profile || '—', conf: confPct[ps.disc.confidence] || 0.5 },
-              { key: 'jungian', color: '#7A9E7E', label: 'Jungian', icon: 'J', result: ps.jungian.primaryArchetype, conf: confPct[ps.jungian.confidence] || 0.5 },
-              { key: 'humanDesign', color: '#9CA3AF', label: 'HD', icon: 'H', result: ps.humanDesign.likelyType || '—', conf: 0.32 },
+            type SystemKey = 'mbti' | 'bigFive' | 'attachment' | 'disc' | 'jungian' | 'humanDesign';
+            const SYSTEMS: Array<{ key: SystemKey; label: string; subtitle: string; whatIs: string; vsEnneagram: string; bg: string; glow: string; color: string; textColor: string; conf: ConfidenceLevel }> = [
+              { key: 'mbti', label: 'Myers-Briggs', subtitle: 'How you process information and make decisions', whatIs: 'The world\'s most widely used personality framework. It maps four dimensions of cognitive preference — where you get energy, how you take in information, how you make decisions, and how you orient to the world.', vsEnneagram: 'MBTI maps cognitive style (how you think). The Enneagram maps core motivation (why you do what you do). Same person, completely different lens.', bg: '#243d6e', glow: '#2563EB', color: '#60A5FA', textColor: '#BFDBFE', conf: ps.mbti.confidence },
+              { key: 'bigFive', label: 'Big Five / OCEAN', subtitle: 'Five core dimensions of personality', whatIs: 'The most scientifically validated personality model in psychology. Measures five trait dimensions on a continuous scale — not types, but spectrums. Used in clinical research worldwide.', vsEnneagram: 'Big Five measures trait intensity (how much of each quality). The Enneagram reveals the driving fear and desire beneath those traits.', bg: '#352368', glow: '#7C3AED', color: '#A78BFA', textColor: '#DDD6FE', conf: ps.bigFive.confidence },
+              { key: 'attachment', label: 'Attachment Theory', subtitle: 'How you learned to bond and feel safe', whatIs: 'Developed from decades of research on how early relationships wire your nervous system for connection. Your attachment style shapes how you give trust, handle conflict, and experience intimacy.', vsEnneagram: 'Attachment maps relational wiring specifically. Your Enneagram type shapes HOW that attachment style expresses — a Type 2 and Type 5 with the same attachment style look very different.', bg: '#4a3518', glow: '#D97706', color: '#FBBF24', textColor: '#FDE68A', conf: ps.attachment.confidence },
+              { key: 'disc', label: 'DISC Profile', subtitle: 'Your behavioral style in action', whatIs: 'A behavioral model used in professional settings. Maps four dimensions of how you take action, communicate, and work with others. Think of it as your work personality.', vsEnneagram: 'DISC captures your observable behavior at work. The Enneagram reveals what\'s driving that behavior from underneath — the motivation behind the style.', bg: '#4a1c1c', glow: '#DC2626', color: '#F87171', textColor: '#FECACA', conf: ps.disc.confidence },
+              { key: 'jungian', label: 'Jungian Archetypes', subtitle: 'The mythic patterns shaping your story', whatIs: 'Carl Jung identified 12 universal character patterns that live in the collective unconscious. Your primary archetype is the role you naturally inhabit — the story you\'re living without knowing it.', vsEnneagram: 'Archetypes describe the roles you play. The Enneagram maps the survival strategy that chose those roles for you.', bg: '#1e3a28', glow: '#7A9E7E', color: '#86EFAC', textColor: '#BBF7D0', conf: ps.jungian.confidence },
+              { key: 'humanDesign', label: 'Human Design', subtitle: 'An exploratory energetic blueprint', whatIs: 'A synthesis system combining astrology, the I Ching, Kabbalah, and the chakra system. Community-based with no peer-reviewed research. Included as a conversation starter, not a conclusion.', vsEnneagram: 'Human Design is exploratory. If it resonates, it may add a layer to your self-understanding. If not, leave it here.', bg: '#363640', glow: '#6B7280', color: '#9CA3AF', textColor: '#E5E7EB', conf: 'low' as ConfidenceLevel },
             ];
 
-            // ── Radar chart math ──
-            const B5 = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism'] as const;
-            const B5L = ['O', 'C', 'E', 'A', 'N'];
-            const B5Full = ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'];
-            const cx = 50, cy = 50, R = 36;
-            const rp = (i: number, v: number) => {
-              const a = (i * 2 * Math.PI / 5) - Math.PI / 2;
-              return { x: cx + R * v * Math.cos(a), y: cy + R * v * Math.sin(a) };
-            };
-            const b5Vals = B5.map(t => scoreVal[ps.bigFive[t].score] || 0.5);
-            const pts = b5Vals.map((v, i) => rp(i, v));
-            const shape = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ') + 'Z';
-            const lblPts = B5L.map((_, i) => { const a = (i * 2 * Math.PI / 5) - Math.PI / 2; return { x: cx + (R + 11) * Math.cos(a), y: cy + (R + 11) * Math.sin(a) }; });
+            const openSys = expandedSystem as SystemKey | null;
 
-            // ── Sub-components ──
-            const ConfDots = ({ level, color }: { level: ConfidenceLevel; color: string }) => {
+            // ── Confidence badge (light on dark) ──
+            const ConfBadge = ({ level, color }: { level: ConfidenceLevel; color: string }) => {
               const n = level === 'high' ? 3 : level === 'medium' ? 2 : 1;
               return (
-                <div className="flex items-center gap-1 mt-0.5">
-                  {[1, 2, 3].map(d => (
-                    <div key={d} className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: d <= n ? color : '#E8E4E0' }} />
-                  ))}
-                  <span className="font-mono text-[0.48rem] uppercase tracking-[0.08em] ml-1" style={{ color: `${color}90` }}>{confLabel[level] || 'Exploratory'}</span>
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1">{[1,2,3].map(d => <div key={d} className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: d <= n ? color : 'rgba(255,255,255,0.2)' }} />)}</div>
+                  <span className="text-[0.55rem] uppercase tracking-[0.1em]" style={{ color: `${color}CC`, fontFamily: 'monospace' }}>{confLabel[level] || 'Exploratory'}</span>
                 </div>
               );
             };
 
-            const Ev = ({ text, color }: { text: string; color: string }) => (
-              <div className="mt-4 relative rounded-xl p-4 overflow-hidden" style={{ background: `${color}06` }}>
-                <span className="absolute top-1 left-3 font-serif text-[2.5rem] leading-none select-none pointer-events-none" style={{ color: `${color}12` }}>&ldquo;</span>
-                <div className="pl-6">
-                  <p className="font-mono text-[0.52rem] uppercase tracking-[0.1em] mb-1.5" style={{ color: `${color}70` }}>From your responses</p>
-                  <p className="font-sans text-[0.82rem] text-[#2C2C2C] leading-[1.75] italic">{text}</p>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(90deg, ${color}30, transparent)` }} />
-              </div>
-            );
-
-            const SC = ({ sysKey, color, icon, label, confidence, delay, children }: { sysKey: string; color: string; icon: string; label: string; confidence: ConfidenceLevel; delay: number; children: React.ReactNode }) => {
-              const isOpen = expandedSystem === sysKey;
-              return (
-                <div id={`system-${sysKey}`} className="rounded-2xl overflow-hidden transition-shadow duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
-                  style={{ background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(8px)', border: `1px solid ${isOpen ? color + '40' : '#E8E4E0'}`, animation: systemsRevealed ? `psSlideUp 0.5s ease-out ${delay}s both` : 'none' }}>
-                  <div className="h-[2px]" style={{ background: `linear-gradient(90deg, ${color}, ${color}40)` }} />
-                  <button onClick={() => setExpandedSystem(isOpen ? null : sysKey)} className="w-full px-5 py-4 flex items-center justify-between gap-3 text-left">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${color}10` }}>
-                        <span className="font-serif text-sm font-bold" style={{ color }}>{icon}</span>
-                      </div>
-                      <div>
-                        <span className="font-sans text-[0.82rem] font-semibold text-[#2C2C2C]">{label}</span>
-                        <ConfDots level={confidence} color={color} />
-                      </div>
-                    </div>
-                    <span className={`text-[#9B9590] text-base transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>▾</span>
-                  </button>
-                  <div className={`overflow-hidden transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'max-h-[2000px]' : 'max-h-0'}`}>
-                    <div className="px-5 pb-5">{children}</div>
-                  </div>
-                </div>
-              );
+            // ── Text cleaning helpers ──
+            const cleanInsight = (text: string) => {
+              if (!text) return '';
+              const sentences = text.match(/[^.!?]+[.!?]+/g) || [];
+              let insight = sentences.slice(0, 2).join(' ').trim();
+              insight = insight
+                .replace(/\b(Fe|Fi|Te|Ti|Se|Si|Ne|Ni)\b-?\w*/g, '')
+                .replace(/cognitive (stack|function)s?/gi, 'thinking style')
+                .replace(/compound type/gi, 'your unique combination')
+                .replace(/tritype \d+-\d+-\d+/gi, 'your type combination')
+                .replace(/\b[A-Z]{4}\b(?!')/g, (m) => MBTI_NAMES[m] ? `${m} (${MBTI_NAMES[m]})` : m)
+                .replace(/\bSX\b/gi, 'Sexual')
+                .replace(/\bSP\b/gi, 'Self-preservation')
+                .replace(/\bSO\b/gi, 'Social')
+                .replace(/\d+w\d+/g, (m) => `Type ${m}`)
+                .replace(/\s{2,}/g, ' ')
+                .trim();
+              return insight;
+            };
+            const cleanText = (text: string) => {
+              if (!text) return '';
+              const first = (text.match(/^[^.!?]+[.!?]/) || [text.slice(0, 140)])[0];
+              return first.replace(/[''\u2018\u2019][^''\u2018\u2019]+[''\u2018\u2019]/g, '').replace(/\s+/g, ' ').trim();
             };
 
-            return (
-              <div className="flex flex-col gap-0">
-                {/* ═══ SECTION A — Personality Constellation ═══ */}
-                <div className="px-6 pt-5 pb-3">
-                  <p className="font-mono text-[0.58rem] uppercase tracking-[0.14em] text-[#9B9590] mb-3">Your personality across 6 frameworks</p>
-                  <div className="flex gap-2.5 overflow-x-auto pb-2 -mx-1 px-1" style={{ scrollbarWidth: 'none' }}>
-                    {chips.map((chip, i) => (
-                      <button key={chip.key} onClick={() => { setExpandedSystem(chip.key); document.getElementById(`system-${chip.key}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }} className="flex-shrink-0"
-                        style={{ animation: systemsRevealed ? `psScaleIn 0.35s ease-out ${i * 0.07}s both` : 'none' }}>
-                        <div className="rounded-2xl px-3.5 py-3 border transition-all duration-300 hover:scale-[1.03] hover:-translate-y-0.5"
-                          style={{ background: expandedSystem === chip.key ? `${chip.color}10` : `${chip.color}05`, borderColor: expandedSystem === chip.key ? `${chip.color}50` : `${chip.color}20`, animation: expandedSystem === chip.key ? 'pulseGlow 2.5s ease-in-out infinite' : 'none', ['--glow-color' as string]: `${chip.color}18` }}>
-                          <svg width="34" height="34" viewBox="0 0 34 34" className="mx-auto mb-1.5">
-                            <circle cx="17" cy="17" r="14" fill="none" stroke={`${chip.color}18`} strokeWidth="2" />
-                            <circle cx="17" cy="17" r="14" fill="none" stroke={chip.color} strokeWidth="2" strokeLinecap="round" strokeDasharray={2 * Math.PI * 14} strokeDashoffset={2 * Math.PI * 14 * (1 - chip.conf)} transform="rotate(-90 17 17)" style={{ transition: 'stroke-dashoffset 1s ease-out' }} />
-                            <text x="17" y="18" textAnchor="middle" dominantBaseline="middle" fill={chip.color} fontSize="11" fontFamily="serif" fontWeight="bold">{chip.icon}</text>
-                          </svg>
-                          <p className="font-serif text-[0.78rem] font-bold text-center whitespace-nowrap leading-tight" style={{ color: chip.color }}>{chip.result}</p>
-                          <p className="font-mono text-[0.45rem] uppercase tracking-[0.1em] text-center mt-0.5" style={{ color: `${chip.color}70` }}>{chip.label}</p>
+            // ── Render expanded content per system ──
+            const renderExpanded = (sysKey: SystemKey) => {
+              const sys = SYSTEMS.find(s => s.key === sysKey)!;
+              switch (sysKey) {
+                // ════════ MBTI ════════
+                case 'mbti': {
+                  const primary = ps.mbti.primary || '';
+                  const letters = primary.length === 4 ? primary.split('') : [];
+                  const axes = letters.length === 4 ? [
+                    { left: 'Extraversion', right: 'Introversion', leftL: 'E', rightL: 'I', val: letters[0] },
+                    { left: 'Sensing', right: 'Intuition', leftL: 'S', rightL: 'N', val: letters[1] },
+                    { left: 'Thinking', right: 'Feeling', leftL: 'T', rightL: 'F', val: letters[2] },
+                    { left: 'Judging', right: 'Perceiving', leftL: 'J', rightL: 'P', val: letters[3] },
+                  ] : [];
+                  const positions: Record<string, number> = { E: 25, I: 75, S: 30, N: 70, T: 35, F: 65, J: 28, P: 72 };
+                  return (
+                    <div className="flex flex-col lg:flex-row gap-8 p-4 pb-8 lg:p-6 lg:pb-10">
+                      <div className="flex flex-col gap-3 flex-1 lg:max-w-[45%]">
+                        <div>
+                          <p className="text-[0.6rem] uppercase tracking-[0.3em] mb-2" style={{ color: `${sys.textColor}80`, fontFamily: 'monospace' }}>What is MBTI?</p>
+                          <p className="text-[0.82rem] leading-relaxed" style={{ color: `${sys.textColor}CC` }}>{sys.whatIs}</p>
                         </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* ═══ SECTION B — Big Five Radar Chart ═══ */}
-                <div className="px-6 py-4" style={{ animation: systemsRevealed ? 'psSlideUp 0.5s ease-out 0.3s both' : 'none' }}>
-                  <div className="bg-white rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-5 overflow-hidden">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-[#7C3AED]" />
-                        <span className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#7C3AED]">Big Five Profile</span>
-                      </div>
-                      <ConfDots level={ps.bigFive.confidence} color="#7C3AED" />
-                    </div>
-                    <div className="flex justify-center my-1">
-                      <svg viewBox="-8 -8 116 116" width="260" height="260" className="max-w-full">
-                        {[0.25, 0.5, 0.75, 1.0].map((pct, ri) => {
-                          const ring = Array.from({ length: 5 }, (_, i) => rp(i, pct));
-                          const d = ring.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ') + 'Z';
-                          return <path key={ri} d={d} fill="none" stroke="#E8E4E0" strokeWidth="0.4" opacity={0.7} />;
-                        })}
-                        {Array.from({ length: 5 }, (_, i) => { const p = rp(i, 1.0); return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#E8E4E0" strokeWidth="0.3" />; })}
-                        <path d={shape} fill="#7C3AED" fillOpacity={0.10} stroke="#7C3AED" strokeWidth="1.5" strokeLinejoin="round" style={{ strokeDasharray: 600, strokeDashoffset: 0, animation: systemsRevealed ? 'radarDraw 1.5s ease-out 0.5s both' : 'none' }} />
-                        {pts.map((p, i) => (<circle key={i} cx={p.x} cy={p.y} r="2.5" fill="white" stroke="#7C3AED" strokeWidth="1.5" style={{ animation: systemsRevealed ? `psScaleIn 0.3s ease-out ${0.8 + i * 0.1}s both` : 'none' }} />))}
-                        {lblPts.map((p, i) => (<text key={i} x={p.x} y={p.y} textAnchor="middle" dominantBaseline="middle" fontSize="4.5" fill="#6B6B6B" fontWeight="600" fontFamily="monospace">{B5L[i]}</text>))}
-                      </svg>
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-1.5 mt-1">
-                      {B5.map((trait, i) => (
-                        <div key={trait} className="flex items-center gap-1 bg-[#FAF8F5] rounded-full px-2.5 py-1 border border-[#E8E4E0]">
-                          <span className="font-mono text-[0.5rem] uppercase tracking-[0.06em] text-[#9B9590]">{B5Full[i]}</span>
-                          <span className="font-sans text-[0.65rem] font-semibold text-[#7C3AED]">{scoreLbl[ps.bigFive[trait].score] || ''}</span>
+                        <div className="rounded-xl p-4" style={{ background: `${sys.color}15`, borderLeft: `3px solid ${sys.color}60` }}>
+                          <p className="text-[0.55rem] uppercase tracking-[0.2em] mb-1" style={{ color: `${sys.color}99`, fontFamily: 'monospace' }}>vs your Enneagram Type {leadingType}</p>
+                          <p className="text-[0.78rem] leading-relaxed" style={{ color: sys.textColor }}>{sys.vsEnneagram}</p>
                         </div>
-                      ))}
-                    </div>
-                    <button onClick={() => setExpandedSystem(expandedSystem === 'bigFive' ? null : 'bigFive')} className="w-full mt-3 pt-2.5 border-t border-[#E8E4E0] flex items-center justify-center gap-1.5 text-[#9B9590] hover:text-[#7C3AED] transition-colors">
-                      <span className="font-sans text-[0.72rem]">{expandedSystem === 'bigFive' ? 'Hide details' : 'Read trait descriptions'}</span>
-                      <span className={`text-xs transition-transform duration-200 ${expandedSystem === 'bigFive' ? 'rotate-180' : ''}`}>▾</span>
-                    </button>
-                    <div className={`overflow-hidden transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${expandedSystem === 'bigFive' ? 'max-h-[1500px] mt-3' : 'max-h-0'}`}>
-                      {B5.map((trait, i) => (<div key={trait} className="mb-3.5 last:mb-0"><p className="font-sans text-[0.78rem] font-semibold text-[#2C2C2C] mb-0.5">{B5Full[i]}</p><p className="font-sans text-[0.82rem] text-[#6B6B6B] leading-[1.7]">{ps.bigFive[trait].description}</p></div>))}
-                      {ps.bigFive.personalVariance && <Ev text={ps.bigFive.personalVariance} color="#7C3AED" />}
-                    </div>
-                  </div>
-                </div>
-
-                {/* ═══ SECTION C — System Detail Cards ═══ */}
-                <div className="px-6 pb-6">
-                  <p className="font-mono text-[0.58rem] uppercase tracking-[0.14em] text-[#9B9590] mb-3">Detailed analysis</p>
-                  <div className="flex flex-col gap-3">
-                    {/* MBTI */}
-                    <SC sysKey="mbti" color="#2563EB" icon="M" label="Myers-Briggs (MBTI)" confidence={ps.mbti.confidence} delay={0.45}>
-                      <div className="flex gap-2.5 flex-wrap mb-4">
-                        {(ps.mbti.types || []).map((t, i) => (
-                          <div key={t} className="rounded-xl px-4 py-2.5 transition-transform hover:scale-[1.02]" style={{ background: i === 0 ? '#EFF6FF' : 'rgba(37,99,235,0.04)', border: `1px solid rgba(37,99,235,${i === 0 ? 0.3 : 0.15})` }}>
-                            <span className={`font-serif text-lg ${i === 0 ? 'font-bold text-[#2563EB]' : 'font-medium text-[#2563EB]/70'}`}>{t}</span>
-                            <span className="font-mono text-[0.48rem] uppercase tracking-wider ml-2" style={{ color: i === 0 ? 'rgba(37,99,235,0.5)' : 'rgba(37,99,235,0.35)' }}>{i === 0 ? 'Primary' : 'Also likely'}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <p className="font-sans text-[0.85rem] text-[#2C2C2C] leading-[1.7]">{ps.mbti.reasoning}</p>
-                      <Ev text={ps.mbti.personalEvidence} color="#2563EB" />
-                    </SC>
-
-                    {/* Attachment + DISC grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <SC sysKey="attachment" color="#D97706" icon="A" label="Attachment" confidence={ps.attachment.confidence} delay={0.55}>
-                        <div className="inline-block rounded-xl px-4 py-2 mb-3" style={{ background: 'rgba(217,119,6,0.05)', border: '1px solid rgba(217,119,6,0.2)' }}>
-                          <span className="font-serif text-[1rem] font-bold text-[#D97706] capitalize">{(ps.attachment.style || '').replace(/_/g, '-')}</span>
-                        </div>
-                        <p className="font-sans text-[0.84rem] text-[#2C2C2C] leading-[1.7]">{ps.attachment.reasoning}</p>
-                        <Ev text={ps.attachment.personalEvidence} color="#D97706" />
-                        {ps.attachment.healthNote && <p className="font-sans text-[0.76rem] text-[#9B9590] leading-relaxed mt-3 italic">{ps.attachment.healthNote}</p>}
-                        {ps.attachment.growthEdge && (
-                          <div className="mt-3 rounded-xl p-3" style={{ background: 'rgba(122,158,126,0.06)', borderLeft: '2px solid rgba(122,158,126,0.25)' }}>
-                            <p className="font-mono text-[0.5rem] uppercase tracking-[0.1em] text-[#7A9E7E]/70 mb-1">Growth edge</p>
-                            <p className="font-sans text-[0.8rem] text-[#2C2C2C] leading-relaxed">{ps.attachment.growthEdge}</p>
+                        {ps.mbti.reasoning && (
+                          <div>
+                            <p className="text-[0.55rem] uppercase tracking-[0.2em] mb-1" style={{ color: `${sys.textColor}90`, fontFamily: 'monospace' }}>Key insight</p>
+                            <p className="font-serif text-[0.95rem] italic leading-relaxed" style={{ color: sys.textColor }}>{cleanInsight(ps.mbti.reasoning)}</p>
                           </div>
                         )}
-                      </SC>
-                      <SC sysKey="disc" color="#DC2626" icon="D" label="DISC Profile" confidence={ps.disc.confidence} delay={0.6}>
-                        <div className="inline-block rounded-xl px-5 py-2 mb-2" style={{ background: 'rgba(220,38,38,0.04)', border: '1px solid rgba(220,38,38,0.18)' }}>
-                          <span className="font-serif text-2xl font-bold text-[#DC2626] tracking-wide">{ps.disc.profile || '—'}</span>
+                      </div>
+                      <div className="flex flex-col gap-5 justify-center flex-1">
+                        {axes.map((ax, i) => {
+                          const pct = positions[ax.val] || 50;
+                          return (
+                            <div key={ax.leftL} style={{ animation: `darkFadeUp 0.4s ease-out ${0.2 + i * 0.12}s both` }}>
+                              <div className="flex justify-between items-end mb-2">
+                                <span className="font-serif text-[2.2rem] font-bold leading-none text-white">{ax.val}</span>
+                                <span className="text-[0.6rem] uppercase tracking-[0.12em]" style={{ color: `${sys.textColor}90`, fontFamily: 'monospace' }}>{ax.left} vs {ax.right}</span>
+                              </div>
+                              <div className="h-[2px] w-[85%] mx-auto relative" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                                <div className="absolute w-4 h-4 rounded-full bg-white -top-[7px]" style={{ left: `${pct}%`, transform: 'translateX(-50%)', animation: 'spectrumDotGlow 3s ease-in-out infinite' }} />
+                              </div>
+                              <div className="flex justify-between mt-2 w-[85%] mx-auto">
+                                <span className="text-[0.6rem] uppercase tracking-wider" style={{ color: `${sys.textColor}80` }}>{ax.leftL}</span>
+                                <span className="text-[0.6rem] uppercase tracking-wider" style={{ color: `${sys.textColor}80` }}>{ax.rightL}</span>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
+                // ════════ BIG FIVE ════════
+                case 'bigFive': {
+                  const B5 = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism'] as const;
+                  const B5Full = ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'];
+                  const cx = 50, cy = 50, R = 38;
+                  const rp = (i: number, v: number) => { const a = (i * 2 * Math.PI / 5) - Math.PI / 2; return { x: cx + R * v * Math.cos(a), y: cy + R * v * Math.sin(a) }; };
+                  const b5Vals = B5.map(t => scoreVal[ps.bigFive[t].score] || 0.5);
+                  const pts = b5Vals.map((v, i) => rp(i, v));
+                  const shape = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ') + 'Z';
+                  const lblPts = B5.map((_, i) => { const a = (i * 2 * Math.PI / 5) - Math.PI / 2; return { x: cx + (R + 12) * Math.cos(a), y: cy + (R + 12) * Math.sin(a) }; });
+                  return (
+                    <div className="flex flex-col gap-4 p-4 pb-8 lg:p-6 lg:pb-10">
+                      <div className="text-center">
+                        <p className="text-[0.55rem] uppercase tracking-[0.3em] mb-2" style={{ color: `${sys.textColor}80`, fontFamily: 'monospace' }}>What is the Big Five?</p>
+                        <p className="text-[0.78rem] leading-relaxed max-w-lg mx-auto" style={{ color: `${sys.textColor}CC` }}>{sys.whatIs}</p>
+                      </div>
+                      <div className="flex flex-col lg:flex-row gap-4 items-center">
+                      <div className="flex flex-col items-center justify-center flex-1">
+                        <svg viewBox="-16 -16 132 132" width="440" height="440" className="max-w-full" style={{ filter: `drop-shadow(0 0 30px ${sys.color}40)` }}>
+                          {[0.25, 0.5, 0.75, 1.0].map((pct, ri) => {
+                            const ring = Array.from({ length: 5 }, (_, i) => rp(i, pct));
+                            const d = ring.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ') + 'Z';
+                            return <path key={ri} d={d} fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.4" />;
+                          })}
+                          {Array.from({ length: 5 }, (_, i) => { const p = rp(i, 1.0); return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="rgba(255,255,255,0.1)" strokeWidth="0.3" />; })}
+                          <path d={shape} fill={`${sys.color}35`} stroke={sys.color} strokeWidth="1.5" strokeLinejoin="round" style={{ strokeDasharray: 600, strokeDashoffset: 0, animation: 'radarShapeDraw 1.5s ease-out 0.3s both' }} />
+                          {pts.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r="3" fill="white" stroke={sys.color} strokeWidth="1.5" style={{ animation: `darkDotAppear 0.3s ease-out ${0.8 + i * 0.1}s both` }} />)}
+                          {lblPts.map((p, i) => <text key={i} x={p.x} y={p.y} textAnchor="middle" dominantBaseline="middle" fontSize="5" fill="rgba(255,255,255,0.8)" fontWeight="700" fontFamily="monospace">{B5Full[i].slice(0, 1)}</text>)}
+                        </svg>
+                      </div>
+                      <div className="flex flex-col gap-3 flex-1">
+                        {B5.map((trait, i) => {
+                          const val = scoreVal[ps.bigFive[trait].score] || 0.5;
+                          const desc = ps.bigFive[trait].description || '';
+                          return (
+                            <div key={trait} style={{ animation: `darkFadeUp 0.4s ease-out ${0.3 + i * 0.08}s both` }}>
+                              <div className="flex justify-between mb-1.5">
+                                <span className="text-[0.7rem] font-semibold text-white">{B5Full[i]}</span>
+                                <span className="text-[0.6rem] font-bold" style={{ color: sys.color, fontFamily: 'monospace' }}>{scoreLbl[ps.bigFive[trait].score] || ''}</span>
+                              </div>
+                              <div className="h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                                <div className="h-full rounded-full" style={{ width: `${val * 100}%`, background: `linear-gradient(90deg, ${sys.color}, ${sys.textColor})`, transformOrigin: 'left', animation: `darkBarFill 0.8s ease-out ${0.4 + i * 0.08}s both`, boxShadow: `0 0 12px ${sys.color}60` }} />
+                              </div>
+                              <p className="text-[0.72rem] mt-1 leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>{cleanText(desc)}</p>
+                            </div>
+                          );
+                        })}
+                        <div className="rounded-xl p-4 mt-2" style={{ background: `${sys.color}10`, borderLeft: `3px solid ${sys.color}50` }}>
+                          <p className="text-[0.6rem] uppercase tracking-[0.2em] mb-2" style={{ color: `${sys.color}99`, fontFamily: 'monospace' }}>vs your Enneagram Type {leadingType}</p>
+                          <p className="text-[0.78rem] leading-relaxed" style={{ color: sys.textColor }}>{sys.vsEnneagram}</p>
                         </div>
-                        {ps.disc.blend && <p className="font-sans text-[0.8rem] text-[#9B9590] italic mb-2">{ps.disc.blend}</p>}
-                        <p className="font-sans text-[0.84rem] text-[#2C2C2C] leading-[1.7]">{ps.disc.reasoning}</p>
-                        <Ev text={ps.disc.personalEvidence} color="#DC2626" />
-                      </SC>
+                      </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                // ════════ ATTACHMENT ════════
+                case 'attachment': {
+                  const style = (ps.attachment.style || '').replace(/_/g, ' ');
+                  // All 4 attachment styles (Bartholomew & Horowitz, 1991)
+                  const zones = [
+                    { name: 'Secure', desc: 'Comfortable with closeness and autonomy', color: '#059669' },
+                    { name: 'Anxious-Preoccupied', desc: 'Craves closeness, fears abandonment', color: '#D97706' },
+                    { name: 'Dismissive-Avoidant', desc: 'Values independence, suppresses need for connection', color: '#BE123C' },
+                    { name: 'Fearful-Avoidant', desc: 'Wants closeness but fears vulnerability', color: '#9333EA' },
+                  ];
+                  const styleMap: Record<string, number> = { secure: 0, 'anxious preoccupied': 1, anxious: 1, 'dismissive avoidant': 2, avoidant: 2, 'fearful avoidant': 3 };
+                  const activeIdx = styleMap[style.toLowerCase()] ?? -1;
+                  const markerPct = styleMap[style.toLowerCase()] ?? 50;
+                  return (
+                    <div className="flex flex-col lg:flex-row gap-4 p-4 pb-8 lg:p-6 lg:pb-10">
+                      <div className="flex flex-col gap-3 flex-1">
+                        <div className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                          <p className="text-[0.6rem] uppercase tracking-[0.3em] mb-2" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'monospace' }}>What is Attachment Theory?</p>
+                          <p className="text-[0.85rem] leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>{sys.whatIs}</p>
+                        </div>
+                        {ps.attachment.growthEdge && (
+                          <div className="rounded-xl p-4" style={{ background: 'rgba(122,158,126,0.25)', border: '1px solid rgba(122,158,126,0.4)' }}>
+                            <p className="text-[0.6rem] uppercase tracking-[0.2em] mb-2" style={{ color: '#86EFACCC', fontFamily: 'monospace' }}>Growth edge</p>
+                            <p className="text-[0.85rem] leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>{ps.attachment.growthEdge}</p>
+                          </div>
+                        )}
+                        <div className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                          <p className="text-[0.6rem] uppercase tracking-[0.2em] mb-2" style={{ color: `${sys.color}CC`, fontFamily: 'monospace' }}>vs your Enneagram Type {leadingType}</p>
+                          <p className="text-[0.82rem] leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>{sys.vsEnneagram}</p>
+                        </div>
+                      </div>
+                      {/* Bartholomew 2×2 attachment model diagram — right half, centered vertically */}
+                      <div className="flex items-center justify-center flex-1">
+                        <div className="relative w-full max-w-[300px]">
+                          {/* Axis labels */}
+                          <div className="text-center mb-2">
+                            <span className="text-[0.5rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'monospace' }}>Positive view of others &rarr;</span>
+                          </div>
+                          <div className="relative aspect-square">
+                            {/* Background + grid lines */}
+                            <div className="absolute inset-0 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)' }} />
+                            <div className="absolute top-0 bottom-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                            <div className="absolute left-0 right-0 top-1/2 h-px" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                            {/* 4 quadrants: Secure(TL), Anxious(TR), Dismissive(BL), Fearful(BR) */}
+                            <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 p-2 gap-1.5">
+                              {zones.map((z, zi) => {
+                                const isActive = zi === activeIdx;
+                                return (
+                                  <div key={z.name} className="rounded-xl flex flex-col items-center justify-center text-center p-2 relative overflow-hidden transition-all"
+                                    style={{
+                                      background: isActive ? z.color : `${z.color}30`,
+                                      border: isActive ? `2px solid ${z.color}` : `1px solid ${z.color}50`,
+                                      boxShadow: isActive ? `0 0 24px ${z.color}50` : 'none',
+                                      animation: `darkFadeUp 0.4s ease-out ${0.2 + zi * 0.1}s both`,
+                                    }}>
+                                    {isActive && <div className="absolute inset-0 pointer-events-none" style={{ background: `linear-gradient(135deg, ${z.color} 0%, ${z.color}BB 100%)` }} />}
+                                    <div className="relative">
+                                      <p className="font-serif text-[0.85rem] font-bold leading-tight" style={{ color: isActive ? 'white' : 'rgba(255,255,255,0.9)' }}>{z.name.split('-')[0]}</p>
+                                      {z.name.includes('-') && <p className="font-serif text-[0.7rem] font-bold leading-tight" style={{ color: isActive ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)' }}>{z.name.split('-').slice(1).join('-')}</p>}
+                                      <p className="text-[0.5rem] leading-snug mt-1" style={{ color: isActive ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.55)' }}>{z.desc}</p>
+                                      {isActive && (
+                                        <div className="mt-1.5 bg-white/25 rounded-full px-2.5 py-0.5 inline-block">
+                                          <span className="text-[0.45rem] uppercase tracking-wider font-bold text-white" style={{ fontFamily: 'monospace' }}>You</span>
+                                        </div>
+                                      )}
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                          {/* Bottom axis label */}
+                          <div className="flex justify-between mt-2 px-2">
+                            <span className="text-[0.45rem] uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'monospace' }}>+ View of self</span>
+                            <span className="text-[0.45rem] uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'monospace' }}>− View of self</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                // ════════ DISC ════════
+                case 'disc': {
+                  const profile = ps.disc.profile || '—';
+                  const profileLetters = profile.split('');
+                  const quads = [
+                    { letter: 'D', name: 'Dominance', color: '#DC2626' },
+                    { letter: 'I', name: 'Influence', color: '#D97706' },
+                    { letter: 'S', name: 'Steadiness', color: '#059669' },
+                    { letter: 'C', name: 'Conscientiousness', color: '#2563EB' },
+                  ];
+                  return (
+                    <div className="flex flex-col gap-4 p-4 pb-8 lg:p-6 lg:pb-10">
+                      {/* What is DISC — centered top */}
+                      <div className="text-center">
+                        <p className="text-[0.55rem] uppercase tracking-[0.3em] mb-2" style={{ color: `${sys.textColor}80`, fontFamily: 'monospace' }}>What is DISC?</p>
+                        <p className="text-[0.78rem] leading-relaxed max-w-md mx-auto" style={{ color: `${sys.textColor}CC` }}>{sys.whatIs}</p>
+                      </div>
+                      {/* Diagram + bars side by side */}
+                      <div className="flex flex-col lg:flex-row gap-6 items-center">
+                        <div className="flex items-center justify-center flex-1">
+                          <div className="relative w-full max-w-[280px] aspect-square">
+                            <div className="absolute inset-0 rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.15)' }}>
+                              {/* Colored quadrant backgrounds */}
+                              <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
+                                {quads.map((q) => {
+                                  const isActive = profileLetters.includes(q.letter);
+                                  return <div key={q.letter + 'bg'} style={{ background: isActive ? `${q.color}12` : 'rgba(255,255,255,0.02)' }} />;
+                                })}
+                              </div>
+                            </div>
+                            <div className="absolute top-0 bottom-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.2)' }} />
+                            <div className="absolute left-0 right-0 top-1/2 h-px" style={{ background: 'rgba(255,255,255,0.2)' }} />
+                            <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 p-4">
+                              {quads.map((q, i) => {
+                                const isActive = profileLetters.includes(q.letter);
+                                const isPrimary = profileLetters[0] === q.letter;
+                                return (
+                                  <div key={q.letter} className="flex flex-col items-center justify-center gap-1 relative" style={{ animation: `darkFadeUp 0.4s ease-out ${0.2 + i * 0.1}s both` }}>
+                                    <span className="font-serif text-[3rem] font-bold transition-colors" style={{ color: isActive ? `${q.color}80` : 'rgba(255,255,255,0.1)' }}>{q.letter}</span>
+                                    <span className="text-[0.55rem] font-semibold" style={{ color: isActive ? `${q.color}DD` : 'rgba(255,255,255,0.3)', fontFamily: 'monospace' }}>{q.name}</span>
+                                    {isPrimary && (
+                                      <div className="absolute top-1 right-1 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: q.color, boxShadow: `0 0 16px ${q.color}80`, border: '2px solid white' }}>
+                                        <div className="w-1.5 h-1.5 bg-white rounded-full" />
+                                      </div>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col gap-3 flex-1">
+                          {quads.map((q, i) => {
+                            const isActive = profileLetters.includes(q.letter);
+                            const barPct = isActive ? (profileLetters[0] === q.letter ? 85 : 65) : 25;
+                            return (
+                              <div key={q.letter} style={{ animation: `darkFadeUp 0.3s ease-out ${0.4 + i * 0.08}s both` }}>
+                                <div className="flex justify-between mb-1">
+                                  <span className="text-[0.6rem] uppercase tracking-wider" style={{ color: isActive ? `${q.color}CC` : 'rgba(255,255,255,0.4)', fontFamily: 'monospace' }}>{q.name}</span>
+                                  <span className="text-[0.55rem] font-bold" style={{ color: isActive ? q.color : 'rgba(255,255,255,0.2)', fontFamily: 'monospace' }}>{barPct}%</span>
+                                </div>
+                                <div className="h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                                  <div className="h-full rounded-full" style={{ width: `${barPct}%`, background: isActive ? q.color : 'rgba(255,255,255,0.1)', boxShadow: isActive ? `0 0 8px ${q.color}60` : 'none', transformOrigin: 'left', animation: `darkBarFill 0.6s ease-out ${0.5 + i * 0.08}s both` }} />
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                      {/* vs Enneagram — centered bottom */}
+                      <div className="rounded-xl p-4 text-center" style={{ background: `${sys.color}10`, borderLeft: `3px solid ${sys.color}50` }}>
+                        <p className="text-[0.55rem] uppercase tracking-[0.2em] mb-1" style={{ color: `${sys.color}99`, fontFamily: 'monospace' }}>vs your Enneagram Type {leadingType}</p>
+                        <p className="text-[0.78rem] leading-relaxed" style={{ color: sys.textColor }}>{sys.vsEnneagram}</p>
+                      </div>
+                    </div>
+                  );
+                }
+
+                // ════════ JUNGIAN ════════
+                case 'jungian': {
+                  const stripThe = (s: string) => s.replace(/^the\s+/i, '').trim();
+                  const userPrimary = stripThe(ps.jungian.primaryArchetype || '');
+                  const userSupporting = (ps.jungian.supportingArchetypes || []).map(stripThe);
+                  const shadow = stripThe(ps.jungian.shadowArchetype || '');
+
+                  const ARCH = [
+                    { name: 'Innocent', mot: 'Safety' },
+                    { name: 'Sage', mot: 'Knowledge' },
+                    { name: 'Explorer', mot: 'Freedom' },
+                    { name: 'Outlaw', mot: 'Liberation' },
+                    { name: 'Magician', mot: 'Power' },
+                    { name: 'Hero', mot: 'Mastery' },
+                    { name: 'Lover', mot: 'Intimacy' },
+                    { name: 'Jester', mot: 'Pleasure' },
+                    { name: 'Everyman', mot: 'Belonging' },
+                    { name: 'Caregiver', mot: 'Service' },
+                    { name: 'Ruler', mot: 'Control' },
+                    { name: 'Creator', mot: 'Innovation' },
+                  ];
+                  const N = 12;
+                  const CX = 200, CY = 200;
+                  const R_OUT = 115, R_IN = 50;
+                  const R_PRIMARY = 180;
+                  const R_OTHERS = 148;
+                  const R_MOT = 82;
+
+                  const ptR = (r: number, idx: number) => {
+                    const a = (idx * 360 / N - 90) * Math.PI / 180;
+                    return { x: CX + r * Math.cos(a), y: CY + r * Math.sin(a) };
+                  };
+                  const midR = (r: number, idx: number) => {
+                    const a = ((idx + 0.5) * 360 / N - 90) * Math.PI / 180;
+                    return { x: CX + r * Math.cos(a), y: CY + r * Math.sin(a) };
+                  };
+                  const segArc = (r1: number, r2: number, i: number) => {
+                    const a1 = (i * 360 / N - 90) * Math.PI / 180;
+                    const a2 = ((i + 1) * 360 / N - 90) * Math.PI / 180;
+                    const x1 = CX + r2 * Math.cos(a1), y1 = CY + r2 * Math.sin(a1);
+                    const x2 = CX + r2 * Math.cos(a2), y2 = CY + r2 * Math.sin(a2);
+                    const x3 = CX + r1 * Math.cos(a2), y3 = CY + r1 * Math.sin(a2);
+                    const x4 = CX + r1 * Math.cos(a1), y4 = CY + r1 * Math.sin(a1);
+                    return `M${x1.toFixed(1)},${y1.toFixed(1)} A${r2},${r2} 0 0 1 ${x2.toFixed(1)},${y2.toFixed(1)} L${x3.toFixed(1)},${y3.toFixed(1)} A${r1},${r1} 0 0 0 ${x4.toFixed(1)},${y4.toFixed(1)} Z`;
+                  };
+
+                  // Normalize alternate archetype names to canonical ARCH names
+                  const ARCH_ALIASES: Record<string, string> = {
+                    rebel: 'outlaw', outlaw: 'outlaw',
+                    warrior: 'hero', guardian: 'hero',
+                    hermit: 'sage', scholar: 'sage', mentor: 'sage',
+                    orphan: 'everyman', regular: 'everyman', citizen: 'everyman',
+                    artist: 'creator', visionary: 'creator',
+                    seeker: 'explorer', wanderer: 'explorer', adventurer: 'explorer',
+                    revolutionary: 'outlaw', destroyer: 'outlaw',
+                    nurturer: 'caregiver', healer: 'caregiver',
+                    trickster: 'jester', fool: 'jester', comedian: 'jester',
+                    enchantress: 'magician', wizard: 'magician', alchemist: 'magician',
+                    king: 'ruler', queen: 'ruler', sovereign: 'ruler',
+                    romantic: 'lover', companion: 'lover',
+                    child: 'innocent', dreamer: 'innocent',
+                  };
+                  const norm = (n: string) => { const l = n.toLowerCase(); return ARCH_ALIASES[l] || l; };
+                  const isP = (n: string) => norm(n) === norm(userPrimary);
+                  // Only the first supporting archetype gets highlighted
+                  const firstSupporting = userSupporting.length > 0 ? norm(userSupporting[0]) : '';
+                  const isS = (n: string) => firstSupporting !== '' && norm(n) === firstSupporting;
+
+                  return (
+                    <div className="flex flex-col gap-5 p-4 pb-8 lg:p-6 lg:pb-10">
+                      <div className="text-center" style={{ animation: 'darkFadeUp 0.5s ease-out 0.1s both' }}>
+                        <p className="text-[0.55rem] uppercase tracking-[0.3em] mb-2" style={{ color: `${sys.textColor}90`, fontFamily: 'monospace' }}>What are Jungian Archetypes?</p>
+                        <p className="text-[0.78rem] leading-relaxed max-w-lg mx-auto" style={{ color: `${sys.textColor}DD` }}>{sys.whatIs}</p>
+                      </div>
+
+                      <div className="flex justify-center">
+                        <svg viewBox="0 0 400 400" width="460" height="460" className="max-w-full" style={{ overflow: 'visible' }}>
+                          {/* Circles, spokes, dots — no animation, always visible */}
+                          <circle cx={CX} cy={CY} r={R_OUT} fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+                          <circle cx={CX} cy={CY} r={R_IN} fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)" strokeWidth="0.75" />
+
+                          {Array.from({ length: N }, (_, i) => {
+                            const p1 = ptR(R_IN, i), p2 = ptR(R_OUT, i);
+                            return <line key={`sp${i}`} x1={p1.x} y1={p1.y} x2={p2.x} y2={p2.y} stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />;
+                          })}
+
+                          <line x1={CX - R_IN} y1={CY} x2={CX + R_IN} y2={CY} stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+                          <line x1={CX} y1={CY - R_IN} x2={CX} y2={CY + R_IN} stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+
+                          {Array.from({ length: N }, (_, i) => {
+                            const p = ptR(R_OUT, i);
+                            return <circle key={`dt${i}`} cx={p.x} cy={p.y} r="1.5" fill="rgba(255,255,255,0.2)" />;
+                          })}
+
+                          {/* Segment highlights — AFTER big labels appear, at 1.7s */}
+                          {ARCH.map((a, i) => isP(a.name) ? <path key={`hp${i}`} d={segArc(R_IN, R_OUT, i)} fill="rgba(134,239,172,0.15)" stroke="rgba(134,239,172,0.3)" strokeWidth="0.8" style={{ animation: 'archSegReveal 1.5s ease-out 1.2s both' }} /> : null)}
+                          {ARCH.map((a, i) => isS(a.name) && !isP(a.name) ? <path key={`hs${i}`} d={segArc(R_IN, R_OUT, i)} fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)" strokeWidth="0.5" style={{ animation: 'archSegReveal 1.5s ease-out 1.2s both' }} /> : null)}
+
+                          {/* Quadrant labels — fade in early */}
+                          {['Structure', 'Journey', 'Connection', 'Legacy'].map((q, qi) => {
+                            const ox = qi === 0 ? -1 : qi === 1 ? 1 : qi === 2 ? -1 : 1;
+                            const oy = qi < 2 ? -1 : 1;
+                            return <text key={q} x={CX + ox * R_IN * 0.42} y={CY + oy * R_IN * 0.42} textAnchor="middle" dominantBaseline="middle" fontSize="7.5" fill="rgba(255,255,255,0.4)" fontWeight="500" fontFamily="serif" style={{ animation: `darkFadeUp 0.4s ease-out ${0.15 + qi * 0.06}s both` }}>{q}</text>;
+                          })}
+
+                          {/* Motivation labels — spin in clockwise */}
+                          {ARCH.map((a, i) => {
+                            const m = midR(R_MOT, i);
+                            const deg = (i + 0.5) * 360 / N;
+                            const rot = deg > 180 ? deg + 180 : deg;
+                            return <text key={`mot${i}`} x={m.x} y={m.y} textAnchor="middle" dominantBaseline="middle" fontSize="8" fill={isP(a.name) ? 'rgba(134,239,172,0.6)' : 'rgba(255,255,255,0.25)'} fontWeight="400" fontFamily="serif" fontStyle="italic" transform={`rotate(${rot - 90}, ${m.x}, ${m.y})`} style={{ animation: `darkFadeUp 0.3s ease-out ${0.2 + i * 0.05}s both` }}>{a.mot}</text>;
+                          })}
+
+                          {/* ═══ PHASE 1: All 12 names spin in clockwise, same dim style ═══ */}
+                          {ARCH.map((a, i) => {
+                            const m = midR(R_OTHERS, i);
+                            const p = isP(a.name);
+                            const s = isS(a.name) && !p;
+                            return (
+                              <text key={`nm${i}`} x={m.x} y={m.y} textAnchor="middle" dominantBaseline="middle"
+                                fontSize="10" fill="rgba(255,255,255,0.3)" fontWeight="400" fontFamily="serif" letterSpacing="0.03em"
+                                style={p || s
+                                  ? { animationName: 'darkFadeUp, archDimOut', animationDuration: '0.3s, 0.35s', animationDelay: `${0.2 + i * 0.05}s, 0.85s`, animationTimingFunction: 'ease-out, ease-in', animationFillMode: 'both, forwards' }
+                                  : { animation: `darkFadeUp 0.3s ease-out ${0.2 + i * 0.05}s both` }
+                                }>
+                                {a.name}
+                              </text>
+                            );
+                          })}
+
+                          {/* ═══ PHASE 2: Big labels fade in at 1.4s (dim text gone by 1.3s) ═══ */}
+                          {ARCH.map((a, i) => {
+                            const p = isP(a.name);
+                            const s = isS(a.name) && !p;
+                            if (!p && !s) return null;
+
+                            if (p) {
+                              const m = midR(R_PRIMARY, i);
+                              return (
+                                <g key={`rv${i}`} style={{ animation: 'archSegReveal 1.5s ease-out 1.2s both' }}>
+                                  <circle cx={m.x} cy={m.y} r="36" fill="rgba(134,239,172,0.04)" style={{ animation: 'archPrimaryPulse 4s ease-in-out 2.2s infinite' }} />
+                                  <circle cx={m.x} cy={m.y} r="28" fill="none" stroke="rgba(134,239,172,0.25)" strokeWidth="0.6" strokeDasharray="4 3" style={{ animation: 'archPrimaryRing 6s linear 2.2s infinite', transformOrigin: `${m.x}px ${m.y}px` }} />
+                                  <circle cx={m.x} cy={m.y} r="22" fill="rgba(134,239,172,0.06)" stroke="rgba(134,239,172,0.15)" strokeWidth="0.4" />
+                                  <text x={m.x} y={m.y - 3} textAnchor="middle" dominantBaseline="middle" fontSize="17" fill="#86EFAC" fontWeight="800" fontFamily="serif" letterSpacing="0.02em">{a.name}</text>
+                                  <text x={m.x} y={m.y + 14} textAnchor="middle" dominantBaseline="middle" fontSize="6" fill="rgba(134,239,172,0.7)" fontWeight="700" fontFamily="sans-serif" letterSpacing="0.2em">PRIMARY</text>
+                                </g>
+                              );
+                            }
+
+                            const m = midR(R_OTHERS, i);
+                            return (
+                              <g key={`rv${i}`} style={{ animation: 'archSegReveal 1.5s ease-out 1.2s both' }}>
+                                <circle cx={m.x} cy={m.y} r="24" fill="rgba(255,255,255,0.03)" style={{ animation: 'archSupportGlow 3s ease-in-out 2.2s infinite' }} />
+                                <circle cx={m.x} cy={m.y} r="18" fill="rgba(255,255,255,0.04)" />
+                                <text x={m.x} y={m.y - 2} textAnchor="middle" dominantBaseline="middle" fontSize="13" fill="rgba(255,255,255,0.9)" fontWeight="700" fontFamily="serif" letterSpacing="0.02em">{a.name}</text>
+                                <text x={m.x} y={m.y + 11} textAnchor="middle" dominantBaseline="middle" fontSize="5.5" fill="rgba(255,255,255,0.5)" fontWeight="700" fontFamily="sans-serif" letterSpacing="0.18em">SUPPORTING</text>
+                              </g>
+                            );
+                          })}
+                        </svg>
+                      </div>
+
+                      <div className="flex flex-col lg:flex-row gap-3" style={{ animation: 'darkFadeUp 0.5s ease-out 0.3s both' }}>
+                        <div className="flex-1 rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                          <p className="text-[0.55rem] uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'monospace' }}>Primary Archetype</p>
+                          <p className="font-serif text-[1.3rem] font-bold text-white">{userPrimary}</p>
+                          {userSupporting.length > 0 && <p className="text-[0.7rem] mt-1" style={{ color: 'rgba(255,255,255,0.6)' }}>Supported by {userSupporting.join(' & ')}</p>}
+                          {ps.jungian.reasoning && <p className="text-[0.75rem] leading-relaxed mt-2" style={{ color: 'rgba(255,255,255,0.75)' }}>{cleanInsight(ps.jungian.reasoning)}</p>}
+                        </div>
+                        <div className="flex-1 rounded-xl p-4" style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.15)' }}>
+                          <p className="text-[0.55rem] uppercase tracking-[0.15em] mb-1" style={{ color: '#A78BFA99', fontFamily: 'monospace' }}>The Shadow</p>
+                          <p className="font-serif text-[1.3rem] font-bold text-[#A78BFA]">{shadow}</p>
+                          {ps.jungian.shadowNote && <p className="text-[0.75rem] italic leading-relaxed mt-1 text-[#94A3B8]">{(() => { const s = ps.jungian.shadowNote; const sents = s.match(/[^.!?]+[.!?]+/g) || []; return sents.slice(0, 2).join(' ').trim() || s.slice(0, 200); })()}</p>}
+                        </div>
+                      </div>
+
+                      <div className="rounded-xl p-4 text-center" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', animation: 'darkFadeUp 0.5s ease-out 0.4s both' }}>
+                        <p className="text-[0.55rem] uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'monospace' }}>vs your Enneagram Type {leadingType}</p>
+                        <p className="text-[0.78rem] leading-relaxed" style={{ color: sys.textColor }}>{sys.vsEnneagram}</p>
+                      </div>
+                    </div>
+                  );
+                }
+
+                // ════════ HUMAN DESIGN ════════
+                case 'humanDesign': {
+                  const hdType = ps.humanDesign.likelyType || '—';
+                  const HD_TYPES = [
+                    { name: 'Manifestor', desc: 'Initiates and impacts', color: '#DC2626', icon: '⚡' },
+                    { name: 'Generator', desc: 'Responds with sustained energy', color: '#D97706', icon: '☀' },
+                    { name: 'Manifesting Generator', desc: 'Multi-passionate responder', color: '#059669', icon: '✦' },
+                    { name: 'Projector', desc: 'Guides and sees clearly', color: '#2563EB', icon: '◇' },
+                    { name: 'Reflector', desc: 'Mirrors the environment', color: '#7C3AED', icon: '○' },
+                  ];
+                  const bullets = (ps.humanDesign.reasoning || '').split(/[.!?]+/).filter(s => s.trim()).slice(0, 3).map(s => s.trim() + '.');
+                  return (
+                    <div className="p-4 pb-8 lg:p-6 lg:pb-10">
+                      <div className="max-w-2xl mx-auto flex flex-col gap-5">
+                        <div className="text-center">
+                          <p className="text-[0.55rem] uppercase tracking-[0.3em] mb-2" style={{ color: `${sys.textColor}80`, fontFamily: 'monospace' }}>What is Human Design?</p>
+                          <p className="text-[0.78rem] leading-relaxed max-w-md mx-auto" style={{ color: `${sys.textColor}CC` }}>{sys.whatIs}</p>
+                        </div>
+                        {/* Type cards — each with its own accent color */}
+                        <div className="flex flex-col gap-2">
+                          {HD_TYPES.map((t, i) => {
+                            const isUser = hdType.toLowerCase().includes(t.name.toLowerCase());
+                            return (
+                              <div key={t.name} className="flex items-center gap-3 rounded-xl px-4 py-3 transition-all"
+                                style={{
+                                  background: isUser ? `${t.color}15` : 'rgba(255,255,255,0.02)',
+                                  border: `1px solid ${isUser ? t.color + '40' : 'rgba(255,255,255,0.06)'}`,
+                                  boxShadow: isUser ? `0 0 20px ${t.color}15` : 'none',
+                                  animation: `darkFadeUp 0.4s ease-out ${0.15 + i * 0.08}s both`,
+                                }}>
+                                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg"
+                                  style={{ background: isUser ? `${t.color}25` : 'rgba(255,255,255,0.04)', border: `1.5px solid ${isUser ? t.color + '60' : 'rgba(255,255,255,0.08)'}`, boxShadow: isUser ? `0 0 12px ${t.color}30` : 'none' }}>
+                                  <span style={{ color: isUser ? t.color : 'rgba(255,255,255,0.2)' }}>{t.icon}</span>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-[0.75rem] font-bold" style={{ color: isUser ? t.color : 'rgba(255,255,255,0.35)' }}>{t.name}</p>
+                                  <p className="text-[0.6rem] leading-snug mt-0.5" style={{ color: isUser ? `${t.color}BB` : 'rgba(255,255,255,0.2)' }}>{t.desc}</p>
+                                </div>
+                                {isUser && <span className="text-[0.5rem] uppercase tracking-wider flex-shrink-0 font-bold" style={{ color: t.color, fontFamily: 'monospace' }}>You</span>}
+                              </div>
+                            );
+                          })}
+                        </div>
+                        {/* Reasoning as warm prose */}
+                        <div className="rounded-xl p-4" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), rgba(217,119,6,0.06))', border: '1px solid rgba(255,255,255,0.08)' }}>
+                          <p className="font-serif text-[0.88rem] italic leading-relaxed text-center" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                            {cleanInsight(ps.humanDesign.reasoning || '')}
+                          </p>
+                        </div>
+                        <div className="rounded-xl p-3 text-center" style={{ background: 'rgba(255,255,255,0.02)', border: '1px dashed rgba(255,255,255,0.08)' }}>
+                          <p className="text-[0.6rem] italic leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>Community-based framework · No peer-reviewed research · Take what resonates</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                default: return null;
+              }
+            };
+
+            // ── Result values for collapsed cards ──
+            const getResult = (key: SystemKey) => {
+              switch (key) {
+                case 'mbti': return ps.mbti.primary || '—';
+                case 'bigFive': return 'OCEAN';
+                case 'attachment': { const s = (ps.attachment.style || '').replace(/_/g, ' '); return s ? `${s} Attachment` : '—'; }
+                case 'disc': return ps.disc.profile || '—';
+                case 'jungian': return (ps.jungian.primaryArchetype || '—').replace(/^The\s+/i, '');
+                case 'humanDesign': return ps.humanDesign.likelyType || '—';
+              }
+            };
+
+            // ── Detail view — full-bleed with floating peek cards ──
+            if (openSys) {
+              const sysIndex = SYSTEMS.findIndex(s => s.key === openSys);
+              const sys = SYSTEMS[sysIndex];
+              const result = getResult(openSys);
+              const mbtiName = openSys === 'mbti' ? (MBTI_NAMES[ps.mbti.primary || ''] || '') : '';
+              const prevSys = SYSTEMS[(sysIndex - 1 + SYSTEMS.length) % SYSTEMS.length];
+              const nextSys = SYSTEMS[(sysIndex + 1) % SYSTEMS.length];
+
+              return (
+                <div className="relative" style={{ animation: 'darkCardEnter 0.4s ease-out both', margin: '0 calc(-50vw + 50%)', width: '100vw' }}>
+                  {/* Top bar: dots + All Systems — inset */}
+                  <div className="flex items-center justify-between mb-3 px-6 lg:px-12">
+                    <div className="flex gap-1.5 items-center">
+                      {SYSTEMS.map((s, i) => (
+                        <button key={s.key} onClick={() => setExpandedSystem(s.key)}
+                          className="rounded-full transition-all duration-300"
+                          style={{ width: i === sysIndex ? 22 : 7, height: 7, background: i === sysIndex ? s.color : `${s.color}35`, borderRadius: 4 }} />
+                      ))}
+                    </div>
+                    <button onClick={() => setExpandedSystem(null)}
+                      className="flex items-center gap-2 rounded-full px-4 py-2 transition-all hover:bg-[#2563EB]/10 active:scale-95"
+                      style={{ border: '1.5px solid #2563EB', background: 'white', boxShadow: '0 2px 8px rgba(37,99,235,0.12)' }}>
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1h5v5H1zM8 1h5v5H8zM1 8h5v5H1zM8 8h5v5H8z" stroke="#2563EB" strokeWidth="1.3" strokeLinejoin="round"/></svg>
+                      <span className="font-sans text-[0.72rem] font-bold text-[#2563EB]">All Systems</span>
+                    </button>
+                  </div>
+
+                  {/* 3-column layout: peek | main | peek — always loops */}
+                  <div className="flex items-center gap-2 px-2 lg:px-4">
+                    {/* ← Prev peek */}
+                    <button onClick={() => setExpandedSystem(prevSys.key)}
+                      className="flex-shrink-0 w-[18%] rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-300 hover:opacity-75 hover:scale-[1.03] self-stretch"
+                      style={{ opacity: 0.4, background: prevSys.bg, border: `1px solid ${prevSys.color}30`, boxShadow: `0 4px 20px ${prevSys.color}12` }}>
+                      <div className="absolute inset-0" style={{ background: `radial-gradient(circle at 70% 30%, ${prevSys.glow}25 0%, transparent 70%)` }} />
+                      <div className="relative flex flex-col items-center justify-center gap-2 p-3 h-full">
+                        <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: `${prevSys.color}20`, border: `2px solid ${prevSys.color}40`, animation: 'peekBobLeft 2s ease-in-out infinite' }}>
+                          <span className="text-white text-lg">&larr;</span>
+                        </div>
+                        <span className="font-serif text-[0.75rem] font-bold text-white/70 text-center leading-tight">{prevSys.label}</span>
+                        <span className="font-serif text-[0.7rem] font-bold capitalize text-center" style={{ color: prevSys.color }}>{getResult(prevSys.key).replace(/\bOr\b/g, 'or')}</span>
+                      </div>
+                    </button>
+
+                    {/* Current detail card — center */}
+                    <div className="flex-1 min-w-0 relative z-20 rounded-2xl overflow-hidden" style={{ background: sys.bg, border: `1px solid ${sys.color}35`, boxShadow: `0 8px 40px ${sys.color}25, 0 0 60px ${sys.color}08` }}>
+                      {/* Animated mesh atmosphere — three drifting orbs */}
+                      <div className="absolute top-[-15%] right-[-10%] w-[60%] h-[55%] rounded-full pointer-events-none z-0 blur-2xl" style={{ background: `radial-gradient(circle, ${sys.glow}60 0%, transparent 65%)`, animation: 'meshDrift1 8s ease-in-out infinite' }} />
+                      <div className="absolute bottom-[-10%] left-[-15%] w-[50%] h-[50%] rounded-full pointer-events-none z-0 blur-3xl" style={{ background: `radial-gradient(circle, ${sys.glow}45 0%, transparent 60%)`, animation: 'meshDrift2 11s ease-in-out infinite' }} />
+                      <div className="absolute top-[25%] right-[10%] w-[40%] h-[40%] rounded-full pointer-events-none z-0 blur-2xl" style={{ background: `radial-gradient(circle, ${sys.glow}35 0%, transparent 55%)`, animation: 'meshDrift3 14s ease-in-out infinite' }} />
+                      <div className="relative z-10 p-4 lg:p-6 text-center">
+                        <div className="flex justify-center"><ConfBadge level={sys.conf} color={sys.color} /></div>
+                        <h3 className="font-serif text-[1.4rem] lg:text-[1.8rem] font-bold text-white mt-1 leading-tight" style={{ textShadow: `0 0 30px ${sys.color}40` }}>{sys.label}</h3>
+                        <p className="font-serif text-[1.1rem] lg:text-[1.4rem] font-bold leading-tight capitalize mt-1 break-words" style={{ color: sys.color }}>{result.replace(/\bOr\b/g, 'or')}</p>
+                        {mbtiName && <p className="text-[0.65rem] italic mt-0.5" style={{ color: `${sys.textColor}80` }}>{mbtiName}</p>}
+                      </div>
+                      <div className="relative z-10">
+                        {renderExpanded(openSys)}
+                      </div>
                     </div>
 
-                    {/* Jungian */}
-                    <SC sysKey="jungian" color="#7A9E7E" icon="J" label="Jungian Archetypes" confidence={ps.jungian.confidence} delay={0.65}>
-                      <div className="flex gap-2 flex-wrap mb-4">
-                        <div className="rounded-xl px-4 py-2 border" style={{ background: 'rgba(122,158,126,0.08)', borderColor: 'rgba(122,158,126,0.25)' }}>
-                          <span className="font-sans text-sm font-semibold text-[#7A9E7E]">{ps.jungian.primaryArchetype}</span>
+                    {/* → Next peek */}
+                    <button onClick={() => setExpandedSystem(nextSys.key)}
+                      className="flex-shrink-0 w-[18%] rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-300 hover:opacity-75 hover:scale-[1.03] self-stretch"
+                      style={{ opacity: 0.4, background: nextSys.bg, border: `1px solid ${nextSys.color}30`, boxShadow: `0 4px 20px ${nextSys.color}12` }}>
+                      <div className="absolute inset-0" style={{ background: `radial-gradient(circle at 30% 30%, ${nextSys.glow}25 0%, transparent 70%)` }} />
+                      <div className="relative flex flex-col items-center justify-center gap-2 p-3 h-full">
+                        <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: `${nextSys.color}20`, border: `2px solid ${nextSys.color}40`, animation: 'peekBob 2s ease-in-out infinite' }}>
+                          <span className="text-white text-lg">&rarr;</span>
                         </div>
-                        {(ps.jungian.supportingArchetypes || []).map((a) => (
-                          <div key={a} className="rounded-xl px-4 py-2 border transition-transform hover:scale-[1.02]" style={{ background: 'rgba(122,158,126,0.04)', borderColor: 'rgba(122,158,126,0.15)' }}>
-                            <span className="font-sans text-sm font-medium text-[#7A9E7E]/75">{a}</span>
-                          </div>
-                        ))}
+                        <span className="font-serif text-[0.75rem] font-bold text-white/70 text-center leading-tight">{nextSys.label}</span>
+                        <span className="font-serif text-[0.7rem] font-bold capitalize text-center" style={{ color: nextSys.color }}>{getResult(nextSys.key).replace(/\bOr\b/g, 'or')}</span>
                       </div>
-                      <div className="bg-[#1E293B] rounded-xl p-5 mb-4 relative overflow-hidden">
-                        <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%)' }} />
-                        <p className="font-mono text-[0.52rem] uppercase tracking-[0.12em] text-[#7C3AED]/55 mb-2">The Shadow</p>
-                        <p className="font-serif text-xl font-bold text-[#7C3AED] mb-1.5">{ps.jungian.shadowArchetype}</p>
-                        {ps.jungian.shadowNote && <p className="font-sans text-[0.82rem] text-[#94A3B8] leading-relaxed italic">{ps.jungian.shadowNote}</p>}
-                      </div>
-                      <p className="font-sans text-[0.85rem] text-[#2C2C2C] leading-[1.7]">{ps.jungian.reasoning}</p>
-                      <Ev text={ps.jungian.personalEvidence} color="#7A9E7E" />
-                    </SC>
-
-                    {/* Human Design */}
-                    <SC sysKey="humanDesign" color="#9CA3AF" icon="H" label="Human Design" confidence="low" delay={0.7}>
-                      <div className="inline-block rounded-xl px-5 py-2.5 mb-3" style={{ border: '1px dashed #D1D5DB', background: '#FAFAFA' }}>
-                        <span className="font-serif text-[1rem] text-[#6B6B6B] font-medium">{ps.humanDesign.likelyType || '—'}</span>
-                      </div>
-                      <p className="font-sans text-[0.84rem] text-[#6B6B6B] leading-[1.7] mb-4">{ps.humanDesign.reasoning}</p>
-                      <div className="rounded-xl p-4 bg-gradient-to-r from-[#F5F3F0] to-[#FAF8F5] border border-[#E8E4E0]">
-                        <p className="font-sans text-[0.72rem] text-[#9B9590] italic leading-relaxed">{ps.humanDesign.disclaimer}</p>
-                      </div>
-                    </SC>
+                    </button>
                   </div>
                 </div>
+              );
+            }
+
+            // ── All systems grid (collapsed) ──
+            return (
+              <div className="grid grid-cols-2 gap-2.5">
+                {SYSTEMS.map((sys, i) => {
+                  const result = getResult(sys.key);
+                  const resultIsLong = result.length > 15;
+                  const discBlend = sys.key === 'disc' ? (ps.disc.blend || '').split(/[—–,]/)[0].trim() : '';
+                  const mbtiName = sys.key === 'mbti' ? (MBTI_NAMES[ps.mbti.primary || ''] || '') : '';
+
+                  return (
+                    <button key={sys.key}
+                      onClick={() => setExpandedSystem(sys.key)}
+                      className="text-left rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                      style={{ background: sys.bg, border: `1px solid ${sys.color}30`, boxShadow: `0 2px 16px ${sys.color}12`, animation: `darkCardEnter 0.5s ease-out ${i * 0.06}s both` }}
+                    >
+                      <div className="relative p-4 overflow-hidden">
+                        {/* Animated mesh orbs */}
+                        <div className="absolute top-[-20%] right-[-15%] w-[70%] h-[70%] rounded-full pointer-events-none blur-xl" style={{ background: `radial-gradient(circle, ${sys.glow}50 0%, transparent 65%)`, animation: 'meshDrift1 9s ease-in-out infinite' }} />
+                        <div className="absolute bottom-[-15%] left-[-20%] w-[60%] h-[60%] rounded-full pointer-events-none blur-2xl" style={{ background: `radial-gradient(circle, ${sys.glow}40 0%, transparent 60%)`, animation: 'meshDrift2 12s ease-in-out infinite' }} />
+                        <div className="relative">
+                          <ConfBadge level={sys.conf} color={sys.color} />
+                          <p className="font-serif text-[0.85rem] font-bold text-white mt-1.5 leading-tight">{sys.label}</p>
+                          {resultIsLong ? (
+                            <p className="font-serif text-[1.1rem] font-bold capitalize mt-2 leading-tight" style={{ color: sys.color }}>{result}</p>
+                          ) : (
+                            <p className="font-serif text-[1.4rem] font-bold capitalize mt-1 leading-none" style={{ color: sys.color }}>{result}</p>
+                          )}
+                          {mbtiName && <p className="text-[0.55rem] italic mt-0.5 truncate" style={{ color: `${sys.textColor}50` }}>{mbtiName}</p>}
+                          {discBlend && <p className="text-[0.55rem] italic mt-0.5 truncate" style={{ color: `${sys.textColor}50` }}>{discBlend}</p>}
+                          <div className="flex items-center gap-1 mt-2">
+                            <span className="text-[0.45rem] uppercase tracking-wider" style={{ color: `${sys.textColor}35`, fontFamily: 'monospace' }}>Explore</span>
+                            <span className="text-[0.6rem]" style={{ color: `${sys.textColor}35` }}>&rarr;</span>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             );
           })()}
@@ -988,6 +1767,18 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
               </div>
             </div>
 
+            {/* ═══ LOW CONFIDENCE NUANCE NOTE ═══ */}
+            {!!(r.lowConfidenceFlag) && (
+              <div className="mt-6 px-6 py-4 bg-[#F5F0EB] rounded-xl border border-[#E0D5C8]"
+                style={{ animation: 'type-reveal-text 0.8s ease-out 1.7s forwards', opacity: 0 }}>
+                <p className="font-serif text-[0.95rem] text-[#5A4A3A] leading-relaxed">
+                  Your results suggest a strong pattern with some nuance worth exploring.
+                  The types closest to yours share meaningful overlap &mdash; which is itself
+                  a meaningful insight about who you are.
+                </p>
+              </div>
+            )}
+
             {/* ═══ BRAND CLOSER ═══ */}
             <div className="mt-8 text-center" style={{ animation: 'type-reveal-text 0.8s ease-out 1.9s forwards', opacity: 0 }}>
               <p className="font-serif italic text-[0.85rem] text-[#9B9590]">
@@ -1001,81 +1792,148 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
       }
 
       // ── Section 1: Superpower & Kryptonite ──
-      case 1:
+      case 1: {
+        const ess1 = TYPE_ESSENCE[leadingType] || TYPE_ESSENCE[1];
         return (
           <div className="flex flex-col gap-5 max-w-[600px] w-full">
-            {/* Section header */}
+            {/* Section header — type-tinted */}
             <div className="bg-gradient-to-b from-[#F0F4FF] to-transparent rounded-2xl px-6 pt-6 pb-3 text-center sr-card" style={{ animationDelay: '0.05s' }}>
               <p className="font-mono text-[0.6rem] text-[#2563EB] uppercase tracking-[0.12em] mb-1">The Wound &amp; The Gift</p>
               <h2 className="font-serif text-[1.4rem] font-bold text-[#2C2C2C]">Superpower &amp; Kryptonite</h2>
             </div>
-            {/* Superpower — warm gold accent */}
-            <div className="rounded-2xl overflow-hidden sr-card" style={{ animationDelay: '0.15s' }}>
-              <div className="h-1 bg-gradient-to-r from-[#F59E0B] to-[#FBBF24]" />
-              <div className="bg-white p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+            {/* Superpower — warm, expansive */}
+            <div className="rounded-2xl overflow-hidden sr-card relative" style={{ animationDelay: '0.15s' }}>
+              {/* Warm glow orb */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-[200px] h-[200px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)', animation: 'warmGlow 4s ease-in-out infinite' }} />
+              </div>
+              {/* Accent bar with entrance animation + radiating lines */}
+              <div className="h-1 bg-gradient-to-r from-[#F59E0B] to-[#FBBF24] relative" style={{ transformOrigin: 'left', animation: 'accentBarEnter 0.6s ease-out both' }}>
+                <svg className="absolute top-0 left-0 w-full h-8 pointer-events-none overflow-visible" viewBox="0 0 600 30">
+                  <line x1="0" y1="1" x2="100" y2="28" stroke="#F59E0B" strokeWidth="0.5" opacity="0.15" strokeDasharray="40" style={{ animation: 'radiateOut 1.5s ease-out 0.6s both' }} />
+                  <line x1="200" y1="1" x2="260" y2="25" stroke="#FBBF24" strokeWidth="0.4" opacity="0.12" strokeDasharray="40" style={{ animation: 'radiateOut 1.5s ease-out 0.8s both' }} />
+                  <line x1="400" y1="1" x2="480" y2="22" stroke="#F59E0B" strokeWidth="0.3" opacity="0.10" strokeDasharray="40" style={{ animation: 'radiateOut 1.5s ease-out 1s both' }} />
+                </svg>
+              </div>
+              <div className="bg-white p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] relative">
                 <p className="font-sans text-[0.7rem] uppercase tracking-[0.1em] text-[#B45309] mb-3">
                   Your Superpower
                 </p>
                 <p className="font-serif text-[1.05rem] text-[#2C2C2C] leading-[1.8]">
-                  <TypewriterText text={superpower || (r.superpower_description as string) || ''} delay={300} />
+                  {portalMode ? (superpower || (r.superpower_description as string) || '') : <TypewriterText text={superpower || (r.superpower_description as string) || ''} delay={300} />}
                 </p>
               </div>
             </div>
-            {/* Kryptonite — cool slate accent */}
-            <div className="rounded-2xl overflow-hidden sr-card" style={{ animationDelay: '0.4s' }}>
-              <div className="h-1 bg-gradient-to-r from-[#64748B] to-[#94A3B8]" />
-              <div className="bg-white p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+            {/* Kryptonite — cool, contained */}
+            <div className="rounded-2xl overflow-hidden sr-card relative" style={{ animationDelay: '0.4s' }}>
+              {/* Accent bar with shimmer */}
+              <div className="h-1 relative" style={{ transformOrigin: 'left', animation: 'accentBarEnter 0.6s ease-out 0.4s both' }}>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#64748B] to-[#94A3B8]" />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%)', backgroundSize: '200% 100%', animation: 'shimmerSlide 6s ease-in-out infinite' }} />
+              </div>
+              <div className="p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] relative" style={{ background: 'linear-gradient(180deg, #FAFAFA, #F5F5F8)' }}>
                 <p className="font-sans text-[0.7rem] uppercase tracking-[0.1em] text-[#475569] mb-3">
                   Your Kryptonite
                 </p>
                 <p className="font-serif text-[1.05rem] text-[#2C2C2C] leading-[1.8]">
-                  <TypewriterText text={kryptonite || (r.kryptonite_description as string) || ''} delay={1500} />
+                  {portalMode ? (kryptonite || (r.kryptonite_description as string) || '') : <TypewriterText text={kryptonite || (r.kryptonite_description as string) || ''} delay={1500} />}
                 </p>
               </div>
             </div>
             {continueButton}
           </div>
         );
+      }
 
       // ── Section 2: React / Respond ──
-      case 2:
+      case 2: {
+        const ess2 = TYPE_ESSENCE[leadingType] || TYPE_ESSENCE[1];
+        const scenarios = (r.real_world_scenarios as Array<{ situation: string; react: string; respond: string }>) || [];
         return (
           <div className="flex flex-col gap-5 max-w-[600px] w-full">
-            {/* Section header */}
+            {/* Section header — type-tinted */}
             <div className="bg-gradient-to-b from-[#F0F4FF] to-transparent rounded-2xl px-6 pt-6 pb-3 text-center sr-card" style={{ animationDelay: '0.05s' }}>
               <p className="font-mono text-[0.6rem] text-[#2563EB] uppercase tracking-[0.12em] mb-1">Defiant Spirit</p>
               <h2 className="font-serif text-[1.4rem] font-bold text-[#2C2C2C]">React &amp; Respond</h2>
             </div>
+            {/* React — tense, constrained */}
             {reactPattern && (
-              <div className="rounded-2xl overflow-hidden sr-card" style={{ animationDelay: '0.15s' }}>
-                <div className="h-1 bg-gradient-to-r from-[#DC2626] to-[#F87171]" />
-                <div className="bg-white p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-                  <p className="font-sans text-[0.7rem] uppercase tracking-[0.1em] text-[#DC2626] mb-3">
-                    How You React
-                  </p>
-                  <p className="font-serif text-[1.05rem] text-[#2C2C2C] leading-[1.8]"><TypewriterText text={reactPattern} delay={300} /></p>
+              <div className="rounded-2xl overflow-hidden sr-card relative" style={{ animationDelay: '0.15s' }}>
+                {/* Diagonal tension lines */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 400 200">
+                  <line x1="0" y1="200" x2="150" y2="0" stroke="rgba(220,38,38,0.04)" strokeWidth="1" />
+                  <line x1="100" y1="200" x2="280" y2="0" stroke="rgba(220,38,38,0.03)" strokeWidth="0.8" />
+                  <line x1="250" y1="200" x2="400" y2="20" stroke="rgba(220,38,38,0.035)" strokeWidth="0.6" />
+                </svg>
+                {/* Accent bar — fast overshoot */}
+                <div className="h-1 bg-gradient-to-r from-[#DC2626] to-[#F87171] relative"
+                  style={{ transformOrigin: 'left', animation: 'accentBarEnter 0.4s cubic-bezier(0.34,1.56,0.64,1) both' }}>
+                  <div className="absolute inset-0 rounded" style={{ boxShadow: '0 0 8px rgba(220,38,38,0.15)', animation: 'warmGlow 3s ease-in-out infinite' }} />
+                </div>
+                <div className="bg-white p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] relative">
+                  <p className="font-sans text-[0.7rem] uppercase tracking-[0.1em] text-[#DC2626] mb-3">How You React</p>
+                  <p className="font-serif text-[1.05rem] text-[#2C2C2C] leading-[1.8]">{portalMode ? reactPattern : <TypewriterText text={reactPattern} delay={300} />}</p>
                 </div>
               </div>
             )}
+            {/* Respond — open, settled */}
             {respondPathway && (
-              <div className="rounded-2xl overflow-hidden sr-card" style={{ animationDelay: '0.4s' }}>
-                <div className="h-1 bg-gradient-to-r from-[#2563EB] to-[#60A5FA]" />
-                <div className="bg-white p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-                  <p className="font-sans text-[0.7rem] uppercase tracking-[0.1em] text-[#2563EB] mb-3">
-                    How You Respond
-                  </p>
-                  <p className="font-serif text-[1.05rem] text-[#2C2C2C] leading-[1.8]"><TypewriterText text={respondPathway} delay={1200} /></p>
+              <div className="rounded-2xl overflow-hidden sr-card relative" style={{ animationDelay: '0.4s' }}>
+                {/* Gentle arc */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 400 200">
+                  <path d="M0 180 Q200 40 400 180" fill="none" stroke="rgba(37,99,235,0.05)" strokeWidth="1.5" />
+                </svg>
+                {/* Accent bar — slow exhale */}
+                <div className="h-1 bg-gradient-to-r from-[#2563EB] to-[#60A5FA]"
+                  style={{ transformOrigin: 'left', animation: 'accentBarEnter 0.8s ease-out 0.4s both' }} />
+                <div className="bg-white p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] relative">
+                  <p className="font-sans text-[0.7rem] uppercase tracking-[0.1em] text-[#2563EB] mb-3">How You Respond</p>
+                  <p className="font-serif text-[1.05rem] text-[#2C2C2C] leading-[1.8]">{portalMode ? respondPathway : <TypewriterText text={respondPathway} delay={1200} />}</p>
                 </div>
+              </div>
+            )}
+            {/* Real-world scenarios */}
+            {scenarios.length > 0 && (
+              <div className="flex flex-col gap-3 sr-card" style={{ animationDelay: '0.6s' }}>
+                <p className="font-mono text-[0.6rem] text-[#6B6B6B] uppercase tracking-[0.12em] px-1">How this plays out</p>
+                {scenarios.map((s, i) => (
+                  <div key={i} className="bg-white rounded-2xl border border-[#E8E4E0] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] sr-card"
+                    style={{ animationDelay: `${0.7 + i * 0.1}s` }}>
+                    <div className="px-5 py-3 bg-[#FAFAF8] border-b border-[#E8E4E0]">
+                      <p className="font-serif text-[0.88rem] text-[#2C2C2C]">{s.situation}</p>
+                    </div>
+                    <div className="grid grid-cols-2 divide-x divide-[#E8E4E0]">
+                      <div className="px-4 py-3">
+                        <p className="font-mono text-[0.5rem] uppercase tracking-widest text-[#DC2626] mb-1.5">React</p>
+                        <p className="font-sans text-[0.78rem] text-[#4B5563] leading-[1.6]">{s.react}</p>
+                      </div>
+                      <div className="px-4 py-3">
+                        <p className="font-mono text-[0.5rem] uppercase tracking-widest text-[#2563EB] mb-1.5">Respond</p>
+                        <p className="font-sans text-[0.78rem] text-[#4B5563] leading-[1.6]">{s.respond}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
             {continueButton}
           </div>
         );
+      }
 
       // ── Section 3: OYN Dimensions ──
       case 3: {
         const oynEntries = Object.entries(oynSummary).filter(([, v]) => v?.trim());
         const oynColors = ['#2563EB', '#7C3AED', '#0891B2', '#059669', '#D97706', '#DC2626'];
+        const oynIcons: Record<string, string> = {
+          who: 'M12 4a4 4 0 100 8 4 4 0 000-8zM6 20c0-3.3 2.7-6 6-6s6 2.7 6 6',
+          what: 'M12 2L2 12l10 10 10-10L12 2zM12 6l6 6-6 6-6-6 6-6z',
+          why: 'M12 4a4 4 0 00-4 4c0 2 1 3 2.5 3.5L12 14l1.5-2.5C15 10 16 9 16 8a4 4 0 00-4-4zm0 14a1.5 1.5 0 110 3 1.5 1.5 0 010-3',
+          how: 'M12 2a2 2 0 012 2v1a7 7 0 014.5 2.5l.7-.7a2 2 0 112.8 2.8l-.7.7A7 7 0 0122 12h1a2 2 0 010 4h-1a7 7 0 01-2.5 4.5l.7.7a2 2 0 11-2.8 2.8l-.7-.7A7 7 0 0112 22v1a2 2 0 01-4 0v-1a7 7 0 01-4.5-2.5l-.7.7a2 2 0 11-2.8-2.8l.7-.7A7 7 0 012 12H1a2 2 0 010-4h1a7 7 0 012.5-4.5L3.8 2.8A2 2 0 116.6.0l.7.7A7 7 0 0112 3V2z',
+          when: 'M12 2a10 10 0 100 20 10 10 0 000-20zm0 3v7l5 3',
+          where: 'M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z',
+        };
+        const ess3 = TYPE_ESSENCE[leadingType] || TYPE_ESSENCE[1];
         return (
           <div className="flex flex-col gap-5 max-w-[600px] w-full">
             <div className="bg-gradient-to-b from-[#F0F4FF] to-transparent rounded-2xl px-6 pt-6 pb-3 text-center">
@@ -1084,23 +1942,29 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
               <p className="font-sans text-[0.82rem] text-[#6B6B6B] mt-1">How your type shows up across six life dimensions.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
-              {oynEntries.map(([key, value], i) => (
-                <div
-                  key={key}
-                  className="rounded-2xl overflow-hidden sr-card flex flex-col"
-                  style={{ animationDelay: `${0.1 + i * 0.1}s` }}
-                >
-                  <div className="h-1 flex-shrink-0" style={{ background: oynColors[i % oynColors.length] }} />
-                  <div className="bg-white p-5 shadow-[0_2px_8px_rgba(0,0,0,0.05)] flex-1">
-                    <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.12em] mb-2"
-                      style={{ color: oynColors[i % oynColors.length] }}
-                    >
-                      {oynLabels[key] ?? key.toUpperCase()}
-                    </p>
-                    <p className="font-sans text-[0.9rem] text-[#2C2C2C] leading-relaxed">{value}</p>
+              {oynEntries.map(([key, value], i) => {
+                const color = oynColors[i % oynColors.length];
+                const iconPath = oynIcons[key] || oynIcons.who;
+                return (
+                  <div key={key} className="rounded-2xl overflow-hidden sr-card flex flex-col"
+                    style={{ animationDelay: `${0.1 + i * 0.15}s` }}>
+                    <div className="h-1 flex-shrink-0" style={{ background: color, transformOrigin: 'left', animation: `accentBarEnter 0.5s ease-out ${0.1 + i * 0.15}s both` }} />
+                    <div className="bg-white p-5 shadow-[0_2px_8px_rgba(0,0,0,0.05)] flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d={iconPath} />
+                        </svg>
+                        <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.12em]" style={{ color }}>
+                          {oynLabels[key] ?? key.toUpperCase()}
+                        </p>
+                      </div>
+                      {/* Decorative bar */}
+                      <div className="h-[2px] rounded-full mb-3" style={{ width: `${Math.min(80, Math.max(30, (value?.length || 50) / 2))}%`, background: `${color}20`, animation: `accentBarEnter 0.5s ease-out ${0.3 + i * 0.15}s both`, transformOrigin: 'left' }} />
+                      <p className="font-sans text-[0.9rem] text-[#2C2C2C] leading-relaxed">{value}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             {continueButton}
           </div>
@@ -1282,15 +2146,27 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                   Your Strongest Types Overall
                 </p>
                 <div className="flex flex-col gap-2">
-                  {top3Overall.map((t, i) => (
-                    <div key={t.type} className="flex items-center gap-3">
-                      <span className="font-serif text-lg font-bold w-8 text-[#2C2C2C]">{t.type}</span>
-                      <AnimatedBar percent={Math.min(100, Math.round(t.score * 100))} color={i === 0 ? '#2563EB' : i === 1 ? '#60A5FA' : '#93C5FD'} delay={700 + i * 150} height="h-2.5" numberClassName="text-[#9B9590]" showNumber={false} />
-                      <span className="font-sans text-xs text-[#9B9590] w-16 text-right">
-                        {TYPE_NAMES[t.type] || ''}
-                      </span>
-                    </div>
-                  ))}
+                  {(() => {
+                    // Normalize scores: top score = its real share of total, shown as relative %
+                    const totalScore = top3Overall.reduce((sum, t) => sum + t.score, 0);
+                    const maxScore = top3Overall[0]?.score || 1;
+                    return top3Overall.map((t, i) => {
+                      // Show as percentage of max score (top type = ~95%, others proportional)
+                      const relPct = totalScore > 0 ? Math.round((t.score / totalScore) * 100) : 0;
+                      // For bar width, use relative to max
+                      const barPct = maxScore > 0 ? Math.round((t.score / maxScore) * 100) : 0;
+                      return (
+                        <div key={t.type} className="flex items-center gap-3">
+                          <span className="font-serif text-lg font-bold w-8 text-[#2C2C2C]">{t.type}</span>
+                          <AnimatedBar percent={barPct} color={i === 0 ? '#2563EB' : i === 1 ? '#60A5FA' : '#93C5FD'} delay={700 + i * 150} height="h-2.5" numberClassName="text-[#9B9590]" showNumber={false} />
+                          <span className="font-mono text-[0.7rem] font-semibold w-10 text-right" style={{ color: i === 0 ? '#2563EB' : '#9B9590' }}>{relPct}%</span>
+                          <span className="font-sans text-xs text-[#9B9590] w-20 text-right truncate">
+                            {TYPE_NAMES[t.type] || ''}
+                          </span>
+                        </div>
+                      );
+                    });
+                  })()}
                 </div>
               </div>
             )}
@@ -1574,44 +2450,60 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
 
       // ── Section 7: Full Assessment Summary ──
       case 7: {
+        const ess7 = TYPE_ESSENCE[leadingType] || TYPE_ESSENCE[1];
+        const profileRows = [
+          { label: 'Type', value: `${leadingType} — ${typeName}`, color: ess7.colors[1], show: true },
+          { label: 'Defiant Spirit Name', value: dsName, color: '#7A9E7E', show: !!dsName },
+          { label: 'Wing', value: wing, color: '#2C2C2C', show: !!wing },
+          { label: 'Instinctual Variant', value: variant, color: '#2C2C2C', show: !!variant },
+          { label: 'Tritype', value: tritype, color: '#2C2C2C', show: !!tritype },
+        ].filter(r => r.show);
         return (
-          <div className="flex flex-col gap-5 max-w-[600px] w-full">
-            <div className="bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sr-card" style={{ animationDelay: '0.1s' }}>
-              <p className="font-sans text-[0.7rem] uppercase tracking-[0.1em] text-[#9B9590] mb-4">
+          <div className="flex flex-col gap-5 max-w-[600px] w-full relative">
+            {/* Type atmosphere glow */}
+            <div className="absolute inset-0 flex items-center justify-start pointer-events-none">
+              <div className="w-[300px] h-[300px] rounded-full -translate-x-1/4" style={{ background: `radial-gradient(circle, ${ess7.colors[0]}08 0%, transparent 70%)` }} />
+            </div>
+            <div className="bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sr-card relative" style={{ animationDelay: '0.1s', borderBottom: `3px solid ${ess7.colors[1]}` }}>
+              {/* Decorative enneagram symbol */}
+              <div className="flex justify-center mb-4">
+                <svg width="48" height="48" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="38" fill="none" stroke="#E8E4E0" strokeWidth="1" />
+                  {[9,1,2,3,4,5,6,7,8].map((t, idx) => {
+                    const a = (idx * 40 * Math.PI) / 180;
+                    const px = 50 + 38 * Math.sin(a);
+                    const py = 50 - 38 * Math.cos(a);
+                    return <circle key={t} cx={px} cy={py} r={t === leadingType ? 4 : 2} fill={t === leadingType ? ess7.colors[1] : '#E8E4E0'} />;
+                  })}
+                </svg>
+              </div>
+              <p className="font-sans text-[0.7rem] uppercase tracking-[0.1em] text-[#9B9590] mb-4 text-center">
                 Your Full Profile
               </p>
               <div className="flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                  <span className="font-sans text-sm text-[#6B6B6B]">Type</span>
-                  <span className="font-sans text-sm font-semibold text-[#2C2C2C]">{leadingType} — {typeName}</span>
-                </div>
-                {dsName && (
-                  <div className="flex items-center justify-between">
-                    <span className="font-sans text-sm text-[#6B6B6B]">Defiant Spirit Name</span>
-                    <span className="font-sans text-sm font-semibold text-[#7A9E7E]">{dsName}</span>
+                {profileRows.map((row, i) => (
+                  <div key={row.label} className="flex items-center justify-between sr-card" style={{ animationDelay: `${0.2 + i * 0.06}s` }}>
+                    <span className="font-sans text-sm text-[#6B6B6B]">{row.label}</span>
+                    <span className="font-sans text-sm font-semibold flex items-center gap-1.5" style={{ color: row.color }}>
+                      {i === 0 && <span className="inline-block w-3 h-3 rounded-full" style={{ background: ess7.colors[1] }} />}
+                      {row.value}
+                    </span>
                   </div>
-                )}
-                {wing && (
-                  <div className="flex items-center justify-between">
-                    <span className="font-sans text-sm text-[#6B6B6B]">Wing</span>
-                    <span className="font-sans text-sm font-semibold text-[#2C2C2C]">{wing}</span>
-                  </div>
-                )}
-                {variant && (
-                  <div className="flex items-center justify-between">
-                    <span className="font-sans text-sm text-[#6B6B6B]">Instinctual Variant</span>
-                    <span className="font-sans text-sm font-semibold text-[#2C2C2C]">{variant}</span>
-                  </div>
-                )}
-                {tritype && (
-                  <div className="flex items-center justify-between">
-                    <span className="font-sans text-sm text-[#6B6B6B]">Tritype</span>
-                    <span className="font-sans text-sm font-semibold text-[#2C2C2C]">{tritype}</span>
-                  </div>
-                )}
-                <div className="flex items-center justify-between border-t border-[#E8E4E0] pt-3 mt-1">
+                ))}
+                {/* Confidence with ring gauge */}
+                <div className="flex items-center justify-between border-t border-[#E8E4E0] pt-3 mt-1 sr-card" style={{ animationDelay: `${0.2 + profileRows.length * 0.06}s` }}>
                   <span className="font-sans text-sm text-[#6B6B6B]">Confidence</span>
-                  <span className="font-sans text-sm font-semibold text-[#2563EB]">{confidencePct}%</span>
+                  <span className="font-sans text-sm font-semibold text-[#2563EB] flex items-center gap-1.5">
+                    <svg width="28" height="28" viewBox="0 0 28 28" className="inline-block">
+                      <circle cx="14" cy="14" r="11" fill="none" stroke="#E8E4E0" strokeWidth="2.5" />
+                      <circle cx="14" cy="14" r="11" fill="none" stroke="#2563EB" strokeWidth="2.5"
+                        strokeLinecap="round" strokeDasharray={2 * Math.PI * 11}
+                        strokeDashoffset={2 * Math.PI * 11 * (1 - (confidencePct || 0) / 100)}
+                        transform="rotate(-90 14 14)"
+                        style={{ transition: 'stroke-dashoffset 1s ease-out' }} />
+                    </svg>
+                    {confidencePct}%
+                  </span>
                 </div>
               </div>
             </div>
@@ -1628,133 +2520,157 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         const ess = TYPE_ESSENCE[leadingType] || TYPE_ESSENCE[1];
 
         return (
-          <div className="flex flex-col w-full max-w-[900px] items-center gap-10">
+          <div className="flex flex-col w-full max-w-[1150px] items-center gap-8">
 
-            {/* ═══ HERO HEADLINE — sets the page purpose ═══ */}
-            <div className="text-center max-w-xl sr-card" style={{ animationDelay: '0.05s' }}>
-              <h1 className="font-serif text-[2.4rem] font-bold text-[#2C2C2C] leading-tight mb-4">
-                Your Journey Begins Here
-              </h1>
-              <p className="font-serif text-[1.05rem] text-[#6B6B6B] leading-[1.85]">
-                The number is not the destination. It is the starting point of the return to wholeness. You have everything you need to choose differently.
-              </p>
-            </div>
-
-            {/* ═══ PERSONAL CLOSING — Baruch's message to this person ═══ */}
-            {defy && (
-              <div
-                className="rounded-2xl w-full relative overflow-hidden sr-card"
-                style={{
-                  background: `linear-gradient(155deg, ${ess.colors[0]} 0%, #1E293B 50%, #0F172A 100%)`,
-                  animationDelay: '0.15s',
-                }}
-              >
-                <div className="absolute inset-0 pointer-events-none"
-                  style={{ background: `radial-gradient(ellipse at 50% 30%, ${ess.colors[1]}10 0%, transparent 60%)` }} />
-                {/* Subtle circle — wholeness */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ opacity: 0.05 }}>
-                  <svg viewBox="0 0 100 100" width="400" height="400">
-                    <circle cx="50" cy="50" r="42" fill="none" stroke="white" strokeWidth="0.2" />
-                  </svg>
-                </div>
-                <div className="relative z-10 px-10 py-10 text-center">
-                  <p className="font-serif text-[1.1rem] text-[#FAF8F5]/85 leading-[2] max-w-lg mx-auto">
-                    {defy}
-                  </p>
-                  <div className="mt-8 flex flex-col items-center gap-4">
-                    <div className="w-12 h-px" style={{ background: `linear-gradient(to right, transparent, ${ess.colors[1]}40, transparent)` }} />
-                    <p className="font-serif italic text-[1rem] leading-[1.8]"
-                      style={{ color: ess.colors[2] }}>
-                      {closing}
-                    </p>
-                  </div>
+            {/* ═══ Header — only in portal mode ═══ */}
+            {portalMode && (
+              <div className="w-full text-center sr-card" style={{ animationDelay: '0.05s' }}>
+                <div className="bg-gradient-to-b from-[#F0F4FF] to-transparent rounded-2xl px-6 pt-6 pb-3">
+                  <p className="font-mono text-[0.6rem] text-[#2563EB] uppercase tracking-[0.12em] mb-1">Your Assessment</p>
+                  <h2 className="font-serif text-[1.4rem] font-bold text-[#2C2C2C]">Key Takeaways</h2>
+                  <p className="font-sans text-[0.78rem] italic text-[#9B9590] mt-1">A personal note from your guide, and ways to keep your results close</p>
                 </div>
               </div>
             )}
 
-            {/* ═══ TWO-COLUMN: CARD + EMAIL — side by side, distinct ═══ */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-
-              {/* LEFT: Download your type card */}
-              <div className="sr-card flex flex-col" style={{ animationDelay: '0.35s' }}>
-                <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] flex flex-col items-center gap-5 h-full">
-                  <div className="text-center">
-                    <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#9B9590] mb-1">Save &amp; Share</p>
-                    <p className="font-serif text-[1.15rem] font-semibold text-[#2C2C2C]">Your Type Card</p>
-                    <p className="font-sans text-[0.8rem] text-[#9B9590] mt-1">Download or share your personalized card.</p>
-                  </div>
-                  <div className="w-full overflow-hidden rounded-xl flex justify-center">
-                    <ShareCard results={r} visible={true} />
-                  </div>
-                </div>
+            {/* ═══ ONE CONTINUOUS DARK CARD — Baruch + Downloads ═══ */}
+            <div className="w-full rounded-3xl overflow-hidden sr-card relative"
+              style={{ background: `linear-gradient(165deg, ${ess.colors[0]} 0%, #1E293B 35%, #0F172A 100%)`, animationDelay: '0.05s' }}>
+              {/* Ambient glow */}
+              <div className="absolute inset-0 pointer-events-none" style={{ background: `radial-gradient(ellipse at 50% 20%, ${ess.colors[1]}15 0%, transparent 60%)` }} />
+              {/* Subtle enneagram watermark */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ opacity: 0.03, top: -100 }}>
+                <svg viewBox="0 0 100 100" width="500" height="500">
+                  <circle cx="50" cy="50" r="42" fill="none" stroke="white" strokeWidth="0.2" />
+                </svg>
               </div>
 
-              {/* RIGHT: Get your PDF report */}
-              <div className="sr-card flex flex-col" style={{ animationDelay: '0.5s' }}>
-                <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] flex flex-col h-full">
-                  <div className="text-center mb-5">
-                    <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#9B9590] mb-1">Your Full Report</p>
-                    <p className="font-serif text-[1.15rem] font-semibold text-[#2C2C2C]">Get the PDF</p>
-                    <p className="font-sans text-[0.8rem] text-[#9B9590] mt-1 leading-relaxed">
-                      Every insight, every pattern, your path from reaction to response — delivered to your inbox.
-                    </p>
+              <div className="relative z-10">
+                {/* ── A note from Dr. Baruch HaLevi ── */}
+                <div className="px-8 pt-14 pb-8">
+                  <div className="flex items-center justify-center gap-2 mb-5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <p className="font-serif italic text-[0.8rem] text-white/40">A note from your guide</p>
                   </div>
+                  {/* Photo + identity — blur-to-clarity */}
+                  <motion.div
+                    initial={{ opacity: 0.3, filter: 'blur(10px)', scale: 1.03 }}
+                    whileInView={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+                    transition={{ duration: 1.4, ease: 'easeOut' }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    className="flex flex-col items-center mb-5"
+                  >
+                    <div className="relative mb-3">
+                      <div className="absolute inset-0 rounded-full" style={{ boxShadow: `0 0 40px ${ess.colors[1]}20, 0 0 80px ${ess.colors[1]}08`, transform: 'scale(1.2)' }} />
+                      <img src="/baruch.jpg" alt="Dr. Baruch HaLevi"
+                        className="relative w-[88px] h-[88px] object-cover rounded-full border-[2px] border-white/15"
+                        style={{ boxShadow: '0 12px 40px rgba(0,0,0,0.35)' }} />
+                    </div>
+                    <p className="font-serif text-[0.92rem] font-semibold text-white/90">Dr. Baruch HaLevi</p>
+                    <p className="font-sans text-[0.6rem] text-white/40 mt-0.5">Creator of the Defiant Spirit Methodology</p>
+                  </motion.div>
 
-                  {/* Preview of what's inside */}
-                  <div className="flex-1 flex flex-col justify-between">
-                    <div className="bg-[#FAF8F5] rounded-xl p-5 mb-5">
-                      <p className="font-sans text-[0.65rem] uppercase tracking-widest text-[#9B9590] mb-3">What&apos;s included</p>
-                      <div className="grid grid-cols-2 gap-2">
-                        {['Superpower & Kryptonite', 'React & Respond Patterns', 'OYN Dimensions', 'Wing & Variant Analysis', 'Stress & Release Lines', 'Domain Insights'].map((item) => (
-                          <div key={item} className="flex items-start gap-2">
-                            <span className="text-[#7A9E7E] text-xs mt-0.5">&#10003;</span>
-                            <span className="font-sans text-[0.75rem] text-[#6B6B6B] leading-snug">{item}</span>
+                  {/* Quote — glassmorphic, tight to photo */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.75, delay: 0.15, ease: 'easeOut' }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    className="max-w-[520px] mx-auto"
+                  >
+                    <div className="rounded-2xl px-7 py-6 relative overflow-hidden"
+                      style={{
+                        background: 'rgba(255,255,255,0.05)',
+                        backdropFilter: 'blur(14px)',
+                        WebkitBackdropFilter: 'blur(14px)',
+                        border: '1px solid rgba(255,255,255,0.10)',
+                        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.06), 0 12px 28px rgba(0,0,0,0.12)',
+                      }}>
+                      <div className="absolute inset-0 rounded-2xl pointer-events-none" style={{ background: `linear-gradient(135deg, ${ess.colors[1]}08, transparent 50%)` }} />
+                      <div className="relative z-10 text-center">
+                        <p className="font-serif text-[0.95rem] text-[#FAF8F5]/80 leading-[1.85] italic mb-4">
+                          &ldquo;The number is not the destination. It is the starting point of the return to wholeness — the moment you stop being run by a pattern and start choosing who you become.&rdquo;
+                        </p>
+                        {defy && (
+                          <>
+                            <div className="w-10 h-px mx-auto mb-4" style={{ background: `linear-gradient(to right, transparent, ${ess.colors[1]}35, transparent)` }} />
+                            <p className="font-serif text-[0.88rem] text-[#FAF8F5]/55 leading-[1.85]">{defy}</p>
+                          </>
+                        )}
+                        <p className="font-serif italic text-[0.82rem] mt-5" style={{ color: ess.colors[2] }}>{closing}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* ── Two white cards inside the dark card ── */}
+                <div className="px-5 pb-6 pt-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+                    {/* Share your card */}
+                    <div className="bg-white/95 rounded-2xl p-5 flex flex-col items-center gap-2">
+                      <p className="font-serif text-[0.95rem] font-semibold text-[#2C2C2C] mb-1">Share Your Results</p>
+                      <p className="font-sans text-[0.72rem] text-[#9B9590] text-center mb-2">Download your personalized type card and show the world.</p>
+                      <div className="w-full overflow-hidden rounded-xl flex justify-center" style={{ maxWidth: 260 }}>
+                        <ShareCard results={r} visible={true} />
+                      </div>
+                    </div>
+                    {/* Get free PDF */}
+                    <div className="bg-white/95 rounded-2xl p-5">
+                      <p className="font-serif text-[0.95rem] font-semibold text-[#2C2C2C] mb-0.5">Get Your Free Report</p>
+                      <p className="font-sans text-[0.72rem] text-[#9B9590] leading-relaxed mb-2.5">
+                        The complete Defiant Spirit assessment — delivered to your inbox.
+                      </p>
+                      <div className="grid grid-cols-2 gap-1 mb-2.5">
+                        {['Superpower & Kryptonite', 'React & Respond', 'OYN Dimensions', 'Wing & Variant', 'Stress & Release', 'Domain Insights'].map((item) => (
+                          <div key={item} className="flex items-center gap-1.5">
+                            <svg width="14" height="14" viewBox="0 0 14 14" className="flex-shrink-0"><circle cx="7" cy="7" r="7" fill="#7A9E7E" /><path d="M4 7l2 2 4-4" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                            <span className="font-sans text-[0.68rem] text-[#2C2C2C] leading-snug">{item}</span>
                           </div>
                         ))}
                       </div>
+                      {emailStatus === 'sent' ? (
+                        <div className="bg-[#E8F0E8] rounded-xl p-3 text-center">
+                          <p className="font-sans text-sm text-[#7A9E7E] font-semibold">Report sent!</p>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col gap-2">
+                          <input type="email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} placeholder="your@email.com"
+                            className="w-full rounded-xl px-4 py-2.5 border border-[#E0DAD4] font-sans text-sm text-[#2C2C2C] placeholder-[#9B9590] bg-[#FAF8F5] focus:border-[#2563EB] focus:outline-none transition-colors" />
+                          <button onClick={sendEmail} disabled={!emailInput.trim() || emailStatus === 'sending'}
+                            className="w-full font-sans text-sm rounded-xl px-5 py-2.5 bg-[#2563EB] text-white font-semibold disabled:opacity-40 hover:bg-[#1D4ED8] transition-colors">
+                            {emailStatus === 'sending' ? 'Sending…' : 'Send My Free Report'}
+                          </button>
+                        </div>
+                      )}
                     </div>
-
-                    {emailStatus === 'sent' ? (
-                      <div className="bg-[#E8F0E8] rounded-xl p-5 text-center">
-                        <p className="font-sans text-sm text-[#7A9E7E] font-semibold">Report sent!</p>
-                        <p className="font-sans text-xs text-[#9B9590] mt-1">Check your inbox.</p>
-                      </div>
-                    ) : (
-                      <div className="flex flex-col gap-3">
-                        <input
-                          type="email"
-                          value={emailInput}
-                          onChange={(e) => setEmailInput(e.target.value)}
-                          placeholder="your@email.com"
-                          className="w-full rounded-xl px-4 py-3 border border-[#E0DAD4] font-sans text-sm text-[#2C2C2C] placeholder-[#9B9590] bg-[#FAF8F5] focus:border-[#2563EB] focus:outline-none transition-colors"
-                        />
-                        <button
-                          onClick={sendEmail}
-                          disabled={!emailInput.trim() || emailStatus === 'sending'}
-                          className="w-full font-sans text-sm rounded-xl px-5 py-3 bg-[#2563EB] text-white font-semibold disabled:opacity-40 hover:bg-[#1D4ED8] transition-colors"
-                        >
-                          {emailStatus === 'sending' ? 'Sending…' : 'Send My Report'}
-                        </button>
-                        {emailStatus === 'error' && (
-                          <p className="font-sans text-xs text-[#1E3A8A] text-center">
-                            Could not send — please try again.
-                          </p>
-                        )}
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* ═══ CONTINUE — only during reveal, not in portal ═══ */}
+            {!portalMode && (
+              <div className="text-center py-4 sr-card" style={{ animationDelay: '0.3s' }}>
+                <button
+                  onClick={() => {
+                    fetch('/api/results/reveal-complete', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sessionId }) }).catch(() => {});
+                    if (typeof window !== 'undefined') localStorage.setItem('soulo_reveal_complete_' + sessionId, 'true');
+                    setPortalMode(true); setPortalTab(0);
+                  }}
+                  className="px-10 py-3.5 rounded-full bg-[#2563EB] text-white font-sans font-semibold text-base hover:bg-[#1D4ED8] transition-all duration-300 shadow-lg hover:shadow-[0_0_24px_rgba(37,99,235,0.4)]"
+                >
+                  Continue to Your Full Results
+                </button>
+              </div>
+            )}
+
             {/* ═══ CLOSING TRUTH ═══ */}
-            <div className="text-center py-2 sr-card" style={{ animationDelay: '0.7s' }}>
-              <p className="font-serif text-[0.95rem] text-[#9B9590] leading-relaxed">
-                You are not a number. You are never a number.
-              </p>
-              <p className="font-serif text-[0.95rem] font-semibold mt-1" style={{ color: ess.colors[1] }}>
-                You are a defiant spirit.
-              </p>
+            <div className="text-center py-2 sr-card" style={{ animationDelay: '0.5s' }}>
+              <p className="font-serif text-[0.95rem] text-[#9B9590]">You are not a number. You are never a number.</p>
+              <p className="font-serif text-[0.95rem] font-semibold mt-1" style={{ color: ess.colors[1] }}>You are a defiant spirit.</p>
             </div>
           </div>
         );
@@ -1780,6 +2696,11 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         const releaseType12 = RELEASE_LINES[coreType] || 7;
         const wingAdj12 = getWingTypes(coreType);
         const typeScoresMap = (r.type_scores as Record<string, number>) ?? {};
+        // Normalize scores to 0-100 range (handles any raw score scale)
+        const totalTypeScore = Object.values(typeScoresMap).reduce((s, v) => s + v, 0);
+        const maxTypeScore = Math.max(...Object.values(typeScoresMap), 1);
+        const getNormalizedPct = (score: number) => totalTypeScore > 0 ? Math.round((score / totalTypeScore) * 100) : 0;
+        const getBarPct = (score: number) => maxTypeScore > 0 ? Math.round((score / maxTypeScore) * 100) : 0;
         const allScoresSorted = Object.entries(typeScoresMap).map(([t, s]) => ({ type: Number(t), score: s })).sort((a, b) => b.score - a.score);
         const lowestType12 = allScoresSorted.length > 0 ? allScoresSorted[allScoresSorted.length - 1] : null;
         const tritypeDigits12 = tritype.replace(/\D/g, '').split('').map(Number);
@@ -1801,7 +2722,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         function getEnergyDescription(typeNum: number): string {
           const key = String(typeNum);
           const score = typeScoresMap[key] ?? 0;
-          const pct = Math.round(score * 100);
+          const pct = getNormalizedPct(score);
           const parts: string[] = [];
 
           if (relDesc[key]?.description) {
@@ -1879,7 +2800,9 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                   releaseType={releaseType12}
                   relationshipDescriptions={relDesc}
                   onTypeHover={setHoveredRelType}
-                  hoveredType={hoveredRelType}
+                  hoveredType={selectedRelType || hoveredRelType}
+                  selectedType={selectedRelType}
+                  onTypeSelect={setSelectedRelType}
                   size={340}
                   typeScores={typeScoresMap}
                 />
@@ -1887,63 +2810,65 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                 <div className="flex flex-wrap gap-3 justify-center">
                   <div className="flex items-center gap-1.5"><div className="w-3 h-0.5 bg-[#DC2626]" style={{ borderTop: '2px dashed #DC2626' }} /><span className="font-sans text-[0.6rem] text-[#9B9590]">Stress</span></div>
                   <div className="flex items-center gap-1.5"><div className="w-3 h-0.5 bg-[#2563EB]" /><span className="font-sans text-[0.6rem] text-[#9B9590]">Release</span></div>
-                  <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full border border-[#9B9590] opacity-40" /><span className="font-sans text-[0.6rem] text-[#9B9590]">Score ring</span></div>
                 </div>
               </div>
 
               {/* Energy info card */}
               <div className="flex-1 min-w-[260px] bg-white border border-[#E8E4E0] rounded-2xl p-7 min-h-[300px] flex flex-col justify-center transition-all duration-200">
-                {hoveredRelType === null ? (
+                {(selectedRelType || hoveredRelType) === null ? (
                   <div className="text-center">
                     <p className="font-serif text-[1.1rem] text-[#2C2C2C] mb-2">Explore the circle</p>
                     <p className="font-sans text-[0.85rem] text-[#9B9590] leading-relaxed">
                       Tap or hover any point to see how that energy lives within you. The larger the ring, the stronger the presence.
                     </p>
                   </div>
-                ) : (
+                ) : (() => {
+                  const activeType = selectedRelType || hoveredRelType;
+                  if (!activeType) return null;
+                  return (
                   <div>
                     {/* Label tags */}
                     <div className="flex flex-wrap gap-1.5 mb-3">
-                      {getEnergyLabel(hoveredRelType).split(' · ').map((tag, i) => (
+                      {getEnergyLabel(activeType).split(' · ').map((tag, i) => (
                         <span key={i} className="font-mono text-[0.55rem] uppercase tracking-widest px-2 py-0.5 rounded-full"
                           style={{
-                            color: hoveredRelType === coreType ? '#2563EB' : getEnergyColor(hoveredRelType),
-                            background: hoveredRelType === coreType ? '#EFF6FF' : `${getEnergyColor(hoveredRelType)}10`,
-                            border: `1px solid ${hoveredRelType === coreType ? '#DBEAFE' : getEnergyColor(hoveredRelType)}20`,
+                            color: activeType === coreType ? '#2563EB' : getEnergyColor(activeType),
+                            background: activeType === coreType ? '#EFF6FF' : `${getEnergyColor(activeType)}10`,
+                            border: `1px solid ${activeType === coreType ? '#DBEAFE' : getEnergyColor(activeType)}20`,
                           }}
                         >{tag}</span>
                       ))}
                     </div>
                     {/* Big number + name */}
                     <div className="flex items-end gap-3 mb-3">
-                      <span className="font-serif font-bold text-[3rem] leading-none" style={{ color: getEnergyColor(hoveredRelType) }}>
-                        {hoveredRelType}
+                      <span className="font-serif font-bold text-[3rem] leading-none" style={{ color: getEnergyColor(activeType) }}>
+                        {activeType}
                       </span>
                       <div className="pb-1">
-                        <span className="font-serif text-lg text-[#2C2C2C]">{TYPE_NAMES[hoveredRelType]}</span>
-                        {typeScoresMap[String(hoveredRelType)] !== undefined && (
-                          <span className="font-sans text-xs text-[#9B9590] ml-2">{Math.round((typeScoresMap[String(hoveredRelType)] ?? 0) * 100)}% active</span>
+                        <span className="font-serif text-lg text-[#2C2C2C]">{TYPE_NAMES[activeType]}</span>
+                        {typeScoresMap[String(activeType)] !== undefined && (
+                          <span className="font-sans text-xs text-[#9B9590] ml-2">{getNormalizedPct(typeScoresMap[String(activeType)] ?? 0)}% active</span>
                         )}
                       </div>
                     </div>
                     {/* Description */}
                     <p className="font-sans text-[0.88rem] text-[#2C2C2C] leading-[1.7]">
-                      {hoveredRelType === coreType
+                      {activeType === coreType
                         ? ((r.core_type_description as string) || `This is your home base — the pattern you know most intimately. The work isn't to escape it. It's to choose it consciously.`)
-                        : getEnergyDescription(hoveredRelType)
+                        : getEnergyDescription(activeType)
                       }
                     </p>
 
                     {/* Practical layer — embodiment + own it (not for core type) */}
-                    {hoveredRelType !== coreType && (() => {
-                      const relKey = String(hoveredRelType);
+                    {activeType !== coreType && (() => {
+                      const relKey = String(activeType);
                       const relData = relDesc[relKey] as { label?: string; description?: string; embodiment?: string; own_it?: string } | undefined;
                       const embodiment = relData?.embodiment || '';
                       const ownIt = relData?.own_it || '';
                       if (!embodiment && !ownIt) return null;
                       return (
                         <>
-                          <div className="w-full h-px my-3" style={{ background: `linear-gradient(to right, transparent, ${getEnergyColor(hoveredRelType)}20, transparent)` }} />
+                          <div className="w-full h-px my-3" style={{ background: `linear-gradient(to right, transparent, ${getEnergyColor(activeType)}20, transparent)` }} />
                           {embodiment && (
                             <div className="mb-2">
                               <p className="font-mono text-[0.55rem] uppercase tracking-widest text-[#9B9590] mb-1">What This Looks Like</p>
@@ -1951,8 +2876,8 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                             </div>
                           )}
                           {ownIt && (
-                            <div className="rounded-lg px-4 py-3 mt-1" style={{ background: `${getEnergyColor(hoveredRelType)}08` }}>
-                              <p className="font-serif italic text-[0.85rem] leading-[1.7]" style={{ color: getEnergyColor(hoveredRelType) }}>
+                            <div className="rounded-lg px-4 py-3 mt-1" style={{ background: `${getEnergyColor(activeType)}08` }}>
+                              <p className="font-serif italic text-[0.85rem] leading-[1.7]" style={{ color: getEnergyColor(activeType) }}>
                                 {ownIt}
                               </p>
                             </div>
@@ -1961,7 +2886,8 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                       );
                     })()}
                   </div>
-                )}
+                  );
+                })()}
               </div>
             </div>
 
@@ -2286,8 +3212,10 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
               <div id="ca-scores" className="bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] scroll-mt-16">
                 <SectionHeader title="Type Scores" chatKey="Type Scores" />
                 <div className="flex flex-col gap-2.5">
-                  {sortedScores.map(([type, score], idx) => {
-                    const pct = Math.min(100, Math.round(score * 100));
+                  {(() => {
+                    const maxSc = Math.max(...sortedScores.map(([, s]) => s), 1);
+                    return sortedScores.map(([type, score], idx) => {
+                    const pct = Math.round((score / maxSc) * 100);
                     const isLead = Number(type) === coreType;
                     return (
                       <div key={type} className="flex items-center gap-3">
@@ -2295,7 +3223,8 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                         <AnimatedBar percent={pct} color={isLead ? '#2563EB' : '#93C5FD'} delay={200 + idx * 80} numberClassName={isLead ? 'font-bold text-[#2563EB]' : 'text-[#9B9590]'} />
                       </div>
                     );
-                  })}
+                  });
+                  })()}
                 </div>
               </div>
               </ScrollReveal>
@@ -2432,15 +3361,18 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                   <div>
                     <p className="font-sans text-[0.65rem] uppercase tracking-widest text-[#9B9590] mb-3">Strongest Types Overall</p>
                     <div className="flex flex-col gap-2">
-                      {top3Overall.map((t, i) => (
-                        <div key={t.type} className="flex items-center gap-3">
-                          <span className="font-serif text-lg font-bold w-8 text-[#2C2C2C]">{t.type}</span>
-                          <div className="flex-1 h-2.5 rounded-full bg-[#E8E4E0] overflow-hidden">
-                            <div className="h-full rounded-full" style={{ width: `${Math.min(100, Math.round(t.score * 100))}%`, backgroundColor: i === 0 ? '#2563EB' : i === 1 ? '#60A5FA' : '#93C5FD' }} />
+                      {(() => {
+                        const maxS = top3Overall[0]?.score || 1;
+                        return top3Overall.map((t, i) => (
+                          <div key={t.type} className="flex items-center gap-3">
+                            <span className="font-serif text-lg font-bold w-8 text-[#2C2C2C]">{t.type}</span>
+                            <div className="flex-1 h-2.5 rounded-full bg-[#E8E4E0] overflow-hidden">
+                              <div className="h-full rounded-full" style={{ width: `${Math.round((t.score / maxS) * 100)}%`, backgroundColor: i === 0 ? '#2563EB' : i === 1 ? '#60A5FA' : '#93C5FD' }} />
+                            </div>
+                            <span className="font-sans text-xs text-[#9B9590] w-20 text-right">{TYPE_NAMES[t.type] || ''}</span>
                           </div>
-                          <span className="font-sans text-xs text-[#9B9590] w-20 text-right">{TYPE_NAMES[t.type] || ''}</span>
-                        </div>
-                      ))}
+                        ));
+                      })()}
                     </div>
                   </div>
                   {lowestType && lowestType.type > 0 && (
@@ -2675,20 +3607,26 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
     'Explore Your Type',
     'Relationship Wheel',
     'Stress & Release Lines',
-    'Complete Analysis',
     'Your Journey Begins',
   ];
 
   // Map visual position → case number (combined final page = case 9 with defy + share + email)
   // Removed case 7 (Full Profile) — redundant with Type Hero and Complete Analysis
-  const SECTION_ORDER = [0, 1, 2, 3, 4, 5, 6, 11, 12, 13, 14, 9];
+  const SECTION_ORDER = [0, 1, 2, 3, 4, 5, 6, 11, 12, 13, 9];
   const currentCase = SECTION_ORDER[section] ?? section;
 
-  return (
+  if (!portalMode) return (
     <div className="bg-[#FAF8F5]" style={{ height: '100dvh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      {/* Shared top nav */}
+      <SouloNav
+        loggedIn={true}
+        userEmail={typeof window !== 'undefined' ? localStorage.getItem('soulo_email') || undefined : undefined}
+        hasResults={true}
+        showPortalTabs={false}
+      />
       {/* Progress breadcrumb */}
-      <div style={{ flexShrink: 0 }} className="px-6 py-3 flex items-center justify-between border-b border-[#E8E4E0] bg-white z-30">
-        <p className="font-serif text-[0.9rem] font-semibold text-[#2563EB]">Your Results</p>
+      <div style={{ flexShrink: 0 }} className="px-6 py-2 flex items-center justify-between border-b border-[#E8E4E0] bg-white/80 backdrop-blur-sm z-20">
+        <p className="font-sans text-[0.72rem] text-[#9B9590]">{sectionTitles[section] || 'Your Results'}</p>
         <div className="flex items-center gap-2">
           {Array.from({ length: totalSections }).map((_, i) => (
             <div
@@ -2752,18 +3690,27 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
           {section >= totalSections - 1 ? (
             <button
               onClick={() => {
-                const uid = typeof window !== 'undefined' ? sessionStorage.getItem('soulo_user_id') : null;
-                const params = uid ? `?userId=${encodeURIComponent(uid)}` : sessionId ? `?sessionId=${encodeURIComponent(sessionId)}` : '';
-                router.push(`/results/dashboard${params}`);
+                // Mark reveal as complete
+                fetch('/api/results/reveal-complete', {
+                  method: 'PATCH',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ sessionId }),
+                }).catch(() => {});
+                if (typeof window !== 'undefined') {
+                  localStorage.setItem('soulo_reveal_complete_' + sessionId, 'true');
+                }
+                setPortalMode(true);
+                setPortalTab(0);
               }}
               className="font-sans text-[0.95rem] rounded-2xl px-8 py-3 bg-[#2563EB] text-white font-semibold hover:bg-[#1D4ED8] transition-colors shadow-lg"
             >
-              View Dashboard →
+              Enter Your Portal →
             </button>
           ) : (
             <button
               onClick={advance}
               className="font-sans text-[0.95rem] rounded-2xl px-8 py-3 bg-[#2563EB] text-white font-semibold hover:bg-[#1D4ED8] transition-colors shadow-lg"
+              style={{ animation: 'ctaPulse 2.5s ease-in-out infinite' }}
             >
               Continue →
             </button>
@@ -2777,6 +3724,145 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         sessionId={sessionId}
         activeSection={chatSection}
       />
+    </div>
+  );
+
+  // ═══ PORTAL MODE ═══
+  return (
+    <div className="flex flex-col min-h-screen bg-[#FAF8F5]">
+      {/* Portal nav — shared with landing page */}
+      <SouloNav
+        loggedIn={true}
+        userEmail={typeof window !== 'undefined' ? localStorage.getItem('soulo_email') || undefined : undefined}
+        hasResults={true}
+        showPortalTabs={true}
+        portalTabs={portalTabs}
+        activeTabId={portalTab}
+        onTabChange={(tab) => { setPortalTab(tab.id); setChatSection(tab.tile); }}
+      />
+
+      {/* Soulo hint tooltip — appears for 12s on overview */}
+      {showSouloHint && (
+        <div className="flex justify-center py-2 relative z-20" style={{ animation: 'darkFadeUp 0.4s ease-out both' }}>
+          <div className="flex flex-col items-center gap-1">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-[#2563EB] animate-bounce">
+              <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <p className="font-sans text-[0.72rem] text-[#6B6B6B] bg-white/90 backdrop-blur-sm rounded-full px-4 py-1.5 shadow-sm border border-[#E8E4E0]">
+              Meet <span className="font-semibold text-[#2563EB]">Soulo</span> — your personal guide
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Portal content — dark bg when Soulo guide tab is active */}
+      <div className={`flex-1 overflow-y-auto ${portalTab === 11 ? 'px-0 py-0' : 'px-5 py-8'}`} data-results-scroll ref={portalScrollRef} style={portalTab === 11 ? { background: 'linear-gradient(165deg, #0F172A 0%, #1E293B 50%, #0F172A 100%)' } : undefined}>
+        <div className="max-w-[960px] mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={portalTab}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col items-center"
+            >
+              {portalTab === 0 && (() => {
+                const essP = TYPE_ESSENCE[leadingType] || TYPE_ESSENCE[1];
+                return (
+                  <div className="w-full flex flex-col items-center gap-8">
+                    {/* Portal Welcome Hero — bigger, more prominent */}
+                    <div className="w-full max-w-[1000px] rounded-3xl overflow-hidden relative"
+                      style={{ background: `linear-gradient(155deg, ${essP.colors[0]} 0%, #1E293B 45%, #0F172A 100%)` }}>
+                      <div className="absolute inset-0 pointer-events-none"
+                        style={{ background: `radial-gradient(ellipse at 50% 35%, ${essP.colors[1]}18 0%, transparent 60%)` }} />
+                      {/* Enneagram watermark */}
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ opacity: 0.04 }}>
+                        <svg viewBox="0 0 100 100" width="400" height="400">
+                          <circle cx="50" cy="50" r="42" fill="none" stroke="white" strokeWidth="0.3" />
+                          {[9,1,2,3,4,5,6,7,8].map((t, idx) => {
+                            const a = (idx * 40 * Math.PI) / 180;
+                            return <circle key={t} cx={Math.round((50 + 42 * Math.sin(a)) * 1000) / 1000} cy={Math.round((50 - 42 * Math.cos(a)) * 1000) / 1000} r={t === leadingType ? 3 : 1.2} fill="white" />;
+                          })}
+                        </svg>
+                      </div>
+                      <div className="relative z-10 px-10 py-16 text-center">
+                        <p className="font-mono text-[0.55rem] uppercase tracking-[0.25em] text-white/30 mb-5">Welcome back</p>
+                        <div className="w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-center"
+                          style={{ background: `linear-gradient(135deg, ${essP.colors[1]}, ${essP.colors[0]})`, boxShadow: `0 0 50px ${essP.colors[1]}35` }}>
+                          <span className="font-serif text-[3rem] font-bold text-white leading-none">{leadingType}</span>
+                        </div>
+                        <h1 className="font-serif text-[2.2rem] font-bold text-white leading-tight mb-2">{typeName}</h1>
+                        {dsName && <p className="font-sans text-[1rem] text-[#7A9E7E] mb-4">{dsName}</p>}
+                        <p className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-white/25 mb-6">{essP.label}</p>
+                        <div className="flex gap-3 flex-wrap justify-center">
+                          {wing && <span className="font-sans text-[0.78rem] bg-white/8 border border-white/12 rounded-full px-5 py-2 text-white/65">{wing}</span>}
+                          {variant && <span className="font-sans text-[0.78rem] bg-white/8 border border-white/12 rounded-full px-5 py-2 text-white/65">{variant}</span>}
+                          {tritype && <span className="font-sans text-[0.78rem] rounded-full px-5 py-2 text-white/65" style={{ background: `${essP.colors[1]}15`, border: `1px solid ${essP.colors[1]}25` }}>{tritype}</span>}
+                        </div>
+                        {headline && (
+                          <p className="font-serif italic text-[1.05rem] leading-[1.8] mt-8 max-w-lg mx-auto" style={{ color: essP.colors[2] }}>
+                            &ldquo;{headline}&rdquo;
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                  </div>
+                );
+              })()}
+              {portalTab === 1 && renderSection(1)}
+              {portalTab === 2 && renderSection(2)}
+              {portalTab === 3 && renderSection(3)}
+              {portalTab === 4 && renderSection(4)}
+              {portalTab === 5 && renderSection(5)}
+              {portalTab === 6 && renderSection(6)}
+              {portalTab === 7 && renderSection(12)}
+              {portalTab === 8 && renderSection(13)}
+              {portalTab === 9 && renderSection(11)}
+              {portalTab === 10 && renderSection(9)}
+              {portalTab === 11 && (() => {
+                const storedFirstName = typeof window !== 'undefined' ? localStorage.getItem('soulo_first_name') : null;
+                const displayName = storedFirstName || '';
+                return (
+                  <div className="w-full min-h-[calc(100vh-8rem)] flex flex-col items-center relative pt-8 pb-16">
+                    {/* Animated background glow orbs */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/[0.08] rounded-full blur-[128px]" style={{ animation: 'meshDrift1 12s ease-in-out infinite' }} />
+                      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/[0.08] rounded-full blur-[128px]" style={{ animation: 'meshDrift2 15s ease-in-out infinite' }} />
+                      <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-cyan-500/[0.05] rounded-full blur-[96px]" style={{ animation: 'meshDrift3 18s ease-in-out infinite' }} />
+                    </div>
+
+                    <div className="relative z-10 w-full max-w-3xl mx-auto px-4 flex flex-col items-center">
+                      {/* Greeting with typewriter */}
+                      <div className="text-center mb-10">
+                        <div className="flex justify-center mb-6">
+                          <SouloOrb size={72} darkMode intensity={0.5} />
+                        </div>
+                        <h2 className="font-serif text-[2rem] font-bold tracking-tight text-white/90 mb-2">
+                          <TypingAnimation text={displayName ? `Hey ${displayName}.` : 'Hey there.'} duration={60} className="font-serif text-[2rem] font-bold tracking-tight text-white/90" />
+                        </h2>
+                        <p className="font-sans text-[0.85rem] text-white/40 leading-relaxed max-w-md mx-auto">
+                          I&apos;m your personal guide — here to help you integrate what you&apos;ve learned and put it to work in your life.
+                        </p>
+                        <div className="h-px w-32 mx-auto mt-6 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+                      </div>
+
+                      {/* Chat — glass container, wider, more room */}
+                      <div className="w-full rounded-2xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.025)', backdropFilter: 'blur(24px)', border: '1px solid rgba(255,255,255,0.06)', boxShadow: '0 8px 32px rgba(0,0,0,0.3)' }}>
+                        <SouloChat results={r} sessionId={sessionId} activeSection="General" embedded darkMode sharedMessages={sharedChatMessages} onMessagesChange={setSharedChatMessages} />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+
+      {/* SouloChat — hidden when Soulo guide tab is active */}
+      {portalTab !== 11 && <SouloChat results={r} sessionId={sessionId} activeSection={chatSection} startCollapsed={portalTab === 0} />}
     </div>
   );
 }

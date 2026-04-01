@@ -123,28 +123,69 @@ Return this exact JSON structure with no markdown:
       console.error('[evaluator] assessment_evaluations insert error:', evalInsertError.message);
     }
 
-    // Update question yield for each question marked useful/not
-    if (evaluation.question_usefulness?.length) {
-      for (const qu of evaluation.question_usefulness) {
-        // Match against assistant messages to find the question ID
-        const assistantMessages = session.conversationHistory
-          .filter((m) => m.role === 'assistant')
-          .map((m) => m.content);
+    // ── Per-question contribution measurement ──
+    // Walk through ALL questions asked (not just the last one) and measure contribution
+    const allQs = session.allQuestionsAsked || [];
+    const finalType = (session.internalState as Record<string, unknown>)?.hypothesis
+      ? ((session.internalState as Record<string, unknown>).hypothesis as Record<string, unknown>)?.leading_type as number
+      : 0;
+    const typeScores = ((session.internalState as Record<string, unknown>)?.hypothesis as Record<string, unknown>)?.type_scores as Record<string, number> ?? {};
 
-        const fragment = qu.question_text_fragment?.toLowerCase() ?? '';
-        const matched = assistantMessages.find((msg) =>
-          msg.toLowerCase().includes(fragment)
-        );
+    if (allQs.length > 0 && finalType > 0) {
+      // Get top 3 types (final + top 2 competitors) for relevance scoring
+      const sortedTypes = Object.entries(typeScores)
+        .map(([t, s]) => ({ type: Number(t), score: s }))
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 3)
+        .map(t => t.type);
 
-        if (matched) {
-          // Look for a selected_question_id pattern in conversation if stored
-          // Use the session's last question ID from internalState if available
-          const qId = (session.internalState as Record<string, unknown>)?.selected_question_id as number | undefined;
-          if (qId && typeof qId === 'number' && qId > 0) {
-            await updateQuestionYield(qId, qu.was_useful);
+      // Fetch target_types for all questions asked
+      const qIds = allQs.map(q => q.questionId).filter(id => id > 0);
+      let questionTargets: Record<number, number[]> = {};
+      if (qIds.length > 0) {
+        try {
+          const { data } = await adminClient
+            .from('questions')
+            .select('id, target_types')
+            .in('id', qIds);
+          if (data) {
+            for (const row of data) {
+              questionTargets[row.id] = (row.target_types as number[]) || [];
+            }
           }
-        }
+        } catch { /* non-fatal */ }
       }
+
+      // Score each question's contribution
+      const yieldPromises = allQs.map(async (q) => {
+        if (q.questionId <= 0) return;
+        const targets = questionTargets[q.questionId] || [];
+        let contributionScore: number;
+        let reason: string;
+
+        if (targets.length === 0) {
+          // General question (no specific target types) — neutral
+          contributionScore = 0.5;
+          reason = `general question, no target types, final type ${finalType}`;
+        } else if (targets.some(t => sortedTypes.includes(t))) {
+          // Question targeted the final type or its top competitors — helpful
+          contributionScore = 0.8;
+          reason = `targets [${targets.join(',')}] overlap with top types [${sortedTypes.join(',')}]`;
+        } else {
+          // Question targeted unrelated types — didn't help differentiate
+          contributionScore = 0.2;
+          reason = `targets [${targets.join(',')}] miss top types [${sortedTypes.join(',')}]`;
+        }
+
+        await updateQuestionYield(q.questionId, contributionScore, sessionId, reason);
+      });
+
+      // Run all yield updates in parallel, non-blocking
+      Promise.all(yieldPromises).catch(err => {
+        console.warn('[evaluator] yield update batch error (non-fatal):', err);
+      });
+
+      console.log(`[evaluator] yield updates queued for ${allQs.length} questions, final type ${finalType}`);
     }
 
     // If score is low, record the top weakness as a learning

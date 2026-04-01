@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { STRESS_LINES, RELEASE_LINES, TYPE_NAMES, CENTER_MAP, getWingTypes } from '@/lib/enneagram-lines';
 import { getCelebritiesByType } from '@/lib/celebrity-data';
 import AnimatedBar from '@/components/ui/AnimatedBar';
-import SouloOrb from './SouloOrb';
+import SouloOrb from '@/components/ui/soulo-orb';
 
 interface ResultsDashboardProps {
   results: Record<string, unknown>;

@@ -1,6 +1,7 @@
 import { adminClient } from '@/lib/supabase';
 import Link from 'next/link';
 import SyncButton from './SyncButton';
+import QuestionYieldDashboard from './QuestionYieldDashboard';
 
 const TYPE_NAMES: Record<number, string> = {
   1: 'Reformer', 2: 'Helper', 3: 'Achiever', 4: 'Individualist',
@@ -340,7 +341,14 @@ export default async function AdminDashboard() {
             )}
           </>
         )}
+
+        {/* Question Yield Dashboard */}
+        <QuestionYieldDashboard />
       </div>
     </div>
   );
 }
+
+// QuestionYieldDashboard is imported from ./QuestionYieldDashboard.tsx (client component)
+// Inline version removed — was causing useState errors in server component context
+void 0; // EOF marker — do not add code below this line
