@@ -11,7 +11,7 @@ export async function POST(req: Request) {
         coreType: number;
         typeName: string;
         wing: string;
-        tritype: string;
+        wholeType: string;
         variant: string;
         section: string;
       };
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 The user has completed their Soulo Enneagram assessment. Here are their results:
 - Core Type: ${context.coreType} (${context.typeName})
 - Wing: ${context.wing}
-- Tritype: ${context.tritype}
+- Whole Type: ${context.wholeType}
 - Instinctual Variant: ${context.variant}
 - They are asking about: ${context.section}
 

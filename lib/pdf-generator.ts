@@ -87,7 +87,7 @@ export async function generateResultsPDF(
     const confidence = r.confidence_pct as number;
     const wing = (r.wing as string) ?? '';
     const variant = (r.instinctual_variant as string) ?? '';
-    const tritype = (r.tritype as string) ?? '';
+    const wholeType = (r.tritype as string) ?? '';
     const headline = (r.headline as string) ?? '';
     const superpower = (r.superpower as string) ?? '';
     const kryptonite = (r.kryptonite as string) ?? '';
@@ -130,7 +130,7 @@ export async function generateResultsPDF(
               : null,
             wing ? React.createElement(Text, { style: styles.subtle }, `Wing: ${wing}`) : null,
             variant ? React.createElement(Text, { style: styles.subtle }, `Variant: ${variant}`) : null,
-            tritype ? React.createElement(Text, { style: styles.subtle }, `Tritype: ${tritype}`) : null
+            wholeType ? React.createElement(Text, { style: styles.subtle }, `Whole Type: ${wholeType}`) : null
           )
         ),
         React.createElement(View, { style: styles.divider }),

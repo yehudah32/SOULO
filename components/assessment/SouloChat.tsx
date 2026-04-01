@@ -43,9 +43,9 @@ const SECTION_QUESTIONS: Record<string, string[]> = {
     'Give me a real-world example of react vs respond for my type.',
   ],
   'Lines of Movement': [
-    'What does my stress line look like day-to-day?',
-    'How do I access my release line more often?',
-    'Why do I feel stuck on my stress line?',
+    'What does my energizing point look like day-to-day?',
+    'How do I access my resolution point more often?',
+    'Why do I feel stuck on my energizing point?',
   ],
   'OYN Dimensions': [
     'Which dimension should I work on first?',
@@ -199,12 +199,12 @@ export default function SouloChat({ results, sessionId, activeSection, embedded 
   const INVITATIONS = [
     'How does your react pattern show up at work?',
     'What happens when you\u2019re under pressure?',
-    'Do you know your release line?',
+    'Do you know your resolution point?',
     'Which center runs the show for you?',
     'What\u2019s your wing doing to your relationships?',
     'Ever notice what triggers your survival strategy?',
     'How does your variant affect how you love?',
-    'What does your tritype say about your blind spots?',
+    'What does your whole type say about your blind spots?',
     'Where does your energy go when you\u2019re stressed?',
     'What would responding look like instead of reacting?',
     'Which OYN dimension needs the most work?',

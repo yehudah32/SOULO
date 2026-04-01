@@ -204,7 +204,7 @@ export default async function AdminDashboard() {
 
                 {/* Table header */}
                 <div className="hidden md:grid grid-cols-[160px_140px_180px_90px_70px_60px_70px_32px] gap-4 items-center px-5 py-3 border-b border-[#F0EBE6]">
-                  {['Date', 'Type', 'DS Type Name', 'Tritype', 'Conf.', 'Exch.', 'Score', ''].map((h) => (
+                  {['Date', 'Type', 'DS Type Name', 'Whole Type', 'Conf.', 'Exch.', 'Score', ''].map((h) => (
                     <span key={h} className="font-sans text-[0.65rem] uppercase tracking-[0.08em] text-gray-500">{h}</span>
                   ))}
                 </div>
@@ -272,7 +272,7 @@ export default async function AdminDashboard() {
                             {row.defiant_spirit_type_name || '—'}
                           </span>
 
-                          {/* Tritype */}
+                          {/* Whole Type */}
                           <div className="flex flex-col gap-0.5">
                             <span className="font-sans text-sm text-soulo-blue">{row.tritype || '—'}</span>
                             {row.tritype_archetype_fauvre && (

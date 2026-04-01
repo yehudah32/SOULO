@@ -5,8 +5,8 @@ import { updateQuestionYield } from './question-bank';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-// Tritype archetype lookup keyed by tritype string (e.g. "125", "469")
-const TRITYPE_ARCHETYPES: Record<string, { life_purpose: string; blind_spot: string; growing_edge: string; core_triggers: string[] }> = {
+// Whole Type archetype lookup keyed by whole type string (e.g. "125", "469")
+const WHOLE_TYPE_ARCHETYPES: Record<string, { life_purpose: string; blind_spot: string; growing_edge: string; core_triggers: string[] }> = {
   '125': { life_purpose: 'The Mentor — to teach the right way with love', blind_spot: 'Perfectionism + over-giving leaving nothing for self', growing_edge: 'Accept imperfect love and receive help', core_triggers: ['incompetence', 'ingratitude', 'disorder'] },
   '126': { life_purpose: 'The Guardian — to serve and protect the community', blind_spot: 'Anxiety about being enough while giving everything', growing_edge: 'Trust self without needing external validation', core_triggers: ['betrayal', 'irresponsibility', 'abandonment'] },
   '127': { life_purpose: 'The Teacher — to inspire and uplift with joy', blind_spot: 'Avoiding painful emotional depth behind optimism', growing_edge: 'Stay with discomfort long enough to learn from it', core_triggers: ['ingratitude', 'limitation', 'negativity'] },
@@ -203,15 +203,15 @@ Return this exact JSON structure with no markdown:
       }
     }
 
-    // Populate tritype archetype in resultsData if tritype is known
-    const tritype = session.wholeType;
-    if (tritype && TRITYPE_ARCHETYPES[tritype]) {
-      const archetype = TRITYPE_ARCHETYPES[tritype];
+    // Populate whole type archetype in resultsData if whole type is known
+    const wholeType = session.wholeType;
+    if (wholeType && WHOLE_TYPE_ARCHETYPES[wholeType]) {
+      const archetype = WHOLE_TYPE_ARCHETYPES[wholeType];
       await adminClient.from('assessment_evaluations')
         .update({ })
         .eq('session_id', sessionId);
       // Log for now — resultsData is set in chat route
-      console.log('[evaluator] Tritype archetype resolved:', tritype, '->', archetype.life_purpose);
+      console.log('[evaluator] Whole Type archetype resolved:', wholeType, '->', archetype.life_purpose);
     }
 
     console.log(`[evaluator] complete — session: ${sessionId}, score: ${overallScore}`);

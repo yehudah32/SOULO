@@ -20,8 +20,8 @@ function getCenterOf(type: number): string {
   return 'Head';
 }
 
-// Generate all valid tritypes for a given core type
-function getTritypeOptions(core: number): string[] {
+// Generate all valid whole types for a given core type
+function getWholeTypeOptions(core: number): string[] {
   const coreCenter = getCenterOf(core);
   const otherCenters = Object.entries(CENTERS).filter(([c]) => c !== coreCenter);
   const options: string[] = [];
@@ -51,7 +51,7 @@ export default function PreviewResultsPage() {
   const [coreType, setCoreType] = useState(4);
   const [wing, setWing] = useState('4w5');
   const [variant, setVariant] = useState('SP');
-  const [tritype, setTritype] = useState('468');
+  const [wholeType, setWholeType] = useState('468');
   const [confidence, setConfidence] = useState(0.85);
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<Record<string, unknown> | null>(null);
@@ -65,8 +65,8 @@ export default function PreviewResultsPage() {
   const loadingStartRef = useRef(0);
   const progressTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Tritype options based on core type
-  const tritypeOptions = getTritypeOptions(coreType);
+  // Whole Type options based on core type
+  const wholeTypeOptions = getWholeTypeOptions(coreType);
 
   // Wing options with correct wrapping
   const wingOptions = [
@@ -74,12 +74,12 @@ export default function PreviewResultsPage() {
     `${coreType}w${coreType === 9 ? 1 : coreType + 1}`,
   ];
 
-  // Update tritype when core type changes
+  // Update whole type when core type changes
   function handleCoreTypeChange(t: number) {
     setCoreType(t);
     setWing(`${t}w${t === 1 ? 9 : t - 1}`);
-    const opts = getTritypeOptions(t);
-    if (opts.length > 0) setTritype(opts[0]);
+    const opts = getWholeTypeOptions(t);
+    if (opts.length > 0) setWholeType(opts[0]);
   }
 
   // Loading progress simulation based on elapsed time
@@ -135,7 +135,7 @@ export default function PreviewResultsPage() {
       const res = await fetch('/api/admin/simulate/preview-results', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ coreType, wing, variant, tritype, confidence }),
+        body: JSON.stringify({ coreType, wing, variant, wholeType, confidence }),
       });
       const data = await res.json();
       if (data.error) throw new Error(data.error + (data.details ? ': ' + JSON.stringify(data.details) : ''));
@@ -234,17 +234,17 @@ export default function PreviewResultsPage() {
             </div>
           </div>
 
-          {/* Tritype — dropdown based on core type */}
+          {/* Whole Type — dropdown based on core type */}
           <div>
             <label className="font-mono text-[0.65rem] uppercase tracking-widest text-[#9B9590] block mb-2">
-              Tritype ({getCenterOf(coreType)}: {coreType})
+              Whole Type ({getCenterOf(coreType)}: {coreType})
             </label>
             <select
-              value={tritype}
-              onChange={(e) => setTritype(e.target.value)}
+              value={wholeType}
+              onChange={(e) => setWholeType(e.target.value)}
               className="w-full font-sans text-sm px-3 py-2 rounded-lg border border-[#E8E4E0] focus:border-[#2563EB] focus:outline-none bg-white"
             >
-              {tritypeOptions.map((opt) => {
+              {wholeTypeOptions.map((opt) => {
                 const digits = opt.split('').map(Number);
                 const labels = digits.map((d) => `${getCenterOf(d)[0]}:${d}`).join(' · ');
                 return (

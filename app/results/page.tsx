@@ -353,7 +353,7 @@ function ResultsContent() {
                   </p>
                   <p className="font-sans text-xs text-[#9B9590] mt-0.5">
                     {Math.round(s.confidence * 100)}% confidence
-                    {s.tritype ? ` · Tritype ${s.tritype}` : ''}
+                    {s.tritype ? ` · Whole Type ${s.tritype}` : ''}
                     {` · ${s.exchange_count} questions`}
                   </p>
                   <p className="font-sans text-xs text-[#D0CAC4] mt-0.5">

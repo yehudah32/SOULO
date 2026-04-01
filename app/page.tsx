@@ -11,7 +11,7 @@ interface UserSession {
   session_id: string;
   leading_type: number;
   confidence: number;
-  tritype: string | null;
+  wholeType: string | null;
   created_at: string;
 }
 

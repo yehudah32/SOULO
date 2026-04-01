@@ -172,16 +172,16 @@ async function updateSessionFromParsed(
   }
 
   // Calculate Whole Type from type_scores using center-based algorithm (one per center)
-  // Do NOT trust the AI's tritype field — it may use top-3 overall instead of top-per-center
+  // Do NOT trust the AI's tritype field — it may use top-3 overall instead of top-per-center (whole type)
   const rawScores = finalInternal?.hypothesis?.type_scores ?? {};
   const numericScores: Record<number, number> = {};
   for (const [k, v] of Object.entries(rawScores)) {
     numericScores[Number(k)] = v as number;
   }
-  const computedTritype = Object.keys(numericScores).length >= 3
+  const computedWholeType = Object.keys(numericScores).length >= 3
     ? selectTritype(numericScores)
     : null;
-  const wholeType: string = computedTritype?.tritype || finalInternal?.hypothesis?.tritype || session.wholeType || '';
+  const wholeType: string = computedWholeType?.tritype || finalInternal?.hypothesis?.tritype || session.wholeType || '';
   const wholeTypeConfidence: number = finalInternal?.hypothesis?.tritype_confidence ?? session.wholeTypeConfidence ?? 0;
   const wholeTypeArchetypeFauvre: string = finalInternal?.hypothesis?.tritype_archetype_fauvre ?? session.wholeTypeArchetypeFauvre ?? '';
   const wholeTypeArchetypeDS: string = finalInternal?.hypothesis?.tritype_archetype_ds ?? session.wholeTypeArchetypeDS ?? '';

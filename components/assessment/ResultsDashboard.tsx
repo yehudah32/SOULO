@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { STRESS_LINES, RELEASE_LINES, TYPE_NAMES, CENTER_MAP, getWingTypes } from '@/lib/enneagram-lines';
+import { ENERGIZING_POINTS, RESOLUTION_POINTS, TYPE_NAMES, CENTER_MAP, getWingTypes } from '@/lib/enneagram-lines';
 import { getCelebritiesByType } from '@/lib/celebrity-data';
 import AnimatedBar from '@/components/ui/AnimatedBar';
 import SouloOrb from '@/components/ui/soulo-orb';
@@ -90,9 +90,9 @@ export default function ResultsDashboard({ results: r, sessionId }: ResultsDashb
   const confidencePct = Math.round(((r.confidence as number) ?? 0) * 100);
   const wingSignals = (r.wing_signals as { left: number; right: number }) ?? { left: 0, right: 0 };
   const variantSignals = (r.variant_signals as Record<string, number>) ?? {};
-  const tritype = str(r.tritype);
-  const tritypeConfidence = (r.tritype_confidence as number) ?? 0;
-  const tritypeArchetype = str(r.tritype_archetype);
+  const wholeType = str(r.tritype);
+  const wholeTypeConfidence = (r.tritype_confidence as number) ?? 0;
+  const wholeTypeArchetype = str(r.tritype_archetype);
   const rawSp = str(r.superpower) || str(r.superpower_description);
   const rawKr = str(r.kryptonite) || str(r.kryptonite_description);
   const negPat = /inner critic|second-guess|tension|impossible standard|never quiets|cannot trust|exhausts|compuls|fear-driven|autopilot/i;
@@ -112,13 +112,13 @@ export default function ResultsDashboard({ results: r, sessionId }: ResultsDashb
   const oynDataRaw = (r.oyn_summary ?? r.oyn_dimensions ?? {}) as Record<string, unknown>;
   const oynEntries = Object.entries(oynDataRaw).filter(([, v]) => typeof v === 'string' && (v as string).trim()).map(([k, v]) => [k, v as string] as [string, string]);
   const wholeSigs = (r.whole_type_signals as Record<string, number>) ?? {};
-  const stressType = STRESS_LINES[leadingType] || 0;
-  const releaseType = RELEASE_LINES[leadingType] || 0;
+  const energizingType = ENERGIZING_POINTS[leadingType] || 0;
+  const resolutionType = RESOLUTION_POINTS[leadingType] || 0;
   const wingAdj = getWingTypes(leadingType);
   const dominantWing = (wingSignals.left ?? 0) > (wingSignals.right ?? 0) ? wingAdj[0] : wingAdj[1];
   const variantEntries = Object.entries(variantSignals).sort(([, a], [, b]) => b - a);
   const dominantVariant = variantEntries[0]?.[0] ?? '—';
-  const tritypeDigits = tritype.replace(/\D/g, '').split('').map(Number);
+  const wholeTypeDigits = wholeType.replace(/\D/g, '').split('').map(Number);
   const centerColors: Record<string, { bg: string; text: string; label: string }> = {
     Body: { bg: '#FEF3C7', text: '#92400E', label: 'Body' },
     Heart: { bg: '#FCE7F3', text: '#9D174D', label: 'Heart' },
@@ -167,7 +167,7 @@ export default function ResultsDashboard({ results: r, sessionId }: ResultsDashb
 
   const navItems = [
     { id: 'scores', label: 'Scores' }, { id: 'powers', label: 'Powers' },
-    { id: 'wing', label: 'Wing' }, { id: 'tritype', label: 'Tritype' },
+    { id: 'wing', label: 'Wing' }, { id: 'tritype', label: 'Whole Type' },
     { id: 'spirit', label: 'Spirit' }, { id: 'lines', label: 'Lines' },
     { id: 'domains', label: 'Domains' }, { id: 'oyn', label: 'OYN' },
     { id: 'explore', label: 'Explore' },
@@ -195,7 +195,7 @@ export default function ResultsDashboard({ results: r, sessionId }: ResultsDashb
                 { label: 'Confidence', value: `${confidencePct}%` },
                 { label: 'Wing', value: `${leadingType}w${dominantWing}` },
                 { label: 'Variant', value: dominantVariant },
-                { label: 'Tritype', value: tritype },
+                { label: 'Whole Type', value: wholeType },
               ].map(m => (
                 <div key={m.label} className="text-center">
                   <span className="font-sans text-[0.55rem] uppercase tracking-widest text-white/40 block">{m.label}</span>
@@ -302,13 +302,13 @@ export default function ResultsDashboard({ results: r, sessionId }: ResultsDashb
           </div>
         </DashCard>
 
-        {/* ═══ COLLAPSIBLE: Tritype ═══ */}
+        {/* ═══ COLLAPSIBLE: Whole Type ═══ */}
         <DashCard
-          id="tritype" title="Tritype" open={openSections.has('tritype')} onToggle={() => toggle('tritype')}
+          id="tritype" title="Whole Type" open={openSections.has('tritype')} onToggle={() => toggle('tritype')}
           preview={
             <div className="flex items-center gap-3">
-              <span className="font-serif text-lg font-bold text-[#2C2C2C]">{tritypeDigits.join(' – ')}</span>
-              {tritypeDigits.map((d, i) => {
+              <span className="font-serif text-lg font-bold text-[#2C2C2C]">{wholeTypeDigits.join(' – ')}</span>
+              {wholeTypeDigits.map((d, i) => {
                 const c = CENTER_MAP[d] || 'Body';
                 const cc = centerColors[c] || centerColors.Body;
                 return <span key={i} className="px-2 py-0.5 rounded-md text-[0.6rem] font-bold uppercase" style={{ background: cc.bg, color: cc.text }}>{cc.label}</span>;
@@ -318,17 +318,17 @@ export default function ResultsDashboard({ results: r, sessionId }: ResultsDashb
         >
           <div className="flex flex-col md:flex-row md:items-start gap-6">
             <div>
-              <p className="font-serif text-[2.5rem] font-bold text-[#2C2C2C] leading-none mb-2">{tritypeDigits.join(' – ')}</p>
-              {tritypeConfidence > 0 && <p className="font-sans text-xs text-[#9B9590]">{Math.round(tritypeConfidence * 100)}% confidence</p>}
-              {tritypeArchetype && (
+              <p className="font-serif text-[2.5rem] font-bold text-[#2C2C2C] leading-none mb-2">{wholeTypeDigits.join(' – ')}</p>
+              {wholeTypeConfidence > 0 && <p className="font-sans text-xs text-[#9B9590]">{Math.round(wholeTypeConfidence * 100)}% confidence</p>}
+              {wholeTypeArchetype && (
                 <div className="bg-[#FAF8F5] rounded-lg px-3 py-2 mt-3 inline-block">
                   <span className="font-sans text-[0.7rem] text-[#9B9590]">Archetype: </span>
-                  <span className="font-sans text-sm font-semibold text-[#2C2C2C]">{tritypeArchetype}</span>
+                  <span className="font-sans text-sm font-semibold text-[#2C2C2C]">{wholeTypeArchetype}</span>
                 </div>
               )}
             </div>
             <div className="grid grid-cols-3 gap-3 flex-1">
-              {tritypeDigits.map((digit, i) => {
+              {wholeTypeDigits.map((digit, i) => {
                 const center = CENTER_MAP[digit] || 'Body';
                 const cc = centerColors[center] || centerColors.Body;
                 return (
@@ -371,8 +371,8 @@ export default function ResultsDashboard({ results: r, sessionId }: ResultsDashb
           id="lines" title="Lines of Movement" open={openSections.has('lines')} onToggle={() => toggle('lines')}
           preview={
             <div className="flex items-center gap-3">
-              <span className="font-sans text-xs text-[#DC2626]">Stress → {stressType}</span>
-              <span className="font-sans text-xs text-[#2563EB]">Release → {releaseType}</span>
+              <span className="font-sans text-xs text-[#DC2626]">Energizing Point → {energizingType}</span>
+              <span className="font-sans text-xs text-[#2563EB]">Resolution Point → {resolutionType}</span>
             </div>
           }
         >
@@ -383,24 +383,24 @@ export default function ResultsDashboard({ results: r, sessionId }: ResultsDashb
                 const pa = gp(a); const pb = gp(b);
                 return <line key={`l-${a}-${b}`} x1={pa.x} y1={pa.y} x2={pb.x} y2={pb.y} stroke="#E8E4E0" strokeWidth="0.3" />;
               })}
-              <line x1={gp(leadingType).x} y1={gp(leadingType).y} x2={gp(stressType).x} y2={gp(stressType).y} stroke="#DC2626" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.7" />
-              <line x1={gp(leadingType).x} y1={gp(leadingType).y} x2={gp(releaseType).x} y2={gp(releaseType).y} stroke="#2563EB" strokeWidth="1.2" opacity="0.7" />
+              <line x1={gp(leadingType).x} y1={gp(leadingType).y} x2={gp(energizingType).x} y2={gp(energizingType).y} stroke="#DC2626" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.7" />
+              <line x1={gp(leadingType).x} y1={gp(leadingType).y} x2={gp(resolutionType).x} y2={gp(resolutionType).y} stroke="#2563EB" strokeWidth="1.2" opacity="0.7" />
               {CIRCLE.map(t => {
-                const p = gp(t); const isCore = t === leadingType; const isStress = t === stressType; const isRelease = t === releaseType;
-                const color = isCore ? '#2563EB' : isStress ? '#DC2626' : isRelease ? '#2563EB' : '#9B9590';
-                return (<g key={`p-${t}`}><circle cx={p.x} cy={p.y} r={isCore ? 4.5 : (isStress || isRelease) ? 3 : 2} fill={color} opacity={isCore ? 1 : 0.7} /><text x={p.x} y={p.y < 20 ? p.y - 6 : p.y > 75 ? p.y + 9 : p.y} dx={p.x > 70 ? 6 : p.x < 30 ? -6 : 0} textAnchor="middle" fill={color} fontSize="4" fontFamily="serif" fontWeight={isCore ? 'bold' : 'normal'}>{t}</text></g>);
+                const p = gp(t); const isCore = t === leadingType; const isEnergizing = t === energizingType; const isResolution = t === resolutionType;
+                const color = isCore ? '#2563EB' : isEnergizing ? '#DC2626' : isResolution ? '#2563EB' : '#9B9590';
+                return (<g key={`p-${t}`}><circle cx={p.x} cy={p.y} r={isCore ? 4.5 : (isEnergizing || isResolution) ? 3 : 2} fill={color} opacity={isCore ? 1 : 0.7} /><text x={p.x} y={p.y < 20 ? p.y - 6 : p.y > 75 ? p.y + 9 : p.y} dx={p.x > 70 ? 6 : p.x < 30 ? -6 : 0} textAnchor="middle" fill={color} fontSize="4" fontFamily="serif" fontWeight={isCore ? 'bold' : 'normal'}>{t}</text></g>);
               })}
             </svg>
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
               <div className="p-4 rounded-xl bg-[#FEF2F2] border-l-4 border-[#DC2626]">
-                <span className="font-mono text-[0.6rem] uppercase tracking-widest text-[#DC2626]">Stress → {stressType}</span>
-                <p className="font-sans text-sm font-semibold text-[#2C2C2C] mt-1">{TYPE_NAMES[stressType]}</p>
-                <p className="font-sans text-xs text-[#6B6B6B] mt-2 leading-relaxed">{str(r.stress_line_description) || `Under pressure, your energy moves toward ${TYPE_NAMES[stressType]} patterns.`}</p>
+                <span className="font-mono text-[0.6rem] uppercase tracking-widest text-[#DC2626]">Energizing Point → {energizingType}</span>
+                <p className="font-sans text-sm font-semibold text-[#2C2C2C] mt-1">{TYPE_NAMES[energizingType]}</p>
+                <p className="font-sans text-xs text-[#6B6B6B] mt-2 leading-relaxed">{str(r.stress_line_description) || `Under pressure, your energy moves toward ${TYPE_NAMES[energizingType]} patterns.`}</p>
               </div>
               <div className="p-4 rounded-xl bg-[#EFF6FF] border-l-4 border-[#2563EB]">
-                <span className="font-mono text-[0.6rem] uppercase tracking-widest text-[#2563EB]">Release → {releaseType}</span>
-                <p className="font-sans text-sm font-semibold text-[#2C2C2C] mt-1">{TYPE_NAMES[releaseType]}</p>
-                <p className="font-sans text-xs text-[#6B6B6B] mt-2 leading-relaxed">{str(r.release_line_description) || `In growth, you access ${TYPE_NAMES[releaseType]} qualities.`}</p>
+                <span className="font-mono text-[0.6rem] uppercase tracking-widest text-[#2563EB]">Resolution Point → {resolutionType}</span>
+                <p className="font-sans text-sm font-semibold text-[#2C2C2C] mt-1">{TYPE_NAMES[resolutionType]}</p>
+                <p className="font-sans text-xs text-[#6B6B6B] mt-2 leading-relaxed">{str(r.release_line_description) || `In growth, you access ${TYPE_NAMES[resolutionType]} qualities.`}</p>
               </div>
             </div>
           </div>

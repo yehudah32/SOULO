@@ -6,8 +6,8 @@ import { getSession, setSession, initSession } from '@/lib/session-store';
 import { adminClient } from '@/lib/supabase';
 import { queryKnowledgeBase } from '@/lib/rag';
 import {
-  RELEASE_LINES,
-  STRESS_LINES,
+  RESOLUTION_POINTS,
+  ENERGIZING_POINTS,
   CENTER_MAP,
   TYPE_NAMES,
   selectTritype,
@@ -147,8 +147,8 @@ export async function POST(req: NextRequest) {
         cachedTypeScores[Number(k)] = v;
       }
       if (Object.keys(cachedTypeScores).length >= 3) {
-        const correctedTritype = selectTritype(cachedTypeScores);
-        cached.wholeType = correctedTritype.wholeType;
+        const correctedWholeType = selectTritype(cachedTypeScores);
+        cached.wholeType = correctedWholeType.wholeType;
       }
       // Override wing with correct wrapping
       const cachedLeading = session.internalState?.hypothesis?.leading_type ?? 0;
@@ -184,7 +184,7 @@ export async function POST(req: NextRequest) {
         const bgPatchType = (cached.leading_type || cached.core_type) as number;
         const bgPatchWing = (cached.wing as string) || '';
         const bgPatchVariant = (cached.instinctual_variant as string) || '';
-        const bgPatchTritype = (cached.wholeType as string) || '';
+        const bgPatchWholeType = (cached.wholeType as string) || '';
         Promise.resolve().then(async () => {
           try {
             const patchRes = await client.messages.create({
@@ -193,7 +193,7 @@ export async function POST(req: NextRequest) {
               system: `You generate Enneagram domain insights in Dr. Baruch HaLevi's Defiant Spirit voice. Return ONLY valid JSON. No markdown.`,
               messages: [{
                 role: 'user',
-                content: `Generate domain insights for Enneagram Type ${bgPatchType}, wing ${bgPatchWing}, variant ${bgPatchVariant}, tritype ${bgPatchTritype}.\n\nReturn this exact JSON:\n{\n  "relationships": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},\n  "wealth": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},\n  "leadership": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},\n  "transformation": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"}\n}`
+                content: `Generate domain insights for Enneagram Type ${bgPatchType}, wing ${bgPatchWing}, variant ${bgPatchVariant}, Whole Type ${bgPatchWholeType}.\n\nReturn this exact JSON:\n{\n  "relationships": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},\n  "wealth": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},\n  "leadership": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"},\n  "transformation": {"react": "<1-2 sentences>", "respond": "<1-2 sentences>"}\n}`
               }],
             });
             const patchText = patchRes.content.filter((b) => b.type === 'text').map((b) => (b as { type: 'text'; text: string }).text).join('').replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
@@ -246,7 +246,7 @@ export async function POST(req: NextRequest) {
       typeScores[Number(k)] = v;
     }
 
-    const tritypeResult = Object.keys(typeScores).length
+    const wholeTypeResult = Object.keys(typeScores).length
       ? selectTritype(typeScores)
       : { wholeType: session.wholeType || '', body: 0, heart: 0, head: 0 };
 
@@ -255,21 +255,21 @@ export async function POST(req: NextRequest) {
       : null;
 
     const secondaryInfluences = Object.keys(typeScores).length
-      ? getSecondaryInfluences(typeScores, tritypeResult)
+      ? getSecondaryInfluences(typeScores, wholeTypeResult)
       : [];
 
-    const stressType = RELEASE_LINES[leadingType] ? STRESS_LINES[leadingType] : null;
-    const releaseType = RELEASE_LINES[leadingType] || null;
+    const energizingPointType = RESOLUTION_POINTS[leadingType] ? ENERGIZING_POINTS[leadingType] : null;
+    const resolutionPointType = RESOLUTION_POINTS[leadingType] || null;
 
     const wingTypes = getWingTypes(leadingType);
 
     // Store computed values in session
     setSession(sessionId, {
-      wholeTypeTypes: { body: tritypeResult.body, heart: tritypeResult.heart, head: tritypeResult.head },
+      wholeTypeTypes: { body: wholeTypeResult.body, heart: wholeTypeResult.heart, head: wholeTypeResult.head },
       lowestScoringType: lowestType,
       secondaryInfluences,
-      energizingPointType: stressType,
-      resolutionPointType: releaseType,
+      energizingPointType,
+      resolutionPointType,
     });
 
     // Build RAG queries — run all in parallel
@@ -277,11 +277,11 @@ export async function POST(req: NextRequest) {
 
     const ragQueries = [
       `Type ${leadingType} Defiant Spirit enneagram ${dominantVariant} core pattern`,
-      `Type ${leadingType} stress line release line integration disintegration enneagram`,
+      `Type ${leadingType} energizing point resolution point integration disintegration enneagram`,
       `Type ${leadingType} superpower kryptonite wound gift enneagram`,
       `Type ${leadingType} react respond pattern survival strategy`,
       `Type ${leadingType} relationships wealth leadership domain enneagram`,
-      `tritype ${tritypeResult.wholeType} archetype enneagram`,
+      `whole type ${wholeTypeResult.wholeType} archetype enneagram`,
       ...relationshipTypes.map(t => `Type ${leadingType} relationship dynamic with Type ${t} enneagram`),
     ];
 
@@ -328,12 +328,12 @@ Type: ${leadingType} (${defiantSpiritTypeName || 'Type ' + leadingType})
 Confidence: ${Math.round(confidence * 100)}%
 Wing: ${leadingType}w${wingDominant}
 Instinctual Variant: ${dominantVariant}
-Tritype: ${tritypeResult.wholeType}
-  Body center type: ${tritypeResult.body}
-  Heart center type: ${tritypeResult.heart}
-  Head center type: ${tritypeResult.head}
-Stress line: Type ${stressType} (${TYPE_NAMES[stressType || 1]})
-Release line: Type ${releaseType} (${TYPE_NAMES[releaseType || 7]})
+Whole Type: ${wholeTypeResult.wholeType}
+  Body center type: ${wholeTypeResult.body}
+  Heart center type: ${wholeTypeResult.heart}
+  Head center type: ${wholeTypeResult.head}
+Energizing Point: Type ${energizingPointType} (${TYPE_NAMES[energizingPointType || 1]})
+Resolution Point: Type ${resolutionPointType} (${TYPE_NAMES[resolutionPointType || 7]})
 Lowest scoring type: ${lowestType}
 Secondary influences: ${secondaryInfluences.join(', ')}
 Life Domains (generate insights for ALL four): Relationships, Wealth, Leadership, Transformation
@@ -412,7 +412,7 @@ and clearly distinct from each other. Never use generic fallback text.
 
 DOMAIN INSIGHTS — MANDATORY:
 You MUST generate meaningful, non-empty "react" and "respond" content for ALL four life domains: relationships, wealth, leadership, and transformation.
-- Use the person's core type, wing, instinctual variant, tritype, stress/release lines, and conversation responses to infer how their pattern plays out in each domain.
+- Use the person's core type, wing, instinctual variant, whole type, energizing/resolution points, and conversation responses to infer how their pattern plays out in each domain.
 - If the conversation touched on a domain directly, incorporate that. If not, deduce from the type profile — every type has predictable patterns across all four domains.
 - "react" = the automatic, unconscious pattern in that domain.
 - "respond" = the conscious, liberated alternative.
@@ -422,7 +422,7 @@ COMBINATION SPECIFICITY — CRITICAL:
 This person is one of 1,350+ possible profiles. Make the output SPECIFIC to their exact combination, not just their core type number.
 - The WING must be mentioned by name in superpower, kryptonite, and core_type_description. A ${leadingType}w${wingDominant} is different from a ${leadingType}w${wingDominant === getWingTypes(leadingType)[0] ? getWingTypes(leadingType)[1] : getWingTypes(leadingType)[0]}. Show how.
 - The VARIANT (${dominantVariant}) must shape the react_pattern and respond_pathway. SP patterns focus on security/resources/self-preservation. SX patterns focus on intensity/bonds/chemistry. SO patterns focus on belonging/groups/social role.
-- The TRITYPE (${tritypeResult.wholeType}) must be referenced in tritype_life_purpose and center_insights. Show how Body ${tritypeResult.body}, Heart ${tritypeResult.heart}, and Head ${tritypeResult.head} interact.
+- The WHOLE TYPE (${wholeTypeResult.wholeType}) must be referenced in tritype_life_purpose and center_insights. Show how Body ${wholeTypeResult.body}, Heart ${wholeTypeResult.heart}, and Head ${wholeTypeResult.head} interact.
 
 FAMOUS EXAMPLES RULES:
 Generate EXACTLY 8 famous examples. ${session.demographics ? `User demographics: age=${session.demographics.ageRange}, gender=${session.demographics.gender}, ethnicity=${session.demographics.ethnicity}, country=${session.demographics.country}, religion=${session.demographics.religion}. Demographic relevance takes top priority — include at least one figure matching EACH demographic they provided.` : ''} AIM FOR WIDE REPRESENTATION across different fields — the list should feel like a cross-section of how this type shows up in the world, not just one industry. After filling demographic matches, actively diversify: science/medicine/technology, politics/activism/social change, sports/athletics, business/entrepreneurship, literature/philosophy/academia, music, art, spiritual leadership, military, journalism. Avoid clustering — if you already have 2+ from entertainment, look elsewhere. Both historical and contemporary figures should be represented. Leave photo_url as empty string — photos are handled separately.
@@ -440,7 +440,7 @@ ${demoContext}
 
 WRITING QUALITY — MANDATORY FOR ALL TEXT FIELDS:
 
-Write like a human: varied, imperfect, specific. These rules apply to ALL text fields (superpower, kryptonite, react_pattern, respond_pathway, oyn dimensions, domain insights, scenarios, closing messages, stress/release descriptions, tritype insights, everything).
+Write like a human: varied, imperfect, specific. These rules apply to ALL text fields (superpower, kryptonite, react_pattern, respond_pathway, oyn dimensions, domain insights, scenarios, closing messages, energizing/resolution point descriptions, whole type insights, everything).
 
 BANNED — Word choice:
 - "Quietly" and magic adverbs: No "quietly", "deeply", "fundamentally", "remarkably", "arguably" used to inflate ordinary descriptions.
@@ -508,7 +508,7 @@ Return this exact JSON structure:
   "instinctual_variant": "${dominantVariant}",
   "subtype_name": "<subtype name>",
   "subtype_description": "<1-2 sentences>",
-  "tritype": "${tritypeResult.wholeType}",
+  "tritype": "${wholeTypeResult.wholeType}",
   "tritype_archetype": "<archetype name if known>",
   "tritype_archetype_fauvre": "<Fauvre archetype name>",
   "tritype_archetype_ds": "<Defiant Spirit archetype name>",
@@ -546,11 +546,11 @@ Return this exact JSON structure:
     {"situation": "<scenario>", "react": "<automatic response>", "respond": "<conscious choice>"},
     {"situation": "<scenario>", "react": "<automatic response>", "respond": "<conscious choice>"}
   ],
-  "stress_line_type": ${stressType},
+  "stress_line_type": ${energizingPointType},
   "stress_line_name": "<name>",
   "stress_line_description": "<2-3 sentences>",
   "stress_line_triggers": "<1-2 sentences>",
-  "release_line_type": ${releaseType},
+  "release_line_type": ${resolutionPointType},
   "release_line_name": "<name>",
   "release_line_description": "<2-3 sentences>",
   "release_line_access": "<1-2 sentences — how to access this consciously>",
@@ -653,7 +653,7 @@ Make the content deeply personal, specific, and grounded in the actual conversat
         confidence,
         wing: `${leadingType}w${wingDominant}`,
         instinctual_variant: dominantVariant,
-        tritype: tritypeResult.wholeType,
+        tritype: wholeTypeResult.wholeType,
         headline: 'Your assessment is complete.',
         superpower: '',
         kryptonite: '',
@@ -670,8 +670,8 @@ Make the content deeply personal, specific, and grounded in the actual conversat
           transformation: { react: '', respond: '' },
         },
         real_world_scenarios: [],
-        stress_line_type: stressType,
-        release_line_type: releaseType,
+        stress_line_type: energizingPointType,
+        release_line_type: resolutionPointType,
         lowest_type: lowestType,
         defy_your_number: '',
         closing_charge: 'Defy Your Number. Live Your Spirit.',
@@ -788,7 +788,7 @@ Make the content deeply personal, specific, and grounded in the actual conversat
     if (!results.type_scores && typeScores && Object.keys(typeScores).length > 0) results.type_scores = typeScores;
     if (!results.variant_signals) results.variant_signals = variantSignals;
     if (!results.wing_signals) results.wing_signals = wingSignals;
-    if (!results.wholeType && tritypeResult.wholeType) results.wholeType = tritypeResult.wholeType;
+    if (!results.wholeType && wholeTypeResult.wholeType) results.wholeType = wholeTypeResult.wholeType;
     if (!results.defiant_spirit_type_name && defiantSpiritTypeName) results.defiant_spirit_type_name = defiantSpiritTypeName;
 
     // Fill react/respond from defiant_spirit session data if missing
@@ -818,7 +818,7 @@ Make the content deeply personal, specific, and grounded in the actual conversat
       if (typeof val === 'object' && val !== null) return Object.keys(val).length === 0;
       return !val;
     });
-    console.log(`[results/generate] COMPLETENESS: ${_allFields.length - _emptyFields.length}/${_allFields.length} fields | Empty: ${_emptyFields.join(', ') || 'none'} | Profile: ${leadingType}w${wingDominant} ${dominantVariant} ${tritypeResult.wholeType}`);
+    console.log(`[results/generate] COMPLETENESS: ${_allFields.length - _emptyFields.length}/${_allFields.length} fields | Empty: ${_emptyFields.join(', ') || 'none'} | Profile: ${leadingType}w${wingDominant} ${dominantVariant} ${wholeTypeResult.wholeType}`);
 
     // ── Personality Systems Analysis (sequential, after main results) ──
     const existingPS = (session.generatedResults as Record<string, unknown>)?.personality_systems;

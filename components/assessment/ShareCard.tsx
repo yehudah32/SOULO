@@ -55,7 +55,7 @@ export default function ShareCard({ results, visible = true }: ShareCardProps) {
   const typeName = (results.type_name as string) ?? `Type ${leadingType}`;
   const dsName = (results.defiant_spirit_type_name as string) ?? '';
   const headline = (results.headline as string) ?? '';
-  const tritype = (results.tritype as string) ?? '';
+  const wholeType = (results.tritype as string) ?? '';
   const wing = (results.wing as string) ?? '';
   const variant = (results.instinctual_variant as string) ?? '';
   const essence = TYPE_ESSENCE[leadingType] || TYPE_ESSENCE[1];
@@ -248,13 +248,13 @@ export default function ShareCard({ results, visible = true }: ShareCardProps) {
                 {variant}
               </span>
             )}
-            {tritype && (
+            {wholeType && (
               <span style={{
                 fontFamily: 'Arial, sans-serif', fontSize: 11, color: essence.colors[2],
                 background: `${essence.colors[1]}18`, border: `1px solid ${essence.colors[1]}25`,
                 borderRadius: 20, padding: '4px 14px',
               }}>
-                {tritype}
+                {wholeType}
               </span>
             )}
           </div>

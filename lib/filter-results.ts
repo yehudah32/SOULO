@@ -45,11 +45,11 @@ export function filterResults(
     { id: 'react-respond', label: 'React & Respond Patterns', locked: true },
     { id: 'oyn', label: 'OYN Dimensions', locked: true },
     { id: 'wing', label: 'Wing & Variant', locked: true },
-    { id: 'tritype', label: 'Tritype Analysis', locked: true },
+    { id: 'tritype', label: 'Whole Type Analysis', locked: true },
     { id: 'domains', label: 'Life Domain Insights', locked: true },
     { id: 'famous', label: 'Famous Figures Like You', locked: true },
     { id: 'relationships', label: 'Relationship Dynamics', locked: true },
-    { id: 'lines', label: 'Stress & Release Lines', locked: true },
+    { id: 'lines', label: 'Energizing & Resolution Points', locked: true },
     { id: 'personality-systems', label: 'Personality Systems Analysis', locked: true },
   ];
 

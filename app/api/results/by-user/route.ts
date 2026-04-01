@@ -54,11 +54,11 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'No completed assessments found' }, { status: 404 });
   }
 
-  // If generated results are cached, return them with corrected tritype + wing
+  // If generated results are cached, return them with corrected whole type + wing
   if (result.generated_results) {
     const cached = { ...(result.generated_results as Record<string, unknown>) };
 
-    // Recalculate tritype from type_scores (one per center)
+    // Recalculate whole type from type_scores (one per center)
     if (result.type_scores && typeof result.type_scores === 'object') {
       const numericScores: Record<number, number> = {};
       for (const [k, v] of Object.entries(result.type_scores as Record<string, number>)) {

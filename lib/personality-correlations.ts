@@ -18,7 +18,7 @@ export interface MBTIBoundary {
   confidence: ConfidenceLevel
   subtypeShift: Record<InstinctualVariant, string>
   wingShift: Record<string, string>
-  tritypeShift: {
+  wholeTypeShift: {
     heartTypes: Record<number, string>
     headTypes: Record<number, string>
   }
@@ -78,7 +78,7 @@ export interface JungianBoundary {
   mechanismNote: string
   confidence: ConfidenceLevel
   subtypeShift: Record<InstinctualVariant, string>
-  tritypeShift: Record<number, string>
+  wholeTypeShift: Record<number, string>
 }
 
 export interface HumanDesignBoundary {
@@ -124,7 +124,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         '1w2':
           'Pulls ISFJ or ESFJ — standards expressed through caring and duty in relationship.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         heartTypes: {
           2: 'Heart 2 adds warmth — shifts toward ISFJ or ESFJ. Agreeableness rises.',
           3: 'Heart 3 adds performance — shifts toward ESTJ or ENTJ. Extraversion rises.',
@@ -345,7 +345,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         SO: 'Ruler dominant — reform as social vocation.',
         SX: 'Hero dominant — idealism as personal crusade.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         4: 'Heart 4 activates The Creator alongside The Ruler — shadow becomes The Orphan rather than pure Rebel.',
         2: 'Heart 2 activates The Caregiver — Ruler softened by Caregiver energy.',
         5: 'Head 5 deepens The Sage — most intellectual and withdrawn 1.',
@@ -390,7 +390,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         '2w3':
           'Pulls ENFJ or ESFJ — performance-oriented helping. Charismatic, visible, achievement-flavored warmth.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         heartTypes: {
           2: 'Core heart type — no shift.',
           3: 'Heart 3 adds performance — shifts toward ENFJ or ENTJ. Extraversion and achievement focus rise.',
@@ -611,7 +611,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         SO: 'Magician dominant — transforming communities through relational insight.',
         SX: 'Lover dominant — deep, intense, one-on-one relational fusion.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         1: 'Body 1 activates The Ruler alongside The Caregiver — structured, principled helping.',
         8: 'Body 8 activates The Warrior — fiercest, most protective Caregiver.',
         9: 'Body 9 activates The Innocent — gentlest, most self-effacing 2.',
@@ -658,7 +658,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         '3w4':
           'Pulls ENTJ or INTJ — depth in achievement. More introspective, creative, emotionally complex.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         heartTypes: {
           2: 'Heart 2 adds warmth — shifts toward ENFJ or ESFJ. Agreeableness rises.',
           3: 'Core heart type — no shift.',
@@ -879,7 +879,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         SO: 'Ruler dominant — achievement through institutional power and status.',
         SX: 'Magician dominant — transformation of self to captivate others.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         1: 'Body 1 activates The Ruler more strongly — principled achievement, structured success.',
         8: 'Body 8 activates The Warrior — the most forceful, dominating 3.',
         9: 'Body 9 activates The Innocent — achievement with least ego attachment (or most hidden ego).',
@@ -928,7 +928,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         '4w5':
           'Pulls INTJ or INFJ — more withdrawn, intellectual, abstract. Most introverted 4.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         heartTypes: {
           2: 'Heart 2 adds warmth — shifts toward ENFJ or INFJ. Agreeableness and extraversion rise.',
           3: 'Heart 3 adds performance — shifts toward ENFP or ENFJ. Achievement-oriented uniqueness.',
@@ -1150,7 +1150,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         SO: 'Outlaw dominant — identity through being the outsider who names suffering.',
         SX: 'Lover dominant — intensity, passion, the romantic quest for the beloved.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         1: 'Body 1 activates The Ruler — principled creativity, standards applied to art.',
         8: 'Body 8 activates The Warrior — fierce emotional assertion, the most confrontational 4.',
         9: 'Body 9 activates The Innocent — gentlest 4, creative through dreaming rather than doing.',
@@ -1199,7 +1199,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         '5w6':
           'Pulls ISTJ or INTJ — more cautious, systematic, loyal to frameworks. Most practical 5.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         heartTypes: {
           2: 'Heart 2 adds warmth — shifts toward INFJ. Most relational 5.',
           3: 'Heart 3 adds performance — shifts toward INTJ or ENTJ. Most externally competent 5.',
@@ -1425,7 +1425,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         SO: 'Sage dominant — knowledge shared as social contribution.',
         SX: 'Magician dominant — transformative one-on-one intellectual fusion.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         1: 'Body 1 activates The Ruler — knowledge applied to standards and reform.',
         8: 'Body 8 activates The Warrior — knowledge as power. Most assertive 5.',
         9: 'Body 9 activates The Innocent — gentlest 5, knowledge through peaceful contemplation.',
@@ -1474,7 +1474,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         '6w7':
           'Pulls ESFJ or ENFJ — more engaging, optimistic, anxiety managed through social connection.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         heartTypes: {
           2: 'Heart 2 adds warmth — shifts toward ISFJ or ESFJ. Agreeableness rises. Loyalty through care.',
           3: 'Heart 3 adds performance — shifts toward ESTJ or ENTJ. Achievement manages anxiety.',
@@ -1700,7 +1700,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         SO: 'Caregiver dominant — loyalty expressed through group protection and duty.',
         SX: 'Warrior dominant — counterphobic. Faces fear through direct confrontation.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         1: 'Body 1 activates The Ruler — principled loyalty, reform through duty.',
         8: 'Body 8 activates The Warrior strongly — most assertive, counterphobic 6.',
         9: 'Body 9 activates The Innocent — gentlest 6, loyalty through peaceful belonging.',
@@ -1749,7 +1749,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         '7w8':
           'Pulls ENTP or ESTP — more assertive, driven, takes what they want. The "realist" 7.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         heartTypes: {
           2: 'Heart 2 adds warmth — shifts toward ENFJ or ESFJ. Most relational 7.',
           3: 'Heart 3 adds performance — shifts toward ENTJ or ENTP. Achievement-oriented enthusiasm.',
@@ -1965,7 +1965,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         SO: 'Jester dominant — social joy, the entertainer and connector.',
         SX: 'Hero dominant — intense passion, focused quest for the ultimate experience.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         1: 'Body 1 activates The Ruler — structured enthusiasm, principled adventure.',
         8: 'Body 8 activates The Warrior — assertive pleasure-seeking, most forceful 7.',
         9: 'Body 9 activates The Innocent — gentlest 7, joy through peaceful contentment.',
@@ -2014,7 +2014,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         '8w9':
           'Pulls INTJ or ISTJ — quieter, more contained, strategic power. The "bear" — calm until provoked.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         heartTypes: {
           2: 'Heart 2 adds protectiveness — shifts toward ENFJ or ESTJ. Most relational 8.',
           3: 'Heart 3 adds achievement — shifts toward ENTJ. Power through accomplishment.',
@@ -2240,7 +2240,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         SO: 'Ruler dominant — institutional power, social leadership, strategic control.',
         SX: 'Outlaw dominant — provocative intensity, boundary-breaking, passionate rebellion.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         1: 'Body 1 activates The Ruler more strongly — principled power, righteous force.',
         8: 'Core body type — no shift.',
         9: 'Body 9 activates The Innocent as secondary — power held in reserve, calm exterior.',
@@ -2290,7 +2290,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         '9w1':
           'Pulls ISFJ or INFJ — more principled, dutiful, inner standards. The "idealist" 9.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         heartTypes: {
           2: 'Heart 2 adds warmth — shifts toward ISFJ or ESFJ. Most relational 9.',
           3: 'Heart 3 adds performance — shifts toward ESFP or ESFJ. Most externally active 9.',
@@ -2516,7 +2516,7 @@ export const TYPE_BOUNDARIES: Record<number, TypeBoundaries> = {
         SO: 'Everyman dominant — belonging through accommodation and group merger.',
         SX: 'Caregiver dominant — peace through merging with and caring for the beloved.',
       },
-      tritypeShift: {
+      wholeTypeShift: {
         1: 'Body 1 activates The Ruler — principled peace, most dutiful 9.',
         8: 'Body 8 activates The Warrior as secondary — the most assertive 9. Bear energy.',
         9: 'Core body type — no shift.',
@@ -2560,9 +2560,9 @@ export function buildCorrelationContext(
   coreType: number,
   instinctualVariant: InstinctualVariant,
   wing: string,
-  tritypeBody: number,
-  tritypeHeart: number,
-  tritypeHead: number,
+  wholeTypeBody: number,
+  wholeTypeHeart: number,
+  wholeTypeHead: number,
   lexiconContext: Array<{ type: number; words: string[]; questionContext: string; stage: number }>
 ): string {
   const b = TYPE_BOUNDARIES[coreType as keyof typeof TYPE_BOUNDARIES]
@@ -2571,8 +2571,8 @@ export function buildCorrelationContext(
   const wingKey = wing.includes('w') ? wing : ''
   const mbtiSubNote = b.mbti.subtypeShift[instinctualVariant] || ''
   const mbtiWingNote = wingKey ? (b.mbti.wingShift[wingKey] || '') : ''
-  const heartShift = b.mbti.tritypeShift.heartTypes[tritypeHeart] || ''
-  const headShift = b.mbti.tritypeShift.headTypes[tritypeHead] || ''
+  const heartShift = b.mbti.wholeTypeShift.heartTypes[wholeTypeHeart] || ''
+  const headShift = b.mbti.wholeTypeShift.headTypes[wholeTypeHead] || ''
 
   const lexiconNotes: string[] = []
   const detectedTypes = [...new Set(lexiconContext.map(lc => lc.type))].filter(t => t !== coreType)
@@ -2595,9 +2595,9 @@ export function buildCorrelationContext(
       ).join('\n')
     : 'No secondary lexicon signals detected'
 
-  const jungianTritypeShifts = [tritypeHeart, tritypeHead]
+  const jungianWholeTypeShifts = [wholeTypeHeart, wholeTypeHead]
     .filter(t => t !== coreType && t !== 0)
-    .map(t => b.jungian.tritypeShift[t] || '')
+    .map(t => b.jungian.wholeTypeShift[t] || '')
     .filter(Boolean)
     .join(' | ')
 
@@ -2606,7 +2606,7 @@ RESEARCH BOUNDARY DATA
 (Use as knowledge guardrail — reason FROM this, do not copy FROM this.)
 
 TYPE ${coreType} | ${instinctualVariant} | ${wing}
-TRITYPE: ${[tritypeBody, tritypeHeart, tritypeHead].join('-')}
+WHOLE TYPE: ${[wholeTypeBody, wholeTypeHeart, wholeTypeHead].join('-')}
 
 MBTI BOUNDARIES:
 Plausible: ${b.mbti.plausible.join(', ')}
@@ -2614,8 +2614,8 @@ Implausible: ${b.mbti.implausible.join(', ')}
 Cognitive foundation: ${b.mbti.cognitiveNote}
 ${instinctualVariant} subtype: ${mbtiSubNote}
 ${wing} wing: ${mbtiWingNote}
-Heart center (${tritypeHeart}): ${heartShift}
-Head center (${tritypeHead}): ${headShift}
+Heart center (${wholeTypeHeart}): ${heartShift}
+Head center (${wholeTypeHead}): ${headShift}
 Confidence: ${b.mbti.confidence}
 
 BIG FIVE RANGES (1-10):
@@ -2638,7 +2638,7 @@ ${instinctualVariant}: ${b.disc.subtypeShift[instinctualVariant]}
 
 JUNGIAN: ${b.jungian.active.join(', ')} | Shadow: ${b.jungian.shadow}
 ${b.jungian.mechanismNote}
-Tritype shifts: ${jungianTritypeShifts || 'none'}
+Whole Type shifts: ${jungianWholeTypeShifts || 'none'}
 
 HUMAN DESIGN (exploratory only):
 ${b.humanDesign.likelyEnergyTypes.join(', ')}

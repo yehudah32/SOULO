@@ -1,5 +1,5 @@
 // Personality Systems Analyzer — Intelligent cross-system correlation engine
-// Analyzes the specific person's compound type (core × subtype × wing × tritype × lexicon)
+// Analyzes the specific person's compound type (core × subtype × wing × whole type × lexicon)
 // across MBTI, Big Five, Attachment, DISC, Jungian, and Human Design
 
 import Anthropic from '@anthropic-ai/sdk'
@@ -26,10 +26,10 @@ export interface PersonalitySystemsInput {
   instinctualVariant: InstinctualVariant
   wing: string
   wingName: string
-  tritypeOrdered: number[]
-  tritypeBody: number
-  tritypeHeart: number
-  tritypeHead: number
+  wholeTypeOrdered: number[]
+  wholeTypeBody: number
+  wholeTypeHeart: number
+  wholeTypeHead: number
   fullUserMessages: string
   lexiconContext: LexiconContextEntry[]
   reactPattern: string
@@ -133,13 +133,13 @@ export function buildAnalyzerInput(session: any, generatedResults: any): Persona
     ? rawWing
     : `${coreType}w${validWings[0] || 9}`
 
-  // Tritype
-  const tritypeStr = generatedResults?.tritype || session.tritype || ''
-  const tritypeDigits = tritypeStr.toString().split('').map(Number).filter((n: number) => n >= 1 && n <= 9)
-  const tritypeOrdered = tritypeDigits.length >= 3 ? tritypeDigits.slice(0, 3) : [coreType, 2, 5]
-  const tritypeBody = tritypeDigits.find((n: number) => CENTER_MAP[n] === 'Body') || (CENTER_MAP[coreType] === 'Body' ? coreType : 1)
-  const tritypeHeart = tritypeDigits.find((n: number) => CENTER_MAP[n] === 'Heart') || 2
-  const tritypeHead = tritypeDigits.find((n: number) => CENTER_MAP[n] === 'Head') || 5
+  // Whole Type
+  const wholeTypeStr = generatedResults?.tritype || session.wholeType || ''
+  const wholeTypeDigits = wholeTypeStr.toString().split('').map(Number).filter((n: number) => n >= 1 && n <= 9)
+  const wholeTypeOrdered = wholeTypeDigits.length >= 3 ? wholeTypeDigits.slice(0, 3) : [coreType, 2, 5]
+  const wholeTypeBody = wholeTypeDigits.find((n: number) => CENTER_MAP[n] === 'Body') || (CENTER_MAP[coreType] === 'Body' ? coreType : 1)
+  const wholeTypeHeart = wholeTypeDigits.find((n: number) => CENTER_MAP[n] === 'Heart') || 2
+  const wholeTypeHead = wholeTypeDigits.find((n: number) => CENTER_MAP[n] === 'Head') || 5
 
   // Extract ALL user messages from conversation
   const conversationHistory = session.conversationHistory || []
@@ -175,10 +175,10 @@ export function buildAnalyzerInput(session: any, generatedResults: any): Persona
     instinctualVariant,
     wing,
     wingName: generatedResults?.wing_name || '',
-    tritypeOrdered,
-    tritypeBody,
-    tritypeHeart,
-    tritypeHead,
+    wholeTypeOrdered,
+    wholeTypeBody,
+    wholeTypeHeart,
+    wholeTypeHead,
     fullUserMessages: allUserMessages.slice(0, 5000),
     lexiconContext: session.lexiconContext || [],
     reactPattern: generatedResults?.react_pattern || '',
@@ -200,9 +200,9 @@ export async function analyzePersonalitySystems(
     input.coreType,
     input.instinctualVariant,
     input.wing,
-    input.tritypeBody,
-    input.tritypeHeart,
-    input.tritypeHead,
+    input.wholeTypeBody,
+    input.wholeTypeHeart,
+    input.wholeTypeHead,
     input.lexiconContext
   )
 
@@ -226,12 +226,12 @@ export async function analyzePersonalitySystems(
 YOUR TASK: Analyze this specific person's personality patterns across all six systems. You are NOT doing generic type-to-type table lookups. You are doing the work a skilled clinician does — reading the whole person from the data they gave you.
 
 PRIMARY DATA SOURCE: Their actual responses (fullUserMessages). This is your ground truth.
-SECONDARY DATA: Defiant Spirit analysis, lexicon signals, tritype structure.
+SECONDARY DATA: Defiant Spirit analysis, lexicon signals, wholeType structure.
 CORRELATION BOUNDARIES: Research guardrails. Trust the data over the boundaries if evidence is compelling.
 
 WHAT MAKES ANALYSIS GOOD:
 1. Every claim grounded in specific evidence from their actual words
-2. The compound type (core × subtype × wing × tritype × lexicon) reasoned as unified whole
+2. The compound type (core × subtype × wing × wholeType × lexicon) reasoned as unified whole
 3. Shows how THIS person differs from the average of their type
 4. Human Design always clearly marked exploratory
 
@@ -287,8 +287,8 @@ THE COMPOUND TYPE
 Core Type: ${input.coreType} (${input.coreTypeName})
 Instinctual Subtype: ${input.instinctualVariant}
 Wing: ${input.wing} (${input.wingName})
-Tritype: ${input.tritypeOrdered.join('-')}
-  Body: Type ${input.tritypeBody} | Heart: Type ${input.tritypeHeart} | Head: Type ${input.tritypeHead}
+Whole Type: ${input.wholeTypeOrdered.join('-')}
+  Body: Type ${input.wholeTypeBody} | Heart: Type ${input.wholeTypeHeart} | Head: Type ${input.wholeTypeHead}
 
 DEFIANT SPIRIT PATTERNS
 Superpower: ${input.superpowerName}
@@ -336,7 +336,7 @@ CRITICAL — rules for ALL text fields (personalEvidence, reasoning, growthEdge,
     "openness": { "score": "very_low|low|medium|high|very_high", "description": "How this compound type affects Openness." },
     "conscientiousness": { "score": "very_low|low|medium|high|very_high", "description": "Specific to their compound type." },
     "extraversion": { "score": "very_low|low|medium|high|very_high", "description": "How subtype and wing shift the base." },
-    "agreeableness": { "score": "very_low|low|medium|high|very_high", "description": "Reference lexicon and tritype." },
+    "agreeableness": { "score": "very_low|low|medium|high|very_high", "description": "Reference lexicon and wholeType." },
     "neuroticism": { "score": "very_low|low|medium|high|very_high", "description": "Reference health level from React pattern." },
     "personalVariance": "How does this person differ from average Type ${input.coreType} on Big Five?",
     "confidence": "high|medium|low"

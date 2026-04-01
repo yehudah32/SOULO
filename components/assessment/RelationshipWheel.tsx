@@ -3,8 +3,8 @@
 import { useRef, useEffect } from 'react';
 import {
   CLOCKWISE_ORDER,
-  STRESS_LINES,
-  RELEASE_LINES,
+  ENERGIZING_POINTS,
+  RESOLUTION_POINTS,
   CENTER_MAP,
   TYPE_NAMES,
   getSweepOrder,
@@ -13,9 +13,9 @@ import {
 
 interface RelationshipWheelProps {
   leadingType: number;
-  tritypeTypes?: { body: number; heart: number; head: number } | null;
-  stressType: number;
-  releaseType: number;
+  wholeTypeTypes?: { body: number; heart: number; head: number } | null;
+  energizingType: number;
+  resolutionType: number;
   relationshipDescriptions: Record<string, { label: string; description: string }>;
   onTypeHover: (type: number | null) => void;
   hoveredType: number | null;
@@ -38,9 +38,9 @@ function getPointPosition(typeNumber: number): { x: number; y: number } {
 
 export default function RelationshipWheel({
   leadingType,
-  tritypeTypes,
-  stressType,
-  releaseType,
+  wholeTypeTypes,
+  energizingType,
+  resolutionType,
   relationshipDescriptions,
   onTypeHover,
   hoveredType,
@@ -102,10 +102,10 @@ export default function RelationshipWheel({
 
   function getLineColor(targetType: number): string {
     if (!hoveredType || hoveredType !== targetType) return 'rgba(0,0,0,0.06)';
-    if (STRESS_LINES[leadingType] === targetType) return 'rgba(220,38,38,0.7)';
-    if (RELEASE_LINES[leadingType] === targetType) return 'rgba(74,118,200,0.7)';
+    if (ENERGIZING_POINTS[leadingType] === targetType) return 'rgba(220,38,38,0.7)';
+    if (RESOLUTION_POINTS[leadingType] === targetType) return 'rgba(74,118,200,0.7)';
     if (wingTypes.includes(targetType)) return 'rgba(196,113,74,0.7)';
-    if (tritypeTypes && Object.values(tritypeTypes).includes(targetType)) {
+    if (wholeTypeTypes && Object.values(wholeTypeTypes).includes(targetType)) {
       const center = CENTER_MAP[targetType];
       if (center === 'Body') return '#2563EB';
       if (center === 'Heart') return '#60A5FA';
@@ -116,13 +116,13 @@ export default function RelationshipWheel({
 
   function isLineDashed(targetType: number): boolean {
     if (!hoveredType) return false;
-    return STRESS_LINES[leadingType] === targetType || RELEASE_LINES[leadingType] === targetType;
+    return ENERGIZING_POINTS[leadingType] === targetType || RESOLUTION_POINTS[leadingType] === targetType;
   }
 
   function getPointColor(typeNum: number): string {
     if (typeNum === leadingType) return '#2563EB';
     if (typeNum === hoveredType) return '#4A76C8';
-    if (tritypeTypes && Object.values(tritypeTypes).includes(typeNum)) {
+    if (wholeTypeTypes && Object.values(wholeTypeTypes).includes(typeNum)) {
       const center = CENTER_MAP[typeNum];
       if (center === 'Body') return '#2563EB';
       if (center === 'Heart') return '#60A5FA';
@@ -134,7 +134,7 @@ export default function RelationshipWheel({
   function getPointRadius(typeNum: number): number {
     if (typeNum === leadingType) return 6;
     if (typeNum === hoveredType) return 5;
-    if (tritypeTypes && Object.values(tritypeTypes).includes(typeNum)) return 4;
+    if (wholeTypeTypes && Object.values(wholeTypeTypes).includes(typeNum)) return 4;
     return 3;
   }
 

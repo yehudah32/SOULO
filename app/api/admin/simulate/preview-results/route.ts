@@ -18,7 +18,7 @@ export async function POST(request: Request) {
       confidence: number;
     };
 
-    const { coreType, wing, variant, wholeType: tritype, confidence } = body; // destructure wholeType as tritype for Supabase compat
+    const { coreType, wing, variant, wholeType, confidence } = body;
 
     if (!coreType) {
       return NextResponse.json({ error: 'Missing coreType' }, { status: 400 });
@@ -28,20 +28,20 @@ export async function POST(request: Request) {
     const sessionId = `admin-preview-${crypto.randomUUID()}`;
     initSession(sessionId);
 
-    // Build synthetic type scores that match the selected tritype
-    // Parse tritype digits — these must score highest in their centers
-    const tritypeDigits = (tritype || String(coreType)).replace(/\D/g, '').split('').map(Number);
-    const tritypeSet = new Set(tritypeDigits);
+    // Build synthetic type scores that match the selected whole type
+    // Parse whole type digits — these must score highest in their centers
+    const wholeTypeDigits = (wholeType || String(coreType)).replace(/\D/g, '').split('').map(Number);
+    const wholeTypeSet = new Set(wholeTypeDigits);
 
     const typeScores: Record<string, number> = {};
     for (let t = 1; t <= 9; t++) {
       if (t === coreType) {
         typeScores[String(t)] = confidence;
-      } else if (tritypeSet.has(t)) {
-        // Tritype members score high in their center (but below core)
+      } else if (wholeTypeSet.has(t)) {
+        // Whole type members score high in their center (but below core)
         typeScores[String(t)] = confidence * 0.7 + Math.random() * 0.1;
       } else {
-        // Non-tritype types score low
+        // Non-whole-type types score low
         typeScores[String(t)] = Math.random() * 0.25;
       }
     }
@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     setSession(sessionId, {
       isComplete: true,
       exchangeCount: 15,
-      wholeType: tritype || String(coreType),
+      wholeType: wholeType || String(coreType),
       wholeTypeConfidence: 0.75,
       defiantSpiritTypeName: '',
       domainSignals: ['relationships', 'leadership', 'wealth'],

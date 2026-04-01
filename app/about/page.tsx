@@ -490,7 +490,7 @@ function EnneagramReimagined() {
 
           <p ref={para2Ref} className="font-sans text-[0.95rem] text-white/55 leading-[1.85] text-center"
             style={{ opacity: showParas[2] ? 1 : 0, transform: showParas[2] ? 'translateY(0)' : 'translateY(16px)', transition: 'opacity 0.8s ease, transform 0.8s ease' }}>
-            Soulo doesn&apos;t sort you into one of nine boxes. It maps your specific combination — type, wing, instinctual variant, tritype — across{' '}
+            Soulo doesn&apos;t sort you into one of nine boxes. It maps your specific combination — type, wing, instinctual variant, Whole Type — across{' '}
             <span className="font-bold text-[#2563EB] text-[1.1rem] inline-block min-w-[4.5ch] text-center" style={{ fontVariantNumeric: 'tabular-nums' }}>{counter > 0 ? counter.toLocaleString() + '+' : '\u00A0'}</span>
             {' '}unique profiles. Then it shows you exactly where you react on autopilot, and where you can choose to respond.
           </p>

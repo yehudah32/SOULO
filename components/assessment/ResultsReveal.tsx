@@ -7,7 +7,7 @@ import RelationshipWheel from './RelationshipWheel';
 import SouloChat from './SouloChat';
 import SouloOrb from '@/components/ui/soulo-orb';
 import SouloNav from '@/components/ui/soulo-nav';
-import { STRESS_LINES, RELEASE_LINES, TYPE_NAMES, CENTER_MAP, getWingTypes, getLowestType } from '@/lib/enneagram-lines';
+import { ENERGIZING_POINTS, RESOLUTION_POINTS, TYPE_NAMES, CENTER_MAP, getWingTypes, getLowestType } from '@/lib/enneagram-lines';
 import { getCelebritiesByType } from '@/lib/celebrity-data';
 import TypewriterText from '@/components/ui/TypewriterText';
 import AnimatedBar from '@/components/ui/AnimatedBar';
@@ -40,9 +40,9 @@ const TYPE_ESSENCE: Record<number, { colors: string[]; label: string; shapes: st
   9: { colors: ['#064E3B', '#059669', '#D1FAE5'], label: 'Peace. Presence. Wholeness.', shapes: 'flow' },
 };
 
-function parseCenters(tritype: string): string[] {
+function parseCenters(wholeType: string): string[] {
   const centers: string[] = [];
-  const digits = tritype.replace(/\D/g, '').split('').map(Number);
+  const digits = wholeType.replace(/\D/g, '').split('').map(Number);
   for (const d of digits) {
     if ([8, 9, 1].includes(d)) centers.push('Body');
     else if ([2, 3, 4].includes(d)) centers.push('Heart');
@@ -308,9 +308,9 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
   const confidencePct = r.confidence_pct as number;
   const wing = (r.wing as string) ?? '';
   const variant = (r.instinctual_variant as string) ?? '';
-  const tritype = (r.tritype as string) ?? '';
-  const tritypeArchetype = (r.tritype_archetype as string) ?? '';
-  const tritypeConfidence = (r.tritype_confidence as number) ?? 0;
+  const wholeType = (r.tritype as string) ?? '';
+  const wholeTypeArchetype = (r.tritype_archetype as string) ?? '';
+  const wholeTypeConfidence = (r.tritype_confidence as number) ?? 0;
   const headline = (r.headline as string) ?? '';
   // Detect if superpower/kryptonite are swapped — if "superpower" contains
   // negative language (inner critic, tension, impossible standard) it's actually
@@ -363,9 +363,9 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
   const variantSignals = (r.variant_signals as Record<string, number>) ?? {};
   const wingSignals = (r.wing_signals as Record<string, number>) ?? {};
 
-  const tritypeCenters = parseCenters(tritype);
-  const hasLowTritype =
-    !tritype || tritypeConfidence < 0.65 || tritypeCenters.length === 0;
+  const wholeTypeCenters = parseCenters(wholeType);
+  const hasLowWholeType =
+    !wholeType || wholeTypeConfidence < 0.65 || wholeTypeCenters.length === 0;
 
   const continueButton = null;
 
@@ -380,7 +380,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
     { id: 3, tile: 'OYN' },
     { id: 4, tile: 'Wing & Variant' },
     { id: 11, tile: 'Soulo', special: true },
-    { id: 5, tile: 'Tritype' },
+    { id: 5, tile: 'Whole Type' },
     { id: 6, tile: 'Domains' },
     { id: 7, tile: 'Energies' },
     { id: 8, tile: 'Lines' },
@@ -1757,7 +1757,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                   { label: 'Type', value: String(leadingType), color: essence.colors[1] },
                   { label: 'Wing', value: wing || '—', color: '#2C2C2C' },
                   { label: 'Variant', value: variant || '—', color: '#2C2C2C' },
-                  { label: 'Tritype', value: tritype || '—', color: '#2C2C2C' },
+                  { label: 'Whole Type', value: wholeType || '—', color: '#2C2C2C' },
                 ].map(m => (
                   <div key={m.label}>
                     <span className="font-mono text-[0.55rem] uppercase tracking-widest text-[#9B9590] block">{m.label}</span>
@@ -2053,17 +2053,17 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         );
       }
 
-      // ── Section 5: Tritype ──
+      // ── Section 5: Whole Type ──
       case 5: {
-        // Parse tritype digits and map to centers
-        const tritypeDigits = tritype.replace(/\D/g, '').split('').map(Number);
+        // Parse whole type digits and map to centers
+        const wholeTypeDigits = wholeType.replace(/\D/g, '').split('').map(Number);
         const centerColors: Record<string, { bg: string; text: string; label: string }> = {
           Body: { bg: '#FEF3C7', text: '#92400E', label: 'Body' },
           Heart: { bg: '#FCE7F3', text: '#9D174D', label: 'Heart' },
           Head: { bg: '#DBEAFE', text: '#1E40AF', label: 'Head' },
         };
 
-        // Top 3 overall types (separate from tritype)
+        // Top 3 overall types (separate from whole type)
         const typeScoresRaw = (r.variant_signals ? r : r) as Record<string, unknown>;
         const allTypeScores = Object.entries(
           (r as Record<string, unknown>).type_scores as Record<string, number> ?? {}
@@ -2073,41 +2073,41 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
 
         // Lowest scoring type
         const lowestType = allTypeScores.length > 0 ? allTypeScores[allTypeScores.length - 1] : null;
-        const lowestOnStressLine = lowestType ? STRESS_LINES[leadingType] === lowestType.type : false;
-        const lowestOnReleaseLine = lowestType ? RELEASE_LINES[leadingType] === lowestType.type : false;
+        const lowestOnEnergizingPoint = lowestType ? ENERGIZING_POINTS[leadingType] === lowestType.type : false;
+        const lowestOnResolutionPoint = lowestType ? RESOLUTION_POINTS[leadingType] === lowestType.type : false;
 
         return (
           <div className="flex flex-col gap-5 max-w-[600px] w-full">
             {/* Section header */}
             <div className="bg-gradient-to-b from-[#F0F4FF] to-transparent rounded-2xl px-6 pt-6 pb-3 text-center sr-card" style={{ animationDelay: '0.05s' }}>
               <p className="font-mono text-[0.6rem] text-[#2563EB] uppercase tracking-[0.12em] mb-1">Three Centers</p>
-              <h2 className="font-serif text-[1.4rem] font-bold text-[#2C2C2C]">Your Tritype</h2>
+              <h2 className="font-serif text-[1.4rem] font-bold text-[#2C2C2C]">Your Whole Type</h2>
             </div>
-            {/* Tritype */}
+            {/* Whole Type */}
             <div className="bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sr-card" style={{ animationDelay: '0.1s' }}>
               <p className="font-sans text-[0.75rem] text-[#6B6B6B] mb-5 leading-relaxed">
                 Your dominant type in each of the three intelligence centers: Body, Heart, and Head.
               </p>
-              {tritype ? (
+              {wholeType ? (
                 <>
-                  {/* Hyphenated tritype display */}
+                  {/* Hyphenated whole type display */}
                   <p className="font-serif text-[2.5rem] font-bold text-[#2C2C2C] leading-none mb-4 sr-card" style={{ animationDelay: '0.2s' }}>
-                    {tritypeDigits.join(' – ')}
+                    {wholeTypeDigits.join(' – ')}
                   </p>
-                  {tritypeConfidence > 0 && (
+                  {wholeTypeConfidence > 0 && (
                     <p className="font-sans text-xs text-[#9B9590] mb-4">
-                      {Math.round(tritypeConfidence * 100)}% confidence
+                      {Math.round(wholeTypeConfidence * 100)}% confidence
                     </p>
                   )}
-                  {tritypeArchetype && (
+                  {wholeTypeArchetype && (
                     <div className="bg-[#FAF8F5] rounded-xl p-4 mb-4">
                       <p className="font-sans text-[0.7rem] text-[#9B9590] mb-1">Archetype</p>
-                      <p className="font-sans text-sm font-semibold text-[#2C2C2C]">{tritypeArchetype}</p>
+                      <p className="font-sans text-sm font-semibold text-[#2C2C2C]">{wholeTypeArchetype}</p>
                     </div>
                   )}
-                  {/* Center-labeled tritype cards */}
+                  {/* Center-labeled whole type cards */}
                   <div className="grid grid-cols-3 gap-3">
-                    {tritypeDigits.map((digit, i) => {
+                    {wholeTypeDigits.map((digit, i) => {
                       const center = CENTER_MAP[digit] || 'Body';
                       const colors = centerColors[center] || centerColors.Body;
                       return (
@@ -2181,13 +2181,13 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                   <span className="font-serif text-xl font-bold text-[#9B9590]">{lowestType.type}</span>
                   <span className="font-sans text-sm text-[#6B6B6B]">{TYPE_NAMES[lowestType.type] || ''}</span>
                 </div>
-                {(lowestOnStressLine || lowestOnReleaseLine) && (
+                {(lowestOnEnergizingPoint || lowestOnResolutionPoint) && (
                   <p className="font-sans text-xs text-[#6B6B6B] leading-relaxed">
-                    {lowestOnReleaseLine && (
-                      <>This is your release line — the energy you move toward in growth. Low activation here may explain difficulty accessing that state.</>
+                    {lowestOnResolutionPoint && (
+                      <>This is your resolution point — the energy you move toward in growth. Low activation here may explain difficulty accessing that state.</>
                     )}
-                    {lowestOnStressLine && (
-                      <>This is your stress line — the pattern you fall into under pressure. Low activation here suggests this pattern is less familiar to you.</>
+                    {lowestOnEnergizingPoint && (
+                      <>This is your energizing point — the pattern you fall into under pressure. Low activation here suggests this pattern is less familiar to you.</>
                     )}
                   </p>
                 )}
@@ -2456,7 +2456,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
           { label: 'Defiant Spirit Name', value: dsName, color: '#7A9E7E', show: !!dsName },
           { label: 'Wing', value: wing, color: '#2C2C2C', show: !!wing },
           { label: 'Instinctual Variant', value: variant, color: '#2C2C2C', show: !!variant },
-          { label: 'Tritype', value: tritype, color: '#2C2C2C', show: !!tritype },
+          { label: 'Whole Type', value: wholeType, color: '#2C2C2C', show: !!wholeType },
         ].filter(r => r.show);
         return (
           <div className="flex flex-col gap-5 max-w-[600px] w-full relative">
@@ -2624,7 +2624,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                         The complete Defiant Spirit assessment — delivered to your inbox.
                       </p>
                       <div className="grid grid-cols-2 gap-1 mb-2.5">
-                        {['Superpower & Kryptonite', 'React & Respond', 'OYN Dimensions', 'Wing & Variant', 'Stress & Release', 'Domain Insights'].map((item) => (
+                        {['Superpower & Kryptonite', 'React & Respond', 'OYN Dimensions', 'Wing & Variant', 'Energizing & Resolution', 'Domain Insights'].map((item) => (
                           <div key={item} className="flex items-center gap-1.5">
                             <svg width="14" height="14" viewBox="0 0 14 14" className="flex-shrink-0"><circle cx="7" cy="7" r="7" fill="#7A9E7E" /><path d="M4 7l2 2 4-4" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
                             <span className="font-sans text-[0.68rem] text-[#2C2C2C] leading-snug">{item}</span>
@@ -2692,8 +2692,8 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
       case 12: {
         const relDesc = (r.relationship_descriptions as Record<string, { label: string; description: string }>) || {};
         const coreType = leadingType;
-        const stressType12 = STRESS_LINES[coreType] || 4;
-        const releaseType12 = RELEASE_LINES[coreType] || 7;
+        const energizingType12 = ENERGIZING_POINTS[coreType] || 4;
+        const resolutionType12 = RESOLUTION_POINTS[coreType] || 7;
         const wingAdj12 = getWingTypes(coreType);
         const typeScoresMap = (r.type_scores as Record<string, number>) ?? {};
         // Normalize scores to 0-100 range (handles any raw score scale)
@@ -2703,15 +2703,15 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         const getBarPct = (score: number) => maxTypeScore > 0 ? Math.round((score / maxTypeScore) * 100) : 0;
         const allScoresSorted = Object.entries(typeScoresMap).map(([t, s]) => ({ type: Number(t), score: s })).sort((a, b) => b.score - a.score);
         const lowestType12 = allScoresSorted.length > 0 ? allScoresSorted[allScoresSorted.length - 1] : null;
-        const tritypeDigits12 = tritype.replace(/\D/g, '').split('').map(Number);
+        const wholeTypeDigits12 = wholeType.replace(/\D/g, '').split('').map(Number);
 
         function getEnergyLabel(typeNum: number): string {
           const labels: string[] = [];
           if (typeNum === coreType) return 'YOUR HOME BASE';
-          if (stressType12 === typeNum) labels.push('STRESS LINE');
-          if (releaseType12 === typeNum) labels.push('RELEASE LINE');
+          if (energizingType12 === typeNum) labels.push('ENERGIZING POINT');
+          if (resolutionType12 === typeNum) labels.push('RESOLUTION POINT');
           if (wingAdj12.includes(typeNum)) labels.push('YOUR WING');
-          if (tritypeDigits12.includes(typeNum) && typeNum !== coreType) labels.push(`${CENTER_MAP[typeNum]?.toUpperCase()} TRITYPE`);
+          if (wholeTypeDigits12.includes(typeNum) && typeNum !== coreType) labels.push(`${CENTER_MAP[typeNum]?.toUpperCase()} WHOLE TYPE`);
           if (lowestType12 && lowestType12.type === typeNum) labels.push('LEAST ACTIVE');
           if (labels.length > 0) return labels.join(' · ');
           const key = String(typeNum);
@@ -2727,9 +2727,9 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
 
           if (relDesc[key]?.description) {
             parts.push(relDesc[key].description);
-          } else if (stressType12 === typeNum) {
+          } else if (energizingType12 === typeNum) {
             parts.push(`Under pressure, your energy moves here. This is the pattern that takes over when fear is in charge — not who you are, but where your survival strategy pulls you.`);
-          } else if (releaseType12 === typeNum) {
+          } else if (resolutionType12 === typeNum) {
             parts.push(`In growth, you access this energy. This is what opens when you choose to respond rather than react — the space between stimulus and response where your freedom lives.`);
           } else if (wingAdj12.includes(typeNum)) {
             const wingIdx = wingAdj12.indexOf(typeNum);
@@ -2751,16 +2751,16 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
             parts.push(`This energy is ${pct}% active within you.`);
           }
 
-          if (tritypeDigits12.includes(typeNum) && typeNum !== coreType) {
-            parts.push(`As part of your tritype, this is your representative in the ${CENTER_MAP[typeNum]} center — one of the three core lenses through which you process experience.`);
+          if (wholeTypeDigits12.includes(typeNum) && typeNum !== coreType) {
+            parts.push(`As part of your whole type, this is your representative in the ${CENTER_MAP[typeNum]} center — one of the three core lenses through which you process experience.`);
           }
 
           return parts.join(' ');
         }
 
         function getEnergyColor(typeNum: number): string {
-          if (stressType12 === typeNum) return '#DC2626';
-          if (releaseType12 === typeNum) return '#2563EB';
+          if (energizingType12 === typeNum) return '#DC2626';
+          if (resolutionType12 === typeNum) return '#2563EB';
           if (typeNum === coreType) return '#2563EB';
           const center = CENTER_MAP[typeNum];
           if (center === 'Body') return '#92400E';
@@ -2784,10 +2784,10 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
               <div className="flex flex-col items-center gap-3">
                 <RelationshipWheel
                   leadingType={coreType}
-                  tritypeTypes={
-                    tritype
+                  wholeTypeTypes={
+                    wholeType
                       ? (() => {
-                          const digits = tritype.replace(/\D/g, '').split('').map(Number);
+                          const digits = wholeType.replace(/\D/g, '').split('').map(Number);
                           return {
                             body: digits.find(d => [8,9,1].includes(d)) || coreType,
                             heart: digits.find(d => [2,3,4].includes(d)) || 2,
@@ -2796,8 +2796,8 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                         })()
                       : null
                   }
-                  stressType={stressType12}
-                  releaseType={releaseType12}
+                  energizingType={energizingType12}
+                  resolutionType={resolutionType12}
                   relationshipDescriptions={relDesc}
                   onTypeHover={setHoveredRelType}
                   hoveredType={selectedRelType || hoveredRelType}
@@ -2903,24 +2903,24 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         );
       }
 
-      // ── Section 13: Stress & Release Lines ──
+      // ── Section 13: Energizing & Resolution Points ──
       case 13: {
         const coreType = leadingType;
-        const stressType = STRESS_LINES[coreType] || 0;
-        const releaseType = RELEASE_LINES[coreType] || 0;
-        const stressDesc = (r.stress_line_description as string) || '';
-        const stressTriggers = (r.stress_line_triggers as string) || '';
-        const releaseDesc = (r.release_line_description as string) || '';
-        const releaseAccess = (r.release_line_access as string) || '';
+        const energizingType = ENERGIZING_POINTS[coreType] || 0;
+        const resolutionType = RESOLUTION_POINTS[coreType] || 0;
+        const energizingDesc = (r.stress_line_description as string) || '';
+        const energizingTriggers = (r.stress_line_triggers as string) || '';
+        const resolutionDesc = (r.release_line_description as string) || '';
+        const resolutionAccess = (r.release_line_access as string) || '';
 
-        // Check if lowest/highest types fall on stress/release lines
+        // Check if lowest/highest types fall on energizing/resolution points
         const allScores = Object.entries(
           (r as Record<string, unknown>).type_scores as Record<string, number> ?? {}
         ).map(([t, s]) => ({ type: Number(t), score: s })).sort((a, b) => b.score - a.score);
         const lowestT = allScores.length > 0 ? allScores[allScores.length - 1] : null;
-        const lowestIsRelease = lowestT ? lowestT.type === releaseType : false;
+        const lowestIsResolution = lowestT ? lowestT.type === resolutionType : false;
         const highSecondary = allScores.length > 1 ? allScores[1] : null;
-        const secondaryIsStress = highSecondary ? highSecondary.type === stressType : false;
+        const secondaryIsEnergizing = highSecondary ? highSecondary.type === energizingType : false;
 
         // SVG geometry helper
         const CIRCLE_ORDER = [9, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -2932,22 +2932,22 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         }
 
         const corePt = getPt(coreType);
-        const stressPt = getPt(stressType);
-        const releasePt = getPt(releaseType);
+        const energizingPt = getPt(energizingType);
+        const resolutionPt = getPt(resolutionType);
 
         return (
           <div className="flex flex-col gap-6 max-w-[600px] w-full">
             <div className="sr-card" style={{ animationDelay: '0.1s' }}>
               <h2 className="font-serif text-[1.6rem] font-bold text-[#2C2C2C] mb-1">
-                Your Stress & Release Lines
+                Your Energizing & Resolution Points
               </h2>
               <p className="font-sans text-[0.85rem] text-[#6B6B6B] leading-relaxed">
-                Every type has two directional lines — where you go under pressure and where you go in growth.
+                Every type has two directional points — where you go under pressure and where you go in growth.
                 These aren&apos;t flaws or goals. They&apos;re the patterns your energy follows when fear runs the show and when you choose consciously.
               </p>
             </div>
 
-            {/* Enneagram diagram — stress/release lines highlighted */}
+            {/* Enneagram diagram — energizing/resolution points highlighted */}
             <div className="flex justify-center py-4">
               <svg viewBox="0 0 100 100" width={280} height={280} style={{ overflow: 'visible' }}>
                 {/* Outer circle */}
@@ -2965,14 +2965,14 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                   return <line key={`h-${a}-${b}`} x1={pa.x} y1={pa.y} x2={pb.x} y2={pb.y} stroke="#E8E4E0" strokeWidth="0.3" />;
                 })}
 
-                {/* Stress line — red dashed */}
+                {/* Energizing point line — red dashed */}
                 <line
-                  x1={corePt.x} y1={corePt.y} x2={stressPt.x} y2={stressPt.y}
+                  x1={corePt.x} y1={corePt.y} x2={energizingPt.x} y2={energizingPt.y}
                   stroke="#DC2626" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.7"
                 />
-                {/* Release line — blue solid */}
+                {/* Resolution point line — blue solid */}
                 <line
-                  x1={corePt.x} y1={corePt.y} x2={releasePt.x} y2={releasePt.y}
+                  x1={corePt.x} y1={corePt.y} x2={resolutionPt.x} y2={resolutionPt.y}
                   stroke="#2563EB" strokeWidth="1.2" opacity="0.7"
                 />
 
@@ -2980,10 +2980,10 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                 {CIRCLE_ORDER.map((t) => {
                   const p = getPt(t);
                   const isCore = t === coreType;
-                  const isStress = t === stressType;
-                  const isRelease = t === releaseType;
-                  const color = isCore ? '#2563EB' : isStress ? '#DC2626' : isRelease ? '#2563EB' : '#9B9590';
-                  const radius = isCore ? 5 : (isStress || isRelease) ? 3.5 : 2.5;
+                  const isEnergizing = t === energizingType;
+                  const isResolution = t === resolutionType;
+                  const color = isCore ? '#2563EB' : isEnergizing ? '#DC2626' : isResolution ? '#2563EB' : '#9B9590';
+                  const radius = isCore ? 5 : (isEnergizing || isResolution) ? 3.5 : 2.5;
                   return (
                     <g key={`pt-${t}`}>
                       <circle cx={p.x} cy={p.y} r={radius} fill={color} opacity={isCore ? 1 : 0.7} />
@@ -3004,63 +3004,63 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                 })}
 
                 {/* Labels on the lines */}
-                <text x={(corePt.x + stressPt.x) / 2 + 3} y={(corePt.y + stressPt.y) / 2 - 2} fill="#DC2626" fontSize="3" fontFamily="sans-serif" opacity="0.8">
-                  STRESS
+                <text x={(corePt.x + energizingPt.x) / 2 + 3} y={(corePt.y + energizingPt.y) / 2 - 2} fill="#DC2626" fontSize="3" fontFamily="sans-serif" opacity="0.8">
+                  ENERGIZING
                 </text>
-                <text x={(corePt.x + releasePt.x) / 2 + 3} y={(corePt.y + releasePt.y) / 2 - 2} fill="#2563EB" fontSize="3" fontFamily="sans-serif" opacity="0.8">
-                  RELEASE
+                <text x={(corePt.x + resolutionPt.x) / 2 + 3} y={(corePt.y + resolutionPt.y) / 2 - 2} fill="#2563EB" fontSize="3" fontFamily="sans-serif" opacity="0.8">
+                  RESOLUTION
                 </text>
               </svg>
             </div>
 
-            {/* Stress Line */}
+            {/* Energizing Point */}
             <div className="bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border-l-4 border-[#DC2626] sr-card" style={{ animationDelay: '0.2s' }}>
               <div className="flex items-center gap-2 mb-3">
                 <span className="font-mono text-[0.65rem] uppercase tracking-widest text-[#DC2626] font-bold">
-                  Stress Line
+                  Energizing Point
                 </span>
                 <span className="font-sans text-sm text-[#6B6B6B]">
-                  → Type {stressType} ({TYPE_NAMES[stressType] || ''})
+                  → Type {energizingType} ({TYPE_NAMES[energizingType] || ''})
                 </span>
               </div>
               <p className="font-sans text-[0.92rem] text-[#2C2C2C] leading-relaxed mb-3">
-                {stressDesc || `Under pressure, you take on qualities of Type ${stressType}. This is where your energy goes when the survival strategy takes over.`}
+                {energizingDesc || `Under pressure, you take on qualities of Type ${energizingType}. This is where your energy goes when the survival strategy takes over.`}
               </p>
-              {stressTriggers && (
+              {energizingTriggers && (
                 <div className="bg-[#FEF2F2] rounded-xl p-4">
                   <p className="font-mono text-[0.6rem] uppercase tracking-widest text-[#DC2626] mb-1">Triggers</p>
-                  <p className="font-sans text-[0.85rem] text-[#6B6B6B] leading-relaxed">{stressTriggers}</p>
+                  <p className="font-sans text-[0.85rem] text-[#6B6B6B] leading-relaxed">{energizingTriggers}</p>
                 </div>
               )}
-              {secondaryIsStress && highSecondary && (
+              {secondaryIsEnergizing && highSecondary && (
                 <p className="font-sans text-xs text-[#DC2626] mt-3 italic">
-                  Type {stressType} scored as your second-strongest type — this stress pattern may be highly active in your life right now.
+                  Type {energizingType} scored as your second-strongest type — this energizing pattern may be highly active in your life right now.
                 </p>
               )}
             </div>
 
-            {/* Release Line */}
+            {/* Resolution Point */}
             <div className="bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border-l-4 border-[#2563EB] sr-card" style={{ animationDelay: '0.4s' }}>
               <div className="flex items-center gap-2 mb-3">
                 <span className="font-mono text-[0.65rem] uppercase tracking-widest text-[#2563EB] font-bold">
-                  Release Line
+                  Resolution Point
                 </span>
                 <span className="font-sans text-sm text-[#6B6B6B]">
-                  → Type {releaseType} ({TYPE_NAMES[releaseType] || ''})
+                  → Type {resolutionType} ({TYPE_NAMES[resolutionType] || ''})
                 </span>
               </div>
               <p className="font-sans text-[0.92rem] text-[#2C2C2C] leading-relaxed mb-3">
-                {releaseDesc || `In growth, you access qualities of Type ${releaseType}. This is the energy that opens up when you choose to respond rather than react.`}
+                {resolutionDesc || `In growth, you access qualities of Type ${resolutionType}. This is the energy that opens up when you choose to respond rather than react.`}
               </p>
-              {releaseAccess && (
+              {resolutionAccess && (
                 <div className="bg-[#EFF6FF] rounded-xl p-4">
                   <p className="font-mono text-[0.6rem] uppercase tracking-widest text-[#2563EB] mb-1">How to access this</p>
-                  <p className="font-sans text-[0.85rem] text-[#6B6B6B] leading-relaxed">{releaseAccess}</p>
+                  <p className="font-sans text-[0.85rem] text-[#6B6B6B] leading-relaxed">{resolutionAccess}</p>
                 </div>
               )}
-              {lowestIsRelease && lowestT && (
+              {lowestIsResolution && lowestT && (
                 <p className="font-sans text-xs text-[#2563EB] mt-3 italic">
-                  Type {releaseType} is your lowest-scoring type — this may explain difficulty accessing this state of release. The energy is there; it&apos;s the one you haven&apos;t learned to reach for yet.
+                  Type {resolutionType} is your lowest-scoring type — this may explain difficulty accessing this state of resolution. The energy is there; it&apos;s the one you haven&apos;t learned to reach for yet.
                 </p>
               )}
             </div>
@@ -3085,8 +3085,8 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         const oynEntriesFull = Object.entries(oynData).filter(([, v]) => typeof v === 'string' && v.trim());
         const reactPattern = (r.react_pattern as string) || (r.defiant_spirit as Record<string, string>)?.react_pattern_observed || '';
         const respondPathway = (r.respond_pathway as string) || (r.defiant_spirit as Record<string, string>)?.respond_glimpsed || '';
-        const stressTypeFull = STRESS_LINES[coreType] || 0;
-        const releaseTypeFull = RELEASE_LINES[coreType] || 0;
+        const energizingTypeFull = ENERGIZING_POINTS[coreType] || 0;
+        const resolutionTypeFull = RESOLUTION_POINTS[coreType] || 0;
         const wholeSigs = (r.whole_type_signals as Record<string, number>) ?? {};
 
         // Clickable section header — pronounced, with hover-reveal questions
@@ -3128,8 +3128,8 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
           return { x: 50 + 38 * Math.sin(a), y: 50 - 38 * Math.cos(a) };
         }
 
-        // Tritype data
-        const tritypeDigits = tritype.replace(/\D/g, '').split('').map(Number);
+        // Whole Type data
+        const wholeTypeDigits = wholeType.replace(/\D/g, '').split('').map(Number);
         const centerColors: Record<string, { bg: string; text: string; label: string }> = {
           Body: { bg: '#FEF3C7', text: '#92400E', label: 'Body' },
           Heart: { bg: '#FCE7F3', text: '#9D174D', label: 'Heart' },
@@ -3138,8 +3138,8 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         const allTypeScores = Object.entries(typeScoresObj).map(([t, s]) => ({ type: Number(t), score: s })).sort((a, b) => b.score - a.score);
         const top3Overall = allTypeScores.slice(0, 3);
         const lowestType = allTypeScores.length > 0 ? allTypeScores[allTypeScores.length - 1] : null;
-        const lowestOnStressLine = lowestType ? STRESS_LINES[coreType] === lowestType.type : false;
-        const lowestOnReleaseLine = lowestType ? RELEASE_LINES[coreType] === lowestType.type : false;
+        const lowestOnEnergizingPoint = lowestType ? ENERGIZING_POINTS[coreType] === lowestType.type : false;
+        const lowestOnResolutionPoint = lowestType ? RESOLUTION_POINTS[coreType] === lowestType.type : false;
         const wingLeft = wingSignals.left ?? 0;
         const wingRight = wingSignals.right ?? 0;
         const wingAdj = getWingTypes(coreType);
@@ -3149,7 +3149,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
           { id: 'scores', label: 'Scores' },
           { id: 'powers', label: 'Powers' },
           { id: 'wing', label: 'Wing' },
-          { id: 'tritype', label: 'Tritype' },
+          { id: 'tritype', label: 'Whole Type' },
           { id: 'spirit', label: 'Spirit' },
           { id: 'lines', label: 'Lines' },
           { id: 'domains', label: 'Domains' },
@@ -3179,7 +3179,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                     { label: 'Confidence', value: `${confidencePct}%` },
                     { label: 'Wing', value: `${coreType}w${dominantWingFull}` },
                     { label: 'Variant', value: dominantVariantFull },
-                    { label: 'Tritype', value: tritype },
+                    { label: 'Whole Type', value: wholeType },
                   ].map(m => (
                     <div key={m.label} className="text-center">
                       <span className="font-sans text-[0.55rem] uppercase tracking-widest text-white/40 block">{m.label}</span>
@@ -3320,25 +3320,25 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
               )}
             </div>
 
-            {/* ═══ TRITYPE — with colored center cards ═══ */}
+            {/* ═══ WHOLE TYPE — with colored center cards ═══ */}
             <ScrollReveal>
             <div id="ca-tritype" className="bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] scroll-mt-16">
-              <p className="font-sans text-[0.65rem] uppercase tracking-widest text-[#9B9590] mb-2">Your Tritype</p>
+              <p className="font-sans text-[0.65rem] uppercase tracking-widest text-[#9B9590] mb-2">Your Whole Type</p>
               <p className="font-sans text-[0.8rem] text-[#6B6B6B] mb-5">Your dominant type in each of the three intelligence centers: Body, Heart, and Head.</p>
-              {tritype ? (
+              {wholeType ? (
                 <div className="flex flex-col md:flex-row md:items-center gap-6">
                   <div>
-                    <p className="font-serif text-[2.5rem] font-bold text-[#2C2C2C] leading-none mb-2">{tritypeDigits.join(' – ')}</p>
-                    {tritypeConfidence > 0 && <p className="font-sans text-xs text-[#9B9590]">{Math.round(tritypeConfidence * 100)}% confidence</p>}
-                    {tritypeArchetype && (
+                    <p className="font-serif text-[2.5rem] font-bold text-[#2C2C2C] leading-none mb-2">{wholeTypeDigits.join(' – ')}</p>
+                    {wholeTypeConfidence > 0 && <p className="font-sans text-xs text-[#9B9590]">{Math.round(wholeTypeConfidence * 100)}% confidence</p>}
+                    {wholeTypeArchetype && (
                       <div className="bg-[#FAF8F5] rounded-lg px-3 py-2 mt-3 inline-block">
                         <span className="font-sans text-[0.7rem] text-[#9B9590]">Archetype: </span>
-                        <span className="font-sans text-sm font-semibold text-[#2C2C2C]">{tritypeArchetype}</span>
+                        <span className="font-sans text-sm font-semibold text-[#2C2C2C]">{wholeTypeArchetype}</span>
                       </div>
                     )}
                   </div>
                   <div className="grid grid-cols-3 gap-3 flex-1">
-                    {tritypeDigits.map((digit, i) => {
+                    {wholeTypeDigits.map((digit, i) => {
                       const center = CENTER_MAP[digit] || 'Body';
                       const cc = centerColors[center] || centerColors.Body;
                       return (
@@ -3382,10 +3382,10 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                         <span className="font-serif text-xl font-bold text-[#9B9590]">{lowestType.type}</span>
                         <span className="font-sans text-sm text-[#6B6B6B]">{TYPE_NAMES[lowestType.type] || ''}</span>
                       </div>
-                      {(lowestOnStressLine || lowestOnReleaseLine) && (
+                      {(lowestOnEnergizingPoint || lowestOnResolutionPoint) && (
                         <p className="font-sans text-xs text-[#6B6B6B] leading-relaxed">
-                          {lowestOnReleaseLine && <>This is your release line — the energy you move toward in growth. Low activation here may explain difficulty accessing that state.</>}
-                          {lowestOnStressLine && <>This is your stress line — the pattern you fall into under pressure. Low activation here suggests this pattern is less familiar to you.</>}
+                          {lowestOnResolutionPoint && <>This is your resolution point — the energy you move toward in growth. Low activation here may explain difficulty accessing that state.</>}
+                          {lowestOnEnergizingPoint && <>This is your energizing point — the pattern you fall into under pressure. Low activation here suggests this pattern is less familiar to you.</>}
                         </p>
                       )}
                     </div>
@@ -3445,15 +3445,15 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                       const pa = gp(a); const pb = gp(b);
                       return <line key={`l-${a}-${b}`} x1={pa.x} y1={pa.y} x2={pb.x} y2={pb.y} stroke="#E8E4E0" strokeWidth="0.3" />;
                     })}
-                    <line x1={gp(coreType).x} y1={gp(coreType).y} x2={gp(stressTypeFull).x} y2={gp(stressTypeFull).y} stroke="#DC2626" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.7" />
-                    <line x1={gp(coreType).x} y1={gp(coreType).y} x2={gp(releaseTypeFull).x} y2={gp(releaseTypeFull).y} stroke="#2563EB" strokeWidth="1.2" opacity="0.7" />
+                    <line x1={gp(coreType).x} y1={gp(coreType).y} x2={gp(energizingTypeFull).x} y2={gp(energizingTypeFull).y} stroke="#DC2626" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.7" />
+                    <line x1={gp(coreType).x} y1={gp(coreType).y} x2={gp(resolutionTypeFull).x} y2={gp(resolutionTypeFull).y} stroke="#2563EB" strokeWidth="1.2" opacity="0.7" />
                     {CIRCLE_ORDER.map((t) => {
                       const p = gp(t);
-                      const isCore = t === coreType; const isStress = t === stressTypeFull; const isRelease = t === releaseTypeFull;
-                      const color = isCore ? '#2563EB' : isStress ? '#DC2626' : isRelease ? '#2563EB' : '#9B9590';
+                      const isCore = t === coreType; const isEnergizing = t === energizingTypeFull; const isResolution = t === resolutionTypeFull;
+                      const color = isCore ? '#2563EB' : isEnergizing ? '#DC2626' : isResolution ? '#2563EB' : '#9B9590';
                       return (
                         <g key={`p-${t}`}>
-                          <circle cx={p.x} cy={p.y} r={isCore ? 4.5 : (isStress || isRelease) ? 3 : 2} fill={color} opacity={isCore ? 1 : 0.7} />
+                          <circle cx={p.x} cy={p.y} r={isCore ? 4.5 : (isEnergizing || isResolution) ? 3 : 2} fill={color} opacity={isCore ? 1 : 0.7} />
                           <text x={p.x} y={p.y < 20 ? p.y - 6 : p.y > 75 ? p.y + 9 : p.y} dx={p.x > 70 ? 6 : p.x < 30 ? -6 : 0} textAnchor="middle" fill={color} fontSize="4" fontFamily="serif" fontWeight={isCore ? 'bold' : 'normal'}>{t}</text>
                         </g>
                       );
@@ -3462,17 +3462,17 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                 </div>
                 <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                   <div className="p-5 rounded-xl bg-[#FEF2F2] border-l-4 border-[#DC2626]">
-                    <span className="font-mono text-[0.65rem] uppercase tracking-widest text-[#DC2626]">Stress → {stressTypeFull}</span>
-                    <p className="font-sans text-sm font-semibold text-[#2C2C2C] mt-1">{TYPE_NAMES[stressTypeFull]}</p>
+                    <span className="font-mono text-[0.65rem] uppercase tracking-widest text-[#DC2626]">Energizing Point → {energizingTypeFull}</span>
+                    <p className="font-sans text-sm font-semibold text-[#2C2C2C] mt-1">{TYPE_NAMES[energizingTypeFull]}</p>
                     <p className="font-sans text-[0.82rem] text-[#6B6B6B] mt-2 leading-relaxed">
-                      {(r.stress_line_description as string) || `Under pressure, your energy moves toward ${TYPE_NAMES[stressTypeFull]} patterns.`}
+                      {(r.stress_line_description as string) || `Under pressure, your energy moves toward ${TYPE_NAMES[energizingTypeFull]} patterns.`}
                     </p>
                   </div>
                   <div className="p-5 rounded-xl bg-[#EFF6FF] border-l-4 border-[#2563EB]">
-                    <span className="font-mono text-[0.65rem] uppercase tracking-widest text-[#2563EB]">Release → {releaseTypeFull}</span>
-                    <p className="font-sans text-sm font-semibold text-[#2C2C2C] mt-1">{TYPE_NAMES[releaseTypeFull]}</p>
+                    <span className="font-mono text-[0.65rem] uppercase tracking-widest text-[#2563EB]">Resolution Point → {resolutionTypeFull}</span>
+                    <p className="font-sans text-sm font-semibold text-[#2C2C2C] mt-1">{TYPE_NAMES[resolutionTypeFull]}</p>
                     <p className="font-sans text-[0.82rem] text-[#6B6B6B] mt-2 leading-relaxed">
-                      {(r.release_line_description as string) || `In growth, you access ${TYPE_NAMES[releaseTypeFull]} qualities.`}
+                      {(r.release_line_description as string) || `In growth, you access ${TYPE_NAMES[resolutionTypeFull]} qualities.`}
                     </p>
                   </div>
                 </div>
@@ -3606,7 +3606,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
     'Domain Insights',
     'Explore Your Type',
     'Relationship Wheel',
-    'Stress & Release Lines',
+    'Energizing & Resolution Points',
     'Your Journey Begins',
   ];
 
@@ -3798,7 +3798,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                         <div className="flex gap-3 flex-wrap justify-center">
                           {wing && <span className="font-sans text-[0.78rem] bg-white/8 border border-white/12 rounded-full px-5 py-2 text-white/65">{wing}</span>}
                           {variant && <span className="font-sans text-[0.78rem] bg-white/8 border border-white/12 rounded-full px-5 py-2 text-white/65">{variant}</span>}
-                          {tritype && <span className="font-sans text-[0.78rem] rounded-full px-5 py-2 text-white/65" style={{ background: `${essP.colors[1]}15`, border: `1px solid ${essP.colors[1]}25` }}>{tritype}</span>}
+                          {wholeType && <span className="font-sans text-[0.78rem] rounded-full px-5 py-2 text-white/65" style={{ background: `${essP.colors[1]}15`, border: `1px solid ${essP.colors[1]}25` }}>{wholeType}</span>}
                         </div>
                         {headline && (
                           <p className="font-serif italic text-[1.05rem] leading-[1.8] mt-8 max-w-lg mx-auto" style={{ color: essP.colors[2] }}>

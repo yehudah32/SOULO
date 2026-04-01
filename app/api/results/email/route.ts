@@ -142,7 +142,7 @@ function buildEmailHtml(results: Record<string, unknown>): string {
     <p style="font-style: italic; color: #2563EB; font-size: 1rem;">${closing}</p>
   </div>
 
-  ${results.tritype ? `<p style="text-align: center; color: #9B9590; font-size: 0.8rem;">Tritype: ${results.tritype}</p>` : ''}
+  ${results.tritype ? `<p style="text-align: center; color: #9B9590; font-size: 0.8rem;">Whole Type: ${results.tritype}</p>` : ''}
 
   <div style="border-top: 1px solid #E8E4E0; padding-top: 20px; margin-top: 20px; text-align: center;">
     <p style="color: #9B9590; font-size: 0.75rem;">Your full results PDF is attached to this email.</p>

@@ -289,12 +289,12 @@ export default async function SessionDetailPage({
           </Card>
         </div>
 
-        {/* Tritype */}
+        {/* Whole Type */}
         {r.tritype && (
           <Card>
             <div className="flex flex-wrap gap-6 items-start">
               <div className="flex flex-col gap-1">
-                <Label>Tritype</Label>
+                <Label>Whole Type</Label>
                 <span className="font-serif text-[2.5rem] font-bold text-[#2C2C2C] leading-none">{r.tritype}</span>
                 {r.tritype_confidence > 0 && (
                   <span className="font-sans text-xs text-[#9B9590]">
