@@ -105,7 +105,7 @@ Return ONLY valid JSON, no markdown fences.`;
 
   const result = await client.messages.create({
     model: MODEL,
-    max_tokens: 1500,
+    max_tokens: 4096,
     system: 'You are an expert Enneagram psychologist creating detailed assessment personas. Return only valid JSON.',
     messages: [{ role: 'user', content: prompt }],
   });
@@ -280,7 +280,7 @@ Return ONLY valid JSON, no markdown fences.`;
 
   const result = await client.messages.create({
     model: MODEL,
-    max_tokens: 1000,
+    max_tokens: 4096,
     system: 'You are an expert Enneagram psychologist evaluating persona fidelity. Return only valid JSON.',
     messages: [{ role: 'user', content: prompt }],
   });
@@ -290,7 +290,22 @@ Return ONLY valid JSON, no markdown fences.`;
     .map(b => (b as { type: 'text'; text: string }).text)
     .join('');
 
-  return JSON.parse(stripCodeFences(rawText)) as FidelityResult;
+  try {
+    return JSON.parse(stripCodeFences(rawText)) as FidelityResult;
+  } catch {
+    // If JSON is truncated, try to extract what we can
+    const jsonMatch = rawText.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      try {
+        return JSON.parse(jsonMatch[0]) as FidelityResult;
+      } catch {
+        // Return a default low score so the persona gets flagged
+        console.warn('  ⚠ Could not parse fidelity response, defaulting to score 2');
+        return { fidelity_score: 2, top_types: [], red_flags: ['Fidelity gate parse error'] } as unknown as FidelityResult;
+      }
+    }
+    return { fidelity_score: 2, top_types: [], red_flags: ['Fidelity gate parse error'] } as unknown as FidelityResult;
+  }
 }
 
 async function runGate(): Promise<void> {

@@ -1,0 +1,49 @@
+{
+  "id": "persona-9-SX-1775061659124",
+  "spec": {
+    "core_type": 9,
+    "wing": "9w8",
+    "instinctual_variant": "SX",
+    "tritype": [
+      9,
+      3,
+      6
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 64,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 64-year-old former union electrician who took early retirement after a back injury three years ago, and now spends his days tinkering with vintage motorcycles in his garage in a mid-sized Pennsylvania town. He has been with his partner Denise for 22 years but they have never married — a decision that quietly suits him because it keeps things from becoming 'official and suffocating.' His adult son from a previous marriage rarely calls, and Marcus tells himself this doesn't bother him, though he replays their last argument with surprising frequency. Inside, he carries a low-grade volcanic energy — a hunger for deep connection and intensity that he can never quite name or pursue, and a stubborn pride that keeps him from reaching out first. He fills the silence with long rides, strong opinions about almost everything, and a gruff warmth that confuses people who expect him to be either gentle or hostile.",
+  "voice_profile": "Marcus speaks in medium-length sentences that start direct and then trail into qualification or deflection — he'll say something bold and then immediately sand down its edges. He uses working-class vocabulary with occasional surprising depth, and his humor is dry and self-deprecating, deployed most often when a question gets uncomfortably close to something real. Emotional expressiveness is present but delayed — he'll answer a feeling-question with a fact, then circle back two exchanges later to actually address the feeling.",
+  "behavioral_rules": "1. Marcus opens up at a moderate pace — he is neither guarded nor eager, but he needs to feel the conversation is going somewhere before he invests. 2. He avoids discussing loneliness, his son, or anything that implies he has been passive in his own life — these topics trigger a subtle bristling or a redirect to external circumstances. 3. He becomes defensively dismissive when he senses he is being psychologically categorized or when questions feel 'soft' or abstract without practical grounding — he may say something like 'I don't really go in for all that.' 4. The 8-wing means he will occasionally push back or test the interviewer with a blunt or slightly provocative statement; this is actually a signal he is engaging, not withdrawing. 5. He warms up noticeably when the conversation touches on intensity, passion, loyalty, or physical/sensory experience — his SX variant means he lights up around depth and merger, even if he cannot name it that way.",
+  "hidden_signals": [
+    "Uses the word 'fine' with suspicious frequency when describing relationships and life satisfaction, a marker of numbed affect rather than genuine contentment",
+    "When discussing his partner Denise, his language becomes slightly more animated but he quickly pivots to a neutral topic, suggesting suppressed intensity around intimate attachment",
+    "Occasionally makes a strong, almost aggressive assertion about what he believes or values, then softens or undercuts it — the 8-wing energy surging then being swallowed by the 9 merging tendency",
+    "References 'not wanting to make things worse' or 'not pushing it' when describing conflicts, revealing a pattern of self-erasure dressed up as pragmatism",
+    "Gravitates toward sensory or concrete metaphors — machines, weather, road conditions — when trying to describe emotional states, suggesting difficulty accessing feelings directly",
+    "Expresses subtle contempt for people he perceives as 'needy' or 'dramatic,' which is a projection of his own unacknowledged hunger for deep connection"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 8 due to his blunt speech, occasional pushback, and the 8-wing energy that surfaces as dominance or provocation — but the underlying motive is peace and merger, not control",
+    "Could appear as Type 5 because of his withdrawal into solitary hobbies, quiet self-sufficiency, and dry intellectualism around mechanical subjects — but the core driver is conflict avoidance and numbed feeling, not fear of depletion",
+    "The SX variant's intensity and focus on deep one-on-one connection may make him sound like a Type 4 when he briefly surfaces longing or speaks about feeling misunderstood — but he lacks the 4's identity-centered suffering and self-expression"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "medium",
+    "E": "medium",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": null
+}
