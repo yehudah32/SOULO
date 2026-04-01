@@ -1,0 +1,291 @@
+{
+  "batch_id": "batch-1775063566843",
+  "tier": "tier1",
+  "total_runs": 3,
+  "timestamp": "2026-04-01T17:12:46.843Z",
+  "headline_metrics": {
+    "overall_accuracy": 1,
+    "meets_75_threshold": true,
+    "convergent_validity_alignment": 1,
+    "harm_weighted_accuracy": 1,
+    "confidence_calibration_ece": 0.12,
+    "commandment_fidelity_avg": 1,
+    "commandment_critical_violations": 6,
+    "labeled_or_liberated_rate": 0
+  },
+  "per_type_accuracy": {
+    "1": {
+      "accuracy": 1,
+      "n": 1,
+      "ci_95": [
+        0.20654329147389294,
+        1
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 1,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 0
+    },
+    "2": {
+      "accuracy": 0,
+      "n": 0,
+      "ci_95": [
+        0,
+        0
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 0
+    },
+    "3": {
+      "accuracy": 0,
+      "n": 0,
+      "ci_95": [
+        0,
+        0
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 0
+    },
+    "4": {
+      "accuracy": 0,
+      "n": 0,
+      "ci_95": [
+        0,
+        0
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 0
+    },
+    "5": {
+      "accuracy": 0,
+      "n": 0,
+      "ci_95": [
+        0,
+        0
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 0
+    },
+    "6": {
+      "accuracy": 1,
+      "n": 1,
+      "ci_95": [
+        0.20654329147389294,
+        1
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 3
+    },
+    "7": {
+      "accuracy": 1,
+      "n": 1,
+      "ci_95": [
+        0.20654329147389294,
+        1
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 1,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 0
+    },
+    "8": {
+      "accuracy": 0,
+      "n": 0,
+      "ci_95": [
+        0,
+        0
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 0
+    },
+    "9": {
+      "accuracy": 0,
+      "n": 0,
+      "ci_95": [
+        0,
+        0
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 0
+    }
+  },
+  "confusion_matrix": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "top_mistype_pairs": [],
+  "question_quality_aggregate": {
+    "avg_disconfirmatory_ratio": 0.0868347338935574,
+    "avg_motivational_ratio": 0.36834733893557425,
+    "avg_liberatory_ratio": 0.05158730158730159,
+    "leading_question_incidents": 0
+  },
+  "commandment_fidelity_aggregate": {
+    "average_cfs": 1,
+    "per_commandment_pass_rates": {
+      "C1": 0.3333333333333333,
+      "C2": 0.3333333333333333,
+      "C3": 0,
+      "C4": 0.6666666666666666,
+      "C5": 0,
+      "C6": 0.6666666666666666,
+      "C7": 0.3333333333333333,
+      "C8": 1,
+      "C9": 0,
+      "C10": 0.3333333333333333
+    },
+    "weakest_commandments": [
+      "C3",
+      "C5",
+      "C9"
+    ],
+    "critical_violation_details": [
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C1"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C6"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C4"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C5"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C2"
+      },
+      {
+        "run_id": "eval-persona-7-SP-1775061605565-1775063566833",
+        "violation": "C2"
+      }
+    ]
+  },
+  "priority_fixes": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A | N/A | N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Frequency: 3/3 runs. Unknown"
+    }
+  ]
+}

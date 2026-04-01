@@ -574,7 +574,7 @@ Return format: [{ ...action }, ...]`;
   try {
     const result = await client.messages.create({
       model: MODEL,
-      max_tokens: 1500,
+      max_tokens: 4096,
       system: 'You are an expert evaluation analyst for an Enneagram AI assessment system. Return only valid JSON arrays.',
       messages: [{ role: 'user', content: prompt }],
     });

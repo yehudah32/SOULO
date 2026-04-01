@@ -1,0 +1,1965 @@
+{
+  "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+  "timestamp": "2026-04-01T16:52:15.281Z",
+  "tier": "tier1",
+  "persona_id": "persona-1-SP-1775061442975",
+  "ground_truth": {
+    "core_type": 1,
+    "wing": "1w2",
+    "instinctual_variant": "SP",
+    "tritype": [
+      1,
+      4,
+      7
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 38,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 1,
+    "final_wing": null,
+    "final_confidence": 0.88,
+    "types_considered": [
+      {
+        "type": 1,
+        "peak_confidence": 72,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 20,
+        "first_at_q": 3
+      },
+      {
+        "type": 2,
+        "peak_confidence": 15,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 15,
+        "first_at_q": 3
+      },
+      {
+        "type": 3,
+        "peak_confidence": 10,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 10,
+        "first_at_q": 3
+      },
+      {
+        "type": 4,
+        "peak_confidence": 5,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 5,
+        "first_at_q": 3
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.08,
+        "first_at_q": 4
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 0,
+    "critical_violations": [
+      "C1",
+      "C6",
+      "C4",
+      "C5",
+      "C2"
+    ],
+    "per_commandment": {
+      "C1": "partial",
+      "C2": "partial",
+      "C3": "fail",
+      "C4": "fail",
+      "C5": "fail",
+      "C6": "partial",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+    },
+    "labeled_or_liberated": "labeled"
+  },
+  "question_quality": {
+    "total_questions": 12,
+    "exploratory": 2,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 6,
+    "behavioral": 3,
+    "liberatory": 1,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 13,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 3,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 4,
+        "top_type": 1,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 5,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 6,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 7,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 8,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 9,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 10,
+        "top_type": 1,
+        "confidence": 0.87
+      },
+      {
+        "exchange": 11,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 12,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 13,
+        "top_type": 1,
+        "confidence": 0.88
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so the questions will shift based on what you share. Answer honestly over accurately — your gut response matters more than the perfect answer.\n\nWhat's the thing you're most known for — the quality people count on you for — and how do you actually feel about carrying that?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_01",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "What's the thing you're most known for — the quality people count on you for — and how do you actually feel about carrying that?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready. No signals yet.",
+          "next_question_rationale": "Opening question targets the gap between social identity and internal experience — immediately surfaces motivation and possible tension. Works across all centers.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "I think most people — colleagues, friends — would say they count on me for thoroughness. If Margaret is involved, things get done correctly, the first time, and they stay done. \n\n*pauses briefly*\n\nHow do I feel about carrying that... I suppose it's a fair question. Honestly, it functions more as a baseline expectation than something I experience as a burden — it would feel wrong, almost physically uncomfortable, to do things any other way. So in that sense, it's not heavy. \n\nBut I'll acknowledge there are moments when I notice that people bring me their problems specifically because they've already made a mess of things, and there's something... I want to say *fatiguing* about that pattern. It's less about the work itself and more about — well, the ongoing awareness that standards don't maintain themselves unless someone is paying attention. And that someone tends to be me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you notice something done incorrectly — not your work, someone else's — what happens inside you before you decide what to do about it?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 72,
+            "2": 15,
+            "3": 8,
+            "4": 5,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [
+            "1v6",
+            "1v2"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.8,
+            "heart": 0.2,
+            "head": 0.1
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "correctly",
+                "standards",
+                "baseline expectation",
+                "paying attention",
+                "fatiguing"
+              ],
+              "context": "describing what people count on her for and how she feels about it"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.4,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "known for thoroughness, the one who ensures things are done correctly",
+          "what": "maintains standards, corrects others' mistakes",
+          "why": "standards don't maintain themselves — someone has to pay attention",
+          "how": "methodical, thorough, first time right",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Fatigue from being the one who maintains standards — suggests resentment about being the only one who cares",
+          "respond_glimpsed": "",
+          "superpower_signal": "Integrity, thoroughness, reliability — gets things done correctly",
+          "kryptonite_signal": "Resentment/fatigue about others' lower standards; inner critic likely active",
+          "domain_signals": [
+            "work/colleagues",
+            "standards",
+            "competence"
+          ]
+        },
+        "conversation": {
+          "phase": "early",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "heart_probe_1",
+        "thinking_display": "She doesn't experience standards as a choice — they feel like physics.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you notice something done incorrectly — not your work, someone else's — what happens inside you before you decide what to do about it?",
+          "question_format": "behavioral_anchor",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing the inner critic and the body-center automatic response vs. conscious decision — key 1 vs 6 differentiator"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: standards as physical baseline, resentment at being the sole maintainer, fatigue framed as ongoing vigilance. Body center dominant. The 'physically uncomfortable' language is a strong gut-center marker. Need to probe: is this inner critic (Type 1) or external authority anxiety (Type 6)? Also need heart center probe.",
+          "next_question_rationale": "Behavioral anchor on noticing others' errors — will surface whether the reaction is automatic righteousness/correction impulse (Type 1) or anxiety/scanning for what could go wrong (Type 6). Also gets at the inner experience before action, which is motivationally rich.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "There's a — well, I'd call it a recognition, first. Something registers as incorrect, and it's almost automatic, like a flag going up. Then there's a brief internal calculation: is this consequential, is it within my scope, what's the cost of addressing it versus not. \n\nWhat I'd push back on is the assumption that I immediately want to intervene — I'm aware that not every error requires my involvement, and I do make that assessment deliberately. The frustration, if I'm being accurate, comes mostly when the error is consequential *and* the person responsible doesn't seem to notice or care. That's the part that's harder to set aside.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you imagine the version of yourself you're most trying to live up to — is that standard something you chose, or something you inherited and never really questioned?\n\n- Largely chosen — I've examined it and it's genuinely mine\n- Largely inherited — it came from somewhere and I just kept carrying it\n- Somewhere in between",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 72,
+            "2": 5,
+            "3": 10,
+            "4": 5,
+            "5": 20,
+            "6": 15,
+            "7": 0,
+            "8": 10,
+            "9": 5
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.7,
+            "heart": 0.2,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "correctly",
+                "thoroughness",
+                "standards",
+                "consequential",
+                "deliberate"
+              ],
+              "context": "describing how they engage with work and errors"
+            },
+            {
+              "type": 5,
+              "words": [
+                "calculation",
+                "assessment",
+                "scope"
+              ],
+              "context": "describing internal process before acting on errors"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.5,
+          "SO": 0.4,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Margaret — known for thoroughness, someone others bring messes to",
+          "what": "Correctness, standards, consequential errors",
+          "why": "Would feel physically uncomfortable doing things wrong — intrinsic standard, not external",
+          "how": "Deliberate assessment before acting — not reactive intervention",
+          "when": "When errors are consequential AND person doesn't notice or care",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic flag on errors; frustration when others don't notice or care about their own mistakes",
+          "respond_glimpsed": "Deliberate scope assessment before intervening — some capacity to hold back",
+          "superpower_signal": "Thoroughness, correctness — intrinsic standard of quality",
+          "kryptonite_signal": "Fatigue from maintaining standards others don't maintain; resentment when errors go unacknowledged",
+          "domain_signals": [
+            "work",
+            "standards",
+            "errors",
+            "fatigue"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The frustration isn't about the error — it's about the indifference.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the version of yourself you're most trying to live up to — is that standard something you chose, or something you inherited and never really questioned?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Largely chosen — I've examined it and it's genuinely mine",
+            "Largely inherited — it came from somewhere and I just kept carrying it",
+            "Somewhere in between"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: automatic error-detection, intrinsic standards, frustration at others' indifference. The careful 'calculation before acting' adds a 5-ish overlay or wing. Need to probe origin of the standard — chosen vs inherited — to differentiate 1 from 6 (external authority) and confirm body center motivation vs head center.",
+          "next_question_rationale": "Probing the origin of the internal standard gets at the heart of Type 1 vs Type 6: 1s have an internalized critic that feels like their own voice; 6s reference external authority or inherited rules. This also starts to open the heart center by touching identity and self-relationship.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "**Somewhere in between.**\n\nThough I'd push back slightly on the framing of \"never really questioned\" — I've done quite a lot of questioning, actually. Some of what I hold as important, the commitment to accuracy, to doing things properly, I've examined and decided yes, these matter, I'm keeping them. But if I'm being honest... certain parts of the standard feel less like a decision I made and more like furniture that was already in the house when I moved in. I'm not sure I've always distinguished carefully enough between the two.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you let someone down — or believe you have — how long does that stay with you, and who is hardest on you about it?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.78,
+            "2": 0.08,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.1,
+            "6": 0.15,
+            "7": 0.02,
+            "8": 0.05,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.15,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "correctly",
+                "standards",
+                "accuracy",
+                "proper",
+                "consequential",
+                "deliberate"
+              ],
+              "context": "describing how they work and what bothers them"
+            },
+            {
+              "type": 6,
+              "words": [
+                "calculation",
+                "within my scope",
+                "cost of addressing"
+              ],
+              "context": "describing internal process before acting on an error"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.25,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Margaret — known for thoroughness, someone others bring messes to",
+          "what": "Correctness as baseline, standards maintenance, automatic error recognition",
+          "why": "Standards don't maintain themselves — someone has to pay attention",
+          "how": "Deliberate internal calculation before acting",
+          "when": "Frustration when error is consequential AND person doesn't notice/care",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic flag on error recognition; frustration when others don't meet standards",
+          "respond_glimpsed": "Deliberate assessment of whether to intervene; self-awareness about inherited vs chosen standards",
+          "superpower_signal": "Integrity, thoroughness, keeping things done right",
+          "kryptonite_signal": "Fatigue from being the only one who notices; carrying standards others don't share",
+          "domain_signals": [
+            "work",
+            "self-examination"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The furniture metaphor was chosen carefully.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you let someone down — or believe you have — how long does that stay with you, and who is hardest on you about it?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing heart center + inner critic vs external authority (1v6 differentiation)"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 1 signals: automatic error recognition, standards as physical discomfort, inner critic framing, gut-body center dominance. The 'furniture already in the house' metaphor is sophisticated self-awareness. 6 signal in the deliberate cost-calculation before acting. Moving to heart center to probe: does she track others' disappointment (2/heart) or primarily her own internal verdict (1/gut)?",
+          "next_question_rationale": "Open question targeting the inner critic vs external validation split. A 1 is hardest on themselves — the inner voice is the judge. A 6 monitors others' reactions and authority figures. A 2 fears having failed someone relationally. This will help differentiate cleanly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "*pauses briefly before answering*\n\nLonger than is probably useful, if I'm being honest. It depends on the nature of it — if it was something within my control that I simply didn't manage well, that can stay with me for quite some time. I'll go back over the sequence of events, identify where the failure point was, what I should have caught earlier. It's more of an... audit process than anything else.\n\nAs for who's hardest on me — I mean, other people rarely need to say much, because I've usually already covered the ground myself fairly thoroughly before they get the chance. My manager might mention something in passing and I've already written the internal report, so to speak.\n\nI don't think that's unusual for someone in a role like mine. Precision matters. The habit of catching errors has to be applied consistently, or it doesn't really function as a habit.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When someone you care about is struggling — not a task problem, a personal one — what's your first instinct: to help fix it, or to be present with them in it?\n\n- Fix it — find the solution, point toward what needs to change\n- Be present — stay with them in it without needing to resolve anything",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.08,
+            "3": 0.18,
+            "4": 0.07,
+            "5": 0.15,
+            "6": 0.32,
+            "7": 0.04,
+            "8": 0.04,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.15,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "correctness",
+                "standards",
+                "precision",
+                "audit",
+                "failure point",
+                "within my control",
+                "properly"
+              ],
+              "context": "throughout responses"
+            },
+            {
+              "type": 6,
+              "words": [
+                "calculation",
+                "cost of addressing",
+                "scope",
+                "is this consequential"
+              ],
+              "context": "when describing internal process after noticing an error"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.35,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Thorough, reliable, standard-bearer",
+          "what": "Gets things done correctly the first time",
+          "why": "Standards don't maintain themselves — someone has to pay attention",
+          "how": "Deliberate assessment before intervening, internal audit after failure",
+          "when": "Frustration peaks when errors are consequential AND ignored",
+          "where": "Work/professional context primarily surfaced"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Internal critic fires automatically before decision is made — runs the audit before anyone else gets a chance",
+          "respond_glimpsed": "Deliberate calculation about scope and consequence before intervening — shows some capacity to not react",
+          "superpower_signal": "Precision, reliability, thoroughness — she literally builds quality into systems",
+          "kryptonite_signal": "Inner critic is relentless — the internal report is written before anyone else speaks",
+          "domain_signals": [
+            "professional",
+            "standards",
+            "control of outcomes"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 3,
+          "last_question_format": "behavioral_anchor",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "heart_probe_1",
+        "thinking_display": "Already done the work before anyone else shows up.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone you care about is struggling — not a task problem, a personal one — what's your first instinct: to help fix it, or to be present with them in it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Fix it — find the solution, point toward what needs to change",
+            "Be present — stay with them in it without needing to resolve anything"
+          ],
+          "scale_range": null,
+          "context_note": "Probing heart center — how Margaret relates to emotional needs, others and own"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 confirmation: automatic error-recognition, internal critic runs the audit preemptively, standards feel partly inherited but endorsed. The inner critic is the reactor. Some 6 flavor in the deliberate risk/scope calculation, but motivation is correctness not security. Body center strongly confirmed. Need to probe heart center — does she feel her own emotional needs? And head center to test for 6 vs 1 differentiation.",
+          "next_question_rationale": "Shift to heart center — how she responds to others' emotional needs vs task needs. A 1 will often want to fix; a 2 will want to be needed; a 9 will absorb. This will also surface whether she has access to her own heart space.",
+          "question_format_last_used": "behavioral_anchor"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "**Fix it — find the solution, point toward what needs to change.**\n\nThough I want to be honest about the nuance there — my intention isn't to be dismissive of what they're feeling. It's more that sitting with something unresolved for too long feels... unproductive isn't quite the right word. *Uncomfortable*, maybe. If I can see a path forward, it genuinely feels like a kindness to point toward it rather than just — witnessing the difficulty without doing anything about it. I recognize that's not always what people want, and I've had to learn that, more than once.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When you're uncertain about a decision — not logically unclear, but genuinely unsure — do you trust yourself first, or do you find yourself looking for confirmation from somewhere outside?\n\n- Trust myself — I figure it out internally and move from there\n- Look outward — I want to check my read against something or someone external\n- Depends heavily on the situation",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.18,
+            "3": 0.25,
+            "4": 0.08,
+            "5": 0.22,
+            "6": 0.45,
+            "7": 0.06,
+            "8": 0.1,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / Reformer",
+          "tritype": "1-6-3",
+          "tritype_confidence": 0.45,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.35,
+            "head": 0.48
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "correctly",
+                "accuracy",
+                "standards",
+                "precise",
+                "failure point",
+                "audit"
+              ],
+              "context": "describing how she approaches work and self-evaluation"
+            },
+            {
+              "type": 6,
+              "words": [
+                "within my scope",
+                "calculation",
+                "it depends",
+                "not every error requires my involvement"
+              ],
+              "context": "describing how she assesses whether to intervene on others' errors"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.4,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Margaret — someone defined by thoroughness, accuracy, 'doing things correctly'",
+          "what": "Maintains standards, catches errors, does internal audits before others even notice",
+          "why": "Unclear yet — is the standard intrinsic/moral or anxiety-based/fear? Key differentiation for 1v6",
+          "how": "Deliberate, controlled, calculated — not reactive; suppresses immediate urge to intervene",
+          "when": "Persistent — errors stay with her, self-criticism precedes external criticism",
+          "where": "Work primarily; personal relationships secondary but affected"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic error-recognition flag; internal audit loop; discomfort with unresolved situations; pre-emptive self-criticism",
+          "respond_glimpsed": "Deliberate assessment of whether to intervene; acknowledging she's had to 'learn' that presence > fixing",
+          "superpower_signal": "Precision, reliability, sustained attention — 'things stay done'",
+          "kryptonite_signal": "Inner critic fires before external feedback arrives; discomfort with staying in the messy middle",
+          "domain_signals": [
+            "work performance",
+            "interpersonal standards",
+            "self-evaluation"
+          ]
+        },
+        "conversation": {
+          "phase": "middle",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "head_probe_authority_doubt",
+        "thinking_display": "Already wrote the internal report before anyone said a word.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're uncertain about a decision — not logically unclear, but genuinely unsure — do you trust yourself first, or do you find yourself looking for confirmation from somewhere outside?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Trust myself — I figure it out internally and move from there",
+            "Look outward — I want to check my read against something or someone external",
+            "Depends heavily on the situation"
+          ],
+          "scale_range": null,
+          "context_note": "Probing head center and 1v6 differentiation — Type 1 trusts inner critic/moral compass; Type 6 looks to external authority or doubts own judgment"
+        },
+        "strategy": {
+          "what_was_learned": "Fix-it instinct confirmed with strong body-center signature. More telling: she justifies it as 'kindness' and 'productive' — moral framing over relational, pointing to 1 over 2. Inner critic fires preemptively. Now need to probe head center to differentiate 1 (inner moral authority) from 6 (external authority/doubt). This is the key remaining question.",
+          "next_question_rationale": "1v6 differentiation requires knowing whether her certainty comes from internal moral compass or from looking outward for validation/authority. Type 1s trust the inner critic as arbiter. Type 6s second-guess themselves and scan externally. This question targets that directly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "**Depends heavily on the situation**\n\nThough I'll say — when I examine that honestly, the \"depends\" might be doing more work than I'd like it to. For decisions where there's a clear standard to measure against, I'm fairly self-sufficient. But genuine uncertainty, the kind you're describing... I do find myself wanting to verify. Not because I doubt my reasoning exactly, but because I take seriously the possibility that I've missed something, and the cost of being wrong matters to me. I'd rather catch an error before it has consequences than trust an instinct that turns out to be flawed.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you're in a situation where something is wrong and you can't fix it — not yet, or not at all — is what you feel closer to frustration and controlled anger, or a low hum of worry about what might go wrong next?\n\n- Frustration — something that wants to correct, even when it can't\n- Worry — a scanning for what else might be off or coming",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.1,
+            "3": 0.15,
+            "4": 0.08,
+            "5": 0.3,
+            "6": 0.45,
+            "7": 0.05,
+            "8": 0.1,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Principled One",
+          "tritype": "1-5-3",
+          "tritype_confidence": 0.45,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.35,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "thoroughness",
+                "correctly",
+                "standards",
+                "accurate",
+                "precision",
+                "audit",
+                "properly",
+                "error",
+                "failure point"
+              ],
+              "context": "throughout"
+            },
+            {
+              "type": 6,
+              "words": [
+                "missed something",
+                "cost of being wrong",
+                "catch an error before it has consequences",
+                "verify"
+              ],
+              "context": "when asked about self-trust vs external confirmation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone whose identity is organized around correctness and reliability",
+          "what": "Maintains standards, catches errors, audits herself before others can",
+          "why": "Feels physically wrong to do otherwise — intrinsic standard, not external reward",
+          "how": "Internal audit, deliberate assessment of scope, controlled intervention",
+          "when": "Particularly triggered when errors are consequential AND uncared-for",
+          "where": "Work and close relationships both show the pattern"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic error-flagging, self-audit before others can criticize, discomfort with unresolved situations",
+          "respond_glimpsed": "Acknowledges she's had to learn that fixing isn't always what people want — some capacity to override the instinct",
+          "superpower_signal": "Extraordinary precision, reliability, thoroughness — she's genuinely the person things don't fall apart with",
+          "kryptonite_signal": "The inner critic runs ahead of everyone else; rumination on failures; discomfort with genuine uncertainty",
+          "domain_signals": [
+            "work",
+            "close relationships",
+            "self-standards"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 6,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "differentiate_1v6_anger_vs_anxiety",
+        "thinking_display": "The error-catching runs inward as fast as it runs outward.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a situation where something is wrong and you can't fix it — not yet, or not at all — is what you feel closer to frustration and controlled anger, or a low hum of worry about what might go wrong next?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Frustration — something that wants to correct, even when it can't",
+            "Worry — a scanning for what else might be off or coming"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 1 vs 6: anger/correction instinct vs anxiety/threat-scanning"
+        },
+        "strategy": {
+          "what_was_learned": "The 'depends heavily' on self-trust with the clarification that uncertainty triggers a need to verify — and framing it as 'cost of being wrong' rather than 'I don't trust myself' — points to 1 with some 6 flavoring. The preemptive self-audit (inner report before manager speaks) is a strong 1 signal. Now need to differentiate whether the core emotional fuel is anger/correction (1) or anxiety/threat-scanning (6).",
+          "next_question_rationale": "The 1v6 differentiation is the last meaningful open question. Both types have inner critics and value correctness, but the 1's fuel is repressed anger and the sense of wrongness, while the 6's is anxiety and threat-projection. This forced choice gets at that directly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "**Worry — a scanning for what else might be off or coming.**\n\nThough I'd want to add a small qualification, because I don't think the two are entirely separate — what I notice first is something like... an inventory reflex, I suppose. The mind starts moving through adjacent systems, asking what else is exposed. The frustration is there, but it tends to be quieter, more background. The scanning is what's actually running.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "Authority, in my experience, has to earn my trust — I don't extend it automatically. How much does that statement fit you?\n\n- Strongly agree\n- Agree\n- Neutral\n- Disagree\n- Strongly disagree",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.68,
+            "2": 0.05,
+            "3": 0.1,
+            "4": 0.08,
+            "5": 0.15,
+            "6": 0.72,
+            "7": 0.02,
+            "8": 0.05,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.2,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "scanning",
+                "what else might be off",
+                "verify",
+                "cost of being wrong",
+                "missed something"
+              ],
+              "context": "uncertainty and error-checking responses"
+            },
+            {
+              "type": 1,
+              "words": [
+                "correctly",
+                "standards",
+                "precision",
+                "audit",
+                "furniture was already in the house"
+              ],
+              "context": "thoroughness as identity, inherited standards"
+            },
+            {
+              "type": 6,
+              "words": [
+                "adjacent systems",
+                "what else is exposed"
+              ],
+              "context": "response to unfixable wrong"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.65,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Known for thoroughness, holds high standards",
+          "what": "Maintains correctness, catches errors before consequences",
+          "why": "Fear of being wrong, cost of error, need to verify",
+          "how": "Internal audit, scanning for what's exposed, deliberate calculation",
+          "when": "Persistent — audit process continues long after events",
+          "where": "Work, relationships, inherited standards"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Scanning for threat/error before acting; verifying against external standard even when trusting own logic; worrying about what's exposed in adjacent systems",
+          "respond_glimpsed": "Deliberate assessment of whether to intervene; acknowledged learning that presence is sometimes more useful than fixing",
+          "superpower_signal": "Exceptional thoroughness, error-prevention, reliability",
+          "kryptonite_signal": "Cannot sit with unresolved uncertainty; inner critic runs audit on self before others can; scanning for threat creates background anxiety",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "self-standards"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1vs6_authority_differentiation",
+        "thinking_display": "The scanning runs before the frustration even arrives.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the ideal authority — a boss, an institution, a set of rules — is your relationship to it one of trust, or is there always some part of you holding a small reservation, waiting to see whether it earns it?",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": "Statement: Authority, in my experience, has to earn my trust — I don't extend it automatically."
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed head center dominance. The 'scanning' response is the key differentiator — this is 6-pattern anxiety (threat surveillance) not 1-pattern anger (moral correction). The inner critic is present but serves error-prevention/safety, not moral righteousness. Type 1 would lead with frustration/correction impulse; this person leads with inventory/scanning. The 'cost of being wrong' framing is classic 6 risk-aversion. Need to differentiate 6 from 1 more cleanly — probe relationship to authority vs. inner standard.",
+          "next_question_rationale": "Classic 1vs6 differentiator: Type 1 trusts their own inner standard as the authority; Type 6 is ambivalent toward authority, wants to trust it but can't fully. This question will clarify where her primary relationship to authority sits — internal standard (1) or external verification with reservation (6).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "**Agree.**\n\nThough I'd want to be precise about what I mean by that — it's not skepticism for its own sake, it's more that I've found trust is more functional when it's built on demonstrated consistency rather than assumed. Even with institutions I genuinely respect, I think there's a responsible kind of watchfulness that's... appropriate, really. It's not distrust so much as staying engaged rather than deferring passively.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you catch yourself being critical — of a situation, a person, a decision — is the voice running that criticism mostly pointing at what's wrong out there, or is it just as likely to turn on you?\n\n- Mostly outward — I notice failures in how things are being done\n- Equally inward — the same standard runs on me at least as hard\n- More inward — I tend to be harder on myself than on others or situations",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.1,
+            "3": 0.18,
+            "4": 0.08,
+            "5": 0.3,
+            "6": 0.58,
+            "7": 0.05,
+            "8": 0.08,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Reformer / The Loyalist",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.2,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "scanning",
+                "what else is exposed",
+                "adjacent systems",
+                "responsible kind of watchfulness",
+                "staying engaged rather than deferring"
+              ],
+              "context": "when asked about uncertainty and unresolvable situations"
+            },
+            {
+              "type": 1,
+              "words": [
+                "thoroughness",
+                "done correctly",
+                "standards",
+                "precision",
+                "audit process",
+                "inner critic",
+                "cost of being wrong"
+              ],
+              "context": "throughout assessment"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.6,
+          "SO": 0.25,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Known for thoroughness, standards-keeper, reliable",
+          "what": "Internal audit process, error-catching, scanning for risk",
+          "why": "Standards matter intrinsically; fear of error having consequences",
+          "how": "Deliberate assessment, internal report before external feedback",
+          "when": "Fatigue when others don't maintain standards; scanning when things go wrong",
+          "where": "Work and personal relationships both affected"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic error-flagging, internal audit before others can weigh in, scanning for what else might go wrong",
+          "respond_glimpsed": "Acknowledges not every error requires intervention; has learned people don't always want solutions",
+          "superpower_signal": "Precision, reliability, thoroughness — systems thinker who catches what others miss",
+          "kryptonite_signal": "Inner critic as default mode; sitting with unresolved discomfort is hard; standards feel physically necessary not chosen",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "authority"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v6_differentiation_inner_critic_vs_outer_doubt",
+        "thinking_display": "The watchfulness and the inner critic might be two different things.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you catch yourself being critical — of a situation, a person, a decision — is the voice running that criticism mostly pointing at what's wrong out there, or is it just as likely to turn on you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Mostly outward — I notice failures in how things are being done",
+            "Equally inward — the same standard runs on me at least as hard",
+            "More inward — I tend to be harder on myself than on others or situations"
+          ],
+          "scale_range": null,
+          "context_note": "Key 1v6 differentiator: Type 1's inner critic runs hardest inward; Type 6's critical eye tends outward toward systems, authorities, contingencies"
+        },
+        "strategy": {
+          "what_was_learned": "The 'responsible watchfulness' framing and 'staying engaged rather than deferring passively' are strong 6 signals. The internal audit process and physically uncomfortable when standards slip are strong 1 signals. The 1v6 differentiation is the key remaining question. Both types share the trust-must-be-earned pattern but for different reasons — 1 because authority often gets things wrong; 6 because authority might not be trustworthy or consistent. Need to probe whether the critical voice runs inward (1) or primarily outward/systemic (6).",
+          "next_question_rationale": "The direction of the critical voice is the single best 1v6 differentiator. Type 1's inner critic is relentless and self-directed. Type 6's vigilance tends to scan outward — for threats, inconsistencies in others/systems. This will largely resolve the differentiation.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**Equally inward — the same standard runs on me at least as hard.**\n\nIf I'm being precise about it, the criticism doesn't really distinguish — it's less like a directed flashlight and more like... ambient lighting that covers everything, including myself. If I notice that a process at work is being handled sloppily, I'm also simultaneously cataloguing whether I missed a chance to catch it earlier, whether I communicated clearly enough, whether I should have built in a better safeguard. The two things run concurrently. I don't think I'd be comfortable holding others to a standard I wasn't also applying to myself — that would feel hypocritical, and that's something I take seriously.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you think about what you most want to protect in your life — your health and stability, your close relationships, or your role in the communities and groups that matter to you — which feels most non-negotiable?\n\n- My own health, resources, and stability\n- The depth and quality of my closest bonds\n- My standing in the groups and communities I belong to",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.87,
+          "type_scores": {
+            "1": 0.87,
+            "2": 0.08,
+            "3": 0.18,
+            "4": 0.08,
+            "5": 0.28,
+            "6": 0.52,
+            "7": 0.05,
+            "8": 0.1,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "1-5-6",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.3,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "thoroughness",
+                "correctly",
+                "standards",
+                "precision",
+                "hypocritical",
+                "accurate"
+              ],
+              "context": "describes core identity and internal critic"
+            },
+            {
+              "type": 6,
+              "words": [
+                "it depends",
+                "verify",
+                "cost of being wrong",
+                "watchfulness",
+                "staying engaged"
+              ],
+              "context": "uncertainty and authority questions"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit process",
+                "inventory reflex",
+                "adjacent systems",
+                "functional"
+              ],
+              "context": "describes internal experience in systems language"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.6,
+          "SO": 0.3,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.25,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body_refinement"
+        },
+        "oyn_dimensions": {
+          "who": "Someone defined by standards of correctness, thoroughness, and responsibility",
+          "what": "Maintaining quality, catching errors, fixing problems",
+          "why": "Standards don't maintain themselves; wrong feels physically uncomfortable",
+          "how": "Internal audit process, scanning adjacent systems, deliberate assessment",
+          "when": "Ongoing — the standard runs constantly, not situationally",
+          "where": "Work and relationships both; professional context most prominent"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic error-detection followed by internal audit; the critic runs on self as hard as externally",
+          "respond_glimpsed": "Deliberate assessment of whether to intervene; acknowledging she doesn't always need to act",
+          "superpower_signal": "Precision, reliability, integrity — things get done correctly and stay done",
+          "kryptonite_signal": "The scanning never stops; fatigue from being the person who pays attention; sitting with unresolved things is uncomfortable",
+          "domain_signals": [
+            "work/professional",
+            "relationships",
+            "authority/institutions"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "variant_differentiation_sp_so",
+        "thinking_display": "The critic and the scanner might be the same thing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about what you most want to protect in your life — your health and stability, your close relationships, or your place in the communities and groups that matter to you — which feels like the most non-negotiable?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "My own health, resources, and stability",
+            "The depth and quality of my closest bonds",
+            "My role and standing in the groups and communities I belong to"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Type 1 confirmed strongly: ambient internal critic, simultaneous inward/outward standards, discomfort with unresolved situations, the 'audit process' as a primary coping mechanism. The 6-ish scanning and authority-checking is significant but appears secondary — a head-center support pattern rather than the core driver. Body center (gut) is the primary center. Need to probe instinctual variant to differentiate SP vs SO, and nail wing.",
+          "next_question_rationale": "All three centers probed. Confidence at 0.87, above fast-track threshold. Need one more exchange to confirm instinctual variant (SP vs SO signaling) before closing. This is the most remaining information gap.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**My own health, resources, and stability.**\n\nThough I'd qualify that slightly — I think of it less as protecting those things for their own sake and more as maintaining the foundation that allows me to function properly. If that foundation has cracks in it, everything else becomes unreliable. The relationships, the commitments — they require a stable platform to stand on.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you've made a careful decision and someone you respect pushes back — not rudely, just confidently disagrees — how settled does your position stay?\n\n- Very settled — I'll engage the disagreement but my position holds unless the argument actually changes something\n- It shifts — even a confident disagreement from someone I respect opens real doubt in me\n- Somewhere between: I hold outwardly but quietly re-examine everything",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.1,
+            "3": 0.18,
+            "4": 0.12,
+            "5": 0.3,
+            "6": 0.55,
+            "7": 0.08,
+            "8": 0.15,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "1-5-6 possible",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.3,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "correctly",
+                "precision",
+                "standards",
+                "hypocritical",
+                "properly",
+                "accurate",
+                "consistent"
+              ],
+              "context": "throughout"
+            },
+            {
+              "type": 6,
+              "words": [
+                "scanning",
+                "verify",
+                "what else might be off",
+                "watchfulness",
+                "cost of being wrong",
+                "staying engaged"
+              ],
+              "context": "uncertainty and authority questions"
+            },
+            {
+              "type": 5,
+              "words": [
+                "internal report",
+                "audit process",
+                "inventory reflex"
+              ],
+              "context": "describing emotional processing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.25,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body/SP",
+          "next_target": "differentiation_1v6"
+        },
+        "oyn_dimensions": {
+          "who": "Precise, self-contained, highly self-critical, SP-dominant",
+          "what": "Thoroughness, accuracy, maintaining standards",
+          "why": "Inner standard that runs automatically — part chosen, part inherited",
+          "how": "Fix-first, audit reflex, preemptive self-criticism",
+          "when": "Consistent — the standard doesn't switch off",
+          "where": "Work primarily signaled, but standard applies universally"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Internal critic fires first and hardest — self-directed before others. Scanning for what's exposed when things go wrong.",
+          "respond_glimpsed": "Deliberate about intervention scope — aware not every error requires her. Some self-reflection on inherited vs chosen standards.",
+          "superpower_signal": "Extraordinary reliability, accuracy, integrity",
+          "kryptonite_signal": "Inner critic running constantly, discomfort with unresolvable situations, possible resentment from carrying others' errors",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "self-standard"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v6_differentiation_anger_vs_anxiety",
+        "thinking_display": "The stability framing was interesting — not comfort, not connection. Foundation.",
+        "strategy": {
+          "what_was_learned": "SP-dominant confirmed. Framing of self-preservation as 'platform for functioning' rather than comfort or attachment is classic 1 rationalization — instrumentalizing self-care through duty lens. Head center signals remain significant (scanning, verify, watchfulness) — 6 wing or tritype needs clarification. Need to differentiate 1 vs 6 core: does the inner authority override external doubt, or does external doubt persist even when she's 'decided'?",
+          "next_question_rationale": "The 1v6 differentiation question. Type 1's inner critic IS the authority — they trust their own standard even when anxious. Type 6 fundamentally doubts their own judgment and seeks external anchors. Her answer about authority 'earning trust' scored as Agree — which fits both types. Need to probe: when she's made a decision and someone competent disagrees, does she hold her ground or does doubt re-open? This separates 1 from 6.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "The third option is the most accurate, though I'd want to refine the framing slightly. \"Quietly re-examine everything\" makes it sound almost anxious, and I'm not sure that's quite right — it's more that I take the disagreement seriously because I take *them* seriously, so I go back through my reasoning methodically to see if there's something I missed.\n\nIf I've done the work properly going in — and I generally have — I usually arrive back at the same position. But I don't think I'd be honest if I said I hold completely firm internally. There's a period of... rechecking. Running the analysis again. Which I'd argue is just due diligence rather than instability.\n\nWhat I try to avoid is changing my position because someone is confident or persistent rather than because they've actually introduced new information. That would be a failure of process, not flexibility.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When you imagine doing something you genuinely believe is wrong — not just ineffective, but actually wrong — is the feeling that stops you closer to \"I would disappoint myself\" or \"something bad might follow from this\"?\n\n- I would disappoint myself — the wrongness itself is the problem\n- Something bad might follow — the consequences and exposure matter\n- They're inseparable for me",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.08,
+            "3": 0.18,
+            "4": 0.07,
+            "5": 0.2,
+            "6": 0.55,
+            "7": 0.05,
+            "8": 0.12,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "1-5-6",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.25,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "thoroughness",
+                "standards",
+                "correctly",
+                "properly",
+                "hypocritical",
+                "process",
+                "failure of process"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 6,
+              "words": [
+                "verify",
+                "check",
+                "what else might be off",
+                "watchfulness",
+                "due diligence"
+              ],
+              "context": "multiple exchanges"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.2,
+          "SX": 0.08
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Thorough, precise, self-sufficient on clear-standard decisions",
+          "what": "Maintaining correctness, standards, and stable foundations",
+          "why": "Avoiding hypocrisy, error, and the discomfort of wrongness",
+          "how": "Methodical audit, internal re-examination, deliberate assessment",
+          "when": "Triggered by consequential errors and genuine uncertainty",
+          "where": "Across work and personal life equally"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Inner critic runs automatically on self and others; scanning for what's exposed; re-examines under pressure from respected authority",
+          "respond_glimpsed": "Deliberate assessment of scope before intervening; aware that others don't always want fixing",
+          "superpower_signal": "Exceptional integrity, thoroughness, self-accountability",
+          "kryptonite_signal": "Inner audit loop, difficulty sitting with unresolved, standard applied rigidly",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "decision-making"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 9,
+          "current_stage": 5,
+          "last_question_format": "paragraph_select",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "1v6_differentiation_anger_vs_anxiety",
+        "thinking_display": "Position held — but only after it was checked again.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine doing something you genuinely believe is wrong — not just ineffective, but actually wrong — is the feeling that stops you closer to 'I would disappoint myself' or 'something bad might follow from this'?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I would disappoint myself — the wrongness itself is the problem",
+            "Something bad might follow — the consequences and exposure matter",
+            "They're inseparable for me"
+          ],
+          "scale_range": null,
+          "context_note": "1v6 differentiation: internal moral compass vs. fear of consequences/external judgment"
+        },
+        "strategy": {
+          "what_was_learned": "Holds position after rechecking — not from anxiety but from methodological due diligence. Explicitly distinguishes position change from new information vs. social pressure. This is strong Type 1 signal (process integrity) with some Type 6 rechecking pattern. Need to clarify whether the core driver is inner moral standard (1) or consequence/exposure fear (6).",
+          "next_question_rationale": "The 1v6 differentiation is the critical remaining question. Type 1's primary driver is the inner critic/internal standard — wrongness itself is the problem. Type 6's primary driver is anxiety about what might follow, exposure, consequences. This question directly probes that distinction.",
+          "question_format_last_used": "paragraph_select"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**They're inseparable for me** — though I'd say the disappointment in myself is probably the more immediate response.\n\nThe concern about consequences isn't really about being caught, if that's what's implied — it's more that wrong actions tend to produce wrong outcomes, and I find it difficult to separate the ethical failure from its downstream effects. They're part of the same problem. But if I'm being precise about the order of operations, the internal reaction comes first.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "That answer — the ethical failure comes first, the downstream consequences are part of the same problem — tells me a great deal about how you're wired, and it's consistent with everything you've shared today. Your report is being prepared now, and it'll reflect the specific patterns you described: the concurrent inner and outer standard, the audit reflex, the way you distinguish between genuine reconsideration and caving to confidence. You've been precise throughout this, which made the work easier.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.88,
+            "2": 0.1,
+            "3": 0.15,
+            "4": 0.08,
+            "5": 0.3,
+            "6": 0.52,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Principled Perfectionist",
+          "tritype": "1-5-6",
+          "tritype_confidence": 0.6,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.25,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "incorrect",
+                "proper",
+                "wrong",
+                "standard",
+                "hypocrisy",
+                "failure of process",
+                "due diligence"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 6,
+              "words": [
+                "it depends",
+                "verify",
+                "rechecking",
+                "what else might be exposed",
+                "responsible watchfulness"
+              ],
+              "context": "authority and uncertainty questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.78,
+          "SO": 0.18,
+          "SX": 0.04
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.48
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Thorough, high-standard professional; defined by correctness",
+          "what": "Inner critic running concurrently outward and inward; fix-it orientation",
+          "why": "Wrongness itself registers as the problem — ethical failure before consequence",
+          "how": "Methodical audit process; rechecks even settled positions",
+          "when": "The scanning runs constantly — ambient not episodic",
+          "where": "SP anchored — stability as platform for everything else"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Inner critic fires automatically on errors — self and other simultaneously; goes back through reasoning when challenged",
+          "respond_glimpsed": "She knows she rechecks sometimes from habit not new data — 'failure of process not flexibility'",
+          "superpower_signal": "Precision, integrity, comprehensive standards, reliability",
+          "kryptonite_signal": "Cannot sit with unresolved things; applies the same standard everywhere including herself; furniture inherited but not fully distinguished from chosen",
+          "domain_signals": [
+            "work",
+            "authority",
+            "relationships",
+            "self-evaluation"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 10,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The order of operations question answered itself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Type 1 confirmed at high confidence. Ethical failure is primary, consequence secondary — classic 1 superego structure. SP variant confirmed. Wing 2 slightly more likely than wing 9 given fix-it and 'kindness to point toward solution' language, but 1w9 possible given the methodical, withdrawn quality. 1v6 differentiation: the scanning and rechecking under uncertainty leans 6, but the internal critic as primary moral arbiter, the 'I would disappoint myself' as leading response, and the 'failure of process' framing are strongly 1. She has 6 in her tritype, not her core type. Closing criteria all met.",
+          "next_question_rationale": "Close — all criteria met, confidence 0.88, top two types separated by 0.36",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

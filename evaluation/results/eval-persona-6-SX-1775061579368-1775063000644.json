@@ -1,0 +1,2750 @@
+{
+  "run_id": "eval-persona-6-SX-1775061579368-1775063000644",
+  "timestamp": "2026-04-01T17:03:20.644Z",
+  "tier": "tier1",
+  "persona_id": "persona-6-SX-1775061579368",
+  "ground_truth": {
+    "core_type": 6,
+    "wing": "6w7",
+    "instinctual_variant": "SX",
+    "tritype": [
+      6,
+      9,
+      3
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 49,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 6,
+    "final_wing": null,
+    "final_confidence": 0.88,
+    "types_considered": [
+      {
+        "type": 6,
+        "peak_confidence": 0.88,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.35,
+        "first_at_q": 2
+      },
+      {
+        "type": null,
+        "peak_confidence": 0.13,
+        "first_at_q": 5
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.06,
+        "first_at_q": 2
+      },
+      {
+        "type": 0,
+        "peak_confidence": 0.06,
+        "first_at_q": 7
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 3,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "partial",
+      "C2": "pass",
+      "C3": "partial",
+      "C4": "pass",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 17,
+    "exploratory": 3,
+    "confirmatory": 6,
+    "disconfirmatory": 2,
+    "motivational": 3,
+    "behavioral": 3,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 18,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 6,
+        "confidence": 0.45
+      },
+      {
+        "exchange": 3,
+        "top_type": 6,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 4,
+        "top_type": 6,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 5,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 7,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 8,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 9,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 10,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 11,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 12,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 13,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 14,
+        "top_type": 6,
+        "confidence": 0.88
+      },
+      {
+        "exchange": 15,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 16,
+        "top_type": 6,
+        "confidence": 0.87
+      },
+      {
+        "exchange": 17,
+        "top_type": 6,
+        "confidence": 0.88
+      },
+      {
+        "exchange": 18,
+        "top_type": 6,
+        "confidence": 0.88
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns more about you, so answer what's true, not what sounds good. One question at a time, and I'll lead.\n\nWhen something goes wrong in your life — a plan falls apart, a relationship cracks, something you built doesn't hold — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_motivational",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in your life — a plan falls apart, a relationship cracks, something you built doesn't hold — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready. No data yet.",
+          "next_question_rationale": "Opening motivational question targeting all three centers simultaneously. Failure/disruption scenarios surface gut instinct (Body), relational pain (Heart), or mental loops (Head) depending on where the person goes first.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "The first thing that happens is... honestly, a kind of grim confirmation. Like, some part of me already had a tab open for that scenario. Which sounds bleak when I say it out loud, but it's more that I'm rarely completely blindsided — I've usually run the failure mode in my head at some point. The actual response is more operational than emotional, at least initially: what's the damage, what are the options, what can still be salvaged. The feeling comes later, usually at night, when the doing-something-about-it phase winds down and there's nothing left to assess.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you run those failure scenarios ahead of time — is that something that feels like preparation, or more like something you can't really turn off?\n\n- Preparation — I'm doing it deliberately\n- Something I can't really turn off\n- Honestly, both",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.45,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.05,
+            "3": 0.1,
+            "4": 0.1,
+            "5": 0.25,
+            "6": 0.4,
+            "7": 0.05,
+            "8": 0.1,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "tab open for that scenario",
+                "failure mode",
+                "blindsided"
+              ],
+              "context": "when asked about internal response to things going wrong"
+            },
+            {
+              "type": 5,
+              "words": [
+                "operational",
+                "assess",
+                "damage",
+                "options"
+              ],
+              "context": "crisis response description"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.2,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "someone who pre-runs failure scenarios, stays operational under pressure",
+          "what": "anticipatory scanning, delayed emotional processing",
+          "why": "not yet clear — is it control, safety, or intellectual habit?",
+          "how": "operational triage first, feelings later",
+          "when": "emotions surface at night when action stops",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "pre-scanning for threats, operational response to crisis — possible anxiety management strategy",
+          "respond_glimpsed": "",
+          "superpower_signal": "preparation, resilience, clear-headed in crisis",
+          "kryptonite_signal": "possible chronic low-grade anxiety, emotional deferral",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The feeling waits until the work stops.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you run those failure scenarios ahead of time — is that something that feels like preparation, or more like something you can't really turn off?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Preparation — I'm doing it deliberately",
+            "Something I can't really turn off",
+            "Honestly, both"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong head-center signal. Pre-scanning for failure modes = possible 6 (anxiety-driven anticipation) or 5 (intellectual modeling). Operational crisis response with delayed emotional processing. Key differentiator: is the scanning DRIVEN BY ANXIETY (6) or is it more like intellectual habit/interest (5)?",
+          "next_question_rationale": "Forced choice to probe whether the anticipatory scanning is volitional/intellectual (5) or compulsive/anxiety-driven (6). This is the key 5v6 differentiator at this stage.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "**Honestly, both.**\n\nThough I'd push back slightly on the framing — because when I say 'can't turn off,' that implies it's a problem, and I think the more accurate read is that the deliberate part and the automatic part have just gotten pretty integrated over the years. Like, I'm not distressed when I'm running scenarios. It's more like... background processing. The thing that runs while you're doing other stuff. It gets to me occasionally — usually when I'm supposed to be, I don't know, relaxing — but mostly it just feels like how I'm wired, and honestly, it's kept me ahead of things more times than I can count.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you trust someone — really trust them — what had to happen first for that to be possible?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.08,
+            "5": 0.28,
+            "6": 0.52,
+            "7": 0.05,
+            "8": 0.08,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.1,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "tab open",
+                "failure mode",
+                "blindsided",
+                "keeps me ahead"
+              ],
+              "context": "describing internal response to failure"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "operational",
+                "assess",
+                "damage",
+                "options"
+              ],
+              "context": "describing initial response to problems"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "someone with strong anticipatory cognition, intellectually self-aware",
+          "what": "scenario-running, contingency planning",
+          "why": "partially deliberate, partially automatic — normalized as identity",
+          "how": "operational first, emotional later",
+          "when": "ahead of problems, night when doing stops",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "anticipatory anxiety converted into cognitive preparation — emotional processing deferred",
+          "respond_glimpsed": "self-awareness that the pattern exists; some capacity to observe it",
+          "superpower_signal": "has stayed ahead of problems, pattern feels functional",
+          "kryptonite_signal": "can't relax; feelings arrive at night when control is off",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The emotion waits until the work stops.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you trust someone — really trust them — what's the thing that had to happen first?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing trust formation to differentiate 5 vs 6 — 5s trust based on competence/respect of boundaries; 6s trust based on reliability/consistency under pressure. Also surfaces heart center data."
+        },
+        "strategy": {
+          "what_was_learned": "Strong head center. Anticipatory cognition is ego-syntonic — not felt as anxiety but as capability. Emotional deferral is a feature, not a bug in their self-model. The 'wired this way' framing suggests the pattern is deeply normalized. SP variant likely — self-sufficiency, resource management. 5 vs 6 differentiation needed: 5s frame the scenario-running as information/competence; 6s frame it as threat-scanning/security. This person's framing has elements of both but the 'kept me ahead' line and the pushback on framing suggest some counterphobic 6 or competent 5.",
+          "next_question_rationale": "Trust formation is a high-yield differentiator for 5 vs 6. Fives build trust slowly around competence and non-intrusion; Sixes build trust around consistency and tested loyalty. Moving to open format after forced_choice.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "They had to show me what they do when it costs them something. \n\nThat's really the only test that matters, if I'm being honest — not what someone says when things are easy, but what they do when keeping a commitment to you creates friction for them, when it would've been much simpler to quietly let it slide. Most people don't even realize they're being watched for that. Which is probably by design on my part, I'll admit. \n\nIt's less about a single moment and more about a pattern — you're looking for consistency under pressure, basically. And I know how that sounds. But I've been on the wrong end of it enough times to know the difference between someone who's reliable and someone who's just... pleasant until they aren't.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When someone in charge makes a call you think is wrong, what do you actually do?\n\n- Push back — directly, to their face\n- Comply outwardly, but I'm already planning around it\n- Depends entirely on whether I trust them",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.07,
+            "5": 0.2,
+            "6": 0.62,
+            "7": 0.03,
+            "8": 0.1,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "grim confirmation",
+                "tab open for that scenario",
+                "consistency under pressure",
+                "wrong end of it",
+                "reliable vs pleasant until they aren't"
+              ],
+              "context": "trust and failure modes"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "operational",
+                "damage assessment",
+                "runs scenarios"
+              ],
+              "context": "response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "self-described as wired for anticipation, not easily blindsided",
+          "what": "scenario-running, damage assessment, trust-testing",
+          "why": "safety through preparation; has been burned before",
+          "how": "covert observation, pattern-matching over time",
+          "when": "continuously — background processing",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "runs failure scenarios automatically; covert trust-testing; delayed emotional processing",
+          "respond_glimpsed": "acknowledges the pattern deliberately, shows self-awareness about design",
+          "superpower_signal": "loyalty-detector; keeps people ahead of failure; reliable under pressure",
+          "kryptonite_signal": "covert surveillance of others; difficulty relaxing; assumes failure as default",
+          "domain_signals": [
+            "trust",
+            "security",
+            "anticipation",
+            "reliability"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Watching without being watched — that's not accidental.",
+        "strategy": {
+          "what_was_learned": "Strong 6 signal: trust requires proof under pressure, covert loyalty-testing, pattern over single moments, history of being burned. 5 signal present: operational/analytical framing, emotional delay, 'background processing' metaphor. Need to differentiate: 6 trusts through others' actions toward them; 5 trusts through distance and self-sufficiency. Next: probe body center — anger, gut reactions, authority. Also need to see if their vigilance is about DOUBT (6) or AUTONOMY (5/8).",
+          "next_question_rationale": "Probe authority relationship — key differentiator. 6 has complicated relationship with authority (doubt vs. loyalty split). 5 avoids authority through detachment. 8 confronts it. Use agree_disagree on a statement about following rules/authority to surface the motivation.",
+          "question_format_last_used": "open"
+        },
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone in charge makes a call you think is wrong, what do you actually do?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Push back — directly, to their face",
+            "Comply outwardly, but I'm already planning around it",
+            "Depends entirely on whether I trust them"
+          ],
+          "scale_range": null,
+          "context_note": null
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "**Depends entirely on whether I trust them.**\n\nAnd I mean that pretty literally — it's not a dodge, it's just how I'm wired. If I've seen someone make good calls under pressure before, I'll push back directly, because that's actually a sign of respect, right? But if we're still in the assessment phase — which, honestly, with most people in authority runs longer than they'd probably like — then yeah, I'm complying on the surface while quietly building contingencies. Which some people would call insubordination, but I'd call *risk management*.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you're in a situation where there's nothing to plan for, no problem to assess, no threat on the horizon — how comfortable are you, actually? Rate it 1 to 5, where 1 is genuinely uncomfortable and 5 is completely at ease.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.18,
+            "6": 0.45,
+            "7": 0.03,
+            "8": 0.07,
+            "9": 0.02,
+            "other": 0.05
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.1,
+            "head": 0.7
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "assessment phase",
+                "risk management",
+                "contingencies",
+                "consistency under pressure",
+                "reliable"
+              ],
+              "context": "trust and authority responses"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "damage",
+                "options",
+                "salvaged",
+                "wired"
+              ],
+              "context": "failure response description"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Vigilant, pattern-tracking, skeptical of authority until proven",
+          "what": "Loyalty conditioned on demonstrated reliability under pressure",
+          "why": "Safety through accurate threat assessment and contingency building",
+          "how": "Background scenario running, surface compliance + contingency planning",
+          "when": "Emotional processing delayed until action phase complete",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic threat-scanning and scenario running; surface compliance with hidden contingency planning when trust not established",
+          "respond_glimpsed": "Directness with trusted authorities — push back as respect",
+          "superpower_signal": "Pattern recognition, reliability-testing, keeping people ahead of failure",
+          "kryptonite_signal": "Extended assessment phase for authority, possible isolation of emotion until 'task complete'",
+          "domain_signals": [
+            "loyalty testing",
+            "authority skepticism",
+            "risk management framing"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "body_center_probe",
+        "thinking_display": "The distinction between compliance and trust came out fast.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a situation where there's no clear threat, nothing to plan for, nothing to fix — how comfortable are you, actually?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = deeply uncomfortable, 5 = completely at ease"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 6 signal: authority trust is contingent and extended, surface compliance + contingency planning is explicit, 'risk management' framing. 5 wing possible given the analytical detachment and 'background processing' language. Need to probe whether the scanning is anxiety-driven (6) or information-driven (5). Also need body center probe — this person is very head-dominant in presentation but need to check gut/instinctual layer.",
+          "next_question_rationale": "The 6v5 key differentiator: 5s withdraw to protect energy/inner world; 6s scan for threat. Ask about what happens in the absence of threat — a 6 often finds this uncomfortable because the scanning doesn't stop; a 5 finds it relief. Scale format for variety after two forced_choices.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "**3 out of 10.**\n\nHonestly? That situation you're describing — I'm not sure it exists in practice, but I'll take the premise seriously. There's always something on the periphery if you know where to look, and I think most people just... don't look. But if I'm being fair to the question, yeah, the stillness gets to me. It's less uncomfortable and more — suspicious, I guess. Like quiet before something shifts. I've learned to tolerate it better than I used to, especially around my kids, but 'comfortable' isn't quite the right word for what I'd call it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When you're uncertain about a big decision, where do you go first — do you work through it in your own head until you land somewhere, or do you find yourself wanting to test your thinking against someone you trust before you feel settled?\n\n- I work through it myself — I usually get there on my own\n- I need to test it against someone I trust before I feel settled",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.2,
+            "6": 0.72,
+            "7": 0.04,
+            "8": 0.1,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.1,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "assessment phase",
+                "contingencies",
+                "risk management",
+                "pattern",
+                "consistency under pressure",
+                "can't turn off",
+                "background processing"
+              ],
+              "context": "trust, authority, and anticipatory scanning"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "assessment",
+                "damage",
+                "options",
+                "operational"
+              ],
+              "context": "response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who tests reliability under pressure, runs threat scenarios automatically",
+          "what": "Anticipatory scanning, contingency building, trust-verification",
+          "why": "Has been burned; safety requires evidence not words",
+          "how": "Operational first, emotional delayed; surface compliance while building workarounds",
+          "when": "Stillness feels suspicious; discomfort in quiet/unstructured moments",
+          "where": "Softens slightly around kids — signal of SX or SP warmth"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic threat-scanning, testing authority figures before committing, quiet contingency planning",
+          "respond_glimpsed": "Aware of pattern ('by design on my part'), choosing direct pushback when trust is established",
+          "superpower_signal": "Loyalty to those who've proven themselves; sharp detection of inconsistency",
+          "kryptonite_signal": "Extended assessment phase, suspicion of stillness, difficulty resting",
+          "domain_signals": [
+            "authority relationships",
+            "trust-building",
+            "anticipatory anxiety masked as preparation"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "6v5_differentiation_inner_authority",
+        "thinking_display": "The quiet feels suspicious to him — not empty.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're uncertain about a big decision, where do you go first — do you work through it in your own head until you land somewhere, or do you find yourself wanting to test your thinking against someone you trust before committing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I work through it myself first — I usually get there on my own",
+            "I need to test it against someone I trust before I feel settled"
+          ],
+          "scale_range": null,
+          "context_note": "Key 6v5 differentiator: inner authority vs. need for trusted sounding board"
+        },
+        "strategy": {
+          "what_was_learned": "Stillness is suspicious, not peaceful — core 6 signal. Rates quiet comfort at 3/10. Authority trust-testing is explicit and deliberate. SP variant likely (kids mentioned as softening agent, resource/safety language throughout). 6 confidence rises to 0.72. Need to differentiate from 5: 5 withdraws and self-contains; 6 scans outward and tests. Key probe: inner authority vs. outer sounding board.",
+          "next_question_rationale": "The 6v5 differentiation hinges on whether they rely on internal processing alone (5) or need to test against trusted others (6). Their language about trust-testing suggests outward orientation, but their operational/analytical style could read as 5. Forced choice here is the cleanest probe.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "**I work through it myself first — I usually get there on my own.**\n\nThough 'get there on my own' might be generous — it's more like I run every scenario until the anxiety of not deciding outweighs the anxiety of deciding wrong. But I do have to do that internal loop first, otherwise bringing it to someone else just feels like I'm outsourcing the discomfort rather than actually thinking. Once I've got a working hypothesis, *then* I'll bounce it off someone — but really I'm looking for holes in my reasoning more than permission, if that makes sense.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When your own reasoning lands somewhere and you feel reasonably settled — how much does it matter to you that someone else agrees? Rate 1 to 5, where 1 is it doesn't matter at all and 5 is you need the validation to feel fully settled.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "0": 0.06,
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.18,
+            "6": 0.42,
+            "7": 0.04,
+            "8": 0.05,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.15,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "I've been on the wrong end of it",
+                "assessment phase",
+                "risk management",
+                "contingencies",
+                "quiet before something shifts",
+                "suspicious"
+              ],
+              "context": "trust, authority, stillness"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "working hypothesis",
+                "outsourcing the discomfort",
+                "run every scenario"
+              ],
+              "context": "internal processing and decision-making"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.5,
+          "SO": 0.25,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Self-contained, vigilant, tests loyalty through action under pressure",
+          "what": "Scenario planning, contingency building, trust calibration",
+          "why": "Safety through preparation, distrust of sudden ease or silence",
+          "how": "Internal processing first, then selective external testing",
+          "when": "Always — background process running constantly",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Background threat-scanning, compliance while building contingencies, discomfort with stillness",
+          "respond_glimpsed": "Tolerating stillness around kids — conscious adaptation noted",
+          "superpower_signal": "Pattern recognition across time, loyalty testing, keeps people ahead of failures",
+          "kryptonite_signal": "Structural distrust of ease, prolonged assessment phase for authority figures",
+          "domain_signals": [
+            "trust",
+            "authority",
+            "preparation",
+            "vigilance"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "The loop ends when the cost of not deciding beats the cost of being wrong.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When your own reasoning lands somewhere and you feel reasonably settled — how much does it matter to you that someone else agrees?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = doesn't matter at all, 5 = I need the validation to feel fully settled"
+        },
+        "strategy": {
+          "what_was_learned": "Strong internal processor — arrives at decisions via exhausting scenarios, not gut or feeling. Brings thinking to others for pressure-testing, not permission. This is the 6v5 differentiator: 5s withdraw and self-contain; 6s self-contain but still need the external check. He needs the check — but only after the internal loop. Slightly more 6 than 5. SP variant strengthening — kids mentioned, safety/resources theme.",
+          "next_question_rationale": "The key 6v5 differentiator now: does external validation matter once the internal loop is done? A 5 genuinely doesn't care. A 6 cares, even if they frame it as 'testing holes.' This scale question will surface whether the external test is cognitive (5) or emotional/reassurance (6).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "**7 out of 10**\n\nLook, I'd like to say I'm fully self-sufficient in my conclusions — and for certain things, technical assessments, risk analysis, I'll stand my ground pretty hard even if I'm the only one in the room who sees it. But if I'm being honest, there's a part of me that wants the validation, wants someone I actually respect to say *yeah, you're reading this right.* It matters less if it's just anyone agreeing — that's almost noise. But when it's someone whose judgment I've vetted? That lands differently. It's not that I need permission exactly. It's more like... confirmation that I'm not operating on a completely isolated signal.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When something's wrong — not a crisis, just an ongoing situation that's wearing on you — do you tend to bring it up with the people involved, or carry it inside until it resolves or becomes unavoidable?\n\n- I bring it up — I'd rather deal with it than carry it\n- I carry it inside, mostly — I don't raise it until I have to",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.04,
+            "5": 0.2,
+            "6": 0.42,
+            "7": 0.02,
+            "8": 0.08,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "6vs5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.25,
+            "heart": 0.15,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "confirmation",
+                "vetted",
+                "contingencies",
+                "risk management",
+                "isolated signal",
+                "assessment phase"
+              ],
+              "context": "authority and trust responses"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "working hypothesis",
+                "outsourcing the discomfort"
+              ],
+              "context": "internal processing description"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Self-reliant processor who tracks patterns in others",
+          "what": "Loyalty earned through demonstrated consistency under pressure",
+          "why": "Managing uncertainty and hidden threat — wants confirmed signal vs isolated signal",
+          "how": "Internal loop first, then test against vetted others for holes",
+          "when": "Delay feeling until operational phase is done",
+          "where": "Kids context mentioned — vulnerability surfaces there"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pre-running failure modes, quiet watchfulness of authority, scenario-looping under uncertainty",
+          "respond_glimpsed": "Has learned to tolerate stillness better, especially with kids — some conscious adaptation visible",
+          "superpower_signal": "Pattern recognition under pressure, loyalty calibration, risk management sophistication",
+          "kryptonite_signal": "Stillness is suspicious, can't fully turn off threat-scanning, validation matters more than stated",
+          "domain_signals": [
+            "professional trust-testing",
+            "family/kids as soft spot",
+            "authority skepticism"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "Wants the independent label, but the data keeps saying otherwise.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something's wrong — not a crisis, just an ongoing situation that's wearing on you — do you tend to bring it up with the people involved, or do you carry it mostly inside until it either resolves or becomes unavoidable?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I bring it up — I'd rather deal with it than carry it",
+            "I carry it inside, mostly — I don't raise it until I have to"
+          ],
+          "scale_range": null,
+          "context_note": "Probing body center — conflict expression vs suppression — also helps differentiate 6 vs 5 on social engagement vs withdrawal"
+        },
+        "strategy": {
+          "what_was_learned": "Validated 6 over 5: the desire for confirmation from vetted others, 'isolated signal' language, trust-testing of authority figures. 5 would be less bothered by operating alone. The SP variant strong — safety, kids, resources on periphery. Now need body center probe — does anger/tension surface in body or stay intellectualized? Also need differentiation question on whether they engage conflict or withdraw from it.",
+          "next_question_rationale": "Shifting to body center via conflict-carrying question. 6 tends to suppress then escalate; 5 tends to withdraw entirely. This will help close 6v5 differentiation and probe body center simultaneously.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "**I carry it inside, mostly — I don't raise it until I have to.**\n\nThough I'd push back a little on the framing of 'until it resolves' — in my experience, things don't just resolve on their own, they evolve, usually in a direction you didn't want. So it's less that I'm avoiding the conversation and more that I'm... assessing whether raising it is actually going to accomplish anything, or whether it's going to create a different problem. There's a calculation that happens. And yeah, sometimes that calculation takes longer than it probably should.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you think about what drives most of what you do — is it more about building something, getting somewhere, or making sure things don't fall apart?\n\n- Building something — I'm oriented toward a goal or vision\n- Getting somewhere — there's a version of myself or my life I'm moving toward\n- Making sure things don't fall apart — protecting what matters most",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.18,
+            "6": 0.78,
+            "7": 0.03,
+            "8": 0.12,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.2,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "assessment phase",
+                "risk management",
+                "contingencies",
+                "grim confirmation",
+                "tab open",
+                "pattern",
+                "consistency under pressure",
+                "isolated signal"
+              ],
+              "context": "trust, authority, decision-making"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "working hypothesis",
+                "technical assessments",
+                "internal loop"
+              ],
+              "context": "cognitive style"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who vets people carefully, tests loyalty under cost, keeps authority at arm's length until proven",
+          "what": "Scenario-running, contingency-building, internal calculation before action",
+          "why": "Uncertain — need to probe: is it fear of being wrong/betrayed, or genuine drive for certainty?",
+          "how": "Analytical, methodical, prefers internal resolution before external input",
+          "when": "Slowness to escalate conflict, delays raising problems until necessary",
+          "where": "Trust established through consistent behavior under pressure"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic scenario-running, quiet surveillance of others, delays conflict until strategic advantage",
+          "respond_glimpsed": "Can push back directly when trust is established; recognizes own calculation pattern",
+          "superpower_signal": "Pattern recognition, loyalty, reliability, strategic foresight",
+          "kryptonite_signal": "Suspicion of calm, difficulty being present without vigilance, calculation that delays necessary conflict",
+          "domain_signals": [
+            "relationships",
+            "authority",
+            "trust",
+            "risk"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "body_center_probe",
+        "thinking_display": "The calculation runs even when there's nothing urgent to calculate.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about what drives most of what you do — is it more about building something, getting somewhere, or making sure things don't fall apart?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Building something — I'm oriented toward a goal or vision",
+            "Getting somewhere — there's a version of myself or my life I'm moving toward",
+            "Making sure things don't fall apart — protecting what matters most"
+          ],
+          "scale_range": null,
+          "context_note": "Body center probe — differentiates 6 from 5 and from 8/1"
+        },
+        "strategy": {
+          "what_was_learned": "Carries conflict internally with explicit calculation about utility of raising it. Strong 6 confirmation. SP variant likely. 5 wing possible (internal resolution, technical confidence). Need body center probe and 6v5 differentiation question.",
+          "next_question_rationale": "Body center probe — gets at orientation toward action, protection, or achievement. Will differentiate 6 (fear/security) from 5 (withdrawal/knowledge) and from 8 (power) or 1 (improvement). Also surfaces what the person is fundamentally organized around.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**Making sure things don't fall apart — protecting what matters most.**\n\nThough I'd push back a little on the framing, because 'making sure things don't fall apart' sounds reactive, like you're just white-knuckling it — and I think there's genuine strategy involved, not just anxiety. It's more like... I've done the risk assessment that most people skip, and I'm acting on it. The protecting *is* the building, if that makes sense.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you pull back from people — and it sounds like you do — is it more about protecting your energy, or about not wanting to depend on someone you haven't fully vetted?\n\n- Protecting my energy — people are draining and I need to manage that\n- Not wanting to depend on someone I haven't fully vetted",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.04,
+            "5": 0.18,
+            "6": 0.78,
+            "7": 0.02,
+            "8": 0.08,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0.3,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.35,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "risk management",
+                "contingencies",
+                "assessment phase",
+                "isolated signal",
+                "already had a tab open"
+              ],
+              "context": "multiple exchanges about trust, planning, and authority"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "working hypothesis",
+                "holes in my reasoning"
+              ],
+              "context": "describing internal thinking process"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who tests loyalty under pressure, assesses authority before compliance",
+          "what": "Scenario-running, contingency-building, protecting what matters",
+          "why": "Fear of being blindsided, of trusting the wrong person, of things falling apart",
+          "how": "Internal loop first, then selective external validation from vetted sources",
+          "when": "Always — the background processing runs continuously",
+          "where": "Not yet probed"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic threat-scanning, carrying problems internally until unavoidable, compliance-with-contingencies when trust isn't established",
+          "respond_glimpsed": "Acknowledges the calculation sometimes takes too long — some self-awareness of the pattern",
+          "superpower_signal": "Risk assessment others skip, loyalty testing under pressure, reliable in crisis",
+          "kryptonite_signal": "Stillness feels suspicious, prolonged authority assessment, carries things too long",
+          "domain_signals": [
+            "trust architecture",
+            "authority relationships",
+            "protective orientation"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "6v5_differentiation",
+        "thinking_display": "Protecting and building feel like the same thing to this person.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you pull back from people — and it sounds like you do — is it more about protecting your energy, or about not wanting to be in a position where you have to depend on someone you haven't fully vetted?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Protecting my energy — people are draining and I need to manage that",
+            "Not wanting to depend on someone I haven't fully vetted"
+          ],
+          "scale_range": null,
+          "context_note": "6v5 differentiation — 5 pulls back for energy/privacy; 6 pulls back for security/trust. This question should split them clearly."
+        },
+        "strategy": {
+          "what_was_learned": "Strong protective orientation confirmed. The 'protecting IS the building' reframe is classic 6 — anxiety-driven vigilance rationalized as strategic intelligence. The 7/10 need for validation from vetted sources is also pure 6 — not needing permission, but needing confirmation from trusted authority. SP variant signals strong. Need to differentiate 6 from 5 — both run internal loops, both are skeptical, but the 5's withdrawal is about energy conservation and privacy, the 6's is about trust architecture and loyalty verification.",
+          "next_question_rationale": "6v5 differentiation is the key remaining task. The person shows 5-ish intellectual patterns (background processing, working hypotheses, holes in reasoning) but the emotional content is very 6 (trust testing, authority assessment, fear of isolation/wrong signal). Need to probe what the withdrawal is actually about — energy or trust.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**Not wanting to depend on someone I haven't fully vetted.**\n\nThough I'd push back slightly on the word 'vetting' — it makes it sound clinical, like I'm running background checks on people at dinner parties. It's more that trust is something I think should be *earned* over time, and I've seen enough situations — professionally, personally — where someone seemed reliable right up until they weren't. Pulling back isn't about energy management for me, that's more of an introvert thing; this is more... strategic, I guess you'd call it. You keep your exposure limited until you have enough data points to make a reasonable judgment call.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you imagine the people closest to you — do they know what's actually going on with you most of the time, or do they mostly see the operational version of you?\n\n- They know what's actually going on — I let them in\n- They mostly see the operational version — I manage what I show",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.18,
+            "6": 0.82,
+            "7": 0.03,
+            "8": 0.1,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.2,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "risk management",
+                "grim confirmation",
+                "already had a tab open",
+                "assessment phase",
+                "data points",
+                "exposure limited",
+                "contingencies",
+                "isolated signal"
+              ],
+              "context": "throughout — consistent fear/scanning/trust-testing language"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "internal loop",
+                "technical assessments",
+                "working hypothesis"
+              ],
+              "context": "when describing internal cognitive style"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who runs threat/failure scenarios automatically, vets people over time before trusting",
+          "what": "Protecting what matters, managing risk, maintaining reliable systems of trust",
+          "why": "Fear of being blindsided, of depending on someone who turns out unreliable",
+          "how": "Internal loops first, then selective external validation from vetted sources",
+          "when": "Discomfort in stillness; feelings come after operational phase winds down",
+          "where": "Close relationships (kids mentioned), professional contexts — consistent pattern across domains"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic scenario-scanning, delayed emotional processing, compliance + contingency building when authority isn't yet trusted",
+          "respond_glimpsed": "Deliberate trust-building, acknowledging the pattern with some self-awareness, choosing when to push back",
+          "superpower_signal": "Loyalty to vetted people, threat anticipation, strategic thinking under pressure",
+          "kryptonite_signal": "Difficulty with stillness, prolonged internal loops before deciding, carrying grievances alone, suspicious of quiet",
+          "domain_signals": [
+            "professional risk analysis",
+            "parenting",
+            "authority relationships",
+            "trust calibration"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "6v5_differentiation",
+        "thinking_display": "The line between strategic and afraid has gotten pretty blurry.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the people closest to you — do they know what's actually going on with you most of the time, or do they mostly see the operational version of you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "They know what's actually going on — I let them in",
+            "They mostly see the operational version — I manage what I show"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 6 from 5: 6s want to be known and struggle with disclosure; 5s withdraw more completely and are more comfortable being unknown"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 6 signal confirmed: trust must be earned through consistency under pressure, authority trust is conditional, pulls back to limit exposure until enough data. 5 wing present but secondary — the desire for external validation from vetted sources (7/10) and the 'not operating on isolated signal' language is distinctly 6, not 5. Need to differentiate 6 from 5 more cleanly: 5s are more comfortable with isolation and being unknown; 6s have underlying longing to be trusted and known. Also need to probe body center and instinctual variant (SP signals strongly).",
+          "next_question_rationale": "6v5 key differentiator: 6s want to be known by people they trust; 5s are genuinely more comfortable being unknown. Also tests disclosure pattern and vulnerability, which hasn't been probed yet.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "They mostly see the operational version — I manage what I show.\n\nThough I'd push back a little on the framing — it's not exactly *managing* so much as... I think what I show is real, it's just a particular layer. My partner knows more than most people have, and my kids see something different again — something I'd actually call more genuine, weirdly enough. But yeah, if we're being honest about it, there's a version of me that's always running a kind of background process that most people don't have visibility into.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When you're in that background process — the one most people don't have visibility into — is it more often running through what could go wrong, or figuring out who and what you can actually count on?\n\n- Running through what could go wrong\n- Figuring out who and what I can actually count on",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.07,
+            "4": 0.05,
+            "5": 0.18,
+            "6": 0.82,
+            "7": 0.03,
+            "8": 0.1,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.25,
+            "heart": 0.3,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "grim confirmation",
+                "tab open",
+                "failure mode",
+                "damage",
+                "options",
+                "salvaged"
+              ],
+              "context": "what happens when things go wrong"
+            },
+            {
+              "type": 6,
+              "words": [
+                "consistency under pressure",
+                "reliable",
+                "pattern",
+                "wrong end of it"
+              ],
+              "context": "what trust requires"
+            },
+            {
+              "type": 6,
+              "words": [
+                "assessment phase",
+                "contingencies",
+                "risk management"
+              ],
+              "context": "dealing with authority"
+            },
+            {
+              "type": 6,
+              "words": [
+                "suspicious",
+                "quiet before something shifts"
+              ],
+              "context": "rating stillness/comfort"
+            },
+            {
+              "type": 6,
+              "words": [
+                "isolated signal",
+                "vetted",
+                "confirmation"
+              ],
+              "context": "needing validation from trusted source"
+            },
+            {
+              "type": 6,
+              "words": [
+                "calculation",
+                "accomplish anything",
+                "different problem"
+              ],
+              "context": "carrying things inside"
+            },
+            {
+              "type": 6,
+              "words": [
+                "risk assessment",
+                "protecting",
+                "strategic",
+                "data points",
+                "exposure limited"
+              ],
+              "context": "pulling back from people"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Operationally self-reliant, manages what is shown to others",
+          "what": "Protecting what matters, risk-assessing relationships and decisions",
+          "why": "Fear of being blindsided, dependence on unvetted people, things falling apart",
+          "how": "Background scenario-processing, strategic compliance, limited exposure until trust earned",
+          "when": "Always — even in stillness, scanning for signals",
+          "where": "Head-led, but with gut instinct about people; some heart visible with partner and kids"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Preemptive threat-scanning, compliance with contingency-building under unvetted authority, carrying things internally until unavoidable",
+          "respond_glimpsed": "Deliberately choosing direct pushback with trusted people; genuine openness with kids",
+          "superpower_signal": "Exceptional threat anticipation, loyalty, strategic patience under uncertainty",
+          "kryptonite_signal": "Stillness feels suspicious; trust is slow and costly; operates from isolation much of the time",
+          "domain_signals": [
+            "relationships",
+            "authority",
+            "decision-making",
+            "self-disclosure"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "differentiation_5v6",
+        "thinking_display": "The background process runs even when the door is open.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in that background process — the one most people don't have visibility into — is it more often running through what could go wrong, or trying to figure out who and what you can actually count on?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Running through what could go wrong",
+            "Figuring out who and what I can actually count on"
+          ],
+          "scale_range": null,
+          "context_note": "5v6 differentiation: 5 tends toward threat modeling focused on information/knowledge gaps; 6 tends toward scanning for reliable support and testing allegiances"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 6 signal: managing exposure, strategic trust-building, operational presentation as protection, partner has more access than most. SP variant likely dominant — protecting what matters most, keeping exposure limited. The kids comment is interesting — suggests genuine self shows in low-stakes unconditional relationships. 5 still possible but the relational anxiety and vetting orientation points 6.",
+          "next_question_rationale": "Key 5v6 differentiator: 5's background process is primarily epistemic (what do I know, what are the gaps, how do I understand this); 6's is relational/loyalty-based (who can I count on, what are the threats to my support structure). This one question should push confidence above 0.85.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**Figuring out who and what I can actually count on.**\n\nAnd look, I know those two things sound like they're in separate lanes, but for me they're basically the same process — because the threat landscape, whether we're talking systems or situations or people, comes down to reliability. What's load-bearing, what's not. I'm not just running doomsday scenarios for the sake of it. I'm trying to map the actual dependencies. Who's solid, what holds under pressure. That's the question that's always running underneath everything else.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you've done all that mapping and feel like you know who and what is solid — does that actually settle you, or does some part of you keep checking anyway?\n\n- It settles me — I trust what I've figured out\n- Some part of me keeps checking regardless",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.04,
+            "5": 0.18,
+            "6": 0.82,
+            "7": 0.02,
+            "8": 0.08,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.25,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "reliability",
+                "load-bearing",
+                "who's solid",
+                "what holds under pressure",
+                "dependencies",
+                "vetting",
+                "confirmation",
+                "isolated signal"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "data points",
+                "assessment phase",
+                "risk analysis"
+              ],
+              "context": "describing internal processes"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "manages what's shown; partner and kids see different versions",
+          "what": "mapping reliability, dependencies, who/what holds under pressure",
+          "why": "safety through knowing what can be counted on — not just threat-running",
+          "how": "internal loop first, then test reasoning against trusted person",
+          "when": "ongoing background process; emotions land later at night",
+          "where": "keeps exposure limited until data points accumulate"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "compliance with contingency planning when authority not yet trusted; carrying grievances internally until unavoidable; the background dependency-mapping that runs constantly",
+          "respond_glimpsed": "directness with trusted authority as sign of respect; genuine vulnerability with partner and kids",
+          "superpower_signal": "extraordinary loyalty and reliability assessment; sees what others miss; keeps people safe through preparation",
+          "kryptonite_signal": "quiet is suspicious; stillness at 3/10 comfort; manages what's shown; trust runway is very long",
+          "domain_signals": [
+            "security",
+            "reliability",
+            "trust",
+            "authority",
+            "hidden emotional processing"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v6_differentiation",
+        "thinking_display": "The map of dependencies and the threat map are the same map.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've done all that mapping and you feel like you know who and what is solid — does that settle you, or does some part of you keep checking?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "It settles me — I trust what I've figured out",
+            "Some part of me keeps checking regardless"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 5 (settles into conclusions) from 6 (ongoing vigilance, doubt continues even after assessment)"
+        },
+        "strategy": {
+          "what_was_learned": "The dependency-mapping framing is revealing — this isn't just 5-style information gathering for autonomy; it's 6-style loyalty mapping for safety. The 'who's load-bearing' language is classic counter-phobic 6 SP. The ongoing background process that never fully stops, the 3/10 comfort with stillness, the need for validation from vetted sources — all strongly 6. Need to probe whether the checking ever really stops (6) vs. whether conclusions actually land and hold (5). Also need to probe body center.",
+          "next_question_rationale": "Critical 5v6 differentiator: 5s trust their own conclusions once formed and withdraw from further input; 6s continue to doubt even after assessment, the vigilance doesn't fully stop. This directly addresses whether the 'background process' is about information sufficiency (5) or ongoing doubt management (6).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**Some part of me keeps checking regardless.**\n\nAnd look, I've thought about this — I'm not unaware of how that sounds. But here's the thing: conditions change. Someone who was solid last year might be under different pressures now, different incentives. It's not distrust exactly, it's more like... ongoing calibration. The map isn't the territory, right? So yeah, I keep checking. It's not compulsive, it's just — I don't think 'settled' is really a stable state when you're dealing with systems that move.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When something feels off — not a confirmed problem, just a gut signal — how much do you trust that feeling before you've had a chance to think it through?\n\nRate 1 to 5: 1 means you don't act on it until you can reason it out, 5 means you take it seriously immediately, even without evidence.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.03,
+            "5": 0.18,
+            "6": 0.42,
+            "7": 0.02,
+            "8": 0.08,
+            "9": 0.02,
+            "other": 0.13
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.25,
+            "heart": 0.15,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "reliable",
+                "load-bearing",
+                "depends",
+                "contingencies",
+                "vetting",
+                "ongoing calibration",
+                "conditions change"
+              ],
+              "context": "trust, authority, and mapping dependencies"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "data points",
+                "working hypothesis",
+                "risk assessment"
+              ],
+              "context": "decision-making and inner process"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who manages exposure carefully, lets in very few people fully",
+          "what": "Reliability mapping — who and what holds under pressure",
+          "why": "Fear of being caught off-guard by something or someone that fails",
+          "how": "Ongoing calibration, scenario-running, strategic compliance",
+          "when": "Always — background process that never fully stops",
+          "where": "Closest in relationships with partner and kids; most guarded professionally"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Keeps checking even after settling — compulsive re-verification of what was already assessed",
+          "respond_glimpsed": "Recognizes the pattern, names it, can distinguish it from distrust intellectually",
+          "superpower_signal": "Deep reliability radar, genuine strategic foresight, loyalty under pressure",
+          "kryptonite_signal": "Settling is never stable — perpetual rechecking prevents true trust or rest",
+          "domain_signals": [
+            "relationships",
+            "authority",
+            "risk",
+            "self-disclosure"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "6v5_differentiation_body",
+        "thinking_display": "The checking never stops — even when the answer comes back clean.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something feels off — not a confirmed problem, just a signal, a gut sense — how much do you trust that feeling before you've had a chance to think it through?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = I don't act on it until I can reason it out / 5 = I take it seriously immediately, even without evidence"
+        },
+        "strategy": {
+          "what_was_learned": "Perpetual rechecking even after confidence — classic 6 counter-phobic rationalization ('conditions change'). Not 5 — 5 withdraws and feels settled once they've analyzed. This person never settles. The driver is doubt/loyalty, not detachment/knowledge. SP variant likely: focus on reliability of load-bearing structures, not group belonging or intensity.",
+          "next_question_rationale": "Need to probe body center — gut/instinct relationship. This also differentiates 6 from 5: 5s distrust gut and rely purely on cognition; 6s have a complex relationship with gut signals (sometimes trusting them, sometimes doubting them, sometimes projecting them outward). One more question before close.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "**8 out of 10.**\n\nAnd look, I know how that sounds — like I'm just a guy who jumps at shadows. But here's the thing: in my line of work, the gut sense *is* the early data. You don't wait for the breach report to know something's wrong with the network traffic. That said, I've learned — sometimes the hard way — to run the feeling through a quick sanity check before I act on it, which is probably why I didn't say 10.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you've figured something out on your own — really landed somewhere — is the next instinct to keep it close and act on it privately, or to find the right person to loop in before you move?\n\n- Keep it close — I act on it privately\n- Find the right person to loop in before I move",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.06,
+            "4": 0.05,
+            "5": 0.35,
+            "6": 0.75,
+            "7": 0.03,
+            "8": 0.12,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.15,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "who and what I can actually count on",
+                "load-bearing",
+                "reliability",
+                "ongoing calibration",
+                "conditions change",
+                "isolated signal",
+                "vetted",
+                "risk management",
+                "threat landscape"
+              ],
+              "context": "across multiple responses about trust and threat assessment"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "strategic",
+                "data points",
+                "map the dependencies"
+              ],
+              "context": "describing internal processes"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "operational version shown to most; partner sees more; kids see something different/more genuine",
+          "what": "threat assessment, reliability mapping, risk management",
+          "why": "protecting what matters most; fear of depending on unreliable people/systems",
+          "how": "internal loops first, then test reasoning; ongoing calibration; gut signals + sanity check",
+          "when": "always — background process running continuously",
+          "where": "professional and personal contexts both"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "continuous background threat-scanning; keeps checking even when 'settled'; carries problems inside rather than raising them; manages what he shows",
+          "respond_glimpsed": "deliberate trust-building based on evidence; sanity-checking gut signals before acting; learned to tolerate stillness around kids",
+          "superpower_signal": "reads reliability accurately; catches threats early; strategic thinking about dependencies",
+          "kryptonite_signal": "can't fully settle; keeps checking regardless; quiet discomfort with stillness; isolation behind operational persona",
+          "domain_signals": [
+            "trust",
+            "authority",
+            "reliability",
+            "security",
+            "isolation"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v6_differentiation",
+        "thinking_display": "The gut and the logic run in parallel — neither one fully overrides the other.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've figured something out on your own — really landed somewhere — is the next instinct to keep it close and act on it privately, or to find the right person to loop in before you move?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Keep it close — I act on it privately",
+            "Find the right person to loop in before I move"
+          ],
+          "scale_range": null,
+          "context_note": "5v6 differentiation: Type 5 tends toward private knowledge-holding and self-sufficiency; Type 6 still wants to verify against a trusted other even after working through things alone"
+        },
+        "strategy": {
+          "what_was_learned": "Gut signals treated as early data — but he sanity-checks before acting. This is key 6 behavior: gut is real, but not fully trusted without verification. Type 5 would trust their own conclusions more completely. The ongoing checking even after conclusions are formed is strongly 6. Confidence is 0.82 but need to push to 0.85 to fast-track. Need to differentiate 5v6 more cleanly and probe body center.",
+          "next_question_rationale": "The 5v6 split: Type 5 characteristically keeps conclusions private and acts on their own analysis. Type 6 characteristically wants to loop in a trusted person before moving — not for permission but for verification. This person said he wants validation from vetted people — that's 6. But he also said he works through it himself first. Need to know which dominates at the decision point. This will likely push confidence to 0.85+.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "**Find the right person to loop in before I move** — but with a pretty significant asterisk on \"right person.\"\n\nIt's not about needing validation, I want to be clear on that. It's more that a conclusion I've reached in isolation has blind spots I can't see from inside my own head, and I've learned — sometimes expensively — that acting unilaterally on something you're certain about is exactly when things go sideways. So I look for one or two people whose judgment I actually trust, which is a shorter list than most people's, and I pressure-test it. Not crowdsource it. There's a difference.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "When you're carrying something heavy — not a problem to solve, just weight — what's your body doing while you carry it?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.87,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.03,
+            "5": 0.2,
+            "6": 0.87,
+            "7": 0.02,
+            "8": 0.1,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "6-9-3",
+          "tritype_confidence": 0.45,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.25,
+            "head": 0.9
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "reliable",
+                "load-bearing",
+                "solid",
+                "depends",
+                "can't turn off",
+                "background process",
+                "ongoing calibration",
+                "conditions change",
+                "right person"
+              ],
+              "context": "throughout assessment — trust, vigilance, dependency mapping"
+            },
+            {
+              "type": 5,
+              "words": [
+                "pressure-test",
+                "blind spots",
+                "data points",
+                "risk assessment",
+                "operating on an isolated signal"
+              ],
+              "context": "decision-making and information gathering language"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who manages what they show, strategic about disclosure, close to partner and kids differently than others",
+          "what": "Mapping reliability — who and what can be counted on under pressure",
+          "why": "Fear of being caught off-guard, of misplaced trust, of things falling apart without adequate warning",
+          "how": "Scenario-running, internal processing first, pressure-testing with trusted few, ongoing calibration",
+          "when": "Always — the background process never stops",
+          "where": "Primarily in relationships and systems/work contexts"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Preemptive threat-scanning, trust-gating, strategic disclosure — automatic vigilance that masquerades as rational risk management",
+          "respond_glimpsed": "Awareness of the pattern (mentions kids showing something 'more genuine'), distinguishes crowdsourcing from pressure-testing",
+          "superpower_signal": "Extraordinary reliability detection, strategic patience, loyalty to vetted people, operational clarity under pressure",
+          "kryptonite_signal": "Can't settle even when the evidence warrants it; ongoing checking even after trust is established; quiet carries weight that doesn't get shared",
+          "domain_signals": [
+            "work/professional context (network traffic reference)",
+            "family (partner, kids)",
+            "relationships as systems to be mapped"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 11,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "body_differentiation_6v5",
+        "thinking_display": "The short list of trusted people isn't just a preference. It's the whole architecture.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're carrying something heavy — not a problem to solve, just weight — what's your body doing while you carry it?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing somatic/body center — under-explored. Also differentiates 6 from 5: 5s tend to detach from body, 6s often hold tension somatically."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 6 confirmation: pressure-testing not crowdsourcing, 'right person' qualifier, blind-spot awareness, learned from acting unilaterally. 5 wing present in analytical framing but the relational trust-mapping is distinctly 6. Need to probe body center and get one more differentiation data point on 6v5 before closing.",
+          "next_question_rationale": "Body center completely unprobed. This person lives in head, manages what they show emotionally — asking what the body does while carrying weight will (a) probe the unstated center, (b) differentiate 6 (somatic tension, bracing) from 5 (body goes offline), and (c) potentially reveal something about SP variant through physical self-awareness.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "That's an interesting way to frame it. Honestly — the shoulders. It goes right into the shoulders and the back of the neck, like I'm bracing for something to hit me from behind. I don't always notice it in real time, but my partner will put her hand on my back sometimes and I'll realize I've been holding that tension for hours, maybe longer. It's not dramatic, it's just... load-bearing, I guess. Structural. Like the body decided it was going to be the thing that absorbs what the mind won't stop processing.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "When someone you care about is hurting — not asking for help, just clearly not okay — what happens in you?\n\n- I move toward them — I want to do something\n- I notice it, but I wait — I don't want to intrude",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.03,
+            "5": 0.18,
+            "6": 0.52,
+            "7": 0.02,
+            "8": 0.05,
+            "9": 0.03,
+            "weighted_check": "6 dominant, 5 secondary"
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "6-5-8 candidate",
+          "tritype_confidence": 0.65,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.25,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "reliable",
+                "keeps checking",
+                "who and what I can count on",
+                "conditions change",
+                "calibration",
+                "right person",
+                "pressure-test"
+              ],
+              "context": "trust mapping and ongoing verification"
+            },
+            {
+              "type": 6,
+              "words": [
+                "grim confirmation",
+                "tab open for that scenario",
+                "assessment phase",
+                "vetting"
+              ],
+              "context": "anticipatory scanning and authority assessment"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "working hypothesis",
+                "in isolation",
+                "blind spots",
+                "pressure-test"
+              ],
+              "context": "analytical framework and epistemic care"
+            },
+            {
+              "type": 8,
+              "words": [
+                "risk management",
+                "load-bearing",
+                "unilateral",
+                "certain",
+                "stand my ground"
+              ],
+              "context": "self-description under pressure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.25,
+          "SX": 0.13
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who manages what they show — operational version vs inner version. Partner has more access. Kids see something more genuine.",
+          "what": "Maps reliability, runs failure scenarios, pressure-tests conclusions before acting.",
+          "why": "Protection of what matters most. Threat = unreliable dependencies. Safety through preparation.",
+          "how": "Internal loop first, then selective external pressure-test. Carries weight physically in shoulders/neck.",
+          "when": "Always running background process. Feeling comes later — at night.",
+          "where": "Professional domain signals (network traffic reference). Family context present (partner, kids)."
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anticipatory scanning / ongoing calibration / doesn't settle even when evidence is good — compulsive re-checking of reliability map",
+          "respond_glimpsed": "Recognizes the pattern, has built some awareness — partner's touch signals. Knows checking is not compulsive, attempts to distinguish it as rational.",
+          "superpower_signal": "Genuine loyalty-testing intelligence — knows who is load-bearing before crisis hits. Real strategic foresight.",
+          "kryptonite_signal": "Can't fully settle even after vetting. Trust earned is still re-audited. Perpetual calibration mode. Weight held in body.",
+          "domain_signals": [
+            "professional (security/risk domain likely)",
+            "family (partner, kids)",
+            "relational trust as primary architecture"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 12,
+          "current_stage": 5,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "heart_probe_differentiation",
+        "thinking_display": "The body knew before the mind admitted it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone you care about is hurting — not asking for help, just clearly not okay — what happens in you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I move toward them — I want to do something",
+            "I notice it, but I wait — I don't want to intrude"
+          ],
+          "scale_range": null,
+          "context_note": "Probing heart center and interpersonal instinct — differentiating 6 from 5. Also surfaces SP vs SX instinct."
+        },
+        "strategy": {
+          "what_was_learned": "Body response is vivid and specific — shoulders, neck, bracing posture. Partner as sensor (hand on back). Self-awareness present but incomplete in real time. 'Load-bearing' and 'structural' language is consistent Type 6 SP — carrying the weight so the system doesn't collapse. Strong somatic signal. Heart center not yet probed directly — need to check interpersonal emotional orientation before closing. 6v5 differentiation: 5 would withdraw and conserve, 6 keeps checking and seeking trusted others. This person clearly seeks trusted others (shorter list, but seeks them). Lean toward 6 with 5 wing.",
+          "next_question_rationale": "Heart center is the one unchecked box before closing. A forced choice about moving toward vs. waiting when someone is hurting will surface emotional orientation and SP/SX instinct simultaneously. If they move toward (but selectively) — SX or SO 6. If they wait and observe — SP 6 or 5w6.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "persona",
+      "content": "I move toward them — I want to do something.\n\nThough I'll qualify that — it's not always graceful. It's more like... I've already run three scenarios in my head about what might be wrong before I've said a word, and then I'm trying to figure out the right angle of approach so I don't spook them. With my kids especially, I'm already moving before I've consciously decided to. With other people, there's more calculation involved, but the impulse is the same — something in me doesn't do well just watching and waiting. Waiting feels like a choice I'm making to let something get worse.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "system",
+      "content": "That image — already running scenarios before you've said a word, not wanting to watch something get worse — that's where this assessment has been circling all along. You've given me what I need, and it's a clear picture. Your personalized report is being prepared now, and it'll name the pattern, the superpower inside it, and where it costs you most.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.06,
+            "3": 0.04,
+            "4": 0.05,
+            "5": 0.15,
+            "6": 0.88,
+            "7": 0.02,
+            "8": 0.1,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "tritype": "6-9-3",
+          "tritype_confidence": 0.45,
+          "whole_type_signals": {
+            "body": 0.4,
+            "heart": 0.55,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "reliability",
+                "load-bearing",
+                "contingencies",
+                "vetting",
+                "ongoing calibration",
+                "right person",
+                "pressure-test"
+              ],
+              "context": "trust and decision-making"
+            },
+            {
+              "type": 6,
+              "words": [
+                "confirmation",
+                "assessment phase",
+                "enough data points",
+                "conditions change"
+              ],
+              "context": "authority and trust"
+            },
+            {
+              "type": 5,
+              "words": [
+                "background processing",
+                "isolated signal",
+                "working hypothesis"
+              ],
+              "context": "internal processing style"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone who keeps close relationships small, vetted, trusted — partner, kids, few others",
+          "what": "Loyalty, reliability, protection of what matters",
+          "why": "Fear of being let down, of dependencies failing under pressure",
+          "how": "Scenario-running, ongoing calibration, strategic disclosure",
+          "when": "Always — the background process never fully stops",
+          "where": "Internal first, then one or two trusted people"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic scanning for reliability/threat — keeps checking even when settled",
+          "respond_glimpsed": "Moves toward people he cares about — impulse toward connection under suffering",
+          "superpower_signal": "Strategic fidelity — maps dependencies, acts on early signals, builds genuine trust",
+          "kryptonite_signal": "Perpetual calibration loop — never quite settled, quiet is suspicious",
+          "domain_signals": [
+            "relationships",
+            "work/professional context",
+            "parenting",
+            "risk/security"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 13,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "Something in him moves before he decides to.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Heart center confirmed — genuine care and movement toward people in pain, not just strategic caretaking. SP/SX variant split but SP dominant. 6w5 most likely. Differentiation from 5 confirmed: he moves toward people, cares about loyalty and connection, not just information/isolation. React pattern clear: scanning, checking, never fully settled. Respond glimpsed: impulse toward connection, especially with kids.",
+          "next_question_rationale": "All closing criteria met. Confidence 0.88. All three centers probed. React/respond identified. Type 6 clearly differentiated from 5. Close now.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}
