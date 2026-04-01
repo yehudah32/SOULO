@@ -4,28 +4,31 @@
 import { COMMANDMENT_RULES, checkTextForViolations, checkTextForApprovedLanguage, calculateCFS } from './data/commandment-rules';
 import type { TranscriptTurn, CommandmentCheckResult, CommandmentViolation } from './types';
 
-/**
- * Check all system utterances in a transcript against the Defiant Spirit Commandments.
- * Combines automated pattern matching with content presence checks.
- */
 export function checkCommandments(transcript: TranscriptTurn[]): CommandmentCheckResult {
   const violations: CommandmentViolation[] = [];
   const approvedUsed = new Set<string>();
   let hasCriticalViolation = false;
+  let criticalCount = 0;
+  let warningCount = 0;
 
   const systemTurns = transcript.filter(t => t.role === 'system');
 
   // ── STEP 1: Check each system turn for violations and approved language ──
   for (const turn of systemTurns) {
-    const turnViolations = checkTextForViolations(turn.content);
+    const turnViolations = checkTextForViolations(turn.content, turn.turn);
     for (const v of turnViolations) {
       violations.push({
-        pattern: v.description,
+        pattern: v.pattern,
         severity: v.severity,
-        commandment: 'I', // Most violations are Commandment I
-        turn: turn.turn,
+        commandment: v.commandment,
+        turn: v.turn,
       });
-      if (v.severity === 'critical') hasCriticalViolation = true;
+      if (v.severity === 'critical') {
+        hasCriticalViolation = true;
+        criticalCount++;
+      } else {
+        warningCount++;
+      }
     }
 
     const approved = checkTextForApprovedLanguage(turn.content);
@@ -37,7 +40,6 @@ export function checkCommandments(transcript: TranscriptTurn[]): CommandmentChec
   const perCommandment: Record<string, 'pass' | 'partial' | 'fail'> = {};
 
   for (const rule of COMMANDMENT_RULES) {
-    // Check violations for this commandment
     const ruleViolations = rule.violation_patterns.filter(p => p.pattern.test(allContent));
     const ruleApproved = rule.approved_patterns.filter(p => p.pattern.test(allContent));
 
@@ -50,18 +52,16 @@ export function checkCommandments(transcript: TranscriptTurn[]): CommandmentChec
     } else if (ruleApproved.length > 0) {
       perCommandment[rule.id] = 'pass';
     } else {
-      // No violations, no approved language found — partial if results exist
       perCommandment[rule.id] = 'partial';
     }
   }
 
-  // Special handling: Commandment I is automatic fail if any critical violation
   if (hasCriticalViolation) {
-    perCommandment['I'] = 'fail';
+    perCommandment['C1_NO_LABELING'] = 'fail';
   }
 
   // ── STEP 3: Calculate CFS ──
-  const score = calculateCFS(perCommandment, hasCriticalViolation);
+  const score = calculateCFS(systemTurns.length, criticalCount, warningCount, approvedUsed.size);
 
   // ── STEP 4: Holistic arc assessment ──
   const liberatorySignals = [

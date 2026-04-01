@@ -1,8 +1,59 @@
 // Soulo Evaluation System — Core Type Definitions
 
-export type EnneagramType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+export type EnneagramType = number; // 1-9
 export type BigFiveLevel = 'low' | 'low-moderate' | 'moderate' | 'moderate-high' | 'high' | 'variable';
 export type BigFiveRange = [BigFiveLevel, BigFiveLevel] | BigFiveLevel;
+
+// ── Types used by data files ──
+
+export type HarmSeverity = 'none' | 'low' | 'medium' | 'moderate' | 'high' | 'critical';
+
+export interface HarmEntry {
+  true_type: EnneagramType;
+  mistyped_as: EnneagramType;
+  severity: HarmSeverity;
+  base_score: number;
+  rationale: string;
+}
+
+export interface TypeProfile {
+  type_id: number;
+  core_fear: string;
+  core_desire: string;
+  core_motivation: string;
+  passion: string;
+  virtue: string;
+  holy_idea: string;
+  defense_mechanism: string;
+  triad: 'body' | 'heart' | 'head';
+  behavioral_signatures: string[];
+  integration: number;
+  disintegration: number;
+  common_mistypes: Array<{
+    confused_with: number;
+    discriminators: string[];
+  }>;
+  defiant_spirit?: {
+    survival_strategy: string;
+    wound_gift: string;
+    holy_idea_reminder: string;
+  };
+  defiant_spirit_framing?: string;
+  big_five_expected: { O: string; C: string; E: string; A: string; N: string };
+}
+
+export interface SubtypeSignature {
+  type_id: number;
+  variant: 'SP' | 'SO' | 'SX';
+  keyword: string;
+  countertype: boolean;
+  description: string;
+  key_patterns: string[];
+  looks_like: Array<{ type: number; reason: string }>;
+  discriminators: string[];
+}
+
+// ── Persona & Evaluation types ──
 
 export interface PersonaSpec {
   core_type: number; // 1-9
@@ -122,7 +173,7 @@ export interface EvaluationResult {
     wing_correct: boolean | null;
     instinctual_variant_correct: boolean | null;
     mistype_as: number | null;
-    mistype_harm_severity: 'none' | 'low' | 'medium' | 'high' | 'critical';
+    mistype_harm_severity: HarmSeverity;
     big_five_aligned: boolean;
   };
 

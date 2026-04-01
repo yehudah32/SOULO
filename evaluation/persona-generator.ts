@@ -7,7 +7,7 @@ import { CONFIG } from './config';
 import type { PersonaSpec, Persona } from './types';
 import { TYPE_PROFILES } from './data/type-profiles';
 import { SUBTYPE_SIGNATURES } from './data/subtype-signatures';
-import { BIG_FIVE_MAPPINGS } from './data/big-five-mappings';
+import { BIG_FIVE_PROFILES } from './data/big-five-mappings';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -49,7 +49,7 @@ function buildSpecContext(spec: PersonaSpec): string {
   const subtype = SUBTYPE_SIGNATURES.find(
     s => s.type_id === spec.core_type && s.variant === spec.instinctual_variant
   );
-  const bigFive = BIG_FIVE_MAPPINGS[spec.core_type];
+  const bigFive = BIG_FIVE_PROFILES[spec.core_type as 1|2|3|4|5|6|7|8|9];
 
   let context = `PERSONA SPECIFICATION:
 ${JSON.stringify(spec, null, 2)}
@@ -57,10 +57,10 @@ ${JSON.stringify(spec, null, 2)}
 TYPE REFERENCE (for your internal use — do NOT expose in persona):
 - Core Fear: ${profile?.core_fear}
 - Core Desire: ${profile?.core_desire}
-- Passion: ${profile?.passion} — ${profile?.passion_description}
+- Passion: ${profile?.passion}
 - Defense Mechanism: ${profile?.defense_mechanism}
 - Behavioral Signatures: ${profile?.behavioral_signatures.join('; ')}
-- Integration → Type ${profile?.integration_direction}, Disintegration → Type ${profile?.disintegration_direction}`;
+- Integration → Type ${profile?.integration}, Disintegration → Type ${profile?.disintegration}`;
 
   if (subtype) {
     context += `\n\nSUBTYPE (${spec.instinctual_variant}${spec.core_type}):
@@ -73,7 +73,7 @@ TYPE REFERENCE (for your internal use — do NOT expose in persona):
   }
 
   if (bigFive) {
-    context += `\n\nEXPECTED BIG FIVE: O=${bigFive.expected.O}, C=${bigFive.expected.C}, E=${bigFive.expected.E}, A=${bigFive.expected.A}, N=${bigFive.expected.N}`;
+    context += `\n\nEXPECTED BIG FIVE: O=${bigFive.openness.expected}, C=${bigFive.conscientiousness.expected}, E=${bigFive.extraversion.expected}, A=${bigFive.agreeableness.expected}, N=${bigFive.neuroticism.expected}`;
   }
 
   return context;
