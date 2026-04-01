@@ -9,7 +9,8 @@
     "lint": "eslint",
     "ingest": "tsx --env-file=.env.local scripts/ingest.ts",
     "test-rag": "tsx --env-file=.env.local scripts/test-rag.ts",
-    "seed-questions": "tsx --env-file=.env.local scripts/seed-questions.ts"
+    "seed-questions": "tsx --env-file=.env.local scripts/seed-questions.ts",
+    "generate-signatures": "tsx --env-file=.env.local scripts/generate-type-signatures.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

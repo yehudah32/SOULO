@@ -104,6 +104,19 @@ export interface SessionData {
 
   // Per-session question tracking for yield optimization
   allQuestionsAsked?: Array<{ exchange: number; questionId: number; questionText: string }>;
+
+  // Vector scoring state (hybrid assessment flow)
+  vectorPhase: 'center_id' | 'type_narrowing' | 'differentiation' | null;
+  vectorScores: {
+    typeScores: Record<number, number>;
+    centerScores: Record<string, number>;
+    confidence: number;
+    topTypes: number[];
+    phase: 'center_id' | 'type_narrowing' | 'differentiation';
+  } | null;
+  vectorQuestionsAsked: string[];
+  useVectorScoring: boolean;
+  llmCallCount: number;
 }
 
 // Persist the store across Hot Module Replacement in development.
@@ -147,6 +160,11 @@ export function initSession(id: string): void {
     releaseLineType: null,
     clarificationState: null,
     allQuestionsAsked: [],
+    vectorPhase: null,
+    vectorScores: null,
+    vectorQuestionsAsked: [],
+    useVectorScoring: false,
+    llmCallCount: 0,
   });
 }
 

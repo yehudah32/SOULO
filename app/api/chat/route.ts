@@ -10,8 +10,9 @@ import { queryKnowledgeBase } from '@/lib/rag';
 import { getQuestionBank, updateQuestionYield, type Question } from '@/lib/question-bank';
 import { supervisorCheck } from '@/lib/supervisor';
 import { runPostAssessmentEvaluation } from '@/lib/evaluator';
-import { selectTritype } from '@/lib/enneagram-lines';
+import { selectTritype, CENTER_MAP } from '@/lib/enneagram-lines';
 import { findPairForTypes, getTopTwoTypes } from '@/lib/differentiation-pairs';
+import { scoreResponse, hasTypeSignatures } from '@/lib/vector-scorer';
 import type { SessionData } from '@/lib/session-store';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
@@ -535,6 +536,57 @@ Format: ${diffPair.questions[qIdx].format}`;
     console.log(
       `[chat/timing] Total: ${Math.round(t5 - t0)}ms | RAG+QB: ${Math.round(t2 - t1)}ms | Claude: ${Math.round(t4 - t3)}ms | Session: ${Math.round(t5 - t4)}ms | Messages: ${anthropicMessages.length} | Exchange: ${session.exchangeCount + 1}`
     );
+
+    // ── Fire-and-forget: Shadow mode vector scoring (non-blocking) ──
+    Promise.resolve().then(async () => {
+      try {
+        const signaturesExist = await hasTypeSignatures();
+        if (!signaturesExist) return; // Skip if signatures haven't been generated yet
+
+        const questionId = String(finalInternal?.selected_question_id ?? session.exchangeCount);
+        const vectorResult = await scoreResponse(
+          latestUserMessage.content,
+          questionId,
+          session.vectorScores ?? null,
+          session.exchangeCount
+        );
+
+        // Update session with vector scores for next turn
+        setSession(sessionId, {
+          vectorScores: vectorResult,
+          vectorPhase: vectorResult.phase,
+        });
+
+        // Determine agreement
+        const claudeTopType = finalInternal?.hypothesis?.leading_type ?? 0;
+        const vectorTopType = vectorResult.topTypes[0] ?? 0;
+        const claudeCenter = claudeTopType > 0 ? (CENTER_MAP[claudeTopType] ?? '') : '';
+        const vectorCenter = vectorTopType > 0 ? (CENTER_MAP[vectorTopType] ?? '') : '';
+
+        const agreement = claudeTopType === vectorTopType;
+        const centerAgreement = claudeCenter === vectorCenter;
+
+        // Log to shadow_mode_log table
+        adminClient.from('shadow_mode_log').insert({
+          session_id: sessionId,
+          exchange_number: session.exchangeCount + 1,
+          claude_top_type: claudeTopType,
+          claude_confidence: finalInternal?.hypothesis?.confidence ?? 0,
+          vector_top_type: vectorTopType,
+          vector_confidence: vectorResult.confidence,
+          vector_center_scores: vectorResult.centerScores,
+          vector_type_scores: vectorResult.typeScores,
+          agreement,
+          center_agreement: centerAgreement,
+          phase: vectorResult.phase,
+        }).then(({ error: logErr }) => {
+          if (logErr) console.error('[shadow-mode] Log error:', logErr.message);
+          else console.log(`[shadow-mode] Exchange ${session.exchangeCount + 1}: Claude=Type${claudeTopType} Vector=Type${vectorTopType} | Type agree: ${agreement} | Center agree: ${centerAgreement}`);
+        });
+      } catch (err) {
+        console.error('[shadow-mode] Error:', err);
+      }
+    });
 
     // ── Fire-and-forget: Supervisor check (non-blocking) ──
     Promise.resolve().then(async () => {
