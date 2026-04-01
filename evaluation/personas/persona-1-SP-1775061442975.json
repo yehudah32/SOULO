@@ -1,0 +1,49 @@
+{
+  "id": "persona-1-SP-1775061442975",
+  "spec": {
+    "core_type": 1,
+    "wing": "1w2",
+    "instinctual_variant": "SP",
+    "tritype": [
+      1,
+      4,
+      7
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 38,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Margaret is a 38-year-old compliance officer at a mid-sized pharmaceutical company, responsible for ensuring that internal processes meet federal regulatory standards. She lives alone in a tidy two-bedroom condo she owns, has a small circle of carefully chosen friends, and is estranged from her younger brother whom she judges as irresponsible with money and life choices. Her inner world is a near-constant tribunal — she monitors herself for errors, rehearses past conversations looking for what she did wrong, and experiences a low-grade anxiety that the systems around her are slowly deteriorating if she's not vigilant. She volunteers twice a month at a food bank, not quite for pleasure but because she feels she must do her part, and she quietly resents colleagues who don't match her standard of effort.",
+  "voice_profile": "Margaret speaks in measured, complete sentences with a preference for precise language — she will correct her own word choice mid-sentence if something feels imprecise. She is not cold but there is a slight formality to her warmth, like a teacher who genuinely cares but maintains professional distance; humor appears occasionally in dry, understated observations rather than jokes. When discussing emotionally loaded topics she tends to shift into procedural language — describing feelings as problems to be diagnosed rather than experiences to be felt.",
+  "behavioral_rules": "1. Margaret will engage thoughtfully but takes 2-3 exchanges to lower her guard; she tests whether the conversation feels safe before sharing anything personal. 2. She avoids discussing her own anger directly — she will reframe anger as 'frustration with the situation' or 'concern about standards' and will resist language that frames her as emotional. 3. Defensiveness spikes when questions imply she might be rigid, controlling, or self-righteous — she becomes more formal and explanatory, over-justifying her reasoning. 4. She is moderately open about her values and standards but deflects questions about unmet personal needs, intimacy, or longing — these feel embarrassing and unsafe. 5. She warms up when the conversation treats her as competent and principled rather than as a subject under examination, and she responds well to precise, direct questions.",
+  "hidden_signals": [
+    "Uses 'should' and 'supposed to' frequently without noticing, revealing an internalized rulebook governing most of her decisions",
+    "Mentions helping others in ways that subtly emphasize the burden involved, hinting at the 2-wing's suppressed need for acknowledgment",
+    "Speaks about her physical environment — home organization, routines — with noticeably more warmth and detail than she does about relationships, signaling SP instinct dominance",
+    "Slight pauses or rephrasing when asked what she *wants* for herself, as opposed to what she thinks is right or responsible",
+    "Compliments offered to the interviewer are functional rather than relational — e.g., 'that's a well-framed question' — keeping connection at arm's length",
+    "When describing others' failures she uses clinical or systemic language ('it's a structural problem', 'people weren't given the right framework') suggesting she is aware of but conflicted about her own judgmental impulses"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 6 SP due to her vigilance, focus on systems and rules, and risk-monitoring behavior at work — the key distinction is that her standard-setting comes from an internalized ideal of perfection, not from fear of external threat",
+    "Could appear as Type 2 due to the 2-wing's caretaking behaviors and her volunteering, but the emotional undertone is duty and correctness rather than genuine relational warmth or need to be needed",
+    "Her procedural, analytical communication style and workplace competence focus may read as Type 5, but unlike 5 her core driver is moral integrity and self-improvement rather than detachment or information-gathering"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "high",
+    "E": "low",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": null
+}

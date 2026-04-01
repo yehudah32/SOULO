@@ -543,18 +543,18 @@ Format: ${diffPair.questions[qIdx].format}`;
         const signaturesExist = await hasTypeSignatures();
         if (!signaturesExist) return; // Skip if signatures haven't been generated yet
 
-        const questionId = String(finalInternal?.selected_question_id ?? session.exchangeCount);
+        const currentExchange = session.exchangeCount + 1; // Use updated count, not stale
+        const questionId = String(finalInternal?.selected_question_id ?? currentExchange);
         const vectorResult = await scoreResponse(
           latestUserMessage.content,
           questionId,
           session.vectorScores ?? null,
-          session.exchangeCount
+          currentExchange
         );
 
         // Update session with vector scores for next turn
         setSession(sessionId, {
           vectorScores: vectorResult,
-          vectorPhase: vectorResult.phase,
         });
 
         // Determine agreement

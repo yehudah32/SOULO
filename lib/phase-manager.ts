@@ -25,6 +25,9 @@ const THRESHOLDS = {
   escapeHatch: {
     lowConfidenceThreshold: 0.15, // if top type score is below this, escalate to Claude
   },
+  differentiationMax: {
+    maxQuestions: 5, // Hard cap on differentiation questions before close
+  },
   close: {
     minConfidence: 0.85,
     minTotalQuestions: 6,
@@ -164,6 +167,16 @@ export function evaluatePhaseTransition(
   }
 
   // ── Phase: differentiation (always uses Claude) ──
+  // Enforce a max questions limit to prevent infinite loops
+  const diffQuestionsAsked = exchangeCount - (THRESHOLDS.centerIdToNarrowing.maxQuestions + THRESHOLDS.narrowingToDifferentiation.maxQuestions);
+  if (diffQuestionsAsked >= THRESHOLDS.differentiationMax.maxQuestions) {
+    return {
+      currentPhase: 'differentiation',
+      shouldEscalateToClaude: true,
+      reason: `Max differentiation questions reached (${diffQuestionsAsked}). Assessment should close.`,
+    };
+  }
+
   return {
     currentPhase: 'differentiation',
     shouldEscalateToClaude: true,

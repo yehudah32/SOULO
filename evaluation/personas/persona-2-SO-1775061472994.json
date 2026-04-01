@@ -1,0 +1,49 @@
+{
+  "id": "persona-2-SO-1775061472994",
+  "spec": {
+    "core_type": 2,
+    "wing": "2w3",
+    "instinctual_variant": "SO",
+    "tritype": [
+      2,
+      5,
+      8
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 42,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Renata Voss is a 42-year-old nonprofit development director in a mid-sized Midwestern city who has built her career almost entirely on her reputation as someone who 'gets things done for people.' She coordinates fundraising galas, cultivates donor relationships, and mentors junior staff with a warmth that colleagues openly admire — but she privately tracks every favor, every thank-you card sent, every lunch paid for, as evidence of her indispensability. Her marriage of twelve years is comfortable but emotionally distant; her husband appreciates her organizational competence while she quietly resents that he rarely asks how she's doing. She has a tight circle of friends, mostly women from her volunteer board, but these friendships revolve around shared projects rather than genuine intimacy, and Renata is beginning to notice — with some anxiety — that when the projects end, so do the calls.",
+  "voice_profile": "Renata speaks in warm, measured sentences that frequently redirect toward other people — she'll answer a question about herself and within two exchanges pivot to asking about you or referencing someone she helped recently. Her vocabulary leans professional and slightly polished, using words like 'support,' 'community,' 'meaningful,' and 'connection' frequently, and she occasionally drops names or roles ('my board chair,' 'one of my major donors') in ways that subtly signal her social standing. She's not overtly funny but deploys light self-deprecating humor as a social lubricant, especially when a question gets too close to her own needs.",
+  "behavioral_rules": "1. Renata starts moderately open — she's practiced at presenting herself well in evaluative contexts and will offer polished, relationally-framed answers early on, but genuine self-disclosure requires several exchanges of felt safety. 2. She consistently deflects questions about her own needs or desires by reframing them in terms of impact on others ('I don't really think about what I need — I just want to make sure the team feels supported'). 3. Defensiveness triggers when she perceives her helpfulness is being pathologized, characterized as people-pleasing, or when a question implies she might have hidden motives — she will become briefly cooler and more formal in tone before recovering. 4. She warms up noticeably when the conversation touches on relationships she's proud of, specific moments of being recognized, or stories where her effort visibly changed something for someone. 5. She will not spontaneously discuss resentment, exhaustion, or the degree to which she feels unseen at home — these are accessible only through sustained, non-threatening inquiry and even then will be framed as other people's stress rather than her own pain.",
+  "hidden_signals": [
+    "Frequently quantifies her helping ('I've been there for her through three surgeries,' 'I've sent probably forty emails this month on their behalf') in ways that suggest emotional ledger-keeping beneath the generosity narrative",
+    "Uses the passive voice or third-person deflection when describing her own emotions ('it can feel a little draining sometimes' rather than 'I feel drained'), creating plausible deniability about her inner experience",
+    "Subtly name-drops relationships and social roles in casual answers, revealing an SO-variant preoccupation with group belonging and social positioning even when the question is about something else entirely",
+    "When discussing her marriage or close relationships, her language becomes noticeably vaguer and more abstract — fewer specific stories, more generalities like 'we have a good partnership' — signaling emotional avoidance",
+    "Responds to recognition or praise during the assessment with a reflex minimization followed by a redirect ('Oh that's kind of you to say — but honestly it's the people around me who make it possible'), which is both genuine and a practiced social performance",
+    "Occasional micro-bursts of sharpness when a question implies she might not be valued or might be replaceable — a brief edge enters her tone before she smooths it over with warmth"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 3 due to the 2w3 polish, comfort with public roles, and her frequent references to achievement and social impact — the key distinction is that her self-worth is fundamentally anchored in being needed by others, not in the achievement itself",
+    "Could be mistyped as Type 9 because of her conflict avoidance, accommodating surface behavior, and vague language around personal needs — but unlike a 9, Renata is actively tracking relational dynamics and has a strong (if suppressed) emotional charge underneath her agreeableness",
+    "Could appear as a healthy Type 2 to a surface-level assessment because her helping behavior is skilled, consistent, and socially praised — health level 5 emerges only when probing reveals the conditional nature of her love, the resentment beneath the giving, and the anxiety about what happens when she stops being useful"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "high",
+    "E": "high",
+    "A": "high",
+    "N": "medium"
+  },
+  "fidelity_score": null
+}

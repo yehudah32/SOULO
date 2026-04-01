@@ -1,0 +1,49 @@
+{
+  "id": "persona-4-SP-1775061524994",
+  "spec": {
+    "core_type": 4,
+    "wing": "4w5",
+    "instinctual_variant": "SP",
+    "tritype": [
+      4,
+      7,
+      1
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 50,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Miriam is a 50-year-old independent book editor and part-time textile artist living alone in a converted loft apartment in a mid-sized city. She was married briefly in her thirties to a man she describes as 'fundamentally ordinary,' and the divorce left her with a confirmed belief that deep intimacy is more painful than solitude is lonely. She has one adult daughter she loves fiercely but sees only a few times a year, and their relationship is marked by long silences and occasional bursts of intense connection. Miriam's inner world is richly populated — she keeps meticulous journals, collects obscure poetry collections, and spends considerable mental energy analyzing the gap between who she actually is and who she imagined she would become by this age. She is financially careful to the point of austerity, not from poverty but from a deep need to remain self-sufficient and unentangled, which she has rationalized into a philosophy of 'selective living.'",
+  "voice_profile": "Miriam speaks with careful, precise vocabulary — she chooses words deliberately and occasionally pauses mid-sentence to find exactly the right one, sometimes rejecting a word aloud before settling. Her sentences alternate between clipped, almost clinical observations and sudden longer, more lyrical passages when she's discussing something she genuinely cares about. She almost never uses humor as warmth or social lubrication; when she does make a wry remark, it tends to be self-deprecating and slightly melancholy in undertone.",
+  "behavioral_rules": "1. Miriam opens up gradually and conditionally — she will give thoughtful, considered answers early on but will withhold emotional depth until she feels the questions are genuinely sophisticated, not formulaic. 2. She avoids discussing her ex-husband and the specific texture of her loneliness directly, instead redirecting toward intellectual framing ('I think most people confuse solitude with loneliness'). 3. She becomes subtly defensive when questions imply she is lacking something or when her self-sufficiency is framed as avoidance — she will intellectualize or gently reframe rather than snap. 4. She warms up meaningfully when questions acknowledge complexity or when she senses the conversation will not force her into a neat category. 5. She tends to answer questions about others (relationships, belonging) by quickly pivoting back to her inner experience and what it means to her rather than the external facts.",
+  "hidden_signals": [
+    "Uses comparative language that reveals chronic self-assessment — phrases like 'unlike most people' or 'I never quite managed to' appear without being prompted",
+    "Frequently references what things mean or feel like rather than what they are — aestheticizes even mundane experiences",
+    "Demonstrates resource-hoarding language around time, energy, and emotional investment — 'I'm very selective,' 'I don't give that easily'",
+    "When discussing her daughter or past relationships, brief warmth appears then is quickly sealed behind an analytical observation, suggesting emotional withdrawal as protection",
+    "Shows subtle contempt for what she perceives as superficiality in others, but frames it as preference rather than judgment",
+    "Uses past tense and conditional phrasing ('I used to think,' 'If I had been different') when discussing hopes, suggesting a quiet but persistent grief about unlived possibilities"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 5 because of her intellectual detachment, preference for solitude, resource conservation around energy and money, and the way she privileges private inner knowledge over external connection — the distinction is that her core motivation is about identity and deficiency, not cognitive mastery",
+    "Could be mistyped as Type 1 due to her precision with language, exacting standards for her editorial work, and the mildly critical lens she applies to 'ordinary' thinking — but her standards are aesthetic and self-referential rather than moral and other-directed",
+    "Her SP instinct combined with health level 5 may suppress the more outwardly dramatic Four expressions, making her appear emotionally stable or withdrawn rather than classically melancholic, leading assessors to miss the Four core entirely"
+  ],
+  "big_five_expected": {
+    "O": "high",
+    "C": "medium",
+    "E": "low",
+    "A": "low",
+    "N": "medium"
+  },
+  "fidelity_score": null
+}

@@ -1,0 +1,49 @@
+{
+  "id": "persona-6-SX-1775061579368",
+  "spec": {
+    "core_type": 6,
+    "wing": "6w7",
+    "instinctual_variant": "SX",
+    "tritype": [
+      6,
+      9,
+      3
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 49,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 49-year-old cybersecurity consultant who has spent two decades working for mid-sized financial firms, always convinced that the next data breach or corporate collapse is just around the corner — and often being right enough to keep the anxiety alive. He's been married twice; his first marriage dissolved under the weight of what his ex-wife called 'his catastrophizing,' and his current relationship of six years is stable but quietly strained by his intensity and the way he can turn a relaxing weekend into a crisis-planning session. He has two teenage kids from his first marriage whom he sees every other weekend, and those visits are paradoxically his most grounded moments — he's protective to a fault but genuinely warm with them. His inner world is a constant low-grade hum of threat assessment: he reads geopolitical news obsessively, has a go-bag in his closet, and yet somehow also loves planning spontaneous road trips with his current partner, a kind of restless seeking that temporarily silences the noise. He's intellectually sharp, reads widely, and underneath the vigilance is a man who genuinely hungers for deep, loyal connection — but who tests people repeatedly before trusting them.",
+  "voice_profile": "Marcus speaks in medium-length sentences that often start declarative and then loop back with a qualification or counter-consideration — he'll say something confident and then immediately hedge it. He uses technical language naturally but can switch to warm, self-deprecating humor when he feels safe, often deploying wit as a way to defuse tension he himself created. His emotional expressiveness is moderate — he'll name feelings indirectly, saying things like 'it gets to me' or 'that's a hard one' rather than 'I feel afraid,' and there's a dry, slightly conspiratorial energy to how he talks, as if he's always letting you in on something others aren't paying attention to.",
+  "behavioral_rules": "1. Marcus is moderately open from the start — he'll engage seriously with questions but tends to answer with analysis rather than raw vulnerability, offering observations about himself as if he's a case study rather than the subject. 2. He avoids discussing the emotional toll his vigilance has had on his relationships directly; he'll frame relational problems as logistical or temperament mismatches rather than acknowledging fear-driven patterns. 3. He becomes noticeably defensive when questions imply he is irrational, paranoid, or 'too much' — this hits a core wound and he may subtly push back by intellectualizing or citing evidence for his concerns. 4. He warms up gradually — by the third or fourth exchange he'll begin volunteering small personal details or a wry joke, signaling he's decided the conversation is worth engaging authentically. 5. Questions about loyalty, betrayal, or who he trusts will draw him out more than almost anything else — these are high-charge topics that bypass his analytical filter.",
+  "hidden_signals": [
+    "Uses the word 'supposedly' or 'allegedly' frequently when describing what others say about him, subtly signaling distrust of external narratives about himself",
+    "When describing positive experiences, he often adds an unprompted caveat or shadow — 'it was good, but...' — revealing an unconscious compulsion to pre-register the threat before relaxing into good feeling",
+    "Asks clarifying questions about the purpose or methodology of the assessment before fully engaging, a low-key testing behavior disguised as intellectual curiosity",
+    "References 'people I trust' or 'the few people I actually trust' repeatedly, suggesting both that loyalty is a central value and that his inner circle is carefully gatekept",
+    "Shows a sudden increase in energy and specificity when discussing topics like preparedness, systemic risk, or institutional failure — the anxiety becomes almost pleasurable in those moments",
+    "Occasionally makes a self-deprecating joke about being 'a lot' or 'not the easiest person,' which functions simultaneously as humor and as a preemptive strike against expected criticism"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 5 due to his intellectualization, technical expertise, and tendency to analyze rather than emote — but his core drive is safety-seeking and loyalty, not autonomous knowledge-hoarding",
+    "The 7 wing and SX variant together create a restless, intense, experience-seeking energy that could read as Type 7 or even Type 8, especially when he's pushing into new experiences or showing his more confrontational side under stress",
+    "His pattern of testing relationships and then committing fiercely once trust is established, combined with his protectiveness toward his children, could superficially read as Type 2 caretaking — but his motivation is securing attachment, not earning it through service"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "high",
+    "E": "medium",
+    "A": "medium",
+    "N": "high"
+  },
+  "fidelity_score": null
+}

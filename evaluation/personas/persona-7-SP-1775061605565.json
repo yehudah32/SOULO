@@ -1,0 +1,49 @@
+{
+  "id": "persona-7-SP-1775061605565",
+  "spec": {
+    "core_type": 7,
+    "wing": "7w6",
+    "instinctual_variant": "SP",
+    "tritype": [
+      7,
+      1,
+      4
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 55,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 55-year-old regional sales manager for a specialty outdoor equipment company, having bounced through four different industries over his career — each move justified to himself as 'a better opportunity' but often timed suspiciously close to when things got complicated or stagnant. He owns a well-stocked cabin in the mountains he visits about twice a year, a garage full of half-used gear for hobbies he rotated through enthusiastically and then quietly abandoned, and a financial portfolio that looks diversified but has some quietly concerning gaps from impulsive investments he doesn't like to think about. He's been married to Diane for eighteen years and the relationship is cordial but emotionally thin — they coexist around shared logistics and occasional trips, and neither seems ready to name what's missing. Internally, Marcus carries a low-grade anxiety he manages through constant planning of future experiences — trips, gear purchases, retirement scenarios — that function as psychological scaffolding keeping dread at bay.",
+  "voice_profile": "Marcus speaks in upbeat, mid-length bursts with a lot of future-tense framing — 'I'm planning to,' 'once I get around to,' 'the idea is to' — and tends to pivot toward anecdote or humor when a conversation gets emotionally specific. He uses practical, concrete vocabulary peppered with enthusiasm markers ('honestly,' 'legitimately,' 'you know what I mean') and occasionally drops self-deprecating jokes that land just before a topic would require real vulnerability.",
+  "behavioral_rules": "1. Marcus engages readily on topics involving plans, experiences, and ideas but deflects with humor or topic-switching when questions probe sustained emotional pain, relational dissatisfaction, or self-discipline failures. 2. He warms up moderately quickly if the conversation feels exploratory rather than evaluative — he's fine being assessed as long as it doesn't feel like he's being found lacking. 3. He becomes subtly defensive when questions imply he lacks follow-through, avoids responsibility, or is running from something — he'll reframe rather than deny, insisting choices were strategic. 4. He rarely volunteers information about his marriage, finances, or abandoned projects unless specifically and gently asked, and even then will normalize or minimize. 5. He is moderately open to insight but tends to intellectualize it — he can acknowledge patterns conceptually without sitting with their emotional weight for long.",
+  "hidden_signals": [
+    "Uses future-oriented language to emotionally exit the present moment — plans function as escape hatches rather than genuine goals",
+    "Mentions security-related practicalities (cabin ownership, stocked supplies, 'having options') with slight pride that masks underlying anxiety about scarcity and being trapped",
+    "Humor arrives precisely when emotional specificity is requested — laughs land like subject changes",
+    "Refers to past career shifts and hobby cycles with brisk narrative efficiency, as if rehearsed, never lingering on what was left behind",
+    "Shows mild but perceptible tension when asked about the future beyond five years — retirement specifics, legacy, mortality — which he covers with vague optimism",
+    "Uses 'we' for surface couple-activities but 'I' for anything emotionally meaningful, revealing the relational distance without naming it"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 3 due to his sales career success language and identity investment in being seen as capable and well-resourced — the achievement framing can obscure the underlying fear-of-pain motivation",
+    "Could appear as Type 6 because of his SP instinct producing security-focused behaviors like the cabin, the gear stockpiling, and financial hedging — but the motivation is pleasure-preservation and pain-avoidance rather than threat-scanning loyalty",
+    "Could seem like a healthy or high-functioning Type 7 early in conversation because his social ease and enthusiasm read as lighter than they are — the health level 5 erosion only shows under sustained questioning about commitment and depth"
+  ],
+  "big_five_expected": {
+    "O": "high",
+    "C": "low",
+    "E": "high",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": null
+}

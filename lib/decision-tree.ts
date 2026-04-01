@@ -65,26 +65,45 @@ export async function selectNextQuestion(
   // Determine which stage to query from the question bank
   const stage = phase === 'center_id' ? 1 : 3;
 
+  // Validate inputs
+  if (!scores || !scores.topTypes) {
+    return null;
+  }
+
   // Query the question bank for candidates, excluding already-asked questions
-  const { data, error } = await adminClient
+  let query = adminClient
     .from('questions')
     .select('*')
     .eq('stage', stage)
-    .not('id', 'in', `(${questionsAsked.length > 0 ? questionsAsked.join(',') : '0'})`)
-    .neq('format', lastFormat)  // Rotate format
     .order('avg_information_yield', { ascending: false })
     .limit(10);
 
+  // Exclude already-asked questions
+  if (questionsAsked.length > 0) {
+    query = query.not('id', 'in', `(${questionsAsked.join(',')})`);
+  }
+
+  // Rotate format if possible
+  if (lastFormat) {
+    query = query.neq('format', lastFormat);
+  }
+
+  const { data, error } = await query;
+
   if (error || !data || data.length === 0) {
-    // Try without format rotation
-    const { data: fallbackData } = await adminClient
+    // Try without format rotation, same stage
+    let fallbackQuery = adminClient
       .from('questions')
       .select('*')
-      .lte('stage', stage + 1)
-      .gte('stage', Math.max(1, stage - 1))
-      .not('id', 'in', `(${questionsAsked.length > 0 ? questionsAsked.join(',') : '0'})`)
+      .eq('stage', stage)
       .order('avg_information_yield', { ascending: false })
       .limit(5);
+
+    if (questionsAsked.length > 0) {
+      fallbackQuery = fallbackQuery.not('id', 'in', `(${questionsAsked.join(',')})`);
+    }
+
+    const { data: fallbackData } = await fallbackQuery;
 
     if (!fallbackData || fallbackData.length === 0) return null;
     return fallbackData[0] as Question;

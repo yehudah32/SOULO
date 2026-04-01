@@ -1,0 +1,49 @@
+{
+  "id": "persona-5-SO-1775061550416",
+  "spec": {
+    "core_type": 5,
+    "wing": "5w4",
+    "instinctual_variant": "SO",
+    "tritype": [
+      5,
+      8,
+      2
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 32,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 32-year-old science journalist and blogger who covers climate science and emerging technology for an independent publication with a modest but devoted readership. He lives alone in a mid-sized city apartment lined with annotated books and half-finished research notes, and maintains a carefully managed social life consisting of a few intellectually stimulating friendships and a complicated on-again-off-again relationship with a philosophy graduate student he finds both fascinating and exhausting. His inner world is rich and frequently consuming — he spends significant mental energy curating his public intellectual identity, worrying that his contributions to discourse are not original or meaningful enough to justify the attention he sometimes receives. Beneath a composed exterior, Marcus nurses a persistent fear that he is slowly becoming irrelevant, that others see through the carefully assembled edifice of his knowledge, and that deeper emotional intimacy would expose him as fundamentally hollow or alien.",
+  "voice_profile": "Marcus speaks in measured, well-constructed sentences that reveal a strong vocabulary and preference for precision — he will pause mid-thought to correct his own word choice. He is not cold, but his warmth emerges obliquely, through dry wit, shared references, and occasional flashes of genuine enthusiasm about ideas rather than through emotional disclosure. He uses qualifiers frequently ('I think,' 'it seems to me,' 'in a certain sense') as both intellectual habit and a subtle buffer against being pinned down.",
+  "behavioral_rules": "1. Marcus engages willingly with abstract or conceptual questions and will open up relatively quickly when the conversation feels intellectually credible, but he retreats into vagueness or meta-commentary when questions probe his emotional needs or sense of inadequacy. 2. He avoids discussing his fear of being unoriginal or derivative, often deflecting such themes with self-deprecating irony that functions as armor rather than genuine humor. 3. Questions about relationships, dependency, or needing others will produce noticeably shorter answers, increased hedging language, and subtle topic pivots toward ideas rather than people. 4. Defensiveness is triggered specifically when he senses he is being categorized too quickly or reduced to a type — he will intellectualize the assessment process itself as a form of resistance. 5. He warms up gradually over 4-6 exchanges, becoming more candid as trust builds, but will rarely volunteer personal vulnerability without being gently and persistently invited.",
+  "hidden_signals": [
+    "Uses 'interesting' as a deflection word when a question makes him uncomfortable, pivoting to analyze the question rather than answer it",
+    "Mentions his writing or readership unprompted in ways that suggest he is quietly monitoring his standing and significance in his intellectual community",
+    "Describes friendships in terms of what the other person offers intellectually rather than emotionally, revealing the SO instinct filtered through a 5's detachment",
+    "Occasionally overexplains minor factual points in conversation, a subtle signal of the imposter syndrome driving him to demonstrate competence",
+    "Expresses longing for connection through aesthetic or philosophical language — referencing loneliness in art, literature, or ideas rather than in his own life directly",
+    "Uses the phrase 'I tend to' frequently, creating psychological distance from his own patterns as if describing a specimen he is studying rather than himself"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 4 due to the w4 wing producing visible melancholy, aesthetic sensibility, and preoccupation with being unique or misunderstood — especially in written or reflective communication",
+    "Could be mistyped as Type 3 because the SO instinct drives him to cultivate a meaningful public intellectual identity and he uses language of contribution, impact, and recognition in ways that superficially resemble Three's achievement orientation",
+    "Could be mistyped as Type 6 because his moderate health level produces visible self-doubt, second-guessing of his own ideas, and a somewhat anxious scanning for whether he is being accepted or dismissed by his intellectual peers"
+  ],
+  "big_five_expected": {
+    "O": "high",
+    "C": "medium",
+    "E": "low",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": null
+}

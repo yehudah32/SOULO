@@ -35,7 +35,8 @@ function cosineSimilarity(a: number[], b: number[]): number {
     magB += b[i] * b[i];
   }
   if (magA === 0 || magB === 0) return 0;
-  return dot / (Math.sqrt(magA) * Math.sqrt(magB));
+  // Clamp to [-1, 1] to handle floating-point precision issues
+  return Math.max(-1, Math.min(1, dot / (Math.sqrt(magA) * Math.sqrt(magB))));
 }
 
 /**
@@ -57,7 +58,7 @@ async function getTypeSimilarities(
 
   if (sigData && (sigData as Array<{ type_id: number; similarity: number }>).length >= 9) {
     for (const row of sigData as Array<{ type_id: number; similarity: number }>) {
-      scores[row.type_id] = row.similarity;
+      scores[row.type_id] = Math.max(0, row.similarity); // Clamp negative similarities
     }
     return scores;
   }
@@ -69,8 +70,13 @@ async function getTypeSimilarities(
 
   if (centroidData) {
     for (const row of centroidData as Array<{ type_id: number; similarity: number }>) {
-      scores[row.type_id] = row.similarity;
+      scores[row.type_id] = Math.max(0, row.similarity);
     }
+  }
+
+  // Ensure all 9 types have a score (uniform fallback if missing)
+  for (let type = 1; type <= 9; type++) {
+    if (scores[type] === undefined) scores[type] = 0;
   }
 
   return scores;
@@ -136,6 +142,11 @@ function bayesianUpdate(
     for (const type of Object.keys(combined)) {
       combined[Number(type)] /= total;
     }
+  } else {
+    // Zero total — return uniform distribution rather than silent failure
+    for (let type = 1; type <= 9; type++) {
+      combined[type] = 1 / 9;
+    }
   }
 
   return combined;
@@ -179,21 +190,21 @@ export async function scoreResponse(
     .sort(([, a], [, b]) => b - a)
     .map(([type]) => Number(type));
 
-  // 6. Determine current phase based on confidence and exchange count
+  // 6. Determine current phase — sequential, non-overlapping
   let phase: VectorScorerResult['phase'] = 'center_id';
-  if (exchangeCount >= 2 && centerScores) {
+
+  // Check differentiation first (highest priority)
+  if (confidence > 0.5 || exchangeCount >= 6) {
+    phase = 'differentiation';
+  }
+  // Then narrowing
+  else if (exchangeCount >= 2) {
     const centerValues = Object.values(centerScores);
     const topCenter = Math.max(...centerValues);
     const totalCenter = centerValues.reduce((s, v) => s + v, 0);
     if (totalCenter > 0 && topCenter / totalCenter > 0.45) {
       phase = 'type_narrowing';
     }
-  }
-  if (exchangeCount >= 4 && confidence > 0.3) {
-    phase = 'type_narrowing';
-  }
-  if (confidence > 0.5 || exchangeCount >= 6) {
-    phase = 'differentiation';
   }
 
   return {
