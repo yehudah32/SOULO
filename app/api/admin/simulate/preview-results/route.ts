@@ -14,11 +14,11 @@ export async function POST(request: Request) {
       coreType: number;
       wing: string;
       variant: string;
-      tritype: string;
+      wholeType: string;
       confidence: number;
     };
 
-    const { coreType, wing, variant, tritype, confidence } = body;
+    const { coreType, wing, variant, wholeType: tritype, confidence } = body; // destructure wholeType as tritype for Supabase compat
 
     if (!coreType) {
       return NextResponse.json({ error: 'Missing coreType' }, { status: 400 });
@@ -50,8 +50,8 @@ export async function POST(request: Request) {
     setSession(sessionId, {
       isComplete: true,
       exchangeCount: 15,
-      tritype: tritype || String(coreType),
-      tritypeConfidence: 0.75,
+      wholeType: tritype || String(coreType),
+      wholeTypeConfidence: 0.75,
       defiantSpiritTypeName: '',
       domainSignals: ['relationships', 'leadership', 'wealth'],
       internalState: {

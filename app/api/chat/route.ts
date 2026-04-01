@@ -171,8 +171,8 @@ async function updateSessionFromParsed(
     });
   }
 
-  // Calculate tritype from type_scores using center-based algorithm (one per center)
-  // Do NOT trust the AI's tritype — it may use top-3 overall instead of top-per-center
+  // Calculate Whole Type from type_scores using center-based algorithm (one per center)
+  // Do NOT trust the AI's tritype field — it may use top-3 overall instead of top-per-center
   const rawScores = finalInternal?.hypothesis?.type_scores ?? {};
   const numericScores: Record<number, number> = {};
   for (const [k, v] of Object.entries(rawScores)) {
@@ -181,10 +181,10 @@ async function updateSessionFromParsed(
   const computedTritype = Object.keys(numericScores).length >= 3
     ? selectTritype(numericScores)
     : null;
-  const tritype: string = computedTritype?.tritype || finalInternal?.hypothesis?.tritype || session.tritype || '';
-  const tritypeConfidence: number = finalInternal?.hypothesis?.tritype_confidence ?? session.tritypeConfidence ?? 0;
-  const tritypeArchetypeFauvre: string = finalInternal?.hypothesis?.tritype_archetype_fauvre ?? session.tritypeArchetypeFauvre ?? '';
-  const tritypeArchetypeDS: string = finalInternal?.hypothesis?.tritype_archetype_ds ?? session.tritypeArchetypeDS ?? '';
+  const wholeType: string = computedTritype?.tritype || finalInternal?.hypothesis?.tritype || session.wholeType || '';
+  const wholeTypeConfidence: number = finalInternal?.hypothesis?.tritype_confidence ?? session.wholeTypeConfidence ?? 0;
+  const wholeTypeArchetypeFauvre: string = finalInternal?.hypothesis?.tritype_archetype_fauvre ?? session.wholeTypeArchetypeFauvre ?? '';
+  const wholeTypeArchetypeDS: string = finalInternal?.hypothesis?.tritype_archetype_ds ?? session.wholeTypeArchetypeDS ?? '';
   const defiantSpiritTypeName: string = finalInternal?.hypothesis?.defiant_spirit_type_name ?? session.defiantSpiritTypeName ?? '';
   const wholeTypeSignals = finalInternal?.hypothesis?.whole_type_signals ?? session.wholeTypeSignals;
   const rawLexicon = finalInternal?.hypothesis?.lexicon_signals ?? session.lexiconSignals ?? [];
@@ -229,10 +229,10 @@ async function updateSessionFromParsed(
       typeScores: finalInternal?.hypothesis?.type_scores ?? {},
       variantSignals: finalInternal?.variant_signals ?? {},
       wingSignals: finalInternal?.wing_signals ?? {},
-      tritype,
-      tritypeConfidence,
-      tritypeArchetypeFauvre,
-      tritypeArchetypeDS,
+      wholeType,
+      wholeTypeConfidence,
+      wholeTypeArchetypeFauvre,
+      wholeTypeArchetypeDS,
       defiantSpiritTypeName,
       wholeTypeSignals,
       oynDimensions: finalInternal?.oyn_dimensions ?? {},
@@ -250,10 +250,10 @@ async function updateSessionFromParsed(
       type_scores: finalInternal?.hypothesis?.type_scores ?? {},
       variant_signals: finalInternal?.variant_signals ?? {},
       wing_signals: finalInternal?.wing_signals ?? {},
-      tritype,
-      tritype_confidence: tritypeConfidence,
-      tritype_archetype_fauvre: tritypeArchetypeFauvre,
-      tritype_archetype_ds: tritypeArchetypeDS,
+      tritype: wholeType, // Supabase column is 'tritype', TS variable is 'wholeType'
+      tritype_confidence: wholeTypeConfidence,
+      tritype_archetype_fauvre: wholeTypeArchetypeFauvre,
+      tritype_archetype_ds: wholeTypeArchetypeDS,
       defiant_spirit_type_name: defiantSpiritTypeName,
       whole_type_signals: wholeTypeSignals,
       oyn_dimensions: finalInternal?.oyn_dimensions ?? {},
@@ -296,10 +296,10 @@ async function updateSessionFromParsed(
     supervisorScores,
     currentStage: stage,
     defiantSpiritTypeName,
-    tritype,
-    tritypeConfidence,
-    tritypeArchetypeFauvre,
-    tritypeArchetypeDS,
+    wholeType,
+    wholeTypeConfidence,
+    wholeTypeArchetypeFauvre,
+    wholeTypeArchetypeDS,
     wholeTypeSignals,
     lexiconSignals,
     lexiconContext,

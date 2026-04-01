@@ -46,10 +46,10 @@ export interface SessionData {
   supervisorScores: number[];
   currentStage: number;
   defiantSpiritTypeName: string;
-  tritype: string;
-  tritypeConfidence: number;
-  tritypeArchetypeFauvre: string;
-  tritypeArchetypeDS: string;
+  wholeType: string;
+  wholeTypeConfidence: number;
+  wholeTypeArchetypeFauvre: string;
+  wholeTypeArchetypeDS: string;
   wholeTypeSignals: { body: number; heart: number; head: number };
   lexiconSignals: number[];
   lexiconContext: Array<{
@@ -81,15 +81,15 @@ export interface SessionData {
 
   // Type score analysis
   topTypeScores: Record<number, number> | null;
-  tritypeTypes: {
+  wholeTypeTypes: {
     body: number;
     heart: number;
     head: number;
   } | null;
   secondaryInfluences: number[];
   lowestScoringType: number | null;
-  stressLineType: number | null;
-  releaseLineType: number | null;
+  energizingPointType: number | null;
+  resolutionPointType: number | null;
 
   // Confidence gate — differentiation clarification
   clarificationState: {
@@ -135,10 +135,10 @@ export function initSession(id: string): void {
     supervisorScores: [],
     currentStage: 1,
     defiantSpiritTypeName: '',
-    tritype: '',
-    tritypeConfidence: 0,
-    tritypeArchetypeFauvre: '',
-    tritypeArchetypeDS: '',
+    wholeType: '',
+    wholeTypeConfidence: 0,
+    wholeTypeArchetypeFauvre: '',
+    wholeTypeArchetypeDS: '',
     wholeTypeSignals: { body: 0, heart: 0, head: 0 },
     lexiconSignals: [],
     lexiconContext: [],
@@ -151,11 +151,11 @@ export function initSession(id: string): void {
     thinkingDisplay: '',
     demographics: null,
     topTypeScores: null,
-    tritypeTypes: null,
+    wholeTypeTypes: null,
     secondaryInfluences: [],
     lowestScoringType: null,
-    stressLineType: null,
-    releaseLineType: null,
+    energizingPointType: null,
+    resolutionPointType: null,
     clarificationState: null,
     allQuestionsAsked: [],
     vectorScores: null,

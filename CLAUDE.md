@@ -1,5 +1,16 @@
 # Soulo Enneagram — Claude Code Onboarding
 
+## Authoritative Documents (Source of Truth)
+These two documents override all other references on philosophy, terminology,
+scoring, and language rules. Read both before making any changes:
+
+- **DYN_SYSTEM_ARCHITECTURE.md** — Master architecture. Tier hierarchy,
+  scoring model (shared 100% resource), confidence rules, type names,
+  tier cascade principle. Governs assessment logic and results delivery.
+- **DYN_COMMANDMENTS.md** — The ten commandments. Every word the system
+  speaks must comply. Includes violation checklist. Governs all AI-generated
+  content: questions, reflections, results, coaching.
+
 ## What This Project Is
 A conversational Enneagram personality assessment web app built on the
 Defiant Spirit methodology by Dr. Baruch HaLevi. Users complete an

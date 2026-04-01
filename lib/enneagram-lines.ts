@@ -1,12 +1,22 @@
-export const RELEASE_LINES: Record<number, number> = {
+// Energizing Point (with the arrow / traditionally "stress"):
+// Future-oriented, adult self. Where energy naturally flows under pressure.
+// Neither good nor bad — both reaction and response expressions exist.
+export const ENERGIZING_POINTS: Record<number, number> = {
+  1: 4, 2: 8, 3: 9, 4: 2, 5: 7,
+  6: 3, 7: 1, 8: 5, 9: 6
+}
+
+// Resolution Point (against the arrow / traditionally "security"):
+// Past-oriented, childhood self. Heart and healing path.
+// Neither good nor bad — both reaction and response expressions exist.
+export const RESOLUTION_POINTS: Record<number, number> = {
   1: 7, 2: 4, 3: 6, 4: 1, 5: 8,
   6: 9, 7: 5, 8: 2, 9: 3
 }
 
-export const STRESS_LINES: Record<number, number> = {
-  1: 4, 2: 8, 3: 9, 4: 2, 5: 7,
-  6: 3, 7: 1, 8: 5, 9: 6
-}
+// Backward-compatible aliases (deprecated — use ENERGIZING_POINTS / RESOLUTION_POINTS)
+export const STRESS_LINES = ENERGIZING_POINTS
+export const RELEASE_LINES = RESOLUTION_POINTS
 
 export const CENTER_MAP: Record<number, 'Body' | 'Heart' | 'Head'> = {
   8: 'Body', 9: 'Body', 1: 'Body',
@@ -28,10 +38,14 @@ export const TYPE_NAMES: Record<number, string> = {
 
 export const CLOCKWISE_ORDER: number[] = [9, 1, 2, 3, 4, 5, 6, 7, 8]
 
+// Selects the Whole Type (one dominant type per center, ordered by score)
+// Note: function retains "selectTritype" name for Supabase compatibility
+// but the return includes both `tritype` and `wholeType` (same value)
 export function selectTritype(
   typeScores: Record<number, number>
 ): {
   tritype: string
+  wholeType: string
   body: number
   heart: number
   head: number
@@ -46,7 +60,7 @@ export function selectTritype(
 
   if (!body || !heart || !head) {
     console.error('[tritype] could not find type for all centers', { typeScores })
-    return { tritype: '', body: 0, heart: 0, head: 0 }
+    return { tritype: '', wholeType: '', body: 0, heart: 0, head: 0 }
   }
 
   // Core type (overall highest) goes first, then the other two by score
@@ -58,8 +72,10 @@ export function selectTritype(
 
   const ordered = [coreType, ...others].map(t => t.type)
 
+  const result = ordered.join('-')
   return {
-    tritype: ordered.join('-'),
+    tritype: result, // Supabase column compatibility
+    wholeType: result, // DYN Architecture terminology
     body: body.type,
     heart: heart.type,
     head: head.type

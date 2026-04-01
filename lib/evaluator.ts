@@ -204,7 +204,7 @@ Return this exact JSON structure with no markdown:
     }
 
     // Populate tritype archetype in resultsData if tritype is known
-    const tritype = session.tritype;
+    const tritype = session.wholeType;
     if (tritype && TRITYPE_ARCHETYPES[tritype]) {
       const archetype = TRITYPE_ARCHETYPES[tritype];
       await adminClient.from('assessment_evaluations')

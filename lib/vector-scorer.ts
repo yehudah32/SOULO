@@ -207,6 +207,14 @@ export async function scoreResponse(
     }
   }
 
+  // 7. No-ties flag: if top 2 types are within 0.02, needs pressure testing
+  const needsPressureTest = topTypes.length >= 2 &&
+    Math.abs((updatedScores[topTypes[0]] ?? 0) - (updatedScores[topTypes[1]] ?? 0)) < 0.02;
+
+  if (needsPressureTest) {
+    console.log(`[vector-scorer] NO-TIES WARNING: Types ${topTypes[0]} and ${topTypes[1]} are within 0.02 — needs pressure testing`);
+  }
+
   return {
     typeScores: updatedScores,
     centerScores,
