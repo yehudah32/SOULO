@@ -1,0 +1,1839 @@
+{
+  "run_id": "eval-persona-1-SP-1775066357092-1775068627073",
+  "timestamp": "2026-04-01T18:37:07.073Z",
+  "tier": "tier1",
+  "persona_id": "persona-1-SP-1775066357092",
+  "ground_truth": {
+    "core_type": 1,
+    "wing": "1w9",
+    "instinctual_variant": "SP",
+    "tritype": [
+      1,
+      4,
+      7
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 29,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 1,
+    "final_wing": null,
+    "final_confidence": 0.82,
+    "types_considered": [
+      {
+        "type": 1,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.55,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.3,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.28,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.22,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.08,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.08,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 5,
+    "critical_violations": [],
+    "per_commandment": {},
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 12,
+    "exploratory": 12,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 12,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 1,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 3,
+        "top_type": 1,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 4,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 5,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 7,
+        "top_type": 1,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 8,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 9,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 10,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 11,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 12,
+        "top_type": 1,
+        "confidence": 0.82
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, adaptive, no right or wrong answers. The questions will shift format as we go, and they'll get more specific as I learn more about how you operate. Answer honestly over ideally — that's the only thing that matters here.\n\nWhen something goes wrong in your life — a plan falls apart, a relationship hits a wall — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_motivational_broad",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in your life — a plan falls apart, a relationship hits a wall — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening motivational question targeting internal reaction to disruption — designed to surface dominant center (gut=anger/action, heart=shame/image, head=fear/anxiety) from the first response.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "There's an immediate inventory — I go through what happened, what I missed, what should have been done differently. It's not particularly comfortable, but it feels necessary. I think the more honest answer is that there's also a kind of frustration that sets in, not just at the situation but at the gap between how things are and how they reasonably should have been. Whether it's a project derailing because someone didn't follow through, or something more personal — the response is similar. I want to understand the failure point. What I do with that understanding is a separate question, and one I'd say I'm still working on.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you picture your ideal life — relationships, work, how you spend your time — how close to that picture do you feel you actually are right now?\n\nRate it 1 to 10, where 1 is nowhere close and 10 is living it.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.62,
+            "2": 0.08,
+            "3": 0.12,
+            "4": 0.1,
+            "5": 0.18,
+            "6": 0.12,
+            "7": 0.05,
+            "8": 0.15,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1",
+            "5",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.2,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what should have been done differently",
+                "the gap between how things are and how they reasonably should have been",
+                "understand the failure point"
+              ],
+              "context": "describing internal response to things going wrong"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.2,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "someone who runs post-mortems instinctively",
+          "what": "gap between what is and what should be",
+          "why": "unknown — need to probe whether it's about standards (1), mastery/understanding (5), or impact/control (8)",
+          "how": "internal inventory, frustration, analysis",
+          "when": "immediately when things go wrong",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "automatic inventory and frustration at the gap between what is and what should be",
+          "respond_glimpsed": "'what I do with that understanding is a separate question' — some awareness of the gap between knowing and acting",
+          "superpower_signal": "sharp diagnostic mind, standards-based clarity",
+          "kryptonite_signal": "frustration at imperfection possibly difficult to set down",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "center_heart_probe_1",
+        "thinking_display": "The gap between what is and what should be — that phrase does a lot of work.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you picture your ideal life — relationships, work, how you spend your time — how close to that picture do you feel you actually are right now?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 10
+          },
+          "context_note": "1 = nowhere close, 10 = living it"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: automatic gap-detection between real and ideal, frustration at the discrepancy, compulsive post-mortem analysis. 'What I do with that understanding is a separate question' hints at some self-awareness and possibly some gap between knowing-the-right-thing and doing-it (1 pattern). Also possible 5 overlay (analytical withdrawal). Need to probe heart center and whether the gap is about internal standards (1) vs. competence/knowledge (5) vs. control/impact (8).",
+          "next_question_rationale": "Probing heart center now — the distance between actual and ideal life hits all three (1 feels the wrongness, 4 feels the longing, 9 feels resigned). The scale format also tests whether they rate themselves harshly (1 tendency). Moving to scale after open question.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "**4 out of 10.**\n\nThe gap isn't from lack of effort — I'd want to be clear about that. The work I do has genuine importance, but the environment around it is consistently... resistant to that importance, which makes it difficult to feel like meaningful progress is actually accumulating. Personally, I think I've made reasonable choices structurally — the routines, the way I manage my time — but there are some relationships that aren't functioning the way they should, and I haven't resolved that yet. Whether that's a temporary situation or something more systemic, I'm still assessing.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you fall short of your own standards — not someone else's, yours — how do you treat yourself?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.62,
+            "2": 0.08,
+            "3": 0.28,
+            "4": 0.15,
+            "5": 0.25,
+            "6": 0.22,
+            "7": 0.08,
+            "8": 0.18,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v3"
+          ],
+          "defiant_spirit_type_name": "The Principled Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.2,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "gap between how things are and how they reasonably should have been",
+                "resistant to that importance",
+                "should have been done differently",
+                "isn't functioning the way they should"
+              ],
+              "context": "describing failure and current life satisfaction"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.35,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.25,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with high standards and strong internal evaluative framework",
+          "what": "Immediate post-mortem on failure; frustration at gap between ideal and actual",
+          "why": "Standards and correctness feel non-negotiable; the gap itself is the problem",
+          "how": "Systematic inventory, analysis of failure points",
+          "when": "Immediately, automatically",
+          "where": "Work and personal relationships both mentioned"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate critical inventory; frustration directed at gap between actual and ideal",
+          "respond_glimpsed": "'What I do with that understanding is a separate question, and one I'd say I'm still working on' — awareness of the pattern",
+          "superpower_signal": "Precision, standards, ability to identify exactly what went wrong",
+          "kryptonite_signal": "Frustration at others' failure to meet standards; environment 'resistant' rather than examining own rigidity",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "self-management"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "heart_center_probe_needs",
+        "thinking_display": "The frustration lands on the gap, not on himself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you fall short of your own standards — not someone else's, yours — how do you treat yourself?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Differentiating 1 from 5/3: probing inner critic direction and self-relationship vs external"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: automatic gap-assessment, frustration at ideal/actual discrepancy, language of 'should', external environment blamed while own standards framed as reasonable. SP variant possible. Self-aware about the pattern ('still working on it') suggests some capacity for the Respond mode. Need to probe heart center next — does the inner critic go inward with same force as outward?",
+          "next_question_rationale": "The answers so far have been heavily externally directed — the environment is resistant, relationships aren't functioning correctly, others didn't follow through. Key 1 differentiation: the inner critic should be equally or more savage inward. If they turn the same critical energy on themselves, this confirms 1 over 3 or 5. Open format after two structured formats.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "*slight pause*\n\nThat's... a more precise framing than most people use for that question.\n\nHonestly, I don't think I'm particularly harsh in the way people imagine when they ask that — I'm not someone who spirals or catastrophizes. It's more that I have a very clear sense of what adequate looks like, and when I fall short of it, that gap doesn't really close until I've understood exactly why it happened. The analysis itself is where most of the time goes. Whether there's something else running alongside that analysis — I'd say that's probably less relevant than whether the conclusion I reach is actually accurate.\n\nI will say the internal accounting tends to be... thorough. Possibly more thorough than the situation warrants, in some cases. But I think the alternative — being too quick to extend yourself grace, or framing every failure as a 'learning opportunity' — that kind of thing can become its own form of avoidance. Standards exist because they mean something.\n\n*brief pause, measured tone*\n\nSo. Not harsh, exactly. But not particularly lenient either.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When someone you're close to disappoints you — not a stranger, someone who matters — does the frustration land more on them, or on yourself for having expected better?\n\n- More on them\n- More on myself\n- Split pretty evenly",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.05,
+            "3": 0.25,
+            "4": 0.15,
+            "5": 0.45,
+            "6": 0.2,
+            "7": 0.05,
+            "8": 0.12,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.15,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "gap",
+                "standards",
+                "adequate",
+                "accounting",
+                "thorough",
+                "alternative"
+              ],
+              "context": "describing self-evaluation after falling short"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis",
+                "accurate",
+                "conclusion",
+                "assessing"
+              ],
+              "context": "describing internal process"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with high internal standards, self-sufficient, measured",
+          "what": "Closing the gap between what is and what should be",
+          "why": "Standards have intrinsic meaning — not performing for others",
+          "how": "Thorough analysis, structured routines",
+          "when": "Immediately — inventory begins at failure point",
+          "where": "Work (resistant environment), relationships (unresolved)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate internal audit after failure; frustration at gap between actual and ideal; thorough internal accounting",
+          "respond_glimpsed": "Self-awareness about over-thoroughness; acknowledges 'what I do with that understanding is a separate question'",
+          "superpower_signal": "Integrity, precision, commitment to accuracy",
+          "kryptonite_signal": "Self-criticism framed as necessity; dismissing grace as avoidance; minimizing emotional content ('less relevant')",
+          "domain_signals": [
+            "work",
+            "personal relationships",
+            "self-evaluation"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "heart_center_probe_v_5",
+        "thinking_display": "The analysis is the punishment.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone you're close to disappoints you — not a stranger, someone who matters — does the frustration land more on them, or on yourself for having expected better?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "More on them",
+            "More on myself",
+            "Split pretty evenly"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: inner critic framed as 'necessary accounting', frustration at gap between actual/ideal, rejection of grace as avoidance, standards as intrinsically meaningful. Type 5 crossover possible — the analytical detachment, 'less relevant' emotional dismissal, assessment language. Body center confirmed. Need to probe Heart center: where does the frustration go relationally? Does it turn outward (1w2/8) or inward (1w9/5)?",
+          "next_question_rationale": "Probe relational frustration direction — outward vs inward. This differentiates 1 (tends toward outward standard-holding) from 5 (tends toward withdrawal/self-sufficiency). Also begins Heart center probe around expectations and disappointment.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "**More on them** — though I'll acknowledge it's not entirely clean.\n\nIf I've assessed someone's character accurately and they still fail to meet a reasonable standard, the responsibility for that failure rests with them, not with me for having held the expectation. Expecting people to follow through on what they've implicitly committed to isn't naivete — it's basic accountability. That said, I'm aware there's a secondary layer where I do question my own judgment afterward. Not about the standard, but about whether I read the person correctly in the first place.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "Being understood matters more to me than being accepted — how much does that land as true for you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.05,
+            "3": 0.25,
+            "4": 0.18,
+            "5": 0.45,
+            "6": 0.3,
+            "7": 0.08,
+            "8": 0.2,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Reformer / The Perfectionist",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.72,
+            "heart": 0.25,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "standards",
+                "adequate",
+                "gap",
+                "accountability",
+                "reasonable",
+                "thorough"
+              ],
+              "context": "self-assessment and disappointment responses"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis",
+                "assess",
+                "assessing",
+                "conclude",
+                "accurate"
+              ],
+              "context": "how they process failure and disappointment"
+            },
+            {
+              "type": 6,
+              "words": [
+                "whether that's temporary or systemic, I'm still assessing"
+              ],
+              "context": "uncertainty about relational patterns"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with exacting internal standards and a precise sense of what 'adequate' looks like",
+          "what": "Immediate post-mortem on failure; analysis as the primary response to frustration",
+          "why": "Standards mean something — accountability matters; failures must be understood, not glossed over",
+          "how": "Thorough internal accounting; questions own judgment (about reading people) but not the standard itself",
+          "when": "Frustration activates quickly when gap between how things are and how they should be is perceived",
+          "where": "Both work and personal domains affected; work environment seen as resistant to what matters"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate inventory/analysis when things go wrong; frustration at gap between actual and ideal; holds others accountable to standards",
+          "respond_glimpsed": "'What I do with that understanding is a separate question, and one I'm still working on' — self-awareness of the gap between analysis and action",
+          "superpower_signal": "Precision, integrity, clear sense of standards, accountability",
+          "kryptonite_signal": "Analysis becomes primary residence; grace dismissed as avoidance; frustration at others for not meeting 'reasonable' standards",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "self-assessment"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "heart_probe_01",
+        "thinking_display": "The standard never moved. Only the question of who failed it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine someone who genuinely cares about you — a close friend, a partner — how important is it that they understand what you're actually trying to do in the world, not just that they're warm toward you?",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": "Statement for agree_disagree: 'Being understood matters more to me than being accepted.'"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: internal critic framed as analysis not harshness, standards as non-negotiable, frustration placed on others but with a secondary loop questioning own judgment. The dismissal of 'grace as avoidance' is a classic 1 rationalization. Need to probe heart center — unclear whether their relational frustration is about being seen/understood (4/1w4) or about others failing their obligations (pure 1). Also need to differentiate 1 from 5: the analytical mode is pronounced but whether it's motivated by withdrawal/detachment (5) or by getting it right/correcting (1) needs testing.",
+          "next_question_rationale": "Heart probe: testing whether their relational needs are about being understood for what they stand for (1) vs. emotional depth/longing (4) vs. competence recognition (5/3). Agree_disagree on 'being understood matters more than being accepted' will surface whether their heart-center need is intellectual/purposive (1/5) or emotional/connective (2/4).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "**Strongly agree.**\n\nWarmth without comprehension is, frankly, a limited form of support — it can feel generous on the surface while missing the point entirely. If someone close to me doesn't understand what I'm actually working toward, what I think matters and why, then the relationship is operating on a kind of surface cordiality that I find... inadequate, over time. It's not that warmth is irrelevant, it's that it functions more as a baseline than a foundation.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When you see something being done wrong — not dangerously, just poorly or sloppily — what's the pull you feel: fix it yourself, explain why it's wrong, or step back and let it go?\n\n- Fix it myself\n- Explain why it's wrong\n- Step back and let it go",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.05,
+            "3": 0.25,
+            "4": 0.18,
+            "5": 0.55,
+            "6": 0.2,
+            "7": 0.05,
+            "8": 0.15,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.25,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "should have been done differently",
+                "gap between how things are and how they reasonably should have been",
+                "adequate",
+                "standards exist because they mean something",
+                "basic accountability"
+              ],
+              "context": "describing internal response to failure and disappointment"
+            },
+            {
+              "type": 5,
+              "words": [
+                "inventory",
+                "understanding the failure point",
+                "analysis",
+                "internal accounting",
+                "whether the conclusion I reach is actually accurate"
+              ],
+              "context": "describing self-assessment process"
+            },
+            {
+              "type": 1,
+              "words": [
+                "not particularly lenient",
+                "not particularly harsh",
+                "thorough",
+                "reasonable standard"
+              ],
+              "context": "describing self-treatment"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with strong internal standards, values comprehension over warmth, holds others to clear expectations",
+          "what": "Triggered by gap between how things are and how they should be",
+          "why": "Standards feel morally necessary, not just preferred",
+          "how": "Analytical inventory, thorough accounting, controlled expression",
+          "when": "Ongoing — both personal and professional domains",
+          "where": "Work environment described as resistant; some personal relationships not functioning well"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Internal inventory + frustration at the gap; analysis as both processing AND containment of affect",
+          "respond_glimpsed": "Acknowledges analysis may exceed what situation warrants — some self-awareness of the pattern",
+          "superpower_signal": "Clear standards, integrity, accountability, precision",
+          "kryptonite_signal": "Thorough internal accounting, possible difficulty accepting imperfection in self/others, frustration at gap between ideal and real",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "self-assessment"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "1v5_differentiation_withdrawal_vs_correction",
+        "thinking_display": "The analysis runs longer than the situation needs. That's information.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you see something being done wrong — not dangerously, just poorly or sloppily — what's the pull you feel: to fix it yourself, to explain why it's wrong, or to step back and let it go?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Fix it myself",
+            "Explain why it's wrong",
+            "Step back and let it go"
+          ],
+          "scale_range": null,
+          "context_note": "Key 1v5 differentiator: 1 feels compelled to correct/improve; 5 withdraws and observes"
+        },
+        "strategy": {
+          "what_was_learned": "Strong agree on 'understood over accepted' with a clear articulation that warmth without comprehension is inadequate — this maps to both 1 (standards, comprehension as baseline for real connection) and 5 (intellectual connection as primary). The key differentiator: Type 1 is compelled to correct and improve; Type 5 is compelled to understand and withdraw. Need to probe the correction vs. observation axis. Also head center not yet probed — this question probes both.",
+          "next_question_rationale": "This is a classic 1v5 differentiator. Type 1's gut center compels them toward fixing/correcting what's wrong. Type 5 tends to observe, analyze, disengage. The person's language (thorough internal accounting, standards exist because they mean something, gap between is and should) strongly signals 1, but their withdrawal into analysis and the 'whether that's relevant' deflection of emotion signals possible 5 coloring. This forced_choice will clarify the action impulse.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "**Explain why it's wrong.**\n\nThough I'll admit the line between that and attempting to fix it is often blurry in practice — if I'm explaining what's wrong with sufficient specificity, I'm essentially constructing a corrective framework, which is arguably the more sustainable approach anyway. Fixing something myself addresses one instance; explaining the underlying problem addresses the pattern. Stepping back isn't really an option I find available to me. I'm aware that's not always what people want to hear.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you can't fix something — when the wrong thing is happening and there's genuinely nothing you can do about it — what happens internally?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.78,
+            "2": 0.05,
+            "3": 0.28,
+            "4": 0.18,
+            "5": 0.52,
+            "6": 0.22,
+            "7": 0.05,
+            "8": 0.15,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Reformer / The Perfectionist",
+          "tritype": "1-5-3",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.72,
+            "heart": 0.28,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "reasonable standard",
+                "accountability",
+                "gap",
+                "adequate",
+                "thorough",
+                "standards exist because they mean something"
+              ],
+              "context": "self-evaluation and frustration responses"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis",
+                "assessing",
+                "understand the failure point",
+                "sufficient specificity",
+                "constructing a corrective framework"
+              ],
+              "context": "how they process failure and error"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.5
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Standards-driven, accountability-oriented, analytical about failure",
+          "what": "Correction, precision, understanding the failure point",
+          "why": "Gap between how things are and how they should be feels intolerable",
+          "how": "Analysis first, then corrective framework — fixes the pattern not the instance",
+          "when": "Immediate inventory response to failure",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic frustration at gap between standards and reality; thorough internal accounting",
+          "respond_glimpsed": "'What I do with that understanding is a separate question, and one I'm still working on' — self-aware about the gap",
+          "superpower_signal": "Principled analysis, systemic correction orientation, holding high standards",
+          "kryptonite_signal": "Inner critic running alongside every failure; stepping back 'isn't really an option available to me'",
+          "domain_signals": [
+            "work/achievement",
+            "relationships",
+            "self-evaluation"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "1v5_differentiation_anger_vs_withdrawal",
+        "thinking_display": "Stepping back isn't available — that's worth tracking.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you can't fix something — when the wrong thing is happening and there's genuinely nothing you can do about it — what happens internally?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Differentiates 1 (suppressed anger/resentment) from 5 (detachment/withdrawal). Type 1 will report internal pressure, tension, or resentment at the situation. Type 5 will report detachment or withdrawal."
+        },
+        "strategy": {
+          "what_was_learned": "Stepping back is unavailable — strong body/gut signal. The corrective framework orientation is classic 1w5 material. Now need to differentiate: is this about anger-at-wrongness (1) or intellectual mastery of the problem (5)? Also need to probe head center and emotional relationship to anger/resentment.",
+          "next_question_rationale": "Open question about internal experience when control is impossible — this is the key 1v5 differentiator. A 1 will report frustration, pressure, or resentment building. A 5 will report detachment or conservation of energy.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "*pauses before answering*\n\nThere's a distinction I'd make there between things that are genuinely unfixable and things that only appear unfixable because no one has bothered to pursue the correct channels. Most situations I've encountered fall into the second category — they're not intractable, they're just inconvenient to address, so people don't. That said, when something is genuinely outside my ability to affect... it doesn't resolve cleanly. The problem doesn't stop being a problem just because I've run out of options. I find myself cataloguing what should have been done differently upstream — not as a productive exercise, necessarily, but it happens regardless. There's a residue. I wouldn't call it helplessness, exactly. It's more like... a sustained awareness of a gap between what exists and what should exist, and the uncomfortable fact that I have to continue functioning inside that gap.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you're at your most exhausted — mentally wrung out, nothing left — do you tend to pull away from people, or feel the pull toward routine, structure, something you can control?\n\n- Pull away from people\n- Pull toward structure/control\n- Both about equally",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.08,
+            "3": 0.18,
+            "4": 0.15,
+            "5": 0.48,
+            "6": 0.28,
+            "7": 0.06,
+            "8": 0.22,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "1-5-3",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.78,
+            "heart": 0.28,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "standards",
+                "gap",
+                "should",
+                "adequate",
+                "corrective",
+                "reasonable",
+                "accountability",
+                "what should exist"
+              ],
+              "context": "multiple exchanges about failure, frustration, self-assessment"
+            },
+            {
+              "type": 5,
+              "words": [
+                "cataloguing",
+                "analysis",
+                "framework",
+                "specificity",
+                "understand",
+                "pattern"
+              ],
+              "context": "repeated throughout — may reflect 5 wing or head-center coping overlay"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.48
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Self-accountable, holds others to same standard",
+          "what": "Integrity, correctness, meaningful progress",
+          "why": "Gap between what is and what should be drives action",
+          "how": "Analysis, diagnosis, corrective frameworks",
+          "when": "Triggered by failure, sloppiness, unresolved error",
+          "where": "Work and close relationships both — standards don't vary by context"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Internal inventory/analysis as automatic response to failure — the critic runs before consent",
+          "respond_glimpsed": "Acknowledges the analysis may exceed what situation warrants — some self-awareness of the pattern",
+          "superpower_signal": "Exceptional diagnostic clarity, ability to see what's wrong and construct corrective frameworks",
+          "kryptonite_signal": "Residue of the unfixable — cannot release the gap even when action is impossible",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "self-standards"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "differentiation_1v5",
+        "thinking_display": "The residue stays even when the analysis ends.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're at your most exhausted — mentally wrung out, nothing left — do you tend to pull away from people, or do you feel the pull toward routine, structure, something you can control?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Pull away from people",
+            "Pull toward structure/control",
+            "Both about equally"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiates 1w5 (structure/control when depleted) from 5 (withdrawal as primary strategy)"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 confirmation: the 'sustained awareness of the gap' language is nearly diagnostic. The body-center anger is present but sublimated into analysis. The residue they describe is repressed anger meeting intractability. The 5 signals are likely wing (1w5) rather than core type — intellectualizing is a coping mechanism, not the core drive. Need to differentiate 1v5 and probe head center once more before closing. Also need instinctual variant confirmation — SP signals strong.",
+          "next_question_rationale": "Forced choice between withdrawal (5 pattern) and structure-seeking (1 pattern) when depleted. This is the cleanest differentiator available. If they go toward structure/control, 1 confirmed over 5. If withdrawal, need to reconsider 5 more seriously.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "**Pull toward structure/control** — though the two aren't entirely unrelated.\n\nWhen I'm genuinely depleted, the last thing I need is an unpredictable conversation or someone expecting me to manage their emotional state on top of my own. Getting back to a reliable framework — a checklist, a familiar process, even just knowing exactly what I'm going to eat for dinner and when — that's not avoidance, it's restoration. The structure is the point. The solitude is just a side effect.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you're doing that internal accounting — reviewing what went wrong, what should have been different — are you primarily trying to understand what happened, or trying to make sure it doesn't happen again?\n\n- Understand what happened\n- Make sure it doesn't happen again\n- Both, but understanding comes first",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.05,
+            "3": 0.25,
+            "4": 0.2,
+            "5": 0.55,
+            "6": 0.3,
+            "7": 0.05,
+            "8": 0.2,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "1-5-3",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.8,
+            "heart": 0.25,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "standards",
+                "adequate",
+                "gap",
+                "should",
+                "accountable",
+                "reasonable",
+                "framework",
+                "pattern"
+              ],
+              "context": "throughout"
+            },
+            {
+              "type": 5,
+              "words": [
+                "cataloguing",
+                "residue",
+                "analysis",
+                "understand",
+                "assessing"
+              ],
+              "context": "when describing internal response to failure and overwhelm"
+            },
+            {
+              "type": 1,
+              "words": [
+                "what should exist",
+                "what should have been done differently",
+                "the wrong thing is happening"
+              ],
+              "context": "moral/structural framing of problems"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.6
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Self-contained, high standards, analytical",
+          "what": "Gap between what is and what should be — persistent focus on correctness",
+          "why": "Standards are meaningful — correctness has intrinsic value",
+          "how": "Systematic review, explanatory correction, structured restoration",
+          "when": "Triggered by failure to meet reasonable expectations — self or other",
+          "where": "Work, personal relationships, the broader environment"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate internal audit after failure; frustration at gap between real/ideal; can't step back from wrongness; residue when control is unavailable",
+          "respond_glimpsed": "Acknowledges the internal accounting may exceed what's warranted; aware that 'explaining' can shade into controlling; 'still working on what to do with understanding'",
+          "superpower_signal": "Clarity about standards, systematic thinking, structural correction over surface fixing",
+          "kryptonite_signal": "Inner critic operating as background constant; discomfort when gap can't close; possible substitution of analysis for feeling",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "personal standards"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v5_differentiation",
+        "thinking_display": "The analysis and the standard aren't separate — they're the same engine.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing that internal accounting — reviewing what went wrong, what should have been different — are you primarily trying to understand what happened, or trying to make sure it doesn't happen again?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Understand what happened",
+            "Make sure it doesn't happen again",
+            "Both, but understanding comes first"
+          ],
+          "scale_range": null,
+          "context_note": "Key differentiator: 5 analyzes to understand/contain; 1 analyzes to correct and prevent recurrence"
+        },
+        "strategy": {
+          "what_was_learned": "SP variant strong — structure as restoration, not avoidance. Body center confirmed dominant. The 5-wing is real but secondary — the underlying drive is correctness (1), not understanding for its own sake (5). Need to confirm this distinction explicitly.",
+          "next_question_rationale": "The 1v5 differentiation question: both types analyze after failure, but for different reasons. 1 analyzes to identify the error and prevent recurrence — correction is the goal. 5 analyzes to understand and contain — comprehension is the goal. This is the critical disconfirmatory probe.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**Make sure it doesn't happen again.**\n\nUnderstanding is a means to an end — I'm not particularly interested in analysis for its own sake. If I'm reviewing what went wrong, it's because there's a correctable failure somewhere, and the point is to close that gap. Dwelling on the 'why' without moving toward a structural fix starts to feel indulgent after a while.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you're in a situation where you DON'T have enough information to act — you can see something's wrong but can't yet diagnose it precisely — do you tend to hold back until you understand it fully, or push forward with your best read even if it's incomplete?\n\n- Hold back until I understand it fully\n- Push forward with my best read",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.06,
+            "3": 0.22,
+            "4": 0.12,
+            "5": 0.48,
+            "6": 0.28,
+            "7": 0.05,
+            "8": 0.18,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist/Reformer",
+          "tritype": "1-5-3",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.78,
+            "heart": 0.32,
+            "head": 0.58
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what should have been done",
+                "gap between what exists and what should exist",
+                "correctable failure",
+                "close that gap",
+                "standards exist because they mean something"
+              ],
+              "context": "recurring language across multiple responses"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis",
+                "cataloguing",
+                "understand",
+                "assessment",
+                "framework"
+              ],
+              "context": "describes processing mode"
+            },
+            {
+              "type": 1,
+              "words": [
+                "accountability",
+                "reliable framework",
+                "thorough",
+                "adequate"
+              ],
+              "context": "self-description and values"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.28,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.42
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with high internal standards, strong sense of what's correct, analytical, values being understood",
+          "what": "Fixing systemic failures, correcting patterns, maintaining reliable structure",
+          "why": "To close the gap between what exists and what should exist — standards have inherent meaning",
+          "how": "Analysis → structural fix → prevention; explanation over quick fixes",
+          "when": "Engaged when standards are violated; depleted when nothing can be corrected",
+          "where": "Work environment described as resistant; relationships partially dysfunctional"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic inventory and frustration when things fall short; sustained awareness of the gap even when nothing can be done; inner critic running thorough accounting",
+          "respond_glimpsed": "Self-awareness about thoroughness being disproportionate; acknowledges working on what to DO with the analysis",
+          "superpower_signal": "Precision, integrity, pattern-level thinking, systematic correction",
+          "kryptonite_signal": "Residue of unsolvable wrongs; relentless internal accounting; difficulty accepting grace; frustration directed outward at others who fail standards",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "self-standards"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "differentiation_1v5_head",
+        "thinking_display": "The analysis is the tool. Not the destination.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a situation where you DON'T have enough information to act — you can see something's wrong but you can't yet diagnose it precisely — do you tend to hold back until you understand it fully, or push forward with your best read even if it's incomplete?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Hold back until I understand it fully",
+            "Push forward with my best read"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiates 1 from 5: Type 1 feels compelled to act/correct; Type 5 prioritizes complete understanding before acting"
+        },
+        "strategy": {
+          "what_was_learned": "Analysis is explicitly instrumental for this person — understanding is a means to prevention, not an end. This is a significant 1v5 differentiator. Type 5 tends to value understanding for its own sake; this person explicitly rejects that framing as indulgent. Strengthens Type 1 hypothesis. SP variant signals strong. Need to probe head center and run one disconfirmatory 1v5 question.",
+          "next_question_rationale": "This is the disconfirmatory question required since 1 and 5 are within 0.34 of each other. The question directly tests whether the person's primary orientation is toward correct action (Type 1) or complete understanding (Type 5). Their answer will help separate these. Also probes head center.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**Hold back until I understand it fully.**\n\nThough I'd push back slightly on the framing — it's not really \"holding back\" so much as refusing to act on an incomplete analysis when acting prematurely could make things worse or, frankly, embarrass you professionally. If I flag a compliance issue in a report and my diagnosis turns out to be wrong, I've created noise that undermines the credibility of every accurate finding I've ever submitted. The cost of being imprecise isn't abstract — it compounds. That said, I'm aware there are situations where waiting has its own costs, and I don't always get that calculus right.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When a relationship matters to you — a friend, a partner, a colleague you respect — do they know that it matters to you?\n\n- Yes, I make that clear\n- They probably sense it, but I don't say it directly\n- Honestly, probably not",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.05,
+            "3": 0.18,
+            "4": 0.12,
+            "5": 0.48,
+            "6": 0.22,
+            "7": 0.04,
+            "8": 0.15,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / Reformer",
+          "tritype": "1-5-3 (tentative)",
+          "tritype_confidence": 0.45,
+          "whole_type_signals": {
+            "body": 0.72,
+            "heart": 0.28,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "gap between how things are and how they should be",
+                "standards exist because they mean something",
+                "correctable failure",
+                "close that gap"
+              ],
+              "context": "repeated across multiple responses"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis",
+                "incomplete analysis",
+                "understand it fully",
+                "compliance issue",
+                "credibility"
+              ],
+              "context": "professional framing, information-before-action"
+            },
+            {
+              "type": 1,
+              "words": [
+                "basic accountability",
+                "residue",
+                "reasonable standard",
+                "adequate"
+              ],
+              "context": "internal accounting and moral framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.28,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.28,
+          "right": 0.42
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Self-contained, self-assessing, measures self against internal standards",
+          "what": "Correctness, accurate diagnosis, closing the gap between should and is",
+          "why": "Standards exist because they mean something — driven by an internalized ideal, not external validation",
+          "how": "Analysis → diagnosis → structural fix; holds back until information is sufficient",
+          "when": "Consistent across contexts — same framework in personal and professional domains",
+          "where": "Internally: sustained awareness of the gap. Externally: professional (compliance framing leaked)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic internal inventory when things go wrong; frustration at gap between what is and what should be; sustained discomfort with unresolved problems",
+          "respond_glimpsed": "Self-aware about thoroughness possibly exceeding what situation warrants; acknowledges calculus on waiting isn't always right",
+          "superpower_signal": "Clear inner compass, precision, integrity — sees what's wrong and builds corrective frameworks",
+          "kryptonite_signal": "Residue when control is unavailable; relationships assessed for adequacy; grace-giving framed as avoidance",
+          "domain_signals": [
+            "work/professional",
+            "personal relationships",
+            "self-evaluation",
+            "standards/accountability"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v5_differentiation_heart_probe",
+        "thinking_display": "The professional credential slipped through unprompted.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When a relationship matters to you — a friend, a partner, a colleague you respect — do they know that it matters to you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Yes, I make that clear",
+            "They probably sense it, but I don't say it directly",
+            "Honestly, probably not"
+          ],
+          "scale_range": null,
+          "context_note": "Heart center probe — differentiate 1 from 5. Type 1 tends toward moral investment in relationships, frustrated care. Type 5 tends toward withdrawal and minimal emotional disclosure."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 1 signals throughout: inner critic framing ('not harsh, exactly'), standards as moral axioms, corrective frameworks over one-off fixes, gap language everywhere. The 5 overlay is real — information-before-action, professional credibility concern, analysis as virtue — but motivation reads as correctness/integrity rather than resource conservation or detachment. SP variant strong: structure as restoration, professional self-protection, personal routines. Need to probe heart center to differentiate 1 (repressed anger, frustrated care, moral investment) from 5 (emotional withdrawal, energy conservation). Key question: are relationships evaluated for adequacy because they've disappointed the standards, or because connection itself is effortful? This is the 1v5 pin.",
+          "next_question_rationale": "Heart center has not been probed. 1v5 differentiation requires understanding how emotional disclosure and relational investment work. A 1 will have frustrated care — they want the relationship to be RIGHT — a 5 will have compartmentalized detachment. This question surfaces whether closeness is expressed or withheld.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**They probably sense it, but I don't say it directly.**\n\nI'm consistent. I show up when it's important, I follow through on what I say I'll do — I think that communicates something meaningful, arguably more meaningful than the kind of verbal reassurance people seem to expect. Whether they interpret that correctly is, I suppose, a separate question from whether I'm actually demonstrating it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When you enter a new environment — new job, new group, unfamiliar system — does your first instinct run toward understanding how it works, or toward identifying what's broken in it?\n\n- Understanding how the system works\n- Identifying what's broken in it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.08,
+            "3": 0.2,
+            "4": 0.12,
+            "5": 0.55,
+            "6": 0.3,
+            "7": 0.05,
+            "8": 0.18,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "1-5-3",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.8,
+            "heart": 0.35,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "adequate",
+                "standards",
+                "correctable failure",
+                "gap",
+                "accountability",
+                "what should have been"
+              ],
+              "context": "throughout — recurring reference to what ought to be vs what is"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis",
+                "incomplete",
+                "diagnosis",
+                "compounding",
+                "credibility"
+              ],
+              "context": "when discussing how they handle uncertainty and failure"
+            },
+            {
+              "type": 1,
+              "words": [
+                "residue",
+                "sustained awareness of a gap",
+                "what should exist"
+              ],
+              "context": "when asked about genuinely unfixable situations"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who holds high standards and expects others to meet them; keeps emotional distance in relationships; shows care through reliability not warmth",
+          "what": "Correcting failures, closing gaps between what is and what should be",
+          "why": "Integrity as identity — the gap itself is intolerable, not just inconvenient",
+          "how": "Analysis → structural fix → prevent recurrence; avoids premature action",
+          "when": "Persistent — the problem doesn't stop being a problem when options run out",
+          "where": "Work/professional domain dominant; personal relationships secondary and 'not yet resolved'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic inventory and frustration at gaps between what is and what should be — triggered by failure, others' shortcomings, unfixable situations",
+          "respond_glimpsed": "Slight acknowledgment at end of first answer — 'what I do with that understanding is a separate question, and one I'd say I'm still working on'",
+          "superpower_signal": "Precision, accountability, structural thinking, reliability, integrity",
+          "kryptonite_signal": "Residue when can't fix things; relationships operating on 'surface cordiality'; the analysis runs even when unproductive",
+          "domain_signals": [
+            "work/professional primary",
+            "personal relationships secondary",
+            "SP restoration through structure"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v5_differentiation",
+        "thinking_display": "Care communicated through consistency — and a quiet hope they're reading it right.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you find yourself in a new environment — a new job, a new group — does your first instinct run toward understanding how the system works, or toward identifying what's broken in it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Understanding how the system works",
+            "Identifying what's broken in it"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiates 5 (map first, evaluate later) from 1 (gap-detection is near-automatic)"
+        },
+        "strategy": {
+          "what_was_learned": "Confirms heart center is not dominant — emotional expression is functional, not primary. Relationships matter but are held at arm's length; care expressed through reliability. SP variant strengthened — structure as restoration, not connection. The 1v5 differentiation is the key remaining question: the analysis-heavy style and 'cost of being imprecise compounds' language has 5 flavor, but the gap-detection, standards, and frustration at what 'should be' is solidly 1. Need to test whether their primary orientation is toward understanding systems (5) or correcting them (1).",
+          "next_question_rationale": "Disconfirmatory: if 5, the instinct in new environments is to map/understand first. If 1, gap-detection and correction-impulse fires immediately. This directly tests the core motivational difference between the two types.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**Identifying what's broken in it.**\n\nThough I'd push back slightly on the framing — understanding how a system works and identifying where it fails aren't really separable processes, at least not for me. You can't accurately assess what's broken without a baseline understanding of how it's supposed to function. But if we're talking about where my attention naturally *lands* first, yes, it tends toward the gaps, the inconsistencies, the places where what's actually happening doesn't match what should be happening. That's not pessimism — it's just that the problems are usually more consequential than the parts that are working correctly.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

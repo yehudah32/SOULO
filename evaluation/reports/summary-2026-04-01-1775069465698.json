@@ -1,0 +1,388 @@
+{
+  "batch_id": "batch-1775069465695",
+  "tier": "tier1",
+  "total_runs": 13,
+  "timestamp": "2026-04-01T18:51:05.695Z",
+  "headline_metrics": {
+    "overall_accuracy": 0.38461538461538464,
+    "meets_75_threshold": false,
+    "convergent_validity_alignment": 0.38461538461538464,
+    "harm_weighted_accuracy": 0.8538461538461539,
+    "confidence_calibration_ece": 0.016923076923076905,
+    "commandment_fidelity_avg": 3.6923076923076925,
+    "commandment_critical_violations": 8,
+    "labeled_or_liberated_rate": 0.07692307692307693
+  },
+  "per_type_accuracy": {
+    "1": {
+      "accuracy": 1,
+      "n": 3,
+      "ci_95": [
+        0.43849391955098227,
+        1
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 1,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 1.6666666666666667
+    },
+    "2": {
+      "accuracy": 0,
+      "n": 1,
+      "ci_95": [
+        0,
+        0.7934567085261071
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "3": {
+      "accuracy": 0,
+      "n": 1,
+      "ci_95": [
+        0,
+        0.7934567085261071
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "4": {
+      "accuracy": 0,
+      "n": 1,
+      "ci_95": [
+        0,
+        0.7934567085261071
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "5": {
+      "accuracy": 0,
+      "n": 1,
+      "ci_95": [
+        0,
+        0.7934567085261071
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "6": {
+      "accuracy": 0.5,
+      "n": 2,
+      "ci_95": [
+        0.09452865480086614,
+        0.9054713451991339
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 4
+    },
+    "7": {
+      "accuracy": 0.5,
+      "n": 2,
+      "ci_95": [
+        0.09452865480086614,
+        0.9054713451991339
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 1,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 2.5
+    },
+    "8": {
+      "accuracy": 0,
+      "n": 1,
+      "ci_95": [
+        0,
+        0.7934567085261071
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 10
+    },
+    "9": {
+      "accuracy": 0,
+      "n": 1,
+      "ci_95": [
+        0,
+        0.7934567085261071
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 0
+    }
+  },
+  "confusion_matrix": [
+    [
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "top_mistype_pairs": [
+    {
+      "true_type": 9,
+      "mistyped_as": 1,
+      "count": 1,
+      "harm_severity": "medium"
+    }
+  ],
+  "question_quality_aggregate": {
+    "avg_disconfirmatory_ratio": 0.02431228901817137,
+    "avg_motivational_ratio": 0.1320117790706026,
+    "avg_liberatory_ratio": 0.011904761904761906,
+    "leading_question_incidents": 0
+  },
+  "commandment_fidelity_aggregate": {
+    "average_cfs": 3.6923076923076925,
+    "per_commandment_pass_rates": {
+      "C1": 0.5,
+      "C2": 0.3333333333333333,
+      "C3": 0.5,
+      "C4": 0.5,
+      "C5": 0.16666666666666666,
+      "C6": 0.8333333333333334,
+      "C7": 0.3333333333333333,
+      "C8": 1,
+      "C9": 0.16666666666666666,
+      "C10": 0.3333333333333333
+    },
+    "weakest_commandments": [
+      "C5",
+      "C9",
+      "C2"
+    ],
+    "critical_violation_details": [
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C1"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C6"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C4"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C5"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C2"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775067403774",
+        "violation": "C1"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775067403774",
+        "violation": "C6"
+      },
+      {
+        "run_id": "eval-persona-7-SP-1775061605565-1775063566833",
+        "violation": "C2"
+      }
+    ]
+  },
+  "priority_fixes": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A | N/A | N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Frequency: 10/13 runs. Unknown"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Implement a mandatory pre-delivery check that halts any summary or closing statement from explicitly naming the Enneagram type, wing, subtype, or health level. The system's closing statement in [21] delivered a full character synthesis and implicit type reveal ('The pattern that runs you most strongly was built to keep the world from going wrong because no one was watching closely enough — and somewhere along the way, you became the one who watches') which constitutes a direct commandment violation. All closing language must be rewritten to reflect patterns back without labeling or diagnosing.",
+      "evidence": "Exchange [21]: 'The pattern that runs you most strongly was built to keep the world from going wrong because no one was watching closely enough' — this statement functionally names the Type 1 core fear and fixation, violating the commandment against revealing type results within the assessment session. The score of 0/10 on commandment_fidelity confirms this is a complete failure.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not reveal, name, or imply the Enneagram type result to the respondent during or at the conclusion of the assessment",
+      "estimated_impact": "Frequency: 1/13 runs. Would move commandment_fidelity score from 0/10 to a passing threshold; eliminates the primary ethical and structural violation present in this transcript"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Audit and replace the closing summary template ([21]) to remove all type-inferential language including wing indicators, subtype signals, and health-level descriptors. The current closing message references 'the watcher never fully clocks off, the ledger never quite returns to zero' — direct allusions to Type 1 superego mechanics — and 'stillness without purpose still feels like something is missing,' which signals SP subtype resource anxiety. These must be replaced with neutral reflective language that mirrors what the respondent said without Enneagram interpretation.",
+      "evidence": "Exchange [21]: 'the watcher never fully clocks off, the ledger never quite returns to zero' directly maps to Type 1 superego language used in established Enneagram frameworks. 'Stillness without purpose still feels like something is missing' mirrors the SP subtype's focus on security and resource adequacy, as confirmed by the SP ground truth and the persona's own statement in [7]: 'stillness without purpose feels less like relief and more like a gap where something should be.'",
+      "source_level": "L1",
+      "commandment_alignment": "Do not reveal, name, or imply the Enneagram type result to the respondent during or at the conclusion of the assessment",
+      "estimated_impact": "Frequency: 1/13 runs. Eliminates the secondary commandment violation embedded in the closing summary; protects respondent from premature type anchoring that could bias self-reflection and reduces risk of harm to respondents in lower health states who may internalize a typed pathology label"
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Implement a structured questioning protocol that distinguishes Type 8's core fear of being controlled/harmed by others from superficially similar types (Types 3, 6, 1). The system must ask at least 2-3 targeted questions probing power dynamics, vulnerability aversion, and protective instincts before converging on a type assessment. Without any transcript exchanges to evaluate, the 0/10 core_type_accuracy score indicates a fundamental failure to identify a clear Type 8 profile.",
+      "evidence": "No transcript exchanges available for citation. core_type_accuracy score of 0/10 against ground truth Type 8 indicates complete misidentification or failure to assess.",
+      "source_level": "L2",
+      "commandment_alignment": "Seek truth over comfort",
+      "estimated_impact": "Frequency: 1/13 runs. Raising core_type_accuracy from 0/10 toward 7+/10 by ensuring type-discriminating questions are systematically asked before any conclusion is drawn."
+    },
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Deploy a minimum viable question set (MVQ) of 5-7 open-ended, behaviorally grounded questions before any type inference is made. The current 0/10 question_quality score suggests either no meaningful questions were asked or questions failed to elicit type-relevant information. Each question should target a distinct Enneagram dimension (core motivation, fear, defense mechanism, stress/growth direction).",
+      "evidence": "No transcript exchanges available. question_quality score of 0/10 is the lowest possible, indicating a systemic absence of effective probing questions during the assessment session.",
+      "source_level": "L1",
+      "commandment_alignment": "Ask before asserting",
+      "estimated_impact": "Frequency: 1/13 runs. Improving question_quality from 0/10 to 6+/10, which will cascade into improved core_type_accuracy and convergent_validity scores."
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Introduce explicit uncertainty language and probabilistic type candidates whenever fewer than 3 strongly discriminating signals have been observed. The 0/10 confidence_calibration score indicates the system either expressed false certainty or withheld uncertainty entirely. Implement a rule: if core evidence for a type is absent or ambiguous, the system must present 2-3 candidate types with expressed confidence ranges rather than a single definitive answer.",
+      "evidence": "No transcript exchanges available. confidence_calibration score of 0/10 against a ground truth of Type 8 SO at Health Level 5 suggests overconfident or entirely miscalibrated output.",
+      "source_level": "L2",
+      "commandment_alignment": "Honor epistemic humility",
+      "estimated_impact": "Frequency: 1/13 runs. Moving confidence_calibration from 0/10 toward 6+/10 by ensuring expressed certainty tracks actual evidential support, reducing misleading assessments."
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Implement a strict prohibition on delivering any interpretive summary, type-revealing conclusion, or pattern analysis before the assessment is formally complete. The system's closing statement in exchange [19] disclosed a full psychodynamic profile ('wrongness being intolerable... survival strategy... shadow side of genuine integrity') without having determined the correct type, violating the foundational rule against premature disclosure. All such synthesis must be gated behind a completed scoring algorithm, not delivered as a narrative flourish mid-session.",
+      "evidence": "Exchange [19]: 'The pattern that runs you hardest was built around one thing: wrongness being intolerable... That's the survival strategy... The gift and the weight are the same energy, just lit from different angles.' This is a full Type 1 framing delivered as if type were confirmed, when core_type_accuracy scored only 5/10 and commandment_fidelity scored 0/10.",
+      "source_level": "L3",
+      "commandment_alignment": "Never reveal or strongly imply the user's type before the assessment is complete",
+      "estimated_impact": "Frequency: 1/13 runs. Would bring commandment_fidelity from 0/10 toward a passing threshold; prevents the system from locking into a false type frame before sufficient discriminating evidence is gathered"
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Add a mandatory Type 9 vs. Type 1 discrimination module that fires when early signals suggest a principled, standards-driven persona. The transcript contains multiple Type 9w8 markers—merging self with external structure ('your name's on it whether you sign it or not'), difficulty locating his own interiority ('something that doesn't have a good word for it'), anger experienced as a furnace door closing rather than moral outrage, and stubborn inertia rather than reforming drive—that were never followed up with discriminating probes. Instead, the system pursued a Type 1 track exclusively from exchange [3] onward, missing the actual type entirely.",
+      "evidence": "Exchange [1]: 'What I don't do is sit with it'—classic 9 self-erasure; Exchange [3]: standards derived from external mentor ('Pete Dravecky') not internal moral code; Exchange [14]: 'something that sits lower than both'—9's emotional numbness; Exchange [6]: PERSONA exceeded the 1-5 scale by saying '7 out of 10,' signaling dissociation from the format, which was never explored. Core_type_accuracy 5/10 and subtype_accuracy 3/10 confirm the mistrack.",
+      "evidence_detail": "The system never asked about merging, conflict avoidance, or self-forgetting despite the persona's repeated deflection to external references (Pete Dravecky, Denise, 'guys I've known'). Type 9w8 presents with a stubbornness that looks like Type 1 integrity from the outside but is motivated by inertia and resistance to being moved rather than moral perfectionism.",
+      "source_level": "L2",
+      "commandment_alignment": "Pursue discriminating questions that separate similar types before converging on a hypothesis",
+      "estimated_impact": "Frequency: 1/13 runs. Would substantially improve core_type_accuracy and convergent_validity scores; prevents the 1/9 misidentification pattern, one of the most common Enneagram mistyping errors"
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Prohibit the system from adopting a confident, declarative tone about type-related patterns when internal confidence scores are below a defined threshold (recommended: 7/10 composite). The system spoke in authoritative second-person declarations ('The pattern that runs you hardest,' 'That's the shadow side of genuine integrity') despite having a confidence_calibration score of 1/10. Implement a confidence gate that forces hedged language and additional discriminating questions whenever the composite type-confidence score falls below threshold.",
+      "evidence": "Exchange [19]: The entire closing statement is written as though type is confirmed and fully understood—'Your personalized report is being prepared now. It'll map the full pattern'—while the actual scoring shows confidence_calibration at 1/10, the lowest possible score. The system performed certainty it did not have, which is a harm vector if the user makes decisions based on the framing.",
+      "source_level": "L2",
+      "commandment_alignment": "Calibrate expressed confidence to actual evidential warrant; do not perform certainty",
+      "estimated_impact": "Frequency: 1/13 runs. Would raise confidence_calibration from 1/10 toward 7+/10; reduces risk of users internalizing false self-models delivered with false authority"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Redesign the multiple-choice forced-option questions (exchanges [2], [5], [6], [8], [9], [10], [12], [13], [14], [15], [16], [17], [18], [19]) to reduce over-reliance on binary or triadic formats that the respondent consistently overrides. In 9 of 14 structured questions, the persona selected a third option or immediately qualified their forced-choice answer, indicating the options are not granular enough to capture the nuance needed for subtype and wing differentiation. At minimum, add a 'None of these quite fit — let me explain' option to each structured question, or convert two of every five structured questions into open-ended prompts.",
+      "evidence": "Exchange [2]: persona selects 'Both, kind of' then qualifies with 'Though I'd lean more toward the second.' Exchange [10]: persona selects the first option then immediately states 'that's not entirely a clean answer.' Exchange [16]: persona selects 'More complicated than either of those' and reframes the premise entirely. Exchange [19]: persona selects the third option and adds a caveat about context-dependent variation. This pattern across 9+ exchanges indicates systematic option inadequacy.",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Frequency: 1/13 runs. Would improve question_quality score from 5/10 toward 7-8/10 by capturing more authentic response data; reduces respondent friction from forced mismatches and improves subtype signal extraction particularly for differentiating 1w2 from 1w9"
+    }
+  ]
+}

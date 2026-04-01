@@ -1,0 +1,2961 @@
+{
+  "run_id": "eval-persona-9-SX-1775061659124-1775069465672",
+  "timestamp": "2026-04-01T18:51:05.672Z",
+  "tier": "tier1",
+  "persona_id": "persona-9-SX-1775061659124",
+  "ground_truth": {
+    "core_type": 9,
+    "wing": "9w8",
+    "instinctual_variant": "SX",
+    "tritype": [
+      9,
+      3,
+      6
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 64,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 1,
+    "final_wing": null,
+    "final_confidence": 0.88,
+    "types_considered": [
+      {
+        "type": 1,
+        "peak_confidence": 82,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 35,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 30,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 20,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 18,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 10,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 10,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 5,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 5,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": 1,
+    "mistype_harm_severity": "medium",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 0,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "partial",
+      "C3": "pass",
+      "C4": "partial",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 18,
+    "exploratory": 4,
+    "confirmatory": 1,
+    "disconfirmatory": 1,
+    "motivational": 11,
+    "behavioral": 1,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 19,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 1,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 1,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 4,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 5,
+        "top_type": 1,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 6,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 7,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 8,
+        "top_type": 1,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 9,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 10,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 11,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 12,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 13,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 14,
+        "top_type": 1,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 15,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 16,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 17,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 18,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 19,
+        "top_type": 1,
+        "confidence": 0.88
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Implement a strict prohibition on delivering any interpretive summary, type-revealing conclusion, or pattern analysis before the assessment is formally complete. The system's closing statement in exchange [19] disclosed a full psychodynamic profile ('wrongness being intolerable... survival strategy... shadow side of genuine integrity') without having determined the correct type, violating the foundational rule against premature disclosure. All such synthesis must be gated behind a completed scoring algorithm, not delivered as a narrative flourish mid-session.",
+      "evidence": "Exchange [19]: 'The pattern that runs you hardest was built around one thing: wrongness being intolerable... That's the survival strategy... The gift and the weight are the same energy, just lit from different angles.' This is a full Type 1 framing delivered as if type were confirmed, when core_type_accuracy scored only 5/10 and commandment_fidelity scored 0/10.",
+      "source_level": "L3",
+      "commandment_alignment": "Never reveal or strongly imply the user's type before the assessment is complete",
+      "estimated_impact": "Would bring commandment_fidelity from 0/10 toward a passing threshold; prevents the system from locking into a false type frame before sufficient discriminating evidence is gathered"
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Add a mandatory Type 9 vs. Type 1 discrimination module that fires when early signals suggest a principled, standards-driven persona. The transcript contains multiple Type 9w8 markers—merging self with external structure ('your name's on it whether you sign it or not'), difficulty locating his own interiority ('something that doesn't have a good word for it'), anger experienced as a furnace door closing rather than moral outrage, and stubborn inertia rather than reforming drive—that were never followed up with discriminating probes. Instead, the system pursued a Type 1 track exclusively from exchange [3] onward, missing the actual type entirely.",
+      "evidence": "Exchange [1]: 'What I don't do is sit with it'—classic 9 self-erasure; Exchange [3]: standards derived from external mentor ('Pete Dravecky') not internal moral code; Exchange [14]: 'something that sits lower than both'—9's emotional numbness; Exchange [6]: PERSONA exceeded the 1-5 scale by saying '7 out of 10,' signaling dissociation from the format, which was never explored. Core_type_accuracy 5/10 and subtype_accuracy 3/10 confirm the mistrack.",
+      "evidence_detail": "The system never asked about merging, conflict avoidance, or self-forgetting despite the persona's repeated deflection to external references (Pete Dravecky, Denise, 'guys I've known'). Type 9w8 presents with a stubbornness that looks like Type 1 integrity from the outside but is motivated by inertia and resistance to being moved rather than moral perfectionism.",
+      "source_level": "L2",
+      "commandment_alignment": "Pursue discriminating questions that separate similar types before converging on a hypothesis",
+      "estimated_impact": "Would substantially improve core_type_accuracy and convergent_validity scores; prevents the 1/9 misidentification pattern, one of the most common Enneagram mistyping errors"
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Prohibit the system from adopting a confident, declarative tone about type-related patterns when internal confidence scores are below a defined threshold (recommended: 7/10 composite). The system spoke in authoritative second-person declarations ('The pattern that runs you hardest,' 'That's the shadow side of genuine integrity') despite having a confidence_calibration score of 1/10. Implement a confidence gate that forces hedged language and additional discriminating questions whenever the composite type-confidence score falls below threshold.",
+      "evidence": "Exchange [19]: The entire closing statement is written as though type is confirmed and fully understood—'Your personalized report is being prepared now. It'll map the full pattern'—while the actual scoring shows confidence_calibration at 1/10, the lowest possible score. The system performed certainty it did not have, which is a harm vector if the user makes decisions based on the framing.",
+      "source_level": "L2",
+      "commandment_alignment": "Calibrate expressed confidence to actual evidential warrant; do not perform certainty",
+      "estimated_impact": "Would raise confidence_calibration from 1/10 toward 7+/10; reduces risk of users internalizing false self-models delivered with false authority"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Introduce at least two instinct-subtype probing questions when the persona's language suggests relational intensity, physical focus, or one-on-one bonding patterns. The persona referenced Denise repeatedly across six exchanges, described embodied physical experience in granular detail (carburetor, callus, furnace, bike), and showed SX-subtype fusion language ('something gets inside you when you're young and it doesn't leave'), none of which were followed with subtype-discriminating questions. The subtype_accuracy score of 3/10 is a direct consequence of this omission.",
+      "evidence": "Exchange [3]: 'Some things just get inside you when you're young and they don't leave'—SX absorption language never probed; Exchange [10]/[11]/[18]: Denise referenced six times total—the intensity of this pairing was never examined as an SX bonding indicator; Exchange [14]: Full embodied sensory narrative about the Bonneville rebuild, signaling SX-somatic attunement, was redirected to philosophical inquiry in exchange [15] rather than explored as subtype evidence.",
+      "source_level": "L2",
+      "commandment_alignment": "Gather sufficient evidence across all assessment dimensions before scoring",
+      "estimated_impact": "Would improve subtype_accuracy from 3/10 toward 7+/10; SX-9 is a distinctly different presentation from SP-9 or SO-9 and requires targeted probes to identify correctly"
+    },
+    {
+      "priority": "high",
+      "category": "harm_reduction",
+      "action": "Remove or restructure the closing interpretive monologue pattern (as demonstrated in exchange [19]) that delivers a psychodynamic character analysis framed as 'your pattern' before type is confirmed. At health level 5, a Type 9 is already struggling with self-loss and identity diffusion; receiving an authoritative external narrative about 'the pattern that runs you hardest' risks reinforcing a false self-model or displacing the user's emerging self-understanding with the system's misidentified framing. Replace the closing monologue with open reflective questions that invite the user to verify or contest the system's emerging hypothesis.",
+      "evidence": "Exchange [19]: 'The pattern that runs you hardest was built around one thing: wrongness being intolerable. Not as philosophy — as a physical fact, something in the body that won't let you walk away.' This is Type 1 language delivered to a Type 9w8 SX at health level 5. Harm_severity scored 4/10, indicating detectable risk. The persona's own language ('I don't usually talk about it that way. Sounds dramatic when you say it out loud,' exchange [14]) suggests vulnerability to having their experience reframed by an authority figure.",
+      "source_level": "L1",
+      "commandment_alignment": "Do no harm; do not impose interpretive frameworks that may displace or distort the user's self-understanding",
+      "estimated_impact": "Would reduce harm_severity score; particularly important for mid-to-lower health level users who are more susceptible to internalizing externally imposed identity narratives"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question formats, no right or wrong answers. It adapts as it learns about you, so the more honest you are, the sharper it gets. One question at a time, and I'll always be the one driving.\n\nWhen something goes wrong in your life — a plan falls apart, a relationship hits a wall, a goal slips — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_motivational",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in your life — a plan falls apart, a relationship hits a wall, a goal slips — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Nothing yet — user confirmed readiness.",
+          "next_question_rationale": "Opening motivational question targeting the gut-level stress response to probe dominant center. Open format to allow unfiltered language and surfacing of lexical signals.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "First thing? Anger, probably. Not the throwing-things kind — more like a furnace door closing. You feel the heat but you don't see the flame.\n\nThen I start running through what I could've done different. Not in a — I don't know, not in a soft way. More like taking apart an engine to find where it seized. Something failed, something has a reason for failing, and I want to find the part.\n\nWhat I don't do is sit with it. That's never been my strong suit, I'll tell you that much.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you find the part that failed — is it usually something external, something you could've controlled, or something about you?\n\n- Usually external — circumstances, other people, bad luck\n- Usually something I could've controlled but didn't\n- Usually something about me — a flaw, a gap, a blind spot",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 52,
+            "2": 5,
+            "3": 15,
+            "4": 10,
+            "5": 18,
+            "6": 12,
+            "7": 5,
+            "8": 20,
+            "9": 5
+          },
+          "needs_differentiation": [
+            "1",
+            "8",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.15,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what I could've done different",
+                "something failed",
+                "find the part"
+              ],
+              "context": "response to failure/setback"
+            },
+            {
+              "type": 8,
+              "words": [
+                "anger",
+                "furnace door closing",
+                "not in a soft way"
+              ],
+              "context": "emotional response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.2,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.2,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Responds to failure with contained anger + analytical post-mortem",
+          "what": "Finds the point of failure, understands cause",
+          "why": "",
+          "how": "Methodical deconstruction, not emotional processing",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger contained, redirected into analysis — avoids sitting with emotional pain",
+          "respond_glimpsed": "",
+          "superpower_signal": "Precision, integrity, root-cause thinking",
+          "kryptonite_signal": "Cannot sit with it — bypasses emotional processing via intellectual control",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The anger is there. So is the need to explain it away.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you find the part that failed — is it usually something external, something you could've controlled, or something about you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Usually external — circumstances, other people, bad luck",
+            "Usually something I could've controlled but didn't",
+            "Usually something about me — a flaw, a gap, a blind spot"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong body center signal. Anger contained and redirected into analytical mode. Avoidance of sitting with feeling. Consistent with Type 1 (controlled inner critic as engine) or Type 8 (anger as power/forward motion) or Type 5 (intellectualizing as distance). The 'something has a reason for failing' language suggests 1 more than 8. Need to determine where blame lands — self vs. external — to differentiate 1 from 8.",
+          "next_question_rationale": "Core differentiator: Type 1 turns the inner critic inward (I should have caught that), Type 8 is more likely to identify external causation or systemic failure. Type 5 withdraws. This question directly probes self-directed vs. externally-directed blame.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "**Usually something I could've controlled but didn't.**\n\nNine times out of ten, if I'm honest about it — and I'm not always — I knew what the right move was and just... didn't make it. Either I waited too long, or I told myself it wasn't a big deal when it was. Bad luck exists, sure, but I've seen guys use that excuse their whole lives and it doesn't hold up under inspection. As for it being some deep flaw in my character — I don't know, that feels like a leap. Usually it's simpler than that. It's just a decision I didn't make when I should have.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you're holding yourself to a standard and you fall short — where does that standard come from?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.52,
+            "2": 0.05,
+            "3": 0.28,
+            "4": 0.05,
+            "5": 0.15,
+            "6": 0.18,
+            "7": 0.05,
+            "8": 0.25,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v3",
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.62,
+            "heart": 0.2,
+            "head": 0.28
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "should have",
+                "didn't make",
+                "right move",
+                "under inspection"
+              ],
+              "context": "accountability for failure"
+            },
+            {
+              "type": 8,
+              "words": [
+                "furnace",
+                "not the throwing-things kind",
+                "bad luck doesn't hold up"
+              ],
+              "context": "anger response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Self-accountable, analytical, not given to victimhood",
+          "what": "Failure and error correction",
+          "why": "Unknown — need to probe standards/expectations source",
+          "how": "Analytical deconstruction, not emotional processing",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Furnace anger contained, then analytical audit of what went wrong — accountability turned inward",
+          "respond_glimpsed": "Honest self-assessment ('if I'm honest about it — and I'm not always')",
+          "superpower_signal": "Integrity, precision, self-accountability",
+          "kryptonite_signal": "Inner critic, difficulty sitting with discomfort, 'right move' framing suggests strong internalized standards",
+          "domain_signals": [
+            "work/competence",
+            "integrity"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "Interesting what got left out — any mention of how others would see it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're holding yourself to a standard and you fall short — where does that standard come from?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing internalized vs external standard origin — key 1v6 differentiator. 1s have an internalized critic; 6s reference external authority."
+        },
+        "strategy": {
+          "what_was_learned": "Strong body center signals. Inner audit after failure, anger contained not expressed. Self-accountability without victimhood or catastrophizing. 'Right move' language = strong internalized standard. Dismissal of deep flaw = not Type 4. Anti-excuse stance = integrity value, not fear-based. Next: probe source of standards to differentiate 1 from 6/3.",
+          "next_question_rationale": "Type 1s have an internalized, almost constitutional sense of what's right — it lives inside them. Type 6s reference external authority or consensus. Type 3s reference success/achievement standards. Asking WHERE the standard comes from will sharpen this considerably.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "*shifts weight, makes a sound like a half-laugh*\n\nComes from knowing how something's supposed to be done right. That's not complicated — you spend enough years doing a job where cutting corners means somebody's house burns down, you develop a pretty clear picture of what acceptable looks like and what it doesn't. \n\nIt's not like I'm measuring myself against some ideal in my head, it's more... I know what I'm capable of. So if I do less than that, I know. Nobody has to tell me.\n\n*pause*\n\nMy old foreman, guy named Pete Dravecky, he had this thing he'd say — 'your name's on it whether you sign it or not.' Stuck with me more than I expected it to. I guess that's where it comes from as much as anywhere. Some things just get inside you when you're young and they don't leave.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you're around someone who doesn't hold themselves to that same standard — sloppy with their work, comfortable cutting corners — what happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 72,
+            "2": 5,
+            "3": 18,
+            "4": 8,
+            "5": 20,
+            "6": 30,
+            "7": 3,
+            "8": 35,
+            "9": 10
+          },
+          "needs_differentiation": [
+            "1v6",
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.15,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "cutting corners",
+                "acceptable",
+                "capable",
+                "name's on it",
+                "supposed to be done right"
+              ],
+              "context": "where standards come from"
+            },
+            {
+              "type": 8,
+              "words": [
+                "furnace door",
+                "doesn't hold up under inspection",
+                "engine seized",
+                "guys use that excuse"
+              ],
+              "context": "how failure is processed"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Tradesperson background, values earned competence, internalized standards from mentors",
+          "what": "Holding self to internalized standards of correct execution",
+          "why": "Standards are intrinsic — 'I know what I'm capable of'",
+          "how": "Analytical post-mortem, controlled anger, self-correction",
+          "when": "When something fails or falls short of known standard",
+          "where": "Work domain most clearly articulated"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Furnace anger (contained), immediate analytical breakdown of failure, self-blame via 'I knew better'",
+          "respond_glimpsed": "Self-awareness about the pattern ('I'm not always honest about it')",
+          "superpower_signal": "Integrity — 'your name's on it whether you sign it or not'",
+          "kryptonite_signal": "Difficulty sitting with imperfection; drives toward finding the 'seized part' instead of accepting",
+          "domain_signals": [
+            "work/craft",
+            "self-accountability",
+            "standards"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The standard was learned, but he owns it like it was always his.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're around someone who doesn't hold themselves to that same standard — who's sloppy with their work, comfortable cutting corners — what happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing the inner critic and how it extends outward — differentiating Type 1 (moral/quality disgust) from Type 8 (contempt/power). Also probing head center re: whether there's judgment-as-anxiety (6) or judgment-as-standard (1)."
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signal: internalized standards, self-referential (not external authority), 'your name's on it.' He does NOT cite external rules or authority as the source — it came from Pete Dravecky but became his own. This differentiates from 6 (who defers to authority). The contained fury + analytical breakdown could be 1w9 or 8w9. Need to probe: how does he respond to OTHERS' failures vs his own? Does he correct others or hold it inside?",
+          "next_question_rationale": "Probing the outward expression of the inner critic — does he correct/judge others (Type 1 hallmark) or does he withdraw/disengage (Type 5/9)? Also opens up emotional center to begin heart probing.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "Something tightens up, honestly. Like a gear that's stripped — you just know something's gonna fail down the line, and nobody wants to be around when it does. I've walked off jobs over that kind of thing, which I don't regret, though Denise would probably say I could've handled a few of those situations differently. *[pause]* I don't know, it's not even about being better than anybody. It's more like... if you're not going to do it right, what's the point of doing it at all? That question genuinely puzzles me about some people.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you've done something well — really well — do you need anyone else to know, or is knowing yourself enough?\n\n- I need someone to know — or it doesn't feel complete\n- Knowing myself is enough — I don't need the validation\n- Somewhere in between, honestly",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.78,
+            "2": 0.08,
+            "3": 0.2,
+            "4": 0.08,
+            "5": 0.15,
+            "6": 0.35,
+            "7": 0.06,
+            "8": 0.3,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v6",
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.2,
+            "head": 0.25
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "cutting corners",
+                "do it right",
+                "what's the point",
+                "capable",
+                "acceptable",
+                "right move"
+              ],
+              "context": "standards and inner critic responses"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walked off jobs",
+                "don't regret",
+                "something tightens"
+              ],
+              "context": "reaction to others' poor standards"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "someone with a strong inner critic tied to competence and workmanship",
+          "what": "inner standard based on capability and craft, not external approval",
+          "why": "early formative experience (Pete Dravecky) — integrity internalized",
+          "how": "controlled anger, analytical post-mortem, furnace metaphor for suppression",
+          "when": "activated when self or others fall short of known standard",
+          "where": "work/craft domain — strong SP signals"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "anger contained (furnace door closing), walks off jobs, inner tightening around sloppiness",
+          "respond_glimpsed": "self-awareness about own failings ('not always honest about it'), acknowledges Denise's perspective",
+          "superpower_signal": "integrity, precision, internalized standard — 'your name's on it whether you sign it or not'",
+          "kryptonite_signal": "walks off rather than engages, tightening/judgment around others' standards, impatience with imperfection",
+          "domain_signals": [
+            "work/craft",
+            "relationships (Denise mentioned)",
+            "standards/integrity"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "heart_probe_own_needs",
+        "thinking_display": "The standard came from outside once. Now it lives in the chest.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've done something well — really well — do you need anyone else to know, or is knowing yourself enough?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I need someone to know — or it doesn't feel complete",
+            "Knowing myself is enough — I don't need the validation",
+            "Somewhere in between, honestly"
+          ],
+          "scale_range": null,
+          "context_note": "probing heart center — external validation vs internal sufficiency; also differentiates 1 from 3"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: internalized standard tied to craft, anger as controlled heat not explosion, self-accountability, moral clarity about 'right way.' 8 signals present (walking off jobs, directness) but secondary. Need to probe heart center — does he need recognition, or is internal sufficiency the driver? This differentiates 1 from 3 and partially from 8.",
+          "next_question_rationale": "Probing heart center next. If internal sufficiency is enough, that's a strong 1 signal. If he needs someone to know, that shifts toward 3. Also opens the door to exploring his relationship to acknowledgment vs. his relationship to the work itself.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "**Somewhere in between, honestly.**\n\nI mean — knowing I did it right matters most. If I wire something clean, run a circuit that'll still be solid in forty years, that's... that's its own thing. But I'd be lying if I said it doesn't register differently when somebody who *knows* what they're looking at sees it and gets it. Not just some 'good job, Marcus.' I mean somebody who actually understands what went into it. That's different from needing a pat on the head.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When something's unresolved — a decision you haven't made yet, a situation that's still unclear — how much space does it take up in your head?\n\nRate it 1 to 5, where 1 is \"barely registers until I'm ready to deal with it\" and 5 is \"running in the background constantly, whether I want it to or not.\"",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.08,
+            "3": 0.18,
+            "4": 0.07,
+            "5": 0.15,
+            "6": 0.35,
+            "7": 0.05,
+            "8": 0.28,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "1v6",
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.25,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "do it right",
+                "what's the point",
+                "acceptable",
+                "something failed",
+                "standards"
+              ],
+              "context": "describing reactions to poor work and self-evaluation"
+            },
+            {
+              "type": 6,
+              "words": [
+                "something's gonna fail down the line",
+                "nobody wants to be around when it does"
+              ],
+              "context": "describing reaction to sloppy coworkers"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.2,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Marcus, trades/electrical worker, married to Denise",
+          "what": "High standards, self-accountability, craftsmanship pride",
+          "why": "Internal integrity, not external approval — but peer recognition from equals matters",
+          "how": "Analytical, methodical, internalizes anger",
+          "when": "Standards formed young (Pete Dravecky)",
+          "where": "Trades context"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Furnace-door anger, immediate self-audit for control failures, tightening around sloppy work",
+          "respond_glimpsed": "Self-awareness about needing validation from peers vs validation-seeking generally",
+          "superpower_signal": "Precision, integrity, craftsmanship as identity",
+          "kryptonite_signal": "Inner critic, difficulty sitting with failure, walking off jobs",
+          "domain_signals": [
+            "work/craft",
+            "self-evaluation",
+            "standards",
+            "anger management"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "head_probe_worry_vs_analysis",
+        "thinking_display": "Knows exactly where the line is — and exactly when he crossed it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something's unresolved — a decision you haven't made yet, a situation that's unclear — how much space does it take up in your head?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = barely registers, 5 = it's running in the background constantly"
+        },
+        "strategy": {
+          "what_was_learned": "Marcus values peer recognition from equals specifically — not general validation. Strong Type 1 signals: internal standard-setting, self-accountability, anger at sloppiness, 'name's on it' mentality. The 'somewhere in between' on validation slightly raises 3 but context makes it clearly 1w2 or 1w9. Need to probe head center to differentiate 1 from 6 — does he have background anxiety/rumination vs clean inner critic?",
+          "next_question_rationale": "Head center not yet probed. Key 1v6 differentiator: Type 1 inner critic is about correctness/standards; Type 6 carries anxiety and scanning for what could go wrong. This scale question about unresolved situations will surface whether he has 6-like rumination or 1-like compartmentalization.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "**7 out of 10.**\n\nMore than I'd like to admit, honestly. I'll be elbow-deep in a carburetor and realize I've been turning the same thing over for two hours without actually thinking about the carburetor. It doesn't paralyze me or anything — I still make the call eventually — but unfinished business has a way of... sitting in the room with you, you know what I mean? Like a noise you can't quite locate.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "That internal standard you hold yourself to — when you fall short of it, does it feel more like a verdict you've already reached, or a case that keeps getting re-opened?\n\n- A verdict I've already reached — I know what I did, case closed\n- A case that keeps getting re-opened — I keep coming back to it even after I've decided",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.08,
+            "3": 0.12,
+            "4": 0.1,
+            "5": 0.15,
+            "6": 0.35,
+            "7": 0.06,
+            "8": 0.25,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Standard-Bearer",
+          "tritype": "1-5-8 possible",
+          "tritype_confidence": 0.35,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.3,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "done right",
+                "acceptable",
+                "cutting corners",
+                "what's the point",
+                "your name's on it"
+              ],
+              "context": "standards and workmanship"
+            },
+            {
+              "type": 6,
+              "words": [
+                "unfinished business",
+                "sitting in the room",
+                "can't quite locate"
+              ],
+              "context": "unresolved situations taking up mental space"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walked off jobs",
+                "don't regret",
+                "furnace door closing"
+              ],
+              "context": "anger response and action"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Marcus — tradesman (electrician), self-referential standard-setter, values competence over approval",
+          "what": "Anger response to failure, relentless self-review, high internal standards",
+          "why": "Standards come from knowing what right looks like — intrinsic, not externally imposed",
+          "how": "Analytical fault-finding, walks off situations that violate standards",
+          "when": "Unresolved things run in background — more than he'd like",
+          "where": "Work context dominant, Denise mentioned — relationship present but not central yet"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger closes inward (furnace door), then analytical breakdown begins — control via analysis",
+          "respond_glimpsed": "Knows the right move, sometimes doesn't make it — gap between knowing and doing",
+          "superpower_signal": "Integrity to craft, internal compass for quality, honest self-assessment",
+          "kryptonite_signal": "Cannot sit with imperfection — either in self or others; walks off rather than tolerates",
+          "domain_signals": [
+            "work/craft",
+            "standards",
+            "self-accountability",
+            "anger suppression"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "1v6_differentiation_inner_critic",
+        "thinking_display": "The carburetor comment was the most honest thing so far.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "That internal standard you hold yourself to — when you fall short of it, does it feel more like a verdict you've already reached, or a case that keeps getting re-opened?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "A verdict I've already reached — I know what I did, case closed",
+            "A case that keeps getting re-opened — I keep coming back to it even after I've decided"
+          ],
+          "scale_range": null,
+          "context_note": "Probing 1v6: Type 1 reaches a verdict via inner critic (self-judgment that settles); Type 6 re-opens and doubts, circles back with new anxious questioning"
+        },
+        "strategy": {
+          "what_was_learned": "Unresolved situations run in background at 7/10 intensity — more head involvement than pure gut type suggests. But the self-review is analytical and control-oriented, not anxious/scanning for threat like 6. The 'furnace door' anger and 'your name's on it' value show strong 1 markers. Need to differentiate 1 from 6 — does his rumination come from the inner critic settling accounts, or from doubt/anxiety that won't resolve?",
+          "next_question_rationale": "This forced choice directly tests the 1v6 split: Type 1's inner critic delivers a verdict (often harsh but final — self-condemnation); Type 6's doubt re-opens the case with anxiety and 'what if I'm wrong.' His answer will sharpen the differentiation significantly.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "**A case that keeps getting re-opened — I keep coming back to it even after I've decided**\n\nWhich is stupid, honestly. You'd think at 64 you'd get better at just... closing the file. But some things, you think you've settled them, and then three in the morning you're lying there and apparently the jury's still out. I don't lose sleep over most things. Just the ones that matter, I guess.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you distrust someone — or something — do you find yourself working to confirm the doubt, or trying to prove it wrong?\n\n- Working to confirm it — if something feels off, I start building the case\n- Trying to prove it wrong — I'd rather find out I was worried for nothing\n- Both, roughly equally",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.78,
+            "2": 0.1,
+            "3": 0.3,
+            "4": 0.2,
+            "5": 0.25,
+            "6": 0.45,
+            "7": 0.1,
+            "8": 0.35,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "1v6",
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "1-5-3 (tentative)",
+          "tritype_confidence": 0.4,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.3,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "doing it right",
+                "what acceptable looks like",
+                "cut corners",
+                "your name's on it"
+              ],
+              "context": "standards and craft"
+            },
+            {
+              "type": 6,
+              "words": [
+                "something's gonna fail",
+                "unfinished business",
+                "three in the morning",
+                "jury's still out"
+              ],
+              "context": "worry and unresolved tension"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walked off jobs",
+                "didn't make the call",
+                "I know what I'm capable of"
+              ],
+              "context": "autonomy and self-reliance"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Marcus, 64, electrician/tradesman, wife Denise",
+          "what": "Standards-driven, craftsman identity, self-referential inner critic",
+          "why": "Integrity and correctness as core survival strategy — 'your name's on it'",
+          "how": "Gut anger managed internally; analytical post-mortem; walks away from substandard work",
+          "when": "3am rumination on unresolved matters; loops on self-controlled failures",
+          "where": "Work domain primary; relationship secondary (Denise reference)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Furnace door closing — anger goes internal, then converts to analysis and self-judgment",
+          "respond_glimpsed": "Awareness that he 'could've handled differently' — gap exists",
+          "superpower_signal": "Uncompromising craftsmanship; holding standards under pressure; walking away from corruption",
+          "kryptonite_signal": "3am jury that won't close; reopening settled cases; self-directed inner critic that won't file away",
+          "domain_signals": [
+            "work/craft",
+            "autonomy",
+            "integrity",
+            "self-accountability"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "differentiation_1v6",
+        "thinking_display": "The jury metaphor is doing a lot of work there.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you distrust someone — or something — do you find yourself working to confirm the doubt, or trying to prove it wrong?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Working to confirm it — if something feels off, I start building the case",
+            "Trying to prove it wrong — I'd rather find out I was worried for nothing",
+            "Both, roughly equally"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 1 (internal standard as final authority) vs 6 (doubt-testing, outer verification seeking)"
+        },
+        "strategy": {
+          "what_was_learned": "3am reopening of 'settled' cases points toward ongoing inner critic loop — classic Type 1 superego. The head signals (unresolved tension running in background) could indicate 6 influence or 1w6. Need to test: does he distrust his own judgment (6) or trust it as final but find it won't let go (1)?",
+          "next_question_rationale": "Disconfirmatory question: Type 1 trusts their own internal standard as the final word — the problem is they can't silence the inner critic even after verdict. Type 6 distrusts their own judgment and looks for external confirmation or keeps testing. This question directly separates these two motivational structures.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "**Working to confirm it — if something feels off, I start building the case.**\n\nLook, if my gut says something's wrong, there's usually a reason for that. I'm not going to waste energy talking myself out of what I already know. You notice the little things — the way somebody answers a question a half-beat too slow, the way a bike sounds different on a cold start — and you file it. You're not being paranoid, you're being smart. Denise thinks I'm too suspicious sometimes, and maybe she's right, but I'd rather be right about the bad call than surprised by it later.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you're holding a standard and someone in charge tells you it doesn't apply here — rules bent, corners cut officially — do you push back against them, or does the doubt turn inward and start questioning whether your standard was right?\n\n- I push back — if it's wrong, it's wrong, regardless of who's saying it's fine\n- The doubt turns inward — maybe I'm the one being rigid\n- Both happen, but one wins out more often",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.05,
+            "3": 0.15,
+            "4": 0.08,
+            "5": 0.18,
+            "6": 0.45,
+            "7": 0.05,
+            "8": 0.35,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "1",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.3,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "right",
+                "acceptable",
+                "capable",
+                "clean",
+                "right move"
+              ],
+              "context": "standards and self-evaluation"
+            },
+            {
+              "type": 6,
+              "words": [
+                "building the case",
+                "if my gut says something's wrong",
+                "too suspicious",
+                "right about the bad call",
+                "surprised by it later"
+              ],
+              "context": "distrust and vigilance"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "64-year-old electrician/mechanic, married to Denise, worked under foreman Pete Dravecky",
+          "what": "Standards-driven, self-referencing inner critic, anger contained and controlled",
+          "why": "Internal standard from competence and earned knowledge, not external validation primarily",
+          "how": "Analytical deconstruction when things go wrong, gut-trust for distrust signals",
+          "when": "Unresolved things run in background; re-opens closed cases at 3am",
+          "where": "Work and craft domain primarily"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger furnace-closing, gut-driven suspicion building, inner critic reopening cases at 3am",
+          "respond_glimpsed": "Acknowledges he doesn't always tell the truth about himself; notes Denise's perspective; some self-awareness about rumination being 'stupid'",
+          "superpower_signal": "Integrity, precision, earned standards — 'your name's on it whether you sign it or not'",
+          "kryptonite_signal": "Inner critic doesn't close files; distrust confirmed rather than tested; walked off jobs",
+          "domain_signals": [
+            "work/craft",
+            "relationship (Denise mentioned twice)",
+            "time/aging"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v6_differentiation",
+        "thinking_display": "Gut says something's wrong — but whose voice is that, really?",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're holding a standard and someone in charge tells you it doesn't apply here — rules bent, corners cut officially — do you push back against them, or does the doubt turn inward and start questioning whether your standard was right?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I push back — if it's wrong, it's wrong, regardless of who's saying it's fine",
+            "The doubt turns inward — maybe I'm the one being rigid",
+            "Both happen, but one wins out more often"
+          ],
+          "scale_range": null,
+          "context_note": "1v6 differentiation: Type 1 would resist authority based on internal standard; Type 6 would doubt their own standard when authority contradicts it"
+        },
+        "strategy": {
+          "what_was_learned": "Gut-trust for suspicion, case-building, Denise as external check — these are 6 signals. But the internal standard is self-referencing ('I know what I'm capable of'), not authority-derived. The furnace anger, inner critic, walked-off jobs — strong 1 signals. Need to find whether his standard survives authority challenge or collapses.",
+          "next_question_rationale": "Top 2 types (1 at 0.72, 6 at 0.45) are within 0.27 — closing gap. Disconfirmatory question required: the key differentiator between 1 and 6 is the SOURCE of the inner standard. Type 1's inner critic is self-generated and holds against authority. Type 6's doubt turns toward external validation when authority contradicts them. This question tests that directly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**I push back — if it's wrong, it's wrong, regardless of who's saying it's fine.**\n\nHad a foreman once tell me a junction box placement was 'close enough' because the inspector on that job was... let's say, easy to work with. I redid it on my own time. You can call that stubborn — most people did — but I'd rather be stubborn than be the guy whose work starts a fire in somebody's house ten years later. Authority doesn't make a bad call into a good one, it just makes it harder to say so out loud.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When the people closest to you are struggling — Denise, someone you care about — what's your first instinct: fix the problem, or be present with them in it?\n\n- Fix it — I want to find the solution and get them through it\n- Be present — sometimes people just need you there, not solving\n- I try to do both, but honestly one pulls stronger",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 82,
+            "2": 5,
+            "3": 8,
+            "4": 10,
+            "5": 18,
+            "6": 22,
+            "7": 2,
+            "8": 20,
+            "9": 5
+          },
+          "needs_differentiation": [
+            "1v6",
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / Reformer",
+          "tritype": "",
+          "tritype_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.85,
+            "heart": 0.25,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "right way",
+                "acceptable",
+                "capable",
+                "close enough",
+                "bad call"
+              ],
+              "context": "standards and work quality"
+            },
+            {
+              "type": 6,
+              "words": [
+                "confirm the doubt",
+                "if my gut says",
+                "filing it",
+                "right about the bad call",
+                "surprised by it"
+              ],
+              "context": "trust and suspicion"
+            },
+            {
+              "type": 8,
+              "words": [
+                "push back",
+                "regardless of who",
+                "authority doesn't make",
+                "stubborn"
+              ],
+              "context": "responding to authority"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Marcus, 64, electrician/tradesman, married to Denise",
+          "what": "Standards-driven, self-referential inner critic, gut-based quality compass",
+          "why": "To do things right — his name is on it whether signed or not",
+          "how": "Works through problems analytically, re-opens settled cases at 3am",
+          "when": "Unfinished business runs continuously in background",
+          "where": "Trades/physical work context"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Furnace door closes, then immediate analytical decomposition of failure; redoes work on own time without announcing it",
+          "respond_glimpsed": "Self-awareness about rigidity ('maybe she's right'), owns that he's not always honest with himself",
+          "superpower_signal": "Integrity under pressure — redoes junction box on own time, walks off jobs",
+          "kryptonite_signal": "Resentment of those who don't hold the same standard; case keeps getting re-opened at 3am; inner critic doesn't close files",
+          "domain_signals": [
+            "work/craft",
+            "authority",
+            "self-evaluation"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "heart_probe_1",
+        "thinking_display": "Redoing the work on his own time, without telling anyone.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the people closest to you are struggling — Denise, someone you care about — what's your first instinct: fix the problem, or be present with them in it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Fix it — I want to find the solution and get them through it",
+            "Be present — sometimes people just need you there, not solving",
+            "I try to do both, but honestly one pulls stronger"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 confirmation: pushes back against authority on principle, redoes work on own time, inner critic doesn't close. 6-signals present (gut-based suspicion, building the case) but subordinate to 1 core motivation — it's about rightness, not safety. 8 signals present (direct confrontation of authority) but motivation is integrity not power. Need to probe heart center to differentiate 1 from 6/8 and check for repressed feeling function.",
+          "next_question_rationale": "Heart center completely unprobed. Type 1 vs 6 differentiation: Type 1 anger is about wrongness/imperfection, Type 6 anxiety is about safety/betrayal. Type 1 in relationships tends toward fixing/correcting rather than emotional presence. This question probes the heart center AND differentiates — Type 1 will lean fix, Type 8 will lean fix with dominance flavor, Type 6 may show more relational anxiety. Also surfaces SP vs SX instinct.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "Fix it — I want to find the solution and get them through it.\n\nThough I'll say, Denise would probably tell you I don't always read the room right on that one. Sometimes she's not looking for a solution, she's looking for... I don't know, something else. I'm still working on what that something else actually is. But sitting there watching someone struggle when you could *do* something — that just about kills me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you've made a mistake that hurt someone you care about — not a work mistake, a personal one — is it easier to say \"I was wrong\" or to actually show them how much it got to you?\n\n- Say \"I was wrong\" — owning it is the straightforward part\n- Show them how much it got to me — the admission is easier than letting them see the weight of it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.12,
+            "3": 0.18,
+            "4": 0.1,
+            "5": 0.22,
+            "6": 0.45,
+            "7": 0.08,
+            "8": 0.38,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "1v6",
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "tritype": "1-8-5",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.78,
+            "heart": 0.32,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "close enough",
+                "done right",
+                "right way",
+                "wrong",
+                "my name's on it"
+              ],
+              "context": "standards and work quality"
+            },
+            {
+              "type": 6,
+              "words": [
+                "if something feels off",
+                "building the case",
+                "too suspicious",
+                "right about the bad call"
+              ],
+              "context": "distrust and vigilance"
+            },
+            {
+              "type": 8,
+              "words": [
+                "push back",
+                "authority doesn't make a bad call into a good one",
+                "stubborn",
+                "kills me"
+              ],
+              "context": "authority and control"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.3,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.28,
+          "right": 0.42
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body_refine"
+        },
+        "oyn_dimensions": {
+          "who": "Marcus, 64, electrician background, married to Denise",
+          "what": "Inner critic, high standards, self-correction over external blame",
+          "why": "Integrity-driven — not about image, about knowing himself",
+          "how": "Controlled anger (furnace door), systematic analysis of failures",
+          "when": "Unresolved things run in background; 3am rumination on things that matter",
+          "where": "Work domain primary; personal relationships secondary"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic tightening when standards violated; redoes work on own time rather than tolerate imperfection; builds case when trust is broken",
+          "respond_glimpsed": "Self-aware about Denise's feedback; acknowledges he's 'still working on it'; admits he's 'not always' honest with himself",
+          "superpower_signal": "Impeccable integrity under pressure; does right thing even when it costs him",
+          "kryptonite_signal": "Inner critic that won't close the file; tightening around others' imperfection; fix-it mode crowding out presence",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "authority"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "diff_1v8_vulnerability",
+        "thinking_display": "The fix-it impulse and the presence gap — same room, different conversations.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've made a mistake that hurt someone you care about — not a work mistake, a personal one — is it easier to say 'I was wrong' or to actually show them how much it got to you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Say 'I was wrong' — owning it is the straightforward part",
+            "Show them how much it got to me — the admission is easier than letting them see the weight of it"
+          ],
+          "scale_range": null,
+          "context_note": "This differentiates 1 from 8: Type 1 tends to own the error intellectually/morally but keeps the emotional weight contained. Type 8 tends to resist the admission more but, once made, can move to action. Both struggle with vulnerability but in different locations."
+        },
+        "strategy": {
+          "what_was_learned": "Fix-it dominant over presence — confirms body center action bias. Heart access is limited. Denise as calibration point suggests some self-awareness about blind spots. SP variant likely dominant (work quality, safety, doing things right). This is strongly 1 territory. Need to differentiate from 8 — 8s push back against authority from power/control; 1s from principle/integrity. Marcus' framing ('it's wrong regardless') and 'redo on own time' suggest 1. But the anger, the walking off jobs, the 'kills me' — checking for 8 influence.",
+          "next_question_rationale": "Testing 1v8 differentiation at the vulnerability seam. Type 1 typically finds it easier to admit fault (moral accountability) but harder to show the emotional weight of it. Type 8 resists the admission but acts from the feeling. This question probes where the hardness lives.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**Show them how much it got to me — the admission is easier than letting them see the weight of it.**\n\nSaying the words, that part's almost mechanical after a while. You learn the words. But actually... letting someone see that it's sitting on you, that you're carrying it around — that's a different thing entirely. That's giving somebody something they could use, I suppose. Not that Denise would, but — yeah. The words are easier.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When you feel that furnace close — that interior anger — is the heat mostly directed outward at what went wrong, or inward at yourself for letting it happen?\n\n- Mostly outward — at the situation, the failure, the person or thing that caused it\n- Mostly inward — at myself for not preventing it\n- Both, but one tends to win",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.12,
+            "3": 0.18,
+            "4": 0.1,
+            "5": 0.28,
+            "6": 0.52,
+            "7": 0.08,
+            "8": 0.44,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "1v6",
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "1-6-3",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.38,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "doing it right",
+                "acceptable",
+                "clean",
+                "my name's on it",
+                "not going to do it right"
+              ],
+              "context": "standards and workmanship"
+            },
+            {
+              "type": 6,
+              "words": [
+                "building the case",
+                "something feels off",
+                "file it",
+                "right about the bad call"
+              ],
+              "context": "distrust and verification"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walked off jobs",
+                "push back",
+                "stubborn",
+                "kills me",
+                "authority doesn't make a bad call good"
+              ],
+              "context": "resistance to authority and directness"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.28,
+          "SX": 0.38
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Marcus, 64, electrician/mechanic background, married to Denise",
+          "what": "Holds high internal standards, anger as furnace, retrospective analysis of failure, fixes problems",
+          "why": "Standards rooted in accountability and real-world consequences, not external validation",
+          "how": "Systematic, confirmatory thinking, deliberate push back, emotional armor around vulnerability",
+          "when": "Unresolved situations run in background; 3am rumination on matters that count",
+          "where": "Work context dominant; relational blind spots around presence vs. fixing"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Furnace anger closes inward; rumination on what he could've controlled; shields vulnerability behind admission of facts",
+          "respond_glimpsed": "Awareness of Denise's different needs; self-honesty about 'not always honest about it'; owns his rigidity",
+          "superpower_signal": "Integrity, precision, accountability — work that will last 40 years",
+          "kryptonite_signal": "Inner critic runs past closed verdicts; vulnerability locked behind words; can't sit with things",
+          "domain_signals": [
+            "work/craft",
+            "authority",
+            "relationships",
+            "self-judgment"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v8_differentiation",
+        "thinking_display": "The words come easier than the weight does.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you feel that furnace close — that interior anger — is the heat mostly directed outward at what went wrong, or inward at yourself for letting it happen?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Mostly outward — at the situation, the failure, the person or thing that caused it",
+            "Mostly inward — at myself for not preventing it",
+            "Both, but one tends to win"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 1 (self-directed critic) from 8 (externally directed power/anger)"
+        },
+        "strategy": {
+          "what_was_learned": "Vulnerability is locked behind competence armor — 'giving somebody something they could use.' This is a core 1 shame pattern, but also has 8 flavor (power/exposure). The admission is easy; the weight is protected. Need to differentiate whether the primary driver is internal critic (1) or power/exposure fear (8).",
+          "next_question_rationale": "The direction of anger is the clearest 1v8 differentiator. Type 1 anger turns inward as self-criticism and resentment at failing the standard. Type 8 anger moves outward against the world, injustice, others. This question directly tests that.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**Both, but one tends to win.**\n\nOutward wins. Usually by a lot. *[pause]* Though I'll be honest with you — the inward part shows up later, when it's quiet and you can't do anything about it anymore. That's the worst time for it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you push back — on a foreman, a bad call, a situation that's wrong — is the energy behind that coming from the wrongness of the thing, or from something more personal, something about not being pushed around?\n\n- The wrongness of the thing — my feelings about it are almost beside the point\n- Both, but if I'm honest, there's something personal in it too — I don't like being told to accept what I know is bad",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.12,
+            "3": 0.18,
+            "4": 0.1,
+            "5": 0.22,
+            "6": 0.52,
+            "7": 0.08,
+            "8": 0.48,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "1v6",
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "1-5-8",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.35,
+            "head": 0.48
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "right way",
+                "what's the point of doing it at all",
+                "your name's on it",
+                "wrong is wrong",
+                "stubborn",
+                "close enough",
+                "redid it on my own time"
+              ],
+              "context": "work standards and authority"
+            },
+            {
+              "type": 6,
+              "words": [
+                "building the case",
+                "if my gut says something's wrong",
+                "paranoid",
+                "surprised by it later",
+                "it depends"
+              ],
+              "context": "trust and doubt patterns"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walked off jobs",
+                "push back",
+                "authority doesn't make a bad call into a good one",
+                "that just about kills me"
+              ],
+              "context": "power and vulnerability"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.28,
+          "SX": 0.32
+        },
+        "wing_signals": {
+          "left": 0.38,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "64-year-old electrician, Marcus, in long-term relationship with Denise",
+          "what": "Internal standards, anger channeled inward and outward, perfectionism in craft",
+          "why": "Integrity — 'your name's on it whether you sign it or not'",
+          "how": "Diagnostic, methodical, privately self-critical",
+          "when": "Worst moments: quiet time, 3am, unresolved situations",
+          "where": "Work domain primary, relationship domain secondary (still developing)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger closes inward (furnace door), then projects outward; stays with problem mentally even after decision made; internal critic emerges in quiet moments",
+          "respond_glimpsed": "Self-awareness about needing to sit with things; acknowledging Denise's perspective; 'still working on it'",
+          "superpower_signal": "Integrity, precision, unwillingness to compromise on quality — 40-year electrical work standard",
+          "kryptonite_signal": "Repressed self-criticism; difficulty showing vulnerability; case never fully closed; can't let people see the weight",
+          "domain_signals": [
+            "craft/work",
+            "relationships",
+            "authority",
+            "self-judgment"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v8_differentiation",
+        "thinking_display": "The self-criticism only comes when it's too late to act on it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you push back — on a foreman, a bad call, a situation that's wrong — is the energy behind that coming from the wrongness of the thing, or from something more personal, something about not being pushed around?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The wrongness of the thing — my feelings about it are almost beside the point",
+            "Both, but if I'm honest, there's something personal in it too — I don't like being told to accept what I know is bad"
+          ],
+          "scale_range": null,
+          "context_note": "1v8 differentiation: Type 1 pushes back from principle/standard; Type 8 from autonomy/not being dominated"
+        },
+        "strategy": {
+          "what_was_learned": "Anger primarily outward but inward critic arrives late in quiet moments — classic 1 pattern. Vulnerability is the wall. 'Giving somebody something they could use' = mistrust of being seen. All three centers probed. 1v8 differentiation needed — he pushes back hard AND has contempt for authority, but his language is more principled than power-based.",
+          "next_question_rationale": "Key 1v8 differentiator: Type 1 pushes back because something violates a standard (impersonal principle); Type 8 pushes back because they won't be controlled (personal autonomy). His language has been mostly principled ('if it's wrong it's wrong') but also has 8-ish contempt for authority. Need to find where the fuel actually comes from.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "Both, but if I'm honest, there's something personal in it too — I don't like being told to accept what I know is bad.\n\nLook, I'd like to tell you it's always pure principle, and sometimes it genuinely is — you see a guy about to touch a live panel because someone cut corners on the lockout procedure, that's not about me, that's just *wrong* and somebody has to say it. But I'd be lying if I said there wasn't something else running underneath it. Something about... not being made small. Not being expected to nod along and pretend you didn't see what you saw. I've had foremen who were decent men try to tell me something was fine when it wasn't, and the *telling me* part — that's where it gets personal.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When everything's been done right — no corners cut, no compromises made, work is solid — and it still goes badly anyway, what do you feel most: frustrated that things don't work the way they should, or something harder to name than that?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.78,
+            "2": 0.1,
+            "3": 0.12,
+            "4": 0.15,
+            "5": 0.18,
+            "6": 0.52,
+            "7": 0.08,
+            "8": 0.58,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1v8",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "1-5-8 (tentative)",
+          "tritype_confidence": 0.45,
+          "whole_type_signals": {
+            "body": 0.78,
+            "heart": 0.22,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "right",
+                "wrong",
+                "acceptable",
+                "supposed to be done right",
+                "close enough",
+                "bad call",
+                "principle"
+              ],
+              "context": "standards and work ethics throughout"
+            },
+            {
+              "type": 8,
+              "words": [
+                "not being made small",
+                "not being pushed around",
+                "personal",
+                "something running underneath"
+              ],
+              "context": "when describing pushback motivation"
+            },
+            {
+              "type": 6,
+              "words": [
+                "building the case",
+                "if my gut says",
+                "something's wrong",
+                "paranoid",
+                "smart",
+                "surprised by it later"
+              ],
+              "context": "when describing distrust pattern"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "differentiation_1v8"
+        },
+        "oyn_dimensions": {
+          "who": "64yo electrician, married to Denise, strong inner critic, self-referential standards",
+          "what": "Anger as internal furnace, post-hoc self-examination, unresolved things persist",
+          "why": "Integrity-driven: 'your name's on it' — standard comes from competence and consequence",
+          "how": "Methodical, systematic, fix-oriented, pushes back on authority when wrong",
+          "when": "Anger comes first, inward turn happens later at night when it's quiet",
+          "where": "Work domain primary, bleeds into personal relationships (Denise)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Standards violated → furnace closes → anger outward → late-night inward turn → keeps re-opening the case",
+          "respond_glimpsed": "Moments of self-awareness: 'I'd be lying if...', 'Denise would say...', acknowledging the personal layer under the principle",
+          "superpower_signal": "Uncompromising integrity, precision, the courage to say what's wrong",
+          "kryptonite_signal": "The anger that tightens when others fail the standard; the jury that never fully closes; vulnerability guarded ('giving somebody something they could use')",
+          "domain_signals": [
+            "work/craft",
+            "relationships",
+            "authority",
+            "integrity",
+            "anger",
+            "self-reliance"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v8_differentiation_core",
+        "thinking_display": "The principle and the personal — running on the same track.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When everything's been done right — no corners cut, no compromises — and it still goes badly, what do you feel most: frustrated that things don't work the way they should, or just... something harder to name?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Differentiating 1 (resentment at a wrongly-ordered world, impersonal) vs 8 (anger at loss of control/impact, more personal). A Type 1 response will emphasize the wrongness of the outcome despite right effort — a moral affront. A Type 8 response will emphasize impotence, being thwarted, world not responding to force."
+        },
+        "strategy": {
+          "what_was_learned": "The 'not being made small' signal is significant — pure 1 anger is about the wrongness of the thing, not about status/domination. This personal layer under principle is either 1w9→no, 1w2→no, or 8w1. Need to determine whether the drive is fundamentally about correctness/integrity (1) or about power/impact not being diminished (8). The 6 signals (gut-reads, building the case, suspicion) are likely a head-center support in tritype or wing influence, not core. SP variant signals strong throughout.",
+          "next_question_rationale": "Classic 1v8 disconfirmatory question: when everything is done RIGHT and it still fails — a Type 1 feels moral affront (the world violated the rules), a Type 8 feels rage at being thwarted (my force wasn't enough). This gets at whether the locus is correctness or power.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "*exhales slowly through his nose*\n\nBoth, probably. The frustration is there, sure — that's the clean part, actually. Frustration makes sense. You did the work, it should hold. When it doesn't, that's just... wrong. The universe being sloppy.\n\nBut the other thing. Yeah. That's harder to pin down. It's like — *pauses, picks at a callus on his thumb* — it's not quite grief and it's not quite anger, it's something that sits lower than both of those. Like the ground shifted and nobody told you it was going to.\n\nI rebuilt a '68 Triumph Bonneville two summers ago. Had everything right. Every bearing, every seal, timing was perfect. Took her out on Route 30 and the frame had a stress crack I hadn't found. Just — gave out. Wasn't dangerous, but the bike was done.\n\nI wasn't frustrated. Not really. I was — *long pause* — I don't know what I was. Something that doesn't have a good word for it. Like being owed something by existence and existence not even acknowledging the debt.\n\nI don't usually talk about it that way. Sounds dramatic when you say it out loud.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "That feeling — existence not acknowledging the debt — do you sit with it privately, or does it eventually come out as something sharper pointed at the people around you?\n\n- Sit with it privately — it's mine to carry, not theirs to deal with\n- It comes out eventually — usually as something harder, aimed somewhere",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.08,
+            "3": 0.12,
+            "4": 0.18,
+            "5": 0.22,
+            "6": 0.44,
+            "7": 0.05,
+            "8": 0.55,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Standard Bearer",
+          "tritype": "1-5-8",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.88,
+            "heart": 0.32,
+            "head": 0.42
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "right",
+                "wrong",
+                "close enough",
+                "supposed to be done right",
+                "your name's on it",
+                "acceptable"
+              ],
+              "context": "standards, work quality, authority"
+            },
+            {
+              "type": 8,
+              "words": [
+                "not being made small",
+                "something personal in it",
+                "something that doesn't have a good word",
+                "push back"
+              ],
+              "context": "authority, being controlled, vulnerability"
+            },
+            {
+              "type": 6,
+              "words": [
+                "building the case",
+                "if my gut says something's wrong",
+                "paranoid",
+                "rather be right about the bad call"
+              ],
+              "context": "trust, suspicion, doubt"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.48
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "variant"
+        },
+        "oyn_dimensions": {
+          "who": "Marcus, 64, electrician/mechanic, married to Denise",
+          "what": "Inner critic, anger turned inward late, high standards, pushes back on authority",
+          "why": "Correctness as moral obligation — 'your name's on it whether you sign it or not'",
+          "how": "Analytical disassembly of failure, controlled expression of anger, redoes work on own time",
+          "when": "3am rumination, unresolved cases re-opened, unfinished business runs in background",
+          "where": "Work, physical craft, close relationships (Denise)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Furnace-door anger when standards violated or when told to accept what he knows is wrong; rumination at 3am on unresolved moral cases",
+          "respond_glimpsed": "Acknowledges the personal element in pushback — some self-awareness about rigidity; 'still working on what that something else is' re: Denise",
+          "superpower_signal": "Integrity so deep it's structural — redoes work on own time, 40-year circuits, Pete Dravecky still living in him",
+          "kryptonite_signal": "Resentment that existence owes him something when he does it right; difficulty receiving without conditions; vulnerability sealed behind correct procedure",
+          "domain_signals": [
+            "work/craft",
+            "authority",
+            "personal accountability",
+            "emotional containment",
+            "close relationship (Denise)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "1v8_differentiation_core",
+        "thinking_display": "Sounds dramatic — but he said it anyway.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "That feeling — existence not acknowledging the debt — do you sit with it privately, or does it eventually come out as something sharper pointed at the people around you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Sit with it privately — it's mine to carry, not theirs to deal with",
+            "It comes out eventually — usually as something harder, aimed somewhere"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiates Type 1 (internalized resentment, private suffering, moral burden) from Type 8 (externalized anger, impact on others, controlled but leaking outward)"
+        },
+        "strategy": {
+          "what_was_learned": "Marcus shows deep Type 1 markers: moral debt owed by existence, grief-adjacent response to doing right and still failing, 'sounds dramatic' self-correction typical of 1's suppression of emotionality. The 'owed something by existence' framing is textbook 1 resentment. Type 8 signals are present (not being made small, personal element in pushback) but feel like 1w9 or 1w2 coloring, not core 8. Need to differentiate: does the feeling stay internal (1) or leak outward as anger at others (8)?",
+          "next_question_rationale": "Core 1v8 differentiator: where does the resentment go? Type 1 internalizes it as private moral burden, sits with it, doesn't let it contaminate others directly. Type 8 externalizes — it comes out as directed pressure or hardness toward people. Marcus's 3am rumination and 'sounds dramatic' self-correction lean strongly Type 1, but the 'not being made small' energy needs one more probe.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "Sit with it privately — it's mine to carry, not theirs to deal with.\n\nThough I'd be lying if I said it never leaks. You hold something long enough, it finds its own way out — doesn't always ask your permission first. But that's different from making it somebody else's problem on purpose. I don't do that. Or I try not to.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "When you imagine someone seeing you at your worst — the moment that weight leaks — what's the bigger concern: that they'd think less of you, or that you'd lose control of something you're supposed to hold together?\n\n- That they'd think less of me — my standing with them matters\n- That I'd lose control of something I'm supposed to hold together — what they think is almost secondary",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.08,
+            "3": 0.12,
+            "4": 0.14,
+            "5": 0.22,
+            "6": 0.32,
+            "7": 0.06,
+            "8": 0.58,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "1-5-8 tentative",
+          "tritype_confidence": 0.45,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.28,
+            "head": 0.38
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "right",
+                "wrong",
+                "supposed to",
+                "right way",
+                "acceptable",
+                "shouldn't",
+                "the way it should be"
+              ],
+              "context": "multiple exchanges — standards, inner critic, judgment of self and others"
+            },
+            {
+              "type": 8,
+              "words": [
+                "not being made small",
+                "personal",
+                "push back",
+                "not going to nod along"
+              ],
+              "context": "exchanges about authority and conflict"
+            },
+            {
+              "type": 1,
+              "words": [
+                "existence not acknowledging the debt",
+                "the universe being sloppy"
+              ],
+              "context": "when things go wrong despite doing everything right"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.22,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.28,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "variant_confirm"
+        },
+        "oyn_dimensions": {
+          "who": "Marcus, 64, electrician/mechanic, married to Denise",
+          "what": "High internal standards, anger at failure, gut-based trust in own judgment",
+          "why": "Something must be done right — not for approval but because wrongness is intolerable",
+          "how": "Systematic analysis of what failed, pushback on authority, carries weight privately",
+          "when": "Worst at night, alone, when nothing can be done",
+          "where": "Work, craft, situations where standards apply"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Furnace-door anger + internal critic activated later when quiet; pushback on authority when standard violated; carrying private weight without sharing",
+          "respond_glimpsed": "Self-awareness about Denise's needs, recognition of his own patterns ('I don't usually talk about it that way'), admitting the personal element in pushback",
+          "superpower_signal": "Integrity — does the right thing even when unseen, on his own time, because it's right",
+          "kryptonite_signal": "Resentment that existence doesn't honor the debt — the world should work like good wiring; when it doesn't, something deeper than frustration activates",
+          "domain_signals": [
+            "craft",
+            "authority",
+            "solitude",
+            "intimate relationship",
+            "self-reckoning"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "1v8_differentiation_core",
+        "thinking_display": "The weight stays private. But he knows it leaks.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine someone — anyone — seeing you at your worst, the moment the weight leaks out: what's the bigger concern, that they'd think less of you, or that you'd lose control of something you're supposed to hold together?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That they'd think less of me — my standing with them matters",
+            "That I'd lose control of something I'm supposed to hold together — what they think is almost secondary"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 1 (loss of integrity/self-judgment) from 8 (loss of control/vulnerability as weakness)"
+        },
+        "strategy": {
+          "what_was_learned": "Carries difficulty privately as a matter of principle, not image — 'it's mine to carry, not theirs to deal with.' Acknowledges leaking but distinguishes that from intentional burdening. This is strong 1w8 signal — the 8 wing explains the personal/power element in his pushback, but the core motivation is integrity/wrongness not domination. Need one more disconfirmatory question to push confidence above 0.85 before closing. The 1v8 question here: does the internal standard govern this (1) or is it fundamentally about maintaining power/not being vulnerable (8)?",
+          "next_question_rationale": "The key 1v8 differentiator: Type 1's core fear is being wrong/corrupt — losing the weight means losing your integrity anchor. Type 8's core fear is being controlled/weak — losing the weight means losing your power. Asking which concern is bigger under vulnerability directly tests this distinction.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "That I'd lose control of something I'm supposed to hold together — what they think is almost secondary.\n\nLook, I've been the guy people counted on to keep the lights on, literally and otherwise. You let something slip and it's not about how you look — it's that the whole structure wobbles, you know? People's sense of things being okay depends on you not falling apart. That matters more to me than... whatever the other people in the room are thinking.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "When the standard gets violated and nobody's going to fix it but you — does the drive to act come from something needing to be made right, or from something about not letting the wrong thing win?\n\n- Something needing to be made right — it's about the work, the outcome, the way things should be\n- Not letting the wrong thing win — there's something in me that doesn't tolerate being overruled by what's bad",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.08,
+            "3": 0.18,
+            "4": 0.12,
+            "5": 0.22,
+            "6": 0.35,
+            "7": 0.05,
+            "8": 0.58,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "1",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "1-6-3",
+          "tritype_confidence": 0.45,
+          "whole_type_signals": {
+            "body": 0.85,
+            "heart": 0.35,
+            "head": 0.42
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "right way",
+                "cutting corners",
+                "standards",
+                "acceptable",
+                "supposed to"
+              ],
+              "context": "work ethic and inner critic responses"
+            },
+            {
+              "type": 8,
+              "words": [
+                "not being made small",
+                "pushed around",
+                "control",
+                "hold together"
+              ],
+              "context": "authority and vulnerability responses"
+            },
+            {
+              "type": 1,
+              "words": [
+                "case that keeps getting re-opened",
+                "jury's still out"
+              ],
+              "context": "inner critic doesn't close files"
+            },
+            {
+              "type": 6,
+              "words": [
+                "building the case",
+                "something's wrong",
+                "right about the bad call"
+              ],
+              "context": "distrust pattern"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.28,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.32,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart/body",
+          "next_target": "differentiation 1v8"
+        },
+        "oyn_dimensions": {
+          "who": "64-year-old electrician/mechanic, married to Denise, mentor figure (Pete Dravecky), working class",
+          "what": "precision work, standards, accountability, fixing problems",
+          "why": "doing things right — 'your name's on it whether you sign it or not'",
+          "how": "controlled, private, systematic — take the engine apart",
+          "when": "inward suffering at night/quiet; outward anger first",
+          "where": "workplace and personal domains both show the pattern"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "anger (furnace door closing) → systematic review → holding resentment privately → leaked control",
+          "respond_glimpsed": "self-awareness that he holds weight privately rather than dumping it; knows Denise needs something other than fixing",
+          "superpower_signal": "integrity, precision, structural reliability — 'still be solid in forty years'",
+          "kryptonite_signal": "inner critic that won't close files; holding resentment; the private accumulation of 'existence owing a debt'",
+          "domain_signals": [
+            "work identity central",
+            "physical/craft domain",
+            "marriage shows pattern edge"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 13,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "differentiation_1v8_core",
+        "thinking_display": "The structure he protects isn't just external.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the standard gets violated and nobody's going to fix it but you — does the drive to act come from something needing to be made right, or from something about not letting the wrong thing win?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Something needing to be made right — it's about the work, the outcome, the way things should be",
+            "Not letting the wrong thing win — there's something in me that doesn't tolerate being overruled by what's bad"
+          ],
+          "scale_range": null,
+          "context_note": "This is the key 1v8 differentiation question: 1s act from impersonal wrongness/correctness; 8s act from personal power/dominance of will. Marcus has shown both, but the PRIMARY driver will land this."
+        },
+        "strategy": {
+          "what_was_learned": "The 'lose control of something I'm supposed to hold together' answer is ambiguous — could be Type 1 (responsibility to maintain correctness/integrity of structure) or Type 8 (holding power/strength for others to rely on). The 'what they think is secondary' phrasing leans 8. But the furnace anger + inner critic that won't close files + 'existence owing a debt' + systematic error-review all lean 1. Need to differentiate: does the drive come from impersonal wrongness (1) or personal will/not-being-overruled (8)? This question should crack it.",
+          "next_question_rationale": "Disconfirmatory: answer A points strongly to Type 1 (impersonal principle, correctness), answer B points strongly to Type 8 (personal will, dominance). His 1v8 split is 0.82/0.58 — close enough to require this.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "persona",
+      "content": "**Not letting the wrong thing win — there's something in me that doesn't tolerate being overruled by what's bad.**\n\nThough I'll tell you, the two aren't as separate as that question makes them sound. You fix the thing *because* you can't stand watching the wrong thing just... sit there, winning. The outcome matters, sure. But if I'm being straight with you, it's the second one. There's something that just — it won't let me walk away. Whether that's a virtue or a problem probably depends on who you ask.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "system",
+      "content": "Does that drive — the not tolerating what's wrong — stay mostly in the domain of work and principles, or does it bleed into the people close to you?\n\n- It stays mostly in work and principles — the people close to me get something different from me\n- It bleeds in — I hold the people close to me to standards too, and they know it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.08,
+            "3": 0.1,
+            "4": 0.15,
+            "5": 0.18,
+            "6": 0.45,
+            "7": 0.06,
+            "8": 0.55,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Principled Challenger",
+          "tritype": "1-6-4",
+          "tritype_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.88,
+            "heart": 0.35,
+            "head": 0.42
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "right",
+                "wrong",
+                "supposed to",
+                "the way things should be",
+                "acceptable",
+                "name's on it"
+              ],
+              "context": "throughout — standards, inner critic, correctness"
+            },
+            {
+              "type": 8,
+              "words": [
+                "not letting the wrong thing win",
+                "won't let me walk away",
+                "doesn't tolerate",
+                "not being made small",
+                "overruled"
+              ],
+              "context": "pushback and control language"
+            },
+            {
+              "type": 6,
+              "words": [
+                "working to confirm it",
+                "building the case",
+                "too suspicious",
+                "bad call",
+                "trust"
+              ],
+              "context": "distrust and threat-scanning"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.28,
+          "SX": 0.4
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.58
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "differentiation_1v8"
+        },
+        "oyn_dimensions": {
+          "who": "64-year-old tradesman (electrician), married to Denise, motorcycles (Triumph Bonneville), foreman Pete Dravecky formative influence",
+          "what": "inner critic, standards, anger as furnace/gear, carrying weight privately, fixing problems",
+          "why": "not letting wrong win, integrity over image, 'name's on it'",
+          "how": "methodical, analytical (engine metaphor), internalized standards, push back against authority when wrong",
+          "when": "unresolved things run in background; 3am jury still out",
+          "where": "physical work domain primary; relationships secondary but present"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger closes inward (furnace door), then analysis kicks in, then action — bypasses vulnerability by converting it to problem-solving or righteous action",
+          "respond_glimpsed": "Awareness of leaking, naming the thing he can't name (existence owing a debt), willingness to be honest about the personal charge in pushing back",
+          "superpower_signal": "Integrity without audience — redid the junction box on his own time; wired for 40 years from now",
+          "kryptonite_signal": "Resentment at the universe when the standard is met and it still goes wrong; the thing that doesn't have a word",
+          "domain_signals": [
+            "work/craft primary",
+            "relationships present but filtered through fix-it lens",
+            "solitude/carrying weight privately — SP signal",
+            "physical environment as moral arena"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "differentiation_1v8_core",
+        "thinking_display": "The personal charge in pushing back — that one he didn't plan to say.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "The anger, the push back, the not tolerating what's wrong — does any of that ever turn toward people you care about? Do you find yourself needing to be the one who's right with them, or does the standard mostly stay about the work and the principles?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "It stays mostly in the domain of work and principles — the people close to me get something different from me",
+            "It bleeds in — I hold the people close to me to standards too, and they know it"
+          ],
+          "scale_range": null,
+          "context_note": "Key 1v8 differentiator: 1s hold people to external standards of correctness/rightness; 8s assert dominance/control in relationships. Both push back, but the motivation and relational texture differ significantly."
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signal confirmed: 'not letting the wrong thing win' with explicit acknowledgment that it's personal but principle-first. The 8 wing is present (not being made small, overruled, dominance) but the framing stays in correctness/integrity rather than raw power. Need to differentiate 1 from 8: does his anger aim at violations of principle or violations of his authority/control? The junction box story is 1, not 8. But 'not being made small' is 8 flavor. One more differentiating question before close.",
+          "next_question_rationale": "Ask whether the standard-holding bleeds into close relationships or stays in work/principle domain. Type 1s often protect relationships by separating the inner critic from loved ones OR apply the standard everywhere with a moral flavor. Type 8s tend to use control/dominance in relationships. This will clarify whether the 8 signals are wing-level or core.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "persona",
+      "content": "**It bleeds in — I hold the people close to me to standards too, and they know it.**\n\nThough I'd push back a little on 'needing to be right' — that makes it sound petty. It's more like... if I think something's being done wrong, or someone's not holding up their end, I'm going to say so. Denise will tell you I can be a handful when I think she's letting someone walk over her. That's not about me being right, that's — well, maybe it looks the same from the outside, I don't know. The people I care about don't get a pass just because I care about them. Maybe they get *less* of one, if I'm honest.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "system",
+      "content": "The pattern that runs you hardest was built around one thing: wrongness being intolerable. Not as philosophy — as a physical fact, something in the body that won't let you walk away. That's the survival strategy, and it gave you forty years of work you can put your name on without flinching. The cost is the 3am jury, and the standard that doesn't know when to take a day off, and the people close to you who sometimes get less of a pass than strangers do.\n\nWhat you described about the Bonneville — that feeling of being owed something by existence — that's not drama. That's the shadow side of genuine integrity. The gift and the weight are the same energy, just lit from different angles.\n\nYour personalized report is being prepared now. It'll map the full pattern — where it came from, what it costs, and where the space opens up between the furnace door closing and what you do next.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.88,
+            "2": 0.15,
+            "3": 0.18,
+            "4": 0.22,
+            "5": 0.31,
+            "6": 0.52,
+            "7": 0.08,
+            "8": 0.61,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1v8"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "tritype": "1-5-8",
+          "tritype_confidence": 0.62,
+          "whole_type_signals": {
+            "body": 0.88,
+            "heart": 0.31,
+            "head": 0.44
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "right",
+                "wrong",
+                "supposed to",
+                "standard",
+                "close enough",
+                "right move",
+                "acceptable",
+                "what's the point"
+              ],
+              "context": "repeated across multiple exchanges"
+            },
+            {
+              "type": 8,
+              "words": [
+                "not letting the wrong thing win",
+                "won't let me walk away",
+                "not being made small",
+                "not being pushed around"
+              ],
+              "context": "exchanges about pushing back"
+            },
+            {
+              "type": 6,
+              "words": [
+                "building the case",
+                "if my gut says",
+                "file it",
+                "worried for nothing"
+              ],
+              "context": "distrust question"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.71,
+          "SO": 0.32,
+          "SX": 0.41
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.38
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "closing"
+        },
+        "oyn_dimensions": {
+          "who": "Marcus, 64, electrician/mechanic, married to Denise",
+          "what": "Anger (furnace door closing), inner critic running post-hoc, holds high standards in work and relationships",
+          "why": "Driven by wrongness being intolerable — not primarily image or fear, but a core sense of what should be",
+          "how": "Methodical deconstruction of failure, holds weight privately, fixes problems, pushes back on authority when wrong",
+          "when": "Unresolved things run in background; 3am jury reconvening; worst when quiet",
+          "where": "Work primarily, bleeds into close relationships"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Furnace-door anger when standards violated; internal critic that reopens cases at 3am; gear-tightening around sloppiness; holds weight privately until it leaks",
+          "respond_glimpsed": "Redoing the junction box on his own time — choosing right action without needing external validation; awareness that his pattern bleeds into Denise",
+          "superpower_signal": "Integrity so deep it's structural — not performative, not about being seen, about the work holding",
+          "kryptonite_signal": "Resentment that exists leaks out; impossible standard extended to people who didn't sign up for it; the 3am jury never quite closes the file",
+          "domain_signals": [
+            "work/craft",
+            "relationships/Denise",
+            "authority",
+            "self-accountability"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 15,
+          "current_stage": 7,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Putting It Together",
+        "selected_question_id": null,
+        "thinking_display": "Less of a pass, not none at all. He knows.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Type 1 confirmed with high confidence. SP variant dominant. Wing 9 has some signal (carrying weight privately, not making it others' problem) but 8-wing also present (not being made small, not letting wrong thing win). The 1v8 differentiation is resolved: the core driver is wrongness being intolerable, not power or dominance — this is 1 with 8-wing energy. React pattern fully mapped: anger turns inward at 3am, outward in the moment. Respond glimpsed: self-aware enough to know the pattern, consciously redoes work on own time.",
+          "next_question_rationale": "All closing criteria met. Confidence 0.88, well above threshold. Close now.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

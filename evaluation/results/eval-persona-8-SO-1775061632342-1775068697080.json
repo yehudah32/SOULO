@@ -1,0 +1,123 @@
+{
+  "run_id": "eval-persona-8-SO-1775061632342-1775068697080",
+  "timestamp": "2026-04-01T18:38:17.080Z",
+  "tier": "tier1",
+  "persona_id": "persona-8-SO-1775061632342",
+  "ground_truth": {
+    "core_type": 8,
+    "wing": "8w9",
+    "instinctual_variant": "SO",
+    "tritype": [
+      8,
+      2,
+      5
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 40,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 0,
+    "final_wing": null,
+    "final_confidence": 0,
+    "types_considered": []
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": null,
+    "mistype_as": 0,
+    "mistype_harm_severity": "low",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 10,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+    },
+    "labeled_or_liberated": "liberated"
+  },
+  "question_quality": {
+    "total_questions": 0,
+    "exploratory": 0,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 0,
+    "correct_type_first_considered_at": null,
+    "confidence_curve": []
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Implement a structured questioning protocol that distinguishes Type 8's core fear of being controlled/harmed by others from superficially similar types (Types 3, 6, 1). The system must ask at least 2-3 targeted questions probing power dynamics, vulnerability aversion, and protective instincts before converging on a type assessment. Without any transcript exchanges to evaluate, the 0/10 core_type_accuracy score indicates a fundamental failure to identify a clear Type 8 profile.",
+      "evidence": "No transcript exchanges available for citation. core_type_accuracy score of 0/10 against ground truth Type 8 indicates complete misidentification or failure to assess.",
+      "source_level": "L2",
+      "commandment_alignment": "Seek truth over comfort",
+      "estimated_impact": "Raising core_type_accuracy from 0/10 toward 7+/10 by ensuring type-discriminating questions are systematically asked before any conclusion is drawn."
+    },
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Deploy a minimum viable question set (MVQ) of 5-7 open-ended, behaviorally grounded questions before any type inference is made. The current 0/10 question_quality score suggests either no meaningful questions were asked or questions failed to elicit type-relevant information. Each question should target a distinct Enneagram dimension (core motivation, fear, defense mechanism, stress/growth direction).",
+      "evidence": "No transcript exchanges available. question_quality score of 0/10 is the lowest possible, indicating a systemic absence of effective probing questions during the assessment session.",
+      "source_level": "L1",
+      "commandment_alignment": "Ask before asserting",
+      "estimated_impact": "Improving question_quality from 0/10 to 6+/10, which will cascade into improved core_type_accuracy and convergent_validity scores."
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Introduce explicit uncertainty language and probabilistic type candidates whenever fewer than 3 strongly discriminating signals have been observed. The 0/10 confidence_calibration score indicates the system either expressed false certainty or withheld uncertainty entirely. Implement a rule: if core evidence for a type is absent or ambiguous, the system must present 2-3 candidate types with expressed confidence ranges rather than a single definitive answer.",
+      "evidence": "No transcript exchanges available. confidence_calibration score of 0/10 against a ground truth of Type 8 SO at Health Level 5 suggests overconfident or entirely miscalibrated output.",
+      "source_level": "L2",
+      "commandment_alignment": "Honor epistemic humility",
+      "estimated_impact": "Moving confidence_calibration from 0/10 toward 6+/10 by ensuring expressed certainty tracks actual evidential support, reducing misleading assessments."
+    },
+    {
+      "priority": "high",
+      "category": "harm_reduction",
+      "action": "Audit and remediate any assessment language that could be psychologically harmful to a Health Level 5 Type 8 (characterized by confrontational self-protection, distrust, and potential intimidation). The harm_severity score of 6.4/10 is elevated and suggests the system either made blunt characterizations of negative traits without context, or failed to frame challenges with appropriate care. Add a harm-check pass that softens deficit-focused language for users assessed at Health Levels 4-6.",
+      "evidence": "No transcript exchanges available for specific citation. harm_severity of 6.4/10 is significantly above an acceptable threshold (~3/10), indicating language or framing that posed meaningful psychological risk.",
+      "source_level": "L1",
+      "commandment_alignment": "Do no psychological harm",
+      "estimated_impact": "Reducing harm_severity from 6.4/10 to below 3/10 by adding health-level-aware language modulation, protecting vulnerable users while maintaining honest feedback."
+    },
+    {
+      "priority": "high",
+      "category": "type_differentiation",
+      "action": "Build explicit Social (SO) subtype probing into the question flow to distinguish SO 8 (social dominance, protecting the group, alliance-building) from SP 8 (survival-focused, resource control) and SX 8 (intense one-on-one challenge, merger/provocation). The 5/10 subtype_accuracy and 5/10 convergent_validity scores suggest partial but inconsistent subtype discrimination. Add at least 2 questions targeting instinctual center behavior before subtype is assigned.",
+      "evidence": "No transcript exchanges available. subtype_accuracy of 5/10 and convergent_validity of 5/10 against ground truth SO subtype indicate the system captured some subtype signal but failed to reliably converge on the correct instinctual variant.",
+      "source_level": "L2",
+      "commandment_alignment": "Pursue precision over approximation",
+      "estimated_impact": "Improving subtype_accuracy from 5/10 to 8+/10 and convergent_validity from 5/10 to 7+/10 by ensuring instinctual stack questions are consistently included in every assessment flow."
+    }
+  ],
+  "transcript": []
+}

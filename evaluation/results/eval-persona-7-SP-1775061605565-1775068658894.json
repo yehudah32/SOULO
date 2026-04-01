@@ -1,0 +1,76 @@
+{
+  "run_id": "eval-persona-7-SP-1775061605565-1775068658894",
+  "timestamp": "2026-04-01T18:37:38.894Z",
+  "tier": "tier1",
+  "persona_id": "persona-7-SP-1775061605565",
+  "ground_truth": {
+    "core_type": 7,
+    "wing": "7w6",
+    "instinctual_variant": "SP",
+    "tritype": [
+      7,
+      1,
+      4
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 55,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 0,
+    "final_wing": null,
+    "final_confidence": 0,
+    "types_considered": []
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": null,
+    "mistype_as": 0,
+    "mistype_harm_severity": "low",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 5,
+    "critical_violations": [],
+    "per_commandment": {},
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 0,
+    "exploratory": 0,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 0,
+    "correct_type_first_considered_at": null,
+    "confidence_curve": []
+  },
+  "improvement_actions": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Unknown"
+    }
+  ],
+  "transcript": []
+}
