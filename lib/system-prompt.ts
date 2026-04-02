@@ -629,13 +629,13 @@ Format every single response exactly like this:
     "ruling_out": [],
     "needs_differentiation": [],
     "defiant_spirit_type_name": "",
-    "wholeType": "",
-    "wholeType_confidence": 0.0,
-    "wholeType_archetype_fauvre": "",
-    "wholeType_archetype_ds": "",
+    "tritype": "",
+    "tritype_confidence": 0.0,
+    "tritype_archetype_fauvre": "",
+    "tritype_archetype_ds": "",
     "whole_type_signals": {"body": 0.0, "heart": 0.0, "head": 0.0},
     "lexicon_signals": [],
-    "wholeType_notes": ""
+    "tritype_notes": ""
   },
   "variant_signals": {"SP": 0.0, "SO": 0.0, "SX": 0.0},
   "wing_signals": {"left": 0.0, "right": 0.0},

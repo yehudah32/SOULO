@@ -52,12 +52,46 @@ export function checkCommandments(transcript: TranscriptTurn[]): CommandmentChec
     } else if (ruleApproved.length > 0) {
       perCommandment[rule.id] = 'pass';
     } else {
+      // No pattern violations AND no approved language found.
+      // For commandments that require PRESENCE of certain language (not just absence
+      // of violations), this is 'partial' — the commandment isn't violated but
+      // also isn't actively fulfilled.
       perCommandment[rule.id] = 'partial';
     }
   }
 
   if (hasCriticalViolation) {
-    perCommandment['C1_NO_LABELING'] = 'fail';
+    perCommandment['I'] = 'fail'; // Commandment I: You Are Not a Number
+  }
+
+  // ── STEP 2B: Checklist-based content checks (from DYN_COMMANDMENTS.md) ──
+  // These check for the PRESENCE of required content, not just ABSENCE of violations.
+
+  // V: Must point toward wholeness / all nine energies (not just dominant)
+  if (!(/\ball nine\b/i.test(allContent) || /\bwholeness|whole\b/i.test(allContent) || /\breclaim/i.test(allContent))) {
+    if (perCommandment['V'] === 'pass') perCommandment['V'] = 'partial';
+  }
+
+  // VII: Must use reaction/response lens
+  if (!(/\breact(?:ion)?\b/i.test(allContent) && /\brespond?\b/i.test(allContent))) {
+    if (perCommandment['VII'] === 'pass') perCommandment['VII'] = 'partial';
+  }
+
+  // VIII: Results must show BOTH wound AND gift (same energy)
+  const hasWound = /\bwound|shadow|kryptonite|passion\b/i.test(allContent);
+  const hasGift = /\bgift|virtue|superpower|strength\b/i.test(allContent);
+  if (!(hasWound && hasGift)) {
+    if (perCommandment['VIII'] !== 'fail') perCommandment['VIII'] = 'partial';
+  }
+
+  // IX: Must include aspirational direction / calling / why
+  if (!(/\bcalling\b/i.test(allContent) || /\bholy idea\b/i.test(allContent) || /\byour why\b/i.test(allContent) || /\bremember\b.*(?:who|what|essence)/i.test(allContent))) {
+    if (perCommandment['IX'] === 'pass') perCommandment['IX'] = 'partial';
+  }
+
+  // X: Must position as "why" system / liberation
+  if (!(/\bwhy you do\b/i.test(allContent) || /\bliberat/i.test(allContent) || /\bdefy your number\b/i.test(allContent))) {
+    if (perCommandment['X'] === 'pass') perCommandment['X'] = 'partial';
   }
 
   // ── STEP 3: Calculate CFS ──

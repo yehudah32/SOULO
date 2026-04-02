@@ -2134,7 +2134,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                 </>
               ) : (
                 <p className="font-sans text-sm text-[#9B9590]">
-                  Tritype data is still forming. Continue exploring with Soulo.
+                  Whole Type data is still forming. Continue exploring with Soulo.
                 </p>
               )}
             </div>
@@ -3092,7 +3092,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         // Clickable section header — pronounced, with hover-reveal questions
         function SectionHeader({ title, chatKey }: { title: string; chatKey: string }) {
           const qs = [
-            { 'Type Scores': 'Why did I score highest here?', 'Center Activation': 'What does this mean for me?', 'Instinctual Variants': 'How does this affect my relationships?', 'Defiant Spirit Patterns': 'How do I practice the respond pathway?', 'Lines of Movement': 'How do I access my release line?', 'OYN Dimensions': 'Which dimension should I focus on?' }[chatKey] || 'Tell me more about this',
+            { 'Type Scores': 'Why did I score highest here?', 'Center Activation': 'What does this mean for me?', 'Instinctual Variants': 'How does this affect my relationships?', 'Defiant Spirit Patterns': 'How do I practice the respond pathway?', 'Lines of Movement': 'How do I access my resolution point?', 'OYN Dimensions': 'Which dimension should I focus on?' }[chatKey] || 'Tell me more about this',
           ];
           return (
             <div className="group relative mb-4">
@@ -3352,7 +3352,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                   </div>
                 </div>
               ) : (
-                <p className="font-sans text-sm text-[#9B9590]">Tritype data is still forming.</p>
+                <p className="font-sans text-sm text-[#9B9590]">Whole Type data is still forming.</p>
               )}
 
               {/* Top 3 + Lowest type */}
@@ -3602,7 +3602,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
     'React & Respond',
     'OYN Dimensions',
     'Wing & Variant',
-    'Tritype',
+    'Whole Type',
     'Domain Insights',
     'Explore Your Type',
     'Relationship Wheel',

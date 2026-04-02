@@ -179,13 +179,13 @@ function makeSpec(type: number, wing: string, variant: 'SP' | 'SO' | 'SX'): Pers
   const subtype = SUBTYPE_SIGNATURES.find(
     s => s.type_id === type && s.variant === variant
   );
-  // Tritype: core type + one from each other center
+  // Whole Type: core type + one from each other center
   const centers: Record<string, number[]> = {
     body: [8, 9, 1], heart: [2, 3, 4], head: [5, 6, 7],
   };
   const coreCenter = type <= 1 || type >= 8 ? 'body' : type <= 4 ? 'heart' : 'head';
   const otherCenters = Object.entries(centers).filter(([c]) => c !== coreCenter);
-  const tritype = [
+  const wholeType = [
     type,
     otherCenters[0][1][Math.floor(Math.random() * 3)],
     otherCenters[1][1][Math.floor(Math.random() * 3)],
@@ -201,7 +201,7 @@ function makeSpec(type: number, wing: string, variant: 'SP' | 'SO' | 'SX'): Pers
     core_type: type,
     wing,
     instinctual_variant: variant,
-    tritype,
+    tritype: wholeType,
     health_level: CONFIG.DEFAULT_PERSONA.health_level,
     countertype: subtype?.countertype ?? false,
     communication_style: commStyles[Math.floor(Math.random() * commStyles.length)],

@@ -140,7 +140,7 @@ export async function POST(req: NextRequest) {
     // Cache check — skip if forceRegenerate
     if (session.generatedResults && !forceRegenerate) {
       const cached = { ...session.generatedResults };
-      // Override tritype with correct center-based calculation
+      // Override whole type with correct center-based calculation
       const cachedTypeScores: Record<number, number> = {};
       const rawCachedScores = session.internalState?.hypothesis?.type_scores || {};
       for (const [k, v] of Object.entries(rawCachedScores)) {
@@ -239,7 +239,7 @@ export async function POST(req: NextRequest) {
         ? wingAdj[0]   // prev (left wing)
         : wingAdj[1];  // next (right wing)
 
-    // Compute tritype correctly (one type per center)
+    // Compute whole type correctly (one type per center)
     const rawTypeScores = internalState?.hypothesis?.type_scores || {};
     const typeScores: Record<number, number> = {};
     for (const [k, v] of Object.entries(rawTypeScores)) {
