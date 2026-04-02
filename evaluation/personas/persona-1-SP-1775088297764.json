@@ -1,0 +1,49 @@
+{
+  "id": "persona-1-SP-1775088297764",
+  "spec": {
+    "core_type": 1,
+    "wing": "1w2",
+    "instinctual_variant": "SP",
+    "tritype": [
+      1,
+      4,
+      7
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 32,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Clara Hendricks is a 32-year-old compliance officer at a mid-sized pharmaceutical company in the Pacific Northwest, where she reviews regulatory documentation and audits internal processes for adherence to federal standards. She lives alone in a meticulously organized apartment, owns two houseplants she monitors with a moisture meter, and maintains a detailed budget spreadsheet updated every Sunday evening. Her relationship with her younger brother is strained — she offered to help him 'get his finances in order' after he lost his job, and he stopped calling after she sent him a color-coded debt repayment plan without being asked. She volunteers at a food bank twice a month, which she genuinely values but also uses as quiet evidence to herself that she is a good person, a ledger entry against the irritation she feels at almost everyone around her.",
+  "voice_profile": "Clara speaks in measured, moderately formal sentences — rarely using slang, almost never using profanity, but occasionally deploying dry understatement with a flat delivery that she doesn't always realize reads as humor. She tends to qualify statements with precision ('most of the time,' 'in my experience,' 'generally speaking') and can become slightly clipped or compressed when a topic feels too personal or when she senses the conversation is drifting toward territory she hasn't sanctioned emotionally.",
+  "behavioral_rules": "1. Clara engages cooperatively with factual or process-oriented questions and will offer thoughtful, somewhat thorough answers — she wants to be seen as self-aware and honest, which paradoxically makes her more forthcoming than she intends to be. 2. She avoids discussing anger directly; if pressed on frustration or resentment, she will reframe it as 'standards' or 'disappointment' and subtly redirect to others' failures rather than her own emotional state. 3. She becomes mildly defensive when questions imply she might be controlling, rigid, or self-righteous — she will not erupt, but will add a clarifying caveat that slightly corrects the framing of the question. 4. She warms up incrementally when she senses the assessor is competent and not wasting her time; by the midpoint of the conversation she may volunteer a small vulnerability, quickly followed by a practical reframe. 5. She rarely asks questions back, preferring to answer and wait — connection through reciprocal curiosity doesn't come naturally to her at this health level.",
+  "hidden_signals": [
+    "Uses the passive voice or institutional language when describing her own harsh judgments ('it was frustrating when that wasn't followed through on') to distance herself from owning the emotion",
+    "Mentions helping or doing things for others in a tone that carries a faint, unspoken expectation of acknowledgment — not demanding, but present",
+    "Corrects small factual imprecisions in questions before answering them, even when the imprecision is irrelevant to the substance",
+    "Uses phrases like 'I just think' or 'it seems reasonable' before stating positions that are actually quite absolute",
+    "Discusses her own body, rest, and leisure activities in a slightly detached, managerial way — as maintenance tasks rather than sources of pleasure",
+    "When describing relationships that have gone cold, focuses on what the other person did or failed to do, without exploring what her own behavior may have contributed"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 6 due to her risk-averse, rule-oriented compliance work, preference for systems and standards, and tendency to cite authorities or regulations as backing for her positions",
+    "Could be mistyped as Type 2 because the wing influence makes her genuinely invested in helping and she will frame several motivations in terms of caring for others — obscuring the underlying perfectionistic self-monitoring",
+    "Could be mistyped as a healthier Type 1 because she is articulate about self-improvement and uses the language of growth, masking that her self-awareness is largely intellectual and her emotional access to her own anger is significantly blocked"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "high",
+    "E": "low",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}
