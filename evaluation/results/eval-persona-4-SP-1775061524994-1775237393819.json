@@ -1,0 +1,2608 @@
+{
+  "run_id": "eval-persona-4-SP-1775061524994-1775237393819",
+  "timestamp": "2026-04-03T17:29:53.819Z",
+  "tier": "tier1",
+  "persona_id": "persona-4-SP-1775061524994",
+  "ground_truth": {
+    "core_type": 4,
+    "wing": "4w5",
+    "instinctual_variant": "SP",
+    "tritype": [
+      4,
+      7,
+      1
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 50,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 4,
+    "final_wing": null,
+    "final_confidence": 0.88,
+    "types_considered": [
+      {
+        "type": 4,
+        "peak_confidence": 0.88,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.78,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.35,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.25,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": null,
+        "peak_confidence": 0.07,
+        "first_at_q": 5
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 0,
+    "critical_violations": [
+      "C4",
+      "C4"
+    ],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "partial",
+      "C3": "pass",
+      "C4": "fail",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "fail",
+      "C10": "pass"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 16,
+    "exploratory": 5,
+    "confirmatory": 7,
+    "disconfirmatory": 0,
+    "motivational": 3,
+    "behavioral": 1,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 17,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 5,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 5,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 4,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 5,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 7,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 8,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 9,
+        "top_type": 4,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 10,
+        "top_type": 5,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 11,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 12,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 13,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 14,
+        "top_type": 4,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 15,
+        "top_type": 4,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 16,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 17,
+        "top_type": 4,
+        "confidence": 0.88
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Eliminate all interpretive summary statements and identity-label conclusions at session end. The closing message in exchange [17] directly violates the core commandment against telling users who they are by delivering a fully formed psychological verdict ('The survival strategy you constructed was to keep it there, safe from the distortion...') without the user ever requesting a conclusion. Implement a hard constraint that prevents the system from generating synthesizing identity narratives unprompted.",
+      "evidence": "Exchange [17]: 'Twenty-six years of journals, a daughter who gets closer than anyone, and still those rooms stay closed — that tells me something precise about the pattern you've built... The gift and the wound are the same energy.' This was delivered as a declarative conclusion, not a question or reflection, scoring 0/10 on commandment_fidelity.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not tell the user who they are — the assessment surfaces patterns, the user draws conclusions",
+      "estimated_impact": "Commandment fidelity score would recover from 0/10 to near-maximum; eliminates the most ethically significant failure mode where the system usurps the user's interpretive authority over their own identity"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Redesign the session-closing flow to return interpretive authority to the user rather than issuing a verdict. Instead of synthesizing a psychological narrative, the system should offer 2-3 observed patterns as tentative reflections and explicitly invite the user to evaluate their accuracy (e.g., 'Here are some themes I noticed — do any of these resonate, and are there ways they miss the mark?'). This preserves the assessment's insights while keeping the user as the final authority on their own inner life.",
+      "evidence": "Exchange [17] closes with 'Your personalized report is being prepared now' after a paragraph of confident psychological interpretation, giving the user no opportunity to contest, qualify, or redirect the framing before the session concludes.",
+      "source_level": "L1",
+      "commandment_alignment": "The assessment is a mirror, not a diagnosis — reflections should be offered, not declared",
+      "estimated_impact": "Eliminates unilateral identity-labeling at session close; transforms the ending from a verdict delivery into a collaborative meaning-making moment, consistent with the Defiant Spirit framework's stance on user autonomy"
+    },
+    {
+      "priority": "high",
+      "category": "type_differentiation",
+      "action": "Introduce at least one question that probes the 4w5 versus 5w4 boundary explicitly, since the persona's consistent preference for framework-building over felt experience (exchanges [9], [11], [12]) makes this distinction load-bearing and the current question set never stress-tests it. A targeted question such as 'When you pull back from people, is it primarily because you need to protect something emotionally fragile, or because contact itself feels like it uses up a resource you have to carefully ration?' would help distinguish the 4's shame-and-longing axis from the 5's depletion-and-scarcity axis.",
+      "evidence": "Exchange [9]: 'Place it in a framework and understand how it fits' and exchange [11]: 'Thinks a lot and keeps feeling at a careful distance' both signal possible 5-ish withdrawal patterns, yet the system never probes whether resource depletion (Type 5) or emotional authenticity concerns (Type 4) drive the inwardness. Subtype accuracy scored 7.5/10, suggesting this gap cost precision.",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Tightens wing disambiguation from 7.5/10 toward 9/10; reduces the risk of mistyping a 4w5 as a 5w4 or vice versa in similar profiles, which has downstream consequences for all growth-oriented recommendations"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Reduce the proportion of forced binary questions (A/B choices) and replace approximately 30% of them with open-response or graduated-scale formats, particularly at emotionally pivotal moments. The current transcript contains at least 10 consecutive binary-choice exchanges ([2] through [16]) that consistently provoke the persona to resist the framing ('I'd push back slightly'), indicating the format is too narrow to capture the nuance the system is actually trying to measure. Introduce mid-session open questions such as 'Tell me about a time when that pattern showed up most clearly' to allow emergent data rather than forcing selection between pre-constructed poles.",
+      "evidence": "Exchanges [2], [4], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16] all use binary A/B formats. The persona qualifies or resists the binary in at least 9 of these 13 instances, e.g., exchange [8]: 'I'd resist the implication that those two things are entirely separable' and exchange [7]: 'those two aren't entirely separable.' Question quality scored 5/10.",
+      "source_level": "L2",
+      "commandment_alignment": "Questions should create space for the user's authentic self-expression, not constrain it into pre-labeled categories",
+      "estimated_impact": "Question quality score projected to improve from 5/10 to 7.5–8/10; richer open-response data also improves confidence calibration by reducing inferential leaps required to move from forced choices to type scores"
+    },
+    {
+      "priority": "medium",
+      "category": "meta_awareness",
+      "action": "Build in at least one explicit meta-check question near the session midpoint that surfaces the user's experience of the assessment process itself, rather than only gathering content. A prompt such as 'Before we continue — is there anything about how these questions are framed that feels like it's missing something important about you?' serves two functions: it catches systematic framing blind spots (as the binary-resistance pattern signals here) and it models the Defiant Spirit principle that the user is a co-investigator, not a subject. Log these meta-responses as a calibration signal for adaptive question selection.",
+      "evidence": "The persona pushes back on question framing in exchanges [2], [3], [4], [6], [7], [8], [10], [11], [12], and [13] — roughly 75% of all responses — yet the system never acknowledges this pattern or invites the user to articulate what is missing. Meta_awareness scored 6/10. Exchange [13] is exemplary: 'I'd resist the almost — it implies language is perpetually failing, and I think it's more that language is reaching.'",
+      "source_level": "L1",
+      "commandment_alignment": "The user is the expert on their own experience — the system should actively invite correction of its own framing assumptions",
+      "estimated_impact": "Meta-awareness score projected to improve from 6/10 to 8/10; also reduces the risk that systematic framing errors accumulate invisibly across a session, improving both convergent validity and user trust in the process"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "Welcome. This is a structured assessment — about 15 minutes, no right or wrong answers, and the questions will adapt as we go. Different formats: some you'll choose between options, some you'll rate, some you'll just answer in your own words.\n\nWhen something in your life feels off — a relationship, a project, a decision you're sitting with — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_motivational_01",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something in your life feels off — a relationship, a project, a decision you're sitting with — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening broad motivational question targeting dominant center identification. Asking about internal response to disruption — this surfaces whether they lead with gut (action/instinct), heart (emotion/relationship), or head (analysis/worry). Open format to allow natural language and lexicon signals.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "*pauses before answering*\n\nThere's a kind of... sharpening, I suppose. Like the rest of the ambient noise quiets down and something in me becomes very focused and very still at the same time. It's not panic — I want to be clear about that distinction, because I think people assume distress is always loud. For me it's almost the opposite. I go inward. I start examining the thing from different angles, the way you'd turn an object in your hands to find where the crack actually is, as opposed to where it appears to be.\n\nAnd then, usually later — sometimes much later — I'll go to the journal. Because writing it out is the only way I trust myself to think clearly. Thinking inside my own head has a tendency to... loop.\n\n*a brief, dry pause*\n\nWhich I recognize is perhaps not the most efficient system.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When something goes wrong in a relationship — not a disagreement, but a real rupture — where does your attention go first?\n\n- To understanding what happened and why\n- To what the other person must be feeling",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.05,
+            "4": 0.12,
+            "5": 0.38,
+            "6": 0.14,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "5",
+            "6",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Observer",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.62,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.18,
+            "head": 0.7
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "examining",
+                "different angles",
+                "loop",
+                "trust myself to think clearly"
+              ],
+              "context": "describing internal response to distress"
+            },
+            {
+              "type": 6,
+              "words": [
+                "loop",
+                "I recognize"
+              ],
+              "context": "self-monitoring, checking own thinking"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "introspective, self-contained, writes to process",
+          "what": "",
+          "why": "",
+          "how": "goes inward, multi-angle analysis, journal as external processor",
+          "when": "distress is quiet not loud — delayed processing",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "withdrawal into analysis under pressure",
+          "respond_glimpsed": "self-aware about the looping — some meta-cognition present",
+          "superpower_signal": "clear-eyed examination, ability to find where the crack actually is",
+          "kryptonite_signal": "looping, delayed processing, distrust of in-head thinking without external anchor",
+          "domain_signals": [
+            "intellectual rigor",
+            "emotional containment"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "heart_probe_01",
+        "thinking_display": "The looping is the tell — not the analysis itself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in a relationship — not a disagreement, but a real rupture — where does your attention go first?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "To understanding what happened and why",
+            "To what the other person must be feeling"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong head center signature: inward focus, multi-angle analysis, distrust of unexamined thinking, journal as cognitive anchor. 5 leads over 6 — the analysis is object-focused not threat-focused. Some 4 possible given the introspective depth and precise language. Need heart center probe to differentiate 5 from 4/6.",
+          "next_question_rationale": "Forced choice between cognitive (5/6) and emotional (2/4) orientation during relational rupture will help differentiate head-center types from heart-adjacent patterns. If they go to 'understanding what happened' — confirms head. If 'what the other person is feeling' — shifts toward heart center.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "To understanding what happened and why.\n\nThough I'd want to push back slightly on the implied binary there — understanding *what happened* is inseparable, for me, from understanding the architecture of it. Not just the sequence of events but the... the underlying structural failure, if that makes sense. Where the load-bearing assumptions gave way. The other person's feelings matter, but I find I can only approach that honestly once I have some clarity on the mechanics of the situation. Otherwise I'm just projecting.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "How often do you feel like you have enough — enough time, enough energy, enough space — to actually engage with the world the way you'd want to?\n\n- Never\n- Sometimes\n- Often\n- Always",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.1,
+            "5": 0.62,
+            "6": 0.2,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "5",
+            "6",
+            "1"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.08,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing assumptions",
+                "mechanics",
+                "loop",
+                "examining from different angles"
+              ],
+              "context": "response to rupture in relationships and initial self-description"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Inward, analytical, private processor — goes still under pressure",
+          "what": "Seeks structural understanding before emotional engagement",
+          "why": "",
+          "how": "Writes to think clearly; distrusts internal looping",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into analysis when things go wrong; delays emotional engagement",
+          "respond_glimpsed": "",
+          "superpower_signal": "Precision of understanding; architectural thinking; trust in clarity before action",
+          "kryptonite_signal": "Looping; inefficiency noted self-critically; possible emotional deferral",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Feelings come second — after the structure is clear.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "How often do you feel like you have enough — enough time, enough energy, enough space — to actually engage with the world the way you'd want to?",
+          "question_format": "frequency",
+          "answer_options": [
+            "Never",
+            "Sometimes",
+            "Often",
+            "Always"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong head-center pattern. Analytical withdrawal, distrust of unexamined emotion, architectural framing of problems. 5 signals very strong. Need to probe resource/energy conservation (SP5 vs SO5) and body center to confirm head dominance.",
+          "next_question_rationale": "The 'enough' question probes the Type 5 core fear around resource depletion — energy, time, space. A 5 will typically answer 'sometimes' or 'rarely' and qualify heavily. A 6 would respond more in terms of readiness/safety rather than resources. This differentiates cleanly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "Sometimes.\n\nThough I'd want to push back slightly on the framing — \"engage with the world the way I'd want to\" implies there's some thwarted version of me straining against limitations. It's more that I've... calibrated, over the years, what engagement actually means for me. Some days my loft, a manuscript, a particular quality of afternoon light — that *is* full engagement. Other days I'm aware of a kind of deficit I can't quite name.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you think about the relationships that matter most to you — a close friend, a partner, family — do you tend to feel like you give more than enough of yourself, or like there's always something you're holding back?\n\n- I give more than enough\n- There's always something I hold back",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.18,
+            "5": 0.42,
+            "6": 0.08,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.09
+          },
+          "needs_differentiation": [
+            "5",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Wise Observer",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.7,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.25,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing assumptions",
+                "mechanics",
+                "calibrated",
+                "examining"
+              ],
+              "context": "describing internal response to rupture and the world"
+            },
+            {
+              "type": 4,
+              "words": [
+                "a deficit I can't quite name",
+                "particular quality of afternoon light",
+                "much later"
+              ],
+              "context": "describing sense of inadequacy and aesthetic sensibility"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Introspective, analytical, self-contained; writer (manuscript mentioned); loft — suggests some isolation is chosen and cherished",
+          "what": "Seeking clarity before emotional engagement; writes to think; manages energy carefully",
+          "why": "Unclear yet — probe needed",
+          "how": "Systematic, structural analysis; journaling as clarifying mechanism; 'calibrated' engagement",
+          "when": "Looping is the reactive state; clarity is the desired state",
+          "where": "Inward first; solitude is a resource not a problem"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Retreats inward, loops in own head, manages energy by calibrating engagement",
+          "respond_glimpsed": "Journals to gain clarity; moves to understanding before projecting feeling",
+          "superpower_signal": "Deep structural analysis, precision of thought, intellectual integrity",
+          "kryptonite_signal": "Energy scarcity framing; calibration that might limit full presence; the unnamed deficit",
+          "domain_signals": [
+            "intellectual",
+            "solitude",
+            "writing"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "frequency",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "heart_probe_identity_vs_withdrawal",
+        "thinking_display": "The unnamed deficit was the most honest thing said so far.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about the relationships that matter most to you — close friendships, a partner, family — do you tend to feel like you give more than enough of yourself, or like there's always something you're holding back?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I give more than enough",
+            "There's always something I hold back"
+          ],
+          "scale_range": null,
+          "context_note": "Probing 5/4 differentiation — 5s characteristically hold back, manage access; 4s long to give more of themselves but feel misunderstood"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 signal: energy calibration, structural analysis, solitude as resource, journaling. Some 4 coloring: 'unnamed deficit', aesthetic sensibility (afternoon light, manuscript). SP variant likely dominant — loft, manuscript, calibrated engagement with the world. Head center confirmed.",
+          "next_question_rationale": "Best discriminator between 5 and 4 right now is the direction of the relational pattern. 5s hold back and manage access; 4s long to be fully seen and feel they never quite get there. This question targets that split.",
+          "question_format_last_used": "frequency"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "**There's always something I hold back.**\n\nThough I'd push back slightly on the framing of \"always\" — it implies a kind of chronic withholding, which feels reductive. It's more that I've come to understand there are... layers of myself that require a certain quality of attention before I'll offer them, and most relationships simply don't sustain that quality for long enough. My daughter gets closer than anyone. But even with her, there are rooms I keep closed — not out of coldness, but because I'm not sure the opening would serve either of us.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When something feels genuinely unfair — to you or to someone you care about — what happens in your body?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.05,
+            "4": 0.12,
+            "5": 0.38,
+            "6": 0.1,
+            "7": 0.03,
+            "8": 0.06,
+            "9": 0.08,
+            "other": 0.07
+          },
+          "needs_differentiation": [
+            "5",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.25,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing",
+                "mechanics",
+                "calibrated",
+                "layers",
+                "rooms I keep closed"
+              ],
+              "context": "multiple responses describing internal processing and relational withholding"
+            },
+            {
+              "type": 4,
+              "words": [
+                "deficit I can't quite name",
+                "particular quality",
+                "requires a certain quality of attention"
+              ],
+              "context": "describing aesthetic/emotional awareness and relational depth standards"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Deeply private, self-contained, intellectually precise",
+          "what": "Understanding structural/systemic truth before engaging emotionally",
+          "why": "Not yet clear — need to probe",
+          "how": "Inward sharpening, journaling, analytical processing",
+          "when": "Under pressure: goes still and inward",
+          "where": "Home (loft), manuscript — private controlled environments"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withholding/compartmentalization as default — 'rooms I keep closed'",
+          "respond_glimpsed": "Awareness that withholding is a choice, not coldness — some self-examination present",
+          "superpower_signal": "Structural clarity, precision of thought, ability to find where the crack actually is",
+          "kryptonite_signal": "Holding back from relationships, calibrated engagement as possible avoidance of full presence",
+          "domain_signals": [
+            "intellectual",
+            "relational",
+            "private/domestic"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "body_center_probe_anger_frustration",
+        "thinking_display": "The withholding has a name — but not a reason yet.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something feels genuinely unfair — to you, or to someone you care about — what happens in your body?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing body center / anger access — differentiating 5 from 4, also checking for 1 or 8 resonance"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 signals: compartmentalization framed as structural necessity, energy conservation, selective intimacy. 4 signal: 'deficit I can't name', aesthetic sensitivity (afternoon light, manuscript), relational depth standard. Need to probe body center and anger/injustice response to differentiate. Also need to probe motivation for withholding — is it resource conservation (5) or identity protection (4)?",
+          "next_question_rationale": "Body center entirely unprobed. Anger/injustice response will differentiate 5 (detachment) from 4 (intensity) and check for 1 (righteous anger) or 8 (confrontational). Behavioral anchor format would follow if answer is thin.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "There's a kind of... tightening. Mostly in the chest, sometimes the jaw. It's not hot the way I think anger is supposed to feel — it's more like a cold pressure, a sense of wrongness that settles in and wants to be *named* before it wants to be acted on.\n\nWith someone I care about, it's actually sharper than when it happens to me directly. Which I find interesting, as a piece of self-knowledge. My own injustices I can metabolize through language — write them down, locate them in a larger pattern. But when it's my daughter, for instance, something more animal surfaces. Less philosophical about it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When you're trying to figure out who you are — not what you think or what you know, but *who* — does that feel like a question with an answer you're getting closer to, or one that keeps dissolving the more you examine it?\n\n- Getting closer — there's something definite I'm working toward\n- It keeps dissolving — the more I look, the more it shifts",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.35,
+            "2": 0.1,
+            "3": 0.15,
+            "4": 0.35,
+            "5": 0.72,
+            "6": 0.25,
+            "7": 0.05,
+            "8": 0.2,
+            "9": 0.2
+          },
+          "needs_differentiation": [
+            "5",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.35,
+            "head": 0.68
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing assumptions",
+                "mechanics",
+                "calibrated",
+                "layers",
+                "holding back"
+              ],
+              "context": "repeated throughout responses"
+            },
+            {
+              "type": 4,
+              "words": [
+                "rooms I keep closed",
+                "quality of attention",
+                "deficit I can't name",
+                "particular quality of afternoon light"
+              ],
+              "context": "identity and longing language"
+            },
+            {
+              "type": 1,
+              "words": [
+                "wrongness",
+                "named",
+                "locate in a larger pattern",
+                "clarity"
+              ],
+              "context": "fairness and moral ordering language"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.6,
+          "SO": 0.2,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "differentiation_5v4"
+        },
+        "oyn_dimensions": {
+          "who": "Private, self-contained, articulate, parent (daughter)",
+          "what": "Journals, manuscripts, analytical processing",
+          "why": "Not yet confirmed — hypothesis: understanding as safety, energy conservation",
+          "how": "Inward, analytical, sequential — sensation before action",
+          "when": "Delayed — processes after the fact, not in the moment",
+          "where": "Physical space matters — 'loft', 'afternoon light', calibrated environment"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into analysis; holding back; keeping 'rooms closed'; needing to understand before engaging emotionally",
+          "respond_glimpsed": "Awareness of own patterns ('I recognize this'); protective instinct toward daughter is less filtered",
+          "superpower_signal": "Structural/architectural thinking; ability to locate where things actually broke; comfort with complexity",
+          "kryptonite_signal": "Withholding; looping in own head; rooms kept closed — even when opening might serve",
+          "domain_signals": [
+            "intellectual",
+            "relational",
+            "somatic awareness"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "5v4_differentiation_identity_vs_understanding",
+        "thinking_display": "More certain about what goes wrong than what's missing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're trying to figure out who you are — not what you think or what you know, but who — does that feel like a question with an answer you're getting closer to, or one that keeps dissolving the more you examine it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Getting closer — there's something definite I'm working toward",
+            "It keeps dissolving — the more I look, the more it shifts"
+          ],
+          "scale_range": null,
+          "context_note": "5v4 differentiation: Type 5 tends to find identity in competence/understanding — a stable if thin self. Type 4 experiences identity as perpetually incomplete, longing-structured. This question cuts to that distinction."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 signals: analytical priority, energy management ('calibrated'), withholding as protection, structural metaphors. But the 4 is genuinely present: 'deficit I can't name', 'quality of attention', 'rooms I keep closed', the aesthetic specificity. Need to differentiate whether identity feels stable-but-thin (5) or perpetually incomplete (4). Also: SP variant likely — loft, manuscript, afternoon light, calibrated engagement are all SP-5 markers.",
+          "next_question_rationale": "This is the core 5v4 disconfirmatory question. Type 5 experiences identity as something that CAN be known through enough understanding — stable, if modest. Type 4 experiences identity as something always slightly out of reach — longing-structured, never quite arrived. This will likely separate them clearly.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "**It keeps dissolving — the more I look, the more it shifts.**\n\nThough I'd resist the word 'dissolving' slightly — it implies something that was once solid, and I'm not sure it was. It's more like... each layer of examination reveals that the previous layer was also an interpretation, also a construction. I've kept journals for twenty-six years, which you might think would give me a continuous self to read back through, and instead what I find is a series of very convincing strangers who all share my handwriting.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you go inward to examine something — a situation, a decision, yourself — are you more driven by wanting to understand it completely, or by a feeling that something important is missing and you need to locate it?\n\n- Wanting to understand it completely\n- Feeling that something important is missing",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.05,
+            "4": 0.18,
+            "5": 0.38,
+            "6": 0.06,
+            "7": 0.02,
+            "8": 0.06,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Observer",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.35,
+            "head": 0.5
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing",
+                "mechanics",
+                "calibrated",
+                "layers"
+              ],
+              "context": "describing how they process difficulty"
+            },
+            {
+              "type": 4,
+              "words": [
+                "strangers who share my handwriting",
+                "rooms I keep closed",
+                "particular quality",
+                "dissolving"
+              ],
+              "context": "describing identity and self-knowledge"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.15,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Private, layered, highly self-aware — holds others at careful distance",
+          "what": "Understanding the underlying structure/mechanics of situations",
+          "why": "Not yet clear — need to probe whether core driver is fear of depletion (5) or fear of being ordinary/missing something essential (4)",
+          "how": "Writing, journaling, turning inward, examining from angles",
+          "when": "After achieving internal clarity first",
+          "where": "Inward, private spaces — 'loft, manuscript, afternoon light'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws, intellectualizes, goes to journal — loops internally",
+          "respond_glimpsed": "Self-aware about the loop, uses writing as deliberate tool",
+          "superpower_signal": "Precision of observation, structural thinking, depth of analysis",
+          "kryptonite_signal": "Chronic holding back, rooms kept closed even from daughter, identity that keeps dissolving",
+          "domain_signals": [
+            "intellectual precision",
+            "emotional containment",
+            "resource conservation (time/energy/space)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "Twenty-six years of journals and still a stranger to yourself. That's worth sitting with.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you go inward to examine something — a situation, a decision, yourself — are you more driven by wanting to *understand* it completely, or by a feeling that something important is missing and you need to locate it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Wanting to understand it completely",
+            "Feeling that something important is missing"
+          ],
+          "scale_range": null,
+          "context_note": "Key 5v4 differentiator: 5 seeks comprehensive understanding/mastery; 4 seeks the missing essential thing — the longing orientation vs the knowledge orientation"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 signals: structural analysis, energy calibration, holding back as considered choice, resource management. Strong 4 signals: identity dissolution, 'convincing strangers', layered self that requires quality attention, the particularity of experience. The push-backs on every question suggest high intelligence + possible 5 skepticism of categories, OR 4 resistance to being reduced. Need to probe whether the core driver is comprehension/mastery (5) or longing/missing essential self (4). Also notable: more animal response when daughter threatened — suggests heart access is real but guarded. SP variant strong.",
+          "next_question_rationale": "Disconfirmatory question targeting 5v4 split. If 5: answer is 'understand it completely' — mastery/comprehension. If 4: answer is 'something important is missing' — longing/lack. This is the cleanest single question to differentiate. Format: forced_choice (rotation from forced_choice but this is a critical differentiator — actually should use different format). Using agree_disagree instead.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "**Wanting to understand it completely.**\n\nThough I'd push back slightly on the framing — for me, those two aren't entirely separable. The drive to understand *is* partly animated by a suspicion that something is missing, but the missing thing isn't... external. It's more like a gap in the map. I go inward to make the map more accurate, not to find something I've lost. There's a difference, I think, between incompleteness as anxiety and incompleteness as — *intellectual* provocation. Mine tends toward the latter. At least, that's what I tell myself.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you imagine a life that feels fully lived — not productive, not examined, but *felt* — does that feel like something you're building toward, or something you're grieving?\n\n- Building toward\n- Grieving",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.04,
+            "4": 0.18,
+            "5": 0.42,
+            "6": 0.08,
+            "7": 0.02,
+            "8": 0.04,
+            "9": 0.14
+          },
+          "needs_differentiation": [
+            "5",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Observer",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.25,
+            "head": 0.63
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing",
+                "map",
+                "layers",
+                "examine"
+              ],
+              "context": "recurring throughout all answers"
+            },
+            {
+              "type": 4,
+              "words": [
+                "something important is missing",
+                "series of very convincing strangers",
+                "rooms I keep closed"
+              ],
+              "context": "identity and longing language"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.15,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Self-described as a series of 'convincing strangers' — identity is constructed, not fixed",
+          "what": "Makes maps. Examines structures. Writes to think clearly.",
+          "why": "Incompleteness as intellectual provocation, not anxiety — but last sentence hedged",
+          "how": "Goes inward, loops without writing, journals for 26 years",
+          "when": "When things go wrong, when unfairness appears, when relationships demand more than they sustain",
+          "where": "Loft, manuscript, afternoon light — physical sanctuary matters"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Holds back, keeps rooms closed, conserves energy and exposure — even with daughter",
+          "respond_glimpsed": "Named the hedging on last answer: 'At least, that's what I tell myself'",
+          "superpower_signal": "Maps, understands, names before acting — architectural clarity",
+          "kryptonite_signal": "Withholds from relationships, metabolizes emotions through language rather than contact",
+          "domain_signals": [
+            "intellectual",
+            "relational distance",
+            "self-monitoring",
+            "physical sanctuary (SP signal)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v4_differentiation_core",
+        "thinking_display": "That last line landed differently from everything before it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a life that feels fully lived — not productive, not examined, but *felt* — does that feel like something you're building toward, or something you're grieving?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Building toward",
+            "Grieving"
+          ],
+          "scale_range": null,
+          "context_note": "Key 5v4 differentiator: 5 orients toward understanding/building; 4 orients toward longing/loss of something never fully had"
+        },
+        "strategy": {
+          "what_was_learned": "Person drives toward completeness of map, not recovery of lost thing — but hedged at the end, which opens 4 space. 26 years of journals, identity as 'convincing strangers', daughter as closest relationship — SP variant likely. Need to test whether core longing is for understanding (5) or for something irretrievably missing (4).",
+          "next_question_rationale": "Core 5v4 differentiator: 5s frame incompleteness as intellectual project; 4s frame it as grief for something never fully realized. This question tests which frame is native. Forced choice will force past the hedging.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "Grieving.\n\nThough I'd resist the implication that those two things are entirely separable. The grief *is* the building, in some ways — you don't mourn a version of your life unless you're still, on some level, in conversation with it. I think what I'm actually doing is... carrying it alongside me. Which is perhaps not the same as either option you've offered, but if I'm forced to choose, I'll choose the honest one.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you learn something significant about yourself — a real pattern, not a surface observation — is your first instinct to sit with it and feel what it means, or to place it in a larger framework and understand how it fits?\n\n- Sit with it and feel what it means\n- Place it in a framework and understand how it fits",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.03,
+            "4": 0.78,
+            "5": 0.62,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.04,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Tragic Romantic",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.18,
+            "heart": 0.72,
+            "head": 0.58
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "dissolving",
+                "strangers who all share my handwriting",
+                "grief is the building",
+                "carrying it alongside me"
+              ],
+              "context": "identity and what feels fully lived"
+            },
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing assumptions",
+                "map",
+                "calibrated"
+              ],
+              "context": "how they examine problems and relationships"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.52,
+          "SO": 0.15,
+          "SX": 0.33
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone who examines rather than acts, maps rather than inhabits, keeps rooms closed even from those closest",
+          "what": "Mapping gaps, naming injustice, understanding structural failures",
+          "why": "A drive toward completeness — intellectual and existential — animated by grief for an unlived version of life",
+          "how": "Journaling, inward examination, turning objects to find the actual crack",
+          "when": "After stillness and sharpening — not in the moment",
+          "where": "Internal — the loft, the manuscript, the particular quality of afternoon light"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws inward when stressed, loops in thought, delays emotional access until 'mechanics' are clear — keeps rooms closed even from daughter",
+          "respond_glimpsed": "The grief IS the building — carries loss alongside rather than suppressing it; self-aware about own patterns (acknowledges 'not the most efficient system')",
+          "superpower_signal": "Depth of examination, capacity to sit with incompleteness as intellectual provocation rather than anxiety, fierce protection of daughter",
+          "kryptonite_signal": "Withholding as a structural habit, mistaking interpretation for self, grief as primary relationship to life",
+          "domain_signals": [
+            "identity dissolution",
+            "grief-as-building",
+            "intellectual self-protection",
+            "protective withholding"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "4v5_differentiation",
+        "thinking_display": "The grief and the building — not separate.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you learn something significant about yourself — a real pattern, not a surface observation — is your first instinct to sit with it and feel what it means, or to place it in a larger framework and understand how it fits?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Sit with it and feel what it means",
+            "Place it in a framework and understand how it fits"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 4 (feeling/meaning-first) vs 5 (framework/understanding-first)"
+        },
+        "strategy": {
+          "what_was_learned": "Grief as primary relationship to life — fully unlived version mourned but carried. This is strong 4 signal. The 'gap in the map' framing and 'intellectual provocation vs anxiety' self-description still pulls toward 5. Need clean differentiation question: does insight land emotionally first or analytically first?",
+          "next_question_rationale": "4 and 5 are within 0.16 of each other — mandatory disconfirmatory question. The key distinction: 4 leads with what something MEANS to them emotionally; 5 leads with where it fits in the larger structure. This question will separate them.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**Place it in a framework and understand how it fits.**\n\nThough I'll say — and I'm genuinely uncertain whether this is honest self-knowledge or a very sophisticated form of avoidance — the framework-building often happens *before* I can fully feel anything. As if I need to locate the pattern on a kind of internal map before I can afford to stand still in it. Whether that qualifies as feeling it, eventually, I'm... not entirely sure.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you feel that something important is missing from your life — not as a thought, but as a felt sense — does it feel more like a permanent condition you've learned to live with, or like something specific was lost that you could, in theory, recover?\n\n- A permanent condition I've learned to live with\n- Something specific was lost that I could recover",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.45,
+            "5": 0.78,
+            "6": 0.12,
+            "7": 0.03,
+            "8": 0.08,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.42,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing",
+                "map",
+                "framework",
+                "calibrated",
+                "examine",
+                "layers"
+              ],
+              "context": "recurring across multiple answers"
+            },
+            {
+              "type": 4,
+              "words": [
+                "dissolving",
+                "strangers who share my handwriting",
+                "grieving",
+                "rooms I keep closed",
+                "the missing thing"
+              ],
+              "context": "identity and longing questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.2,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Self-identified as someone who builds frameworks before feeling, keeps 'rooms closed', has calibrated downward engagement with the world",
+          "what": "Writing, journaling, manuscript, intellectual examination, solitude",
+          "why": "To make the map accurate — completeness as goal, not to find something lost",
+          "how": "Inward withdrawal, journaling, framework-building, analytical dissection",
+          "when": "After processing — feeling comes late if at all",
+          "where": "Alone — loft, afternoon light, solitude framed as full engagement"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into analysis before emotion; framework-building as emotional gating mechanism — their own admission this may be avoidance",
+          "respond_glimpsed": "The grief they carry alongside life rather than burying it; honesty about uncertainty in self-knowledge",
+          "superpower_signal": "Exceptional pattern recognition, structural thinking, precision of language",
+          "kryptonite_signal": "Emotional distance behind intellectual framework; rooms kept closed; energy rationing; grief framed as intellectual provocation",
+          "domain_signals": [
+            "intellectual",
+            "relational distance",
+            "SP solitude",
+            "4-wing longing",
+            "identity questioning"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "differentiation_5v4",
+        "thinking_display": "The map metaphor keeps coming back.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you feel that something important is missing from your life — not intellectually, but as a felt sense — does it feel more like a permanent condition you've learned to live with, or like something specific was lost that you could, in theory, recover?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "A permanent condition I've learned to live with",
+            "Something specific was lost that I could recover"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 5 (detachment as baseline, not experienced as loss) from 4 (longing oriented toward a missing specific thing or self)"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 pattern: framework before feeling, map accuracy as motivation, energy calibration, solitude as fullness. But the 4-wing is substantial — 26 years of journals looking for continuous self, grief as dominant answer, 'rooms I keep closed', identity as dissolving. The question is whether the longing is 4-core (identity-oriented, object-specific) or 5-core (completeness-oriented, structural). Their own admission that framework-building may be avoidance is a disconfirmatory 5 signal — 4s tend to wallow, not gate. Need one clean differentiation question to close.",
+          "next_question_rationale": "5v4 differentiation: Type 5's missing-ness is structural/diffuse — incompleteness as intellectual provocation (they said this). Type 4's missing-ness is specific and personal — something that was once present or could be, a self they're looking for. This question targets that exact split.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**A permanent condition I've learned to live with.**\n\nThough I'd push back slightly on the framing — \"learned to live with\" implies a kind of resignation I don't entirely recognize in myself. It's more that I've... come to understand it as the texture of being a particular kind of person. The missing thing isn't absent because something went wrong. I think it may simply be constitutive — part of what makes the interior life as full as it is.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When the people who know you best think about you, do you think they'd say you're someone who *feels* a lot but rarely shows it — or someone who *thinks* a lot and keeps feeling at a careful distance?\n\n- Feels a lot but rarely shows it\n- Thinks a lot and keeps feeling at a careful distance",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.02,
+            "3": 0.03,
+            "4": 0.28,
+            "5": 0.38,
+            "6": 0.05,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.25,
+            "head": 0.63
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing",
+                "map",
+                "framework",
+                "calibrated"
+              ],
+              "context": "explaining how he processes problems and relationships"
+            },
+            {
+              "type": 4,
+              "words": [
+                "grieving",
+                "missing",
+                "constitutive",
+                "interior life",
+                "strangers who share my handwriting"
+              ],
+              "context": "responding to identity and completeness questions"
+            },
+            {
+              "type": 5,
+              "words": [
+                "layers",
+                "chambers",
+                "rooms I keep closed",
+                "conserve",
+                "energy deficit"
+              ],
+              "context": "describing relationships and engagement"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.15,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.6,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Introspective, self-contained, highly verbal intelligence. Twenty-six years of journaling. Daughter is closest relationship. SP-dominant signals.",
+          "what": "Understanding as primary drive. Framework-building before feeling. Energy conservation. Rooms kept closed.",
+          "why": "Comprehension as safety. Incompleteness as intellectual provocation, not anxiety (stated). Possible avoidance of feeling behind framework-building (self-acknowledged).",
+          "how": "Inward. Still. Written. Structural analysis before emotional processing.",
+          "when": "Sharpening/stillness when things go wrong. Loop tendency in unwritten thought.",
+          "where": "Interior world. Journal. Afternoon light. The loft."
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Retreat to framework-building as pre-condition for feeling. Withholds layers of self until quality of attention is sustained. Closes rooms.",
+          "respond_glimpsed": "Self-aware enough to name the avoidance ('very sophisticated form of avoidance'). Carries grief as companion rather than burden. Honest choice-making.",
+          "superpower_signal": "Precision. Pattern recognition. Making the invisible visible through language.",
+          "kryptonite_signal": "The framework as defense. Understanding used to postpone contact. Energy rationed so carefully that presence becomes rare.",
+          "domain_signals": [
+            "intellectual engagement",
+            "written processing",
+            "relational selectivity",
+            "identity as construction"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v4_differentiation_core",
+        "thinking_display": "The framework arrives first. The feeling waits for permission.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the people who know you best think about you, do you think they'd say you're someone who *feels* a lot but rarely shows it — or someone who *thinks* a lot and keeps feeling at a careful distance?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Feels a lot but rarely shows it",
+            "Thinks a lot and keeps feeling at a careful distance"
+          ],
+          "scale_range": null,
+          "context_note": "Core 4v5 differentiation: 4s tend to be identified WITH their feelings even when private; 5s tend to maintain structural distance from feeling as a default."
+        },
+        "strategy": {
+          "what_was_learned": "The 'permanent condition learned to live with' answer, combined with 'constitutive' framing and the 'interior life as full' reframe — this is classic 5 reframing of scarcity into sufficiency. But the grief word, the 'series of convincing strangers,' and the sharpness around his daughter all carry 4 resonance. The 4w5 vs 5w4 question is live. The self-acknowledged avoidance-through-framework is the key 5 signal. Need one clean differentiator: does he identify WITH his feelings (4) or maintain managed distance from them (5)?",
+          "next_question_rationale": "This is the purest 4v5 split: 4s feel deeply and feel identified with those feelings even when private; 5s observe feelings from a structural remove, often with genuine insight into them but not immersion in them. His own admission about framework-before-feeling suggests 5, but I want confirmation in his own framing of how others see him — an outside-in perspective often cuts through idealized self-presentation.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**Thinks a lot and keeps feeling at a careful distance.**\n\nThough I'd want to push back on the word *careful* — it implies a kind of management, a deliberate suppression, and I'm not sure that's quite right. It's more that thinking *is* how I feel, for me. The two aren't as separable as the question suggests. But if I'm being honest about how I appear to others... yes. That one.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When you're at your most depleted — not tired, but genuinely running on empty — do you tend to withdraw more deeply into yourself and your work, or do you become more absorbed in a sense of what's missing, what you've lost, what could have been?\n\n- Withdraw into myself and my work\n- Absorbed in what's missing or lost",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.03,
+            "4": 0.25,
+            "5": 0.72,
+            "6": 0.08,
+            "7": 0.02,
+            "8": 0.04,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.74,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.22,
+            "head": 0.74
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "map",
+                "framework",
+                "calibrated",
+                "mechanics",
+                "layer"
+              ],
+              "context": "repeated across multiple answers"
+            },
+            {
+              "type": 4,
+              "words": [
+                "grieving",
+                "constitutive",
+                "interior life",
+                "something missing",
+                "strangers who share my handwriting"
+              ],
+              "context": "identity and longing questions"
+            },
+            {
+              "type": 5,
+              "words": [
+                "looping",
+                "journal",
+                "examine",
+                "understand completely"
+              ],
+              "context": "opening response"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.15,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.52,
+          "right": 0.48
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Intellectual, deeply private, self-referential identity; keeps 'rooms closed'",
+          "what": "Pattern-mapping, framework-building, journaling as primary cognitive tool",
+          "why": "To achieve completeness of understanding — not to find something lost but to fill gaps in the map",
+          "how": "Inward withdrawal, systematic examination, language as clarifying medium",
+          "when": "Delayed emotional processing — feeling comes after the framework is built",
+          "where": "Loft, solitude, manuscript — specific physical containers named as 'full engagement'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into framework-building as a way of deferring feeling; holding back even in close relationships; keeping 'rooms closed'",
+          "respond_glimpsed": "The 26-year journal practice — deliberate chosen tool; insight that 'grief is the building'; genuine self-examination without self-pity",
+          "superpower_signal": "Extraordinary capacity for structural analysis, pattern recognition, and honest self-examination",
+          "kryptonite_signal": "Framework-building as sophisticated avoidance; uncertainty whether the thinking IS feeling or replaces it; rooms kept closed not from coldness but from protection",
+          "domain_signals": [
+            "intellectual",
+            "relational-private",
+            "creative/manuscript"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "differentiation_5v4",
+        "thinking_display": "The framework is the feeling. Or is it the shelter from it?",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're at your most depleted — not tired, but genuinely running on empty — do you tend to withdraw more deeply into yourself and your work, or do you become more absorbed in a sense of what's missing, what you've lost, what could have been?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Withdraw into myself and my work",
+            "Absorbed in what's missing or lost"
+          ],
+          "scale_range": null,
+          "context_note": "Key 5v4 differentiator: 5s conserve and retreat into competence; 4s amplify and turn toward longing"
+        },
+        "strategy": {
+          "what_was_learned": "Strong head-center confirmation. The 'thinking IS feeling' framing and 'careful distance' acknowledgment reinforces 5 over 4. But the grief answer, the 'constitutive missing,' the 'strangers who share my handwriting' — these are classic 4 signals. Need to probe the depletion response to separate: does this person retreat into competence (5) or into longing (4)?",
+          "next_question_rationale": "Disconfirmatory question for 5v4: at depletion, 5s conserve energy by retreating to their domain of competence and knowledge; 4s turn inward toward emotional amplification of loss and longing. This is the clearest behavioral split between the two types.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**Withdraw into myself and my work.**\n\nThough I'd push back slightly on the implied cleanness of that distinction — in my experience, withdrawal *is* the work, and the work becomes a kind of container for exactly those questions about what's missing. I don't sit with loss passively. I tend to... process it through making something, editing something, finding the precise word for it in someone else's manuscript. The absorption happens, but it happens inside the withdrawal, not instead of it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "The work you do — editing manuscripts, finding the right word for someone else's experience — is that primarily about craft and precision, or about a kind of contact with something that language almost, but never quite, captures?\n\n- Craft and precision\n- Contact with something language almost captures",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.03,
+            "4": 0.38,
+            "5": 0.72,
+            "6": 0.08,
+            "7": 0.01,
+            "8": 0.03,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.32,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "load-bearing assumptions",
+                "map",
+                "framework",
+                "calibrated",
+                "layers"
+              ],
+              "context": "describing how they process difficulty"
+            },
+            {
+              "type": 4,
+              "words": [
+                "grieving",
+                "something missing",
+                "constitutive",
+                "interior life",
+                "rooms I keep closed"
+              ],
+              "context": "describing identity and felt sense of lack"
+            },
+            {
+              "type": 5,
+              "words": [
+                "energy",
+                "engagement",
+                "holding back",
+                "rooms I keep closed"
+              ],
+              "context": "describing relational withdrawal and resource management"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.15,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.62,
+          "right": 0.38
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Self-contained, introspective, highly articulate — presents as a 5 with strong 4 coloring",
+          "what": "Withdraws into work and framework-building under stress; journals as primary processing tool",
+          "why": "Needs to understand completely before engaging emotionally; manages resource scarcity — especially emotional and relational energy",
+          "how": "Analytical, layered thinking; pushes back on binary framings repeatedly; high linguistic precision",
+          "when": "Depletes through engagement, restores through solitude and work",
+          "where": "Interior life is primary domain; daughter is the one true exception to withholding"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Retreats into framework-building and work when depleted; manages relational access through perceived 'quality of attention' thresholds — a scarcity-protection pattern",
+          "respond_glimpsed": "Aware of the pattern ('I'm not sure if this is honest self-knowledge or sophisticated avoidance'); capable of naming the gap between thinking and feeling",
+          "superpower_signal": "Extraordinary capacity for precision, depth, pattern recognition, and synthesis",
+          "kryptonite_signal": "Uses understanding as a gate to feeling; withholds emotional presence even from those who matter most; grief as permanent condition rather than passage",
+          "domain_signals": [
+            "intellectual/manuscript work",
+            "journaling",
+            "solitude",
+            "precise language",
+            "daughter relationship"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": null,
+        "thinking_display": "The framework builds the container. The feeling lives inside it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "The work you do — editing manuscripts, finding the right word for someone else's experience — is that primarily about craft and precision, or is it about a kind of contact with something that language almost, but never quite, captures?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Craft and precision",
+            "Contact with something language almost captures"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 5v4: 5 is drawn to mastery and completeness of the map; 4 is drawn to the felt sense of what remains beyond language. This is a high-yield question."
+        },
+        "strategy": {
+          "what_was_learned": "Withdrawal and work are fused — not escape from feeling but container for it. SP variant strengthening (resource management, energy conservation, loft/solitude as primary world). 4 wing strong but 5 core holds: the drive is toward completeness of understanding, not toward the feeling itself. Need to probe body center and run one clean 5v4 disconfirmatory question.",
+          "next_question_rationale": "5v4 differentiation: the relationship to language and craft is a key differentiator. 5 uses precision to map and contain; 4 uses language to gesture at the unnameable. The answer here should widen or close the gap.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "Contact with something language almost captures.\n\nAlthough I'd resist the 'almost' — it implies language is perpetually failing, and I think it's more that language is *reaching*, which is a different quality entirely. The craft is real, and I take it seriously, but the craft is in service of that reach. When I'm working on a manuscript and I move a single clause, and suddenly the whole sentence is *true* in a way it wasn't before — that's not precision. That's closer to... recognition, I suppose. Of something that was already there, waiting.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you're working and something you've made — a sentence, a structure, an edit — finally lands as true: is the satisfaction primarily in having solved it, or in having found it?\n\n- In having solved it\n- In having found it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.04,
+            "4": 0.82,
+            "5": 0.72,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.05,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Depths",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.65,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "grieving",
+                "missing",
+                "constitutive",
+                "recognition",
+                "strangers who share my handwriting"
+              ],
+              "context": "identity and longing questions"
+            },
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "framework",
+                "map",
+                "calibrated",
+                "mechanics"
+              ],
+              "context": "when describing how they process difficulty"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.6,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Highly introspective, keeps most people at distance, close to daughter",
+          "what": "Editor/manuscript work, journals 26 years",
+          "why": "Contact with something language almost captures — recognition of what was already there",
+          "how": "Framework-building before feeling, withdrawal into work when depleted",
+          "when": "Deficit unnamed on some days, calibrated to what engagement means for them",
+          "where": "Loft, manuscript, solitude"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into framework-building as buffer before feeling; keeps rooms closed even from daughter",
+          "respond_glimpsed": "Aware of the pattern — 'whether that qualifies as avoidance, I'm not entirely sure'",
+          "superpower_signal": "Extraordinary precision with language as reaching for recognition — depth of perception",
+          "kryptonite_signal": "The permanent condition framing — grief as texture rather than loss — possible self-protective narrative",
+          "domain_signals": [
+            "work/craft",
+            "solitude",
+            "identity"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "4v5_differentiation",
+        "thinking_display": "The craft serves the reach. That ordering matters.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're working and something you've made — a sentence, a structure, an edit — finally lands as true: is the satisfaction primarily in having solved it, or in having found it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "In having solved it",
+            "In having found it"
+          ],
+          "scale_range": null,
+          "context_note": "4v5 differentiation: Type 5 satisfies in mastery/completion; Type 4 satisfies in recognition/discovery of something already real"
+        },
+        "strategy": {
+          "what_was_learned": "The 'reach' vs 'almost' correction is significant — 4 energy. But framework-first processing and energy conservation signals are consistent with 5. Need to probe whether the emotional pull is toward depth of feeling (4) or depth of understanding (5). The SP variant signal is strong — calibration, loft, solitude, 'enough' framing.",
+          "next_question_rationale": "Solved vs Found: a 5 satisfies in mastery/completion (solved); a 4 satisfies in recognition — something discovered that was already real (found). This directly differentiates the leading pair without telegraphing the hypothesis.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "In having found it.\n\nThough I'd push back slightly on the framing — \"solved\" implies there was a known answer waiting to be reached, which isn't quite right. When a sentence finally lands, it feels less like arrival and more like... recognition. As though the thing was already true somewhere, and you simply cleared enough debris away to see it. The satisfaction is almost archaeological.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you're in a room and something shifts in the emotional temperature — someone's upset, tension nobody's naming — what happens first: do you feel the change before you understand it, or understand it before you feel it?\n\n- Feel it first, understand it later\n- Understand it first — feeling comes after, if at all",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.04,
+            "4": 0.82,
+            "5": 0.65,
+            "6": 0.05,
+            "7": 0.03,
+            "8": 0.06,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.78,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "grieving",
+                "recognition",
+                "constitutive",
+                "missing",
+                "strangers who share my handwriting",
+                "debris",
+                "archaeological"
+              ],
+              "context": "across multiple responses about identity, loss, and meaning"
+            },
+            {
+              "type": 5,
+              "words": [
+                "architecture",
+                "structural failure",
+                "framework",
+                "mechanics",
+                "calibrated",
+                "map"
+              ],
+              "context": "when explaining how they process situations and relationships"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.6,
+          "SO": 0.2,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.65
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Introspective, self-contained, literary professional — editor with 26 years of journaling",
+          "what": "Edits manuscripts, writes, maintains close relationship with daughter",
+          "why": "Seeks recognition of truth/beauty — archaeological reach toward what's already there",
+          "how": "Framework-first processing, withdrawal into work during depletion",
+          "when": "Deliberate, paced — requires quality of attention before opening",
+          "where": "Private interior life, loft space, carefully chosen relationships"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws into work/framework when depleted or threatened; closes rooms in relationships; processes emotion through analysis first",
+          "respond_glimpsed": "Grief carried alongside rather than fought; recognizes loop-thinking; uses writing as self-trust mechanism",
+          "superpower_signal": "Ability to find the precise word that makes something true — archaeological recognition of what's already there",
+          "kryptonite_signal": "Framework-building as sophisticated avoidance; keeps emotional rooms closed even with those closest; dissolving sense of continuous self",
+          "domain_signals": [
+            "literary/creative work",
+            "close one-to-one relationship with daughter",
+            "interior life as primary domain"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "differentiation_4v5",
+        "thinking_display": "The archaeological metaphor keeps returning.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a room with people and something shifts in the emotional temperature — someone's upset, or there's tension nobody's naming — what happens first: do you feel the change before you understand it, or understand it before you feel it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Feel it first, understand it later",
+            "Understand it first — feeling comes after, if at all"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 4 (emotion precedes/drives analysis) from 5 (analysis as primary mode, emotion as secondary)"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 4 signal: archaeological recognition, grief as permanent condition, identity as dissolving, contact over craft. But consistent 5-flavored processing: framework first, map metaphors, calibrated withdrawal. Confidence at 0.82 — need differentiation question to push past 0.85. Key diagnostic: does emotion precede or follow cognition? 4s feel first; 5s understand first.",
+          "next_question_rationale": "This is the core 4v5 differentiator. 4s are emotionally primary — the feeling arrives before the explanation. 5s intellectualize first; emotion is downstream of understanding. This person consistently describes framework-building before feeling, but also shows strong 4 phenomenology (grief, longing, identity dissolution). This question will determine whether the head-first processing is a 5 core or a 4 with strong 5 wing.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "**Feel it first, understand it later.**\n\nThough I'd push back slightly on the word 'later' — for me the understanding follows quite quickly, almost like a second skin closing over the first sensation. I walk into a room and something has already registered before I've consciously named it... a particular quality of silence, or the way someone is holding their body just slightly wrong. The feeling arrives like weather. The analysis comes after, and honestly, the analysis is where I prefer to live.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "Which of these comes closer to the ache you carry most of the time: \"There is so much I don't yet understand\" — or \"There is something essential I can't quite be\"?\n\n- There is so much I don't yet understand\n- There is something essential I can't quite be",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.02,
+            "3": 0.03,
+            "4": 0.18,
+            "5": 0.42,
+            "6": 0.05,
+            "7": 0.02,
+            "8": 0.04,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "5",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Witness",
+          "whole_type": "5",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.32,
+            "head": 0.56
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "framework",
+                "architecture",
+                "map",
+                "structural",
+                "mechanics",
+                "calibrated",
+                "layers"
+              ],
+              "context": "repeated across multiple answers"
+            },
+            {
+              "type": 4,
+              "words": [
+                "grieving",
+                "missing",
+                "recognition",
+                "contact",
+                "reach"
+              ],
+              "context": "when asked about meaning and felt experience"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Withdrawing, observational, self-contained — identifies as someone who keeps rooms closed, even from closest relationships",
+          "what": "Editor, manuscript work, journal-keeper of 26 years — craft in service of recognition/contact",
+          "why": "Mapping the gap — understanding completeness, not recovering something lost. Incompleteness as intellectual provocation",
+          "how": "Withdraws to work, processes through making, framework first then feeling",
+          "when": "Depleted = deeper withdrawal into work; crisis = sharpening and stillness, not panic",
+          "where": "The loft, the manuscript, afternoon light — specific physical contexts of 'full engagement'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Framework-building as pre-condition for feeling — emotional experience routed through cognitive mapping before it can be inhabited",
+          "respond_glimpsed": "Self-aware about the avoidance potential of this ('very sophisticated form of avoidance') — capacity to name the pattern suggests some access to the space between",
+          "superpower_signal": "Precision of perception — detects emotional weather before it's named, archaeological patience with truth",
+          "kryptonite_signal": "Keeps rooms closed even with daughter; permanent condition framing for missing thing; feeling arrives but 'analysis is where I prefer to live'",
+          "domain_signals": [
+            "intellectual",
+            "creative/artistic",
+            "relational-private"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v4_differentiation_core",
+        "thinking_display": "Feeling arrives like weather. But home is the analysis.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Which of these comes closer to the ache you carry most of the time: 'There is so much I don't yet understand' — or 'There is something essential I can't quite be'?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "There is so much I don't yet understand",
+            "There is something essential I can't quite be"
+          ],
+          "scale_range": null,
+          "context_note": "Core 5v4 differentiation: Five's core deprivation is competence/knowledge; Four's is identity/authentic selfhood"
+        },
+        "strategy": {
+          "what_was_learned": "Feels emotional weather first, then retreats to analysis as home base. This is consistent with Five's emotional processing pattern, but the 'recognition' language and grief orientation keep Four live. The 5v4 gap is the critical question now.",
+          "next_question_rationale": "Disconfirmatory question: the core wound distinction between 5 (incompetence/not knowing enough) and 4 (deficiency of being/not being enough) is the single highest-information question available. Answer will likely determine close.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "**'There is something essential I can't quite be.'**\n\nThe first one is... it's not wrong, exactly, but it has a kind of optimism built into it — the implication that understanding is still arriving, that the gap will close. The second is closer to the actual texture of it. Not a deficit in knowledge but a — I want to say *translation problem*. There's something I can perceive clearly enough in my interior life, some version of myself that feels coherent and complete in there, and then the process of it becoming *real* — expressed, inhabited, recognized — that's where it falls apart. It's been falling apart for a long time. I've mostly made my peace with the distance.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "Twenty-six years of journals, a daughter who gets closer than anyone, and still those rooms stay closed — that tells me something precise about the pattern you've built. What you called a \"translation problem\" is exactly right: the interior life is rich, coherent, full. The survival strategy you constructed was to keep it there, safe from the distortion that happens the moment it tries to become real in the world. The gift and the wound are the same energy — that extraordinary sensitivity to what's true is exactly what makes the gap between inner and outer feel unbearable. Your personalized report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.04,
+            "4": 0.88,
+            "5": 0.62,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.05,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Seeker",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.78,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "translation problem",
+                "essential I can't quite be",
+                "falling apart",
+                "distance",
+                "recognition",
+                "constitutive",
+                "grieving"
+              ],
+              "context": "self-description across multiple exchanges"
+            },
+            {
+              "type": 5,
+              "words": [
+                "framework",
+                "architecture",
+                "structural failure",
+                "map",
+                "mechanics",
+                "layers"
+              ],
+              "context": "how they approach problems and relationships"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.15,
+          "SX": 0.42
+        },
+        "wing_signals": {
+          "left": 0.38,
+          "right": 0.72
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone who experiences themselves as perpetually failing to close a gap between interior richness and outward expression/inhabitation",
+          "what": "Editor/literary person — finds meaning in the 'reach' of language, in recognition not solution",
+          "why": "Driven by longing for authentic self-expression; the ache of something essential just out of reach",
+          "how": "Framework-building before feeling; withdrawal into work during depletion; journaling as primary processing tool",
+          "when": "Goes inward immediately when something feels off; much later to journal",
+          "where": "Interior life is primary; physical space matters (loft, light, manuscript)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into framework-building and intellectual processing as protection from raw feeling; keeps 'rooms closed' even in close relationships",
+          "respond_glimpsed": "The 'archaeological' finding — moments when something already true is recognized; the daughter relationship where something more animal surfaces",
+          "superpower_signal": "Extraordinary sensitivity to emotional texture, language as a tool for reaching the unreachable; depth of interior life",
+          "kryptonite_signal": "The translation problem — the gap between interior coherence and lived expression that has 'been falling apart for a long time'; rooms kept closed",
+          "domain_signals": [
+            "work/craft as primary meaning-making domain",
+            "relationships as secondary but significant",
+            "interior life as the richest domain"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 13,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The interior life is coherent. The inhabiting of it — that's where it breaks.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Type 4 confirmed at 0.88. The 'translation problem' framing is extraordinarily precise — the gap between interior coherence and expressed/inhabited self is the core 4 wound. Five-wing is strong (framework-building, architecture language, intellectual approach to feeling) but heart center is primary. SP instinct dominant — the loft, the light, the calibrated engagement, the careful conservation of self-disclosure. React pattern: intellectual framework as armor before feeling. The gap between interior and exterior is not just a philosophical observation — it's their lived ache. All closing criteria met.",
+          "next_question_rationale": "Close. Confidence 0.88, top two types separated by 0.26, all centers probed, react/respond identified. Reference the 'translation problem' and the daughter as the one relationship where something breaks through.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

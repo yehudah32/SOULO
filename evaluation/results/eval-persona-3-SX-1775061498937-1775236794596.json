@@ -1,0 +1,784 @@
+{
+  "run_id": "eval-persona-3-SX-1775061498937-1775236794596",
+  "timestamp": "2026-04-03T17:19:54.596Z",
+  "tier": "tier1",
+  "persona_id": "persona-3-SX-1775061498937",
+  "ground_truth": {
+    "core_type": 3,
+    "wing": "3w4",
+    "instinctual_variant": "SX",
+    "tritype": [
+      3,
+      6,
+      9
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 63,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 3,
+    "final_wing": null,
+    "final_confidence": 0.68,
+    "types_considered": [
+      {
+        "type": 3,
+        "peak_confidence": 0.68,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.08,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.08,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.08,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.06,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.04,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 5,
+    "critical_violations": [],
+    "per_commandment": {},
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 5,
+    "exploratory": 5,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 5,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 3,
+        "top_type": 3,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 4,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 5,
+        "top_type": 3,
+        "confidence": 0.68
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, adaptive, no right or wrong answers. Different question types will show up as we go, and the questions will shift based on what you share. One question at a time, always.\n\nWhen something goes wrong in your life — a plan falls apart, a relationship hits a wall, something fails — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in your life — a plan falls apart, a relationship hits a wall, something fails — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Nothing yet — first exchange.",
+          "next_question_rationale": "Open question targeting the gut/immediate reaction to disruption. Designed to surface dominant center (body=anger/instinct, heart=shame/feeling, head=fear/thinking) from the very first response.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "There's a beat — maybe half a second — where I take stock of what it looks like from the outside before I've fully registered what it feels like on the inside. I'm not proud of that, but I think it's accurate. Then something that I'd call recalibration kicks in — what's salvageable, what's the narrative, how do we move forward — and that machinery starts up very quickly, which is efficient, but occasionally means I've reframed the situation before I've actually *sat with it*. My second wife — my current partner — she's pointed that out more than once. Not in those words, but in so many words.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When a project or effort fails, how much does it matter to you that other people don't see the full extent of it?\n\n- Strongly agree\n- Agree\n- Neutral\n- Disagree\n- Strongly disagree",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.06,
+            "3": 0.62,
+            "4": 0.12,
+            "5": 0.08,
+            "6": 0.04,
+            "7": 0.1,
+            "8": 0.06,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "3v7",
+            "3v4"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.68,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "what's the narrative",
+                "what's salvageable",
+                "how do we move forward",
+                "reframed"
+              ],
+              "context": "describing internal response to failure"
+            },
+            {
+              "type": 4,
+              "words": [
+                "not proud of that",
+                "sat with it",
+                "what it feels like on the inside"
+              ],
+              "context": "self-observation, mild shame at pattern"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.45,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Self-aware, partnered, reflective enough to notice the pattern but not necessarily stop it",
+          "what": "Rapid reframing after setbacks — image awareness before emotional processing",
+          "why": "Unknown — survival mechanism around image/control/narrative not yet confirmed",
+          "how": "External optics first, then internal machinery for salvage and narrative",
+          "when": "Under failure/disruption conditions",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Image-check before feeling — external frame before internal experience",
+          "respond_glimpsed": "Capacity for self-observation — knows the pattern, names it honestly, mild shame suggests some desire to do it differently",
+          "superpower_signal": "Rapid recalibration, narrative agility, forward momentum",
+          "kryptonite_signal": "Bypasses emotional processing — reframes before feeling — partner has named this",
+          "domain_signals": [
+            "relationship",
+            "self-observation",
+            "failure response"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "What got named is the machinery. What didn't get named is what the machinery is protecting.",
+        "strategy": {
+          "what_was_learned": "Strong 3 signal: external image-check before internal feeling, rapid reframing, narrative control. Some 4 coloring: self-awareness, mild shame, the 'not proud of that' — could be 3w4. Partner has named the pattern — this person is at least partially aware they're running a bypass. Heart center confirmed. Need to probe: what the narrative control is actually protecting — prestige, image, fear of being seen as weak/failing?",
+          "next_question_rationale": "Test the 3 hypothesis more directly: is the rapid reframing about image management or something deeper? The 'what does it look like from the outside' is the key tell. Want to know if success/achievement matters to self-perception or just external validation. Agree/disagree format to rotate from open.",
+          "question_format_last_used": "open"
+        },
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When a project or effort fails, how much does it matter to you that other people don't see the full extent of it?",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": null
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "**Agree.**\n\nThere's a natural instinct to manage the narrative around failure — I don't think that's vanity so much as basic professional hygiene. How a setback is perceived shapes what opportunities remain available to you afterward, and I've watched people let a stumble become their entire story simply because they didn't think carefully about how it was framed. That said — and I'm aware of how this sounds — there's a difference between strategic discretion and outright concealment, and I'd like to think I've generally stayed on the right side of that line.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you're working on something that matters to you, how often do you find yourself thinking about how it will land with the people who matter — before it's even finished?\n\n- Never\n- Sometimes\n- Often\n- Always",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.68,
+            "4": 0.08,
+            "5": 0.04,
+            "6": 0.04,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            3,
+            8
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.72,
+            "head": 0.16
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "narrative",
+                "reframe",
+                "strategic discretion",
+                "salvageable",
+                "opportunities",
+                "perceived",
+                "framed"
+              ],
+              "context": "describing response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.4,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "someone acutely aware of external perception, capable of self-reflection about it",
+          "what": "narrative management, rapid recalibration after failure",
+          "why": "unclear yet — strategic or identity-protective?",
+          "how": "reframing before feeling, professional framing",
+          "when": "",
+          "where": "professional domain strongly signals"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "external image check before internal emotional registration; rapid reframe of failure before sitting with it",
+          "respond_glimpsed": "self-aware about the pattern — wife's observation landed",
+          "superpower_signal": "efficient recalibration, narrative intelligence",
+          "kryptonite_signal": "bypassing genuine feeling for image management",
+          "domain_signals": [
+            "professional",
+            "relational"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The justification came before the reflection.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're working on something that matters to you, how often do you find yourself thinking about how it will land with the people who matter — before it's even finished?",
+          "question_format": "frequency",
+          "answer_options": [
+            "Never",
+            "Sometimes",
+            "Often",
+            "Always"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong image-awareness around failure; defends it as strategic rather than ego-driven — classic 3 rationalization. The distinction between 'strategic discretion' and 'outright concealment' suggests an active inner critic policing the line. Rapid recalibration before sitting with feeling is textbook 3 affect bypass. Wife's observation is a real data point — this pattern has relational cost. Need to probe whether the drive is about achievement/success or power/impact (3 vs 8 differentiation) and whether image is tied to identity (3) or competence (5).",
+          "next_question_rationale": "Frequency question probes whether audience-awareness is constant (high 3) vs situational. Moving to a different format after agree_disagree. Rotates to frequency. Also probes the heart center further — is the image concern about being seen as successful/competent, or is it about belonging/love (2)?",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "**Often.**\n\nThat's just... good craft, honestly. If you're creating something meaningful — whether it's a brand narrative, a strategy, a presentation — understanding your audience isn't vanity, it's competence. The best work I've done always had a reader in mind from the first draft. I'd call that professional instinct more than anything else.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "Think about a time you did something well and nobody knew about it — it went unrecognized. What happened inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.08,
+            "3": 0.62,
+            "4": 0.05,
+            "5": 0.05,
+            "6": 0.05,
+            "7": 0.04,
+            "8": 0.03,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v7"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.65,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.65,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "narrative",
+                "reframe",
+                "how it lands",
+                "professional instinct",
+                "strategic discretion",
+                "good craft",
+                "audience"
+              ],
+              "context": "describing response to failure and work process"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.4,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Professional, image-aware, achievement-oriented",
+          "what": "Narrative management, efficiency, reframing",
+          "why": "Not yet clear — working hypothesis: worth/success tied to performance",
+          "how": "Strategic, forward-moving, audience-aware",
+          "when": "Before processing internally — external scan first",
+          "where": "Professional domain primary"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "External scan before internal registration — image management is automatic, pre-conscious",
+          "respond_glimpsed": "Self-awareness about the pattern — 'I'm not proud of that'",
+          "superpower_signal": "Efficiency, narrative craft, strategic clarity",
+          "kryptonite_signal": "Reframing before sitting with experience — bypassing feeling",
+          "domain_signals": [
+            "professional achievement",
+            "brand/narrative work",
+            "relationship feedback received but not fully integrated"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "frequency",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The justification came faster than the admission.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Think about a time you did something well and nobody knew about it — it went unrecognized. What happened inside you?",
+          "question_format": "behavioral_anchor",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing whether recognition is essential to sense of success — key 3 differentiator vs 1"
+        },
+        "strategy": {
+          "what_was_learned": "Strong image-management instinct, pre-conscious external scan before internal registration, professional justification language wrapping what sounds like core image concern. Heart center confirmed. Leading 3 hypothesis strengthened. Now need to probe: is success meaningful without recognition? Does their value come from achievement or from how achievement is seen?",
+          "next_question_rationale": "Behavioral anchor on unrecognized success — this directly differentiates 3 (needs recognition for sense of worth) from 1 (integrity-based, recognition optional) and surfaces whether internal satisfaction is sufficient or if external validation is load-bearing.",
+          "question_format_last_used": "frequency"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "*A brief pause, the kind that feels considered rather than uncertain.*\n\nThere's a particular quality to that experience that I've never quite found the right word for. I remember restructuring a client's entire messaging architecture — quietly, behind the scenes — and watching them take a bow in front of their board while I sat in the back of the room. And I thought... *should* this bother me more than it does?\n\nThe honest answer is that there were two things happening simultaneously. One was a clean, almost private satisfaction — the work was right, I knew it was right, and that had its own integrity. The other thing was smaller and less comfortable to admit: a kind of waiting. As though the recognition was still coming, just delayed. And when it didn't, I told myself the first feeling was the real one.\n\n*A measured exhale.*\n\nI'm not sure it was.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you imagine the life you're building — professionally, personally — how much of that picture depends on how it looks versus how it actually feels to be living it?\n\nRate on a scale of 1 to 10, where 1 means it's almost entirely about how it feels, and 10 means it's almost entirely about how it looks.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.06,
+            "3": 0.68,
+            "4": 0.1,
+            "5": 0.06,
+            "6": 0.04,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            3,
+            4
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.78,
+            "head": 0.1
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "narrative",
+                "reframe",
+                "strategic discretion",
+                "professional instinct",
+                "how it will land",
+                "craft"
+              ],
+              "context": "describing failure and work process"
+            },
+            {
+              "type": 4,
+              "words": [
+                "particular quality",
+                "never quite found the right word for",
+                "the real one"
+              ],
+              "context": "describing unrecognized work"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.45,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning professional, self-aware, manages image strategically",
+          "what": "Narrative control, reframing, achievement",
+          "why": "Recognition and validation — partially acknowledged",
+          "how": "Recalibration, strategic framing, efficiency over emotional processing",
+          "when": "Under pressure/failure — image management kicks in immediately",
+          "where": "Professional domain primarily"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Image check before emotional registration; reframing before sitting with feeling",
+          "respond_glimpsed": "Private satisfaction from quality work — briefly acknowledged then suppressed",
+          "superpower_signal": "Strategic intelligence, narrative craft, adaptability",
+          "kryptonite_signal": "Self-deception about what the 'real' feeling is; delaying emotional truth",
+          "domain_signals": [
+            "professional achievement",
+            "narrative/messaging",
+            "audience awareness"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "behavioral_anchor",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The two feelings coexisted — but only one was allowed to be true.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the life you're building — professionally, personally — how much of that picture depends on how it looks versus how it actually feels to be living it?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 10
+          },
+          "context_note": "1 = almost entirely about how it feels / 10 = almost entirely about how it looks"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 3 signal: image management precedes emotional registration, narrative control is primary. But that last answer showed genuine 4-adjacent depth — the 'particular quality' language, the uncertainty about which feeling was real. This is either a 3 with strong self-awareness OR a 3w4. Need to probe the identity/authenticity dimension more carefully. Also: the admission 'I'm not sure it was' is significant — that's the crack in the image machine. Next question: probe whether the 'picture' of his life is constructed for audience or for self. Scale format, image vs. authentic feeling.",
+          "question_format_last_used": "behavioral_anchor"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "**7 out of 10 — how it looks.**\n\nAnd I'll be honest with you, that ratio has shifted over the years — not always in the direction I'd prefer to report. Early on, I genuinely believed the two were inseparable: that if you built something worth admiring, the internal experience would follow as a matter of course. What I've come to understand — more recently than I'd like to admit — is that those aren't always the same project. The image can be structurally sound long after something quieter has started to... not quite keep pace with it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

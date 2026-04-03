@@ -1,0 +1,190 @@
+{
+  "run_id": "eval-persona-8-SO-1775061632342-1775239399080",
+  "timestamp": "2026-04-03T18:03:19.080Z",
+  "tier": "tier1",
+  "persona_id": "persona-8-SO-1775061632342",
+  "ground_truth": {
+    "core_type": 8,
+    "wing": "8w9",
+    "instinctual_variant": "SO",
+    "tritype": [
+      8,
+      2,
+      5
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 40,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 0,
+    "final_wing": null,
+    "final_confidence": 0,
+    "types_considered": []
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": null,
+    "mistype_as": 0,
+    "mistype_harm_severity": "low",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 9,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+    },
+    "labeled_or_liberated": "liberated"
+  },
+  "question_quality": {
+    "total_questions": 1,
+    "exploratory": 1,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 1,
+    "correct_type_first_considered_at": null,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so the more honest you are, the sharper the picture gets. One question at a time, and I'll lead.\n\nWhen something goes wrong in your life — a mistake, a setback, a conflict — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in your life — a mistake, a setback, a conflict — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready. No data yet.",
+          "next_question_rationale": "Opening with a broad motivational question targeting the first internal response to adversity — this is the highest-yield question for identifying center of intelligence (body=anger/gut reaction, heart=shame/feeling response, head=fear/mental scramble). Avoids warm-up questions entirely per Phase 1 protocol.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

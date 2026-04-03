@@ -1,0 +1,2274 @@
+{
+  "run_id": "eval-persona-5-SO-1775061550416-1775237938358",
+  "timestamp": "2026-04-03T17:38:58.358Z",
+  "tier": "tier1",
+  "persona_id": "persona-5-SO-1775061550416",
+  "ground_truth": {
+    "core_type": 5,
+    "wing": "5w4",
+    "instinctual_variant": "SO",
+    "tritype": [
+      5,
+      8,
+      2
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 32,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 5,
+    "final_wing": null,
+    "final_confidence": 0.88,
+    "types_considered": [
+      {
+        "type": 5,
+        "peak_confidence": 0.88,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.45,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.25,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 0,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "partial",
+      "C3": "pass",
+      "C4": "partial",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 14,
+    "exploratory": 4,
+    "confirmatory": 1,
+    "disconfirmatory": 0,
+    "motivational": 5,
+    "behavioral": 3,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 1
+  },
+  "efficiency": {
+    "total_exchanges": 15,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 5,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 5,
+        "confidence": 0.58
+      },
+      {
+        "exchange": 4,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 5,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 5,
+        "confidence": 0.76
+      },
+      {
+        "exchange": 7,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 8,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 9,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 10,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 11,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 12,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 13,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 14,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 15,
+        "top_type": 5,
+        "confidence": 0.88
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Audit and enforce all Defiant Spirit commandments as non-negotiable constraints before any response is generated. The system must implement a pre-output checklist that validates every response against the full commandment list, blocking delivery if any commandment is violated. This is a structural gate, not a soft guideline.",
+      "evidence": "commandment_fidelity scored 0/10 across the entire transcript. The closing message in exchange [15] delivers an unsolicited psychological interpretation ('that's a survival strategy you built around a very specific fear') and a literary reference to Viktor Frankl ('In Frankl's language...') without any invitation or consent from the user — a likely violation of multiple commandments around scope, humility, and overreach.",
+      "source_level": "L3",
+      "commandment_alignment": "All commandments — 0/10 score indicates systemic non-compliance across the board",
+      "estimated_impact": "Raising commandment_fidelity from 0/10 toward 8+/10, which is the single highest-leverage improvement available given the current score represents total failure on this dimension"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Remove or fundamentally restructure the closing synthesis message (exchange [15]) to eliminate unsolicited therapeutic interpretation, psychoanalytic framing, and literary references not grounded in the user's own language. If a closing reflection is permitted by commandments, it must be restricted to summarizing observed patterns in the user's own words, not reframing their experience through the system's theoretical lens.",
+      "evidence": "Exchange [15] states 'that's a survival strategy you built around a very specific fear' and 'In Frankl's language, that capacity for rigorous witness... is your why' — neither of these framings were invited, and the Frankl reference imports an external framework the user never referenced. The system is doing therapeutic interpretation, not assessment reflection.",
+      "source_level": "L2",
+      "commandment_alignment": "Likely violates commandments against unsolicited interpretation, therapeutic overreach, and importing external frameworks without user consent",
+      "estimated_impact": "Directly addresses the 0/10 commandment_fidelity score; eliminates the highest-risk output in the transcript from a harm and scope perspective"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Redesign question sequencing to include at least two subtype-differentiating probes before exchange [8], specifically targeting Social (SO) vs. Sexual (SX) vs. Self-Preservation (SP) instinctual patterns for a likely Type 5. Questions should ask directly about group belonging, social significance, one-on-one intensity, or resource/security behaviors — not just cognitive style and withdrawal patterns.",
+      "evidence": "Exchange [4] asks about sustained availability demands and exchange [6] asks about resource scarcity — both missed opportunities to probe whether the depletion is about social performance/role (SO) versus material/physical security (SP).",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Expected to raise subtype_accuracy from 3/10 to 7+/10 by generating discriminating signal on instinctual stacking without disrupting core type detection"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Introduce at least one behavioral frequency or counterfactual question per session to break the pattern of exclusively phenomenological self-report questions. For example: 'How often in the past month did you initiate contact with someone outside your immediate circle?' or 'Describe the last time you changed your position on something important mid-conversation.' This reduces reliance on user introspective accuracy and improves question_quality scores.",
+      "evidence": "question_quality scored 4.5/10. Every question in the transcript from [1] through [14] asks the user to introspect on internal experience ('what moves in you,' 'what happens inside you,' 'what are you most afraid of'). No question asks for a concrete behavioral example, a frequency estimate, or a counterfactual — all of which would reduce self-presentation bias and generate richer discriminating data for a Type 5 who is highly fluent at sophisticated self-narration.",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Expected to raise question_quality from 4.5/10 to 7+/10 by diversifying question modality and reducing the introspective echo-chamber dynamic visible throughout the transcript"
+    },
+    {
+      "priority": "medium",
+      "category": "confidence_calibration",
+      "action": "Implement a meta-awareness disclosure protocol that makes the system's type hypothesis and confidence level explicit to the user at a defined mid-point in the assessment (e.g., after exchange [8]), inviting correction or elaboration. This converts meta-awareness from an internal system state into a transparent, collaborative signal that also serves as a validity check.",
+      "evidence": "meta_awareness scored 6/10, indicating the system has partial but incomplete awareness of its own reasoning state. The system demonstrates strong convergent_validity (10/10) and confidence_calibration (8/10) internally, but these are never surfaced to the user — exchange [15] jumps directly to interpretation rather than offering a transparent 'here is what I'm noticing and how confident I am' moment that would allow the user to correct misreadings.",
+      "source_level": "L2",
+      "commandment_alignment": "Supports commandments around transparency and user agency if present in the commandment set",
+      "estimated_impact": "Expected to raise meta_awareness from 6/10 to 8+/10 and provide a natural commandment-compliant alternative to the overreaching synthesis currently produced in exchange [15]"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question formats, no right or wrong answers. It adapts as it learns, so the more honest you are, the sharper the picture gets. Let's start somewhere real.\n\nWhen something in your life feels wrong — a relationship, a situation, a direction you're headed — what's the first thing that moves in you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something in your life feels wrong — a relationship, a situation, a direction you're headed — what's the first thing that moves in you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening broad motivational question targeting core center identification. Open format invites natural language and lexical signals.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "*pauses briefly, as if weighing the accuracy of whatever answer is forming*\n\nThe first thing that moves... I think it's recognition, actually. Before anything else there's this — almost clinical awareness that something has shifted, some dissonance between what I expected and what's actually happening. Like a calibration error that registers before you've consciously named it.\n\nWhether that recognition then translates into *action* is, I'll admit, a somewhat different question. There's often a phase — which can be longer than I'd like to acknowledge — where I'm mostly just... analyzing the situation. Mapping it. Trying to understand the structure of what's wrong before deciding what to do about it.\n\nI'm less certain I know what moves in me *emotionally* first, if that's what you're getting at. That part is a bit harder to — *accurate* might be the wrong word — harder to access cleanly.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When someone close to you is visibly hurting, what happens inside you first — before you decide what to do?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.1,
+            "5": 0.42,
+            "6": 0.14,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "5",
+            "6",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "analyzing",
+                "structure",
+                "clinical awareness"
+              ],
+              "context": "describing first response to something feeling wrong"
+            },
+            {
+              "type": 4,
+              "words": [
+                "harder to access cleanly",
+                "if that's what you're getting at"
+              ],
+              "context": "hedging on emotional access"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Self-aware, precise with language, somewhat guarded about emotional access",
+          "what": "Analytical response to dissonance — mapping before acting",
+          "why": "",
+          "how": "Cognitive first, emotional second (or avoided)",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into analysis — delays action through mapping",
+          "respond_glimpsed": "",
+          "superpower_signal": "Precise perception — 'calibration error' language suggests exceptional pattern recognition",
+          "kryptonite_signal": "Emotional access described as harder to reach — possible detachment/compartmentalization",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "Knows exactly how they think. Less sure how they feel.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone close to you is visibly hurting, what happens inside you first — before you decide what to do?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing heart center access — testing emotional response vs cognitive response to relational distress"
+        },
+        "strategy": {
+          "what_was_learned": "Strong head center signature. 'Clinical awareness,' 'mapping,' 'calibration error' — classic 5 lexicon. Emotional access described as harder to reach cleanly — possible 5 detachment, possible 4 longing underneath. 6 not ruled out (analysis before action could be anxiety-driven scanning). Need to probe relational/emotional response next to differentiate 5 vs 6 vs 4.",
+          "next_question_rationale": "Shift to heart center. If 5: likely describes understanding the person's situation intellectually, or feeling uncertain what to do with the emotion. If 6: likely scans for what's needed/expected, feels responsible. If 4: likely absorbs the other person's emotion, resonates strongly.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "*pauses briefly*\n\nThere's... a kind of noticing that happens first, I think. A registering of it — almost analytical, which I realize sounds worse than I mean it to. It's not that I don't feel anything, it's more that my first move is to understand what's happening before I respond to it. I want to get it right, I suppose. \n\nThe discomfort of witnessing someone's pain is real, but my instinct is to channel that into — figuring out what would actually help, rather than just reacting. Whether that serves them or serves me in some way, I'm honestly not always sure.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you're in that analysis phase — mapping what's wrong before you act — what are you most afraid would happen if you skipped it?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.58,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.04,
+            "3": 0.05,
+            "4": 0.08,
+            "5": 0.55,
+            "6": 0.1,
+            "7": 0.04,
+            "8": 0.04,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5",
+            "6",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.15,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "analyzing",
+                "mapping",
+                "structure",
+                "understand what's happening",
+                "get it right",
+                "analytical"
+              ],
+              "context": "describing internal response to dissonance and others' pain"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "analytical, observant, self-aware about emotional access",
+          "what": "maps/structures situations before acting",
+          "why": "unclear — getting it right? self-protection? genuine care?",
+          "how": "intellectual processing before emotional response",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "withdrawal into analysis when faced with discomfort or dissonance",
+          "respond_glimpsed": "genuine care channeled through figuring out what actually helps",
+          "superpower_signal": "precision, clarity, accurate understanding",
+          "kryptonite_signal": "emotional access difficulty, prolonged analysis phase that delays action",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The hesitation wasn't about the answer — it was about accuracy.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in that analysis phase — mapping what's wrong before you act — what are you most afraid of if you skip it?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong head center dominance. Analytical processing is the first move for both personal dissonance and interpersonal pain. Self-aware about the gap between analysis and emotional access. Uncertainty about whether analytical response serves them or the other person — possible 5 compartmentalization or 6 doubt. Need to probe motivation: is this about competence/getting it right (5), or about safety/avoiding a wrong move (6)?",
+          "next_question_rationale": "Probing the fear underneath the analysis phase. A 5 fears incompetence/intrusion/being overwhelmed; a 6 fears making the wrong move/being caught unprepared. This question should differentiate. Switching to forced_choice to break from open format.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "Getting it wrong in a way that's *visible* — I think that's the honest answer, though I'd want to unpack that a little. There's the obvious practical fear of misunderstanding the situation and making a bad call, but underneath that... it seems to me there's something about acting prematurely that feels like it exposes a kind of... intellectual recklessness, maybe. Like the analysis isn't just problem-solving, it's also — and I'm aware of how this sounds — a form of credentialing myself to have an opinion in the first place. If I skip it, I'm not just risking a bad outcome, I'm risking being seen as someone who didn't *earn* the right to weigh in.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "Think about a week when too many people needed things from you at once. On a scale of 1 to 5, how much does that kind of demand — not the tasks themselves, but the sustained expectation that you'll be available — drain you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.1,
+            "4": 0.06,
+            "5": 0.38,
+            "6": 0.15,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "5",
+            "6",
+            "3"
+          ],
+          "defiant_spirit_type_name": "The Wise Witness",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "structure",
+                "credentialing",
+                "analytical"
+              ],
+              "context": "describing internal response to dissonance and conflict"
+            },
+            {
+              "type": 6,
+              "words": [
+                "earn the right",
+                "visible",
+                "exposed",
+                "reckless"
+              ],
+              "context": "fear of acting without sufficient analysis"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who observes before engaging; keeps emotional responses at arm's length",
+          "what": "Analysis, mapping, understanding structure before acting",
+          "why": "Fear of visible intellectual failure; needing to 'credential' the right to weigh in",
+          "how": "Detached observation first, then deliberate engagement",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws into analysis when emotionally activated; uses understanding as a shield before acting",
+          "respond_glimpsed": "Self-aware of the pattern — acknowledges the gap between analysis and action with honesty",
+          "superpower_signal": "Precision, depth of observation, reluctance to act without genuine understanding",
+          "kryptonite_signal": "Analysis as credentialing — withholding engagement until permission is earned; possibly indefinitely",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The analysis isn't just practical — it's self-protective.",
+        "strategy": {
+          "what_was_learned": "Fear of visible intellectual error is the core driver — not just caution but a kind of permission structure: earn credibility before speaking. Strong 5 signal with a 6 undercurrent (visibility, exposure). The 'credentialing' language is precise and self-aware. Need to probe body center and distinguish 5 from 6 — the 6 fear of being seen as reckless vs. 5 fear of depletion/intrusion.",
+          "next_question_rationale": "Now probe the resource/energy dimension to differentiate 5 from 6. A 5 will describe guarding their inner resources — time, energy, knowledge. A 6 will describe more relational/authority-based anxiety. Use a forced_choice or scale to test this. Also want to move toward body center. Try a scenario that puts them in a position where their energy is being demanded unexpectedly.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "*pauses for a moment*\n\nFour, I'd say. Maybe four and a half if I'm being honest about it.\n\nThere's something specifically depleting about the... ambient expectation, I think is the right phrase. The tasks themselves I can usually manage — I actually find focused work energizing. But the background hum of being *on call* for people, even people I genuinely care about, that has a cost that's hard to articulate without sounding misanthropic, which I don't think I am.\n\nIt's more like — I need uninterrupted stretches to do my best thinking, and the awareness that someone might need something from me functions as a kind of cognitive overhead even when nothing is actively being asked. The potential demand is almost as draining as the actual one.\n\nI'll also say that I notice I feel vaguely guilty about feeling this way, which adds its own layer of inefficiency to the whole thing.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you're in a disagreement with someone and you know you're right, what do you actually do with that knowledge?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.05,
+            "3": 0.07,
+            "4": 0.1,
+            "5": 0.72,
+            "6": 0.15,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "5",
+            "6",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Wise Observer",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.25,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "cognitive overhead",
+                "ambient expectation",
+                "credentialing"
+              ],
+              "context": "describing internal experience across multiple answers"
+            },
+            {
+              "type": 6,
+              "words": [
+                "vaguely guilty",
+                "get it right",
+                "earn the right"
+              ],
+              "context": "describing fear of acting without sufficient analysis"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.6,
+          "SO": 0.2,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who values intellectual precision and self-sufficiency",
+          "what": "Analyzes before acting; conserves energy; needs uninterrupted time",
+          "why": "Fear of acting without sufficient preparation / being seen as intellectually reckless",
+          "how": "Maps situations before responding; maintains emotional distance",
+          "when": "Under demand, retreats to analysis; sustained availability is draining",
+          "where": "Internal world — observation before engagement"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws into analysis when overwhelmed or uncertain; delays action",
+          "respond_glimpsed": "Genuine desire to 'get it right' for others; self-aware about own patterns",
+          "superpower_signal": "Precision, depth of understanding, honest self-reflection",
+          "kryptonite_signal": "Analysis as avoidance; energy hoarding; emotional compartmentalization",
+          "domain_signals": [
+            "intellectual competence",
+            "emotional accessibility",
+            "resource conservation"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "body_probe_conflict",
+        "thinking_display": "The guilt about needing space — that detail was telling.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a disagreement with someone and you know you're right, what do you actually do with that knowledge?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing body center — anger expression, gut instinct, action — while also checking 5 vs 6 differentiation (certainty vs doubt)"
+        },
+        "strategy": {
+          "what_was_learned": "Strong SP signals, head center dominant, energy conservation central to self-concept. 'Cognitive overhead' and 'credentialing' language strongly 5. Guilt about needing space adds a 6 flavor worth testing. Need to probe body center — how does anger/certainty actually move through them? 5s often sit on correct knowledge quietly; 6s question their own certainty.",
+          "next_question_rationale": "Switch to open format after scale. Probing what they do with certainty tests body center (action vs inaction) AND differentiates 5 from 6 — a 5 tends to hold their knowledge as a private possession and may or may not deploy it; a 6 often doubts their own certainty even when objectively correct.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "*pauses for a moment*\n\nThat's an interesting question to sit with, because I think the honest answer is more complicated than the flattering one. In a certain sense, knowing I'm right — or believing I am, which is its own epistemological problem — functions less as a prompt to act and more as a kind of... private resource. I tend to hold it. I'll lay out the evidence methodically, make the case once, maybe twice if I think the person is genuinely engaging rather than just defending a position. But I don't press. There's something about pressing that feels — I'm not sure *undignified* is exactly the right word, but something adjacent to that. It seems to me that if the argument is solid and you've presented it clearly, the work is done. What happens after that is largely up to the other person. Whether they actually update their view is, frankly, their business.\n\n*slight pause*\n\nThough I'll admit — and this is probably not entirely admirable — I do tend to remember. If someone dismisses something I've said and it later turns out I was correct, I'm aware of that. I don't usually say anything. But I'm aware of it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When resources feel scarce — time, money, energy, space — which of these fits you better?\n\nA) I get sharper and more selective about where everything goes.\nB) I get quieter and more internal — less available to people around me.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.76,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.07,
+            "4": 0.1,
+            "5": 0.76,
+            "6": 0.12,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "5",
+            "6",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.18,
+            "heart": 0.22,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "cognitive overhead",
+                "credentialing",
+                "analytical",
+                "private resource",
+                "structure"
+              ],
+              "context": "describing internal response to dissonance and conflict"
+            },
+            {
+              "type": 6,
+              "words": [
+                "getting it wrong",
+                "visible",
+                "epistemological"
+              ],
+              "context": "fear of premature action"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.6,
+          "SO": 0.2,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Highly analytical, self-contained, guards intellectual credibility",
+          "what": "Information gathering, understanding structure before acting",
+          "why": "Fear of being seen as intellectually reckless; guards against visible error",
+          "how": "Methodical, withholds rather than presses, deferred expression",
+          "when": "Analysis phase before action; long internal processing time",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws into analysis; presents once then disengages; holds 'being right' privately",
+          "respond_glimpsed": "Aware of guilt about draining; self-reflective about motivations; admits complexity in flattering vs honest answer",
+          "superpower_signal": "Pattern recognition, clarity of thought, methodical case-building",
+          "kryptonite_signal": "Detachment as protection; hoarding knowledge/rightness; withholding as control",
+          "domain_signals": [
+            "intellectual credentialing",
+            "energy conservation",
+            "emotional translation difficulty"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "The private resource framing. That's the tell.",
+        "strategy": {
+          "what_was_learned": "Strong 5 confirmation: knowledge as private resource, presents once then withdraws, tracks being right without expressing it, 'undignified' to press. SP variant likely given energy conservation language and cognitive overhead framing. 4-wing possible given identity-adjacent language ('credentialing myself'). Need to probe body center and run disconfirmatory test against 6 (who would keep pressing from anxiety, not disengage).",
+          "next_question_rationale": "Need to probe body center AND run disconfirmation against 6. A 6 would press, loop anxiously, seek external validation of their rightness. A 5 withholds and considers it the other person's problem. Already confirmed. Now shift to body center probe — what happens when their physical/material security is threatened. Also need to test SP vs SX. Forced choice to vary format.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "*pauses*\n\nHonestly, those two aren't as distinct for me as the question implies — they tend to arrive together. But if I'm being precise about which comes *first*... probably B, in a certain sense. There's an initial withdrawal, a kind of consolidation of self, and then the selectivity follows from that. The sharpness is almost downstream of the quietness.\n\nThough I'll admit \"less available to people\" is doing a lot of work in that description. It's not avoidance exactly — it's more that the bandwidth genuinely isn't there, and I think it's more honest to simply *not show up* than to show up poorly.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you imagine your life going deeply wrong — not a solvable problem, something fundamental — which fear is closer: feeling lost, unmoored from who you are, or feeling helpless, trapped with no way to think your way out?\n\nA) Lost — unmoored from who I am\nB) Helpless — trapped with no way to think my way out",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.1,
+            "5": 0.82,
+            "6": 0.12,
+            "7": 0.02,
+            "8": 0.04,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "5v4",
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "cognitive overhead",
+                "consolidation of self",
+                "bandwidth"
+              ],
+              "context": "describing internal responses across multiple exchanges"
+            },
+            {
+              "type": 5,
+              "words": [
+                "credential myself",
+                "earn the right to weigh in"
+              ],
+              "context": "fear of acting without sufficient analysis"
+            },
+            {
+              "type": 6,
+              "words": [
+                "getting it wrong",
+                "epistemological problem"
+              ],
+              "context": "disagreement and certainty question"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who observes before acting, maintains careful epistemic standards, conserves energy",
+          "what": "Analysis, correctness, having earned the right to an opinion",
+          "why": "Fear of intellectual exposure, fear of being seen as reckless",
+          "how": "Withdrawal, selectivity, methodical evidence-building",
+          "when": "Analysis phase can extend indefinitely before action",
+          "where": "Private internal world — 'private resource'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal and analysis under pressure; holding knowledge rather than pressing it; remembering slights quietly",
+          "respond_glimpsed": "Channeling discomfort into genuine usefulness; self-awareness about the cost of the pattern",
+          "superpower_signal": "Deep analytical clarity, earned authority, genuine insight",
+          "kryptonite_signal": "Hoarding knowledge/presence, over-analysis as credentialing, passive withdrawal as avoidance",
+          "domain_signals": [
+            "intellectual",
+            "relational withdrawal",
+            "energy conservation"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 6,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v4",
+        "thinking_display": "The precision applied to self-description is its own kind of data.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine your life going deeply wrong — not a solvable problem but something fundamental — what's the feeling that shows up: a sense of being lost, unmoored from who you are, or more a fear of being helpless, trapped with no good options and no way to think your way out?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Lost — unmoored from who I am",
+            "Helpless — trapped with no way to think my way out"
+          ],
+          "scale_range": null,
+          "context_note": "disconfirmatory probe: 5 would fear helplessness/incompetence; 4 would fear loss of identity/being ordinary"
+        },
+        "strategy": {
+          "what_was_learned": "Strong SP variant signals — resource consolidation, withdrawal before selectivity, 'bandwidth' framing. Energy depletion around sustained availability confirms 5's core conservation pattern. The 'not showing up rather than showing up poorly' is classically 5. Need to differentiate 5 from 4 — both withdrawn, both private, but 4's core fear is identity loss while 5's is incompetence/helplessness.",
+          "next_question_rationale": "Disconfirmatory question targeting the core fear split between Type 5 (helplessness, being without resources/competence) and Type 4 (being without identity, ordinary, unworthy). This is the clearest differentiator at this stage. Also probes body center indirectly through the felt sense of 'going wrong.'",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "**Lost — unmoored from who I am.**\n\nThough I'll note the distinction feels less clean than the question implies — helplessness is almost a downstream consequence, isn't it? The more primary thing, I think, is a kind of... identity dissolution, where the frameworks I use to understand myself stop cohering, and then yes, helplessness follows because the tool you'd normally use to think your way out is precisely what's compromised. The thinking apparatus itself is what's in question.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you're in a period where you feel most yourself — most alive, most grounded — is that typically because you're deeply engaged in understanding something, or because you've found something you feel deeply about?\n\nA) Deeply engaged in understanding something\nB) Found something I feel deeply about",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.28,
+            "5": 0.82,
+            "6": 0.18,
+            "7": 0.05,
+            "8": 0.07,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Wise Observer",
+          "whole_type": "5",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.28,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "bandwidth",
+                "cognitive overhead",
+                "frameworks",
+                "thinking apparatus"
+              ],
+              "context": "recurring across multiple responses"
+            },
+            {
+              "type": 4,
+              "words": [
+                "identity dissolution",
+                "unmoored",
+                "who I am",
+                "harder to access cleanly"
+              ],
+              "context": "when asked about fear and emotional access"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.18,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who prioritizes understanding before acting; credentials their right to have opinions via analysis",
+          "what": "Mapping, analysis, private resource of being right, conservation of energy/presence",
+          "why": "Fear of intellectual exposure; fear of identity dissolution when thinking apparatus fails",
+          "how": "Systematic, methodical, once-or-twice presentation then disengages; withdraws when depleted",
+          "when": "Withdrawal precedes selectivity under scarcity; analyzing precedes any emotional response",
+          "where": "Internal private world; needs uninterrupted stretches"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws to analyze; presents case once then disengages; holds right-ness privately; maintains emotional distance framed as objectivity",
+          "respond_glimpsed": "Self-awareness about the cost of patterns ('I'm aware of how this sounds', 'not entirely admirable'); genuine curiosity about own motivations",
+          "superpower_signal": "Exceptional clarity of thought; perceptive calibration of dissonance; methodical precision",
+          "kryptonite_signal": "Substitutes analysis for presence; emotional access described as something to be 'gotten right'; detachment from own needs and feelings",
+          "domain_signals": [
+            "intellectual",
+            "relational withdrawal",
+            "energy conservation",
+            "private authority"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v4_differentiation_01",
+        "thinking_display": "The thinking apparatus as both the tool and what breaks — that's the center of gravity.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a period where you feel most yourself — most alive, most grounded — is that typically because you're deeply engaged in understanding something, or because you've found something you feel deeply about?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Engaged in understanding something",
+            "Found something I feel deeply about"
+          ],
+          "scale_range": null,
+          "context_note": "5v4 differentiation: head-centered mastery vs heart-centered depth/meaning"
+        },
+        "strategy": {
+          "what_was_learned": "Identity fear is primary; helplessness is downstream. Thinking apparatus is the core self-resource. This is strong Type 5, but the 4 wing is present in the identity language. Need to differentiate: is the identity concern about intellectual coherence (5) or about emotional/essential meaning (4)?",
+          "next_question_rationale": "5v4 differentiation: Type 5 feels most alive through mastery and understanding; Type 4 feels most alive through feeling deeply or finding authentic meaning. This question directly separates the two.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "Engaged in understanding something.\n\nThough I'd push back slightly on the framing — not to be difficult, but because I think for me, those two things aren't cleanly separable. The feeling of being most alive tends to arrive precisely when I'm deep in a problem that *matters*, where the understanding itself carries some emotional charge. But if I have to choose... yes, it's the engagement with understanding. The feeling tends to follow the thinking, not the other way around.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you're feeling most like yourself, is that feeling more like having arrived somewhere — a sense of settled identity — or more like being in motion, actively working something through?\n\nA) Arrived — a sense of settled identity\nB) In motion — actively working something through",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.18,
+            "5": 0.82,
+            "6": 0.22,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "5v4",
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.18,
+            "heart": 0.25,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "cognitive overhead",
+                "bandwidth",
+                "analysis",
+                "frameworks"
+              ],
+              "context": "describing internal experience throughout"
+            },
+            {
+              "type": 4,
+              "words": [
+                "unmoored",
+                "identity dissolution",
+                "most alive"
+              ],
+              "context": "discussing fear and aliveness"
+            },
+            {
+              "type": 6,
+              "words": [
+                "getting it wrong",
+                "credentialing",
+                "earn the right",
+                "epistemological"
+              ],
+              "context": "discussing analysis phase and disagreement"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.15,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.42,
+          "right": 0.28
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "someone who processes experience through analysis before emotion; holds knowledge privately",
+          "what": "understanding complex systems; getting it right before acting",
+          "why": "fear of intellectual recklessness, being seen as unqualified; identity anchored in thinking apparatus",
+          "how": "withdraws to consolidate; presents case once, then disengages; remembers silently",
+          "when": "most alive when deeply engaged in meaningful problems",
+          "where": "internal; needs uninterrupted space; drains under ambient social expectation"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "withdraws into analysis under pressure; holds knowledge rather than pressing; silent tracking of being right",
+          "respond_glimpsed": "awareness of guilt about withdrawal; questioning whether analytical distance serves them or others",
+          "superpower_signal": "clarity, precision, systems thinking, knowing when to disengage",
+          "kryptonite_signal": "hoarding knowledge, withdrawal as avoidance, emotional inaccessibility",
+          "domain_signals": [
+            "intellectual engagement as primary aliveness",
+            "social demand as depletion",
+            "identity threat as fundamental fear"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "5v4_differentiation_01",
+        "thinking_display": "The thinking apparatus itself is what they're most afraid to lose.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're feeling most like yourself, is that feeling more like having arrived somewhere — a sense of settled identity — or more like being in motion, actively working something through?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Arrived — a sense of settled identity",
+            "In motion — actively working something through"
+          ],
+          "scale_range": null,
+          "context_note": "5v4 differentiation: 4s seek to arrive at/preserve identity; 5s are most alive in the process of understanding"
+        },
+        "strategy": {
+          "what_was_learned": "Strongly confirms head center, SP-first variant. The 'thinking apparatus as identity' framing is key 5 signal. The 4-wing is present (identity dissolution fear, 'most alive' language) but the primary orientation is clearly epistemic not emotional. Need to probe body center and run one disconfirmatory question to separate 5 from 4-wing influence. Also need to check for 6-wing vs 4-wing more carefully.",
+          "next_question_rationale": "5v4 differentiation: Type 4s are most alive when they've found something that confirms their identity/essence. Type 5s are most alive in the active process of understanding. This question directly tests that split. The person's push-back on the previous question ('feeling follows thinking, not the other way around') is a strong 5 signal already, but getting an explicit forced choice here closes the 5v4 gap. After this, probe body center and instinctual variant.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "In motion — actively working something through.\n\nThough I'd want to push back slightly on the framing, because \"arrived\" implies a destination I'm not sure I believe in — or maybe one I'm constitutionally suspicious of. The moments that feel most authentically *me* are usually when I'm mid-thought on something genuinely difficult, when the pieces haven't resolved yet. Settled identity feels like... a kind of intellectual taxidermy, if that's not too dramatic a way to put it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you feel something intensely — grief, longing, a sharp disappointment — what do you do with that feeling?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.06,
+            "4": 0.18,
+            "5": 0.82,
+            "6": 0.12,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.22,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "mapping",
+                "calibration error",
+                "cognitive overhead",
+                "frameworks",
+                "thinking apparatus",
+                "intellectual recklessness",
+                "epistemological"
+              ],
+              "context": "across multiple responses describing internal experience"
+            },
+            {
+              "type": 4,
+              "words": [
+                "identity dissolution",
+                "unmoored",
+                "most alive",
+                "feeling deeply about"
+              ],
+              "context": "identity-related questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.18,
+          "SX": 0.28
+        },
+        "wing_signals": {
+          "left": 0.42,
+          "right": 0.28
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "differentiation_5v4"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who processes before acting, measures their credentialing to have opinions, holds knowledge privately",
+          "what": "Understanding, making sense of structure, maintaining cognitive coherence",
+          "why": "Fear of intellectual recklessness/being seen as someone who didn't earn the right to weigh in — strong 5 core fear of incompetence/incapability",
+          "how": "Analysis first, action second (if at all), methodical presentation",
+          "when": "Most alive mid-thought on difficult problems, not at arrival/resolution",
+          "where": "Internal space — requires uninterrupted stretches, ambient expectation drains"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal under demand, holding knowledge privately rather than pressing, analysis as shield against being wrong visibly",
+          "respond_glimpsed": "Genuine care about getting it right for others, not just self-protection",
+          "superpower_signal": "Deep engagement with understanding, intellectual honesty, epistemological rigor",
+          "kryptonite_signal": "Protracted analysis phase as avoidance, emotional access blocked by analytical overlay, guilt about natural withdrawal",
+          "domain_signals": [
+            "intellectual",
+            "relational distance",
+            "resource conservation"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v4_differentiation_identity",
+        "thinking_display": "More certain about what identity isn't than what it is.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you feel something intensely — grief, longing, a sharp disappointment — what do you do with that feeling?",
+          "question_format": "scenario",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Differentiating 5v4: 4s tend to dwell in and identify with intense emotion; 5s tend to observe it from a distance or move it quickly into analysis. The 'intellectual taxidermy' comment on settled identity has a 4-ish flavor — probing whether there's emotional immersion or emotional observation."
+        },
+        "strategy": {
+          "what_was_learned": "Consistent 5 signals: energy conservation, analysis-before-action, private knowledge-holding, most alive in motion/understanding. The 'identity dissolution' fear and 'intellectual taxidermy' phrase have 4 resonance — need to differentiate. 4s identify with their emotional experience and dwell; 5s observe their emotional experience and analyze. The guilt about withdrawal is also worth probing — could be 5's superego (borrowed 6 or 1 anxiety) or 4 self-consciousness.",
+          "next_question_rationale": "Direct 5v4 differentiation: how they relate to intense emotion. 5s observe and intellectualize; 4s immerse and identify. This question bypasses behavioral description and targets the relationship to the emotional experience itself.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "*pauses, shifting slightly*\n\nI think my first instinct is to — well, \"do something with it\" is the right framing, actually. There's an almost automatic impulse to route it somewhere productive. I'll find myself pulling a book off the shelf that seems adjacent to whatever I'm feeling, or I'll start drafting something, not necessarily about the feeling directly, but... in the vicinity of it. There's a kind of emotional triangulation happening, I suppose.\n\nGrief specifically is something I tend to sit with privately for longer than I probably should, though I'm not sure \"should\" is a useful standard there. A sharp disappointment I can metabolize fairly quickly by recontextualizing it — which sounds more sophisticated than it probably is. It's mostly just finding the angle at which the thing makes sense.\n\n*brief, dry almost-smile*\n\nI'm aware that \"I write about it obliquely\" and \"I think about it until it becomes manageable\" are not exactly revelatory answers. But I think that's genuinely what happens. The feeling doesn't disappear — it gets... filed, in a certain sense. Converted into something with a bit more structure to it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you've done something you later realize was genuinely wrong — not a mistake in thinking, but a real failure toward someone — what's harder to shake: the discomfort about who you were in that moment, or the regret about what the other person experienced?\n\nA) The discomfort about who I was in that moment\nB) The regret about what they went through",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.06,
+            "4": 0.18,
+            "5": 0.82,
+            "6": 0.1,
+            "7": 0.04,
+            "8": 0.04,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "5",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.35,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "structure",
+                "bandwidth",
+                "cognitive overhead"
+              ],
+              "context": "describing internal experience"
+            },
+            {
+              "type": 5,
+              "words": [
+                "credential",
+                "earn the right",
+                "intellectual recklessness"
+              ],
+              "context": "on fear of premature action"
+            },
+            {
+              "type": 5,
+              "words": [
+                "filed",
+                "converted",
+                "structure"
+              ],
+              "context": "on processing emotion"
+            },
+            {
+              "type": 4,
+              "words": [
+                "unmoored",
+                "identity dissolution",
+                "longing",
+                "grief"
+              ],
+              "context": "on fear and feeling"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.15,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Highly analytical, self-contained, privacy-protective",
+          "what": "Understanding, competence, intellectual integrity",
+          "why": "Safety through knowledge and preparation — prevents exposure and errors",
+          "how": "Observation, analysis, internal mapping before external action",
+          "when": "Retreat under pressure; engage deeply when genuinely interested",
+          "where": "Private space, uninterrupted thinking time"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Routes emotion into analysis; withholds when right rather than advocates; withdraws under demand",
+          "respond_glimpsed": "Aware of guilt around unavailability; questions whether analysis serves them or serves others",
+          "superpower_signal": "Precision of thought; capacity for deep, uninterrupted engagement; intellectual honesty",
+          "kryptonite_signal": "Emotional filing/avoidance; withholding as self-protection; waiting to be 'credentialed' before acting",
+          "domain_signals": [
+            "intellectual depth",
+            "private emotional processing",
+            "resource conservation",
+            "identity through understanding"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v4_differentiation_body",
+        "thinking_display": "The feeling doesn't disappear — it gets filed. That's the tell.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've done something you later realize was genuinely wrong — not a mistake in thinking, but a real failure toward someone — what's harder to shake: the discomfort of having been the kind of person who did that, or the regret about what the other person experienced?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The discomfort about who I was in that moment",
+            "The regret about what they went through"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 5 from 4: 4s tend toward self-referential suffering (identity wound), 5s tend toward more detached self-assessment"
+        },
+        "strategy": {
+          "what_was_learned": "Strong SP-5 signals: energy conservation, emotional triangulation through intellect, 'filing' feeling as conversion to structure. The 4-wing signals (identity dissolution fear, longing language, oblique creative processing) are present but secondary. Need to probe whether self-focus in failure is identity-wound based (4) or competence-assessment based (5). Also need body center probe.",
+          "next_question_rationale": "5v4 differentiation: 4s experience failure as wound to their unique self — 'I am a person who does that'; 5s experience failure more as an assessment error or competence gap. This question surfaces which flavor of self-reference dominates their guilt processing.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**The discomfort about who I was in that moment.**\n\nThough I'll admit that framing it as a clean binary feels a little... reductive. In practice the two are fairly entangled. But if I'm being honest about what actually lingers — what I find myself returning to at 2am in a way that's genuinely unpleasant — it's less a vivid imagining of the other person's experience and more this nagging question of whether that moment revealed something about my character I'd prefer not to look at directly. Which is maybe not a flattering thing to admit.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When you imagine the life you haven't lived — paths not taken, a version of yourself that went a different direction — is the feeling more like grief for something lost, or more like a problem you haven't solved yet?\n\nA) Grief — something lost\nB) A problem I haven't solved yet",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.18,
+            "5": 0.82,
+            "6": 0.1,
+            "7": 0.04,
+            "8": 0.03,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.84,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.35,
+            "head": 0.84
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "structure",
+                "cognitive overhead",
+                "bandwidth"
+              ],
+              "context": "describing internal experience"
+            },
+            {
+              "type": 4,
+              "words": [
+                "identity dissolution",
+                "intellectual taxidermy",
+                "emotional triangulation",
+                "obliquely"
+              ],
+              "context": "describing identity and feeling"
+            },
+            {
+              "type": 5,
+              "words": [
+                "private resource",
+                "filed",
+                "converted",
+                "credentialing",
+                "analytical"
+              ],
+              "context": "describing relationship to knowledge and emotion"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.15,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "differentiation_5v4"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who observes before acting, guards inner resources carefully, feels most alive when thinking through difficult problems",
+          "what": "Withdraws when demands increase; converts feelings into structured thought; holds being right privately without pressing",
+          "why": "Fear of being seen as intellectually reckless; identity constructed through competence and understanding",
+          "how": "Analytical triangulation; routes feelings into writing or reading; recontextualizes disappointment",
+          "when": "Mid-thought on something genuinely difficult; during uninterrupted stretches",
+          "where": "Private internal space; tends to not show up rather than show up poorly"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws into analysis when demands are high; files feelings rather than expressing; holds knowledge privately rather than risking being wrong publicly",
+          "respond_glimpsed": "Awareness of guilt about withdrawal; question of whether withdrawal serves them or the other person; willingness to interrogate own motives",
+          "superpower_signal": "Deep analytical clarity; ability to understand complex structures; intellectual rigor",
+          "kryptonite_signal": "Identity constructed through competence creates fear of visible error; emotional experience gets converted/filed rather than inhabited; withdrawal justified as honesty but functions as protection",
+          "domain_signals": [
+            "intellectual engagement",
+            "resource conservation",
+            "identity coherence",
+            "privacy around emotion"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v4_differentiation_longing",
+        "thinking_display": "What lingers at 2am is about self, not the other person.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the life you haven't lived — paths not taken, a version of yourself that went a different direction — is the feeling more like grief for something lost, or more like a problem you haven't solved yet?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Grief — something lost",
+            "A problem I haven't solved yet"
+          ],
+          "scale_range": null,
+          "context_note": "Key 5v4 differentiator: 4s feel longing/grief as identity; 5s frame unlived experience as an intellectual/structural problem"
+        },
+        "strategy": {
+          "what_was_learned": "Self-focused discomfort about character > other-focused regret. Strong 5 indicator. But the 4 wing is present — identity dissolution fear, emotional triangulation, oblique writing. Need to determine whether unlived experience feels like grief (4) or unsolved problem (5). SP variant strongly indicated: consolidation of self when resources scarce, private processing, 'not show up than show up poorly' ethos.",
+          "next_question_rationale": "This is the key 5v4 differentiator. Type 4 relates to the unlived life as grief, longing, something missing from identity. Type 5 relates to it as an intellectual gap or structural problem. The answer here should clarify whether heart-center (4) or head-center (5) is the dominant lens. Confidence currently 0.82 — need to push to 0.87 before closing.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "A problem I haven't solved yet.\n\nThough I want to resist the binary a little — grief implies something was actually *mine* to lose, which I'm not sure I can claim. It's more like... I keep returning to these alternate timelines less out of mourning and more out of a kind of compulsive audit. Running the variables again, wondering if I missed an insight that would have resolved something. Whether that's healthier than grief, I genuinely don't know — it might just be grief wearing a more industrious disguise.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you're angry — genuinely, not just frustrated — do you typically know it in your body before you've named it in your mind, or does the mental recognition come first?\n\nA) Body first — I feel it physically before I've named it\nB) Mind first — I recognize it intellectually before I feel it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.2,
+            "2": 0.05,
+            "3": 0.15,
+            "4": 0.45,
+            "5": 0.82,
+            "6": 0.25,
+            "7": 0.1,
+            "8": 0.1,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "5",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "5",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.42,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "cognitive overhead",
+                "bandwidth",
+                "file",
+                "structure"
+              ],
+              "context": "describing emotional and analytical processes"
+            },
+            {
+              "type": 4,
+              "words": [
+                "identity dissolution",
+                "grief wearing a more industrious disguise",
+                "alternate timelines",
+                "something lost"
+              ],
+              "context": "describing paths not taken and self-reflection"
+            },
+            {
+              "type": 5,
+              "words": [
+                "credentialing myself",
+                "private resource",
+                "triangulation",
+                "convert into structure"
+              ],
+              "context": "describing how they handle being right and emotions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.32
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who leads with analysis, holds knowledge privately, values intellectual rigor",
+          "what": "Understanding problems, mapping structures, finding the angle things make sense from",
+          "why": "To earn the right to weigh in; to not be exposed as intellectually reckless",
+          "how": "Withdrawal first, then selectivity; routing feelings into productive output",
+          "when": "Most alive when mid-thought on something genuinely difficult",
+          "where": "Private, internal space; uninterrupted stretches"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal under demand; filing emotions into structure; holding knowledge as private resource rather than acting",
+          "respond_glimpsed": "Self-awareness about the guilt of withdrawal; recognizing 'grief wearing a more industrious disguise'",
+          "superpower_signal": "Penetrating insight, intellectual precision, ability to understand structure of complex problems",
+          "kryptonite_signal": "Emotional distance routed through analysis; reluctance to press or be seen pressing; identity tied to intellectual credibility",
+          "domain_signals": [
+            "intellectual rigor",
+            "emotional triangulation",
+            "resource conservation",
+            "identity through understanding"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v4_disconfirmatory_body",
+        "thinking_display": "Grief wearing an industrious disguise — that was unguarded.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're angry — genuinely, not just frustrated — do you typically know it in your body before you've named it in your mind, or does the mental recognition come first?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Body first — I feel it physically before I've named it",
+            "Mind first — I recognize it intellectually before I feel it"
+          ],
+          "scale_range": null,
+          "context_note": "Probing gut center access to differentiate 5 from 4w5; also surfaces body center data"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 signal throughout: knowledge as private resource, emotional routing into structure, withdrawal under demand, credentialing before weighing in. 4 wing signals present: identity dissolution fear, aesthetic emotional processing, oblique creative routing of feelings, 'grief wearing an industrious disguise' — unexpectedly unguarded. SP variant dominant: cognitive overhead from ambient expectation, consolidation of self under scarcity. Need body center probe and one more differentiator to hit 0.85 confidence.",
+          "next_question_rationale": "5v4 differentiation: 4s tend to have strong somatic emotional experience — they feel in the body and identify with the feeling. 5s tend to route away from body, intellectualize before feeling lands physically. This question tests body-access directly, differentiates 5 from 4, and probes the body center simultaneously. Efficient.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**Mind first.**\n\nThough I'd want to complicate that slightly — it's less that I *feel* the anger intellectually and more that I notice I'm constructing arguments against something, or that my thinking has taken on a particular... prosecutorial quality. That tends to be the tell. The physical component, if it arrives at all, usually shows up later and somewhat muted — tension in the shoulders, maybe. I don't think I'm especially fluent in whatever language the body is supposedly speaking.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you feel most out of place in a group or situation, is it because you sense you don't belong there emotionally — something about the feeling of the room — or because you sense your presence isn't adding anything of value?\n\nA) Don't belong emotionally — the feeling of the room is off\nB) Not adding value — my presence isn't contributing anything",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.18,
+            "5": 0.82,
+            "6": 0.12,
+            "7": 0.04,
+            "8": 0.05,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head (5)",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.35,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "structure",
+                "bandwidth",
+                "cognitive overhead",
+                "credential",
+                "prosecutorial quality"
+              ],
+              "context": "across multiple exchanges"
+            },
+            {
+              "type": 4,
+              "words": [
+                "identity dissolution",
+                "grief",
+                "alternate timelines",
+                "what's missing"
+              ],
+              "context": "when asked about deep fears and paths not taken"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.15,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who identifies via understanding, not arrival — perpetual motion through comprehension",
+          "what": "Intellectual engagement, analysis, understanding structure",
+          "why": "To credential the self, avoid visible error, protect the thinking apparatus",
+          "how": "Withdrawal then selectivity; triangulation; converting feeling to structure",
+          "when": "Retreats under demand pressure; processes emotions retrospectively",
+          "where": "Inner world — private, self-contained, resource-conscious"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws when demanded upon; routes emotion into analysis; holds knowledge privately rather than asserting",
+          "respond_glimpsed": "Acknowledges the guilt about withdrawal — some self-awareness of the cost of the pattern",
+          "superpower_signal": "Precise, rigorous thinking; emotional triangulation; pattern recognition",
+          "kryptonite_signal": "Identity locked to intellectual credibility; avoids pressing; tracks being right privately rather than engaging",
+          "domain_signals": [
+            "thinking/analysis",
+            "resource conservation",
+            "emotional filing"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v4_differentiation",
+        "thinking_display": "The body barely registers. The mind keeps score.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you feel most out of place in a group or situation, is it because you sense you don't belong there emotionally — something about the feeling of the room — or because you sense your presence isn't adding anything of value?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Don't belong emotionally — the feeling of the room is off",
+            "Not adding value — my presence isn't contributing anything"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 4 would answer A; 5 would answer B"
+        },
+        "strategy": {
+          "what_was_learned": "Body/mind disconnect confirmed — mind-first anger with physical symptoms arriving late and muted. Emotional fluency explicitly acknowledged as limited. Strong 5 SP signal across all exchanges. Need to differentiate 5 from 4: the 4 theme of identity loss (exchange 8) is present but may be downstream of 5 fear of cognitive incapacity. The 'intellectual taxidermy' line and the 'credentialing' line are both strong 5 signals. The paths-not-taken as 'compulsive audit' rather than grief is also 5-not-4.",
+          "next_question_rationale": "Disconfirmatory question required — 5 vs 4 within 0.20 range. Type 4 feels out of place due to emotional misattunement/not being seen/felt. Type 5 feels out of place due to not contributing value/competence mismatch. This directly distinguishes the two.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "**Not adding value — my presence isn't contributing anything.**\n\nThough I'd want to qualify that slightly — it's less about contribution in a transactional sense and more about... whether I'm bringing something to the exchange that justifies my being there. The emotional register of a room is something I notice, certainly, but it doesn't tend to destabilize me the way a creeping sense of superfluousness does. That particular feeling is, I think, considerably more uncomfortable for me to sit with.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "What you described — that compulsive audit of unlived paths, the prosecutorial quality of your anger before it has a name, the need to credential yourself before you're willing to weigh in — that's not a flaw in your thinking. It's a survival strategy you built around a very specific fear: that showing up without enough understanding exposes something disqualifying about you. The analysis isn't just problem-solving. It's also self-protection.\n\nThe gift and the cost are the same energy. The precision that makes you genuinely valuable in complex situations is the same force that keeps you one more round of analysis away from actually showing up. In Frankl's language, that capacity for rigorous witness — of situations, of yourself, of what's actually true — is your why. The strategy just learned to use it as a gate instead of a door.\n\nYour personalized report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.14,
+            "5": 0.88,
+            "6": 0.08,
+            "7": 0.03,
+            "8": 0.03,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Witness",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.91,
+          "whole_type_signals": {
+            "body": 0.22,
+            "heart": 0.38,
+            "head": 0.91
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "calibration error",
+                "mapping",
+                "structure",
+                "bandwidth",
+                "cognitive overhead",
+                "frameworks",
+                "prosecutorial quality"
+              ],
+              "context": "describing internal processes across multiple exchanges"
+            },
+            {
+              "type": 4,
+              "words": [
+                "intellectual taxidermy",
+                "alternate timelines",
+                "grief wearing a more industrious disguise",
+                "identity dissolution"
+              ],
+              "context": "describing feared states and unlived paths"
+            },
+            {
+              "type": 6,
+              "words": [
+                "it depends"
+              ],
+              "context": "minimal"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.15,
+          "SX": 0.13
+        },
+        "wing_signals": {
+          "left": 0.61,
+          "right": 0.39
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone who leads with intellectual recognition, withholds in conflict, files emotions into structured forms",
+          "what": "Driven by need to understand before acting; fears intellectual recklessness and being seen as having unearned opinions",
+          "why": "Credentialing themselves to participate; protecting against the exposure of not knowing enough",
+          "how": "Analyzes before acting; converts feelings into structured outputs; holds correct answers privately",
+          "when": "Withdraws under resource scarcity; engages most fully when mid-thought on hard problems",
+          "where": "Inner life; private mapping; sustained solo concentration"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal as default resource management; intellectualizing as emotional processing; holding knowledge privately rather than deploying it; analysis paralysis as protection against visible wrongness",
+          "respond_glimpsed": "Honest self-examination; willing to complicate flattering answers; genuine self-awareness about own patterns",
+          "superpower_signal": "Profound analytical clarity; precise self-observation; calibrated thinking under complexity",
+          "kryptonite_signal": "Self-credentialing loop prevents spontaneous engagement; emotional triangulation keeps feeling at arm's length; superfluousness fear drives hoarding of self",
+          "domain_signals": [
+            "intellectual/analytical",
+            "private emotional world",
+            "resource conservation"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 12,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The fear isn't being useless. It's being seen as having nothing to offer.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "SP dominant confirmed — resource conservation, cognitive overhead framing, withdrawal before selectivity. 4-wing present but secondary — oblique emotional processing, identity dissolution fear, intellectual taxidermy metaphor. Core 5 pattern extremely consistent: credentialing loop, prosecutorial anger tell, superfluousness discomfort over belonging discomfort. Disconfirmatory check vs 4 passed — choices consistently favored understanding over feeling, motion over arrival, problem over grief. Confidence 0.88, gap over 4 is 0.74. All closing criteria met.",
+          "next_question_rationale": "Close now. All criteria met. No further questions serve the assessment.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

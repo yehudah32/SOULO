@@ -1,0 +1,670 @@
+{
+  "run_id": "eval-persona-9-SX-1775061659124-1775239563649",
+  "timestamp": "2026-04-03T18:06:03.649Z",
+  "tier": "tier1",
+  "persona_id": "persona-9-SX-1775061659124",
+  "ground_truth": {
+    "core_type": 9,
+    "wing": "9w8",
+    "instinctual_variant": "SX",
+    "tritype": [
+      9,
+      3,
+      6
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 64,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 1,
+    "final_wing": null,
+    "final_confidence": 0.62,
+    "types_considered": [
+      {
+        "type": 1,
+        "peak_confidence": 0.62,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.42,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.28,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.28,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.18,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.08,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.05,
+        "first_at_q": 3
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": 1,
+    "mistype_harm_severity": "medium",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 5,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "partial",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "liberated"
+  },
+  "question_quality": {
+    "total_questions": 4,
+    "exploratory": 1,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 1,
+    "behavioral": 1,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 1
+  },
+  "efficiency": {
+    "total_exchanges": 4,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 1,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 9,
+        "confidence": 0.42
+      },
+      {
+        "exchange": 4,
+        "top_type": 1,
+        "confidence": 0.62
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so the more honest you are, the more accurate the picture gets. One question at a time, starting now.\n\nWhen things go wrong in your life — a plan falls apart, a relationship hits a wall, something you worked hard for doesn't land — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_motivational",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When things go wrong in your life — a plan falls apart, a relationship hits a wall, something you worked hard for doesn't land — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready. No signal yet.",
+          "next_question_rationale": "Opening motivational question targeting the stress response — most revealing entry point for center identification. Open format invites unguarded language.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "First thing? Anger, probably. Not the loud kind — just this... tightening. Like something in my chest decides it's done being patient. \n\nThen I start running through what went wrong, who dropped the ball — including myself, I'm not gonna pretend otherwise. I'm pretty honest with myself about that part, even when it's uncomfortable.\n\nThe harder part is sitting with it when there's nothing to fix. When it's just... done, and there's no lever to pull. That's when I'll go out to the garage, put some hours into whatever's on the lift, and by the time I come back in, I've either worked through it or buried it deep enough that it stops interfering. \n\nWhether those two things are the same, I honestly couldn't tell you.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you're the one who dropped the ball — not someone else, you — how hard on yourself do you actually get?\n\nOn a scale of 1 to 5: 1 means you give yourself grace pretty easily, 5 means you hold yourself to a standard most people wouldn't.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.52,
+            "2": 0.01,
+            "3": 0.01,
+            "4": 0.01,
+            "5": 0.03,
+            "6": 0.1,
+            "7": 0,
+            "8": 0.28,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Reformer / The Challenger",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.72,
+            "heart": 0.08,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "honest with myself",
+                "what went wrong",
+                "dropped the ball",
+                "nothing to fix"
+              ],
+              "context": "response to things going wrong"
+            },
+            {
+              "type": 8,
+              "words": [
+                "tightening",
+                "done being patient",
+                "worked through it or buried it"
+              ],
+              "context": "describing inner anger response"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "self-aware, physically active processor",
+          "what": "anger → analysis → physical displacement",
+          "why": "unknown — need to probe",
+          "how": "garage/hands-on work as regulation",
+          "when": "when unfixable situations arise",
+          "where": "private, solo processing"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "anger + analysis + physical displacement when things are unfixable",
+          "respond_glimpsed": "self-honesty about own role — unusually clear",
+          "superpower_signal": "integrity, self-accountability",
+          "kryptonite_signal": "may bury rather than process — acknowledged this himself",
+          "domain_signals": [
+            "gut/body center confirmed",
+            "inner critic present but turned on self too, not just outward"
+          ]
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "values_standard_probe",
+        "thinking_display": "Honest about his own failures — before anyone asks.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're the one who dropped the ball — not someone else, you — how hard on yourself do you actually get?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = I give myself grace pretty easily, 5 = I hold myself to a standard most people wouldn't"
+        },
+        "strategy": {
+          "what_was_learned": "Strong body center signal. Anger is the first response — controlled, not explosive. Physical displacement (garage) is the regulation strategy. Self-honesty is notable and unprompted. The 1/8 differentiation is key: 1s turn the inner critic on themselves primarily; 8s are more outward. The self-accountability he volunteered suggests Type 1. The 'tightening' and 'done being patient' suggests 8 flavor possible. Need to probe the inner critic intensity and whether the anger is about standards (1) or control/autonomy (8).",
+          "next_question_rationale": "Probe the inner critic directly. How hard he gets on himself will differentiate 1 (relentless inner critic, self-referential) from 8 (anger goes outward first, self-criticism is less chronic). Scale format after open.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "**Scale: 4 out of 10**\n\nI don't really sit around beating myself up — that's not my style. I fix what I can fix and move on. Though I'll say this... there's a difference between being hard on yourself and just... turning something over in your head for longer than you probably should. That part, I do more than I'd like to admit.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you're turning something over in your head like that — what are you actually looking for?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 9,
+          "confidence": 0.42,
+          "type_scores": {
+            "1": 0.35,
+            "2": 0.05,
+            "3": 0.1,
+            "4": 0.1,
+            "5": 0.15,
+            "6": 0.12,
+            "7": 0.05,
+            "8": 0.25,
+            "9": 0.38
+          },
+          "needs_differentiation": [
+            "1",
+            "9",
+            "8"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.15,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 9,
+              "words": [
+                "stops interfering",
+                "buried it deep enough",
+                "sit with it"
+              ],
+              "context": "describing how he processes failure"
+            },
+            {
+              "type": 1,
+              "words": [
+                "honest with myself",
+                "even when it's uncomfortable",
+                "turning something over longer than I should"
+              ],
+              "context": "self-accountability framing"
+            },
+            {
+              "type": 8,
+              "words": [
+                "who dropped the ball",
+                "there's no lever to pull",
+                "put hours into whatever's on the lift"
+              ],
+              "context": "action-oriented, control-seeking response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Male, hands-on, garage/mechanical hobby, self-reflective but action-oriented",
+          "what": "Gut responder — anger first, then analysis",
+          "why": "",
+          "how": "Fixes or buries — avoids sitting in unresolvable emotion",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Tightening anger → problem analysis → physical displacement activity (garage) when no fix available",
+          "respond_glimpsed": "Self-honest about own role; acknowledges rumination without excusing it",
+          "superpower_signal": "Action-orientation, self-accountability",
+          "kryptonite_signal": "Avoidance through activity; unresolvable situations trigger displacement; rumination",
+          "domain_signals": [
+            "work/achievement",
+            "physical/body",
+            "self-mastery"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 3,
+          "current_stage": 1,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The rumination part slipped out sideways — like he didn't mean to say it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're turning something over in your head like that — what are you actually looking for?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing motivation behind rumination — differentiates 1 (seeking resolution/correctness), 9 (seeking peace/understanding), 8 (seeking restoration of control). Moves toward head center."
+        },
+        "strategy": {
+          "what_was_learned": "He explicitly rejected high self-criticism but admits to rumination — suggests 9 or 8 more than 1. The 4/10 self-rating is interesting: relatively self-forgiving on beating himself up, but can't stop turning it over. This rumination pattern is key differentiator. SP variant signals strong (garage, physical grounding, solo processing).",
+          "next_question_rationale": "Open question targeting the WHY behind rumination — is he looking for a resolution (1-ish), peace/understanding (9-ish), or restoration of agency/control (8-ish)? This is stage 1 motivational probing, moves toward head center.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "*quiet for a second, wipes hands on a rag he doesn't need to wipe*\n\nI'm looking for where I went wrong, mostly. Or where the other person did. *short exhale* Usually both, and usually in that order, which probably tells you something. It's like... you know how when an engine's running rough, there's a moment before you even crack it open where you already half-know what it is? That's what I'm doing. Running it back until I find the knock. \n\nI don't know that I'm always looking for anything, though. Sometimes it just... runs.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you find the knock — when you've figured out what went wrong — does knowing it actually make you feel better, or does it just let you stop looking?\n\n- It genuinely makes me feel better\n- It just lets me stop looking\n- Both, depending on the situation\n- Neither — knowing doesn't really change much",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.62,
+            "2": 0.08,
+            "3": 0.1,
+            "4": 0.08,
+            "5": 0.18,
+            "6": 0.28,
+            "7": 0.05,
+            "8": 0.22,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "whole_type": "Body",
+          "whole_type_confidence": 0.65,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.2,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "where I went wrong",
+                "honest with myself",
+                "that order"
+              ],
+              "context": "rumination and self-accountability"
+            },
+            {
+              "type": 6,
+              "words": [
+                "usually both, usually in that order",
+                "probably tells you something"
+              ],
+              "context": "self-aware doubt pattern"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Self-accountable, physically grounded, introspective under pressure",
+          "what": "Finds fault (including self), seeks the 'knock' in the engine — needs to locate error",
+          "why": "Not yet confirmed — could be integrity drive (1) or security/certainty drive (6)",
+          "how": "Physical withdrawal + mental replay loop",
+          "when": "When things fail or fall apart",
+          "where": "Garage / physical space as processing ground"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Tightening, rumination loop — replay until 'knock' is found or buried",
+          "respond_glimpsed": "Self-honesty — includes self in accountability even when uncomfortable",
+          "superpower_signal": "Diagnostic precision, integrity, self-accountability",
+          "kryptonite_signal": "Rumination that runs without resolution — 'sometimes it just runs'",
+          "domain_signals": [
+            "work/craft",
+            "self-accountability",
+            "emotional suppression via action"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The engine metaphor wasn't an analogy — it was the actual process.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you find the knock — when you've figured out who or what went wrong — does knowing it actually make you feel better, or does it just let you stop looking?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "It genuinely makes me feel better",
+            "It just lets me stop looking",
+            "Both, depending on the situation",
+            "Neither — knowing doesn't really change much"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong inner critic with diagnostic precision. Rumination isn't emotional processing — it's error-location. Self-honesty is a value, not just a behavior. '...usually in that order, which probably tells you something' — self-aware about the pattern. Need to probe whether this is integrity-driven (1) or certainty/security-driven (6). Also need to probe: what happens when no knock is findable.",
+          "next_question_rationale": "1 vs 6 differentiation: 1s find relief in knowing because it restores order/rightness. 6s find relief in knowing because it reduces uncertainty. This question targets that split directly.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "**It just lets me stop looking.**\n\nThough I'd be lying if I said that's a bad thing, necessarily. Sometimes stopping the search is the whole damn point — you run down every wire in the circuit, you find the fault, and you don't need some big emotional resolution on top of it. The problem's identified, you move forward. Whether you *feel* better about it... I don't know. Feelings aren't really the goal of the diagnosis.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}
