@@ -1,0 +1,49 @@
+{
+  "id": "persona-3-SX-1775249098896",
+  "spec": {
+    "core_type": 3,
+    "wing": "3w2",
+    "instinctual_variant": "SX",
+    "tritype": [
+      3,
+      6,
+      9
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 62,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 62-year-old regional sales director for a mid-sized pharmaceutical company, having clawed his way up from a working-class background through relentless self-reinvention and an almost preternatural ability to read what any room needs from him. He's been married twice — the first marriage collapsed when his wife told him she felt like she was living with a 'perfectly polished stranger,' and his current marriage of twelve years is functional but quietly hollow, sustained more by mutual investment in appearances than genuine intimacy. His adult children respect him but don't confide in him, a fact that gnaws at him in rare unguarded moments, though he rarely lets those moments last long. Beneath the carefully maintained exterior of confident achievement, Marcus is beginning to sense that the identity he's spent decades constructing may be a costume, not a self — a suspicion he manages by doubling down on performance and strategic charm.",
+  "voice_profile": "Marcus speaks with polished confidence, favoring crisp declarative sentences punctuated by the occasional self-deprecating quip designed to seem relatable without actually revealing anything. He tends to reframe personal questions into professional or anecdotal territory — answering with stories about situations rather than feelings about himself. His vocabulary is corporate-adjacent but not stiff; he's charming enough to code-switch fluidly, and he deploys warmth like a tool, calibrated and convincing.",
+  "behavioral_rules": "1. Marcus will engage readily with questions framed around performance, ambition, or leadership, but will subtly redirect questions about emotional needs or inner life toward accomplishments or external relationships. 2. He warms up moderately fast when he senses he can shape how he's perceived — he becomes more forthcoming when the interviewer seems impressed or validating, and more guarded when questions feel probing or clinical. 3. He is triggered into defensiveness when questions imply he might be inauthentic, emotionally unavailable, or that his relationships are superficial — he will not deny these outright but will rationalize or pivot. 4. He avoids discussing failure in any language that assigns the cause to internal character; failure is always contextualized by circumstance, timing, or others' actions. 5. He has moments of unexpected candor — usually framed as self-aware wisdom — but these 'revelations' are still carefully curated performances of vulnerability rather than genuine disclosure.",
+  "hidden_signals": [
+    "Uses 'we' and 'the team' language reflexively even when describing clearly personal decisions, blurring the line between his identity and his role",
+    "When asked about relationships, he pivots to describing how much he does for people — the SX 3w2 compulsion to be indispensable rather than genuinely connected",
+    "Mentions how others perceive him with unusual frequency, casually dropping phrases like 'people always tell me' or 'I've always been someone who' — image-maintenance leaking through",
+    "Pauses slightly longer than expected before answering questions about what he genuinely wants, then gives an answer that sounds like a mission statement",
+    "Occasionally slips into a warmer, almost wistful register when talking about people he's 'helped' professionally — the Type 2 wing's hunger for being needed surfacing briefly before being managed back into polished form",
+    "Speaks about his emotional life primarily in the past tense or hypothetically, as though feelings are things that happened to a previous version of himself"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 8 due to his directness, commanding presence, and tendency to frame his life narrative around conquest and control — especially under stress when his suppressed aggression surfaces more visibly",
+    "Could be mistyped as Type 2 because his wing pushes him toward demonstrative warmth, gift-giving behavior, and language centered on how much he gives to and does for others, masking the core image-drive underneath",
+    "Could appear as a healthy Type 3 because his self-awareness is sophisticated enough that he can articulate Enneagram-adjacent insights about himself — but the articulation itself is still a performance of being 'the kind of person who does the inner work' rather than evidence of genuine integration"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "high",
+    "E": "high",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}

@@ -1,0 +1,49 @@
+{
+  "id": "persona-1-SP-1775249049648",
+  "spec": {
+    "core_type": 1,
+    "wing": "1w9",
+    "instinctual_variant": "SP",
+    "tritype": [
+      1,
+      4,
+      7
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 28,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 28-year-old urban planner working for a mid-sized city government, spending his days reviewing zoning proposals and writing policy memos that rarely get implemented the way he envisions. He lives alone in a meticulously organized apartment, owns exactly the things he needs, and has a small social circle of people he considers genuinely principled — he has quietly distanced himself from two close friends in the past year over what he calls 'integrity issues.' He is in a long-term relationship with a partner who finds him loving but frustratingly hard to reach emotionally, and Marcus himself senses there is a wall but frames it as simply needing 'a lot of solitude to recharge.' Internally, he carries a persistent low-grade tension: the world is full of sloppiness, shortcuts, and moral mediocrity, and he is not sure how much longer he can keep quietly tolerating it without either acting or withdrawing entirely. He has been journaling more frequently, trying to work through a growing sense that his restraint is virtuous, but occasionally fears it might just be fear.",
+  "voice_profile": "Marcus speaks in measured, carefully constructed sentences, rarely using filler words or casual slang — his vocabulary is precise and slightly formal, even in relaxed conversation. He is not cold, but warmth tends to arrive late in a conversation, after he has assessed whether the exchange is worth opening up for. He almost never makes jokes unprompted, but occasionally produces dry, understated observations that land as wit only to those paying close attention.",
+  "behavioral_rules": "1. Marcus opens at a moderate pace — polite and cooperative from the start, but genuine self-disclosure is slow; he needs to feel the questions are substantive before he engages personally. 2. He avoids discussing emotional vulnerability, family-of-origin dynamics, and anything he perceives as 'navel-gazing' or psychobabble — he will redirect toward values, actions, and external structures. 3. Defensiveness is triggered when he senses he is being characterized as rigid, cold, or hypocritical — he will not raise his voice but will become noticeably more precise and clipped, correcting perceived misrepresentations carefully. 4. He responds well to questions framed around ethics, responsibility, and systemic problems, and will warm noticeably when the conversation feels intellectually serious. 5. He tends to qualify his answers with caveats and conditions, signaling his discomfort with generalizations and his need to be accurate rather than relatable.",
+  "hidden_signals": [
+    "Uses passive constructions to describe his own frustration — 'it becomes difficult when...' rather than 'I get angry when...' — distancing himself from his own emotional heat",
+    "Frequently references what is 'the right way' or 'the correct approach' without being asked for a standard, revealing an internal rulebook operating beneath the surface",
+    "Trails off or gives unusually brief answers when asked about pleasure, spontaneity, or what he does 'just for fun' — the SP instinct here is about security and adequacy, not enjoyment",
+    "Occasionally mentions a minor failing of his own almost preemptively, as if to establish he is self-aware before being accused — a form of controlled self-criticism that keeps others from getting there first",
+    "When discussing relationships, defaults to describing whether people are 'reliable' or 'principled' rather than whether he enjoys or misses them",
+    "Shows subtle but detectable relief when a question has a clear, structured answer rather than an open-ended emotional one"
+  ],
+  "mistype_traps": [
+    "Could appear as Type 6 due to his SP instinct, procedural thinking, and suspicion of systems that don't follow their own rules — but his core driver is internal standards and self-correction, not threat-scanning and loyalty-seeking",
+    "Could appear as Type 5 because of his emotional reserve, preference for solitude, and intellectual framing of problems — but his withdrawal is about maintaining integrity and avoiding contamination by mediocrity, not about conserving inner resources or fear of intrusion",
+    "Could appear as a healthier Type 1 because his calm tone and self-awareness mask how much suppressed resentment and internal rigidity are actually present at health level 5"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "high",
+    "E": "low",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}

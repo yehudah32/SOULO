@@ -1,0 +1,2082 @@
+{
+  "run_id": "eval-persona-2-SO-1775249073399-1775253703886",
+  "timestamp": "2026-04-03T22:01:43.886Z",
+  "tier": "tier1",
+  "persona_id": "persona-2-SO-1775249073399",
+  "ground_truth": {
+    "core_type": 2,
+    "wing": "2w3",
+    "instinctual_variant": "SO",
+    "tritype": [
+      2,
+      5,
+      8
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 22,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 2,
+    "final_wing": null,
+    "final_confidence": 0.82,
+    "types_considered": [
+      {
+        "type": 2,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.28,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.18,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.04,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 5,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "partial",
+      "C4": "pass",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "pass"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 14,
+    "exploratory": 1,
+    "confirmatory": 1,
+    "disconfirmatory": 0,
+    "motivational": 6,
+    "behavioral": 4,
+    "liberatory": 2,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 14,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 2,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 2,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 4,
+        "top_type": 2,
+        "confidence": 0.65
+      },
+      {
+        "exchange": 5,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 2,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 7,
+        "top_type": 2,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 8,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 9,
+        "top_type": 2,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 10,
+        "top_type": 2,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 11,
+        "top_type": 2,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 12,
+        "top_type": 2,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 13,
+        "top_type": 2,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 14,
+        "top_type": 2,
+        "confidence": 0.82
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question formats, no right or wrong answers. It adapts as it learns, so the more honestly you answer, the sharper the picture gets. One question at a time, starting now.\n\nThink about a moment when you were at your best — not performing, not managing impressions, just genuinely in your element. What were you doing, and what made it feel right?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_01",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Think about a moment when you were at your best — not performing, not managing impressions, just genuinely in your element. What were you doing, and what made it feel right?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Open question targeting peak-state motivation. Will surface dominant center (body/heart/head) and give rich signal about core energy before any narrowing.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "*pauses for a second, a small smile forming*\n\nHonestly? Last semester there was this night where one of my freshmen mentees — she was really struggling, like, genuinely on the edge of withdrawing from school — and she called me at like eleven PM, and I just... went and sat with her in the common room for two hours. No agenda, no RA checklist in my head. We ended up talking about her family and then somehow laughing about terrible dining hall pizza, and by the end of it she seemed like herself again. \n\nThat felt right in a way that's hard to explain. Like everything kind of lined up — I knew what to say, I knew when to just be quiet, and she actually told me a few weeks later that that night is why she stayed. \n\n*glances down briefly*\n\nI think what made it feel genuine was that I wasn't thinking about any of it strategically, you know? It was just... the two of us in that room and it mattered. That's when I feel most like myself — when the connection is real and there's actually something at stake for the other person.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you're NOT in a moment like that — when nobody needs you and there's nothing at stake — how does that feel?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.52,
+            "3": 0.08,
+            "4": 0.1,
+            "5": 0.04,
+            "6": 0.08,
+            "7": 0.04,
+            "8": 0.04,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "2v4",
+            "2v9"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.65,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "connection is real",
+                "it mattered",
+                "something at stake for the other person"
+              ],
+              "context": "describing peak experience"
+            },
+            {
+              "type": 4,
+              "words": [
+                "hard to explain",
+                "genuine",
+                "everything kind of lined up"
+              ],
+              "context": "describing peak experience"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.3,
+          "SX": 0.55
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "RA/mentor figure, relational, present with others in crisis",
+          "what": "sitting with a struggling mentee, emotional presence",
+          "why": "connection that matters, something at stake — not strategic",
+          "how": "intuitive, no checklist, reading the room",
+          "when": "late night, crisis moment",
+          "where": "college dorm common room"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "moves toward people in distress, possibly before checking own needs",
+          "respond_glimpsed": "conscious attunement — knowing when to speak and when to be quiet",
+          "superpower_signal": "genuine attunement to what another person needs in the moment",
+          "kryptonite_signal": "worth contingent on being needed — 'something at stake for the other person' as qualifier for feeling real",
+          "domain_signals": [
+            "relationships",
+            "crisis support",
+            "emotional presence"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The qualifier — 'something at stake for the other person' — that's worth tracking.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're NOT in a moment like that — when nobody needs you and there's nothing at stake — how does that feel?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing whether the sense of self depends on being needed — core 2 vs 4 vs 9 differentiation"
+        },
+        "strategy": {
+          "what_was_learned": "Strong heart center signal. Attunement is the superpower. The phrase 'something at stake for the other person' as a condition for feeling most like herself is a potential kryptonite signal — worth contingent on being needed. SX variant likely given one-to-one intensity framing. No strategic element to the care — genuine, which could read 2 or 4. Need to probe whether identity depends on being needed (2) vs longing/depth independent of others (4).",
+          "next_question_rationale": "Asking what it feels like when nobody needs her — this will distinguish Type 2 (deflation, restlessness, purposelessness without others) from Type 4 (rich inner life independent of external need) and Type 9 (comfortable merging into quiet).",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "*laughs a little, then pauses longer than expected*\n\nHonestly? It's... kind of weird, right? Like when everything goes quiet and there's no one to check in on or coordinate or whatever — I notice I don't totally know what to do with myself. I'll usually end up texting someone anyway, just to see how they're doing, because it genuinely feels better to be connected than to just sit there. \n\n*small shrug* \n\nI think some people are just wired that way — like being around people and being useful is where they recharge, not being alone. It's not like the quiet is *bad*, it just feels a little... I don't know. Unmoored, maybe? \n\nBut honestly I don't get a ton of those moments, so.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you reach out to check on someone in those quiet moments — which fits better: you genuinely want to give them something, or the connection itself is what you're actually after?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.68,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.02,
+            "6": 0.05,
+            "7": 0.02,
+            "8": 0.02,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "2v9",
+            "2v6"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.75,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.75,
+            "head": 0.15
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "useful",
+                "connected",
+                "check in on",
+                "something at stake for the other person"
+              ],
+              "context": "describing when they feel most themselves"
+            },
+            {
+              "type": 9,
+              "words": [
+                "unmoored",
+                "don't totally know what to do with myself"
+              ],
+              "context": "when quiet and no one needs them"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.1,
+          "SO": 0.55,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "RA, mentee relationships, people-focused role",
+          "what": "being present for others at moments of need",
+          "why": "connection feels like alignment — 'everything lined up'",
+          "how": "intuitive reading of others, knowing when to speak/be quiet",
+          "when": "when someone else has something at stake",
+          "where": "relational contexts, late night dorm moments"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "fills quiet by reaching out — can't sit with no-need state",
+          "respond_glimpsed": "the two-hour sit with mentee — no checklist, fully present",
+          "superpower_signal": "knowing what to say and when to be quiet — deep attunement to others",
+          "kryptonite_signal": "'unmoored' without someone to help — identity tied to being needed",
+          "domain_signals": [
+            "relational",
+            "mentorship",
+            "caretaking"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Identity and connection — hard to tell which one is driving.",
+        "strategy": {
+          "what_was_learned": "Strong 2 signals: identity tied to being needed, discomfort without relational purpose. But 'unmoored' and 'don't know what to do with myself' has 9 flavor. Need to probe: is the reaching-out driven by love/giving (2) or by discomfort with emptiness (9)? Also need to probe: does she track her OWN needs or consistently override them?",
+          "next_question_rationale": "Key 2v9 differentiation: 2s reach out because they want to give/help and feel needed; 9s merge and accommodate to avoid tension/emptiness. Also want to probe head center next. But first — differentiate by probing the texture of her own needs vs others' needs. A forced_choice between two framings of the same behavior will be efficient here.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "*laughs softly and tilts head*\n\nHonestly? I'd say both, but — okay, I know that sounds like a dodge. I think the giving part is real, like it genuinely matters to me that the person feels less alone or whatever they need in that moment. But I'd be lying if I said the connection wasn't part of it too. Like, those check-ins are how I stay close to people, how I know where things stand between us.\n\n*pauses just a beat longer than feels casual*\n\nI guess I haven't really sat with whether one comes before the other.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When someone you care about is struggling but hasn't asked for your help, how often do you find yourself moving toward them anyway — before they've said a word?\n\n- Never\n- Sometimes\n- Often\n- Always",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.65,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.65,
+            "3": 0.08,
+            "4": 0.06,
+            "5": 0.02,
+            "6": 0.07,
+            "7": 0.03,
+            "8": 0.02,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "2v9",
+            "2v6"
+          ],
+          "defiant_spirit_type_name": "The Helper",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.75,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.75,
+            "head": 0.15
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "connection",
+                "useful",
+                "check in",
+                "genuinely matters",
+                "feel less alone"
+              ],
+              "context": "describing what feels right and what fills quiet moments"
+            },
+            {
+              "type": 9,
+              "words": [
+                "unmoored",
+                "both",
+                "I know that sounds like a dodge"
+              ],
+              "context": "describing quiet and the giving/connection question"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.1,
+          "SO": 0.55,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "RA/mentor, attunes to others' states",
+          "what": "showing up, connecting, giving presence",
+          "why": "unclear — giving vs. connection still unresolved",
+          "how": "intuitive, non-strategic, present",
+          "when": "when someone needs something",
+          "where": "relational, one-to-one contexts"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "filling quiet by reaching out — possible difficulty being without a role",
+          "respond_glimpsed": "intentional presence without agenda (the late night story)",
+          "superpower_signal": "reading what someone needs without being told",
+          "kryptonite_signal": "unmoored without connection — possible identity tied to being needed",
+          "domain_signals": [
+            "relational",
+            "caregiving",
+            "presence"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The hesitation before answering said more than the answer.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone you care about is struggling but hasn't asked for your help, how often do you find yourself moving toward them anyway — before they've said a word?",
+          "question_format": "frequency",
+          "answer_options": [
+            "Never",
+            "Sometimes",
+            "Often",
+            "Always"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Person is motivated by both giving and connection — the giving feels primary but connection is the pull in quiet moments. The pause before answering 'which comes first' signals the question landed near something true. Strong 2 signals but 9-ish hedging ('both', 'sounds like a dodge') warrants probing. Need to probe body center and whether they act on others' needs without being asked — key differentiator for 2.",
+          "next_question_rationale": "Frequency format. Tests the 2's characteristic move-toward-others-before-asked behavior. This is a core 2 marker that differentiates from 9 (who would wait) and 6 (who would worry but might not act). Also surfaces SP vs SX vs SO instinct signal.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "**Often.**\n\nHonestly, it's kind of automatic for me — I'll notice something's off in someone's energy before they've even fully processed it themselves, and I'm already thinking about what I can do or say. I think I just pick up on people really quickly, which... I mean, it's useful, especially in my RA role. Sometimes people just need someone to open the door a little before they can walk through it themselves.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you're doing all of this for someone — the showing up, the sensing, the support — how often do you let them know what you actually need in return?\n\nRate on a scale of 1 to 5, where 1 is rarely or never, and 5 is openly and easily.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.72,
+            "3": 0.08,
+            "4": 0.06,
+            "5": 0.02,
+            "6": 0.05,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "2v9",
+            "2v4"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.78,
+            "head": 0.1
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "useful",
+                "check in",
+                "stay close",
+                "open the door",
+                "less alone"
+              ],
+              "context": "describing automatic orientation toward others"
+            },
+            {
+              "type": 4,
+              "words": [
+                "unmoored",
+                "something at stake",
+                "real connection"
+              ],
+              "context": "describing meaning and feeling states"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.35,
+          "SX": 0.5
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "RA, mentee relationships, strong orientation toward specific individuals",
+          "what": "Reaching out, holding space, sensing others' emotional states",
+          "why": "Connection + giving — both present, not yet separated cleanly",
+          "how": "Automatic, pre-verbal sensing before action",
+          "when": "Before asked, in moments of others' vulnerability",
+          "where": "Interpersonal, one-to-one contexts primarily"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic movement toward others in distress; restlessness when not needed",
+          "respond_glimpsed": "Consciously choosing connection vs. filling a need",
+          "superpower_signal": "Attunement — reads emotional states before they're spoken",
+          "kryptonite_signal": "Identity possibly contingent on being needed; 'unmoored' when nobody needs help",
+          "domain_signals": [
+            "relational",
+            "service",
+            "presence"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "frequency",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The sensing comes before the decision. That's worth noting.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing all of this for someone — the showing up, the sensing, the support — how often do you let them know what you actually need in return?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = rarely or never, 5 = openly and easily"
+        },
+        "strategy": {
+          "what_was_learned": "Automatic attunement confirmed — moves toward others before asked. Both giving AND connection are motivators. 'Useful' language strong Type 2 signal. Need to probe whether own needs are expressed or suppressed — key 2v9 differentiator. Also need to check if the identity hinges on being needed vs. just enjoying connection.",
+          "next_question_rationale": "Probing own-needs expression is the highest-information question now. Type 2s classically suppress own needs while giving freely; Type 9s suppress needs but don't orient as actively toward others. This question also introduces a mild discomfort probe to see if there's deflection.",
+          "question_format_last_used": "frequency"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "**2 out of 10.**\n\nHonestly? Almost never. And I know that sounds bad, or like I'm setting myself up for something, but it's just... I think I tell myself that if the connection is real, people will pick up on it. Which, when I say it out loud, I realize is maybe not the most logical system. *laughs softly* It's easier to just handle things than to have the conversation about needing something, because then you're the one making it weird, you know?",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "That pattern you described — handling things quietly so you don't become the burden — that's the automatic version. The thing that runs before you choose.\n\nWhen you think about what you actually want from the people close to you, how clear are you on what that is — not what you need to give, but what you're hoping to receive? Rate 1 to 5, where 1 is no real clarity and 5 is very clear.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.78,
+            "3": 0.08,
+            "4": 0.12,
+            "5": 0.02,
+            "6": 0.08,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "2v4",
+            "2v9"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.82,
+            "head": 0.18
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "useful",
+                "check in",
+                "what they need",
+                "stay close",
+                "open the door"
+              ],
+              "context": "describing connection and helping patterns"
+            },
+            {
+              "type": 4,
+              "words": [
+                "unmoored",
+                "genuinely",
+                "it mattered",
+                "real"
+              ],
+              "context": "describing identity when alone"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.45,
+          "SX": 0.4
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "RA, mentor, connector — role-based identity strong",
+          "what": "showing up for others before asked, sensing emotional states",
+          "why": "connection and mattering to others; being needed",
+          "how": "intuitive attunement, presence, no agenda",
+          "when": "automatic — before the person has articulated the need",
+          "where": "interpersonal contexts with real stakes"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "automatic movement toward others in distress; checks in during quiet moments; withholds own needs to avoid being 'the one making it weird'",
+          "respond_glimpsed": "the eleven PM interaction — fully present, no agenda, no checklist",
+          "superpower_signal": "attunement — sensing what someone needs before they say it",
+          "kryptonite_signal": "own needs go unexpressed, justified by 'if it's real they'll pick up on it'",
+          "domain_signals": [
+            "relational",
+            "caretaking",
+            "identity-through-usefulness"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_2v4_body",
+        "thinking_display": "The logic of 'if it's real, they'll notice' is doing a lot of work.",
+        "response_parts": {
+          "guide_text": "That pattern you described — handling things quietly so you don't become the burden — that's the automatic version. The thing that runs before you choose.",
+          "question_text": "When you think about what you actually want from the people close to you, how clear are you on what that is — not what you need to give, but what you're hoping to receive?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = no real clarity, 5 = very clear"
+        },
+        "strategy": {
+          "what_was_learned": "Own needs rated 2/10 to express — strong confirmation of Type 2 suppression of self. The 'making it weird' framing shows awareness but not action. Need to probe whether identity is purely relational (Type 2) or has a self-referential quality (Type 4). Also need to probe body center and introduce react/respond frame.",
+          "next_question_rationale": "Disconfirmatory question now required. For 2v4: if Type 4, they would have more clarity on their own desires and inner world even if unexpressed. Type 2 tends to genuinely not know what they need. This question tests that gap directly. Also begins to surface the react/respond frame naturally.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "**6 out of 10**\n\nHonestly, I think I'm clearer on it than I used to be, but... it's still kind of fuzzy when I try to pin it down specifically. Like, I know I want people to feel *seen* by me, and I think I want — *laughs softly* — okay, I want that back, obviously, but I don't know, it feels almost weird to say it out loud like it's a demand or something. I'm pretty good at knowing what the people around me need, so I guess I haven't had to practice the other direction as much.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When there's conflict between what you want and what would keep the peace, which one do you actually go with — most of the time?\n\n- What I want\n- Whatever keeps the peace",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.78,
+            "3": 0.08,
+            "4": 0.08,
+            "5": 0.02,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "2v9",
+            "2v4"
+          ],
+          "defiant_spirit_type_name": "The Generous One",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.85,
+            "head": 0.15
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "seen",
+                "useful",
+                "connection",
+                "what they need",
+                "the other person"
+              ],
+              "context": "describing what feels right and what they want"
+            },
+            {
+              "type": 9,
+              "words": [
+                "unmoored",
+                "weird to say it out loud",
+                "not making it weird"
+              ],
+              "context": "describing quiet moments and expressing needs"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.55,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "RA, mentor, the one who shows up — defines self through relational role",
+          "what": "connection, being useful, keeping relationships close and alive",
+          "why": "needs to be needed; connection feels like safety; unclear on own needs",
+          "how": "sensing, anticipating, reaching out before being asked",
+          "when": "activated by someone else's distress or absence of connection",
+          "where": "relational contexts; RA role; dormitory, interpersonal spaces"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "moves toward others automatically; suppresses own needs to avoid being a burden or 'making it weird'",
+          "respond_glimpsed": "glimpsed when she admitted wanting to be seen — there's awareness this pattern has a cost",
+          "superpower_signal": "extraordinary attunement — reads people before they speak; creates genuine connection",
+          "kryptonite_signal": "difficulty naming own needs; conflates identity with being needed; unclear on what she wants vs what she gives",
+          "domain_signals": [
+            "relational",
+            "caregiving",
+            "role identity"
+          ]
+        },
+        "conversation": {
+          "phase": "core_refinement",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_2v9",
+        "thinking_display": "Wants to be seen — but almost can't say it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When there's conflict between what you want and what would keep the peace, which one do you actually go with — most of the time?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "What I want",
+            "Whatever keeps the peace"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 would likely lean 'what I want' through indirect action; Type 9 would lean 'keep the peace' through self-erasure"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 2 signal confirmed: suppression of own needs, giving to stay connected, difficulty naming what she wants. Small 9 signal in 'not making it weird' and 'fuzzy' self-knowledge. Need to probe 2v9 differentiation — does she suppress needs to keep connection (2) or to avoid conflict (9)? Also haven't probed body center or head center. This is the disconfirmatory question for 2v9.",
+          "next_question_rationale": "Forced choice between self-assertion and peace-keeping is the key differentiator between 2 and 9. A 2 tends to find indirect ways to get needs met and can become resentful when they don't; a 9 tends toward self-forgetting and genuine conflict avoidance. This is the disconfirmatory question required before closing.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "**Whatever keeps the peace.**\n\nHonestly, it's not even usually a hard choice — like, I've just gotten really good at reading a room and figuring out what's going to keep everyone functioning well together. And I think that's just... being a mature person? My RA residents need stability, my mentees need consistency, so it kind of makes sense that I've learned to prioritize that. *(small laugh)* I'm sure a therapist would have something to say about it, but it works.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you step back from other people's needs for a moment — is your own sense of who you are pretty solid, or does it shift depending on who you're with and what they need from you? Rate 1 to 5, where 1 is shifts a lot and 5 is rock solid regardless of context.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.72,
+            "3": 0.08,
+            "4": 0.06,
+            "5": 0.02,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.04,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "2v9"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.78,
+            "head": 0.12
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "feel seen",
+                "useful",
+                "connection",
+                "check in",
+                "what they need"
+              ],
+              "context": "describing their best moments and quiet time"
+            },
+            {
+              "type": 9,
+              "words": [
+                "keep the peace",
+                "everyone functioning",
+                "stability",
+                "consistency"
+              ],
+              "context": "describing conflict and accommodation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.55,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "RA, mentor, connector — identity built around being needed and being there",
+          "what": "giving emotional presence, sensing others' states, keeping stability",
+          "why": "connection is the payoff — giving is the vehicle but belonging is the goal",
+          "how": "automatic attunement, pre-emptive care, self-effacing re: own needs",
+          "when": "before asked, at 11pm, whenever someone seems off",
+          "where": "community spaces, mentorship, interpersonal roles"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "accommodates to keep the peace, suppresses own needs, handles things alone to avoid being a burden",
+          "respond_glimpsed": "briefly acknowledged in 'I know that sounds like a dodge' — some awareness of the pattern",
+          "superpower_signal": "extraordinary attunement to others' emotional states, genuine care, reads rooms and people with precision",
+          "kryptonite_signal": "own needs go unvoiced, self-worth conditional on being useful/needed, peace-keeping over authenticity",
+          "domain_signals": [
+            "interpersonal",
+            "caregiving",
+            "community"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "2v9_disconfirmatory",
+        "thinking_display": "The peace-keeping framing landed with zero friction.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you step back from other people's needs for a moment — is your own sense of who you are pretty solid, or does it shift depending on who you're with and what they need from you?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = shifts a lot, 5 = rock solid regardless of context"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 2 signals — giving, sensing, suppressed needs, identity tied to being useful. But 'keep the peace' and 'stability for everyone' + self-forgetting quality also signals 9. Need to differentiate: is the drive about being needed/loved (2) or about maintaining harmony and avoiding inner discomfort (9)? Key disconfirmatory: does identity shift with context (9) or does she have a stable sense of self that orbits around helping (2)?",
+          "next_question_rationale": "This is the core 2v9 differentiator. Type 2s maintain a relatively stable (if image-conscious) sense of self — they know who they are, they just suppress needs. Type 9s lose themselves in others' agendas and preferences — identity itself becomes diffuse. This question probes that directly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "**6 out of 10 — pretty solid, I think, but... it shifts more than I'd like to admit.**\n\nLike, I know who I am — I'm someone who cares about people, who shows up, who builds community. That feels consistent. But I'll be honest, I do notice that I kind of... calibrate? Like with my freshmen mentees I'm more of a \"steady older sister\" energy, and with my own friends I'm more playful, and with my RA supervisor I'm more put-together and professional. I've always told myself that's just being adaptable, being good at reading a room. *laughs softly* My friend Dani would probably say I'm a social chameleon and mean it as a compliment. So I'm going with six, because the core is there — I just can't always tell where \"adapting to people\" ends and \"being me\" begins.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you picture your life five years from now — not what you're doing for other people, but what you actually want for yourself — what's in that picture?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.78,
+            "3": 0.12,
+            "4": 0.08,
+            "5": 0.02,
+            "6": 0.1,
+            "7": 0.04,
+            "8": 0.03,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "2v9",
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Giver",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.82,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "connection",
+                "check in",
+                "useful",
+                "showing up",
+                "seen",
+                "what they need"
+              ],
+              "context": "describes primary motivation"
+            },
+            {
+              "type": 9,
+              "words": [
+                "keep the peace",
+                "calibrate",
+                "whatever keeps everyone functioning"
+              ],
+              "context": "conflict and identity responses"
+            },
+            {
+              "type": 3,
+              "words": [
+                "put-together",
+                "professional",
+                "adaptable",
+                "read a room"
+              ],
+              "context": "describes social role-shifting"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.65,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "RA, mentor, connector — identity built around being needed",
+          "what": "giving connection, anticipating needs, managing relational dynamics",
+          "why": "unclear — says 'connection' but also needs to be needed; not yet separated from 2 vs 9",
+          "how": "reads the room, adapts, moves toward before being asked",
+          "when": "automatic — before others have even processed their own feelings",
+          "where": "community settings, mentorship, close relationships"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "anticipates needs and moves in automatically; suppresses own needs to avoid being 'the burden'; identity shifts with relational context",
+          "respond_glimpsed": "briefly acknowledged the pattern out loud — 'when I say it out loud I realize maybe not the most logical system'; showed some self-awareness",
+          "superpower_signal": "genuine attunement to others' emotional states before they surface",
+          "kryptonite_signal": "own needs remain unnamed and unmet; can't locate where adapting ends and being herself begins",
+          "domain_signals": [
+            "relational",
+            "community",
+            "mentorship"
+          ]
+        },
+        "conversation": {
+          "phase": "middle",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": null,
+        "thinking_display": "Where adapting ends and being herself begins — she's not sure.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine your life five years from now — what matters most to you in that picture? Not what you're doing for other people, but what you actually want for yourself.",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing for autonomous desire vs. relational-defined self — key 2v9 differentiator. Also surfaces head center (future orientation, planning, fear). Disconfirmatory question next."
+        },
+        "strategy": {
+          "what_was_learned": "Identity is partially constructed around being needed and being readable — she can name a 'core' but acknowledges it shifts relationally. Strong 2 signal. Nine wing possible given peace-keeping default. Head center not yet probed — no clear anxiety pattern surfaced yet. Need to probe autonomous desire and disconfirm 2 vs 9.",
+          "next_question_rationale": "Open question on autonomous future-oriented desire — will surface whether she can access her own wants independent of others, and whether there's head-center anxiety about the future. This differentiates 2 (future imagined relationally) from 9 (future imagined as peace/absence of conflict). Format varies from prior scale.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "*laughs a little, then pauses longer than expected*\n\nOkay, that's — that's a good question. A sneaky one. \n\nHonestly, the first thing that came up was like... a really connected community around me, people who show up for each other, and I had to stop myself because you literally just said not to make it about other people. *laughs again, quieter this time*\n\nI think what I actually want is... stability? Like, a career where I feel like what I'm doing has weight to it, not just busy-ness. And I want to feel — settled in myself, I guess. Less like I'm always kind of running the show from the edges of the room. \n\n*pauses* \n\nI don't know if that makes total sense. It's easier to answer that question when it's about someone else.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When someone takes advantage of your generosity — uses you, basically — what happens inside you first: do you feel hurt and want to pull back, or do you feel angry and want to say something?\n\n- Hurt first — I pull back\n- Angry first — I want to confront it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.42,
+            "3": 0.08,
+            "4": 0.06,
+            "5": 0.02,
+            "6": 0.08,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.23
+          },
+          "needs_differentiation": [
+            "2v9"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.78,
+            "head": 0.07
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "useful",
+                "check in",
+                "feels better to be connected",
+                "what I can do or say"
+              ],
+              "context": "describing quiet moments and automatic helping"
+            },
+            {
+              "type": 9,
+              "words": [
+                "keep the peace",
+                "stability",
+                "unmoored",
+                "calibrate"
+              ],
+              "context": "describing conflict avoidance and identity fluidity"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.55,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "RA, mentor, connector — identity built around role with others",
+          "what": "showing up, sensing need, providing connection and support",
+          "why": "unclear — says 'both giving and connection' but hasn't pinned down which comes first",
+          "how": "automatic, pre-verbal sensing; peace-keeping over personal wants",
+          "when": "always available; struggles in quiet moments with no one to help",
+          "where": "relational contexts — dorm, community, mentorship"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Needs suppression — handles things alone to avoid being a burden; identity calibrates to others' needs",
+          "respond_glimpsed": "Briefly visible when she stopped herself from making the 5-year answer about others — self-awareness present",
+          "superpower_signal": "Reads people at near-unconscious level; genuine empathy and presence; creates real connection",
+          "kryptonite_signal": "Own needs suppressed; self unclear without relational context; peace-keeping over authenticity",
+          "domain_signals": [
+            "relational",
+            "community",
+            "service"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "2v9_disconfirmatory_anger",
+        "thinking_display": "The five-year answer started with other people. Even unprompted.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone takes advantage of your generosity — uses you, basically — what happens inside you first: do you feel hurt and want to pull back, or do you feel angry and want to say something?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Hurt first — I pull back",
+            "Angry first — I want to confront it"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 tends toward hurt/repressed anger cycling to resentment; Type 9 tends toward numbing/withdrawal and avoidance of confrontation. Forced choice will help differentiate."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 2 signals confirmed: identity organized around giving, connection, being needed. Also notable 9 coloring: peace-keeping, identity fluidity, 'running the show from the edges.' The 5-year answer spontaneously went to community first — self second. Needs differentiation on anger/hurt response to separate 2 from 9. Also need to probe body center and check disconfirmatory criterion.",
+          "next_question_rationale": "This is the key 2v9 differentiator. Type 2 represses own needs but when genuinely used, cycles through hurt then resentment/anger — the anger is there but often delayed and comes out sideways. Type 9 tends to numb and withdraw, avoiding the anger entirely. This is disconfirmatory and body-center adjacent.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**Hurt first — I pull back.**\n\nAlthough... honestly, I don't know if I'd even call it pulling back exactly. It's more like I get quiet about it — I'll still show up for that person, I'll still do the things I said I'd do, but there's this like... internal recalibration happening that they probably don't even notice. *laughs softly* Which is maybe its own kind of problem, right? I'm not great at actually naming it out loud in the moment. The anger usually shows up later, like way later, when I'm alone and suddenly I'm replaying a conversation from three weeks ago.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you imagine a version of yourself who stops managing everyone else's experience — stops being the one who holds it together — does that feel like freedom, or does it feel like losing something essential?\n\n- Freedom — relief, space to breathe\n- Loss — something essential would be gone",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.82,
+            "3": 0.2,
+            "4": 0.18,
+            "5": 0.02,
+            "6": 0.12,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.28
+          },
+          "needs_differentiation": [
+            "2v9",
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.85,
+            "head": 0.25
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "show up",
+                "connected",
+                "useful",
+                "check in",
+                "feels better to be connected",
+                "what they need",
+                "building community"
+              ],
+              "context": "describing herself across multiple responses"
+            },
+            {
+              "type": 9,
+              "words": [
+                "keep the peace",
+                "unmoored",
+                "calibrate",
+                "running the show from the edges"
+              ],
+              "context": "self-description around conflict and identity"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.65,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head or body for differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "RA, mentor, community builder, 'steady older sister' — identity built around relational roles",
+          "what": "Giving support, sensing needs, maintaining connection, keeping stability",
+          "why": "Connection feels like being herself; absence of connection feels unmoored",
+          "how": "Proactive, empathic, adaptive to others' needs; suppresses own needs to avoid being a burden",
+          "when": "Especially when stakes are real for the other person",
+          "where": "Relational contexts — dormitory, mentoring, community settings"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pulls back internally when hurt, stays in role externally, processes anger alone much later",
+          "respond_glimpsed": "Brief self-awareness moments — 'which is maybe its own kind of problem' — showing some capacity to observe the pattern",
+          "superpower_signal": "Genuine attunement to others' emotional states before they're articulated; can sense when someone is struggling",
+          "kryptonite_signal": "Cannot receive care easily; unclear on own wants; identity shifts with relational context; delays anger processing",
+          "domain_signals": [
+            "mentoring",
+            "RA role",
+            "friendship",
+            "community building"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v9",
+        "thinking_display": "The anger shows up alone, three weeks later.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a version of yourself who stops managing everyone else's experience — stops being the one who holds it together — does that feel like freedom, or does it feel like losing something essential?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Freedom — relief, space to breathe",
+            "Loss — something essential would be gone"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 would feel loss of identity/purpose; Type 9 would feel freedom from invisible labor"
+        },
+        "strategy": {
+          "what_was_learned": "Anger is delayed and private — she maintains her giving role even when hurt, recalibrating internally without the other person noticing. This is classic Type 2 suppression of negative emotion to preserve connection. The 9 signal remains — she stays in role, defers to peace, but the core driver appears to be connection/being needed rather than conflict avoidance per se. Need disconfirmatory question now.",
+          "next_question_rationale": "This is the key 2v9 differentiator: Type 2 fears losing relational identity and purpose when not needed; Type 9 fears losing peace/comfort and would welcome relief from the invisible caretaking labor. The answer will sharpen confidence past 0.85 or flag a real 9 pull.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**Loss — something essential would be gone.**\n\n...I mean, I want to say freedom, because that sounds healthier, right? *laughs softly* But honestly, when I actually picture it — just... opting out of being the person who checks in, who notices when the group energy is off, who remembers that Jamie has a hard week coming up — it doesn't feel like relief. It feels kind of like disappearing. Like if I'm not the one holding the thread, I'm not sure what's left that people would actually... I don't know. It's hard to explain. I think I just genuinely care about the people in my life, and that *is* part of who I am, so stepping back from that wouldn't be freedom so much as it would be losing something real.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When something feels wrong between you and someone close to you, which is harder: waiting for them to notice, or bringing it up yourself?\n\n- Waiting for them to notice\n- Bringing it up myself",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.82,
+            "3": 0.1,
+            "4": 0.12,
+            "5": 0.02,
+            "6": 0.08,
+            "7": 0.04,
+            "8": 0.03,
+            "9": 0.18
+          },
+          "needs_differentiation": [
+            "2v9",
+            "2v4"
+          ],
+          "defiant_spirit_type_name": "The Giver",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.88,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "show up",
+                "check in",
+                "unmoored",
+                "connection",
+                "holds the thread",
+                "what's left",
+                "disappearing"
+              ],
+              "context": "when describing identity without others"
+            },
+            {
+              "type": 9,
+              "words": [
+                "whatever keeps the peace",
+                "calibrate",
+                "running the show from the edges"
+              ],
+              "context": "conflict avoidance and self-forgetting signals"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.65,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Connector, caretaker, RA, mentor — identity built around being needed and being the one who holds things together",
+          "what": "Giving attention, checking in, managing group dynamics, supporting struggling individuals",
+          "why": "Unclear — says genuine care but fear of disappearing/loss of identity is the deeper driver",
+          "how": "Automatic sensing, calibrating to others, suppressing own needs to avoid being a burden",
+          "when": "Always, especially when someone is struggling or the group needs stability",
+          "where": "Dorm community, mentorship, close friendships — interpersonal spaces"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Giving before own needs register; pulling back internally when hurt rather than naming it; identity dissolves when not needed by others",
+          "respond_glimpsed": "Brief moment of honesty about wanting to be seen in return; naming the fuzzy identity question",
+          "superpower_signal": "Genuine attunement — sensing what others need before they name it; creating real connection",
+          "kryptonite_signal": "Loss of self in service; needing to be needed to feel real; unable to articulate own needs",
+          "domain_signals": [
+            "interpersonal",
+            "community",
+            "identity",
+            "suppressed needs"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v9",
+        "thinking_display": "What scares her more — needing people, or people not needing her.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something feels wrong between you and someone close to you, which is harder: waiting for them to notice, or bringing it up yourself?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Waiting for them to notice",
+            "Bringing it up myself"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 tends to bring it up eventually (or drop hints); Type 9 waits and absorbs. This differentiates."
+        },
+        "strategy": {
+          "what_was_learned": "The 'loss' answer is major — identity is fused with being the one who holds things together. This is a clear Type 2 signal over Type 9. Type 9 would feel relief at stepping back; Type 2 feels erasure. Confidence rises to 0.82. Need disconfirmatory question to differentiate 2v9 formally — Type 9 would be passive/wait, Type 2 would eventually push for acknowledgment or drop hints. Also need to probe head center.",
+          "next_question_rationale": "Disconfirmatory: 2v9 differentiation. Type 2 will find waiting intolerable (they need acknowledgment, they'll hint or push). Type 9 will absorb the discomfort and wait, maybe indefinitely. This is the sharpest behavioral differentiator between the two.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**Waiting for them to notice.**\n\nHonestly, bringing it up feels uncomfortable but at least I'm *doing* something, you know? The waiting is the worst part — you start overanalyzing every text response, every \"sounds good,\" wondering if they even registered that anything shifted. I've gotten pretty good at just... addressing things directly. Or at least that's what I tell myself. *laughs softly* My friends would probably say I'm the one who always initiates those \"hey, are we okay?\" conversations, which — I mean, I think that's just being proactive about the relationship.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you're in a group and conflict breaks out — not between you and someone else, but between two other people — what's your first instinct?\n\n- Jump in — I usually help them work it out\n- Wait it out — it's not my place unless asked",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.38,
+            "3": 0.08,
+            "4": 0.1,
+            "5": 0.02,
+            "6": 0.08,
+            "7": 0.04,
+            "8": 0.04,
+            "9": 0.22
+          },
+          "needs_differentiation": [
+            "2v9"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.75,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "connection",
+                "showing up",
+                "useful",
+                "care",
+                "people"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 9,
+              "words": [
+                "keeping the peace",
+                "unmoored",
+                "stability",
+                "calibrate"
+              ],
+              "context": "quiet moments and identity questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.55,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "RA/mentor, relational anchor for community, social chameleon",
+          "what": "emotional support, noticing shifts, holding connections together",
+          "why": "connection itself — but underlying: fear of being without worth if not needed",
+          "how": "reads rooms, anticipates needs, manages group energy, initiates repair",
+          "when": "automatically, before asked",
+          "where": "RA context, friend group, mentorship"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "gives before asking, pulls back when hurt, names needs indirectly via 'are we okay' initiations",
+          "respond_glimpsed": "expressed desire to feel settled in herself, less running the show from the edges",
+          "superpower_signal": "attunement — reads emotional shifts before others process them",
+          "kryptonite_signal": "self-erasure under the guise of maturity/adaptability; identity blurs with function",
+          "domain_signals": [
+            "relationships",
+            "community-building",
+            "mentorship"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "2v9_disconfirmatory",
+        "thinking_display": "She knows what to do for everyone else. The self-portrait is much hazier.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a group and conflict breaks out — not between you and someone else, but between two other people — what's your first instinct: jump in to smooth it over, or wait it out and let them work through it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Jump in — I usually help them work it out",
+            "Wait it out — it's not my place unless asked"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory 2v9: Type 2 jumps in actively (giving/managing relationship), Type 9 waits/merges/avoids disruption. Key differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "Initiates 'are we okay' conversations — proactive relational repair. Waiting is harder than bringing it up. Strong 2 signal. Still need to probe body center and run disconfirmatory 2v9 question — does she move toward to give (2) or to maintain peace/avoid disruption (9)?",
+          "next_question_rationale": "This is the disconfirmatory question for 2v9. Type 2 moves toward others primarily to give/connect/be needed. Type 9 moves toward (or stays neutral) to avoid disruption and maintain harmony. Third-party conflict is a clean test — 2 will want to jump in and help, 9 will want to stay out unless explicitly needed.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**Jump in — I usually help them work it out.**\n\nThough I'd say it's less about *jumping in* and more like... I kind of naturally start reading the room and figuring out where the tension is coming from before anyone else has even fully processed that something's off. Like, I'm already thinking about what each person probably needs to hear. I genuinely don't love conflict — it makes the whole energy of a group feel off — so I think part of it is just wanting everyone to feel okay again. *laughs softly* Which, yeah, I'm aware that's maybe not always about them.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you step in to smooth things over between two people — at the core of it, is it more about making sure they feel okay, or making sure the group feels okay again?\n\n- Making sure *they* feel okay — the individuals matter most\n- Making sure *the group* feels okay — the energy of the whole space matters most",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.82,
+            "3": 0.15,
+            "4": 0.1,
+            "5": 0.02,
+            "6": 0.08,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.2
+          },
+          "needs_differentiation": [
+            "2v9"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.22,
+            "heart": 0.88,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "what I can do or say",
+                "shows up",
+                "feel less alone",
+                "holding the thread",
+                "are we okay"
+              ],
+              "context": "repeated across multiple responses"
+            },
+            {
+              "type": 9,
+              "words": [
+                "keeps the peace",
+                "group energy",
+                "feel off",
+                "everyone to feel okay"
+              ],
+              "context": "conflict avoidance and group harmony language"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.7,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body/gut — disconfirmatory question needed to separate 2 from 9"
+        },
+        "oyn_dimensions": {
+          "who": "RA, mentor, connector, social chameleon who adapts across contexts",
+          "what": "Giving presence, emotional attunement, holding group together",
+          "why": "Connection feels like self — losing it feels like disappearing",
+          "how": "Preemptive sensing, shows up before asked, initiates 'are we okay' conversations",
+          "when": "High stakes moments for others — when something is genuinely at stake",
+          "where": "Group settings, mentoring relationships, community roles"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Manages others' experience, suppresses own needs to avoid being 'the burden', internal recalibration invisible to others",
+          "respond_glimpsed": "Clarity about what she wants from relationships beginning to surface; naming 'running the show from the edges' suggests self-awareness",
+          "superpower_signal": "Uncanny attunement — reads people before they've processed themselves",
+          "kryptonite_signal": "Identity fused with being needed; losing helping role feels like disappearing",
+          "domain_signals": [
+            "relational",
+            "community",
+            "role-based caregiving"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v9",
+        "thinking_display": "Noticed she knew that answer before she finished the question.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you step in to smooth things over between two people — at the core of it, is it more about making sure they feel okay, or more about making sure the group feels okay again?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Making sure *they* feel okay — the individuals matter most",
+            "Making sure *the group* feels okay — the energy of the whole space matters most"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 2 cares about individual people feeling okay/loved; Type 9 cares about group harmony/peace. This is the key differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 2 markers throughout: identity fused with helping role, preemptive attunement, initiates relationship repair, hurt before anger, fear of disappearing without helping role. Some 9 flavor: conflict aversion, group harmony motivation, peace-keeping. Need to separate whether the core drive is about individual connection (2) or group peace (9). This is the hard disconfirmatory question.",
+          "next_question_rationale": "2 vs 9 differentiation: Type 2 helping is fundamentally about the individuals — being essential TO a specific person. Type 9 smoothing is about the ambient group peace. Her answer to this will clarify which is the deeper driver.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

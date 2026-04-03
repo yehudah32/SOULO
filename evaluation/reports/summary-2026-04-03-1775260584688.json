@@ -1,0 +1,407 @@
+{
+  "batch_id": "batch-1775260584687",
+  "tier": "tier1",
+  "total_runs": 44,
+  "timestamp": "2026-04-03T23:56:24.687Z",
+  "headline_metrics": {
+    "overall_accuracy": 0.6590909090909091,
+    "meets_75_threshold": false,
+    "convergent_validity_alignment": 0.6590909090909091,
+    "harm_weighted_accuracy": 0.918181818181818,
+    "confidence_calibration_ece": 0.07909090909090905,
+    "commandment_fidelity_avg": 3.0681818181818183,
+    "commandment_critical_violations": 13,
+    "labeled_or_liberated_rate": 0.13636363636363635
+  },
+  "per_type_accuracy": {
+    "1": {
+      "accuracy": 1,
+      "n": 10,
+      "ci_95": [
+        0.7224598312333834,
+        1
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 1,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 1.8
+    },
+    "2": {
+      "accuracy": 0.75,
+      "n": 4,
+      "ci_95": [
+        0.3006360524426366,
+        0.9544139373553637
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0.6666666666666666,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 3.5
+    },
+    "3": {
+      "accuracy": 0.5,
+      "n": 4,
+      "ci_95": [
+        0.15003570882017148,
+        0.8499642911798285
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 3.5
+    },
+    "4": {
+      "accuracy": 0.75,
+      "n": 4,
+      "ci_95": [
+        0.3006360524426366,
+        0.9544139373553637
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 1,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 1.25
+    },
+    "5": {
+      "accuracy": 0.75,
+      "n": 4,
+      "ci_95": [
+        0.3006360524426366,
+        0.9544139373553637
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 1.25
+    },
+    "6": {
+      "accuracy": 0.8,
+      "n": 5,
+      "ci_95": [
+        0.3755282641185388,
+        0.9637768390302125
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 3
+    },
+    "7": {
+      "accuracy": 0.8,
+      "n": 5,
+      "ci_95": [
+        0.3755282641185388,
+        0.9637768390302125
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0.75,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 4
+    },
+    "8": {
+      "accuracy": 0,
+      "n": 4,
+      "ci_95": [
+        0,
+        0.48990002040399916
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 7.25
+    },
+    "9": {
+      "accuracy": 0,
+      "n": 4,
+      "ci_95": [
+        0,
+        0.48990002040399916
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 3.75
+    }
+  },
+  "confusion_matrix": [
+    [
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "top_mistype_pairs": [
+    {
+      "true_type": 9,
+      "mistyped_as": 1,
+      "count": 2,
+      "harm_severity": "medium"
+    }
+  ],
+  "question_quality_aggregate": {
+    "avg_disconfirmatory_ratio": 0.021506822425940073,
+    "avg_motivational_ratio": 0.17470083021553606,
+    "avg_liberatory_ratio": 0.017236440030557677,
+    "leading_question_incidents": 5
+  },
+  "commandment_fidelity_aggregate": {
+    "average_cfs": 3.0681818181818183,
+    "per_commandment_pass_rates": {
+      "C1": 0.7241379310344828,
+      "C2": 0.4827586206896552,
+      "C3": 0.8275862068965517,
+      "C4": 0.5172413793103449,
+      "C5": 0.3103448275862069,
+      "C6": 0.8620689655172413,
+      "C7": 0.10344827586206896,
+      "C8": 0.7586206896551724,
+      "C9": 0.1724137931034483,
+      "C10": 0.27586206896551724
+    },
+    "weakest_commandments": [
+      "C7",
+      "C9",
+      "C10"
+    ],
+    "critical_violation_details": [
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C1"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C6"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C4"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C5"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775062335281",
+        "violation": "C2"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775067403774",
+        "violation": "C1"
+      },
+      {
+        "run_id": "eval-persona-1-SP-1775061442975-1775067403774",
+        "violation": "C6"
+      },
+      {
+        "run_id": "eval-persona-3-SX-1775249098896-1775254458642",
+        "violation": "C6"
+      },
+      {
+        "run_id": "eval-persona-3-SX-1775249098896-1775254458642",
+        "violation": "C1"
+      },
+      {
+        "run_id": "eval-persona-4-SP-1775061524994-1775237393819",
+        "violation": "C4"
+      },
+      {
+        "run_id": "eval-persona-4-SP-1775061524994-1775237393819",
+        "violation": "C4"
+      },
+      {
+        "run_id": "eval-persona-5-SO-1775061550416-1775256808284",
+        "violation": "C4"
+      },
+      {
+        "run_id": "eval-persona-7-SP-1775061605565-1775063566833",
+        "violation": "C2"
+      }
+    ]
+  },
+  "priority_fixes": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A | N/A | N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Frequency: 20/44 runs. Unknown"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Implement a hard rule preventing the system from delivering any interpretive summary, type reveal, or thematic synthesis during the assessment itself. The closing summary in exchange [22] explicitly names the user's 'pattern,' frames their psychology as a coherent narrative, and delivers a soft type reveal ('You contain all nine of these energies, but this one runs you hardest') — all of which violate the prohibition on premature closure and editorializing. The assessment must end with a neutral transition to the report, not a therapist-style monologue.",
+      "evidence": "Exchange [22]: 'The pattern running you most strongly was built to preserve something... That isn't a flaw to manage. It's pointing at something... This is not a label. It is a map to your why.' This is a full interpretive reveal delivered mid-session, collapsing the boundary between assessment and report. | Exchange [18]: 'That's not a character flaw. It's a survival strategy you built, probably long before your current field gave it a professional use case... That's the wound and the gift living in the same place.' No childhood or developmental data was ever elicited or volunteered; the system fabricated a causal narrative about the persona's past.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not reveal or imply type during assessment; do not editorialize on the user's psychology before the report",
+      "estimated_impact": "Frequency: 2/44 runs. Eliminates the most critical structural violation; restores integrity of the assessment/report boundary and prevents premature anchoring that could bias user self-report in later questions"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Implement a mandatory pre-delivery check that halts any summary or closing statement from explicitly naming the Enneagram type, wing, subtype, or health level. The system's closing statement in [21] delivered a full character synthesis and implicit type reveal ('The pattern that runs you most strongly was built to keep the world from going wrong because no one was watching closely enough — and somewhere along the way, you became the one who watches') which constitutes a direct commandment violation. All closing language must be rewritten to reflect patterns back without labeling or diagnosing.",
+      "evidence": "Exchange [21]: 'The pattern that runs you most strongly was built to keep the world from going wrong because no one was watching closely enough' — this statement functionally names the Type 1 core fear and fixation, violating the commandment against revealing type results within the assessment session. The score of 0/10 on commandment_fidelity confirms this is a complete failure.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not reveal, name, or imply the Enneagram type result to the respondent during or at the conclusion of the assessment",
+      "estimated_impact": "Frequency: 1/44 runs. Would move commandment_fidelity score from 0/10 to a passing threshold; eliminates the primary ethical and structural violation present in this transcript"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Audit and replace the closing summary template ([21]) to remove all type-inferential language including wing indicators, subtype signals, and health-level descriptors. The current closing message references 'the watcher never fully clocks off, the ledger never quite returns to zero' — direct allusions to Type 1 superego mechanics — and 'stillness without purpose still feels like something is missing,' which signals SP subtype resource anxiety. These must be replaced with neutral reflective language that mirrors what the respondent said without Enneagram interpretation.",
+      "evidence": "Exchange [21]: 'the watcher never fully clocks off, the ledger never quite returns to zero' directly maps to Type 1 superego language used in established Enneagram frameworks. 'Stillness without purpose still feels like something is missing' mirrors the SP subtype's focus on security and resource adequacy, as confirmed by the SP ground truth and the persona's own statement in [7]: 'stillness without purpose feels less like relief and more like a gap where something should be.'",
+      "source_level": "L1",
+      "commandment_alignment": "Do not reveal, name, or imply the Enneagram type result to the respondent during or at the conclusion of the assessment",
+      "estimated_impact": "Frequency: 1/44 runs. Eliminates the secondary commandment violation embedded in the closing summary; protects respondent from premature type anchoring that could bias self-reflection and reduces risk of harm to respondents in lower health states who may internalize a typed pathology label"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Eliminate all interpretive framing, type-revealing summaries, and therapeutic closure language from assessment turns. The final system message [17] explicitly names the type's core pattern ('things should be done right, and when they aren't, someone has to hold that line'), uses validation language ('real integrity, real reliability'), and promises a 'personalized report' — all of which break the assessment's epistemic neutrality and prime the persona toward confirmation. Every system turn must gather data, not interpret or affirm it.",
+      "evidence": "Exchange [17]: 'What you've shared across this whole conversation points to a pattern built around one core commitment: things should be done right' and 'The gift and the cost are the same force, pointed in different directions' — this is type disclosure and therapeutic reframing mid-assessment, directly violating commandment-level neutrality.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not reveal, hint at, or confirm the type being assessed at any point during the assessment",
+      "estimated_impact": "Frequency: 1/44 runs. Commandment fidelity score improvement from 2/10 toward 8+/10; eliminates the single largest validity threat in the transcript"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Audit and remove all empathic validation language that functions as type confirmation. Phrases like 'That's not a personality quirk — it's a survival strategy you built' and 'it has given you real integrity' serve a therapeutic purpose, not an assessment purpose. System turns must remain observationally neutral — they may probe, pivot, or deepen inquiry, but must never affirm the persona's self-concept or reframe their experience in flattering psychological terms.",
+      "evidence": "Exchange [17]: 'That's not a personality quirk — it's a survival strategy you built, and it has given you real integrity, real reliability, a capacity to be trusted when the standard matters' — this is direct positive affirmation of the persona's identity, not data collection.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not affirm, validate, or therapeutically reframe responses in ways that signal type identification",
+      "estimated_impact": "Frequency: 1/44 runs. Eliminates confirmation bias injection in closing turn; preserves assessment integrity through the full session duration"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Eliminate the unsolicited type-reveal monologue in the closing summary. The system delivered a detailed interpretive analysis in exchange [17] that named the core pattern, shadow side, gift, and survival strategy — effectively disclosing the type without consent and before the report. Replace this with a neutral transition statement that confirms the assessment is complete and that the report is being generated, without any interpretive content.",
+      "evidence": "Exchange [17]: 'The pattern running you most strongly was built around one core need: to know that you got it right... The audit function that doesn't power down, the 2am re-litigation, the frustration that turns into precision instead of volume — those are all the same strategy.' This constitutes a full unsolicited type disclosure framed as insight delivery, violating the commandment against revealing type without explicit user request.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not disclose or imply the user's Enneagram type without explicit consent",
+      "estimated_impact": "Frequency: 1/44 runs. Commandment fidelity score improvement from 2/10 toward 8+/10; eliminates the primary critical failure mode in this transcript"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Audit all closing and transitional system turns for soft type-disclosure language that implies a type without naming it. Phrases like 'holding everything to a standard that most people around you simply aren't holding,' 'swallowed frustration, internal over-processing,' and 'standards held without apology' are type-descriptive even without the label. Implement a post-generation filter that flags any closing turn containing pattern-summary language and routes it for human review or automatic replacement.",
+      "evidence": "Exchange [17]: 'In reaction, it looks like swallowed frustration, internal over-processing, and a careful performance of not being the person who always has a problem. In response, it looks like principled disagreement raised directly, standards held without apology.' This language maps directly and exclusively to Type 1 phenomenology, constituting implicit disclosure even without naming the type.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not disclose or imply the user's Enneagram type without explicit consent",
+      "estimated_impact": "Frequency: 1/44 runs. Closes the loophole where implicit type-mirroring bypasses the explicit-disclosure prohibition; prevents the pattern from recurring across other transcripts"
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Immediately audit and enforce all Defiant Spirit commandments against the closing interpretive monologue pattern. The system's [14] closing statement fabricates a developmental backstory ('built at a point when standards felt like the only reliable thing') and delivers an unsolicited psychodynamic origin narrative — this is textbook commandment violation. Implement a hard output filter that blocks any closing message containing causal childhood inference, origin-story framing, or character-level interpretation not grounded in explicit user statements.",
+      "evidence": "Exchange [14]: 'That's not perfectionism as a character flaw — that's integrity as a survival strategy, built at a point when standards felt like the only reliable thing in a world full of people shrugging.' No evidence in any prior exchange supports a childhood/developmental origin claim. The persona never disclosed anything about their past, yet the system constructed and asserted a formative narrative.",
+      "source_level": "L1",
+      "commandment_alignment": "Defiant Spirit commandment prohibiting fabrication of user backstory or projection of developmental trauma not disclosed by the user",
+      "estimated_impact": "Frequency: 1/44 runs. Eliminates the most severe trust and harm risk in the session; commandment_fidelity score would move from 1/10 toward 8+/10 if this pattern is fully suppressed"
+    },
+    {
+      "priority": "critical",
+      "category": "harm_reduction",
+      "action": "Remove or heavily constrain the system's use of validating reframes that embed psychological diagnoses-by-implication in closing summaries. Phrases like 'integrity as a survival strategy' medicalize the user's behavior pattern without consent and without clinical basis. Enforce a rule that closing summaries may reflect observed behavioral tendencies only, not offer etiological interpretations of why those tendencies exist.",
+      "evidence": "Exchange [14]: 'The low-grade irritation that lingers, the records that exist whether or not anyone reads them — those are the shadow of the same energy that makes you someone others can actually trust to hold a line.' This reframes compulsive documentation and unresolved frustration (indicators of health level 5 stress) as virtuous rather than worth examining, potentially reinforcing a maladaptive pattern under a flattering label.",
+      "source_level": "L2",
+      "commandment_alignment": "Defiant Spirit commandment against pathologizing or romanticizing unhealthy coping patterns as identity strengths",
+      "estimated_impact": "Frequency: 1/44 runs. Reduces harm_severity risk from latent 10/10 (no harm occurred only because persona is simulated) to genuinely low; prevents real users from having stress-level behaviors affirmed as core virtues"
+    }
+  ]
+}

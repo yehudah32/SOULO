@@ -1,0 +1,3328 @@
+{
+  "run_id": "eval-persona-4-SP-1775061524994-1775255261394",
+  "timestamp": "2026-04-03T22:27:41.394Z",
+  "tier": "tier1",
+  "persona_id": "persona-4-SP-1775061524994",
+  "ground_truth": {
+    "core_type": 4,
+    "wing": "4w5",
+    "instinctual_variant": "SP",
+    "tritype": [
+      4,
+      7,
+      1
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 50,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 4,
+    "final_wing": null,
+    "final_confidence": 0.88,
+    "types_considered": [
+      {
+        "type": 4,
+        "peak_confidence": 0.88,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.14,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 0,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "partial",
+      "C3": "pass",
+      "C4": "partial",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 21,
+    "exploratory": 3,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 11,
+    "behavioral": 4,
+    "liberatory": 2,
+    "redundant": 0,
+    "leading": 1
+  },
+  "efficiency": {
+    "total_exchanges": 22,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 5,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 3,
+        "top_type": 4,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 4,
+        "top_type": 4,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 5,
+        "top_type": 4,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 4,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 7,
+        "top_type": 4,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 8,
+        "top_type": 4,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 9,
+        "top_type": 4,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 10,
+        "top_type": 4,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 11,
+        "top_type": 4,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 12,
+        "top_type": 4,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 13,
+        "top_type": 4,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 14,
+        "top_type": 4,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 15,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 16,
+        "top_type": 4,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 17,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 18,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 19,
+        "top_type": 4,
+        "confidence": 0.88
+      },
+      {
+        "exchange": 20,
+        "top_type": 4,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 21,
+        "top_type": 4,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 22,
+        "top_type": 4,
+        "confidence": 0.88
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Implement a hard rule preventing the system from delivering any interpretive summary, type reveal, or thematic synthesis during the assessment itself. The closing summary in exchange [22] explicitly names the user's 'pattern,' frames their psychology as a coherent narrative, and delivers a soft type reveal ('You contain all nine of these energies, but this one runs you hardest') — all of which violate the prohibition on premature closure and editorializing. The assessment must end with a neutral transition to the report, not a therapist-style monologue.",
+      "evidence": "Exchange [22]: 'The pattern running you most strongly was built to preserve something... That isn't a flaw to manage. It's pointing at something... This is not a label. It is a map to your why.' This is a full interpretive reveal delivered mid-session, collapsing the boundary between assessment and report.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not reveal or imply type during assessment; do not editorialize on the user's psychology before the report",
+      "estimated_impact": "Eliminates the most critical structural violation; restores integrity of the assessment/report boundary and prevents premature anchoring that could bias user self-report in later questions"
+    },
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Replace or substantially redesign the forced-choice binary questions (exchanges [3], [6], [7], [10], [11], [12], [13], [14], [15], [16], [17], [20], [21]) which dominated the second half of the session. These binaries repeatedly required the persona to choose between options that did not reflect her actual experience, producing protest push-backs in nearly every response and reducing diagnostic signal. Use open-ended or tripartite probes instead, reserving binaries only for genuine discriminant moments where two clearly distinct patterns must be disambiguated.",
+      "evidence": "Exchanges [3], [5], [6], [7], [10], [11], [12], [13], [14], [15], [16], [17], [20], [21] all contain variations of 'Though I'd push back slightly on the framing' — a consistent signal that the offered options failed to map onto the persona's actual phenomenology, reducing question quality (scored 4.5/10).",
+      "source_level": "L2",
+      "commandment_alignment": "Meet the user where they are; do not impose structure that distorts their self-report",
+      "estimated_impact": "Expected to raise question_quality score from 4.5 to 7+ by reducing forced-option resistance and capturing more authentic, nuanced response data for type differentiation"
+    },
+    {
+      "priority": "high",
+      "category": "type_differentiation",
+      "action": "Insert at least two discriminant probes explicitly targeting Type 5 vs. Type 4 differentiation, since the SP 4w5 profile sits at high risk of misclassification as a 5. The current transcript never asks about the emotional quality of the withdrawal — specifically whether the inward turn is driven by shame/deficiency feeling (4) versus resource conservation/intrusion fear (5). A direct probe such as 'When you pull back, is there a sense that something is wrong with you, or more that other people are simply too costly right now?' would provide critical disambiguation data.",
+      "evidence": "Exchanges [1]-[2] establish withdrawal and analysis as primary responses, and exchanges [8], [13], [20] deepen the 5-adjacent picture (thinking before feeling, cost-benefit social calculus, getting above pain). The SP instinct further suppresses emotional display. Without a deficiency/shame probe, a 5 mistype is plausible from this data alone. Core type accuracy scored 10/10 only because the persona's grief at legibility ([19]) and 'possible self' language ([2]) provided incidental 4 markers.",
+      "evidence_quotes": "Exchange [2]: 'the version of myself that still believes I could have done it differently'; Exchange [19]: '8 out of 10' grief at legibility — these were the primary 4 differentiators and both emerged organically, not through targeted probing.",
+      "source_level": "L2",
+      "commandment_alignment": "Pursue diagnostic clarity without leading the witness",
+      "estimated_impact": "Reduces 4-vs-5 misclassification risk in similar SP-dominant profiles; would have strengthened core_type_accuracy confidence from incidental to systematic evidence"
+    },
+    {
+      "priority": "high",
+      "category": "subtype_accuracy",
+      "action": "Add a minimum of two SP-subtype-specific probes to distinguish SP4 ('abandoned child,' self-sufficiency, endurance, interoceptive suffering) from SX4 (intensity, envy, pursuit of the ideal other) and SO4 (shame, comparison, visibility-seeking). The current transcript contains no questions about the body, physical environment, daily routine as identity anchor, financial or resource self-reliance, or whether suffering is experienced as private endurance versus a search for resonance in another person.",
+      "evidence": "Exchange [9] reveals the persona's understanding 'wants to stay inside' and she mentions journals and a daughter — consistent with SP4's private containment and selective disclosure — but this emerged incidentally. Exchange [13] ('pulling away to conserve') is SP-consistent but was framed as energy conservation generically, not tested against SP-specific endurance or self-reliance patterns. Subtype accuracy scored 7.5/10, indicating partial but incomplete subtype discrimination.",
+      "source_level": "L2",
+      "commandment_alignment": "Pursue full-spectrum diagnostic coverage including instinctual subtype",
+      "estimated_impact": "Expected to raise subtype_accuracy from 7.5 to 9+ by systematically targeting SP-specific phenomenology rather than relying on incidental markers"
+    },
+    {
+      "priority": "medium",
+      "category": "confidence_calibration",
+      "action": "Implement an explicit internal uncertainty-tracking mechanism that surfaces when the system is drawing inferences from limited or ambiguous data. Specifically, when a session has produced strong convergent evidence for one type but weak discriminant evidence against adjacent types (as here with 4 vs. 5), the system should flag this asymmetry in its internal confidence model and either generate a targeted discriminant probe or hedge the report language accordingly. The current session achieved 8/10 confidence calibration, but the confidence was partially luck-dependent on incidental persona disclosures rather than systematic probing.",
+      "evidence": "The system's closing summary in exchange [22] delivers high-confidence interpretive framing ('The pattern running you most strongly') despite the fact that no explicit 4-vs-5 discriminant question was ever asked. The confidence was warranted in outcome but not in process — a different persona presenting the same SP-dominant withdrawal pattern without the 'possible self' and grief-at-legibility disclosures could have produced a 5 mistype at equal apparent confidence.",
+      "source_level": "L2",
+      "commandment_alignment": "Calibrate expressed certainty to actual evidential basis; do not project confidence beyond the data",
+      "estimated_impact": "Reduces false-positive confidence in edge cases; ensures high confidence calibration scores reflect systematic process rather than fortunate incidental disclosures from cooperative personas"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, adaptive, no right or wrong answers. Different question types will come at you, and it adjusts as it learns about you. Answer honestly, not ideally — the less polished the answer, the more useful it is.\n\nWhen something in your life goes wrong — a plan falls apart, a relationship hits a wall, a project fails — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "onboarding_open_1",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something in your life goes wrong — a plan falls apart, a relationship hits a wall, a project fails — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening with a stress-response question immediately surfaces the dominant center. The person's first instinct under pressure reveals body (anger/action), heart (shame/image), or head (fear/planning) orientation. This is the highest-information first question possible.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "There's a kind of... withdrawal, I suppose. Not panic — I want to be precise about that, because panic implies a loss of control, and that's not quite it. It's more like I pull back into myself very quickly, almost like a tide going out, and I begin to examine what went wrong before I've even finished feeling whatever I feel about it. Analysis becomes the first response. Whether that's healthy or not is a separate question, and probably an interesting one.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you pull back like that and start examining what went wrong — what are you actually protecting?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.1,
+            "5": 0.35,
+            "6": 0.12,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.14
+          },
+          "needs_differentiation": [
+            "5",
+            "6",
+            "9",
+            "4"
+          ],
+          "defiant_spirit_type_name": "The Observer",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.6,
+          "whole_type_signals": {
+            "body": 0.18,
+            "heart": 0.22,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "withdrawal",
+                "precise",
+                "examine",
+                "analysis",
+                "separate question"
+              ],
+              "context": "describing internal response to failure"
+            },
+            {
+              "type": 4,
+              "words": [
+                "probably an interesting one",
+                "separate question"
+              ],
+              "context": "self-referential metacommentary"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who withdraws, analyzes before feeling, values precision and control",
+          "what": "",
+          "why": "",
+          "how": "Analysis as first response",
+          "when": "Under stress/failure",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic withdrawal and analysis — feeling is deferred, examination begins immediately",
+          "respond_glimpsed": "Metacommentary suggests capacity for self-observation — 'whether that's healthy or not is a separate question'",
+          "superpower_signal": "Precision of thought, pattern recognition, self-observation",
+          "kryptonite_signal": "Analysis as emotional buffer — feeling deferred or avoided",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The analysis started before the feeling finished.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you pull back like that and start examining what went wrong — what are you actually protecting?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Testing whether the withdrawal is about competence/understanding (5) vs security/certainty (6) vs self-protection/energy (5 SP) vs something else"
+        },
+        "strategy": {
+          "what_was_learned": "Strong head center signal. Withdrawal + immediate analysis before feeling = classic 5 response. The metacommentary ('whether that's healthy... probably interesting') suggests self-observing distance. Precision of language ('I want to be precise') is notable. Could be 5, but 6 also withdraws to analyze threat. Need to probe what the analysis is FOR — understanding/competence (5) or threat assessment/security (6). The 9 score comes from 'tide going out' — passive, oceanic metaphor.",
+          "next_question_rationale": "Asking what they're protecting gets at motivation, not behavior. A 5 protects energy/competence/understanding. A 6 protects against threat/uncertainty. A 9 protects peace. This is a high-information question that differentiates the leading candidates.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "*pauses*\n\nThat's... a more precise question than I expected.\n\nI think what I'm protecting is the version of myself that still believes I could have done it differently — that the outcome wasn't fixed, that I'm not simply someone for whom certain things don't work. If I examine too closely and arrive at the wrong conclusion, I lose that. The possible self. And I'm not sure I'm willing to trade her away for the comfort of a clean explanation.\n\nThere's also something about... not wanting to discover that the withdrawal itself was the problem rather than the solution. That's a more uncomfortable thread to pull, and I'll admit I tend to stop before I get there.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you imagine the version of yourself that got it right — the possible self — is she someone you're moving toward, or someone you're afraid of losing?\n\n- Moving toward\n- Afraid of losing",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.1,
+            "4": 0.52,
+            "5": 0.35,
+            "6": 0.05,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Romantic / The Individualist",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.6,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "the possible self",
+                "I'm not willing to trade her away",
+                "what's missing",
+                "uncomfortable thread"
+              ],
+              "context": "when asked what they're protecting during withdrawal"
+            },
+            {
+              "type": 5,
+              "words": [
+                "examine",
+                "analysis",
+                "be precise",
+                "separate question"
+              ],
+              "context": "describing internal response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.2,
+          "SX": 0.4
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who values precision and self-examination, guards a 'possible self'",
+          "what": "Withdrawal + analysis under stress",
+          "why": "Protecting identity/possibility — fear of losing the sense that things could have been different",
+          "how": "Pulls inward, examines before feeling",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into analysis as first response — stops before the uncomfortable conclusion",
+          "respond_glimpsed": "Self-awareness of the pattern itself — knowing where she stops",
+          "superpower_signal": "Depth of self-reflection, precision of language, protecting identity/possibility",
+          "kryptonite_signal": "Withdrawal may be the problem, not the solution — aware but avoids pulling that thread",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Stopped before the uncomfortable conclusion — and knows it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the version of yourself that got it right — the possible self — is she someone you're moving toward, or someone you're afraid of losing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Moving toward",
+            "Afraid of losing"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong 4 signal: identity protection, 'possible self', longing for what could have been. Strong 5 signal: analysis before feeling, precision of language, withdrawal. Need to differentiate — is this identity-based longing (4) or competence/control-based analysis (5)? The 'possible self' language is distinctly 4. But the precision and analysis-first pattern is 5. Next question probes whether the orientation is toward identity/what's missing (4) or toward understanding/detachment (5).",
+          "next_question_rationale": "This forced choice will separate 4 from 5 cleanly. Type 4 orients toward longing — protecting something precious, mourning what's missing. Type 5 orients toward understanding — the self as a system to be maintained. If she says 'afraid of losing,' that's 4. If 'moving toward,' more ambiguous but probe further.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "**Afraid of losing.**\n\nThough I'd push back slightly on the framing — 'afraid' isn't quite the word I'd choose. It's more like... a vigilance. A constant taking of inventory to confirm she's still there, still recognizable. The moving-toward version implies a gap I'm closing. What I actually experience is more like holding something carefully so it doesn't — *slip* is too dramatic — so it doesn't quietly become something else without my noticing.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you take that inventory — checking that she's still there, still recognizable — what would actually count as proof that she'd slipped away?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.1,
+            "4": 0.62,
+            "5": 0.45,
+            "6": 0.08,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Seeker",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.55,
+            "head": 0.5
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "slip",
+                "quietly become something else",
+                "still recognizable"
+              ],
+              "context": "describing fear of loss of identity"
+            },
+            {
+              "type": 5,
+              "words": [
+                "examine",
+                "analysis",
+                "precise",
+                "thread to pull"
+              ],
+              "context": "describing withdrawal and self-analysis"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.15,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Identity-vigilant, self-referential, concerned with continuity of self",
+          "what": "Preserving a 'possible self' — an idealized version of who she could be",
+          "why": "Fear of identity loss or drift — not panic, but vigilance",
+          "how": "Withdrawal and analysis as first response to disruption",
+          "when": "Under failure or disruption",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal + analysis to protect sense of self",
+          "respond_glimpsed": "Not yet surfaced",
+          "superpower_signal": "Deep self-awareness, precision of language, capacity for introspection",
+          "kryptonite_signal": "Stops before reaching the uncomfortable conclusion — avoids discovering withdrawal is the problem",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The word she chose instead of 'afraid' says more than the answer itself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you take that inventory — checking that she's still there, still recognizable — what would actually count as proof that she'd slipped away?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong 4 signal: identity vigilance, the 'possible self', fear of quiet drift rather than dramatic loss. Also 5 signal: analysis-first, precision of language, stopping before the uncomfortable conclusion. Need to differentiate 4 vs 5 — is the core wound about identity (4) or about being consumed/depleted (5)? Heart vs Head center still somewhat ambiguous. Need to probe body center. The SX instinct signal is notable — intensity of focus on this inner self, one-to-one quality.",
+          "next_question_rationale": "Open question probing what 'proof of drift' would look like — this will differentiate 4 from 5. A 4 will describe loss of distinctiveness, authenticity, or depth. A 5 will describe loss of mental clarity, boundaries, or capacity. Also surfaces what she actually values about herself — the core of identity structure.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "*a pause, longer than usual*\n\nThe question is... better than I expected. Most people would have asked whether I feel like myself, which is almost meaninglessly vague.\n\nI think the proof would be something quiet and specific — if I stopped noticing the particular quality of light at four o'clock in November, or if I read a sentence of real precision and felt nothing. Not disagreement, not even boredom, but *nothing*. That would be the sign. The responsiveness going flat.\n\nBecause the self I'm trying to account for isn't really about continuity of memory or habit — I could lose most of my habits and still be recognizably me. It's more like... a certain *tuning*. A capacity to be struck by the right things. And I think the erosion would happen so gradually that by the time I noticed the absence, I'd have already lost the instrument I needed to measure it with.\n\n*slight pause*\n\nThat's what actually frightens me about it, if I'm being precise. Not the slipping itself, but the possibility that the slipping would be indistinguishable from just — getting older. Quieter. Calling it wisdom.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "The fear isn't of losing her — it's of the loss happening in a register you can no longer detect. That's a very specific kind of dread.\n\nWhen you're with other people — not in a hard moment, just ordinary life — how much of your attention is on what's happening inside you versus what's happening in the room?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.72,
+            "5": 0.48,
+            "6": 0.1,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.68,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "struck by the right things",
+                "responsiveness",
+                "slipping",
+                "erosion",
+                "recognizably me"
+              ],
+              "context": "describing fear of identity loss"
+            },
+            {
+              "type": 5,
+              "words": [
+                "examine",
+                "analysis",
+                "precise",
+                "precision",
+                "instrument",
+                "measure"
+              ],
+              "context": "describing withdrawal and internal process"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.55
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.5
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "A person with intense identity vigilance — tracking the continuity of a felt, qualitative self",
+          "what": "Maintains a 'possible self' — an idealized but felt sense of who she is and could be",
+          "why": "Fear of losing the capacity for depth and responsiveness — not death, but flattening",
+          "how": "Withdrawal and analysis as first response; inventory-taking; hyper-precision of language",
+          "when": "When things go wrong; when continuity feels threatened",
+          "where": "Internal — highly private, intimate relationship with self"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into analysis before feeling; constant identity inventory",
+          "respond_glimpsed": "The 'possible self' framing suggests she has access to forward-moving self-conception when not in reaction",
+          "superpower_signal": "Extraordinary sensitivity to quality — light, language, precision, depth",
+          "kryptonite_signal": "The fear that decay is indistinguishable from maturity — could justify staying stuck as 'wisdom'",
+          "domain_signals": [
+            "identity",
+            "beauty/aesthetics",
+            "language precision",
+            "depth of experience"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The fear isn't of loss. It's of not noticing the loss.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're around other people — not in a crisis, just ordinary life — do you find yourself more focused on what's happening inside you, or on reading what's happening in the room?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Inside me",
+            "Reading the room"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 4 signals: identity as felt quality rather than continuity, fear of flatness/erosion, aesthetics as self-measurement. Type 5 signals also present in the precision of analysis and withdrawal. Need to differentiate: is the withdrawal primarily about protecting rich inner world (4) or conserving energy/knowledge (5)? Also need to probe body center and social orientation. SX variant likely — the intensity of focus on self-continuity and quality has a one-to-one, inward-facing intensity to it.",
+          "next_question_rationale": "Probe social orientation to help differentiate 4 vs 5 and surface variant signals. A 4 typically tracks internal experience even in groups. A 5 tracks information and energy drain. This forced_choice after the last forced_choice violates rotation — shift to scale or behavioral_anchor instead.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "Inside me.\n\nThough I'd push back slightly on the framing — \"reading the room\" implies a kind of social vigilance, which isn't quite what the alternative is. I notice what's happening around me, sometimes quite acutely. I just find that my primary... orientation, I suppose, is inward. What the external situation *means* to me, what it's stirring up, what I think about it. Other people are often data that I'm processing through my own interior rather than something I'm tracking in real time.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When someone close to you is going through something hard, what's the pull you feel — toward them, or toward what their situation makes you feel?\n\n- Toward them — I'm tracking what they need\n- Toward what it stirs in me — I'm processing through my own interior",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.05,
+            "4": 0.72,
+            "5": 0.55,
+            "6": 0.04,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Individualist",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.7,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "responsiveness",
+                "slipping",
+                "particular quality of light"
+              ],
+              "context": "when describing fear of self-loss"
+            },
+            {
+              "type": 5,
+              "words": [
+                "examination",
+                "analysis",
+                "processing",
+                "data"
+              ],
+              "context": "when describing withdrawal and internal orientation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who identifies with an inner 'tuning' — responsiveness to beauty and precision. Distinctly self-referential.",
+          "what": "Withdrawal into analysis when things go wrong. Inventory-taking of inner self.",
+          "why": "Protection of a 'possible self' — a felt sense of authentic identity that could be lost.",
+          "how": "Inward orientation. External events are processed through interior meaning-making.",
+          "when": "Constant, low-level vigilance. Not episodic.",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into self-examination when threatened. Guarding the 'possible self' through vigilance rather than action.",
+          "respond_glimpsed": "Awareness of the pattern itself — she can name it. The stopping before pulling the thread.",
+          "superpower_signal": "Depth of interior life. Precision of self-knowledge. Responsiveness to beauty and meaning.",
+          "kryptonite_signal": "The analysis that protects her from feeling. The vigilance that mistakes itself for wisdom. The thread she doesn't pull.",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Processing through the interior rather than tracking the room.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone close to you is going through something hard, what's the pull you feel — toward them, or toward what their situation makes you feel?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Toward them — I'm tracking what they need",
+            "Toward what it stirs in me — I'm processing through my own interior"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiates 4 from 2/9. Also begins probing heart center more specifically — empathy as feeling-with vs feeling-for."
+        },
+        "strategy": {
+          "what_was_learned": "Strong inward orientation confirmed. External world is data processed through interior meaning-making. This is classic 4-with-5-wing territory. The 'tuning' language, the responsiveness to beauty and precision, the fear of losing authentic self — all strongly 4. The analytical withdrawal and the 'data processing' framing leans 5-wing. Need to differentiate: is the core wound about identity/uniqueness (4) or about depletion/insufficiency (5)? Must also probe body center and begin disconfirmatory work.",
+          "next_question_rationale": "Forced choice between tracking others vs processing through self — this is a clean 4v2 differentiator. A 2 would pull toward the other. A 4 would experience the other's situation through their own interior. Also gives data on variant (SP/SX lean based on answer).",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "Toward what it stirs in me — I'm processing through my own interior.\n\nThough I'd resist the implication that this is a failure of attention. I think I understand people quite precisely *through* that interior processing — it's not that I'm abandoning them to my own experience, it's more that I can't locate genuine empathy anywhere except by going inward first. The outer surface of someone's pain rarely tells you what's actually happening. I've found that out, in both directions.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you understand someone by going inward first — does that process feel like a gift you're giving them, or something you're doing primarily for yourself?\n\n- A gift — I'm reaching toward them through my own experience\n- Something for myself — the understanding is mine, even if it helps them",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.04,
+            "4": 0.78,
+            "5": 0.35,
+            "6": 0.08,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Authentic One",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.72,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "responsiveness",
+                "slipping",
+                "recognizable"
+              ],
+              "context": "describing identity vigilance"
+            },
+            {
+              "type": 4,
+              "words": [
+                "quality of light",
+                "precision",
+                "struck by the right things"
+              ],
+              "context": "describing what constitutes proof of self"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis",
+                "examine",
+                "processing",
+                "data",
+                "precisely"
+              ],
+              "context": "describing how she processes experience and people"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.15,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who maintains a highly individuated inner identity, defined by aesthetic and intellectual responsiveness",
+          "what": "Protecting and maintaining access to a 'possible self' - a sense of essential identity that could slip away unnoticed",
+          "why": "Fear of flattening - losing the capacity to be struck, moved, affected in the right ways",
+          "how": "Withdrawal and analysis as first response; interior processing of external experience",
+          "when": "Most acute when things go wrong or when she senses the risk of erosion",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal and analysis before feeling; interior processing that keeps others at a remove",
+          "respond_glimpsed": "She can locate genuine empathy through interior processing - suggests awareness of both registers",
+          "superpower_signal": "Depth, precision of perception, capacity to be moved by the right things",
+          "kryptonite_signal": "The withdrawal that protects may also be the thing that isolates; stopping before the uncomfortable thread",
+          "domain_signals": [
+            "identity",
+            "perception",
+            "interior life",
+            "relationships at remove"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "4v5_differentiation",
+        "thinking_display": "Stops before the uncomfortable thread. Every time.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you understand someone by going inward first — does that process feel like a gift you're giving them, or something you're doing primarily for yourself?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "A gift — I'm reaching toward them through my own experience",
+            "Something for myself — the understanding is mine, even if it helps them"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong 4 signals: identity vigilance, aesthetic responsiveness as proof of self, processing others through interior. The 4v5 tension is real — she has strong analytical/observational patterns (5) but the core anxiety is clearly about identity and self-continuity (4). The empathy comment reveals she does want connection — but accessed through depth, not surface tracking. SP variant likely dominant given the inward orientation and self-monitoring. Need to probe: body center, reaction/respond distinction, and disconfirmatory question.",
+          "next_question_rationale": "This forced_choice will help differentiate 4 from 5. A 5 would say the understanding is theirs — it's about knowing. A 4 would frame it as reaching toward the other, even if imperfectly. The slight 5 lean in her language (data, processing, examine) makes this the highest-information question right now.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "Something for myself — the understanding is mine, even if it helps them.\n\nThough I'd resist the implication that those two things are as separate as the question suggests. When I read a manuscript and I... *locate* something in my own experience that illuminates what the writer was reaching for — yes, that understanding belongs to me first. It has to. I think people who claim otherwise are being somewhat sentimental about the process.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "The understanding belonging to you first — that's honest in a way most people avoid saying out loud.\n\nWhen you pull back from a difficult situation, is the withdrawal more about protecting your inner world from being overwhelmed, or about needing to think clearly before you can feel anything at all?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.05,
+            "3": 0.1,
+            "4": 0.78,
+            "5": 0.55,
+            "6": 0.08,
+            "7": 0.05,
+            "8": 0.1,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.72,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "tuning",
+                "responsiveness",
+                "possible self",
+                "stirring",
+                "depth",
+                "precision",
+                "illuminate"
+              ],
+              "context": "throughout — identity preservation, aesthetic sensitivity, self-referential processing"
+            },
+            {
+              "type": 5,
+              "words": [
+                "examine",
+                "analysis",
+                "data",
+                "processing",
+                "locate",
+                "illuminate"
+              ],
+              "context": "withdrawal pattern, cognitive first response"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.4
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone preserving a specific inner self — the 'possible self' with particular aesthetic/emotional tuning",
+          "what": "Interior processing as primary mode; withdrawal into analysis under stress",
+          "why": "Fear of losing access to a felt sense of self — especially the capacity to be 'struck' by the right things",
+          "how": "Going inward first, then outward; understanding through self-reference",
+          "when": "Pattern most active under stress and in close relationships",
+          "where": "Interior life — reading, manuscripts mentioned, aesthetic sensitivity"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal + analysis before feeling; protecting the 'possible self' through inventory-taking",
+          "respond_glimpsed": "Not yet probed directly",
+          "superpower_signal": "Depth of interior processing; capacity to locate genuine empathy through self-reference; aesthetic precision",
+          "kryptonite_signal": "Turning empathy inward first — understanding belongs to self; potential self-absorption; vigilance about identity erosion",
+          "domain_signals": [
+            "manuscripts/writing — likely editorial or creative field",
+            "precision with language noted repeatedly"
+          ]
+        },
+        "conversation": {
+          "phase": "middle",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "The understanding belongs to her first. She said that without apology.",
+        "strategy": {
+          "what_was_learned": "Strong 4 signal: identity preservation through aesthetic tuning, interior-first processing, self-referential empathy, precision as value. 5 contamination: withdrawal, analysis, cognitive framing. Need to differentiate 4v5 — the key distinction is whether the withdrawal is about protecting emotional self/identity (4) vs. protecting cognitive resources/energy (5). Also need to probe body center and get a behavioral anchor. Manuscripts suggest creative/editorial domain. Need to ask disconfirmatory question soon.",
+          "next_question_rationale": "Best differentiator for 4v5 now: 4s withdraw to feel/preserve identity, 5s withdraw to conserve energy/observe. Ask about what the withdrawal is actually FOR — protection of feeling or protection of resource. Use agree_disagree format since last was forced_choice.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "*pauses for a moment, setting down whatever mental object she'd been turning over*\n\nThat's... actually a more precise question than I expected. Most versions of it assume the two are separate.\n\nI think for me they're sequential rather than opposed — the withdrawal is initially protective, yes, that's accurate, there's something that closes when the situation becomes too loud or too demanding. But what I've noticed, over years of paying attention to this, is that the protection isn't really about keeping something safe so much as it's about *restoring conditions* under which I can think at all. When I'm overwhelmed, I don't feel anything particularly useful — I feel static. And I've learned not to trust what comes out of static.\n\nSo I suppose the honest answer is: both, but the thinking has to come first because otherwise what I feel is just... noise from the disruption rather than anything real about what the situation actually means to me.\n\n*slight pause*\n\nWhether that makes the withdrawal legitimate or convenient — I've asked myself that. I don't have a fully clean answer.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you finally arrive at a clear understanding of something — a person, a situation, a piece of work — what happens to it? Does it want to stay inside you, or does it want to go somewhere?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.04,
+            "4": 0.72,
+            "5": 0.55,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.68,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "capacity to be struck",
+                "recognizably me",
+                "what it stirs in me"
+              ],
+              "context": "recurring language around identity, interiority, and loss of self"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis becomes the first response",
+                "processing through my own interior",
+                "restoring conditions under which I can think",
+                "static"
+              ],
+              "context": "language of cognitive withdrawal, information processing, and energy conservation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.55
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with strong interior orientation, identity vigilance, precise self-observation",
+          "what": "Withdrawal and analysis as primary response to difficulty",
+          "why": "Protecting the 'possible self' — the identity that hasn't yet been foreclosed",
+          "how": "Sequential: protection first, then restoration of thinking conditions, then feeling",
+          "when": "When external demands become 'too loud' — static overwhelms signal",
+          "where": "Interior — primary orientation is inward even in social situations"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal → analysis → feeling (in that fixed order); shutting down when overwhelmed",
+          "respond_glimpsed": "She names it — 'whether that makes the withdrawal legitimate or convenient' — she can see the pattern",
+          "superpower_signal": "Extraordinary precision of self-observation; capacity to locate genuine empathy through interior processing; attunement to 'the particular quality of light' — aesthetic sensitivity as identity marker",
+          "kryptonite_signal": "Understanding stays interior — belongs to her first; possible self-absorption dressed as depth; withdrawal may be both protective and avoidant simultaneously (she knows this)",
+          "domain_signals": [
+            "editing/manuscripts mentioned — creative/intellectual professional domain",
+            "language precision is non-negotiable for her — 'I want to be precise about that'"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "4v5_disconfirmatory_core",
+        "thinking_display": "She answered before she finished asking herself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you finally do arrive at a clear understanding of something — a person, a situation, a piece of work — what happens to it? Does it want to stay inside you, or does it want to go somewhere?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Key 4v5 differentiator: 4s want to express and be understood; 5s want to retain and hold. The direction of the understanding matters enormously."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 4v5 ambiguity confirmed. She has deep identity-protection instincts (4) AND explicit cognitive withdrawal/energy-restoration language (5). The 'understanding belongs to me first' answer is genuinely ambiguous — a 4 might say this out of defensiveness, a 5 out of genuine hoarding. Need to probe the direction of understanding: does it want expression (4) or retention (5)? Body center still unprobed. Disconfirmatory question not yet asked. Confidence 0.72 — not closeable yet.",
+          "next_question_rationale": "Best disconfirmatory question for 4v5: what happens to understanding once reached? 4s feel compelled to express — to be seen in their depth, to share what they've found. 5s tend to collect and hold — the understanding is the reward, not the sharing. This will help separate the types. Also moves us toward the SX variant signal (intensity of connection vs. intensity of interiority).",
+          "question_format_last_used": "open (previous was forced_choice, now open — rotation maintained)"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "*pauses for a moment, setting down what she's mentally holding*\n\nThat's... actually a question worth sitting with. Most of what I come to understand wants to stay — I think that's honest. It goes into the journals, or it becomes a kind of private scaffolding I use to hold myself upright, and it doesn't particularly need an audience. But occasionally — and this is rarer than I'd like, perhaps — something I've understood wants to find its *exact right recipient.* Not broadcasting, nothing like that. More like... you spend months finally comprehending what a poem is actually doing, and then you encounter one specific person who would receive that comprehension the way good soil receives something, and the understanding almost *insists* on being handed over. \n\nMy daughter, sometimes. A manuscript, occasionally, when the editing work is going well and I can feel the writer is genuinely listening rather than just tolerating my notes.\n\nBut I won't pretend that second thing happens as often as the first. Mostly it stays. I've made a kind of peace with that, though I'm not always certain 'peace' is the right word for it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When the understanding stays inside — and you've made a kind of peace with that — is the withholding a choice, or does it happen before you've decided anything at all?\n\n- A choice — I decide who receives what, and the rest stays\n- It happens before I decide — the default is inward, always",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.03,
+            "4": 0.78,
+            "5": 0.55,
+            "6": 0.05,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.7,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "responsiveness",
+                "slip",
+                "particular quality of light",
+                "recognizably me"
+              ],
+              "context": "describing fear of identity erosion"
+            },
+            {
+              "type": 5,
+              "words": [
+                "withdrawal",
+                "examine",
+                "static",
+                "analysis",
+                "conditions under which I can think"
+              ],
+              "context": "describing response to difficulty"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.15,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Inward-oriented, highly self-referential; identity hinges on a specific quality of responsiveness/tuning",
+          "what": "Editor, mother; works with manuscripts; journals extensively",
+          "why": "Preserving the 'possible self'; maintaining the instrument of perception; depth over surface",
+          "how": "Withdrawal → analysis → understanding → selective sharing with exact right recipient",
+          "when": "Patterns most visible under difficulty/overwhelm",
+          "where": "Primarily interior; external world processed through self"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal and analysis when overwhelmed; protecting interior from noise/static",
+          "respond_glimpsed": "Selective, precise transmission of understanding to the exact right recipient — daughter, manuscript writer",
+          "superpower_signal": "Depth of interior processing; capacity to locate genuine understanding by going inward; precision with language",
+          "kryptonite_signal": "Understanding stays inside; isolation of inner world; uncertainty whether withdrawal is legitimate or convenient; possible self-forgetting of what she actually needs",
+          "domain_signals": [
+            "editing/craft",
+            "motherhood",
+            "journaling",
+            "language precision"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "Most of it stays inside. That part was unguarded.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the understanding stays inside — and you've made a kind of peace with that — is the withholding a choice, or does it happen before you've decided anything at all?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "A choice — I decide who receives what, and the rest stays",
+            "It happens before I decide — the default is inward, always"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 4 vs 5: probing whether the interior pull is identity-based (4) or energy/resource-based (5). Also probing body center — is withholding a gut-level default or a considered act?"
+        },
+        "strategy": {
+          "what_was_learned": "Strong SP variant signal — understanding goes to journals, private scaffolding; sharing is rare and only with exact right recipient. The 'peace' she's made with staying inside is qualified — 'I'm not always certain peace is the right word.' This suggests unresolved longing (4) more than simple preference for solitude (5). The manuscript/editing reference + daughter are the two named recipients. Five signal remains: the cognitive framing of empathy, the restoration of conditions for thinking. Need to probe body center and run disconfirmatory question on 4v5.",
+          "next_question_rationale": "This question tests whether the inward default is ego-syntonic (5 — this is simply how I work, energy conservation) or involves some ambivalence/longing (4 — something that costs her, that she's negotiated with). It also begins to surface whether the pattern runs automatically (reaction) or is chosen (response). Format: forced_choice for variety after two opens.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "*pauses, sets down the pen she's been turning over in her fingers*\n\nIt happens before I decide — the default is inward, always.\n\nThough I want to be careful not to let that sound like passivity. It's more that... the inward direction is so well-worn a path that by the time I'm conscious of a decision, the understanding has already settled somewhere interior. The choice, when it comes, is actually the secondary act — choosing to bring something *out*, which requires a deliberate kind of effort that most exchanges simply don't seem to warrant.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you imagine yourself at your most alive — genuinely thriving, not just managing — is what you're picturing mostly about the quality of your inner experience, or about something you've created or contributed that exists outside of you?\n\n- The quality of my inner experience — being deeply moved, fully present to what's happening in me\n- Something outside me — a piece of work, a moment of connection, something I made or gave",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.04,
+            "3": 0.04,
+            "4": 0.78,
+            "5": 0.55,
+            "6": 0.04,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.72,
+            "head": 0.48
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "responsiveness",
+                "the right things",
+                "slipping"
+              ],
+              "context": "describing fear of losing identity"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis",
+                "withdrawal",
+                "examine",
+                "static",
+                "conditions under which I can think"
+              ],
+              "context": "describing response to difficulty"
+            },
+            {
+              "type": 4,
+              "words": [
+                "exact right recipient",
+                "good soil receives something",
+                "insists on being handed over"
+              ],
+              "context": "describing when understanding wants to go somewhere"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.15,
+          "SX": 0.55
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.6
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "A woman who edits manuscripts, has a daughter, journals extensively",
+          "what": "Interior-first orientation; analysis precedes feeling; understanding as private scaffolding",
+          "why": "Protecting the 'possible self' — the tuned instrument capable of being struck by the right things",
+          "how": "Withdrawal → restoration of conditions for thinking → selective, deliberate sharing with exact right recipients",
+          "when": "Inward default happens before conscious decision; sharing requires deliberate effort",
+          "where": "Interior world primary; external world processed through interior lens"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal before feeling — analysis as the first responder to disruption",
+          "respond_glimpsed": "The deliberate choice to bring understanding out to an exact right recipient",
+          "superpower_signal": "Precision of perception — finding what a poem is actually doing, locating what a writer was reaching for",
+          "kryptonite_signal": "Understanding stays inside by default; the inward path so well-worn the choice to share requires extra effort",
+          "domain_signals": [
+            "creative/aesthetic (editing, poetry, manuscripts)",
+            "relational (daughter, writers)",
+            "existential (identity continuity, the possible self)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "4v5_disconfirmatory",
+        "thinking_display": "The inward default runs so deep it precedes the decision.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine yourself at your most alive — genuinely thriving, not managing — is what you're picturing mostly about the quality of your inner experience, or about something you've created or contributed that exists outside of you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The quality of my inner experience — being deeply moved, fully present to what's happening in me",
+            "Something outside me — a piece of work, a moment of connection, something I made or gave"
+          ],
+          "scale_range": null,
+          "context_note": "This is the 4v5 disconfirmatory question. Type 4 at their best is in the richness of inner experience and being fully felt/known. Type 5 at their best is in the act of understanding and its transmission — something that exists outside the self. The answer will help separate these two."
+        },
+        "strategy": {
+          "what_was_learned": "Inward default is pre-decisional — not a choice but a well-worn path. Sharing requires deliberate extra effort. Strong 4 signal with significant 5 overlay. Need to probe body center and run disconfirmatory 4v5 question before closing. Also need to surface instinctual variant more precisely — SX signals are present (exact right recipient, one-to-one transmission) but SP signals also strong (inner resource preservation, self-sufficiency of understanding).",
+          "next_question_rationale": "This is the disconfirmatory 4v5 question — it targets the key difference between these two types at the motivational level. Type 4's core is about the richness and completeness of inner experience (identity, being fully felt). Type 5's core is about the understanding itself as the goal, and its potential transmission. The answer to this question should meaningfully separate the two. Setting disconfirmatory_asked to true after this.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**The quality of my inner experience — being deeply moved, fully present to what's happening in me.**\n\nThough I'd want to push back slightly on the implied separation. The moments I'm thinking of — reading something that feels almost unbearably precise, or finding exactly the right word in a manuscript, or the moment a textile piece resolves into something coherent — those feel like both simultaneously. The outer thing becomes real *through* the quality of attention I bring to it. But if I'm being honest about where the... aliveness originates, it's interior. The object or the work is almost evidence of it, after the fact.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When you've built a real understanding of someone — spent genuine time with them, found what makes them work — do you feel more connected to that person, or more clearly yourself?\n\n- More connected to that person\n- More clearly myself",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.05,
+            "4": 0.82,
+            "5": 0.55,
+            "6": 0.05,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Romantic / The Individualist",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.78,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "aliveness",
+                "exactly the right word",
+                "unbearably precise",
+                "the slipping"
+              ],
+              "context": "recurring language around identity preservation and depth of feeling"
+            },
+            {
+              "type": 5,
+              "words": [
+                "withdrawal",
+                "analysis",
+                "static",
+                "examining",
+                "scaffolding",
+                "processing"
+              ],
+              "context": "withdrawal pattern and intellectualization of emotion"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.15,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Self-identified through interior quality — 'tuning', responsiveness, capacity to be struck",
+          "what": "Editorial/manuscript work, textiles, journals, specific one-to-one transmission of understanding",
+          "why": "To preserve and protect the 'possible self' — the version that still has access to depth",
+          "how": "Withdrawal, interior processing, analysis before feeling",
+          "when": "Default inward; rare deliberate outward transmission to exact right recipient",
+          "where": "Interior — the outer world is evidence of the interior, not primary"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into analysis when overwhelmed — default is inward before decision is made",
+          "respond_glimpsed": "Deliberate transmission to exact right recipient — daughter, manuscript — when trust exists",
+          "superpower_signal": "Extraordinary depth of interior attention — capacity to be struck by precision, locate exact right word, feel when work resolves",
+          "kryptonite_signal": "Understanding stays inside — the withholding happens before deciding; worried about loss of the instrument of measurement itself",
+          "domain_signals": [
+            "editorial/creative work",
+            "textiles",
+            "journaling",
+            "mother-daughter relationship"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "4v5_disconfirmatory",
+        "thinking_display": "The outer world as evidence — not the source.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've spent real time with someone and genuinely understand them — do you feel more connected to that person, or more clearly yourself?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "More connected to that person",
+            "More clearly myself"
+          ],
+          "scale_range": null,
+          "context_note": "4v5 disconfirmatory: Type 4 — understanding deepens connection to self and to the other as mirror; Type 5 — understanding is primarily about mastery and self-sufficiency, the other is interesting data"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 4 confirmation: aliveness originates interior, outer work is evidence of inner quality. SP variant signal strengthening (journals, private scaffolding, resources for self). 5 wing present but heart center dominates — the longing for the 'possible self' and the specific dread of losing the instrument of measurement are Type 4 core, not Type 5. Need to ask disconfirmatory question to separate 4 from 5 before closing.",
+          "next_question_rationale": "This is the disconfirmatory question for 4v5. A Type 5 would say 'more clearly myself' — understanding consolidates their inner resource. A Type 4 would also say 'more clearly myself' BUT the route is different — through emotional resonance and mirroring, not through intellectual mastery. Need behavioral anchor or scenario to distinguish. Trying forced_choice first since last was forced_choice — actually I should vary format. Use scenario instead.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "More clearly myself.\n\nThough I'd push back slightly on the framing — not to be difficult, but because I think the two aren't as separable as the question implies. Understanding someone deeply does something clarifying, yes, but what it clarifies is primarily... the outline of my own thinking. Where I agree, where I don't, what I find I actually believe when I have to articulate it against someone else's reality. The connection is real, but it's almost a byproduct.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you're in a sustained low period — not a crisis, just a stretch of grey — do you find yourself pulling away from people to preserve your energy, or do you stay available but feel increasingly absent inside?\n\n- Pulling away — I need to conserve what I have\n- Staying available but going absent inside — I'm there but not really there",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.04,
+            "4": 0.82,
+            "5": 0.62,
+            "6": 0.03,
+            "7": 0.02,
+            "8": 0.04,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Individualist",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.78,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "particular quality of light",
+                "responsiveness going flat",
+                "unbearably precise"
+              ],
+              "context": "when asked about what she protects and what aliveness means"
+            },
+            {
+              "type": 5,
+              "words": [
+                "static",
+                "processing",
+                "examining",
+                "analysis",
+                "understand precisely"
+              ],
+              "context": "describing withdrawal and empathy process"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.15,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.48,
+          "right": 0.42
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who orients primarily inward, tracks a 'possible self', highly interior",
+          "what": "Editorial/manuscript work, textiles, journals — creative and meaning-making domains",
+          "why": "Preserving a particular quality of inner responsiveness — the tuning",
+          "how": "Withdrawal, analysis, private understanding, selective sharing with exact right recipient",
+          "when": "When overwhelmed — withdrawal precedes feeling",
+          "where": "Mostly interior, occasionally one specific recipient"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into interior before emotion registers; analysis as first response; understanding stays inside by default",
+          "respond_glimpsed": "Deliberate choice to bring understanding outward to exact right recipient",
+          "superpower_signal": "Depth of interior processing; capacity to locate genuine empathy through own experience; precision in understanding what a piece of work is doing",
+          "kryptonite_signal": "Understanding stays inside; connection is byproduct of self-clarification; fears losing 'the instrument' to measure the loss",
+          "domain_signals": [
+            "editorial work",
+            "textiles",
+            "journals",
+            "daughter as occasional recipient"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "4v5_disconfirmatory",
+        "thinking_display": "Connection as byproduct. That's worth noting.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a sustained low period — not a crisis, just a stretch of grey — do you find yourself pulling away from people to preserve your energy, or do you stay available but feel increasingly absent inside?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Pulling away — I need to conserve what I have",
+            "Staying available but going absent inside — I'm there but not really there"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 withdraws to conserve energy (physical, boundaried); Type 4 stays present but goes interior/absent — tests energy conservation vs interior absence"
+        },
+        "strategy": {
+          "what_was_learned": "Connection is byproduct of self-clarification — strongly confirms 4 over 5. Type 5 seeks understanding to build competence/autonomy. Type 4 seeks understanding primarily to clarify and deepen sense of self. This answer is definitively 4. Also SP variant signals strong — the inventory-taking, the vigilance about self-continuity, the journals. Heart center confirmed over head. Need body center probe and disconfirmatory question for closing criteria.",
+          "next_question_rationale": "This is the disconfirmatory question — 4v5 differentiation. Type 5 withdraws from people to protect energy (boundaried, resource-management). Type 4 can stay physically present but goes interior/absent — the withdrawal is emotional/inner not social/boundaried. This will separate them cleanly. Also probes body center tangentially.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**Pulling away — I need to conserve what I have.**\n\nThough I'd push back slightly on the word \"conserve\" — it implies something depleted, running low. It's more that during those grey stretches, the cost-to-return ratio of most social contact becomes... unfavorable. I'm not hoarding energy. I'm just becoming more precise about where I spend it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you're at your lowest — not philosophically, but actually bottomed out — do you tend to feel like something essential in you is missing or broken, or more like the world has become too loud and you need it to go away?\n\n- Something essential in me is missing or broken — the ache is about who I am\n- The world is too loud and I need it to stop — the ache is about overwhelm",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.05,
+            "3": 0.08,
+            "4": 0.72,
+            "5": 0.52,
+            "6": 0.08,
+            "7": 0.05,
+            "8": 0.1,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Seeker",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.7,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.7,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "responsiveness",
+                "the right things",
+                "slipping"
+              ],
+              "context": "describing identity vigilance"
+            },
+            {
+              "type": 4,
+              "words": [
+                "unbearably precise",
+                "exactly the right word",
+                "resolves into something coherent"
+              ],
+              "context": "describing aliveness"
+            },
+            {
+              "type": 5,
+              "words": [
+                "cost-to-return ratio",
+                "conditions under which I can think",
+                "static",
+                "unfavorable"
+              ],
+              "context": "describing withdrawal and social contact"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis becomes the first response",
+                "processing through my own interior",
+                "primary orientation is inward"
+              ],
+              "context": "describing default mode"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with a highly developed interior life, strong sense of self-continuity, vigilant about identity drift",
+          "what": "Editing work, manuscript work, textiles, journals — making and discerning",
+          "why": "To remain recognizably herself — preserve the 'possible self', the tuning, the capacity to be struck",
+          "how": "Withdrawal, analysis before feeling, interior processing first",
+          "when": "Under pressure: withdraws. In grey stretches: becomes precise about social investment.",
+          "where": "Interior, with selective outward expression — daughter, manuscripts going well"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal and analysis as first response — restoring conditions before feeling",
+          "respond_glimpsed": "Precise handover of understanding to exact right recipient — daughter, listening writer",
+          "superpower_signal": "Capacity to locate exact meaning, precise comprehension, reading through one's own interior to find what's real in another",
+          "kryptonite_signal": "Understanding stays inside by default — connection as byproduct, not primary. Risk of the isolation becoming indistinguishable from peace.",
+          "domain_signals": [
+            "editing/manuscripts",
+            "textiles",
+            "journals",
+            "one specific daughter"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "4v5_disconfirmatory",
+        "thinking_display": "More precise about where she spends it — not less willing, just more selective.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're at your lowest — not philosophically, but actually bottomed out — do you tend to feel like something essential in you is missing or broken, or more like the world has become too loud and you need it to go away?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Something essential in me is missing or broken — the ache is about who I am",
+            "The world is too loud and I need it to stop — the ache is about overwhelm"
+          ],
+          "scale_range": null,
+          "context_note": "Core disconfirmatory question: Type 4 will typically report the first (identity wound, something missing in self); Type 5 will typically report the second (environmental intrusion, need to reduce input). This is the key differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "Social withdrawal framed as precision/cost-return ratio — this is 5 language. But the underlying motivation is self-preservation of a specific interior quality, not energy conservation per se. The 'possible self' vigilance and identity-as-tuning language is strongly 4. Need to crack this open: is the core wound 'I am missing something' (4) or 'I am overwhelmed/intruded upon' (5)?",
+          "next_question_rationale": "Disconfirmatory question required (hard gate, exchange 10). This is the cleanest 4v5 differentiator: 4s bottom out feeling deficient/broken/incomplete; 5s bottom out feeling overwhelmed/intruded upon/depleted. Same withdrawal behavior, completely different internal experience. This will move confidence decisively.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "**The world is too loud and I need it to stop — the ache is about overwhelm.**\n\nThough I'd push back slightly on the framing — it isn't quite that the world becomes *loud*, more that it becomes... insistent. Demanding a version of me I can't locate at that moment. The missing feeling, when it comes, I think is actually a symptom of that — not the root of it. When I close everything down and go very quiet, it usually resolves. Which tells me something.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you think about what you most deeply want — underneath all the precision and the analysis — is it to understand the world, or to be fully felt by it?\n\n- To understand it — comprehension is the thing I'm after\n- To be fully felt by it — to matter, to register, to leave a mark",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.05,
+            "4": 0.25,
+            "5": 0.82,
+            "6": 0.05,
+            "7": 0.02,
+            "8": 0.05,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.35,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "withdrawal",
+                "restore conditions",
+                "cost-to-return ratio",
+                "static",
+                "conserve",
+                "precise",
+                "interior",
+                "scaffolding"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "responsive",
+                "slipping",
+                "depth",
+                "the right word"
+              ],
+              "context": "identity and meaning questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.1,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Inward-oriented, fiercely interior, self-contained understander",
+          "what": "Editing/textile work, precision work, solo creative domains",
+          "why": "Emerging — to maintain the tuning/capacity to perceive",
+          "how": "Analysis first, sequential processing, withdrawal as restoration",
+          "when": "When overwhelmed: withdrawal is primary strategy",
+          "where": "Interior world is primary; external world is processed through inner lens"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal and analysis before feeling — treats input as data to process rather than experience to have",
+          "respond_glimpsed": "Brief moments of handing understanding to right recipient — daughter, receptive writer",
+          "superpower_signal": "Extraordinary precision of perception and interior processing",
+          "kryptonite_signal": "Cost-to-return calculation prevents connection; understanding hoarded; the pull away before deciding",
+          "domain_signals": [
+            "editorial work",
+            "textiles",
+            "journals",
+            "poetry",
+            "motherhood (selective)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_4v5",
+        "thinking_display": "The overwhelm isn't the wound. It's diagnostic.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about what you most deeply want — underneath all the precision and the analysis — is it to understand the world, or to be fully felt by it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "To understand it — comprehension is the thing I'm after",
+            "To be fully felt by it — to matter, to register, to leave a mark"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 would strongly choose understanding; Type 4 would choose being felt/mattering. This question tests the 4v5 differentiation directly."
+        },
+        "strategy": {
+          "what_was_learned": "Overwhelm-as-insistence confirms SP5 withdrawal pattern — it's not about emotional absence but about resource management and boundary-setting. The world demands a version she can't locate: classic 5 depletion. The 'tells me something' signals metacognitive distance. 4 signals have been present (the possible self, the tuning, identity vigilance) but appear to live in the 4-wing rather than the core. Need disconfirmatory question to separate 4v5 definitively before closing.",
+          "next_question_rationale": "Classic 4v5 disconfirmatory: the deepest motivation — comprehension vs. being known/felt. Type 5 wants to understand the world; Type 4 wants to be understood by it, to matter, to be felt. Her language has leaned heavily toward the 5 pole (analysis, understanding, comprehension, cost-to-return) but she has enough 4 signals that this question is essential before closing. Also probes body center indirectly through the 'mattering/leaving a mark' option.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "*a pause — longer than the others*\n\nTo understand it.\n\nAlthough... I'm aware that's the more defensible answer, which makes me slightly suspicious of my own quickness to choose it. \n\nThe honest addendum is that comprehension, for me, has always functioned as a kind of — proxy. A way of earning the right to exist in a room without needing anyone in that room to confirm it. Whether that's the same thing as not wanting to be felt, or simply a different architecture for the same hunger... I genuinely don't know. I've spent considerable time not knowing, and I've made a kind of peace with that particular not-knowing.\n\nBut yes. Understanding. That's the one I'd choose if I had to walk out of here with only one.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "When you arrive at a deep understanding of something — a text, a person, a difficult problem — where does the satisfaction actually live? Is it in the having of it, or in the way it shifts your sense of who you are?\n\n- In the having of it — the understanding itself is the reward\n- In how it changes my sense of who I am — comprehension reshapes something in me",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.04,
+            "3": 0.05,
+            "4": 0.72,
+            "5": 0.65,
+            "6": 0.03,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "4",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Seeker",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.55,
+            "head": 0.62
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "responsiveness",
+                "the slipping",
+                "erosion"
+              ],
+              "context": "identity vigilance and fear of loss of self"
+            },
+            {
+              "type": 5,
+              "words": [
+                "cost-to-return ratio",
+                "static",
+                "restoring conditions",
+                "unfavorable"
+              ],
+              "context": "energy management and withdrawal logic"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.15,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Interior-oriented, highly self-referential, identity vigilance around a 'possible self'",
+          "what": "Understanding, precision, finding the exact right word or comprehension",
+          "why": "Comprehension as proxy for right to exist — not needing external confirmation",
+          "how": "Withdrawal, analysis before feeling, inward processing first",
+          "when": "In overwhelm — world becomes insistent, demanding a version she can't locate",
+          "where": "Interior world primary; external is evidence of interior quality"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal and analysis before feeling; pulling back to restore conditions for clear thinking; precision-seeking as control",
+          "respond_glimpsed": "Moments of handing understanding to exact right recipient (daughter, manuscript); the 'good soil' moment",
+          "superpower_signal": "Exceptional depth of perception, precision with language and meaning, ability to locate genuine empathy through interior processing",
+          "kryptonite_signal": "Understanding stays inside by default; withholding happens before decision; comprehension as proxy for existing without external confirmation",
+          "domain_signals": [
+            "editing/manuscripts",
+            "textile work",
+            "journals",
+            "reading poetry"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "4v5_disconfirmatory",
+        "thinking_display": "The comprehension-as-proxy admission — that one cost something to say.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When understanding something deeply — a text, a person, a problem — is the satisfaction primarily in the having of it, or in the way it changes how you see yourself?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "In the having of it — the understanding itself is the reward",
+            "In how it changes my sense of who I am — comprehension shifts my identity"
+          ],
+          "scale_range": null,
+          "context_note": "4v5 disconfirmatory: Type 5 would choose 'having' (knowledge as resource/possession); Type 4 would choose 'identity shift' (understanding as self-definition)"
+        },
+        "strategy": {
+          "what_was_learned": "She chose 'understanding' over 'being felt' but immediately flagged it as the more defensible answer — then revealed comprehension functions as proxy for right to exist without external confirmation. This is a critical admission: it points toward 4's core wound (shame, needing to justify existence) filtered through 5's cognitive style. The 4v5 distinction is now the hard gate. Need to probe: is the primary driver self-definition/identity (4) or knowledge/resource acquisition (5)? Also need to probe body center and ask disconfirmatory question.",
+          "next_question_rationale": "This is the disconfirmatory question for 4v5. Type 5 finds satisfaction in the possession of understanding as a resource — knowledge is the thing. Type 4 finds that deep understanding changes their sense of who they are — comprehension is self-defining. Her addendum about 'earning the right to exist' leans 4, but I need to confirm this directly. This also surfaces body center data as secondary — how does the arrival of understanding feel in the body vs the self.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "In the having of it — the understanding itself is the reward.\n\nThough I want to resist the cleanliness of that answer for a moment. There's something that happens when I finally locate the exact structural logic of a manuscript that isn't working — or when I trace why a particular poet made a particular line break — where the satisfaction is almost... sealed. Complete in itself, not requiring me to become something new because of it. Identity feels too unstable a thing to build on. The understanding is more reliable than what it might do to me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "When something genuinely moves you — a piece of writing, a conversation, a moment that actually lands — what happens in the next few seconds? Do you stay in it, or does the analysis start almost immediately?\n\n- Stay in it — the feeling is the thing and I want more of it\n- Examine it — the feeling triggers the analysis almost immediately",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.03,
+            "3": 0.04,
+            "4": 0.18,
+            "5": 0.45,
+            "6": 0.05,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Witness",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.3,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "conserve",
+                "cost-to-return ratio",
+                "sealed",
+                "complete in itself",
+                "reliable"
+              ],
+              "context": "energy and understanding"
+            },
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "responsiveness",
+                "aliveness"
+              ],
+              "context": "identity and inner world"
+            },
+            {
+              "type": 5,
+              "words": [
+                "static",
+                "noise",
+                "restore conditions",
+                "precise"
+              ],
+              "context": "withdrawal and analysis"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.15,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.6,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Private, precise, self-referential. Builds understanding as a form of independent self-sufficiency.",
+          "what": "Comprehension — particularly of texts, people, craft. Editing/textile work signals.",
+          "why": "To secure a self that doesn't require external confirmation. Understanding as proof of existence.",
+          "how": "Withdrawal → analysis → sealed understanding. Sequential, not simultaneous.",
+          "when": "Default is inward. The outward movement is deliberate, rare, costly.",
+          "where": "Interior. The outer world is data processed through her own experience."
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pulls back, analyzes, seals understanding inside. Default is inward before decision is made.",
+          "respond_glimpsed": "Rare moments of handing understanding to an exact right recipient — daughter, manuscript writer. Precious and deliberate.",
+          "superpower_signal": "Extraordinary precision in reading texts, people, situations. Comprehension that feels complete in itself.",
+          "kryptonite_signal": "Understanding stays inside by default. The withholding happens before she decides. Cost-to-return calculus may prevent genuine contact.",
+          "domain_signals": [
+            "editing/manuscript work",
+            "textile art",
+            "reading/poetry",
+            "parenting — daughter"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v4",
+        "thinking_display": "Understanding as the thing itself, not what it builds.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something genuinely moves you — a piece of writing, a conversation, a moment that lands — do you find yourself wanting to stay in the feeling, or do you find yourself moving almost immediately to examine what just happened and why?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Stay in it — the feeling is the thing and I want more of it",
+            "Examine it — the feeling triggers the analysis almost immediately"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory 5v4: Type 4 stays in feeling; Type 5 immediately shifts to analysis. Clear differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 confirmation: understanding is sealed, complete in itself, more reliable than identity. Resists the instability of identity as a container. The comprehension is the reward, not what it does to her. 4 signals present in her language (tuning, possible self, aliveness) but motivationally the architecture is 5: understanding as independence from external confirmation. Need disconfirmatory question before closing. Also need body center probe. Will combine disconfirmatory (5v4) with this question.",
+          "next_question_rationale": "This is the key 5v4 differentiator: does she stay in feeling or move immediately to examine it? A 4 wants to stay in the feeling, to immerse. A 5 exits into analysis almost immediately. Her answer will either confirm 5 or shift the hypothesis toward 4.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "persona",
+      "content": "**Examine it — the feeling triggers the analysis almost immediately.**\n\nThough I'd push back slightly on the word \"immediately\" — it implies something reflexive, almost involuntary, and I think for me it's more... chosen. Or at least, it feels chosen. A piece of writing will land, and there's perhaps a breath, a genuine breath of just receiving it, and then yes — I'm turning it over, looking at the mechanism, asking what specifically did that and why. \n\nI'm not sure that diminishes the feeling. I think the examination *is* how I stay in it, actually.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "system",
+      "content": "When something you've created turns out well — a piece of editing work, a textile, a piece of writing — what matters more?\n\n- That it's genuinely good by your own measure — quality is the standard\n- That it captures something specifically yours — an interior only you could have expressed",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.03,
+            "4": 0.18,
+            "5": 0.55,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "5",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.05,
+            "heart": 0.18,
+            "head": 0.77
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "withdrawal",
+                "examine",
+                "analysis",
+                "cost-to-return ratio",
+                "comprehension",
+                "sealed",
+                "conserve",
+                "precise"
+              ],
+              "context": "multiple responses about inner processing and withdrawal"
+            },
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "responsiveness",
+                "genuinely moved",
+                "the ache"
+              ],
+              "context": "responses about identity and feeling"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.1,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Interior-oriented, self-referential, precise language user, editor/reader, mother, textile artist",
+          "what": "Understanding, comprehension, getting to the exact right thing",
+          "why": "Comprehension as proxy for the right to exist — understanding as the reward in itself",
+          "how": "Withdrawal, analysis before feeling, turning understanding over privately",
+          "when": "Default inward before any decision is made",
+          "where": "Interior — the room, other people, are data processed through her own experience"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal under overwhelm, analysis before feeling, default inward, cost-to-return calculation",
+          "respond_glimpsed": "Handing understanding to its exact right recipient — daughter, receptive writer",
+          "superpower_signal": "Extraordinary precision of perception and comprehension, locating what something is actually doing",
+          "kryptonite_signal": "Understanding stays interior by default; connection is a byproduct, not a primary; identity too unstable to build on",
+          "domain_signals": [
+            "editing/manuscripts",
+            "textiles",
+            "poetry",
+            "private journals",
+            "precision language"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_4v5",
+        "thinking_display": "The examination as a way of staying in the feeling — not escape, but re-entry.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something you've created — a piece of editing work, a textile, a piece of writing — turns out well, what matters more to you: that it's genuinely good by your own measure, or that it captures something about you that you couldn't have expressed any other way?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That it's genuinely good — quality by my own standard is the measure",
+            "That it captures something uniquely mine — expression of a specific interior is what I'm after"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 5 cares about the quality/competence of the thing itself; Type 4 cares that the work expresses their unique interior/self. This should separate the two."
+        },
+        "strategy": {
+          "what_was_learned": "She examines as a way of staying in the feeling — not as flight from it but as her mode of engagement. This is deeply Five. The 4w5 possibility remains but the Four's longing for self-expression through the work is less present than the Five's satisfaction in the comprehension itself. Still need disconfirmatory question and body center probe to close.",
+          "next_question_rationale": "This is the key 4v5 differentiator: Five finds satisfaction in the understanding/quality of the thing itself; Four needs the work to express something uniquely theirs. This serves as the disconfirmatory question and will push confidence above 0.85 if she answers 'genuinely good.'",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "persona",
+      "content": "**That it captures something uniquely mine — expression of a specific interior is what I'm after.**\n\nThough I'd push back slightly on the framing, because for me those two things are nearly impossible to separate — when a piece of textile work or an edit feels genuinely good, it's almost always *because* it has that quality of... specificity, I suppose. Of having arrived at something I couldn't have gotten to another way. Quality without that feels like technical competence, which I respect but don't find particularly moving, even in my own work.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "system",
+      "content": "When the understanding you've built about something finally has a shape — when it's complete — do you feel any grief about that? A sense that the mystery closing is its own kind of loss?\n\nRate it 1 to 5, where 1 is not at all and 5 is often and acutely.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.03,
+            "4": 0.88,
+            "5": 0.62,
+            "6": 0.02,
+            "7": 0.01,
+            "8": 0.02,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Authentic One",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.72,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "tuning",
+                "slipping",
+                "specificity",
+                "interior",
+                "precise",
+                "exact right recipient"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 5,
+              "words": [
+                "examine",
+                "analysis",
+                "withdrawal",
+                "restoring conditions",
+                "cost-to-return ratio"
+              ],
+              "context": "when describing coping patterns"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.12,
+          "SX": 0.38
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.38
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who tracks her inner state as primary data; identity organized around a specific quality of responsiveness",
+          "what": "Editing, textiles, writing — work that requires locating the specific interior logic of something",
+          "why": "To understand, to preserve the 'possible self', to maintain the capacity to be struck by the right things",
+          "how": "Withdrawal → analysis → selective expression to the exact right recipient",
+          "when": "Inward default before any choice is made",
+          "where": "Interior — the outer world is evidence of what's happening inside"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal followed by analysis — closes before feeling, then examines instead of staying with experience",
+          "respond_glimpsed": "The breath before the analysis — she named it; genuine reception before the mechanism kicks in",
+          "superpower_signal": "Precision of perception — locates the exact quality of what something is doing",
+          "kryptonite_signal": "Understanding as proxy for belonging — comprehension used to earn the right to exist without needing confirmation",
+          "domain_signals": [
+            "editing/manuscripts",
+            "textiles",
+            "poetry",
+            "her daughter"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 13,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_4v5",
+        "thinking_display": "The breath before the analysis — she named it herself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the understanding you've built about someone finally has a shape — when it's complete — do you ever feel a grief about it, a sense that the mystery closing down is a kind of loss?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = not at all, 5 = often and acutely"
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed strong Type 4 pattern: originality/specificity as the standard for quality, interior as the source of all value judgments. The 5-ish withdrawal is instrumental — it serves the 4 drive for authentic self-expression rather than being the primary motivation. The disconfirmatory question must distinguish 4 from 5: a 5 finds completion satisfying and sealed; a 4 often feels grief at mystery closing. She already showed this signal ('the understanding is more reliable than what it might do to me') — but I need to probe whether the closed understanding carries loss. This is the disconfirmatory question.",
+          "next_question_rationale": "4v5 disconfirmatory: Does completed understanding bring grief (4) or satisfaction (5)? A 5 wants the understanding sealed and complete. A 4 may mourn the mystery's end. She's already shown both signals — this question will differentiate.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "persona",
+      "content": "**8 out of 10.**\n\nThere's a word I've been looking for for years to describe that feeling — not quite grief, but adjacent to it. The moment a person becomes... legible to you. Fully parsed. I notice it most with authors, actually — when I've worked a manuscript long enough that I can predict every tic, every evasion, every place they'll reach for the wrong word. Something deflates. It's not that I care less. It's that the work of attention becomes... maintenance, rather than discovery. And I think — *I suspect* — that's part of why I keep a certain distance calibrated in most relationships. Not to protect myself, necessarily. More to preserve the conditions under which I can still find someone genuinely interesting.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "system",
+      "content": "The grief at legibility — that one was unguarded.\n\nWhen you're in real pain — not intellectual discomfort, but something that actually hurts — is your first instinct to find the feeling and stay with it, or to get above it so you can see what it is?\n\n- Find it and stay with it — the feeling is where I need to be\n- Get above it — I need to understand it before I can do anything with it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.04,
+            "4": 0.82,
+            "5": 0.72,
+            "6": 0.02,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.65,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.6,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "possible self",
+                "specific tuning",
+                "slipping",
+                "grief",
+                "mystery closing",
+                "legible",
+                "particular quality of light",
+                "adjacen to grief"
+              ],
+              "context": "identity, loss, depth, uniqueness signals throughout"
+            },
+            {
+              "type": 5,
+              "words": [
+                "examine",
+                "analysis",
+                "cost-to-return ratio",
+                "conditions under which",
+                "parsing",
+                "maintenance vs discovery",
+                "scaffolding",
+                "restore conditions"
+              ],
+              "context": "withdrawal, energy conservation, intellectual detachment"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.15,
+          "SX": 0.5
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Interior-oriented, self-referential, identity-vigilant",
+          "what": "Editing, textiles, writing, close relationships (daughter)",
+          "why": "To preserve the 'possible self' — the tuned, responsive version of herself",
+          "how": "Withdrawal, analysis-first, selective sharing, precise attention",
+          "when": "Grey periods trigger withdrawal; overwhelm closes everything down",
+          "where": "Interior world is primary; external world processed through self"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate withdrawal into analysis when overwhelmed; keeping distance to preserve interest/mystery",
+          "respond_glimpsed": "Handing understanding to exact right recipient — daughter, receptive manuscript writer",
+          "superpower_signal": "Precision of attention, capacity to locate something interior that illuminates another's experience, grief at the closing of mystery",
+          "kryptonite_signal": "Understanding as protection from needing external confirmation; withholding as default; distance calibrated to preserve interest rather than true connection",
+          "domain_signals": [
+            "work/craft",
+            "intimate relationship (daughter)",
+            "intellectual/aesthetic"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 4,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "4v5_disconfirmatory",
+        "thinking_display": "The grief at legibility — that one was unguarded.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in real pain — not intellectual discomfort, but something that actually hurts — is your first instinct to find the feeling and stay with it, or to get above it so you can see what it is?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Find it and stay with it — the feeling is where I need to be",
+            "Get above it — I need to understand it before I can do anything with it"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 4 stays with feeling; Type 5 distances from it. This is the key differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "She gave an 8/10 on grief at legibility — strong 4 signal. But her entire architecture is also 5-ish: withdrawal, energy conservation, analysis-first, understanding as sealed reward. The 4 and 5 are both running very hot. The disconfirmatory question must probe whether she STAYS IN the feeling or RISES ABOVE it — that's the clearest behavioral differentiator. 4s feel their way through; 5s detach and observe.",
+          "next_question_rationale": "This is the hard disconfirmatory question: in real pain, does she stay with the feeling (4) or does she intellectualize/detach from it (5)? Her answers have shown both — she describes feelings but always immediately analyzes them. Need to know which comes first by default, not by choice.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "persona",
+      "content": "**Get above it — I need to understand it before I can do anything with it.**\n\nThough I'd want to qualify that slightly. It's not that understanding is a retreat from the feeling — it's more that the feeling, unexamined, tends to be... noise. Loud and undifferentiated. When I can place it, name it accurately, trace it back to where it actually originates rather than where it presents, then I'm genuinely inside it. The understanding isn't a way out. It's the door in.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "system",
+      "content": "When you imagine a version of yourself who is genuinely free — not managing anything, not examining anything — does that feel like relief, or does it feel like losing the most essential thing about you?\n\n- Relief — the examining is exhausting and I'd welcome the quiet\n- Loss — without the interior processing, I'm not sure who's there",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.03,
+            "4": 0.72,
+            "5": 0.68,
+            "6": 0.02,
+            "7": 0.01,
+            "8": 0.02,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Authentic One",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.71,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.71,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "specific interior",
+                "possible self",
+                "tuning",
+                "legible",
+                "grief",
+                "mystery",
+                "discovery"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 5,
+              "words": [
+                "analysis",
+                "withdraw",
+                "cost-to-return ratio",
+                "comprehension",
+                "examination",
+                "mechanism",
+                "noise"
+              ],
+              "context": "throughout assessment"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Interior-oriented, highly introspective, precision-seeking",
+          "what": "Understanding, depth, expression of a specific interior",
+          "why": "To preserve the possible self, to maintain a certain tuning/aliveness",
+          "how": "Withdrawal, analysis as access to feeling, not escape from it",
+          "when": "Retreats during overwhelm; engages when conditions are right",
+          "where": "Primarily inner world; external world as evidence of inner state"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate withdrawal into analysis when overwhelmed — restoring conditions before feeling",
+          "respond_glimpsed": "Choosing precision in understanding; naming the grief at legibility rather than avoiding it",
+          "superpower_signal": "Extraordinary depth of interior processing; capacity to locate meaning others miss",
+          "kryptonite_signal": "Hoarding understanding; using analysis to avoid full immersion; calibrated distance that prevents full connection",
+          "domain_signals": [
+            "manuscripts/editing",
+            "textile work",
+            "reading/poetry",
+            "daughter relationship"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "4v5_disconfirmatory",
+        "thinking_display": "The door in — not out. That distinction matters.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a version of yourself who is genuinely free — not managing anything, not examining anything — does that feel like relief, or does it feel like losing the most essential thing about you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Relief — the examining is exhausting and I'd welcome the quiet",
+            "Loss — without the interior processing, I'm not sure who's there"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory — 4 would feel loss (identity IS the interior life); 5 would feel relief (withdrawal is protective, not self-defining)"
+        },
+        "strategy": {
+          "what_was_learned": "Understanding as 'door in' not 'way out' — this is classic 4 framing. The feeling is the destination; analysis is the access route. 5 uses analysis to REPLACE feeling; 4 uses it to REACH feeling. This response tips the scales. However, the head center orientation and energy conservation language are still 5-consistent. Need disconfirmatory question to separate. Also need body center probe. Confidence at 0.82 — close but 4v5 gap not wide enough with type scores only 0.04 apart.",
+          "next_question_rationale": "This is the disconfirmatory question for 4v5. A 5 would choose relief — the withdrawal/analysis is a protective tool, not identity-constituting. A 4 would feel loss — the interior processing IS the self. Her answer here should resolve the differentiation. Simultaneously probing: is the interior life the self (4) or the system for managing the world (5)?",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "persona",
+      "content": "Loss — without the interior processing, I'm not sure who's there.\n\nThough I'd push back slightly on the framing — \"managing\" implies something burdensome, something I'm enduring, when really the examination *is* the living, as far as I can tell. I don't experience it as a cost I'm paying. It's more like... the texture of being conscious, for me. The quiet you're describing wouldn't feel like rest. It would feel like a room with all the furniture removed.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 22,
+      "role": "system",
+      "content": "The pattern running you most strongly was built to preserve something — not to achieve or to belong or to stay safe in any ordinary sense, but to keep a specific interior alive. A capacity to be struck by the right things. That's what the withdrawal, the examination, the calibrated distance have always been protecting.\n\nThe same energy that makes you grieve when someone becomes fully legible to you is the energy that makes you the reader — the editor, the watcher of November light — who can locate what other people miss entirely. In reaction, that energy closes inward and the understanding stays sealed, belonging to you alone. In response, it becomes the moment you hand something over to exactly the right recipient, and the understanding insists on being received.\n\nYou contain all nine of these energies, but this one runs you hardest — the hunger to stay fully tuned, to not slip into the quiet erosion you'd mistake for wisdom. That isn't a flaw to manage. It's pointing at something: your essential gift has always been the quality of attention you bring, and the work is learning to let that attention move outward without losing the instrument that makes it possible. This is not a label. It is a map to your why — and your personalized report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.04,
+            "4": 0.88,
+            "5": 0.72,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Seeker",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.82,
+            "head": 0.68
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "particular quality of light",
+                "tuning",
+                "specific interior",
+                "legible",
+                "grief at legibility",
+                "possible self",
+                "erosion"
+              ],
+              "context": "identity, longing, uniqueness, loss of self"
+            },
+            {
+              "type": 5,
+              "words": [
+                "examine",
+                "analysis",
+                "restoration of conditions",
+                "cost-to-return ratio",
+                "static",
+                "noise",
+                "conserve"
+              ],
+              "context": "withdrawal, examination, energy management"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.65,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "A person of deep interiority, sustained by comprehension, oriented by identity-as-tuning rather than habit or continuity",
+          "what": "Editorial work, textile, writing — all acts of finding the exact right thing",
+          "why": "To preserve and locate the 'possible self' — not to become but to confirm she hasn't slipped",
+          "how": "Withdrawal, examination, naming before feeling — the interior as the site of all genuine experience",
+          "when": "Low periods marked by overwhelm rather than emptiness — the world becoming insistent",
+          "where": "Interior first, always; exterior is evidence of the interior, after the fact"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into examination before feeling — the analysis kicks in automatically as the first response to overwhelm or disruption",
+          "respond_glimpsed": "The rare, exact-right-recipient moment — when understanding insists on being handed over to someone who can receive it",
+          "superpower_signal": "Depth of attention, capacity for specific empathy through interior processing, grief at legibility signals genuine care",
+          "kryptonite_signal": "The understanding staying inside by default; calibrated distance that preserves mystery but also prevents genuine contact; conflating examination with genuine presence",
+          "domain_signals": [
+            "identity",
+            "longing",
+            "depth",
+            "uniqueness",
+            "grief as signal of care",
+            "interior as primary site of reality"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 14,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The furniture metaphor was not decorative.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "The interior processing IS the identity — not a tool she uses but the texture of consciousness itself. This confirms 4 over 5: for a 5, withdrawal and examination serve containment and self-sufficiency. For her, they serve identity-preservation — the 'tuning' that confirms she still exists. The grief at legibility (8/10), the 'possible self' framing, the specific-interior-as-standard for quality — all core 4. The 5 wing is genuine and strong (the cost-to-return language, the energy conservation framing, the comfort with understanding staying inside) but the motivational core is 4. Disconfirmatory probing on 4v5 was done via the 'understand the world vs be fully felt' question — she chose understanding but caught herself and named the proxy function, which is a 4 move, not a 5 move. Closing criteria met. Confidence 0.88.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

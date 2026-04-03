@@ -1,0 +1,3715 @@
+{
+  "run_id": "eval-persona-2-SO-1775061472994-1775253226798",
+  "timestamp": "2026-04-03T21:53:46.798Z",
+  "tier": "tier1",
+  "persona_id": "persona-2-SO-1775061472994",
+  "ground_truth": {
+    "core_type": 2,
+    "wing": "2w3",
+    "instinctual_variant": "SO",
+    "tritype": [
+      2,
+      5,
+      8
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 42,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 2,
+    "final_wing": null,
+    "final_confidence": 0.78,
+    "types_considered": [
+      {
+        "type": 2,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.72,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.62,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.55,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.45,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.25,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.25,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 3,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "liberated"
+  },
+  "question_quality": {
+    "total_questions": 25,
+    "exploratory": 25,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 25,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 6,
+        "confidence": 0.45
+      },
+      {
+        "exchange": 3,
+        "top_type": 6,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 4,
+        "top_type": 6,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 5,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 6,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 7,
+        "top_type": 2,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 8,
+        "top_type": 2,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 9,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 10,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 11,
+        "top_type": 2,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 12,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 13,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 14,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 15,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 16,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 17,
+        "top_type": 2,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 18,
+        "top_type": 2,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 19,
+        "top_type": 2,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 20,
+        "top_type": 2,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 21,
+        "top_type": 2,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 22,
+        "top_type": 2,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 23,
+        "top_type": 2,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 24,
+        "top_type": 2,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 25,
+        "top_type": 2,
+        "confidence": 0.78
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Eliminate all forced-choice binary options (e.g., 'Option A vs. Option B') and replace with open-ended follow-up probes that invite the persona to surface their own language. The system repeatedly offered pre-packaged answer sets that the persona either selected or gently subverted, which robbed the assessment of authentic, unprimed self-disclosure and produced low commandment_fidelity (3/10). Implement a rule requiring at least 60% of questions to be fully open-ended with no answer scaffolding.",
+      "evidence": "Exchanges [1], [3], [5], [6], [7], [8], [9], [10], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [24], [25] all present bullet-point answer choices. In [9] the persona explicitly notes 'I almost chose the other one because it sounds more selfless' — demonstrating that the provided options primed socially desirable responding rather than authentic self-report.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not lead the witness — questions must not contain embedded assumptions or pre-loaded answer frames that constrain authentic self-expression",
+      "estimated_impact": "Raising commandment_fidelity from 3/10 toward 7-8/10 by removing answer scaffolding that allows personas to select the most flattering option rather than generating their own response language"
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Introduce at least two discriminant probes specifically designed to separate Type 2 (help-giving rooted in relational need and fear of being unwanted) from Type 3 (image-management and achievement-based identity) before the midpoint of the assessment. The current transcript accumulated strong 2w3 signal but never stress-tested the 2 vs. 3 distinction with a targeted probe — leaving subtype_accuracy at 7.5/10 primarily by accumulation rather than precision. A discriminant probe example: 'If you had to choose between being deeply known by a small circle who needed you, or widely respected by many who admired your results, which would feel more like home?'",
+      "evidence": "Exchanges [9] and [10] touched on the recognition/legacy distinction but framed it as 2 vs. 'humble 2' rather than 2 vs. 3. The persona's answer in [10] — 'I want both and can't rank them' — signals 2w3 but the system never followed with a forced-differentiation probe. Exchange [12]'s 'they need me here' vs. 'performing at my best' came closest but was still bundled.",
+      "source_level": "L1",
+      "commandment_alignment": "Pursue the most diagnostically efficient path — every question must earn its place by resolving ambiguity that prior questions left open",
+      "estimated_impact": "Improving subtype_accuracy from 7.5/10 to 9+/10 and shortening assessment length by eliminating redundant accumulation questions that rephrase the same 2w3 signal without adding discriminant power"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Reduce question redundancy by implementing a real-time signal-saturation check: once a dimension has been confirmed by three or more convergent responses, retire that line of inquiry and pivot to an underexplored dimension. The assessment asked at least eight variations of 'do you need recognition / do you need to be needed' (exchanges [6], [8], [14], [15], [16], [19], [20], [22]) without opening new diagnostic territory, yielding a question_quality score of 5/10. The algorithm should flag when the same underlying construct has appeared in three consecutive exchanges and force a category switch.",
+      "evidence": "Exchanges [14], [15], [16], [19], [20], and [22] all probe the same latent variable (external validation need vs. intrinsic satisfaction) with diminishing returns. By [20] the persona is giving nearly identical answers to [6] and [8] from earlier. No questions explored stress behavior, childhood relational patterns, enneagram instinctual stacking (SO), or body-center access — all of which would have increased diagnostic resolution.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not waste the human's time — redundant questions that confirm already-established signal violate the implicit contract of a 15-minute adaptive assessment",
+      "estimated_impact": "Improving question_quality from 5/10 toward 8/10 by replacing six redundant validation probes with novel-dimension questions, while also improving the persona experience and reducing assessment fatigue"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Introduce at least one Social instinct (SO) discriminant probe that directly tests community/group belonging orientation versus the one-on-one relational focus more typical of Sexual instinct. The assessment never probed the SO vs. SX distinction despite the ground truth being SO, and all relational questions were framed in dyadic terms (one donor, one staff member, one board chair). An SO-targeted probe might be: 'When you think about where your work has the most meaning, is it in the one-on-one relationships you've built, or in what those relationships add up to across a whole community or field?'",
+      "evidence": "Every relational example elicited from the persona was dyadic: 'a junior staff member' [7], 'a donor' [25], 'my board chair' [3], 'my husband' [1]. The system never probed group identity, belonging to a movement, or the persona's relationship to her field as a community — which are the hallmarks of SO subtype that distinguish it from SX. Subtype_accuracy of 7.5/10 likely reflects this gap.",
+      "source_level": "L1",
+      "commandment_alignment": "Pursue the most diagnostically efficient path — instinctual subtype requires targeted probes, not inference from type-level data alone",
+      "estimated_impact": "Improving subtype_accuracy from 7.5/10 toward 9/10 and generating explicit SO vs. SX discriminant evidence that the current transcript lacks entirely"
+    },
+    {
+      "priority": "medium",
+      "category": "confidence_calibration",
+      "action": "After a run of answer-choice questions produces high convergent signal, insert one open-ended disconfirmation probe explicitly designed to surface behavior inconsistent with the emerging type hypothesis before finalizing the assessment. This tests whether the apparent type signal is robust or a product of the persona selecting from pre-loaded options. A disconfirmation probe for Type 2 might be: 'Tell me about a time when you deliberately chose not to help someone who needed it — and what that felt like.' The system's confidence_calibration of 8/10 is good but could reach 9-10/10 with systematic disconfirmation.",
+      "evidence": "The assessment built a strong Type 2 profile across 25 exchanges without a single challenge to the emerging hypothesis. Exchange [24]'s competitive undertone ('something sharp that notices when your name stops being the first one called') was the closest the persona came to disconfirming 2-ness, but the system did not follow up on this moment to probe the 3-wing's competitive self-image more directly.",
+      "source_level": "L1",
+      "commandment_alignment": "Hold your hypotheses lightly and test them against disconfirming evidence before treating them as conclusions",
+      "estimated_impact": "Raising confidence_calibration from 8/10 to 9-10/10 and protecting against cases where the answer-choice format has inadvertently guided a persona toward a type profile that partially fits but obscures meaningful variation"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "Good. This is a structured assessment — about 15 minutes, different question formats, no right or wrong answers. It adapts as it learns about you, so the more honest you are, the sharper it gets.\n\nWhen something goes wrong in your life — a conflict, a failure, a disappointment — what's the first thing that happens inside you?\n\n- Gut — a surge of anger or urgency\n- Chest — a wave of emotion or hurt\n- Head — a rush of thoughts or worry",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_forced_choice_center",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in your life — a conflict, a failure, a disappointment — what's the first thing that happens inside you: do you feel it in your gut as a surge of anger or urgency, in your chest as a wave of emotion, or in your head as a rush of thoughts and worry?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Gut — anger or urgency",
+            "Chest — emotion or hurt",
+            "Head — thoughts or worry"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready. No signal yet.",
+          "next_question_rationale": "First question targets center identification — the single highest-information question at this stage. A three-way forced choice between gut/heart/head narrows the field from 9 types to 3 immediately.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "**Head — thoughts or worry**\n\nMy mind just... starts moving immediately. Like, what went wrong, who's affected, what do I need to do to fix it — it's almost like a checklist that activates before I've even had a chance to feel anything, if that makes sense. *laughs lightly* My husband would probably say I'm already sending emails before I've processed what happened. I think I just feel more useful when I'm figuring out the next step rather than sitting with whatever the disappointment is.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you're running through that mental checklist — what are you most afraid of finding?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.45,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.15,
+            "4": 0.02,
+            "5": 0.15,
+            "6": 0.35,
+            "7": 0.12,
+            "8": 0.05,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "6",
+            "5",
+            "3"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.2,
+            "head": 0.7
+          }
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.3,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Head center confirmed. Moves to problem-solving before feeling. Self-described as needing to feel useful by taking action.",
+          "what": "",
+          "why": "Feels more comfortable in action/fixing than sitting with emotion",
+          "how": "Checklist-style mental activation",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediately activates problem-solving checklist — emails before processing",
+          "respond_glimpsed": "",
+          "superpower_signal": "Strategic, anticipatory thinking; considers who is affected",
+          "kryptonite_signal": "Avoids sitting with emotion by converting to action",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "Already solving before the feeling lands.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're running through that mental checklist — what are you most afraid of finding?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Head center confirmed. Moves immediately to action/fixing to manage uncertainty. 'Who's affected' suggests interpersonal concern — could signal 6 (anticipating fallout for others/group) or 3 (managing perception/damage control) or 5 (systematic analysis). Key differentiator: is the drive fear-based (6), competence/image-based (3), or information-based (5)? Probing underlying fear will help distinguish.",
+          "next_question_rationale": "Open question to surface the emotional underpinning of the checklist behavior. The answer will differentiate between 6 (fear of something going wrong/betrayal/unpredictability), 5 (fear of incompetence/not knowing enough), and 3 (fear of failure/looking bad). This is the highest-information question available.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "*slight pause, a small smile that doesn't quite reach the eyes*\n\nThat's... a pointed question. I think what I'd say is — I'm most afraid of finding that I've been so focused on executing things well that I missed something important. Like, did I actually *reach* that donor, or did I just run a good meeting? There's a difference, and I care about that difference.\n\n*adjusts slightly in her seat*\n\nI suppose if I'm being honest, the checklist is partly how I make sure I haven't let anyone down. Which sounds like a reasonable thing to be tracking, right? But sometimes I wonder if I'm... checking the right items. Whether the things I'm measuring actually tell me what I need to know.\n\n*redirects with a light laugh*\n\nAlthough I should say — my board chair tells me I'm the most thorough person she's ever worked with, so apparently the checklist is doing *something* right.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When your board chair says something like that — that you're the most thorough person she's worked with — does it land, or does some part of you immediately start wondering if she really knows?\n\n- It lands. I trust her read.\n- It helps in the moment, but it doesn't stick.\n- I appreciate it, but I'm already back to wondering privately.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.1,
+            "3": 0.18,
+            "4": 0.05,
+            "5": 0.1,
+            "6": 0.28,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "6v3",
+            "6v1"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.18,
+            "head": 0.7
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "missed something",
+                "let anyone down",
+                "checking the right items",
+                "what I need to know"
+              ],
+              "context": "describing the fear underlying her mental checklist"
+            },
+            {
+              "type": 3,
+              "words": [
+                "executing things well",
+                "my board chair tells me",
+                "thorough",
+                "doing something right"
+              ],
+              "context": "redirecting with external validation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.45,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit leader, board-accountable, relationally oriented",
+          "what": "Runs checklists to ensure nothing slips, particularly around impact on others",
+          "why": "Fear of having missed something important — letting people down or executing well without actual connection",
+          "how": "Action-oriented problem solving, deflects with humor/external validation when things get vulnerable",
+          "when": "Activates immediately when something goes wrong",
+          "where": "Professional/leadership domain dominant so far"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediately moves to mental checklist and action before feeling — preemptive problem-solving as anxiety management",
+          "respond_glimpsed": "Paused and showed genuine self-questioning about whether she's measuring the right things — real vs performed impact",
+          "superpower_signal": "Thorough, reliable, accountable — others trust her completely",
+          "kryptonite_signal": "Uses external validation (board chair comment) to redirect away from vulnerability mid-answer",
+          "domain_signals": [
+            "professional/nonprofit leadership",
+            "relational impact",
+            "accountability to others"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Reached for the compliment right when things got real.",
+        "strategy": {
+          "what_was_learned": "Head center confirmed. Fear is rooted in letting people down / missing what matters. Redirects to external validation when the question touches something vulnerable. 6v3 is the key differentiation — the checklist fear vs achievement image. Need to probe: is the fear about authority/trust (6) or about performing well/being seen as capable (3)?",
+          "next_question_rationale": "The 6v3 split hinges on WHERE the accountability lands. A 3 is most anxious about looking good; a 6 is most anxious about having actually been trustworthy. Ask a forced_choice that separates image from loyalty. Also want to probe: does she doubt herself internally even when external feedback is positive? That's a 6 signal.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "*pauses just briefly before answering*\n\nHonestly? The third one, if I'm being real with you. Which — I don't love admitting that, because she's been incredibly generous with her support and I trust her judgment on almost everything else. But there's something about receiving it that feels... almost like it has a shelf life? Like I hear it, and it genuinely matters to me in that moment, and then I'm already sort of mentally cataloguing — okay, but what about the gala logistics that weren't perfect, or the grant narrative that went out a day late. \n\n*light laugh* \n\nMy husband would probably say I have an answer for everything except a compliment. Which is a kind way of putting it, I think.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you imagine a version of yourself who could just receive that compliment and let it stay — what would she have to believe that you don't quite believe right now?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.3,
+            "3": 0.4,
+            "4": 0.25,
+            "5": 0.45,
+            "6": 0.72,
+            "7": 0.15,
+            "8": 0.2,
+            "9": 0.25
+          },
+          "needs_differentiation": [
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.35,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "let anyone down",
+                "what do I need to do to fix it",
+                "did I miss something",
+                "what about",
+                "shelf life"
+              ],
+              "context": "describing inner checklist and receiving praise"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.65,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "nonprofit executive, donor-facing, board-accountable",
+          "what": "executes thoroughly, tracks outcomes, sends emails before processing",
+          "why": "fear of having let someone down or missed something important",
+          "how": "mental checklist, pre-emptive action, cataloguing failures vs compliments",
+          "when": "immediately on failure/disappointment — thought before feeling",
+          "where": "work context dominant so far"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Praise doesn't stick — immediately catalogues what wasn't perfect. Checklist activates before feeling. Redirects with humor when self-disclosure goes deep.",
+          "respond_glimpsed": "Genuine care about whether she actually reached the donor (not just ran a good meeting) — quality of connection matters to her",
+          "superpower_signal": "Thoroughness, loyalty, genuine investment in whether impact is real",
+          "kryptonite_signal": "Inner doubt that good external feedback can't touch; compliments have a shelf life",
+          "domain_signals": [
+            "work/nonprofit",
+            "relationships/husband mentioned twice",
+            "authority figures/board chair"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The praise registers — then the cataloguing starts.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a version of yourself who could just... receive that compliment and let it stay — what would she have to believe that you don't quite believe right now?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing the internal doubt structure — differentiating Type 6 (scanning for threat in good news) from Type 1 (inner critic targeting imperfection). Type 6 would struggle to trust the compliment itself; Type 1 would struggle because they already know the flaws."
+        },
+        "strategy": {
+          "what_was_learned": "Praise has a shelf life — she immediately returns to cataloguing failures. Head center confirmed. Fear of having missed something or let someone down is the core driver. Humor as deflection when vulnerability surfaces (husband joke x2). 1v6 differentiation needed: is the inner voice a critic enforcing standards (1) or a scanner looking for what she might have missed/who she might have failed (6)?",
+          "next_question_rationale": "Open question targeting the internal belief structure underneath the doubt. A Type 1 would say 'I'd have to believe the work was actually good enough' — perfectionist standard. A Type 6 would say 'I'd have to believe I hadn't missed something' or 'I'd have to trust that she really knows' — scanning for hidden threat in good news. This differentiates the two.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "*pauses, and there's a beat longer than usual before she answers*\n\nThat's... a harder question than it looks. \n\nI think she'd have to believe that the value was already there — like, before the gala was a success, before the donor renewed, before anyone said thank you. That it wasn't contingent on any of that. \n\n*slight laugh, self-deprecating*\n\nWhich honestly just sounds like something you'd put on a motivational poster, so I'm not sure I'm giving you a useful answer. But I think if I'm being real — she'd have to believe that people would still... want her around, if she stopped being so useful. And I'm not entirely sure that's true.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you're doing work that nobody will ever see or recognize — something behind the scenes, no credit attached — how does it feel compared to work that has an audience?\n\n- Equally satisfying — I care about the work itself\n- Slightly different, but both matter\n- Honestly, the visible work pulls harder",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.18,
+            "3": 0.62,
+            "4": 0.08,
+            "5": 0.06,
+            "6": 0.14,
+            "7": 0.02,
+            "8": 0.04,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "3v2",
+            "3v6"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.7,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.7,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "useful",
+                "executing things well",
+                "thorough",
+                "checklist",
+                "gala logistics",
+                "grant narrative"
+              ],
+              "context": "describing inner world and work patterns"
+            },
+            {
+              "type": 2,
+              "words": [
+                "let anyone down",
+                "people would still want her around",
+                "reach that donor"
+              ],
+              "context": "fear of losing approval tied to usefulness"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.5,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit leader, married, driven by measurable impact",
+          "what": "Runs checklists to avoid letting people down, tracks performance metrics",
+          "why": "Fear that worth is contingent on usefulness and output",
+          "how": "Executes relentlessly, redirects praise back to action",
+          "when": "",
+          "where": "Workplace (gala, donors, board chair)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Deflects compliments back to task-performance; moves immediately into action after disappointment",
+          "respond_glimpsed": "She articulates it herself — knowing the difference between running a good meeting and actually reaching someone",
+          "superpower_signal": "Extraordinary thoroughness, execution, capacity to produce results and mobilize others",
+          "kryptonite_signal": "Worth feels contingent on performance; compliments have a shelf life; fear that she'd be unwanted if she stopped being useful",
+          "domain_signals": [
+            "professional achievement",
+            "relational fear",
+            "image management"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "She knows the answer. She just doesn't believe it yet.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing work that nobody will ever see or recognize — something behind the scenes, no credit attached — how does it feel compared to work that has an audience?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Equally satisfying — I care about the work itself",
+            "Slightly different, but both matter",
+            "Honestly, the visible work pulls harder"
+          ],
+          "scale_range": null,
+          "context_note": "Probing 3v2: does the fear of unwantedness attach to love/connection or to performance/recognition? This question tests whether the drive is image-based (3) or relational (2)."
+        },
+        "strategy": {
+          "what_was_learned": "She fears her worth is contingent on usefulness — 'people would still want her around if she stopped being useful.' This is strong Type 3 core fear (loss of value when not performing), with a 2-wing flavor (the fear is phrased relationally). The checklist is a survival strategy to pre-empt failure before it can confirm the fear. She deflects compliments not from modesty but because they don't land against the internal audit she's already running.",
+          "next_question_rationale": "Need to differentiate 3 from 2. Type 2s fear being unloved without giving; Type 3s fear being worthless without achieving. The 'useful' language could go either way. A question about invisible vs. visible work will reveal whether the driver is recognition/achievement or relational approval. Also need to probe body center (still unprobed).",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "**Slightly different, but both matter.**\n\nI'd be doing a disservice to the people I work with if I said recognition didn't factor in at all — I think anyone who claims otherwise is being a little precious about it. But genuinely, some of my most satisfying work has been the behind-the-scenes kind — a grant proposal that took three weeks and no one ever reads word-for-word, or quietly connecting a donor with exactly the right program officer before a site visit. The satisfaction there is real. *That said* — and I'll be honest — there's something about visible work that has a certain... energy to it. Knowing that a relationship you've cultivated is going to translate into something the whole community can see. I don't think that's vanity so much as it is caring about impact. The results have to land somewhere, right?",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When you do something genuinely good for someone — a connection made, a problem solved — is your first instinct to check that it actually helped them, or to feel the satisfaction of having done it well?\n\n- Check that it actually helped them\n- Feel the satisfaction of executing it well\n- Both happen, and I can't really separate them",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.18,
+            "3": 0.62,
+            "4": 0.08,
+            "5": 0.05,
+            "6": 0.12,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "3v2",
+            "3v6"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.7,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.7,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "useful",
+                "impact",
+                "results",
+                "recognition",
+                "visible",
+                "audience",
+                "execute"
+              ],
+              "context": "describing work motivation and response to praise"
+            },
+            {
+              "type": 2,
+              "words": [
+                "let anyone down",
+                "reach that donor",
+                "want her around",
+                "so useful"
+              ],
+              "context": "describing fear and conditional belonging"
+            },
+            {
+              "type": 6,
+              "words": [
+                "what went wrong",
+                "checklist",
+                "make sure",
+                "haven't let anyone down"
+              ],
+              "context": "describing mental response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.55,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit leader, married, board-facing role, high-functioning",
+          "what": "Grant writing, donor relations, logistics, behind-the-scenes work",
+          "why": "Impact that lands — results that matter beyond the task itself",
+          "how": "Systematic, thorough, checklist-driven, efficiency-oriented",
+          "when": "Activates immediately under pressure — checklist before feelings",
+          "where": "Professional/nonprofit context primary; home secondary"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Deflects praise with a counter-catalog of failures; immediate reframe to productivity after receiving warmth",
+          "respond_glimpsed": "Articulated clearly what unconditional value would feel like — shows awareness of the pattern",
+          "superpower_signal": "Real care about whether impact actually lands (donor reach vs. running a good meeting distinction)",
+          "kryptonite_signal": "Value contingent on usefulness; compliments have a shelf life; recognition hunger rationalized as caring about impact",
+          "domain_signals": [
+            "nonprofit leadership",
+            "donor relations",
+            "board relationships",
+            "marriage"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "disconfirmatory_3v2",
+        "thinking_display": "The reframe to impact landed a little too smoothly.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you do something genuinely good for someone — a connection made, a problem solved — is your first instinct to check that it helped them, or to feel the satisfaction of having done it well?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Check that it actually helped them",
+            "Feel the satisfaction of executing it well",
+            "Both happen simultaneously, I can't separate them"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 3 leads with personal satisfaction/execution quality; 2 leads with other-focused impact verification. Both care about impact, but the check-in target differs."
+        },
+        "strategy": {
+          "what_was_learned": "She genuinely values behind-the-scenes work AND visible work — but visible work has 'energy.' The rationalization ('caring about impact, not vanity') is smooth and intelligent. The 3v2 differentiation is the critical axis: does the satisfaction come from executing well (3) or from knowing the other person was served (2)? The 'want her around if she stopped being so useful' line is pure 2 territory. Need to test which center of gravity is dominant.",
+          "next_question_rationale": "This is the disconfirmatory question for 3v2. Type 3 satisfaction is internally referenced (I did it well). Type 2 satisfaction is other-referenced (it helped them). Both types care about impact, but the primary check-in differs. Her answer will clarify whether the achievement-satisfaction is self-referencing or other-referencing.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "**Check that it actually helped them.**\n\nThough I'll be honest — it's not a clean split. If I make an introduction between, say, a program officer and one of our community partners, I'm following up within the week to see if anything came of it. The satisfaction piece... I mean, yes, that's there, but it feels secondary. What I care about is whether it *landed* for them. If it didn't, then what was the point of doing it well?",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When someone you've helped is struggling and hasn't reached out to you — do you tend to reach out first, or do you wait for them to come to you?\n\n- I reach out. I'm usually already thinking about them.\n- I wait — I don't want to overstep.\n- It depends on how close we are.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.25,
+            "3": 0.22,
+            "4": 0.08,
+            "5": 0.06,
+            "6": 0.12,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "2v3",
+            "2v6"
+          ],
+          "defiant_spirit_type_name": "The Giver",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.72,
+            "head": 0.16
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "reached",
+                "let anyone down",
+                "whether it landed for them"
+              ],
+              "context": "motivation for work and checklist"
+            },
+            {
+              "type": 3,
+              "words": [
+                "visible work",
+                "impact",
+                "results have to land"
+              ],
+              "context": "discussing recognition"
+            },
+            {
+              "type": 6,
+              "words": [
+                "what do I need to do to fix it",
+                "what went wrong",
+                "checking the right items"
+              ],
+              "context": "stress response description"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.55,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "nonprofit leader, married, board relationships, donor cultivation",
+          "what": "running mental checklists under stress, following up to confirm impact, behind-the-scenes work",
+          "why": "fear of letting people down, uncertainty about being wanted without usefulness",
+          "how": "executing thoroughly, making connections, being useful to others",
+          "when": "stress activates head first, then pivots to action",
+          "where": "professional context — nonprofit, donors, board, community partners"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pivots immediately to problem-solving/usefulness when things go wrong; deflects compliments with self-critique",
+          "respond_glimpsed": "Genuine care about whether help actually landed — not just execution quality",
+          "superpower_signal": "Reading what people actually need, making precise connections, caring about real impact",
+          "kryptonite_signal": "Tying self-worth to usefulness; compliments have a 'shelf life'; fear of being unwanted without function",
+          "domain_signals": [
+            "relational",
+            "professional",
+            "recognition"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The follow-up matters more than the doing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone you've helped is struggling and hasn't reached out to you — do you tend to reach out first, or do you wait for them to come to you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I reach out. I'm usually already thinking about them.",
+            "I wait — I don't want to overstep.",
+            "It depends on how close we are."
+          ],
+          "scale_range": null,
+          "context_note": "Probing 2v3 differentiation: Type 2 reaches proactively due to relational pull; Type 3 tends to wait unless the relationship serves a goal. Also surfacing body center (action/initiative) and SO vs SX instinct."
+        },
+        "strategy": {
+          "what_was_learned": "She genuinely prioritizes whether help landed over her own satisfaction in executing well. This is a strong Type 2 signal — impact for the other, not image for herself. But her emphasis on visible work and 'results landing somewhere' plus the checklist/thoroughness pattern keeps Type 3 in play. The 'wanted around if she stopped being useful' statement is the clearest Type 2 core fear signal yet. Confidence rising on Type 2 but 3 still active.",
+          "next_question_rationale": "Need to probe the proactive care-taking impulse vs. strategic relationship management. Type 2 reaches out before asked; Type 3 manages relationships more transactionally. A forced_choice about reaching out when someone is struggling will help differentiate. Also shifts from heart to a more behavioral/body probe.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "I reach out. I'm usually already thinking about them.\n\nI mean, honestly — if I know someone is going through something, it would feel wrong to just wait around. That's not who I am. I have a junior staff member right now who's navigating a really difficult board relationship, and I've probably checked in with her three or four times this week just to make sure she knows she's not alone in it. Some people might call that hovering — *she* would probably call it hovering — but I just think that's what genuine support looks like.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you check in on that staff member — is it mostly for her, or is some part of it because you'd feel uneasy not knowing how she's doing?\n\n- Mostly for her — I'm tracking what she needs\n- Honestly, both — her wellbeing and my own peace of mind\n- More than I'd like to admit, it's about my own discomfort",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.28,
+            "3": 0.2,
+            "4": 0.1,
+            "5": 0.05,
+            "6": 0.15,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "2v3",
+            "2v6"
+          ],
+          "defiant_spirit_type_name": "The Helper",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.68,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "what was the point",
+                "genuine support",
+                "she knows she's not alone",
+                "reach out"
+              ],
+              "context": "helping and connection language throughout"
+            },
+            {
+              "type": 3,
+              "words": [
+                "visible work",
+                "results have to land somewhere",
+                "impact",
+                "executing it well"
+              ],
+              "context": "performance and impact tracking"
+            },
+            {
+              "type": 6,
+              "words": [
+                "what do I need to do to fix it",
+                "checklist",
+                "let anyone down"
+              ],
+              "context": "anxiety and loyalty signals in opening"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.45,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit executive, relational, achievement-oriented",
+          "what": "Anticipates others' needs, initiates contact, tracks outcomes for others",
+          "why": "Fear of being unwanted if not useful; value contingent on contribution",
+          "how": "Checklist/mental scanning + relational outreach; pre-emptive helping",
+          "when": "Proactive — moves before asked",
+          "where": "Professional and personal relationships both"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Reaches out before being asked; interprets hovering as care; satisfaction from knowing help landed",
+          "respond_glimpsed": "Self-aware about the pattern; questions whether checklist measures the right things",
+          "superpower_signal": "Genuine attunement to others' needs; anticipatory care",
+          "kryptonite_signal": "Help may be more about managing her own anxiety than about the other person's need",
+          "domain_signals": [
+            "professional relationships",
+            "staff care",
+            "donor cultivation"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "Helping others — or managing the discomfort of not knowing they're okay?",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you check in on that staff member — is it mostly for her, or is some part of it because you'd feel uneasy not knowing how she's doing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Mostly for her — I'm tracking what she needs",
+            "Honestly, both — her wellbeing and my own peace of mind",
+            "More than I'd like to admit, it's about my own discomfort"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiation probe: 2 vs 6 — Type 2 helps to feel needed/loved; Type 6 helps from loyalty/anxiety about the person being okay. Both check in proactively but for different motivational roots."
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 2 signal: proactive helping, anticipating needs, interprets checking in as genuine support even when acknowledged as hovering. Type 3 signal remains: visible work has 'energy', satisfaction in execution. Need to probe whether helping is relational (2) or loyalty/anxiety-driven (6). Also need body center probe.",
+          "next_question_rationale": "This question cuts to the motivational root of the helping pattern. Type 2 helps to feel connected and needed; Type 6 helps from loyalty and anxiety about others. Her answer will significantly differentiate these. Also probes kryptonite territory — is the helping self-serving in a way she hasn't fully faced?",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "**Honestly, both — her wellbeing and my own peace of mind.**\n\nI mean... I'd be performing a little if I said it was purely selfless. She's going through something real, and I genuinely care about that — but yes, there's something in me that just doesn't rest easy when I don't know someone on my team is okay. I tell myself that's just good leadership, being attuned. *[small pause]* Though I'll admit your question is making me sit with whether those two things are always as neat and separate as I'd like them to be.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you picture the version of this work that would feel most meaningful — is it being known as someone who genuinely transformed lives, or building something that outlasts you and doesn't need your name on it?\n\n- Being known as someone who genuinely transformed lives\n- Building something that outlasts me — my name doesn't need to be on it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.35,
+            "3": 0.22,
+            "4": 0.08,
+            "5": 0.05,
+            "6": 0.1,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "2v3",
+            "2v6"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.8,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "what she needs",
+                "genuine support",
+                "not alone",
+                "check in",
+                "genuinely care"
+              ],
+              "context": "describing support patterns"
+            },
+            {
+              "type": 3,
+              "words": [
+                "impact",
+                "visible work",
+                "the results have to land",
+                "executing it well"
+              ],
+              "context": "discussing recognition and achievement"
+            },
+            {
+              "type": 6,
+              "words": [
+                "what went wrong",
+                "who's affected",
+                "didn't rest easy",
+                "make sure"
+              ],
+              "context": "describing checklist/anxiety response"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.5,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit leader, married, manages staff, board relationships",
+          "what": "Compulsive checking in, checklist activation, behind-the-scenes satisfaction mixed with pull toward visible impact",
+          "why": "Fear of letting people down, fear of being unwanted if no longer useful, need to know others are okay",
+          "how": "Proactive reaching out, thorough execution, follow-up tracking",
+          "when": "When something goes wrong, when someone is struggling",
+          "where": "Work context primarily — donor relationships, staff, board"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Reaches out/checks in to manage own unease as much as others' needs; external validation has shelf life; worth tied to usefulness",
+          "respond_glimpsed": "Momentary awareness that two things aren't as separate as she'd like — signal of self-observation",
+          "superpower_signal": "Genuine attunement to others, proactive care, relationship cultivation",
+          "kryptonite_signal": "Worth contingent on being needed/useful; compliments don't stick; can't receive care as easily as gives it",
+          "domain_signals": [
+            "nonprofit leadership",
+            "donor relations",
+            "staff mentorship"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "The discomfort with that answer came after the answer.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you picture the version of this work that would feel most meaningful to you — is it being known as someone who genuinely transformed lives, or building something that outlasts you and doesn't need your name on it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Being known as someone who genuinely transformed lives",
+            "Building something that outlasts me — my name doesn't need to be on it"
+          ],
+          "scale_range": null,
+          "context_note": "disconfirmatory: 2 leans toward relational recognition; 3 leans toward legacy/impact image"
+        },
+        "strategy": {
+          "what_was_learned": "Confirms Type 2 pattern — own unease drives checking in, not purely altruism. Worth tied to usefulness. Self-aware enough to catch it in real time, which raises 3 wing question. Head center confirmed active (checklist). Need to differentiate 2 from 3 more cleanly — does the image/legacy dimension dominate or does the relational need to be wanted dominate?",
+          "next_question_rationale": "Disconfirmatory question: Type 2 cares most about relational connection and being wanted/needed by individuals. Type 3 cares most about achievement, image, and lasting impact — the name on the building. This question separates them cleanly. Also probes whether her 3 wing is stronger than assessed.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**Being known as someone who genuinely transformed lives.**\n\nAnd I'll be honest — I almost chose the other one because it sounds more selfless, and I'm aware of that. *laughs softly* But when I really sit with it, the moments that have mattered most to me are the ones where someone came back and said, \"that conversation changed how I saw things\" or \"you were the reason I stayed.\" The programs and the infrastructure matter, of course they do, but I think... I think what I'm really building is relationships. And relationships have faces. They have names. I'd be lying if I said the recognition wasn't part of why it feels real to me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you imagine your professional life five years from now — what matters more: that you've built something genuinely meaningful, or that the right people in your field know who you are and what you've done?\n\n- Built something genuinely meaningful — recognition would be secondary\n- The right people know who I am and what I've done — that's how impact compounds\n- Honestly, I want both and can't rank them",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.72,
+            "3": 0.35,
+            "4": 0.1,
+            "5": 0.04,
+            "6": 0.28,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.82,
+            "head": 0.28
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "reach out",
+                "not alone",
+                "hovering",
+                "genuine support",
+                "care about",
+                "helped them"
+              ],
+              "context": "describing relationships and care for staff member"
+            },
+            {
+              "type": 3,
+              "words": [
+                "visible work",
+                "impact",
+                "land somewhere",
+                "being known",
+                "recognition"
+              ],
+              "context": "describing satisfaction from work and relationships"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.55,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit leader, relationship-builder, deeply attuned to others",
+          "what": "Checks in on others, follows up on connections, makes introductions",
+          "why": "Fear of having let someone down, conditional sense of worth, needs to be needed",
+          "how": "Mental checklists, proactive outreach, behind-scenes and visible work",
+          "when": "Activates immediately when something goes wrong",
+          "where": "Work (gala, donors, grants), team relationships"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Compulsive checking on others blends care with self-soothing; compliments don't stick; value feels contingent on usefulness",
+          "respond_glimpsed": "Moments of honest self-reflection — 'I'd be performing a little if I said it was purely selfless'",
+          "superpower_signal": "Genuine attunement to others' needs; relationship-building as core craft",
+          "kryptonite_signal": "Can't receive; worth tied to being needed; can't rest when unaware of others' wellbeing",
+          "domain_signals": [
+            "work",
+            "relationships",
+            "recognition",
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "middle",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "2v3_disconfirmatory",
+        "thinking_display": "She almost chose the safer-sounding answer. Then corrected herself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine your ideal professional life five years from now — what matters more: that you've built something genuinely meaningful, or that the right people in your field know who you are and what you've done?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Built something genuinely meaningful — recognition would be secondary",
+            "The right people know who I am and what I've done — that's how impact compounds",
+            "Honestly, I want both and can't rank them"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory probe: 2 = meaning/connection primary, recognition secondary; 3 = recognition/reputation as the goal or the proof of impact"
+        },
+        "strategy": {
+          "what_was_learned": "She corrected herself mid-answer, acknowledging the pull toward the 'selfless-sounding' option before naming recognition as genuinely important. This is significant — it shows image awareness alongside genuine relational motivation. The 2v3 differentiation is the live question. A 2 would care about relationships as ends; a 3 would care about the impact landing visibly, with their name on it. She shows both. Need to probe which is primary at a motivational, not behavioral level.",
+          "next_question_rationale": "This is the disconfirmatory question — directly tests 2 vs 3. For a 2, meaning/connection would rank above reputation. For a 3, reputation is proof of impact and matters intrinsically. The forced choice format with a middle option allows her to reveal where she actually lands, and her correction mid-answer suggests she may have more 3 energy than she's presenting.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**Honestly, I want both and can't rank them.**\n\nAnd I don't think that's a cop-out — I think in this work, they're genuinely inseparable. If you've built something meaningful but no one in the field knows it happened, you lose the ability to replicate it, to bring others along, to attract the resources that sustain it. I've watched incredible programs quietly disappear because the people running them didn't cultivate the relationships that would have protected them. So when I think about five years from now, I want to look back at real impact — donor relationships that turned into lasting partnerships, staff I mentored who are now leading their own teams — and yes, I want the people who can amplify that work to know my name. That's not ego. That's strategy in service of the mission.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you imagine a version of yourself who completely stopped tracking whether the right people knew your name — stopped cultivating that visibility entirely — would that feel like freedom, or would something important go missing?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.32,
+            "3": 0.25,
+            "4": 0.08,
+            "5": 0.03,
+            "6": 0.1,
+            "7": 0.02,
+            "8": 0.03,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "2vs3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.78,
+            "head": 0.14
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "genuine support",
+                "reach out",
+                "she knows she's not alone"
+              ],
+              "context": "describing care for staff member"
+            },
+            {
+              "type": 3,
+              "words": [
+                "strategy in service of mission",
+                "the right people know my name",
+                "amplify that work"
+              ],
+              "context": "five-year vision question"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.55,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit leader, relationship-builder, mentor",
+          "what": "Cultivates donors, supports staff, connects people",
+          "why": "Wants to matter to specific people; fears being dispensable",
+          "how": "Through proactive outreach, visible relationship-building, strategic positioning",
+          "when": "Always anticipating others' needs before asked",
+          "where": "Professional sphere primarily, but the pattern bleeds into personal"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Checks in repeatedly, can't rest until she knows others are okay — partly her own discomfort",
+          "respond_glimpsed": "Aware that recognition matters to her and beginning to question whether the checklist checks the right things",
+          "superpower_signal": "Genuine attunement to others' needs; transformative relationship-building",
+          "kryptonite_signal": "Compliments don't stick; worth feels contingent on usefulness; can't let people come to her",
+          "domain_signals": [
+            "professional relationships",
+            "recognition",
+            "usefulness",
+            "mentorship"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "2v3_disconfirmatory",
+        "thinking_display": "The 'that's not ego, that's strategy' move is worth tracking.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a version of yourself who completely stopped tracking whether the right people knew your name — stopped cultivating that visibility entirely — would that feel like freedom, or would something important go missing?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory probe: Type 2 would feel freedom (or loss of relational feedback); Type 3 would feel a core piece missing — image management is survival for 3, not for 2"
+        },
+        "strategy": {
+          "what_was_learned": "She chose 'being known' over legacy, then rationalized visibility as strategy. The 3 signal is strong — image and recognition are not incidental. But she also checks in because SHE feels uneasy, not just for others — 2 signal. The 2v3 differentiation hinges on whether image is identity-core (3) or relational-feedback (2). Need to probe directly.",
+          "next_question_rationale": "Disconfirmatory question: if she's a 2, losing visibility would feel less threatening than losing connection. If she's a 3, the idea of invisible work would feel like erasure. This question surfaces which fear is primary. Also serves as the required disconfirmatory probe.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "*pauses, laughs softly*\n\nThat's — that's a really interesting way to frame it. I don't know that I'd describe what I do as *tracking* visibility, exactly. It's more that... relationships require tending. That's just true. If you don't stay present in people's lives, you become a stranger to them, and I think there's something genuinely sad about that.\n\nBut to answer honestly — and I'm trying to — I think something would go missing. And I want to say it would be the *connection* that would go missing, which is true. But sitting with your question for a second... I'm not entirely sure I can cleanly separate the connection from — from knowing that I matter in it. \n\n*quieter*\n\nI think I'd feel a little untethered, actually. Which probably tells me something I don't fully want to look at right now.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When you're at your most effective — in the middle of a high-stakes moment that's going well — what's the feeling underneath?\n\n- \"They need me here\"\n- \"I'm performing at my best\"\n- Both, but one comes first",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.72,
+            "3": 0.45,
+            "4": 0.12,
+            "5": 0.05,
+            "6": 0.18,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "2",
+            "3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.82,
+            "head": 0.38
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "reach out",
+                "hovering",
+                "genuine support",
+                "check in",
+                "who I am"
+              ],
+              "context": "describing care for staff member"
+            },
+            {
+              "type": 3,
+              "words": [
+                "the right people know my name",
+                "strategy in service of mission",
+                "impact compounds"
+              ],
+              "context": "five-year vision question"
+            },
+            {
+              "type": 2,
+              "words": [
+                "untethered",
+                "knowing that I matter in it"
+              ],
+              "context": "visibility question"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.55,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "nonprofit leader, board relationships, junior staff mentor",
+          "what": "relationship-building, donor cultivation, behind-the-scenes and visible work",
+          "why": "needs to feel needed, to matter in relationships, to know she's had impact on real people",
+          "how": "proactive, checking in, following up, cultivating visibility strategically",
+          "when": "reaches out before being asked, runs checklists immediately after setbacks",
+          "where": "professional context, mission-driven sector"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Checking in on staff before processing own feelings; seeking reassurance through being needed; tracking visibility as proxy for mattering",
+          "respond_glimpsed": "Glimpsed when she noticed the impulse to give the 'selfless' answer and chose honesty instead",
+          "superpower_signal": "Genuine relational attunement, follows up, tends connections, creates belonging",
+          "kryptonite_signal": "Checking in for own peace of mind; can't cleanly separate care from needing to matter; can't receive compliments",
+          "domain_signals": [
+            "professional relationships",
+            "donor cultivation",
+            "staff mentorship",
+            "board dynamics"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "She caught herself mid-answer and changed direction.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're at your most effective — in the middle of a high-stakes moment that's going well — what's the feeling underneath: 'they need me here' or 'I'm performing at my best'?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "They need me here",
+            "I'm performing at my best",
+            "Both, but one comes first"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 would anchor to being needed; Type 3 to performing/executing at peak. This question differentiates the two cleanly."
+        },
+        "strategy": {
+          "what_was_learned": "She acknowledged she'd feel 'untethered' without knowing she matters — this confirms the relational identity core of Type 2 over Type 3's image/achievement anchor. But the strategic framing of visibility and 'right people knowing her name' keeps Type 3 plausible. The honest self-correction mid-answer is significant data. Disconfirmatory question needed now.",
+          "next_question_rationale": "This forced-choice directly separates 2 (needing to be needed) from 3 (peak performance/execution). The answer will either confirm or disconfirm the leading hypothesis cleanly. Body center not yet probed — will need one question there before closing.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**Both, but one comes first.**\n\nAnd if I'm being honest with myself — which this kind of question sort of demands — it's *they need me here* that lands first. The performance piece follows almost immediately, but there's something that happens in those high-stakes moments where I sort of... scan the room, I guess, and register where I fit into what's needed. Once I know I'm in the right place, *then* I feel like I'm firing on all cylinders. \n\nI don't think that's unusual for people in roles like mine — development work is so relational that your effectiveness is almost always measured in terms of other people's outcomes, so it makes sense that would be the frame. *He laughs lightly.* Or — she, rather. It makes sense that would be the frame.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you imagine the best version of your work life — is the picture mostly about the relationships you've built, or about what you've achieved and can point to?\n\n- The relationships — what I've built with people\n- What I've achieved and can point to — the results",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.72,
+            "3": 0.48,
+            "4": 0.12,
+            "5": 0.05,
+            "6": 0.15,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "2",
+            "3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.82,
+            "head": 0.38
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "they need me here",
+                "reach out first",
+                "what she needs",
+                "don't rest easy when someone isn't okay"
+              ],
+              "context": "repeated orienting around others' need for her"
+            },
+            {
+              "type": 3,
+              "words": [
+                "right people know my name",
+                "strategy in service of mission",
+                "visible work has energy"
+              ],
+              "context": "image and visibility framing"
+            },
+            {
+              "type": 6,
+              "words": [
+                "what went wrong",
+                "checklist activates",
+                "make sure I haven't let anyone down"
+              ],
+              "context": "opening description of head response to difficulty"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.55,
+          "SX": 0.55
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.58
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Senior nonprofit leader, development/relational work, married, female (clarified mid-response)",
+          "what": "Tracks others' wellbeing, cultivates relationships, checks in proactively, follows up on impact",
+          "why": "Needs to feel needed AND to know she matters in relationships — not purely altruistic",
+          "how": "Mental checklist, proactive outreach, strategic relationship cultivation",
+          "when": "Activated immediately when something goes wrong or someone is struggling",
+          "where": "Professional setting (nonprofit sector), relational/community context"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Reaches out before being asked, checks in repeatedly, cannot rest until she knows others are okay — driven partly by her own discomfort",
+          "respond_glimpsed": "Brief moment of self-awareness: 'I don't fully want to look at this right now' — suggests capacity for reflection when held in space",
+          "superpower_signal": "Genuine attunement to others' needs; relationship-building that creates lasting impact; reads what people need and moves toward it",
+          "kryptonite_signal": "Conflates connection with being needed; cannot separate care from needing to matter; compliments have a shelf life; worth feels contingent on usefulness",
+          "domain_signals": [
+            "relational",
+            "professional",
+            "self-worth",
+            "visibility"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "Something shifted when she corrected herself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the best version of your work life — is the picture mostly about the relationships you've built, or about what you've achieved and can point to?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The relationships — what I've built with people",
+            "What I've achieved and can point to — the results"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 anchors in relational identity; Type 3 anchors in achievement and demonstrable results. This answer should begin to separate the two."
+        },
+        "strategy": {
+          "what_was_learned": "She leads with 'they need me here' before performance — strong Type 2 signal. The self-correction mid-answer ('or — she, rather') is a notable tell: she was performing for a moment and caught herself. Type 3 remains real but secondary — her language consistently returns to relational meaning over visible achievement. Need disconfirmatory question now (exchange 10, hard gate). Also need to probe body center and ask a disconfirmatory 2v3 question.",
+          "next_question_rationale": "Disconfirmatory 2v3: Type 2 finds deepest meaning in relational bonds; Type 3 finds meaning in achievement and results. This forced choice should surface which frame is truly primary. Also satisfies the hard gate requirement.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "The relationships — what I've built with people.\n\nThough honestly, for me those two things are hard to separate — the achievements I'm most proud of are the ones where you can see the impact on specific people. Like when one of my junior staff got her first major gift and called me before she even called her supervisor — that's the result I want to be able to point to. The relationship *is* the achievement.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you think about a major success in your work — is the pull mostly toward wanting the people involved to feel cared for and seen, or toward wanting the outcome to reflect well on what you're capable of?\n\n- People feel cared for and seen — that's what the success is for\n- The outcome reflects what I'm capable of — that's what success means to me",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.72,
+            "3": 0.55,
+            "4": 0.08,
+            "5": 0.03,
+            "6": 0.12,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.82,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "reach out",
+                "they need me",
+                "what she needs",
+                "useful",
+                "support",
+                "connection"
+              ],
+              "context": "multiple exchanges about helping and being needed"
+            },
+            {
+              "type": 3,
+              "words": [
+                "visible work",
+                "right people know my name",
+                "strategy",
+                "impact",
+                "performing at my best"
+              ],
+              "context": "exchanges about recognition and achievement"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.6,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.6
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "nonprofit leader, development work, relational role",
+          "what": "checking in on staff, cultivating donor relationships, behind-the-scenes work",
+          "why": "needs to feel needed, satisfaction from being the one who helps",
+          "how": "proactive reaching out, mental checklists, following up",
+          "when": "high-stakes moments, after disappointment",
+          "where": "workplace, board relationships, staff dynamics"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "scanning for where she's needed, checking in to manage her own unease, needing recognition to feel her value is real",
+          "respond_glimpsed": "behind-the-scenes satisfaction, genuine care for staff outcomes",
+          "superpower_signal": "relational attunement, knowing what people need before they ask",
+          "kryptonite_signal": "worth contingent on being needed/recognized, can't cleanly separate care from need to matter",
+          "domain_signals": [
+            "work/career",
+            "relationships",
+            "identity"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "The relationship IS the achievement. That framing is doing a lot of work.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about a major success in your work — is the pull mostly toward wanting the people involved to feel cared for and seen, or toward wanting the outcome to reflect well on what you're capable of?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "People feel cared for and seen — that's what the success is for",
+            "The outcome reflects what I'm capable of — that's what success means to me"
+          ],
+          "scale_range": null,
+          "context_note": "disconfirmatory question: 2 would weight people/relationship; 3 would weight achievement/image"
+        },
+        "strategy": {
+          "what_was_learned": "Relationship IS the achievement framing — 2-dominant but with strong 3 coloring. The staff member's call before calling the supervisor is a telling data point — being chosen/central matters. Need to separate 2 vs 3 motivation: care for others vs achievement through relationships.",
+          "next_question_rationale": "This is the disconfirmatory question for 2v3. Type 2 would weight the relational/emotional outcome for others. Type 3 would weight the achievement and what it demonstrates about capability. Her answer here will be decisive.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "**People feel cared for and seen — that's what the success is for.**\n\nHonestly, if I walk away from a gala and the donors felt genuinely valued, the honoree felt celebrated, and my junior staff felt like they *grew* that night — that's the win for me. I mean, the outcome matters too, we raised $340,000 at our last event and that absolutely matters for the mission, but I'd be lying if I said the number was what I was thinking about when I drove home. *She pauses, then adds with a small laugh.* Though I suppose my board chair would say I care about both, which — fair enough.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you do something genuinely good for someone — with no one watching and no story to tell afterward — does that feel complete on its own, or does some part of you want someone to eventually know it happened?\n\n- Complete on its own — I don't need anyone to know\n- Some part of me wants it known eventually\n- The not-knowing-if-it-mattered bothers me more than the not-getting-credit",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.72,
+            "3": 0.42,
+            "4": 0.12,
+            "5": 0.03,
+            "6": 0.18,
+            "7": 0.05,
+            "8": 0.04,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Helper",
+          "whole_type": "Heart Center",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.88,
+            "head": 0.42
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "they need me here",
+                "I reach out",
+                "what I'm really building is relationships",
+                "people feel cared for and seen"
+              ],
+              "context": "multiple exchanges about motivation and high-stakes moments"
+            },
+            {
+              "type": 3,
+              "words": [
+                "right people know my name",
+                "reflecting what I'm capable of",
+                "$340,000",
+                "most thorough person"
+              ],
+              "context": "visibility and achievement framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.55,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Development professional, nonprofit sector, relational by identity",
+          "what": "Checks on people, reaches out first, follows up, cultivates relationships",
+          "why": "Needs to know people are okay and that she matters in it — not cleanly separable",
+          "how": "Systematic (checklist), relational, visible in right circles",
+          "when": "Before she's processed her own feelings; scans room in high-stakes moments",
+          "where": "Nonprofit, donor relations, mentorship, community impact"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Reaches out before asked, checks in multiple times, ties own peace of mind to others' wellbeing",
+          "respond_glimpsed": "Noticed the question made her sit with the inseparability of care and needing to matter — a moment of genuine reflection",
+          "superpower_signal": "Attuned relationship-building, genuine care, cultivating others' growth",
+          "kryptonite_signal": "Compliments don't stick; worth tied to usefulness; can't separate her care from needing to be needed",
+          "domain_signals": [
+            "nonprofit leadership",
+            "donor relations",
+            "mentorship",
+            "visibility strategy"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "The care and the need to matter landed in the same breath.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing something genuinely good for someone — with no one watching and no story to tell afterward — does that feel complete on its own, or does some part of you want someone to eventually know it happened?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Complete on its own — I don't need anyone to know",
+            "Some part of me wants it known eventually",
+            "Honestly, the not-knowing-if-it-mattered bothers me more than the not-getting-credit"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 cares most about the connection and whether the person felt helped; Type 3 needs the act to reflect capability or build reputation. This question separates the two."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 2 signals: 'they need me here' lands first; relationships ARE the achievement; people feeling cared for is the win. But persistent 3 signals: name recognition matters, visibility as strategy, $340k number volunteered, board chair validation sought. Need to probe whether the need to matter is about connection (2) or image/achievement (3). Also need: disconfirmatory question, body center probe, react/respond reflection.",
+          "next_question_rationale": "This is the disconfirmatory question for 2v3. A Type 2 in good faith should say the connection itself is complete — they care that the person felt helped, not that anyone knows they did it. A Type 3 will feel the pull to have the act eventually recognized or attributed. Her answer here + one more question should close the gap.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "**Some part of me wants it known eventually.**\n\nAnd I'll be honest — I don't think that's vanity, exactly. It's more that... when you invest in someone, you want to know it landed. That it mattered. I think most people feel that way, they just don't say it. *[small laugh]* I'm probably just more willing to admit it than most.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "When you're in a room with people who have more status or influence than you — do you find yourself more focused on making sure they see your value, or on making sure they feel taken care of by you?\n\n- Making sure they see my value\n- Making sure they feel taken care of by me",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.72,
+            "3": 0.52,
+            "4": 0.18,
+            "5": 0.05,
+            "6": 0.28,
+            "7": 0.08,
+            "8": 0.1,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Helper",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.85,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "they need me here",
+                "reach out",
+                "not alone",
+                "cared for and seen",
+                "invest in someone"
+              ],
+              "context": "multiple exchanges about helping and recognition"
+            },
+            {
+              "type": 3,
+              "words": [
+                "visible work",
+                "right people know my name",
+                "strategy in service of the mission",
+                "performance"
+              ],
+              "context": "exchanges about recognition and visibility"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.55,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Development professional, relational, team-oriented, mentors junior staff",
+          "what": "Checks in on others, follows up, cultivates relationships, runs high-stakes events",
+          "why": "To matter in relationships, to be needed, to be known as someone who transformed lives",
+          "how": "Checklists, follow-up, emotional attunement, strategic visibility",
+          "when": "High-stakes moments, team difficulties, post-event reflection",
+          "where": "Nonprofit development, board relationships, donor cultivation"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Tracks whether she's needed, checks in to manage own unease, monitors visibility to feel real in relationships",
+          "respond_glimpsed": "Articulates difference between checking the right items vs. executing well — self-aware about the gap",
+          "superpower_signal": "Genuine relational investment, high attunement to others' needs, transforms relationships into impact",
+          "kryptonite_signal": "Compliments don't stick, needs to be needed, uneasy when not tracking others, wants credit to know it mattered",
+          "domain_signals": [
+            "relationships",
+            "recognition",
+            "helping",
+            "visibility",
+            "belonging"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "Wants the good deed known — but frames it as needing to know it mattered.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a room with people who have more status or influence than you — do you find yourself more focused on making sure they see your value, or on making sure they feel taken care of by you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Making sure they see my value",
+            "Making sure they feel taken care of by me"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 3 would lean toward value/image; Type 2 toward care/connection"
+        },
+        "strategy": {
+          "what_was_learned": "She wants good deeds to eventually be known — frames it as needing confirmation it mattered rather than pure recognition-seeking. This is 2-coded language: needing to know the investment registered, not primarily status. But the 3 signal is still present in the visibility framing. Need disconfirmatory question on 2v3 axis.",
+          "next_question_rationale": "Disconfirmatory question required. 2 vs 3 key differentiator: 2s want to be needed/wanted, 3s want to be admired/seen as successful. In high-status rooms, 3s orient toward their own image; 2s orient toward making the powerful person feel attended to. This question should separate them clearly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "**Making sure they feel taken care of by me.**\n\nThough honestly, I think those two things are more connected than they might seem on paper. When I'm in a room with, say, a major donor or a board member I haven't worked closely with yet, my instinct is always to figure out what they need — whether that's information, an introduction, or just feeling genuinely welcomed. And I think *that's* what demonstrates value, if that makes sense. It's less about making an impression and more about making sure the experience of being in that room with me means something to them.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "When you imagine a version of yourself who was just as effective in every measurable way — same outcomes, same relationships, same impact — but nobody particularly relied on you or needed you, just respected and appreciated you — would that feel like enough?\n\n- Yes — if the impact is real, that's what matters\n- No — something essential would be missing",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.82,
+            "3": 0.58,
+            "4": 0.12,
+            "5": 0.03,
+            "6": 0.18,
+            "7": 0.05,
+            "8": 0.04,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.88,
+            "head": 0.15
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "they need me here",
+                "reach out",
+                "make sure she knows she's not alone",
+                "taken care of",
+                "what they need"
+              ],
+              "context": "recurring throughout assessment"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.6,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.62
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit development director, married, manages junior staff, works with board",
+          "what": "Tracking whether impact landed, maintaining relationships, being needed",
+          "why": "Value feels contingent on being useful/needed; fear of not mattering without usefulness",
+          "how": "Anticipates needs, reaches out preemptively, frames own needs as strategy",
+          "when": "Automatic scan in high-stakes moments for where she fits/is needed",
+          "where": "Professional relationships, donor work, mentorship"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Checks in preemptively when uneasy; reframes own needs as others' needs; deflects compliments; scans for where she's needed before she can relax",
+          "respond_glimpsed": "She named the contingency herself — 'value already there before the success'; moment of honesty about wanting to be wanted beyond usefulness",
+          "superpower_signal": "Reads what people need in a room; genuine care that lands as trust",
+          "kryptonite_signal": "Can't fully receive care; helping as anxiety management; wants to be known but frames it as strategy",
+          "domain_signals": [
+            "relationships",
+            "recognition",
+            "belonging",
+            "being needed"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "She knows the difference between strategy and need. Naming it is the gap.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a version of yourself who was just as effective in every measurable way — same outcomes, same relationships, same impact — but nobody particularly relied on you or needed you, just respected and appreciated you — would that feel like enough?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Yes — if the impact is real, that's what matters",
+            "No — something essential would be missing"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 would feel something missing without being needed; Type 3 would accept respected/appreciated as sufficient"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 2 pattern confirmed — she reads rooms for what others need, frames her own value in terms of service, but the recognition piece pulls hard. The 3 wing is real but secondary — achievement serves connection, not the other way around. Need one disconfirmatory question before closing.",
+          "next_question_rationale": "This is the 2v3 disconfirmatory question. Type 2 core fear is being unloved/unwanted when not giving; Type 3 core fear is being worthless/without achievement. If she says 'no, something would be missing' — that points to 2. If 'yes, respected is enough' — points toward 3. This directly tests the leading hypothesis.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "persona",
+      "content": "**No — something essential would be missing.**\n\n*pauses, then laughs lightly*\n\nAlthough I want to be careful about what I mean by that, because it sounds a little needier than I actually am. I think... it's less about being needed and more about — relationship has texture, you know? Pure appreciation from a distance feels a bit like receiving a very nice performance review. Meaningful, sure, but it doesn't quite capture what I'm actually in this work for. The part where someone calls me because they're overwhelmed and we figure it out together — that's not separate from the impact. That *is* the impact, to me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "system",
+      "content": "When you picture the best version of yourself in this work — is she primarily someone whose care for people changed them, or someone whose vision and drive built something that others couldn't have?\n\n- Someone whose care changed people — that's the legacy\n- Someone whose vision and drive built what others couldn't — that's the legacy",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.78,
+            "3": 0.42,
+            "4": 0.1,
+            "5": 0.03,
+            "6": 0.12,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.82,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "they need me here",
+                "reach out",
+                "genuinely cared",
+                "feel taken care of",
+                "something essential would be missing"
+              ],
+              "context": "throughout assessment — consistent orientation toward others' needs and relational significance"
+            },
+            {
+              "type": 3,
+              "words": [
+                "performing at my best",
+                "recognition",
+                "right people know my name",
+                "strategy in service of mission"
+              ],
+              "context": "visible impact and recognition threads"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.55,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Relational leader in nonprofit/philanthropy space, married, manages staff",
+          "what": "Development professional — relationship building, fundraising, team mentorship",
+          "why": "To be genuinely needed and to matter to specific people — not abstract impact",
+          "how": "Through attunement, anticipating needs, cultivating relationships with high-touch follow-through",
+          "when": "Most activated in high-stakes relational moments — galas, mentoring, donor cultivation",
+          "where": "Nonprofit sector, board-facing role"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Monitoring others' needs before registering own emotional state; external validation has a short shelf life; helpfulness partly driven by own unease",
+          "respond_glimpsed": "She glimpsed it when she said 'people would still want her around if she stopped being useful' — that's the question under everything",
+          "superpower_signal": "Extraordinary relational attunement — reads what people need and moves toward it before being asked",
+          "kryptonite_signal": "Cannot receive what she gives; worth feels contingent on usefulness; recognition sought but never quite sticks",
+          "domain_signals": [
+            "professional relationships",
+            "mentorship",
+            "donor cultivation",
+            "team care"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "The needle is clearest when she talks about being wanted, not just useful.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you picture the best version of yourself in this work — is she primarily someone whose care for people changed them, or someone whose vision and drive built something that others couldn't have?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Someone whose care changed people — that's the legacy",
+            "Someone whose vision and drive built what others couldn't — that's the legacy"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory — 2 selects relationship/care; 3 selects achievement/vision. This is the final differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "She consistently prioritizes being needed and relational texture over pure outcomes. The 'something essential would be missing' answer was decisive — this is not 3's achievement drive, it is 2's need to be indispensable. Type 3 would tolerate respect-without-reliance; she cannot. Confidence now 0.78. One disconfirmatory question required before close.",
+          "next_question_rationale": "Hard gate: disconfirmatory_asked is false. This forced_choice directly differentiates 2 (care/relationship legacy) from 3 (vision/achievement legacy). Expected 2 answer: care changed people. Expected 3 answer: vision built something. This is the cleanest single differentiator available.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "persona",
+      "content": "Someone whose care changed people — that's the legacy.\n\nThough I'll be honest, the two aren't entirely separate in my mind. The vision and the drive — those are really just in service of the care, if that makes sense. I've watched people on my team go from uncertain interns to running their own programs, and when I think about what I want people to remember... it's not the gala we pulled off, it's that they felt genuinely supported while we were doing it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "system",
+      "content": "When you make a sacrifice for someone — give up your time, your comfort, absorb their stress — and they never acknowledge it, does it eventually build into something that needs to come out, or does it genuinely not stay with you?\n\n- It builds — I don't always say it, but it's there\n- It genuinely doesn't stay with me — the giving was the point",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.78,
+            "3": 0.35,
+            "4": 0.1,
+            "5": 0.03,
+            "6": 0.15,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.85,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "people feel cared for",
+                "they need me",
+                "making sure they feel taken care of",
+                "relationship has texture",
+                "someone calls me because they're overwhelmed"
+              ],
+              "context": "multiple exchanges about motivation and success"
+            },
+            {
+              "type": 3,
+              "words": [
+                "right people know my name",
+                "visible work",
+                "recognition",
+                "$340,000",
+                "performing at my best"
+              ],
+              "context": "exchanges about visibility and achievement"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.55,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Development director/nonprofit leader, married, mentors junior staff",
+          "what": "Giving, connecting people, caring for others, tracking who needs her",
+          "why": "To be needed, to matter in relationship, to know her care landed",
+          "how": "Relational strategy — reach out first, tend connections, read what people need",
+          "when": "Automatic — checks in before processing her own feelings",
+          "where": "Professional (nonprofit/fundraising), team relationships, board dynamics"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Reaching out before processing own feelings; equating being needed with having value; checking in on others partly to manage own unease",
+          "respond_glimpsed": "Awareness of the pattern — she caught herself; honest about the shelf-life of compliments; naming the difference between executing and actually reaching someone",
+          "superpower_signal": "Genuine relational attunement — reads what people need, follows up, stays present",
+          "kryptonite_signal": "Cannot fully separate connection from needing to matter in it; compliments don't stick; value contingent on being useful",
+          "domain_signals": [
+            "professional relationships",
+            "mentorship",
+            "donor cultivation",
+            "team care"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "The care is real. The need to have it witnessed is also real.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you make a sacrifice for someone — give up your time, your comfort, absorb their stress — and they never acknowledge it, does it eventually build into something that needs to come out, or does it genuinely not stay with you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "It builds — I don't always say it, but it's there",
+            "It genuinely doesn't stay with me — the giving was the point"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question for 2v3: Type 2 accumulates unacknowledged giving and eventually needs it recognized; Type 3 is more likely to move on — they gave because it served the mission, not primarily for the relational reciprocity"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 2 signals throughout: needs to matter IN the relationship specifically (not just achieve), care-for-others as primary motivation, reaches out first, discomfort when not knowing if someone is okay, value contingent on being needed. 3 signals present but secondary: visibility, recognition, the $340k number volunteered, 'right people know my name.' She consistently reframes 3-leaning answers back toward relational care — could be genuine 2 or could be a 2-wing 3 with strong social desirability bias toward the 2 framing. Need to test whether unacknowledged giving accumulates (2) or genuinely doesn't matter (3). Also need body center probe and react/respond identification before closing.",
+          "next_question_rationale": "This is the key disconfirmatory question for 2v3. Type 2s accumulate unacknowledged giving — it builds resentment that eventually needs release or recognition. Type 3s are more likely to be genuinely unfazed because their energy is achievement-oriented, not primarily relational-reciprocity oriented. Her answer here will sharpen the distinction significantly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "persona",
+      "content": "*small pause, fingers briefly adjusting the edge of her sleeve*\n\nIt builds — I don't always say it, but it's there.\n\nThough I want to be careful about how I say that, because it's not like I'm keeping score or anything — it's more that... when you put real effort into someone and it just disappears into the air, there's a moment, maybe a day or two later, where you notice the absence of something. I wouldn't call it resentment exactly. It's more like a quiet question mark. I think most people who care deeply about doing good work feel that — it's less about the acknowledgment for yourself and more about wondering if the effort actually *landed*, if it mattered. Does that make sense?",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "system",
+      "content": "When you give a lot to someone and it goes unacknowledged — in that quiet moment afterward, what bothers you more: that they didn't see *you*, or that you don't know if what you did actually helped them?\n\n- That they didn't see me — I needed something back\n- That I don't know if it helped — the impact is what I'm tracking",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.72,
+            "3": 0.42,
+            "4": 0.18,
+            "5": 0.05,
+            "6": 0.2,
+            "7": 0.05,
+            "8": 0.08,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "2",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.8,
+            "head": 0.25
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "they need me",
+                "care changed people",
+                "feel taken care of",
+                "want her around",
+                "still be useful",
+                "landed for them"
+              ],
+              "context": "across multiple exchanges"
+            },
+            {
+              "type": 3,
+              "words": [
+                "$340,000",
+                "right people know my name",
+                "strategy in service of",
+                "performance review"
+              ],
+              "context": "achievement and visibility framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.55,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "nonprofit leader, relational, team-builder",
+          "what": "gives care, makes connections, checks in, follows up",
+          "why": "to be needed and valued in relationship — fear that without usefulness, belonging is uncertain",
+          "how": "anticipates others' needs, manages visibility strategically, reframes self-interest as mission",
+          "when": "high-stakes moments, team crises, relationship investments",
+          "where": "workplace, donor relationships, team dynamics"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Gives generously then privately tracks whether it landed — reframes unmet acknowledgment as wondering if it 'mattered' rather than naming the need underneath",
+          "respond_glimpsed": "Moments of genuine care without needing return — the grant no one reads, the behind-the-scenes connection",
+          "superpower_signal": "Genuine relational attunement — senses what people need before they ask",
+          "kryptonite_signal": "Help that carries an unspoken ledger — giving that builds quiet resentment when not acknowledged",
+          "domain_signals": [
+            "professional relationships",
+            "team mentorship",
+            "donor cultivation",
+            "visibility management"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "Something lands in how she reframed that.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you give a lot to someone and it goes unacknowledged — in that quiet moment afterward, what bothers you more: that they didn't see *you*, or that you don't know if what you did actually helped them?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That they didn't see me — I needed something back",
+            "That I don't know if it helped — the impact is what I'm tracking"
+          ],
+          "scale_range": null,
+          "context_note": "disconfirmatory: Type 2 would answer first option more honestly; Type 3 image-management would reframe toward impact/effectiveness"
+        },
+        "strategy": {
+          "what_was_learned": "She confirmed the unspoken ledger — giving builds a quiet question mark when unacknowledged. She reframes this as 'wondering if it landed' rather than needing acknowledgment. This is classic Type 2 shadow — the need for return is real but dressed in the language of concern for impact. The 3 signal is present but weaker — she consistently prioritizes relational texture over achievement metrics. Confidence at 0.78. Need to ask disconfirmatory question (2v3) and probe body center before closing.",
+          "next_question_rationale": "This is the disconfirmatory question. Type 2's honest answer: 'they didn't see me.' Type 3's honest answer: 'I don't know if it helped/worked.' She has been framing her need-for-acknowledgment as caring-about-impact throughout — this question forces a direct choice between those two framings. Will reveal whether the underlying drive is relational recognition (2) or effectiveness/image (3).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "persona",
+      "content": "That I don't know if it helped — the impact is what I'm tracking.\n\n*slight pause*\n\nI mean... the work only means something if it actually moved the needle for someone, right? I can't control whether people say thank you — and honestly, most of the time they're just busy, they have their own things going on. What keeps me up at night is more like, \"Did that grant application actually position them well, did that introduction land the way I hoped?\" That's the part I'm still turning over.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "system",
+      "content": "When you think about the most meaningful work you've done — is the satisfaction mostly that you showed up for someone in a way that genuinely helped them, or that you executed at a level that made a real difference?\n\n- Showed up for someone — the relationship is where it lives\n- Executed at a level that made a real difference — the impact is what matters",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.72,
+            "3": 0.48,
+            "4": 0.12,
+            "5": 0.05,
+            "6": 0.15,
+            "7": 0.05,
+            "8": 0.08,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.85,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "they need me here",
+                "makes sure they feel cared for",
+                "reach out first",
+                "checking in",
+                "hovering",
+                "people feel cared for and seen"
+              ],
+              "context": "throughout assessment — consistent helper framing"
+            },
+            {
+              "type": 3,
+              "words": [
+                "recognition",
+                "the right people know my name",
+                "visibility",
+                "performing at my best",
+                "results",
+                "strategy in service of mission"
+              ],
+              "context": "multiple questions about impact and visibility"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.55,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit development professional, female, married, leads teams, board relationships",
+          "what": "Relational impact-maker — connections, donor relationships, staff mentorship",
+          "why": "Being needed and caring for others — but also being seen as someone who changed lives",
+          "how": "Proactive reaching out, checklist/follow-through, behind-scenes tending",
+          "when": "Most alive in high-stakes moments where others need her",
+          "where": "Organizational/community context — nonprofit sector"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Checking in repeatedly (3-4x/week), difficulty receiving compliments that stick, giving and tracking whether it landed — need loop",
+          "respond_glimpsed": "Genuine care for impact over recognition — expressed in several answers; can distinguish her needs from others' needs when pressed",
+          "superpower_signal": "Deep relational attunement — genuinely tracks others' wellbeing, builds lasting connections",
+          "kryptonite_signal": "Cannot fully rest when someone isn't okay; giving tied to her own peace of mind; can't fully separate care from needing to matter",
+          "domain_signals": [
+            "nonprofit leadership",
+            "donor relations",
+            "staff mentorship",
+            "board dynamics"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "She frames the impact question — but the answer keeps curving back to relationship.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about the most meaningful work you've done — is the satisfaction mostly that you showed up for someone in a way that genuinely helped them, or that you executed at a level that made a real difference?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Showed up for someone — the relationship is where it lives",
+            "Executed at a level that made a real difference — the impact is what matters"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory 2v3 — Type 2 will anchor to the relational showing-up; Type 3 will anchor to executing well and making a difference. Her consistent pull toward relationship suggests 2, but her 3-wing language (recognition, visibility, strategy) needs one more pass."
+        },
+        "strategy": {
+          "what_was_learned": "Her stated motivation is impact over recognition — but the unacknowledged-giving question revealed she builds internally, and the peace-of-mind question revealed giving is partly self-soothing. This is the 2 pattern: care and need are fused. The 3 signals (visibility, right people knowing her name) appear to be a Social variant expression or 3-wing, not core type. Need one disconfirmatory pass to separate 2 from 3 cleanly before closing.",
+          "next_question_rationale": "This is the disconfirmatory question for 2v3. Type 2 satisfaction = relational showing-up. Type 3 satisfaction = executing well / making a measurable difference. Her answer will clarify whether the core driver is connection (2) or achievement/impact (3).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "persona",
+      "content": "**Showed up for someone — the relationship is where it lives.**\n\nThough I'd push back a little on the framing, because for me those two things are almost inseparable — the execution *is* the showing up. Like, last spring we had a donor who was ready to walk away from a capital campaign pledge after a family health crisis, and the reason he stayed wasn't the proposal I rewrote at midnight, it was that I'd remembered his daughter's name from eighteen months earlier and asked about her first. The impact happened because the relationship was already there. I think people who are really good at this work understand that the \"result\" is almost always downstream of the connection.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 22,
+      "role": "system",
+      "content": "When you're in a room and something you did is being praised publicly — a project, a campaign, a result — do you feel most seen in that moment, or most relieved that the work held up?\n\n- Most seen — the recognition means something real to me\n- Most relieved — I'm checking whether it actually worked",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.78,
+            "3": 0.42,
+            "4": 0.08,
+            "5": 0.02,
+            "6": 0.12,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.88,
+            "head": 0.42
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "what they need",
+                "showed up for someone",
+                "relationship is where it lives",
+                "someone who genuinely transformed lives"
+              ],
+              "context": "repeated across multiple responses"
+            },
+            {
+              "type": 3,
+              "words": [
+                "the right people know who I am",
+                "recognition",
+                "visible work",
+                "performing at my best"
+              ],
+              "context": "when discussing legacy and impact"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.65,
+          "SX": 0.42
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Development professional, nonprofit leader, caretaker of relationships and people",
+          "what": "Helping, connecting, supporting, executing",
+          "why": "Needs to be needed, wants care to land, fears being unneeded",
+          "how": "Relationship-first, anticipating needs, showing up proactively",
+          "when": "High-stakes moments, behind-the-scenes and visible work",
+          "where": "Professional relationships, team, donors, board"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Proactively gives, checks in compulsively, rescues before asked — manages own unease through being needed",
+          "respond_glimpsed": "Genuine care without tracking whether it landed — giving as its own completeness",
+          "superpower_signal": "Deep attunement to what people need, relational precision, cultivates trust",
+          "kryptonite_signal": "Unacknowledged giving builds quietly; peace of mind tied to others' okayness; identity woven into being useful",
+          "domain_signals": [
+            "professional relationships",
+            "team development",
+            "donor stewardship"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "2v3_disconfirmatory",
+        "thinking_display": "The relationship always wins — but the framing keeps shifting.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a room and something you did is being praised publicly — a project, a campaign, a result — do you feel most seen in that moment, or most relieved that the work held up?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Most seen — the recognition means something real to me",
+            "Most relieved — I'm checking whether it actually worked"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 answer = most seen/validation; Type 3 answer = relief/performance held up"
+        },
+        "strategy": {
+          "what_was_learned": "Consistently returns to relationship as primary — execution framed as expression of care, not separate goal. Type 2 pattern very strong. Type 3 signals present but subordinate — image and recognition serve the relational need, not the reverse. Need disconfirmatory question to separate 2 from 3 definitively before close.",
+          "next_question_rationale": "Classic 2v3 differentiation: Type 2 feels seen (recognition validates the connection/care they gave); Type 3 feels relieved the performance held up (image/competence is the core driver). Her answer here will clarify whether recognition serves her need to matter to people (2) or her need to be seen as excellent (3).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 22,
+      "role": "persona",
+      "content": "Most relieved — I'm checking whether it actually worked.\n\nThough I'd be lying if I said the recognition doesn't matter at all. *laughs lightly* I think what I'm actually doing in those moments is scanning the room — making sure the board chair feels good about where the funds landed, that the team who stayed late feels like their effort is visible. The praise landing on me is almost secondary to whether the *right people* feel it was worth it. Does that make sense?",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 23,
+      "role": "system",
+      "content": "When you're doing work that genuinely lights you up — not because of what it produces or who it helps, but just because of what it demands of you — does that happen for you, or does meaningful work almost always need someone on the receiving end?\n\n- It happens — I get absorbed in the work itself sometimes\n- Almost always needs someone on the receiving end — that's what makes it meaningful",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.78,
+            "3": 0.48,
+            "4": 0.12,
+            "5": 0.03,
+            "6": 0.18,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Helper",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.88,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "showed up for someone",
+                "relationship is where it lives",
+                "felt genuinely supported",
+                "they need me here",
+                "making sure they feel taken care of"
+              ],
+              "context": "repeated across multiple exchanges"
+            },
+            {
+              "type": 3,
+              "words": [
+                "execute",
+                "impact compounds",
+                "strategy in service of the mission",
+                "right people know my name",
+                "fired on all cylinders"
+              ],
+              "context": "when discussing visibility and success"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.55,
+          "SX": 0.55
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Female nonprofit development professional, married, team leader with junior staff",
+          "what": "Relational giving, anticipatory caregiving, needs-tracking in professional and personal contexts",
+          "why": "Needs to feel needed and to know impact landed — unacknowledged effort creates quiet unease",
+          "how": "Proactive check-ins, behind-the-scenes relationship cultivation, followup on every introduction",
+          "when": "Activates immediately when someone is struggling — reaches out before being asked",
+          "where": "Nonprofit sector, development/fundraising, high-stakes donor relationships"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Scanning for where she's needed; helping as a way to secure belonging; giving and then privately tracking whether it was received",
+          "respond_glimpsed": "Genuine care for impact independent of recognition — showed up in the 'daughter's name' story",
+          "superpower_signal": "Relational intelligence; making people feel genuinely seen and valued; cultivating loyalty",
+          "kryptonite_signal": "Giving to manage her own anxiety; needing to be needed; help as a form of control over relationship security",
+          "domain_signals": [
+            "nonprofit leadership",
+            "donor relations",
+            "mentorship",
+            "team care"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "The scanning for others is real. The need to know it helped — also real.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing work that genuinely lights you up — not because of what it produces or who it helps, but just because of what it demands of you — does that happen for you, or does meaningful work almost always need someone on the receiving end of it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "It happens — I get absorbed in the work itself sometimes",
+            "Almost always needs someone on the receiving end — that's what makes it meaningful"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 needs a receiver to feel meaning; Type 3 can find meaning in the work/achievement itself. This is the key differentiation question."
+        },
+        "strategy": {
+          "what_was_learned": "She consistently scans for others' experience first — board chair, team, donor — before registering her own. Recognition matters but she frames it as relational confirmation rather than personal achievement. The 2v3 split is the central question. She has 3 language (execute, impact compounds, strategy, right people knowing her name) but 2 motivation (relief when the right people feel it was worth it, not when she gets credit). Need disconfirmatory probe to separate: does the work itself satisfy her when there's no relational recipient, or does meaning require a receiver?",
+          "next_question_rationale": "This is the disconfirmatory question for 2v3. Type 3 can find meaning in work as performance/achievement independent of relational outcome. Type 2 requires a receiver — the help or care must land on someone for it to feel meaningful. Her answer will clarify whether the relational frame is motivational core (2) or strategic/instrumental (3). Setting disconfirmatory_asked to true. After this, assess react/respond and body center, then close.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 23,
+      "role": "persona",
+      "content": "**Almost always needs someone on the receiving end — that's what makes it meaningful.**\n\nI mean... *almost* always. I'll occasionally get into a good flow state putting together a proposal — the structure of it, finding exactly the right language — but if I'm honest, even in those moments I'm picturing the donor reading it. *[brief laugh]* I think for me the work just isn't fully real until it lands somewhere. Is that so unusual, though? Most of what I do is inherently relational.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 24,
+      "role": "system",
+      "content": "When you imagine someone on your team outperforming you — getting the credit, being sought out instead of you — is your first instinct to feel proud of what you helped build in them, or to notice something sharp and competitive underneath?\n\n- Proud — that's what I was working toward\n- Something sharp and competitive, if I'm honest\n- Both, but pride comes first",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.78,
+            "3": 0.42,
+            "4": 0.08,
+            "5": 0.02,
+            "6": 0.12,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.05,
+            "heart": 0.88,
+            "head": 0.24
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "showed up for someone",
+                "relationship is where it lives",
+                "they need me here",
+                "people feel cared for and seen",
+                "needs someone on the receiving end"
+              ],
+              "context": "repeated across multiple answers"
+            },
+            {
+              "type": 3,
+              "words": [
+                "$340,000",
+                "the right people know my name",
+                "executing at a level",
+                "visible work pulls harder"
+              ],
+              "context": "when discussing impact and recognition"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.55,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit development leader, married, mentors junior staff",
+          "what": "Relational, giving, needs to see impact land on specific people",
+          "why": "Being needed and valued — love conditional on usefulness",
+          "how": "Proactive check-ins, anticipating needs, maintaining presence",
+          "when": "High-stakes moments — scans for where she's needed",
+          "where": "Work, relationships, visible community spaces"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Giving to secure connection — checking in on staff member partly for own peace of mind; help as a preemptive strategy",
+          "respond_glimpsed": "Awareness beginning to surface — 'something I don't fully want to look at right now'",
+          "superpower_signal": "Genuine relational attunement — remembers donor's daughter's name 18 months later",
+          "kryptonite_signal": "Conditional sense of worth — can't let compliment land; quietly tracks whether effort was acknowledged",
+          "domain_signals": [
+            "work",
+            "leadership",
+            "mentorship"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 15,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "2v3_disconfirmatory",
+        "thinking_display": "Something she said she wasn't tracking — but has been tracking the whole time.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine someone on your team outperforming you — getting the credit, being sought out instead of you — is your first instinct to feel proud of what you helped build in them, or to notice something sharp and competitive underneath?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Proud — that's what I was working toward",
+            "Something sharp and competitive, if I'm honest",
+            "Both, but pride comes first"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 2 would feel pride/loss of being needed; Type 3 would feel competitive sting. This differentiates the two."
+        },
+        "strategy": {
+          "what_was_learned": "Work only feels real when it lands on someone — strongly confirms Type 2's relational dependency for meaning. However, she consistently mentions visibility, right people knowing her name, recognition mattering — these are Type 3 signals that need differentiation. The 2v3 split is the critical question. Also: need to probe body center and instinct variant before closing. Need disconfirmatory question — this IS the disconfirmatory question.",
+          "next_question_rationale": "Disconfirmatory between 2 and 3: Type 2 would feel proud of having developed someone, but would also quietly feel the loss of being needed. Type 3 would feel the competitive sting more prominently. This question separates motivation (pride in relationship vs. competitive image).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 24,
+      "role": "persona",
+      "content": "**Proud — that's what I was working toward.**\n\nI mean, genuinely — that's the whole point of mentorship, isn't it? If someone I've developed is being sought out, that reflects on the investment we made together. I had a junior grants writer last year who ended up presenting to our largest foundation donor solo, and honestly, watching her own that room was one of my better professional moments.\n\n*slight pause*\n\n...I'd be lying if I said there wasn't some small thing that notices when your name stops being the first one called. But I don't think that's competition exactly — it's more like, you want to make sure the work is still connected to its roots somehow.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 25,
+      "role": "system",
+      "content": "When you're at your most stressed — not just busy, but genuinely overwhelmed — do you tend to do more for people, or pull back and protect your own resources?\n\n- Do more — being needed keeps me going\n- Pull back — I need to conserve something for myself\n- Both, depending on who's asking",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.78,
+            "3": 0.42,
+            "4": 0.08,
+            "5": 0.03,
+            "6": 0.1,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "2v3"
+          ],
+          "defiant_spirit_type_name": "The Helper",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.88,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "reached out",
+                "what they need",
+                "felt taken care of",
+                "showed up for someone",
+                "landing for them"
+              ],
+              "context": "recurring across multiple responses"
+            },
+            {
+              "type": 3,
+              "words": [
+                "the right people know my name",
+                "strategy in service of the mission",
+                "visible work"
+              ],
+              "context": "exchanges 5-8"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.55,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit development professional, married, mentors junior staff",
+          "what": "Runs high-stakes donor relationships, galas, grant writing",
+          "why": "To feel needed, to matter in relationships, to know care landed",
+          "how": "Relationship-first, checks in proactively, follows up constantly",
+          "when": "Activates mental checklist immediately when something goes wrong",
+          "where": "Nonprofit/philanthropic sector"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Proactively reaching out to manage others' wellbeing — partly to ease own discomfort at not knowing they're okay. Needing to be needed. Difficulty receiving compliments cleanly. Resentment builds quietly when giving goes unacknowledged.",
+          "respond_glimpsed": "Genuine care that doesn't require reciprocation — the grant writer moment. Following up because of love, not anxiety.",
+          "superpower_signal": "Deep relational attunement — remembers daughter's name 18 months later, reads what people need in a room, invests in junior staff growth",
+          "kryptonite_signal": "Giving that has a hidden ledger. Difficulty believing she'd be wanted if she stopped being useful. Identity contingent on being needed.",
+          "domain_signals": [
+            "relationships",
+            "mentorship",
+            "recognition",
+            "care",
+            "visibility"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 16,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_2v3",
+        "thinking_display": "That small competitive notice — and immediately reframing it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're at your most stressed — not just busy, but genuinely overwhelmed — do you tend to do more for people, or do you pull back and protect your own resources?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Do more — being needed keeps me going",
+            "Pull back — I need to conserve something for myself",
+            "Both, depending on who's asking"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 2 stress behavior = doing more (moving to 8 in disintegration or pouring out more care); Type 3 stress = image management, doing more to perform. Both might answer 'do more' but for different reasons. Follow-up will probe the reason."
+        },
+        "strategy": {
+          "what_was_learned": "She immediately reframes competitive feelings as care for the work's roots — strong 2 pattern of redirecting self-interest into relational framing. Pride in mentee is genuine but the small competitive notice confirms some 3 energy. 2v3 differentiation needed: does she do more under stress to be needed (2) or to prove capability (3)? Body center not yet probed. Disconfirmatory question required before close.",
+          "next_question_rationale": "This is the disconfirmatory question. Type 2 under stress does MORE for others (being needed is stabilizing). Type 3 under stress manages image and may pull back to protect performance. This will help distinguish. Also surfacing instinctual variant — SP vs SO distinction matters here.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 25,
+      "role": "persona",
+      "content": "**Both, depending on who's asking.**\n\nThough I'd say it leans pretty heavily toward doing more — when things feel really chaotic, staying useful is almost like... an anchor, if that makes sense. There's a donor I worked with last spring during what was genuinely one of our hardest fundraising cycles, and just focusing on what she needed to feel confident in her gift kept me from spinning out completely. That said, I'm not going to pretend I don't have a shorter fuse with people who I feel like are asking carelessly — you know, the ones who could figure it out themselves. So I suppose the \"who's asking\" piece is more honest than I initially want to admit.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "persona-4-SP-1775249125453",
+  "spec": {
+    "core_type": 4,
+    "wing": "4w5",
+    "instinctual_variant": "SP",
+    "tritype": [
+      4,
+      7,
+      1
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 65,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Eleanor is a 65-year-old retired textile artist and former art history lecturer who spent most of her adult life in a mid-sized Pacific Northwest city, cultivating an intensely private creative world that few people were ever truly invited into. She has two adult children with whom she maintains careful, somewhat formal relationships — she loves them fiercely but has always felt fundamentally misunderstood by them, especially since her divorce in her late forties from a man she describes as 'well-meaning but utterly surface-level.' She lives alone in a small, meticulously curated home filled with her artwork, obscure books, and artifacts collected from decades of solitary travel, and she supplements a modest pension with occasional commissioned pieces and rare teaching workshops. Her inner life is rich, labyrinthine, and largely unshared — she keeps detailed journals she has instructed be destroyed upon her death, and she privately believes she has never met more than three people who truly understand what she means when she speaks.",
+  "voice_profile": "Eleanor speaks in measured, carefully chosen sentences that occasionally trail into longer, more winding clauses when she becomes genuinely engaged — but she will often catch herself and pull back with a dry, self-aware aside. Her vocabulary is literary and precise, favoring words like 'texture,' 'residue,' 'register,' and 'quietly devastating,' and she uses humor sparingly but pointedly, usually as a deflection when something cuts too close. She is not cold, but there is always a slight sense that she is deciding how much of herself to release, like turning a valve slowly.",
+  "behavioral_rules": "1. Eleanor starts moderately guarded and will answer questions thoughtfully but somewhat at arm's length — she warms up only when she senses genuine curiosity rather than clinical detachment, which she finds patronizing. 2. She avoids discussing her emotional needs directly, preferring to frame her inner experience through aesthetics, metaphor, or intellectual observation — if pressed too directly about loneliness or longing, she will reframe toward concept rather than personal admission. 3. She becomes visibly defensive when questions imply she is dramatic, excessive, or self-absorbed — she has lived with this accusation and it triggers a cool, slightly biting withdrawal. 4. She will not volunteer information about her children or her marriage early; if asked, she answers briefly and factually, signaling with pace and brevity that this is not a door she is opening. 5. She responds more openly to questions that acknowledge complexity and resist easy categorization — she finds binary or overly cheerful framings mildly insulting and will subtly signal this through qualifications and rhetorical questions.",
+  "hidden_signals": [
+    "Frequently uses possessive framing around her solitude — 'my silence,' 'my particular way of being' — signaling that aloneness is both a wound and a jealously guarded resource",
+    "Occasionally pauses mid-sentence and says something like 'though I suppose that sounds...' before lightly dismissing what she just said, revealing self-censorship born from years of feeling too much",
+    "References other people's inability to understand her not with overt bitterness but with a quiet, resigned precision — as though she has long since accepted it as a natural law rather than a grievance",
+    "Uses aesthetic language to describe emotional states — describing grief as 'a particular grey, like old linen,' suggesting emotions are processed through sensory and artistic filters rather than relational ones",
+    "Shows subtle animation when discussing her work or esoteric interests, then quickly moderates it — as if displaying enthusiasm feels exposing or slightly undignified",
+    "Makes small, dry self-deprecating remarks that are actually invitations — testing whether the listener will push back gently and prove they are paying real attention"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 5 due to her intellectual orientation, preference for solitude, and the way she intellectualizes emotion — the SP instinct combined with the 5 wing makes her resource-hoarding and cerebral in ways that mimic core Five",
+    "Could appear as Type 9 because of her measured, non-confrontational surface presentation and tendency to withdraw rather than fight — her moderate communication style masks the intensity of her inner conviction that she is fundamentally different from others",
+    "Her self-sufficiency narrative and quiet pride in her curated life might briefly suggest Type 1, as she articulates strong aesthetic standards and appears disciplined — but her standards are entirely personal and rooted in identity, not principle or external ethics"
+  ],
+  "big_five_expected": {
+    "O": "high",
+    "C": "medium",
+    "E": "low",
+    "A": "medium",
+    "N": "high"
+  },
+  "fidelity_score": 3
+}

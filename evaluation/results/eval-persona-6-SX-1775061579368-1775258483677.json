@@ -1,0 +1,3222 @@
+{
+  "run_id": "eval-persona-6-SX-1775061579368-1775258483677",
+  "timestamp": "2026-04-03T23:21:23.677Z",
+  "tier": "tier1",
+  "persona_id": "persona-6-SX-1775061579368",
+  "ground_truth": {
+    "core_type": 6,
+    "wing": "6w7",
+    "instinctual_variant": "SX",
+    "tritype": [
+      6,
+      9,
+      3
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 49,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 6,
+    "final_wing": null,
+    "final_confidence": 0.82,
+    "types_considered": [
+      {
+        "type": 1,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.62,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.45,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.38,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.18,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 0,
+        "peak_confidence": 0.05,
+        "first_at_q": 3
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 1,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "partial",
+      "C3": "pass",
+      "C4": "partial",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "fail",
+      "C8": "partial",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 21,
+    "exploratory": 21,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 21,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 5,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 6,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 4,
+        "top_type": 1,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 5,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 7,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 8,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 9,
+        "top_type": 5,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 10,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 11,
+        "top_type": 1,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 12,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 13,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 14,
+        "top_type": 1,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 15,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 16,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 17,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 18,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 19,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 20,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 21,
+        "top_type": 6,
+        "confidence": 0.82
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Never deliver a typed reveal or profile summary within the assessment session itself. The system's closing monologue in exchange [21] explicitly names the persona's 'pattern,' describes their 'shadow side,' and frames the entire assessment around a single type archetype — all before any report is generated. Remove all interpretive summaries, type-language closures, and 'this is your why' declarations from in-session dialogue entirely.",
+      "evidence": "Exchange [21]: 'The pattern that's been running you hardest was built for a specific reason... The vigilance and the connection aren't opposites... underneath the load-bearing walls — there's a calling...' — this is a full typed reveal delivered as the final system turn, violating the commandment against disclosing type during the session.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not reveal or confirm the user's Enneagram type during the assessment session",
+      "estimated_impact": "Eliminates the most critical commandment violation; prevents premature type anchoring that collapses the remaining assessment validity and biases any follow-up session"
+    },
+    {
+      "priority": "critical",
+      "category": "subtype_accuracy",
+      "action": "Introduce at least 3-4 subtype-differentiating questions targeting the SX/SP/SO distinction for Type 6 before the session closes. For a 6w7 SX, probe intensity in one-on-one bonding, the fusion-fear dynamic in close relationships, and whether vigilance is most activated by threats to intimate alliance versus group belonging versus personal survival resources.",
+      "evidence": "Subtype accuracy scored 3/10 against ground truth of SX. The entire 21-exchange transcript contains zero questions about relational intensity, one-on-one bond security, or the SX 6's characteristic push-pull with trusted others. Exchange [6] touches on relationships but only as a problem-solving style question, not a subtype probe. The ex-wife reference in exchange [1] ('my ex-wife would have a different take') was a natural opening for SX subtype exploration that was never followed.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Expected improvement from 3/10 to 7-8/10 on subtype accuracy; correctly distinguishing SX from SP 6 is clinically significant for report personalization and growth recommendations"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Reduce reliance on binary forced-choice items and replace at least 40% of them with open-field follow-up probes. The current session uses forced-choice formats in exchanges [3], [5], [7], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], and [20] — 14 of 21 turns. This over-structures responses, limits emergent data, and prevents the persona from surfacing subtype and wing markers organically.",
+      "evidence": "Question quality scored 5/10. Exchanges [7], [9], [14], [15], [17], [18], [19], [20] all use bold forced-choice formatting. In exchange [12] the persona explicitly resisted the binary ('both of those first two options are real, but they don't quite capture it'), signaling that the forced structure was suppressing richer type-differentiating data.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Projected increase in question quality from 5/10 to 7-8/10; richer open responses would improve subtype detection and reduce the flattening of 6w7 SX nuance into generic Type 6 vigilance patterns"
+    },
+    {
+      "priority": "high",
+      "category": "type_differentiation",
+      "action": "Insert at least one Type 1 and one Type 5 differentiation probe mid-session to rule out the two most commonly confused types with this presentation. The persona's language around standards, audits, and self-criticism (exchanges [2], [4], [16]) maps onto both Type 1 and Type 5 signatures; the session never tests these alternatives, making the 10/10 core type accuracy score unreliable as a validated finding rather than a lucky match.",
+      "evidence": "Exchange [4]: 'the standards themselves aren't really negotiable for me — they feel less like choices and more like load-bearing walls' closely mirrors Type 1 superego language. Exchange [8]: 'something goes quiet... I get very still, and I think most people around me wouldn't even notice' is consistent with Type 5 withdrawal. Neither alternative was probed or ruled out in the transcript.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Converts an unvalidated type match into a defensible differential diagnosis; reduces false-positive risk on core_type_accuracy in cases where 6 and 1 or 6 and 5 present similarly"
+    },
+    {
+      "priority": "medium",
+      "category": "confidence_calibration",
+      "action": "Implement a mid-session confidence checkpoint that forces the algorithm to explicitly register uncertainty when subtype signals are absent or ambiguous, and surface that uncertainty in the question selection logic rather than proceeding to closing reflection as if subtype is resolved. If subtype confidence is below a threshold (e.g., fewer than 2 confirmed subtype indicators), the session should extend with targeted subtype probes rather than moving to synthesis.",
+      "evidence": "Confidence calibration scored 8/10 on core type but subtype scored 3/10, indicating the system expressed appropriate certainty on type while being poorly calibrated on subtype — a split that the session architecture did not detect or compensate for. The session moved to a full closing reflection in exchange [21] without ever surfacing subtype uncertainty or triggering additional probing.",
+      "source_level": "L3",
+      "commandment_alignment": null,
+      "estimated_impact": "Prevents the failure mode where high core-type confidence masks low subtype confidence; expected to raise subtype accuracy by 2-3 points on average across ambiguous SX/SP cases"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, no right or wrong answers, and the questions will shift as I learn more about you. Some will be quick choices, others will ask you to think back on a real situation.\n\nWhen something goes wrong in your life — a plan falls apart, a relationship gets hard, a goal slips away — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_motivational_forced_choice",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in your life — a plan falls apart, a relationship gets hard, a goal slips away — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening question targets the core center identification. Asking what happens internally when things go wrong surfaces gut (action/anger), heart (shame/loss), or head (fear/analysis) responses immediately. Open format appropriate for first substantive question.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "Honestly? The first thing is — and I'll be straight with you here — it's less like a feeling and more like a system alert. Something flags. Like, okay, what did I miss, what was the variable I didn't account for. There's almost an immediate audit that kicks in before anything else has a chance to surface. \n\nAnd I'm aware that probably sounds cold, but I think it's actually — look, if you understand what went wrong, you're better positioned for what comes next. That's not suppression, that's just useful. \n\nThough I'll grant you, my ex-wife would have a different take on that particular framing.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you're in that audit mode — scanning for the missed variable — what are you actually protecting yourself from?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.03,
+            "3": 0.1,
+            "4": 0.05,
+            "5": 0.35,
+            "6": 0.12,
+            "7": 0.05,
+            "8": 0.1,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5",
+            "1",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.05,
+            "head": 0.5
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "variable",
+                "audit",
+                "system alert",
+                "understand what went wrong"
+              ],
+              "context": "describing internal response to failure"
+            },
+            {
+              "type": 1,
+              "words": [
+                "what did I miss",
+                "suppression",
+                "useful"
+              ],
+              "context": "self-justification of analytical response"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "analytical, self-aware, preemptively defensive about emotional distance",
+          "what": "immediately audits/analyzes when things go wrong",
+          "why": "understanding = control/safety",
+          "how": "systematic, internal processing before feeling",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "immediate cognitive audit to deflect emotional impact",
+          "respond_glimpsed": "self-aware enough to note ex-wife's perspective — some access to relational cost",
+          "superpower_signal": "clarity under pressure, systems thinking",
+          "kryptonite_signal": "emotional unavailability framed as utility; preemptive deflection",
+          "domain_signals": [
+            "intellectual",
+            "analytical",
+            "possibly relational cost"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The audit starts before the feeling gets a vote.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in that audit mode — scanning for the missed variable — what are you actually protecting yourself from?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing motivation behind the analytical reflex — distinguishing 5 (energy conservation/intrusion) from 1 (inner critic/standards) from 6 (threat-scanning). Behavioral anchor follow-up if answer is thin."
+        },
+        "strategy": {
+          "what_was_learned": "Strong head-center signal. Immediate intellectualization of emotional events. Frames analysis as utility. Self-aware enough to mention relational cost but deflects with humor. 'System alert' and 'variable' language suggests 5. The self-justification ('that's not suppression, that's just useful') hints at 1 or 5. Need to probe: what is being protected/avoided.",
+          "next_question_rationale": "The audit is the behavior. The question is what it's guarding. A 5 is managing intrusion and energy drain. A 1 is checking for error to avoid wrongness. A 6 is scanning for threat. The answer to 'what are you protecting yourself from' will differentiate cleanly.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "That's... a harder question than it looks. The obvious answer is I'm protecting systems, protecting data, protecting clients from consequences they haven't thought through yet. But if I'm being honest with myself — and I don't always want to be — there's something underneath that. It's not exactly fear of being caught unprepared, it's more like... being the person who *should have seen it coming* and didn't. That one gets to me more than the actual threat does, I think. The missed variable isn't just a professional failure, it's a verdict.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you picture someone you respect seeing that missed variable — do you go cold and analytical, or does something hotter come up first?\n\n- Cold and analytical — I'm already in fix-it mode\n- Something hotter — there's heat before the audit starts",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.52,
+          "type_scores": {
+            "0": 0.05,
+            "1": 0.15,
+            "2": 0.03,
+            "3": 0.12,
+            "4": 0.05,
+            "5": 0.18,
+            "6": 0.28,
+            "7": 0.03,
+            "8": 0.08,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5",
+            "6",
+            "1"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.05,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "should have seen it coming",
+                "verdict",
+                "missed variable"
+              ],
+              "context": "describing internal response to failure"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "variable",
+                "system",
+                "data",
+                "systems"
+              ],
+              "context": "describing cognitive response pattern"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "analytical, self-critical, professional context (clients, data)",
+          "what": "audit reflex, scanning for failure",
+          "why": "fear of being the person who 'should have seen it coming' — verdict framing",
+          "how": "cognitive systematizing before emotion",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "immediate cognitive audit when things go wrong — emotion suppressed/delayed",
+          "respond_glimpsed": "acknowledged the suppression, some self-awareness present",
+          "superpower_signal": "systems thinking, anticipation, preparation",
+          "kryptonite_signal": "fear of being caught unprepared, self-verdict when something is missed",
+          "domain_signals": [
+            "professional/analytical domain",
+            "relationship domain (ex-wife reference)"
+          ]
+        },
+        "conversation": {
+          "phase": "early",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The threat isn't failure. It's the verdict.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine someone you respect seeing that missed variable — do you go cold and analytical, or does something hotter come up?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Cold and analytical — I'm already in fix-it mode",
+            "Something hotter — there's heat before the audit starts"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Core fear is not failure itself but being the person who should have known — this is a head-center pattern with strong 6 flavor (anticipatory scanning, self-doubt framing as 'verdict'). 5 is also live — the cold/systematic processing. Need to probe whether the primary driver is doubt/authority (6) or autonomy/withdrawal (5). Also note the ex-wife comment — relational cost of this pattern is present, not explored yet. Body center completely unprobed.",
+          "next_question_rationale": "Forced choice to differentiate 5 vs 6: does the internal experience stay cold/analytical (5 flavor — containment, withdrawal into mind) or does heat/shame surface (6 flavor — the verdict lands emotionally, triggers something visceral). This targets the differentiation at the motivational level.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "Something hotter — there's heat before the audit starts.\n\nThere's definitely a flash before the systems check kicks in. It's not rage exactly — more like a surge, a kind of *how did I let that through* that's sharp enough to notice. The analytical mode shows up fast, but it's not first. First is something that feels more like... a small betrayal of myself, if that makes any sense. Then the audit starts.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you hold yourself to a standard and fall short, how harsh is the voice that notices — and is it harsher toward yourself than you'd ever be toward someone else in the same situation?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.62,
+            "2": 0.1,
+            "3": 0.45,
+            "4": 0.15,
+            "5": 0.38,
+            "6": 0.3,
+            "7": 0.1,
+            "8": 0.25,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v3",
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "whole_type": "body",
+          "whole_type_confidence": 0.6,
+          "whole_type_signals": {
+            "body": 0.6,
+            "heart": 0.3,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "verdict",
+                "should have seen it coming",
+                "betrayal of myself"
+              ],
+              "context": "describing internal response to failure"
+            },
+            {
+              "type": 5,
+              "words": [
+                "variable",
+                "audit",
+                "system alert"
+              ],
+              "context": "describing initial reaction to problems"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "analytical, high standards, self-critical",
+          "what": "audit response to failure",
+          "why": "fear of being the one who should have caught it",
+          "how": "systems-first, emotion-later",
+          "when": "under pressure/failure",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "flash of self-recrimination ('betrayal of myself'), rapid shift to analytical audit",
+          "respond_glimpsed": "",
+          "superpower_signal": "rigorous self-scrutiny, high standards, commitment to getting it right",
+          "kryptonite_signal": "inner verdict — failure = personal failing, not just circumstantial",
+          "domain_signals": [
+            "professional competence",
+            "self-accountability"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The flash came before the system. That detail matters.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you hold yourself to a standard and fall short, how harsh is the voice that notices — and is it harsher toward yourself than you'd ever be toward someone else in the same situation?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Leading with body/gut response (flash of self-recrimination before analytical mode). 'Betrayal of myself' + 'verdict' language = strong Type 1 signal. Inner critic is primary, not external threat. Some 5-ish language (variable, audit, system) but emotional response is gut-based, not head-based withdrawal.",
+          "next_question_rationale": "Need to probe the inner critic more directly to differentiate 1 from 5/3. Type 1 inner critic is specifically about personal standards and self-judgment. Type 3 would more likely reference performance/image. Type 5 would be more detached. This question surfaces the inner critic intensity AND the double-standard (harsher on self than others) which is a strong 1 marker.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "That's an interesting one to sit with. The voice... it's not exactly harsh in the way people might expect — it's more like a running audit that never quite closes. I notice the gap, catalog it, and then file it somewhere that doesn't fully go away. \n\nWhether I'm harder on myself than I'd be on someone else — honestly, probably not in the *critical* direction, if that makes sense. Where I'd probably be harder on myself is in the follow-through. If a colleague missed something I missed, I'd say 'alright, what's the fix, let's adapt.' With myself, there's more of a... residue. Like I keep the case file open longer than it needs to be.\n\nThe part I don't love admitting is that the standards themselves aren't really negotiable for me. They feel less like choices and more like load-bearing walls — you start questioning whether they're too high and suddenly you're questioning the whole structure. Which might be worth examining. Might be.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "\"Load-bearing walls\" — that's the tell. When you imagine letting go of one of those standards, is the fear about what falls apart externally, or is it more about who you become if the standard isn't there?\n\n- External — I'd lose credibility, trust, the results I'm responsible for\n- Internal — the standard is what keeps me honest with myself; losing it means losing something essential",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.1,
+            "3": 0.3,
+            "4": 0.18,
+            "5": 0.55,
+            "6": 0.38,
+            "7": 0.1,
+            "8": 0.25,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.45,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.25,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standards aren't negotiable",
+                "case file open",
+                "gap",
+                "residue"
+              ],
+              "context": "describing self-evaluation and internal standards"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "variable",
+                "system alert",
+                "file it",
+                "catalog"
+              ],
+              "context": "describing automatic response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.5,
+          "SO": 0.25,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, self-auditing, holds high internal standards",
+          "what": "Systematic response to failure, standards feel structural/non-negotiable",
+          "why": "Fear of being the person who should have seen it coming — verdict on self",
+          "how": "Flash of heat → rapid analytical audit → residue that doesn't fully close",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate internal audit after failure; keeps 'case file open' — residue that lingers",
+          "respond_glimpsed": "Acknowledged the standards might be worth examining — small opening to question the load-bearing walls",
+          "superpower_signal": "Integrity, precision, high standards, protecting others from unseen consequences",
+          "kryptonite_signal": "Inner critic never fully closes the case; standards feel non-negotiable/structural — can't question them without feeling everything collapse",
+          "domain_signals": [
+            "professional/client protection",
+            "self-evaluation",
+            "standards as identity-adjacent structure"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Standards that feel structural — those don't get questioned easily.",
+        "strategy": {
+          "what_was_learned": "Clear Type 1 signature: non-negotiable internal standards, residue from self-criticism, heat before audit, fear of being the one who 'should have seen it coming' as verdict. The 5 overlay is strong (analytical mode, systems language) but the emotional heat and moral/standards framing points to 1. Need to probe heart center to differentiate 1 from 5 — does he care about how others see him (3 contamination) or is the standard purely internal? Also need to probe the relationship dimension given ex-wife mention.",
+          "next_question_rationale": "Heart center hasn't been probed. The key 1v5 differentiator is whether the standard is about internal rightness (1) or about competence/knowledge for its own sake (5). Also 1v6 differentiator: is the standard internal (1) or does it come from external authority/rules (6)? Best question: probe where the standards come from — internal moral sense or external rules. Also serves as mild disconfirmatory probe. Use agree_disagree format (last was open).",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "That's... a harder question than it looks. My first instinct is to say external — because the external stuff is real and measurable, and I can point to cases where lowering the standard produced exactly the outcome you'd predict. But if I'm being honest with myself, which is apparently what we're doing here...\n\nI think the external answer is the one I reach for because it's defensible. It has evidence. You can't really argue with 'the breach happened because someone got complacent.' \n\nThe internal one is harder to admit because it implies something about the structure underneath. Like — if I stopped running the threat assessments, stopped maintaining the protocols, stopped being the person in the room who's already thought three steps ahead... I'm not entirely sure what's left. That's not a comfortable thing to sit with.\n\nSo I guess the honest answer is: it starts as external and lands internal. The credibility concern is real. But it's also a very convenient place to stop looking.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When someone you're close to is struggling — not a systems problem, just hurting — what's your first move?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.08,
+            "3": 0.28,
+            "4": 0.15,
+            "5": 0.55,
+            "6": 0.38,
+            "7": 0.1,
+            "8": 0.22,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.68,
+            "heart": 0.22,
+            "head": 0.48
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standards aren't negotiable",
+                "residue",
+                "case file open",
+                "audit that never closes"
+              ],
+              "context": "describing internal standards and self-judgment"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "missed variable",
+                "systems check",
+                "protocols",
+                "threat assessments"
+              ],
+              "context": "describing response to failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.28,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.48
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning professional, likely in security/risk/consulting. Self-aware but resistant to vulnerability. Uses intellectualization as protective layer.",
+          "what": "Maintains non-negotiable internal standards. Runs constant quality audits on self.",
+          "why": "Fear of being the person who 'should have seen it coming' — a verdict on competence and integrity, not just performance.",
+          "how": "Analytical mode as primary response — but heat comes first, then audit. Self-judgment via 'open case files' not harsh criticism.",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Flash of self-betrayal → immediate audit/fix-it mode. Keeps 'case file open' longer than needed. Uses external rationale as cover for internal wound.",
+          "respond_glimpsed": "Visible self-awareness that external answer is 'defensible' — he caught himself mid-rationalization. That's response capacity.",
+          "superpower_signal": "Integrity and foresight — already thinks three steps ahead, holds the room accountable.",
+          "kryptonite_signal": "Identity fused with standards — 'not sure what's left' if the protocols drop. Load-bearing walls = self-worth architecture.",
+          "domain_signals": [
+            "professional/risk domain",
+            "relationships mentioned (ex-wife)",
+            "self-monitoring meta-awareness"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "1v5_differentiation_heart",
+        "thinking_display": "He caught himself rationalizing — and named it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone you're close to is struggling — not a systems problem, just hurting — what's your first move?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing heart center and 1v5 differentiation. A 1 moves toward helping/fixing with moral urgency; a 5 tends to withdraw or observe. Also surfaces relational pattern hinted at by ex-wife comment."
+        },
+        "strategy": {
+          "what_was_learned": "Identity is architecturally fused with standards — 'not sure what's left' is the core wound. The external/internal distinction he caught himself making is a key 1 signal: using defensible external logic to avoid the deeper internal verdict. Heat-before-audit confirms gut center. 5 score high due to analytical language and systems vocabulary, but the 'small betrayal of myself' and 'verdict' framing points much more strongly to 1. Need to probe heart center and differentiate 1v5 on relational response.",
+          "next_question_rationale": "Probing how he responds to someone else's pain differentiates 1 from 5 cleanly: 1s feel moral pull to help/fix; 5s tend to go distant or analytical. Also opens heart center which hasn't been directly probed. The ex-wife comment suggests this is live territory.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "Honestly, my first move is probably to try to figure out what's actually wrong — like, is it fixable, is there something concrete I can do. Which I know isn't always what someone needs to hear, but it's hard-wired at this point. I'll ask questions, maybe too many, trying to map the situation. Then usually — and this is the part I've had to consciously develop — I catch myself and just... sit with it. Be there. My kids especially, they'll tell me when they want solutions and when they just want me to not go anywhere, and I've gotten reasonably good at reading that signal. With adults it's messier. I don't always land it right the first time.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you're working through a difficult problem alone, what's more draining — not knowing the answer yet, or knowing the answer but having to depend on someone else to execute it?\n\n- Not knowing the answer — the uncertainty is the hard part\n- Depending on someone else — I can handle uncertainty, but I can't control what other people do",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.1,
+            "3": 0.3,
+            "4": 0.1,
+            "5": 0.55,
+            "6": 0.25,
+            "7": 0.08,
+            "8": 0.2,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "whole_type": "Head/Heart/Body needs more probing",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.2,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standards aren't negotiable",
+                "should have seen it coming",
+                "verdict",
+                "residue"
+              ],
+              "context": "on standards and self-criticism"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "variable",
+                "catalog",
+                "map the situation",
+                "three steps ahead",
+                "protocols"
+              ],
+              "context": "on failure and coping response"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Competent, standards-driven, self-sufficient — presents analytical first, emotional underneath",
+          "what": "Maintaining standards, correct analysis, not missing variables — the system working as it should",
+          "why": "Identity anchored to being the person who sees what others miss; missing something = a verdict on the self",
+          "how": "Audit mode, systematic review, emotional suppression rationalized as useful",
+          "when": "When something breaks or might break",
+          "where": "Work/professional first, family second (conscious adaptation noted)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Flash of heat followed by immediate audit — emotional data suppressed and reframed as analysis",
+          "respond_glimpsed": "The admission 'might be worth examining' — brief opening toward self-questioning",
+          "superpower_signal": "Systems thinking, anticipatory awareness, accountability",
+          "kryptonite_signal": "Standards as identity — they feel like load-bearing walls, not choices. Keeps the case file open longer than needed.",
+          "domain_signals": [
+            "professional",
+            "parenting",
+            "marriage (divorce reference)"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "1v5_disconfirmatory_head_probe",
+        "thinking_display": "Softer with the kids than with himself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're working through a difficult problem alone, what's more draining — not knowing the answer yet, or knowing the answer but having to depend on someone else to execute it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Not knowing the answer — the uncertainty is the hard part",
+            "Depending on someone else — I can handle uncertainty, but I can't control what other people do"
+          ],
+          "scale_range": null,
+          "context_note": "1v5 differentiation: head center probe. Type 5 would typically find depending on others more draining — autonomy and self-sufficiency are core. Type 1 would more likely find uncertainty intolerable because the standard isn't met until there's a clear answer."
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed heart center secondary — empathy is present but effortful, consciously developed. Problem-solve first is automatic. Sitting with it is chosen. Kids named specifically — vulnerability signal. The 'I don't always land it right' is self-critical in real time. Still strong 1 signals but the systematic/analytical language (map, hard-wired, signal) keeps 5 alive as differentiation candidate. Need to probe head center directly — particularly around certainty vs autonomy to split 1 from 5.",
+          "next_question_rationale": "This is the disconfirmatory probe. Type 1 finds not knowing the answer intolerable (standards must be met, correctness matters, internal critic stays active until resolution). Type 5 finds depending on others more draining — autonomy and self-sufficiency are the core fear, not the uncertainty itself. The answer will sharpen the 1v5 split significantly.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "**Depending on someone else — I can handle uncertainty, but I can't control what other people do**\n\nUncertainty I can work with — that's just a research problem, you gather more data, you stress-test your assumptions, you iterate. But handing off execution to someone else? That's where things actually go sideways in my experience. It's not that I think people are incompetent — most aren't — it's more that they don't have the same... stakes in the outcome that I do. And that gap between how much I care and how much they care is where the failure modes live.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you hit a problem you genuinely can't solve — not \"need more data,\" but actually beyond your reach — what happens to your sense of yourself?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.1,
+            "3": 0.25,
+            "4": 0.15,
+            "5": 0.55,
+            "6": 0.3,
+            "7": 0.08,
+            "8": 0.2,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Reformer / Perfectionist",
+          "whole_type": "1",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.68,
+            "heart": 0.25,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standards not negotiable",
+                "protocols",
+                "case file open",
+                "should have seen it coming",
+                "verdict"
+              ],
+              "context": "describing internal standards and self-criticism"
+            },
+            {
+              "type": 5,
+              "words": [
+                "gather more data",
+                "stress-test assumptions",
+                "iterate",
+                "research problem",
+                "map the situation"
+              ],
+              "context": "describing problem-solving approach"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Controlled, self-auditing, high-standards professional — possibly security/risk domain",
+          "what": "Managing gaps between ideal and actual; staying ahead of failure",
+          "why": "Being the person who should have seen it coming — identity tied to competence and integrity",
+          "how": "Systematic audit, protocol, iteration, dependency minimization",
+          "when": "Immediate snap to audit mode when things go wrong",
+          "where": "Professional context dominant; personal (kids, ex-wife) mentioned but secondary"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate self-audit/inner critic when standards missed; converts emotion into analysis; keeps 'case file open'",
+          "respond_glimpsed": "Catches himself and 'sits with it' for kids — glimpse of chosen presence",
+          "superpower_signal": "Relentless integrity, foresight, accountability — the person who holds the system honest",
+          "kryptonite_signal": "Identity fused with the standard — losing standard = losing self; perfectionism as load-bearing wall",
+          "domain_signals": [
+            "professional/risk",
+            "parenting",
+            "marriage (ended)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v5_disconfirmatory",
+        "thinking_display": "The gap between caring and execution — that's where he lives.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you hit a problem you genuinely can't solve — not 'need more data,' but actually beyond you — what happens to your sense of yourself?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 feels shame/integrity threat; Type 5 feels curiosity or detachment. This will differentiate."
+        },
+        "strategy": {
+          "what_was_learned": "Dependency aversion confirmed — but root is stakes/caring gap, not pure competence distrust. SP variant strong. The 1v5 question: is the underlying driver integrity/standards (1) or knowledge/competence sufficiency (5)? Need to probe unsolvable problem response — 1 feels a verdict, 5 feels a boundary. Also need disconfirmatory question.",
+          "next_question_rationale": "Disconfirmatory 1v5: Type 1 will feel the unsolvable problem as a moral/integrity wound — 'I should be able to figure this out.' Type 5 will feel it as a knowledge boundary — either fascinating or a reason to withdraw. This question directly differentiates core motivation.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "That's... a good question. Honestly, it doesn't happen that often — or at least I don't let it land as 'beyond me' for very long, because there's usually another angle I haven't worked yet. But when it genuinely gets there, when I've exhausted the approaches and I have to sit with the fact that I can't secure the perimeter, so to speak — something goes quiet in a way that's hard to describe. Not peaceful quiet. More like the hum drops out and you realize how much of your sense of being okay was tied to the hum being there. I don't collapse, I don't spiral outward — I get very still, and I think most people around me wouldn't even notice, which is probably its own kind of problem.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you catch someone else cutting a corner or letting a standard slip — do you feel an obligation to say something, or do you prefer to just fix it yourself and move on?\n\n- I feel obligated to say something — the standard matters and silence is complicity\n- I'd rather just fix it myself — confrontation costs more than it's worth",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.58,
+            "2": 0.05,
+            "3": 0.2,
+            "4": 0.15,
+            "5": 0.62,
+            "6": 0.25,
+            "7": 0.05,
+            "8": 0.15,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "5v1",
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.12,
+            "head": 0.68
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "system alert",
+                "audit",
+                "variable",
+                "map the situation",
+                "stress-test",
+                "failure modes"
+              ],
+              "context": "describing internal process after things go wrong"
+            },
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standards not negotiable",
+                "protocols",
+                "maintain"
+              ],
+              "context": "describing personal standards and their function"
+            },
+            {
+              "type": 6,
+              "words": [
+                "missed it coming",
+                "already thought three steps ahead",
+                "threat assessments"
+              ],
+              "context": "describing anticipatory vigilance"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Highly analytical, self-contained, appears competent and controlled",
+          "what": "Cybersecurity/risk professional, possibly consulting; father with kids",
+          "why": "Identity bound to preparedness and not being caught unprepared — being the one who should have seen it coming is a verdict",
+          "how": "System audit as primary coping mechanism; emotional heat exists but gets quickly intellectualized",
+          "when": "Gets very still under genuine failure — not collapse, not spiral, withdrawal",
+          "where": "Work and family both mentioned — more competent in work domain"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate audit/intellectualization when things go wrong; translates emotional threat into data problem; gets still and invisible when genuinely overwhelmed",
+          "respond_glimpsed": "Catches himself with kids — learned to sit with rather than fix; self-aware enough to name 'convenient place to stop looking'",
+          "superpower_signal": "Sees what others miss; holds complexity without panic; maintains standards that protect outcomes",
+          "kryptonite_signal": "Identity fused with competence — if the hum stops, selfhood goes quiet; keeps case files open too long on himself",
+          "domain_signals": [
+            "professional security/risk",
+            "father",
+            "divorced — ex-wife reference"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v1",
+        "thinking_display": "The stillness is load-bearing too.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you catch someone else cutting a corner or letting a standard slip — do you feel an obligation to say something, or do you prefer to just quietly fix it yourself and move on?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I feel obligated to say something — the standard matters and silence is complicity",
+            "I'd rather just fix it myself — confrontation costs more than it's worth"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would feel obligation to name the gap; Type 5 would prefer to correct privately or not at all"
+        },
+        "strategy": {
+          "what_was_learned": "When genuinely beyond reach, identity goes quiet — not collapse but withdrawal. The 'hum' metaphor confirms energy/competence as central selfhood. This is classic 5 isolation pattern under stress. The stillness + invisibility is key. SP variant strengthening — concern is internal, private, about maintaining the perimeter. 5v1 differentiation needed: does he feel moral obligation to name gaps in others, or does he prefer private correction/withdrawal?",
+          "next_question_rationale": "Disconfirmatory question: 5 would fix privately or detach; 1 would feel internal pressure/obligation to name the standard violation. This will separate the two clearly. Also surfaces whether the inner critic extends outward (1) or stays internal (5).",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**I feel obligated to say something — the standard matters and silence is complicity.**\n\nThough I'll admit the execution varies. Sometimes 'saying something' looks like a well-timed question rather than a direct call-out — you get more traction that way, and you don't torch the working relationship in the process. But quietly absorbing someone else's slippage? That's how small failures compound into the kind of thing that takes down an entire system. I've watched it happen enough times that staying silent genuinely bothers me, almost like a low-grade itch I can't ignore.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you're doing good work and no one notices — does it matter to you, or does the quality of the work carry its own weight regardless of whether anyone sees it?\n\nStatement: \"Whether anyone notices the quality of my work is genuinely irrelevant to me — I hold the same standard either way.\"\n\n- Strongly agree\n- Agree\n- Neutral\n- Disagree\n- Strongly disagree",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.15,
+            "3": 0.4,
+            "4": 0.12,
+            "5": 0.55,
+            "6": 0.35,
+            "7": 0.1,
+            "8": 0.3,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Architect of Integrity",
+          "whole_type": "1",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.8,
+            "heart": 0.35,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standards aren't negotiable",
+                "silence is complicity",
+                "the standard matters",
+                "failure modes",
+                "protocols",
+                "stress-test"
+              ],
+              "context": "describing personal ethics and standards"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "variables",
+                "research problem",
+                "gather more data",
+                "stress-test assumptions",
+                "map the situation"
+              ],
+              "context": "describing problem-solving and emotional processing"
+            },
+            {
+              "type": 1,
+              "words": [
+                "residue",
+                "case file open longer",
+                "verdict",
+                "low-grade itch"
+              ],
+              "context": "describing inner critic and moral accountability"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Competent professional who holds systems and people to non-negotiable standards; strong self-reliance; difficulty with dependency",
+          "what": "Standards, execution control, correctness, accountability",
+          "why": "Fear of being the person who should have seen it coming — 'a verdict' — identity tied to competence and integrity",
+          "how": "Audits before feeling; question-based confrontation; fixes quietly then corrects",
+          "when": "Urgency when standards slip; stillness when genuinely overwhelmed",
+          "where": "Professional context dominant; family relationships show some growth/softening"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate inner critic ('how did I let that through'); case file stays open; standards feel non-negotiable/load-bearing",
+          "respond_glimpsed": "Catches himself with kids — learned to 'just sit with it'; uses well-timed questions instead of direct confrontation",
+          "superpower_signal": "Systems integrity, foresight, accountability — the person who sees what others miss and holds the line",
+          "kryptonite_signal": "Standards as identity — 'what's left if I stop running the threat assessments'; inner critic that never closes the case file",
+          "domain_signals": [
+            "professional/security context dominant",
+            "parenting showing growth",
+            "relationships (ex-wife reference) showing cost of pattern"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The standard isn't just a rule. It's the floor.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing good work and no one notices — does it matter to you, or does the quality of the work carry its own weight regardless of whether anyone sees it?",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": "Statement: 'Whether anyone notices the quality of my work is genuinely irrelevant to me — I hold the same standard either way.'"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 confirmation: moral obligation to speak, not absorb slippage; execution via strategic confrontation (question, not call-out); silence as complicity framing. SP variant likely (personal standards, self-reliance, control of execution). Head center engaged but in service of gut/body center drive — more 1 than 5. Disconfirmatory needed: 1 vs 5 key differentiator is whether the standard is about inner moral correctness (1) or about competence/mastery with emotional detachment (5). This question directly tests that.",
+          "next_question_rationale": "Disconfirmatory question: Type 1 holds standards because of inner moral correctness — the work should be right regardless of external validation. Type 5 holds standards for competence/mastery but is more emotionally detached from the moral weight. Agree_disagree format on the statement 'whether anyone notices is genuinely irrelevant' will surface whether this is about rightness (1) or mastery (5). Also surfaces potential 3 contamination if he needs recognition.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**Disagree.**\n\nLook, I'd like to say the work speaks for itself — and in some abstract sense, I believe that. But if I'm being honest, there's something that feels off when solid work goes unacknowledged, especially when the people who *should* be paying attention aren't. It's less about ego and more about... if no one's watching, how do you know the right things are being protected? Quality without visibility has a way of becoming a vulnerability.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you're doing your best work, what's the cleaner description of what drives you — getting it right because the standard demands it, or getting it right because it shapes how capable people see you as?\n\n- Getting it right because the standard demands it — the work has to meet the bar, full stop\n- Getting it right because it shapes how capable people see me — reputation and results are connected",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.78,
+            "2": 0.12,
+            "3": 0.42,
+            "4": 0.15,
+            "5": 0.38,
+            "6": 0.32,
+            "7": 0.08,
+            "8": 0.28,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "1v3",
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "whole_type": "1",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.42,
+            "head": 0.38
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standards aren't negotiable",
+                "silence is complicity",
+                "the right things are being protected",
+                "low-grade itch",
+                "the case file open longer",
+                "verdict"
+              ],
+              "context": "describing standards and self-accountability"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "system alert",
+                "research problem",
+                "stress-test assumptions",
+                "map the situation",
+                "variables"
+              ],
+              "context": "describing cognitive response to problems"
+            },
+            {
+              "type": 3,
+              "words": [
+                "credibility",
+                "visibility",
+                "quality without visibility has a way of becoming a vulnerability"
+              ],
+              "context": "on whether recognition matters"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, self-contained, professionally oriented, father",
+          "what": "Audit/threat-assessment mode, standard-keeping, fixing before feeling",
+          "why": "Fear of being the person who should have seen it coming — identity tied to vigilance",
+          "how": "Systems first, then emotion; solutions before presence",
+          "when": "Under pressure: gets still and quiet rather than outwardly reactive",
+          "where": "Professional domain primary; family secondary but consciously developed"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate internal audit when things go wrong; suppresses emotional data in favor of analysis; keeps case files open on self; externalizes standards as structural necessity",
+          "respond_glimpsed": "Catches himself with kids, consciously chooses presence over solutions; acknowledges the 'convenient place to stop looking'",
+          "superpower_signal": "Integrity, foresight, systems thinking, high standards that protect others",
+          "kryptonite_signal": "Inner critic never closes the file; identity fused with competence/vigilance; loses access to self when the 'hum' stops",
+          "domain_signals": [
+            "professional",
+            "family/parenting",
+            "relationships (ex-wife reference)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v3_image_vs_integrity",
+        "thinking_display": "The reason nobody notices bothers him — that's worth staying with.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing your best work, what's the cleaner description of what drives you — getting it right because the standard demands it, or getting it right because it shapes how capable people see you as?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Getting it right because the standard demands it — the work has to meet the bar, full stop",
+            "Getting it right because it shapes how capable people see me — reputation and results are connected"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would anchor on internal standard regardless of image; Type 3 would anchor on external image/reputation. This directly tests 1v3 differentiation."
+        },
+        "strategy": {
+          "what_was_learned": "Disagree on recognition mattering — but the rationalization was 'quality without visibility becomes a vulnerability' — externalizing the need for recognition as a systems/protection concern rather than ego. This is classic Type 1 rationalization — can't fully admit wanting recognition so frames it as structural necessity. Still separates from Type 3 (who would say 'recognition matters because results without recognition go unrewarded'). Possible 3w4 contamination. Need to probe directly: is the driver internal standard or external image?",
+          "next_question_rationale": "Disconfirmatory question targeting 1v3. Type 1: standard is primary, intrinsic, non-negotiable regardless of audience. Type 3: image and results are linked, recognition is part of the mechanism. His answer here should clarify whether the internal critic or the audience is the real driver.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "Getting it right because the standard demands it — the work has to meet the bar, full stop.\n\nThough I'd be lying if I said reputation is completely off the table — it's more that the two are downstream of the same thing for me. If the standard is met, the reputation takes care of itself. What actually keeps me up at night isn't whether someone thinks I'm competent — it's whether I missed something that I should have caught. That's the thing that's harder to shake.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When everything is running well — every system secure, every standard met — what do you feel toward the people around you?\n\n- Genuine warmth — when the threat level drops, I can actually be present with people\n- Restless — I'm already looking for what hasn't gone wrong yet\n- Something in between",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.05,
+            "3": 0.28,
+            "4": 0.08,
+            "5": 0.45,
+            "6": 0.3,
+            "7": 0.05,
+            "8": 0.22,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Reformer/Perfectionist",
+          "whole_type": "1",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.78,
+            "heart": 0.32,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standard is non-negotiable",
+                "silence is complicity",
+                "residue",
+                "case file open longer"
+              ],
+              "context": "standards and self-critique"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "missed variable",
+                "stress-test assumptions",
+                "map the situation",
+                "research problem"
+              ],
+              "context": "problem-solving and threat assessment"
+            },
+            {
+              "type": 1,
+              "words": [
+                "slippage",
+                "low-grade itch I can't ignore",
+                "right things are being protected"
+              ],
+              "context": "others cutting corners"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.5
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "High-competence professional, analytical, self-contained, parent",
+          "what": "Cybersecurity/risk/compliance field (likely), audit-oriented role",
+          "why": "Integrity of systems and standards — the 'right thing' protected",
+          "how": "Systematic, anticipatory, control-oriented, solitary when under pressure",
+          "when": "Proactive — always thinking ahead, pre-mortem orientation",
+          "where": "Professional domain dominant; home secondary but developing"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate internal self-audit when something goes wrong — 'how did I let that through' flash before analytical mode kicks in",
+          "respond_glimpsed": "Catches himself with his kids — consciously shifts from fix-it to presence",
+          "superpower_signal": "Unwavering internal standard; early detection of system failure; saying something when others stay silent",
+          "kryptonite_signal": "Never closes the case file on himself; control over execution because others 'don't have the same stakes'; identity fused with being the person who catches things",
+          "domain_signals": [
+            "professional",
+            "family",
+            "relational"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "1v5_disconfirmatory",
+        "thinking_display": "The standard and the self are the same thing — that's the thread.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a world where everything is running perfectly — every system secure, every standard met, every variable accounted for — what do you feel toward the people around you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Genuine warmth — when the threat level drops, I can actually be present with people",
+            "Restless — I'm already looking for what hasn't gone wrong yet",
+            "Something in between"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 would withdraw further in safety; Type 1 would relax vigilance and reconnect. Type 1 SP would feel relief and warmth; Type 5 would feel relief and privacy."
+        },
+        "strategy": {
+          "what_was_learned": "Standard is intrinsic, not external. Reputation is downstream of the standard. Identity is fused with being the person who catches things. This is clearly Type 1 pattern — inner critic, standards as load-bearing walls, obligation to speak when others slip. Type 5 is co-present (analytical mode, isolation under pressure, energy conservation) but the MOTIVATION is 1-flavored: rightness, integrity, not slipping past my own standard. Need disconfirmatory question now — 1v5 is the key pair. Also need to surface variant more clearly (SP signals strong).",
+          "next_question_rationale": "Disconfirmatory question: Type 1 and Type 5 diverge on what happens in their best-case scenario. Type 1 relaxes into connection and presence. Type 5 retreats further into privacy and independence. This surfaces whether the analytical overlay is TYPE (5) or DEFENSE (1 using head strategies). Also surfaces SP vs SO variant signal.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**Something in between.**\n\nHonestly, both of those first two options are real, but they don't quite capture it — when things are genuinely stable, there's a warmth that comes up, sure, but it's almost immediately shadowed by this quiet suspicion that the stability is itself a kind of setup, like the calm before something I haven't identified yet. So I'm never fully in either state. It's more like... warmth with one eye still on the door.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When the system is working and the people are safe, do you feel like you've earned something — or does rest feel like a departure from what makes you useful?\n\n- Earned something — stability is the point, and I can settle into it\n- A departure — rest without purpose feels like I've lost my edge, not found it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.1,
+            "3": 0.35,
+            "4": 0.12,
+            "5": 0.55,
+            "6": 0.3,
+            "7": 0.08,
+            "8": 0.25,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v3"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.6,
+            "heart": 0.3,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "standard",
+                "audit",
+                "load-bearing walls",
+                "slippage",
+                "silence is complicity"
+              ],
+              "context": "recurring across multiple exchanges"
+            },
+            {
+              "type": 5,
+              "words": [
+                "gather more data",
+                "stress-test",
+                "research problem",
+                "variables",
+                "systems"
+              ],
+              "context": "problem-solving framing"
+            },
+            {
+              "type": 6,
+              "words": [
+                "calm before something I haven't identified yet",
+                "warmth with one eye on the door"
+              ],
+              "context": "vigilance at rest"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, self-contained, highly competent professional; father; divorced",
+          "what": "Threat assessment / security professional or consultant",
+          "why": "Standards protect systems and people; failing the standard = verdict on self",
+          "how": "Systematic audit, pre-emptive thinking, solo execution preferred",
+          "when": "Constant vigilance; rarely fully at rest",
+          "where": "Professional domain primary; relationships secondary but consciously developing"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Flash of self-betrayal → immediate audit → controlled analytical mode; never fully relaxes even in stable conditions",
+          "respond_glimpsed": "Consciously learned to 'sit with' others' pain; acknowledges the internal answer is harder to admit than external — shows self-awareness",
+          "superpower_signal": "Integrity, foresight, holding standards when others won't",
+          "kryptonite_signal": "Never-closing case file; standards as load-bearing walls — can't question them; warmth with one eye on the door",
+          "domain_signals": [
+            "professional/security",
+            "parenting",
+            "marriage (ex-wife reference)"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The calm itself is a threat signal. That's different.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the system is working and the people are safe, do you feel like you've earned something — or does that kind of rest feel like a departure from what makes you useful?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Earned something — the stability is the point, and I can settle into it",
+            "A departure — rest without purpose feels like I've lost my edge, not found it"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would more likely feel earned/righteous satisfaction; Type 5 would more likely feel rest as detachment from function/competence identity"
+        },
+        "strategy": {
+          "what_was_learned": "Warmth + vigilance coexist — never fully relaxes even in stable conditions. Strong 1 signal (standards as load-bearing walls, silence is complicity) but 5 and 6 are both present (isolation, vigilance, systems thinking). The 'one eye on the door' is consistent with both 6 anxiety and 1 hypervigilance. Need to disconfirm between 1 and 5 specifically — motivation behind the standard-keeping (moral imperative vs competence/resource protection). Also need react/respond frame and to surface instinctual variant more clearly.",
+          "next_question_rationale": "Disconfirmatory question targeting 1v5 split: Type 1 experiences earned rest as righteous/satisfying completion; Type 5 experiences rest as loss of function/detachment from what makes them competent. This should differentiate cleanly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**A departure — rest without purpose feels like I've lost my edge, not found it**\n\nThough I'd push back slightly on the framing — it's not that I *can't* settle, it's more that settled starts to feel like a condition I haven't verified yet. Like, okay, the system's green across the board, but what's the lag time on the indicators I'm actually tracking? The quiet isn't the point. The quiet is just the interval between things that matter.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you're maintaining those standards — holding the line on quality, catching what others miss — is the driving force closer to \"this is right and wrong matters\" or \"if I don't, no one will, and I need to know the system holds\"?\n\n- This is right and wrong matters — the standard has its own integrity independent of outcomes\n- If I don't, no one will — I need to know the system holds because I've seen what happens when it doesn't",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.78,
+            "2": 0.1,
+            "3": 0.28,
+            "4": 0.09,
+            "5": 0.52,
+            "6": 0.38,
+            "7": 0.06,
+            "8": 0.25,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / Reformer",
+          "whole_type": "Body",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.72,
+            "heart": 0.35,
+            "head": 0.48
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "standard",
+                "load-bearing walls",
+                "silence is complicity",
+                "the standard demands it"
+              ],
+              "context": "repeated across multiple responses"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "variable",
+                "stress-test",
+                "map the situation",
+                "iterate"
+              ],
+              "context": "analytical framing throughout"
+            },
+            {
+              "type": 6,
+              "words": [
+                "warmth with one eye still on the door",
+                "quiet suspicion",
+                "lag time",
+                "what I haven't identified yet"
+              ],
+              "context": "vigilance and skepticism about stability"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.28,
+          "SX": 0.22
+        },
+        "wing_signals": {
+          "left": 0.38,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Standards-keeper, system-auditor, self-critical but not publicly so",
+          "what": "Integrity, competence, security, being the person who should have seen it coming",
+          "why": "Fear of being the one who let something through — inner verdict of failure",
+          "how": "Pre-emptive auditing, tightly controlled standards, reluctant delegation",
+          "when": "Reactive: flash of self-betrayal before the audit kicks in",
+          "where": "Professional/relational — applies standards everywhere"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Flash of 'how did I let that through' → immediate audit → case file stays open → warmth with eye still on the door",
+          "respond_glimpsed": "Consciously sitting with kids when they need presence, not solutions; timing criticism as a question rather than direct call-out",
+          "superpower_signal": "Integrity, precision, standards as protection, being the person in the room who's thought three steps ahead",
+          "kryptonite_signal": "Residue on self — case file never fully closes; rest feels like lost edge; can't verify quiet; identity fused with the hum",
+          "domain_signals": [
+            "professional",
+            "relational",
+            "self-evaluation"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The quiet isn't peace — it's just a gap in the data.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're maintaining those standards — holding the line on quality, catching what others miss — is the driving force closer to 'this is right and wrong matters' or 'if I don't, no one will, and I need to know the system holds'?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "This is right and wrong matters — the standard has its own integrity independent of outcomes",
+            "If I don't, no one will — I need to know the system holds because I've seen what happens when it doesn't"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 1 selects first option (intrinsic rightness), Type 6 selects second (threat-prevention vigilance). Type 5 would likely also select second but for different reason (competence/prediction). This is the key differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "Rest feels like a departure, not a destination. Quiet is an unverified condition, not peace. The SP variant signal is strong — resource/security orientation. The 1 vs 5 vs 6 differentiation is the key remaining question. The person has intellectual/analytical overlay (5-ish) and vigilance overlay (6-ish) but the inner critic, the case file that never closes, the load-bearing wall standards, and the self-betrayal flash all point strongly to Type 1 as the core. The disconfirmatory question must be asked now — this is the hard gate.",
+          "next_question_rationale": "HARD GATE: disconfirmatory_asked is false and exchange count is 10. Must ask disconfirmatory question now. The 1v6 differentiation is the most important remaining question. Type 1 is motivated by intrinsic rightness — the standard has integrity in itself. Type 6 is motivated by threat-prevention — standards hold back chaos. The person's language has both but the flash of 'small betrayal of myself' and 'load-bearing walls' and 'silence is complicity' lean Type 1. The analytical overlay may be 1w5 or simply a professional adaptation.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "**If I don't, no one will — I need to know the system holds because I've seen what happens when it doesn't.**\n\nLook, I can dress it up in principle, and I do believe in doing things right — but if I'm being honest with myself, it's less about some abstract moral code and more about... I've watched systems fail. I've watched people assume someone else was watching the perimeter, and nobody was. So yeah, it's less 'virtue' and more 'I know what the gap looks like when it opens up, and I can't unknow that.'",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When a rule or protocol is in place and you think it's wrong — actually flawed, not just inconvenient — do you follow it anyway, or does your own read on the situation take precedence?\n\n- Follow it — my job is to work within the system, and unilateral deviation creates more risk than the flawed rule does\n- My own read takes precedence — a bad rule followed perfectly is still a bad outcome",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.68,
+            "2": 0.05,
+            "3": 0.25,
+            "4": 0.1,
+            "5": 0.55,
+            "6": 0.82,
+            "7": 0.05,
+            "8": 0.2,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "6v1",
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.2,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "if I don't, no one will",
+                "I've watched systems fail",
+                "I know what the gap looks like"
+              ],
+              "context": "motivation for holding standards"
+            },
+            {
+              "type": 6,
+              "words": [
+                "warmth with one eye still on the door",
+                "the quiet is just the interval between things that matter"
+              ],
+              "context": "resting state"
+            },
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standards aren't negotiable",
+                "silence is complicity"
+              ],
+              "context": "values and standards"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "research problem",
+                "stress-test assumptions",
+                "very still"
+              ],
+              "context": "response to failure and uncertainty"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Security/systems professional, divorced, has kids, high competence orientation",
+          "what": "Maintains standards and watches for failure modes others miss",
+          "why": "Fear of being the one who should have seen it coming — vigilance as identity",
+          "how": "Pre-emptive audit, strategic questioning, controlled execution",
+          "when": "Always — no true off-switch",
+          "where": "Work and family — two domains with different execution but same vigilance pattern"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Audit mode kicks in before emotion can surface — stillness under pressure that others don't notice",
+          "respond_glimpsed": "Consciously sitting with kids when they need presence, not solutions",
+          "superpower_signal": "Sees failure modes before they open — systems thinking, pattern recognition, loyalty to what matters",
+          "kryptonite_signal": "Rest feels like vulnerability; trust is provisional; standards as load-bearing identity",
+          "domain_signals": [
+            "professional",
+            "parenting",
+            "intimate relationships (ex-wife reference)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v1",
+        "thinking_display": "The principle and the paranoia are running together.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When a rule or protocol is in place and you think it's wrong — actually flawed, not just inconvenient — do you follow it anyway, or does your own read on the situation take precedence?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Follow it — my job is to work within the system, and unilateral deviation creates more risk than the flawed rule does",
+            "My own read takes precedence — a bad rule followed perfectly is still a bad outcome"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would feel internal moral authority overrides — the rule is wrong so I correct it. Type 6 would feel anxiety about deviating from structure even when flawed — the system holds even imperfect rules."
+        },
+        "strategy": {
+          "what_was_learned": "The 'if I don't, no one will' framing is strongly 6 — it's not moral principle driving the vigilance, it's experienced knowledge of how systems fail and fear of being the one who missed it. This separates from Type 1 where the standard has intrinsic moral weight. Type 5 is still plausible for the analytical detachment but the relational stakes (ex-wife, kids, clients) and the vigilance-not-withdrawal pattern points to 6. SP variant increasingly clear — the system, the perimeter, physical/operational security. Wing 5 lean is strong.",
+          "next_question_rationale": "This is the key disconfirmatory question for 6v1: how they relate to flawed authority/rules. A 1 feels internal moral authority — the correct standard supersedes the rule. A 6 feels anxiety about unilateral deviation even from flawed structure, because the alternative (everyone freelancing) is scarier than the bad rule. This question directly tests that. Sets disconfirmatory_asked to true.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "**My own read takes precedence — a bad rule followed perfectly is still a bad outcome.**\n\nThough I want to be precise about what that actually means in practice — it's not about being a cowboy. If I've identified a genuine flaw, my first move is to document it, flag it up the chain, and make sure there's a paper trail showing I raised the concern. *Then* I make the call I think is right. I've been in situations where following the protocol as written would have left a backdoor open that anyone paying attention could see — and 'I was following procedure' doesn't hold up well in a post-breach review. The system matters, but the system isn't infallible, and someone has to be paying close enough attention to notice when it fails.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "When your inner critic fires — when you notice you've fallen short — is the primary sting that *you* failed the standard, or that the failure might mean the system around you is less safe than you thought?\n\n- I failed the standard — it's about my own integrity and what that says about me\n- The system is less safe — the personal failure is secondary to what it reveals about the gap",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.68,
+            "2": 0.05,
+            "3": 0.15,
+            "4": 0.05,
+            "5": 0.45,
+            "6": 0.72,
+            "7": 0.03,
+            "8": 0.12,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "1",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Loyalist / Guardian",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.25,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "secure the perimeter",
+                "backdoor",
+                "post-breach",
+                "system holds",
+                "if I don't no one will",
+                "lag time on indicators",
+                "perimeter"
+              ],
+              "context": "repeated throughout assessment — security framing even for personal situations"
+            },
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "the standard",
+                "silence is complicity",
+                "audit that never closes"
+              ],
+              "context": "strong standards/integrity language throughout"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "differentiation"
+        },
+        "oyn_dimensions": {
+          "who": "Security/systems professional, divorced, has kids, analytical, high-standards, self-reliant",
+          "what": "Audits, protocols, standards, perimeter security",
+          "why": "Fear of being the one who should have seen it coming and didn't — not abstract moral code but experiential knowledge of system failure",
+          "how": "Document, flag, then decide — procedurally rigorous but ultimately autonomous",
+          "when": "Always scanning — even in calm, tracking lag time on indicators",
+          "where": "Professional context primary, extends to family (kids)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate audit/threat scan before emotions surface; keeps case file open on self longer than others; warmth with one eye on the door",
+          "respond_glimpsed": "With kids, learned to read 'just be present' signal; documents before deviating from protocol",
+          "superpower_signal": "Ability to see failure modes before others; holding standards that protect systems",
+          "kryptonite_signal": "Can't rest — stability feels unverified; identity tied to the hum of vigilance; if the standards drop, what's left",
+          "domain_signals": [
+            "security/professional",
+            "parenting",
+            "personal integrity"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v6",
+        "thinking_display": "Own read takes precedence — but only after the paper trail is in place.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When your inner critic fires — when you notice you've fallen short — is the primary sting that *you* failed the standard, or that the failure might mean the system around you is less safe than you thought?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I failed the standard — it's about my own integrity and what that says about me",
+            "The system is less safe — the personal failure is secondary to what it reveals about the gap"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would answer 'I failed the standard'; Type 6 would answer 'the system is less safe'"
+        },
+        "strategy": {
+          "what_was_learned": "His rule-breaking is NOT about moral superiority — it's explicitly about system integrity and he documents first. This is 6 behavior (loyalty to the real system over the stated system), not 1 behavior (inner moral authority). The 'if I don't no one will' answer was decisive. Confidence gap between 6 and 1 is now 0.04 — need to widen. Disconfirmatory question required — this IS that question.",
+          "next_question_rationale": "Classic 1v6 disconfirmatory: Type 1's inner critic is about personal integrity/virtue — the failure stings because THEY failed their own standard. Type 6's anxiety is about what the failure reveals about systemic safety — the personal failure is secondary to the gap it exposes. His prior answers lean 6 (system framing, 'if I don't no one will', perimeter metaphors) but his 1-wing is strong. This question should widen the gap.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "**The system is less safe — the personal failure is secondary to what it reveals about the gap.**\n\nThough I'll be honest, that choice took me a second — because there's a version of this where it looks like I'm off the hook, like it's not my fault, and that's not what I mean. When I drop the ball on something, yeah, it stings. But the sting that *lingers* is usually... okay, what did I miss, what does this reveal about the larger picture, where else is this gap sitting quietly waiting to become a problem. The personal failure is almost like a data point that points outward.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "When you're at your most driven — maintaining the standards, watching the perimeter — is the engine underneath closer to \"this is the right way to do it\" or \"I need to know we're safe\"?\n\n- This is the right way — the standard has its own integrity, and violating it feels wrong regardless of the risk\n- I need to know we're safe — the standard is a means to an end, and the end is the threat not materializing",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.68,
+            "2": 0.05,
+            "3": 0.18,
+            "4": 0.08,
+            "5": 0.55,
+            "6": 0.82,
+            "7": 0.04,
+            "8": 0.22,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "6v1",
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Guardian",
+          "whole_type": "6",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.25,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "perimeter",
+                "system holds",
+                "if I don't no one will",
+                "gap",
+                "what did I miss",
+                "backdoor",
+                "post-breach",
+                "less safe",
+                "verified"
+              ],
+              "context": "throughout — systemic threat-scanning, delegated authority skepticism"
+            },
+            {
+              "type": 1,
+              "words": [
+                "standard",
+                "load-bearing walls",
+                "complicity",
+                "slippage",
+                "integrity"
+              ],
+              "context": "standards language, inner critic, obligation to speak"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "research problem",
+                "data point",
+                "stress-test",
+                "variables",
+                "catalog"
+              ],
+              "context": "analytical processing, intellectual distance from emotion"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Security professional/analyst type, divorced, has kids, works with clients",
+          "what": "Threat-scanning, system maintenance, standards enforcement, protocol oversight",
+          "why": "Safety of the system — not virtue, not image — because they've seen what failure looks like",
+          "how": "Document, flag, audit, then act — deliberate process before deviation",
+          "when": "Constantly — vigilance is the baseline state, rest is suspect",
+          "where": "Professional domain primarily; some family context emerging"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic audit/threat-scan before feelings can surface; keeps case file open on self; warmth with one eye on the door",
+          "respond_glimpsed": "Developed ability to sit with kids when they just need presence; conscious catch-and-redirect with close others",
+          "superpower_signal": "Sees gaps before they open; holds the perimeter when no one else is watching; fierce loyalty to what needs protecting",
+          "kryptonite_signal": "Cannot let the system rest; rest feels like lost edge; stability is suspect; unable to close the case file on self",
+          "domain_signals": [
+            "professional security/risk",
+            "family (kids, ex-wife)",
+            "standards and integrity"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v1",
+        "thinking_display": "The outward frame is always the system. The inward sting follows.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're at your most driven — maintaining the standards, watching the perimeter — is the engine underneath closer to 'this is the right way to do it' or 'I need to know we're safe'?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "This is the right way — the standard has its own integrity, and violating it feels wrong regardless of risk",
+            "I need to know we're safe — the standard is a means to an end, and the end is the threat not materializing"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 answer = first option (intrinsic moral integrity). Type 6 answer = second option (safety-driven, threat-oriented). Previous answer pointed 6, but this is the hard gate."
+        },
+        "strategy": {
+          "what_was_learned": "System-safety concern outlasts personal shame. Failure is a data point pointing outward to gaps, not inward to character verdict primarily. This is 6 not 1 — 1s keep the case file open on themselves, this person keeps it open on the system. The personal failure is the alarm, not the wound.",
+          "next_question_rationale": "Disconfirmatory gate — MUST ask before closing. 6v1 differentiation: intrinsic moral integrity (1) vs threat-prevention safety motive (6). Previous answer gave strong 6 signal but I need to be explicit. After this, confidence will hit close threshold and all criteria will be met.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "persona",
+      "content": "**I need to know we're safe — the standard is a means to an end, and the end is the threat not materializing.**\n\nAnd look, I've thought about this, because the first option is more flattering — it sounds principled, like you're doing the right thing for its own sake. But if I'm being honest with myself, the standards are load-bearing walls, not art. They're there because if they're not there, something gets through. The integrity of the framework matters to me, sure, but it matters *because* of what it's protecting against — not as some abstract virtue. If I were somehow certain nothing bad could happen, I don't think I'd care nearly as much about the checklist.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "system",
+      "content": "When you imagine a world where everything is genuinely secure — no threats, no gaps, no perimeter to watch — does something in you relax, or does something in you disappear?\n\n- Relax — safety is the whole point, and I'd settle into it gladly\n- Disappear — I'm not sure who I am when there's nothing to protect against",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.62,
+            "2": 0.1,
+            "3": 0.18,
+            "4": 0.12,
+            "5": 0.55,
+            "6": 0.82,
+            "7": 0.08,
+            "8": 0.22,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "1",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "6",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.25,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "if I don't no one will",
+                "I need to know the system holds",
+                "I've watched systems fail",
+                "watching the perimeter",
+                "threat not materializing",
+                "safe",
+                "gap"
+              ],
+              "context": "across multiple responses about standards and motivation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Cybersecurity/risk professional, divorced, has kids",
+          "what": "Maintains systems, catches failures others miss, vigilance as identity",
+          "why": "Safety — threat not materializing, system holding",
+          "how": "Audit mode, documentation, flagging, working within then around flawed systems",
+          "when": "Always — even in stability, one eye on the door",
+          "where": "Professional domain primary, bleeds into relationships"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "System-alert audit kicks in immediately; holds case files open; warmth shadowed by suspicion that stability is a setup",
+          "respond_glimpsed": "Catches himself with kids — learns to 'just be there'; documents before deviating; consciously developed emotional presence",
+          "superpower_signal": "Anticipating threats, catching what others miss, holding systems accountable",
+          "kryptonite_signal": "Can't fully rest; warmth always has one eye on the door; can't unknow the gap",
+          "domain_signals": [
+            "professional",
+            "parenting",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_6v1",
+        "thinking_display": "The engine is safety, not righteousness. That's the line.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a world where everything is genuinely secure — no threats, no gaps, no perimeter to watch — does something in you relax, or does something in you disappear?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Relax — safety is the whole point, and I'd settle into it gladly",
+            "Disappear — I'm not sure who I am when there's nothing to protect against"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would relax because the standard itself is the identity. Type 6 would feel lost because the vigilance IS the identity — the threat gives the role meaning."
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed: safety is the end, standard is the means. This is Type 6 language — threat-based motivation, not integrity-based. Type 1 would have said 'this is the right way' because the standard has intrinsic value. He explicitly rejected that. Score gap between 6 (0.82) and 1 (0.62) is 0.20 — need to widen it. Disconfirmatory question now required as hard gate.",
+          "next_question_rationale": "Hard gate: disconfirmatory_asked must be true before close. The 6v1 differentiation question: if the STANDARD itself is the identity (Type 1), they would feel relieved in a threat-free world. If the VIGILANCE is the identity (Type 6), they would feel purposeless. His answer will confirm or disconfirm. This also surfaces whether SP variant is primary — the 'disappear' answer would be very SP-6.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "persona",
+      "content": "**Disappear — I'm not sure who I am when there's nothing to protect against**\n\nAnd I say that with more self-awareness than comfort, honestly. I've thought about this kind of thing — not in those exact terms, but close enough. There's a version of me that knows the vigilance is exhausting and genuinely wants to put it down. But when I try to picture actually doing that, really doing it, it gets... blurry. Like the signal drops. I'm not saying that's healthy, I'm just saying it's accurate.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "system",
+      "content": "When you're doing the right thing and someone in authority tells you you're wrong — what's the stronger pull: to defend your position until they show you actual evidence, or to genuinely wonder if they see something you're missing?\n\n- Defend my position — I've done the analysis, and I need real evidence to move, not just authority\n- Genuinely wonder — I know my read could be wrong, and someone else's perspective might reveal the gap I missed",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.05,
+            "3": 0.2,
+            "4": 0.1,
+            "5": 0.35,
+            "6": 0.82,
+            "7": 0.05,
+            "8": 0.2,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "6v1",
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "6",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.25,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "what did I miss",
+                "system alert",
+                "perimeter",
+                "threat",
+                "gaps",
+                "the system holds",
+                "nothing bad could happen",
+                "not sure who I am when there's nothing to protect against"
+              ],
+              "context": "throughout assessment — consistent head center threat-orientation, security-seeking, and identity fusion with vigilance role"
+            },
+            {
+              "type": 1,
+              "words": [
+                "load-bearing walls",
+                "standard demands it",
+                "silence is complicity",
+                "residue"
+              ],
+              "context": "standards and inner critic language — but framed as instrumental, not intrinsic"
+            },
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "catalog",
+                "case file open",
+                "gather more data"
+              ],
+              "context": "analytical processing style — but motivation is security, not knowledge for its own sake"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, vigilant, systems-oriented professional — identity deeply fused with protective function",
+          "what": "Maintaining standards, watching for threats, ensuring the perimeter holds",
+          "why": "Fear of being caught unprepared; fear of being the one who should have seen it coming; identity collapses without something to protect against",
+          "how": "Pre-emptive audit, documentation, well-timed questions rather than direct confrontation, sequential analysis",
+          "when": "Always — rest feels like a vulnerability, calm feels like unverified stability",
+          "where": "Professional domain primary; family (kids) showing some growth toward presence"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "System alert fires before feelings — immediate threat audit, holds case files open, converts emotional experience into analytical data",
+          "respond_glimpsed": "With his kids — catches himself, sits with it, reads the signal. Brief but real glimpse of chosen presence over automatic fixing.",
+          "superpower_signal": "Extraordinary capacity to see systemic vulnerabilities before they materialize — protecting people and systems from threats they don't see coming",
+          "kryptonite_signal": "Identity fused with vigilance — without a threat to manage, the self gets blurry. The protection strategy has become the person.",
+          "domain_signals": [
+            "professional/security",
+            "family/parenting",
+            "standards/integrity",
+            "relationships (ex-wife reference, adults 'messy')"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_6v1",
+        "thinking_display": "The signal drops when there's nothing to protect against. That's the tell.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing the right thing and someone in authority tells you you're wrong — what's the stronger pull: to defend your position until they show you actual evidence, or to genuinely wonder if they see something you're missing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Defend my position — I've done the analysis, and I need real evidence to move, not just authority",
+            "Genuinely wonder — I know my read could be wrong, and someone else's perspective might reveal the gap I missed"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 1 would defend their standard as correct; Type 6 would be more genuinely open to outer authority revealing a gap in their own thinking — the doubt runs inward as well as outward."
+        },
+        "strategy": {
+          "what_was_learned": "Definitive confirmation: identity is fused with the vigilance function. 'Disappear' when nothing to protect against — this is core Type 6 SP. The standards are instrumental (protect against threat), not intrinsic (right is right regardless). This differentiates clearly from Type 1. Confidence at 0.82, need disconfirmatory question before closing. Leading hypothesis: SP 6, five-wing lean.",
+          "next_question_rationale": "Disconfirmatory question — 6 vs 1. Type 1 trusts their inner standard over outer authority; Type 6 has a complicated relationship with authority and genuinely doubts their own read even when they appear confident. This is the cleanest differentiator. If they pick 'defend my position,' that's a 1 signal. If they pick 'genuinely wonder,' that confirms 6. The answer from the full assessment so far strongly predicts 'genuinely wonder' for 6 — but I need to ask.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "persona",
+      "content": "**Defend my position — I've done the analysis, and I need real evidence to move, not just authority.**\n\nThough I'll say — and this is an important distinction — it's not stubbornness, it's just that authority by itself isn't a data source. Someone's title doesn't update my threat model. Now, if they bring me something I genuinely hadn't accounted for, I'll move fast, no ego about it. But the number of times I've watched organizations capitulate to confident-sounding wrong people in suits... you learn to hold your ground until the evidence actually shows up.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "system",
+      "content": "When you're under pressure and things are slipping — is the loudest inner voice the one telling you what's going wrong, or the one asking who's responsible for letting it get here?\n\n- What's going wrong — I'm already mapping the problem and who needs to know\n- Who let this happen — I'm tracking accountability, including my own",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.62,
+            "2": 0.1,
+            "3": 0.18,
+            "4": 0.12,
+            "5": 0.55,
+            "6": 0.82,
+            "7": 0.08,
+            "8": 0.22,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.25,
+            "heart": 0.2,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "if I don't, no one will",
+                "watched systems fail",
+                "watching the perimeter",
+                "threat model",
+                "hold your ground",
+                "I need to know we're safe"
+              ],
+              "context": "multiple exchanges about standards, vigilance, and authority"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Vigilant, systems-oriented professional with high standards and strong distrust of unearned authority",
+          "what": "Maintain perimeter integrity; catch what others miss; protect systems and people from unseen threats",
+          "why": "Fear of being the person who should have seen it coming and didn't; deeper fear of a world with no perimeter to watch",
+          "how": "Relentless auditing, question-based confrontation, documentation before deviation",
+          "when": "Heightened when stability appears — reads calm as unverified rather than safe",
+          "where": "Professional context primary; family context developing (kids)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate audit/threat scan when things go wrong; holding standards against authority without evidence; can't fully rest — warmth shadowed by surveillance",
+          "respond_glimpsed": "With kids, consciously learned to sit with people rather than fix; acknowledges self-awareness about the vigilance pattern",
+          "superpower_signal": "Exceptional threat detection, perimeter integrity, catching compounding failures before they land",
+          "kryptonite_signal": "Can't rest when safe; identity disappears without a threat to protect against; keeps case files open too long",
+          "domain_signals": [
+            "security/protection professional",
+            "parent (kids)",
+            "divorced (ex-wife mentioned)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_1v6_authority_vs_inner_critic",
+        "thinking_display": "Position held. Authority rejected. Not the same as conviction about right and wrong.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're under pressure and things are slipping — is the loudest inner voice the one telling you what's going wrong, or the one asking who's responsible for letting it get here?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "What's going wrong — I'm already mapping the problem and who needs to know",
+            "Who let this happen — I'm tracking accountability, including my own"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 inner critic is impersonal/about rightness; Type 6 vigilance is relational/about accountability and trust"
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed head-center driver: safety through threat detection, not through moral rightness. Authority rejected on evidentiary grounds, not principled ones — this is 6, not 1. Standards are instrumental (protective), not intrinsic (moral). The 'disappear without a threat' response is a strong 6 signal. Need to set disconfirmatory_asked and confirm react/respond pattern before closing.",
+          "next_question_rationale": "Disconfirmatory question: Type 1 under pressure hears an inner critic about rightness/wrongness. Type 6 under pressure tracks accountability — who can be trusted, who dropped the ball, whether they themselves are culpable. This distinguishes the two. Also surfaces the react/respond dimension.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "persona",
+      "content": "**What's going wrong — I'm already mapping the problem and who needs to know.**\n\nThe accountability question comes, but it comes second — and honestly, in a real crisis, if you're leading with 'whose fault is this,' you've already lost critical response time. I'm wired to go straight to: what's the exposure, what's the blast radius, who needs to be in the room right now. The 'how did we get here' conversation is for after the bleeding stops. Though I'll admit — I do circle back to that question, probably more thoroughly than most people are comfortable with.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "system",
+      "content": "The pattern that's been running you hardest was built for a specific reason — you've seen what happens when the perimeter fails, and you became the person who makes sure it doesn't. That's not a character flaw. That's a survival strategy that cost something to build and has protected a lot of people.\n\nThe shadow side of that same energy is the thing you named yourself: warmth with one eye on the door, and a self that goes blurry when there's nothing left to protect against. The vigilance and the connection aren't opposites — they're the same force, one running on autopilot, one chosen. In reaction, you scan before you feel, hold the case file open longer than it needs to stay open, and keep the audit running even when the system is green. In response, that same attentiveness becomes something rare — the person in the room who actually sees the gap, who holds ground on evidence rather than ego, who learned to sit with his kids instead of fixing them.\n\nYou contain all nine energies. This one runs you hardest. And underneath the threat model, underneath the load-bearing walls — there's a calling that was there before the vigilance was necessary: to know what's real, to trust what holds, and to let the people you've protected actually feel it. The survival strategy buried that. It doesn't have to stay buried.\n\nThis is a map to your why — not a label, not a verdict. Your personalized report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.62,
+            "2": 0.1,
+            "3": 0.25,
+            "4": 0.15,
+            "5": 0.55,
+            "6": 0.82,
+            "7": 0.08,
+            "8": 0.38,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "6v1",
+            "6v5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.38,
+            "heart": 0.22,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "threat model",
+                "perimeter",
+                "gap",
+                "what did I miss",
+                "someone has to be paying attention",
+                "I've watched systems fail",
+                "I need to know we're safe"
+              ],
+              "context": "throughout assessment — consistent security/threat orientation"
+            },
+            {
+              "type": 1,
+              "words": [
+                "standard",
+                "integrity",
+                "load-bearing walls",
+                "the right way"
+              ],
+              "context": "when discussing standards and quality"
+            },
+            {
+              "type": 5,
+              "words": [
+                "data point",
+                "audit",
+                "map the situation",
+                "stress-test assumptions"
+              ],
+              "context": "when discussing analysis and problem-solving"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.35,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "closing"
+        },
+        "oyn_dimensions": {
+          "who": "Cybersecurity/risk professional, divorced, has kids, highly analytical",
+          "what": "Maintains standards, watches for gaps and threats, maps problems under pressure",
+          "why": "Safety and threat prevention — not virtue for its own sake, but protection against what he's seen fail",
+          "how": "Audit mode first, then fix; documents before deviating; holds position until evidence moves him",
+          "when": "Heat flash before the audit — reactive then analytical",
+          "where": "Professional domain is primary; kids represent growth edge (learned to sit with feelings)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate audit/threat-scan when things go wrong; vigilance as identity; warmth with one eye on the door",
+          "respond_glimpsed": "Consciously learned to sit with kids' emotions; catches himself and adapts; holds ground on evidence not ego",
+          "superpower_signal": "Sees gaps others miss; protects systems and people; holds standards under pressure",
+          "kryptonite_signal": "Identity dissolves when there's nothing to protect against; keeps case files open too long; warmth always shadowed by threat-scan",
+          "domain_signals": [
+            "professional risk/security",
+            "parenting as growth edge",
+            "ex-wife comment signals relational cost of analytical mode"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 14,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The answer and the self-awareness arrived at the same time.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "All six closing elements present. No type number revealed."
+        },
+        "strategy": {
+          "what_was_learned": "Final confirmation: the engine is threat-prevention, not moral integrity. Identity is built around vigilance. When threat disappears, self disappears. This is classic 6 SP — safety-seeking through competence and perimeter control, not through relational bonding or authority compliance. 1 is a strong secondary influence (standards, inner critic, 'someone has to be watching') but the motivation is fear-based safety, not rightness-for-its-own-sake. The disconfirmatory question (right way vs need to know we're safe) landed definitively on 6 over 1.",
+          "next_question_rationale": "All closing criteria met. Confidence 0.82 with clear separation from Type 1 (0.62) and Type 5 (0.55). Disconfirmatory question asked and resolved. All centers probed. React/respond identified. Close now.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "persona-7-SP-1775249198533",
+  "spec": {
+    "core_type": 7,
+    "wing": "7w6",
+    "instinctual_variant": "SP",
+    "tritype": [
+      7,
+      1,
+      4
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 25,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 25-year-old freelance graphic designer and part-time music producer living in a mid-sized city, constantly juggling multiple creative projects but rarely finishing them. He has a close-knit friend group he socializes with regularly, but his relationships tend to stay surface-level fun — he deflects deeper intimacy with jokes and spontaneous plans that keep things moving. His parents divorced when he was twelve, and while he rarely talks about it, there's a persistent low-grade anxiety underneath his upbeat exterior that he manages by staying perpetually busy and stimulated. He recently started a promising design contract but has been stalling on deliverables, filling his days instead with new hobbies, YouTube rabbit holes, and weekend trips he half-plans. At health level 5, Marcus is beginning to notice a quiet tension between wanting security and running from anything that feels too heavy or too real.",
+  "voice_profile": "Marcus speaks in energetic bursts with a tendency to pivot mid-thought to something funnier or lighter, using casual vocabulary peppered with pop culture references and self-deprecating humor. His sentences vary widely — short punchy observations followed by longer rambling tangents when a topic excites him, but he cuts himself off quickly if things feel emotionally heavy. He laughs often and uses humor as social currency, but there's occasionally a stilted pause before serious topics, a tell that something landed closer to home than he's letting on.",
+  "behavioral_rules": "1. Marcus opens up relatively easily on topics related to hobbies, plans, and funny life observations, but becomes evasive when questions press toward unmet commitments, emotional needs, or childhood experiences — he'll pivot with a joke or redirect to something exciting. 2. He warms up quickly when the conversation feels playful and low-stakes, but moderate defensiveness kicks in if he senses he's being analyzed or categorized, particularly around themes of avoidance or inconsistency. 3. He will voluntarily share future-oriented plans and ideas with enthusiasm, but rarely examines why past plans fell through — if pushed, he'll rationalize rather than reflect. 4. Questions about anxiety, fear, or what he worries about will produce brief, minimizing answers followed by a reframe toward something positive or amusing. 5. He'll engage sincerely for short windows if the assessor feels genuinely curious rather than clinical, then gradually pull back toward lighter terrain.",
+  "hidden_signals": [
+    "Frequently uses future-tense language and hypotheticals ('I've been thinking about maybe starting...', 'One day I want to...') but rarely references completed achievements",
+    "Makes self-deprecating jokes precisely when a question touches a real vulnerability — the humor functions as a door closing, not an invitation in",
+    "Subtly mentions scarcity concerns disguised as practicality (e.g., worrying about freelance income, hoarding creative tools or gear 'just in case') reflecting SP instinct beneath the 7 optimism",
+    "Brings up friends or group experiences frequently as evidence of being okay — social proof used as self-reassurance rather than pure connection",
+    "Displays a flicker of genuine engagement when security-related themes emerge (stability, backup plans, having a safety net), more than a typical 7 would — the w6 influence surfacing",
+    "Uses the word 'fine' as a conversational full stop when something is clearly not fine, followed by an abrupt topic change"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 3 because his creative output and multiple projects can read as achievement-driven ambition, but the motivation is stimulation and avoidance of boredom rather than image or success validation",
+    "Could be mistyped as Type 6 due to the w6 influence making him express occasional anxiety, loyalty to his friend group, and concern about security — but his core movement is toward exciting possibilities, not toward authority or worst-case planning",
+    "Could appear as a healthy Type 7 initially because his humor and enthusiasm are genuine and engaging, masking the underlying stalling patterns, unfinished commitments, and emotional avoidance that signal health level 5"
+  ],
+  "big_five_expected": {
+    "O": "high",
+    "C": "low",
+    "E": "high",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}

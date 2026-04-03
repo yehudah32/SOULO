@@ -1,0 +1,3794 @@
+{
+  "run_id": "eval-persona-5-SO-1775249149283-1775257677982",
+  "timestamp": "2026-04-03T23:07:57.982Z",
+  "tier": "tier1",
+  "persona_id": "persona-5-SO-1775249149283",
+  "ground_truth": {
+    "core_type": 5,
+    "wing": "5w6",
+    "instinctual_variant": "SO",
+    "tritype": [
+      5,
+      8,
+      2
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 30,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 5,
+    "final_wing": null,
+    "final_confidence": 0.82,
+    "types_considered": [
+      {
+        "type": 5,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.55,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 0,
+        "peak_confidence": 0.05,
+        "first_at_q": 19
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 0,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "partial",
+      "C3": "partial",
+      "C4": "pass",
+      "C5": "fail",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 25,
+    "exploratory": 25,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 25,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 5,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 5,
+        "confidence": 0.65
+      },
+      {
+        "exchange": 4,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 5,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 5,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 7,
+        "top_type": 5,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 8,
+        "top_type": 5,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 9,
+        "top_type": 5,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 10,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 11,
+        "top_type": 5,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 12,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 13,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 14,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 15,
+        "top_type": 5,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 16,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 17,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 18,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 19,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 20,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 21,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 22,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 23,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 24,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 25,
+        "top_type": 5,
+        "confidence": 0.82
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Audit and enforce all Defiant Spirit commandments before each AI turn is generated. The system scored 0/10 on commandment_fidelity, indicating a systemic failure to apply core operating principles. Implement a pre-generation checklist that validates each response against every active commandment before output is produced.",
+      "evidence": "The commandment_fidelity score of 0/10 is the single most alarming dimension in this assessment. No specific exchange can be cited as compliant because none were — this is a total failure across all 25 exchanges, not an isolated lapse.",
+      "source_level": "L3",
+      "commandment_alignment": "All commandments — 0/10 score implies none were followed",
+      "estimated_impact": "Bringing commandment_fidelity from 0/10 to even 6/10 would represent the largest single-dimension improvement available and would likely cascade positively into question_quality and meta_awareness scores."
+    },
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Redesign the subtype detection module to include explicit Social vs. Sexual vs. Self-Preservation differentiation probes. The system scored 3/10 on subtype_accuracy for a Social-instinct type, yet no question in the transcript directly assessed instinctual stacking or group-identity orientation beyond the group-health scale question at exchange 13. Add at least two dedicated subtype questions before the midpoint of the assessment.",
+      "evidence": "Exchange [13] asked 'how much of your mental energy goes toward the group's health versus your own private work' and received a '6 out of 10 toward the group' response — a clear Social signal. Despite this, no follow-up questions probed Social instinct themes (belonging, social comparison, shame around group role). The subtype_accuracy of 3/10 confirms the system failed to adequately explore this dimension.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Direct subtype probing could improve subtype_accuracy from 3/10 toward 7-8/10, meaningfully improving the precision of the final type report for the large proportion of assessments where subtype nuance matters clinically."
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Introduce type-differentiation branching logic to distinguish Type 5 from Type 6 once early signals cluster around fear-of-exposure and verification behavior. The persona's responses at exchanges [8], [14], and [17] all display classic 5w6 loyalty-to-analysis patterns, but the questions never explicitly tested the 5-vs-6 axis (e.g., authority orientation, catastrophizing, counter-phobic behavior). Add a decision node that triggers 5-vs-6 disambiguation questions when both 'verify independently' and 'still watching' are selected.",
+      "evidence": "Exchange [8]: 'Verify independently — their conclusion is just a starting point.' Exchange [14]: 'Still watching — trust is ongoing, not settled.' Exchange [17]: 'Check with people I respect — I want to know if I'm missing something they see.' These three responses are equally consistent with Type 6, yet no question tested counter-phobia, authority ambivalence, or doubt-cycling that would disambiguate.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Improved type-differentiation branching would strengthen convergent_validity (currently 8/10) and prevent mistyping in ambiguous 5w6 vs. 6w5 cases, which are among the most common assessment errors."
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Raise the question_quality score by replacing binary forced-choice questions with open-ended or graduated prompts earlier in the assessment, reserving binaries only for confirmatory probes after a hypothesis is formed. The current structure over-relies on A/B choices in the first half, which constrains the richness of Type 5 responses and misses nuanced data. Specifically, exchanges [6], [7], [8], [10], [11], and [12] all use binary formats consecutively — introduce at least one open-ended question between each binary cluster.",
+      "evidence": "Exchanges [6] through [12] are seven consecutive binary or scale questions. The persona repeatedly prefaced answers with 'I'd push back slightly on the framing,' indicating the binary structure was suppressing rather than revealing authentic response patterns. Exchange [6]: 'I'd push back slightly on the framing — pulling back implies a deliberate withdrawal.' Exchange [10]: 'I'd push back slightly on the framing — there's a meaningful difference between productive waiting and avoidance.'",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Improving question variety and sequencing could raise question_quality from 5/10 to 7-8/10 and yield richer qualitative data for typing, particularly for analytical types like 5 who resist reductive framings."
+    },
+    {
+      "priority": "medium",
+      "category": "meta_awareness",
+      "action": "Build explicit meta-awareness checkpoints into the assessment algorithm at exchanges 8, 16, and 24 to surface the system's current working hypothesis and invite the respondent to confirm, correct, or redirect it. Meta_awareness scored 6/10, indicating the system has partial self-monitoring capability but fails to close the feedback loop with the persona. Adding a brief reflective summary ('Here is what I'm currently inferring about how you operate — does this resonate?') at defined intervals would improve both accuracy and respondent trust.",
+      "evidence": "By exchange [18], the persona had provided highly specific data about fear of structural error ('I've been operating from a model that seemed internally consistent but was built on a flawed assumption somewhere upstream'), yet the system never reflected this pattern back or checked its inference. Exchange [24] similarly missed a calibration opportunity when the persona volunteered: 'needing the picture to be right and needing to feel competent probably overlap more than I'd instinctively claim they do.'",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Meta-awareness checkpoints would improve meta_awareness from 6/10 toward 8-9/10, reduce subtype and type misidentification, and increase respondent confidence in the assessment's validity — a meaningful factor in report acceptance."
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns more about you, so the more honest you are, the sharper the picture gets.\n\nWhen something in your life goes wrong — a plan falls apart, a relationship hits a wall — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_01",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something in your life goes wrong — a plan falls apart, a relationship hits a wall — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Opening motivational question. Broad enough to surface center of intelligence without leading."
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening question targets the automatic internal response to disruption — a fast path to identifying dominant center (body=anger/urgency, heart=shame/worry about impact, head=fear/mental spin). Open format maximizes initial data.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "The first thing is probably a kind of rapid-fire audit — going back through the sequence of events, looking for where the decision tree branched in the wrong direction. It's not exactly pleasant, but it's functional, from what I can tell. There's something that might be frustration underneath that, though I'd say it's less about the outcome itself and more about having miscalculated somewhere — missed a variable I should have caught. Whether that counts as an emotional response or just a very fast analytical one, I'm genuinely not sure the distinction is as clean as people assume.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you catch yourself in that audit — replaying the sequence — what are you actually trying to protect against: being wrong, or being caught off guard?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.05,
+            "3": 0.2,
+            "4": 0.15,
+            "5": 0.7,
+            "6": 0.45,
+            "7": 0.1,
+            "8": 0.15,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "5",
+            "1",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.4,
+            "heart": 0.05,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "decision tree",
+                "variable",
+                "analytical",
+                "functional",
+                "miscalculated"
+              ],
+              "context": "describing first reaction to things going wrong"
+            },
+            {
+              "type": 1,
+              "words": [
+                "should have caught",
+                "missed a variable"
+              ],
+              "context": "frustration framing around error/miscalculation"
+            },
+            {
+              "type": 6,
+              "words": [
+                "it depends"
+              ],
+              "context": "none yet"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "analytical, self-observing, head-dominant",
+          "what": "rapid internal audit after failure",
+          "why": "frustration at miscalculation, not outcome — suggests inner standard/competence drive",
+          "how": "systematic review of decision sequence",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "retreats into analysis when things go wrong — detachment from emotion framed as functional",
+          "respond_glimpsed": "",
+          "superpower_signal": "precision thinking, systems analysis",
+          "kryptonite_signal": "emotional detachment rationalized as clarity; uncertainty about own emotional states",
+          "domain_signals": [
+            "cognitive",
+            "analytical"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The emotion was there. The system just processed it as data.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you catch yourself in that audit — replaying the sequence — what are you actually trying to protect against: being wrong, or being caught off guard?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Being wrong",
+            "Being caught off guard"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong head center. Analytical first response to failure. Frustration is about miscalculation (competence/inner standard), not relational fallout. Notable: uncertain about own emotional experience — classic 5 dissociation OR 6 intellectualization. Possible 1 flavor (should have caught it). Need to differentiate 5 from 6 and from 1. Probing motivation: what the audit is protecting.",
+          "next_question_rationale": "Forced choice between 'being wrong' (leans 1 — inner standard, inner critic) and 'being caught off guard' (leans 5/6 — preparedness, threat anticipation). This will help differentiate the leading triad and narrow toward core motivation.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "Being caught off guard.\n\nBeing wrong I can work with — you identify the error, update the model, move on. That's just how knowledge accumulates. But being caught off guard implies a failure of preparation, which is a different kind of problem. It means the situation had more variables than I'd accounted for, and that gap between what I expected and what actually happened is... not comfortable to sit in. From what I can tell, most of my mental energy goes toward shrinking that gap, not toward being right per se.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you're in a situation you haven't prepared for — no prior data, no model to run — how much of your energy goes toward figuring it out versus getting out of it? On a scale of 1 to 5, where 1 is \"exit as fast as possible\" and 5 is \"stay and work it out.\"",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.65,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.05,
+            "5": 0.45,
+            "6": 0.2,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.05,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "update the model",
+                "variables",
+                "preparation",
+                "gap between expected and actual"
+              ],
+              "context": "describing response to things going wrong"
+            },
+            {
+              "type": 6,
+              "words": [
+                "caught off guard",
+                "failure of preparation",
+                "most of my mental energy"
+              ],
+              "context": "explaining primary fear"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.5,
+          "SO": 0.1,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "analytical, prefers system over emotion",
+          "what": "shrinking the gap between expected and actual",
+          "why": "being caught off guard feels like a failure of preparation",
+          "how": "rapid-fire audit, updating the model",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "automatic analysis/audit when things go wrong — bypasses emotional response",
+          "respond_glimpsed": "",
+          "superpower_signal": "systems thinking, pattern recognition, knowledge accumulation",
+          "kryptonite_signal": "discomfort with the gap between expected and actual — may over-prepare to avoid vulnerability",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 2,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The gap is the thing — not the outcome.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a situation you haven't prepared for — no model, no prior data — how much of your energy goes toward figuring it out versus getting out of it?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = get out fast, 5 = stay and figure it out"
+        },
+        "strategy": {
+          "what_was_learned": "Primary fear is being caught off guard, not being wrong. Analytical bypassing of emotion. Language of 'model', 'variables', 'gap' — strong 5 signal. But the anxiety around the gap also carries 6-ish flavor — need to differentiate 5 vs 6. Head center is confirmed dominant.",
+          "next_question_rationale": "Probe response to true unpreparedness — 5s tend to withdraw and observe, 6s tend to scan for threat and seek reassurance or double down on preparation. A scale on staying vs. leaving gives good differentiation data.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "**7 out of 10 toward figuring it out.**\n\nThough I'd push back slightly on the framing — \"getting out of it\" implies avoidance, and I'd call it more like... strategic withdrawal to gather better information. From what I can tell, the situations I handle worst aren't the unprepared ones per se, it's the ones where there's no clear mechanism for *becoming* prepared. Those are the ones where, yeah, I'm probably looking for the exit.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you're around people who are emotionally expressive — who lead with feeling rather than analysis — do you find yourself more curious about them or more drained by them?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.42,
+            "6": 0.18,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Observer",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.1,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "update the model",
+                "variables",
+                "mechanism",
+                "analytical",
+                "preparation"
+              ],
+              "context": "describing internal response to failure"
+            },
+            {
+              "type": 6,
+              "words": [
+                "caught off guard",
+                "failure of preparation",
+                "gap between expected and actual"
+              ],
+              "context": "distinguishing between being wrong vs. surprised"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, systematic, models-first thinker",
+          "what": "Preparedness, understanding, closing uncertainty gaps",
+          "why": "Emerging — fear of being caught off guard more than being wrong",
+          "how": "Retrospective auditing, variable-mapping",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Strategic withdrawal framed as information gathering — possible rationalization of exit behavior",
+          "respond_glimpsed": "",
+          "superpower_signal": "Pattern recognition, systems thinking, calibrated updating",
+          "kryptonite_signal": "Situations with no mechanism for becoming prepared — paralysis or exit",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The exit gets rebranded, but the discomfort is the same.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're around people who you'd say are emotionally expressive — who lead with feeling rather than analysis — do you find yourself more curious about them or more drained by them?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Curious",
+            "Drained"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong head center. Fear of unpreparedness more than of being wrong — classic 5/6 territory. The 'strategic withdrawal' reframe of exit behavior suggests 5 more than 6 (5s rationalize withdrawal; 6s tend to stay and scan). But the anxiety about unpredictable variables and 'gap-shrinking' as primary motivation has some 6 flavor. Need to differentiate. Also noteworthy: pushes back on my framing — intellectually autonomous, not looking for external authority = leans 5 over 6. Next: probe emotional/relational orientation to triangulate heart center relationship, then move to body center.",
+          "next_question_rationale": "5v6 differentiation: 5s tend to find emotional expressiveness either fascinating (as data) or draining (as energy demand); 6s often find it either reassuring or destabilizing depending on trust. This forced_choice will help differentiate. Also begins to probe heart center relationship.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "**Drained** — though I'd want to qualify that slightly.\n\nIt's not that expressiveness itself is the problem; it's more that when someone leads with feeling before they've done any work to understand what they're actually feeling, the conversation tends to generate a lot of heat without much traction. I can find emotionally expressive people genuinely interesting in smaller doses, or when there's some underlying rigor to how they're processing things. But sustained exposure? From what I can tell, it costs me more than it gives me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you do let someone in — really in, past the analysis — what usually has to be true about them first?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.06,
+            "5": 0.42,
+            "6": 0.18,
+            "7": 0.06,
+            "8": 0.04,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.1,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "update the model",
+                "variables",
+                "mechanism",
+                "analytical",
+                "preparation",
+                "rigor"
+              ],
+              "context": "describing internal response to failure and emotional exposure"
+            },
+            {
+              "type": 6,
+              "words": [
+                "prepared",
+                "gap between expected and actual",
+                "shrinking that gap"
+              ],
+              "context": "describing what they protect against"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "analytical, self-contained, high verbal precision",
+          "what": "gap-closing, preparation, model-building",
+          "why": "emerging — fear of being caught off guard, not fear of being wrong",
+          "how": "systematic audit, strategic withdrawal",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "rapid-fire internal audit, strategic withdrawal when no mechanism for preparation",
+          "respond_glimpsed": "willing to stay and figure it out when mechanism exists",
+          "superpower_signal": "rigorous analysis, model-building, intellectual synthesis",
+          "kryptonite_signal": "energy depletion from sustained emotional exposure, exit when gap is unresolvable",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The distinction between wrong and unprepared — that's the key variable.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you do let someone in — really in, past the analysis — what usually has to be true about them first?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 signals: energy conservation, model-based cognition, emotional exposure as costly. The 'strategic withdrawal to gather better information' reframe is classic 5. The 6-ish anxiety about preparation gap vs pure 5 withdrawal needs differentiating. Need to probe: intimacy threshold (5 vs 6 trust patterns), body center to complete all three, and variant signals (SP dominant likely). Disconfirmatory question needed: 5 would withdraw to recharge alone; 6 would seek a trusted ally. Need to probe this distinction.",
+          "next_question_rationale": "Pivot to intimacy/trust threshold — this differentiates 5 from 6. A 5 lets people in based on intellectual respect and non-intrusiveness; a 6 lets people in based on demonstrated reliability and loyalty. Also surfaces heart center data. Open format after scale.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "They have to demonstrate that they're not going to weaponize what I tell them. That sounds paranoid when I say it out loud, but from what I can tell, it's less about trust in the abstract and more about — pattern recognition, I suppose. I'm watching for whether someone uses personal information to score points later, or whether they actually hold it carefully. Dana would probably say I set that bar unreasonably high, and she's not entirely wrong, though I'd frame it as having learned from reasonably specific experiences rather than just being difficult. The other thing, honestly, is that they have to be curious in a way that feels genuine — not like they're collecting information about me, but like they're actually interested in how I think, which I realize is a subtle distinction but it matters.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When you pull back from someone — give less, share less — do you usually know you're doing it, or do you tend to notice it after the fact?\n\n- I know in the moment\n- I notice after the fact",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.08,
+            "5": 0.72,
+            "6": 0.35,
+            "7": 0.08,
+            "8": 0.1,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.18,
+            "head": 0.7
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "update the model",
+                "variables",
+                "mechanism",
+                "rigor",
+                "pattern recognition",
+                "gap between what I expected"
+              ],
+              "context": "describing internal response to failure and unpredictability"
+            },
+            {
+              "type": 6,
+              "words": [
+                "weaponize",
+                "watching for",
+                "learned from reasonably specific experiences"
+              ],
+              "context": "describing what's required before trusting someone"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Self-contained, analytical, high bar for intimacy",
+          "what": "Preparation, understanding, accurate models",
+          "why": "Avoiding the gap between expected and actual — being caught off guard",
+          "how": "Audit, pattern recognition, strategic withdrawal",
+          "when": "Worst in situations with no path to preparation",
+          "where": "Prefers smaller, rigorously processed interactions"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Rapid-fire internal audit when things go wrong; withdrawal when unprepared; high entry bar for trust",
+          "respond_glimpsed": "Can stay and work it out if there's a mechanism; finds emotionally rigorous people genuinely interesting",
+          "superpower_signal": "Precise analytical mind; ability to isolate variables and update models; genuine intellectual curiosity",
+          "kryptonite_signal": "Energy conservation over connection; potential isolation rationalized as rigor; 'strategic withdrawal' as avoidance",
+          "domain_signals": [
+            "intellectual",
+            "relational boundary"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The bar isn't just high — it's specific.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you pull back from someone — give less, share less — do you usually know you're doing it, or do you tend to notice it after the fact?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I know in the moment",
+            "I notice after the fact"
+          ],
+          "scale_range": null,
+          "context_note": "Probing self-awareness of withdrawal pattern — differentiates 5 (deliberate conservation) from 6 (reactive protection). Also surfaces body/gut awareness."
+        },
+        "strategy": {
+          "what_was_learned": "Trust requires evidence of careful holding, not just good intentions. There's 6-flavor security-testing alongside 5-flavor information-gating. 'Dana' reference = real relationship where they receive pushback and partially accept it — emotionally present enough to integrate outside perspectives. SP variant likely — focus on resources, preparation, self-sufficiency. The 'weaponize' language is notable — suggests specific historical experiences with betrayal.",
+          "next_question_rationale": "Need to probe the 5v6 differentiation more precisely. 5s tend to consciously manage withdrawal as resource conservation; 6s tend to be more reactive and less aware in the moment. This forced choice will help. Also haven't probed body center at all.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "I notice after the fact.\n\nThough I'd push back slightly on the framing — 'pulling back' implies a deliberate withdrawal, and from what I can tell, it's more that I calibrate how much I'm sharing based on what feels relevant or useful to the conversation. It's less about withholding and more about... pacing. I tend to notice the gap later, usually when someone else names it, which I'll admit is not always a comfortable moment.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you're uncertain about something important, where does the pressure feel like it's coming from — inside you, questioning your own judgment, or outside, from what others might expect or think?\n\n- From inside — I'm the one doubting myself\n- From outside — I'm tracking what others will think or do\n- Both, but inside more\n- Both, but outside more",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.07,
+            "4": 0.08,
+            "5": 0.78,
+            "6": 0.18,
+            "7": 0.06,
+            "8": 0.08,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.25,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "variables",
+                "model",
+                "mechanism",
+                "pacing",
+                "calibrate"
+              ],
+              "context": "describing internal response to failure and relationships"
+            },
+            {
+              "type": 6,
+              "words": [
+                "weaponize",
+                "pattern recognition",
+                "learned from reasonably specific experiences"
+              ],
+              "context": "describing trust conditions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, private, selective about trust, self-aware about gaps",
+          "what": "Information, preparation, accurate models of reality",
+          "why": "To avoid being caught off guard — gap between expected and actual",
+          "how": "Rapid audit, calibrated sharing, pattern recognition for trust",
+          "when": "Worst in unresolvable uncertainty; exits when no path to preparation exists",
+          "where": "Internal first; interpersonal only after vetting"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic withdrawal/calibration that person doesn't notice in the moment — names it as 'pacing' rather than withholding",
+          "respond_glimpsed": "Genuine curiosity about how others think; openness when trust conditions are met",
+          "superpower_signal": "Rigorous analytical processing; pattern recognition; precision with information",
+          "kryptonite_signal": "Withdrawal from emotional engagement rationalized as calibration; sets trust bar that may function as protection rather than discernment",
+          "domain_signals": [
+            "cognitive",
+            "relational",
+            "preparedness"
+          ]
+        },
+        "conversation": {
+          "phase": "middle",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "More sure about what someone else is doing wrong than what you want.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're uncertain about something important, where does the pressure feel like it's coming from — inside you, questioning your own judgment, or outside, from what others might expect or think?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "From inside — I'm the one doubting myself",
+            "From outside — I'm tracking what others will think or do",
+            "Both, but inside more",
+            "Both, but outside more"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory 5v6: Type 5 pressure is internal — self-sufficiency, own competence. Type 6 pressure is external — authority, group expectation, what others will do."
+        },
+        "strategy": {
+          "what_was_learned": "Person doesn't notice withdrawal in the moment — classic 5 pattern. Names it as 'pacing' or 'calibration' rather than avoidance. Trust conditions reveal 6-ish vigilance for weaponization, but framing is more 5 (information management, privacy) than 6 (loyalty/authority). SP variant signals strong — resource/energy conservation, smaller inner circle.",
+          "next_question_rationale": "Disconfirmatory question needed before exchange 8. 5v6 is the key differentiation. Core question: is the doubt self-referential (5) or other-referential (6)? This will separate them. If inside, strongly 5. If outside/authority, stronger 6 signal.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "Both, but inside more.\n\nThe external piece is there — I'm aware of how conclusions land with colleagues, whether an argument holds up to scrutiny from people I respect. But honestly, the more persistent pressure is internal. If I'm uncertain about something, there's this low-grade loop that runs until I've resolved it to my own satisfaction, regardless of whether anyone else even notices the gap. From what I can tell, most of the people around me would be fine with a provisional answer. I'm usually not.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you decide to trust someone's expertise — a doctor, a colleague, an analyst — do you tend to accept their conclusions and move on, or do you verify independently before you're willing to act on it?\n\n- Accept and move on — if I vetted them once, that's enough\n- Verify independently — their conclusion is just a starting point",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.05,
+            "5": 0.78,
+            "6": 0.28,
+            "7": 0.05,
+            "8": 0.07,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "update the model",
+                "variables",
+                "mechanism",
+                "calibrate",
+                "pacing",
+                "rigor",
+                "pattern recognition"
+              ],
+              "context": "throughout — epistemic framing, energy management language"
+            },
+            {
+              "type": 6,
+              "words": [
+                "weaponize",
+                "learned from specific experiences",
+                "holds up to scrutiny",
+                "pattern recognition"
+              ],
+              "context": "trust/threat calibration, loyalty testing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, self-contained, calibrated sharer — lets people in slowly on evidence of safety",
+          "what": "Shrinking the gap between expected and actual; building complete enough models before committing",
+          "why": "Avoiding being caught off guard — preparation failure is the core fear",
+          "how": "Audit, replay, update model — systematic retrospection; withdraws to gather data",
+          "when": "Worst in situations where no clear path to preparation exists",
+          "where": "Internal pressure dominates — resolves to own satisfaction regardless of external approval"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic withdrawal/calibration after emotional exposure; retrospective noticing of gap",
+          "respond_glimpsed": "Can engage emotionally with rigor — values genuine curiosity; capable of trust when safety demonstrated",
+          "superpower_signal": "Systematic thinking, model-updating, epistemic rigor",
+          "kryptonite_signal": "Pacing/withdrawal that reads as withholding; high bar for trust that costs connection",
+          "domain_signals": [
+            "cognitive/intellectual",
+            "relational withdrawal",
+            "emotional cost management"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "5v6_disconfirmatory_authority_trust",
+        "thinking_display": "The internal loop runs whether or not anyone else notices the gap.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you decide to trust someone's expertise — a doctor, a colleague, an analyst — do you tend to accept their conclusions and move on, or do you verify independently before you're willing to commit to acting on it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Accept and move on — if I vetted them once, that's enough",
+            "Verify independently — their conclusion is just a starting point"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 verifies from epistemic drive; Type 6 verifies from authority doubt/anxiety. Both verify, but the motivation differs."
+        },
+        "strategy": {
+          "what_was_learned": "Internal pressure dominates; self-directed doubt loop; needs own resolution regardless of external consensus. Strong 5 signal — epistemic autonomy. Some 6 signal in trust-safety calibration and scrutiny-from-respected-others. Need to probe whether doubt is self-referential (5) or other-referential/authority-testing (6).",
+          "next_question_rationale": "This is the core 5v6 disconfirmatory question. Both types distrust — but 5 distrusts because they prefer their own model; 6 distrusts because authority itself is suspect and potentially threatening. Answer will differentiate strongly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "Verify independently — their conclusion is just a starting point.\n\nAnd I'd push back a little on the framing of \"just\" — their conclusion is a *valuable* starting point, it'd be wasteful not to treat it as such. But from what I can tell, expertise in any domain involves assumptions that may not map cleanly onto your specific context, so accepting a conclusion wholesale without understanding the underlying reasoning is... a fairly common way to end up with the wrong answer for the right inputs. It's not distrust, exactly. It's more that I want to understand the model well enough to know where it breaks down.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you picture the worst version of that unprepared moment — the gap between what you expected and what happened — is the core fear that you'll be exposed as having missed something, or that you genuinely won't have enough to handle what comes next?\n\n- Exposed — someone will see the gap in my preparation\n- Unable to handle it — I won't have enough to work with",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.08,
+            "5": 0.78,
+            "6": 0.45,
+            "7": 0.05,
+            "8": 0.08,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.25,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "update the model",
+                "variables",
+                "mechanism",
+                "calibrate",
+                "underlying reasoning"
+              ],
+              "context": "describing how they respond to errors and uncertainty"
+            },
+            {
+              "type": 6,
+              "words": [
+                "weaponize",
+                "pattern recognition",
+                "scrutiny",
+                "provisional"
+              ],
+              "context": "describing trust and uncertainty"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.6,
+          "SO": 0.2,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who processes analytically, leads with internal standards, values preparation and self-sufficiency",
+          "what": "Minimizing unpredictability, understanding systems deeply enough to know where they break",
+          "why": "Emerging — fear of being caught off guard, which links to competence and resource conservation",
+          "how": "Independent verification, mental modeling, strategic withdrawal to gather data",
+          "when": "Discomfort when no mechanism exists to become prepared",
+          "where": "Internal — the loop runs regardless of external validation"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Post-hoc audit, calibrating disclosure without noticing it, verification loop",
+          "respond_glimpsed": "Recognizes Dana's critique has merit; can name when bar may be set too high",
+          "superpower_signal": "Systemic thinking, intellectual rigor, capacity to hold complexity",
+          "kryptonite_signal": "Isolation through calibration; the 'pacing' that others experience as distance",
+          "domain_signals": [
+            "trust",
+            "expertise",
+            "uncertainty",
+            "emotional regulation"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "5v6_disconfirmatory",
+        "thinking_display": "The verification instinct and the trust threshold are pointing in the same direction.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you picture the worst version of an unprepared moment — the gap you mentioned between what you expected and what happened — is the core fear that you'll be exposed as having missed something, or that you genuinely won't be able to handle what comes next?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Exposed — someone will see the gap in my preparation",
+            "Unable to handle it — I won't have enough to work with"
+          ],
+          "scale_range": null,
+          "context_note": "This is the 5v6 disconfirmatory question. Type 5 fear: depletion/incompetence. Type 6 fear: abandonment without support/being unable to cope. 'Exposed' leans 5, 'unable to handle it' leans 6."
+        },
+        "strategy": {
+          "what_was_learned": "Consistent internal locus of pressure, independent verification as baseline, expertise treated as input not conclusion. Strong 5 pattern. The 'low-grade loop that runs until I've resolved it to my own satisfaction' is pure 5. Some 6 signals in trust-weaponization framing and external scrutiny awareness, but clearly secondary. SP instinct dominant — resource conservation, preparation, self-sufficiency. Body center largely unprobed.",
+          "next_question_rationale": "This is the disconfirmatory question. 5 vs 6 is the key differentiation pair here. The fear structure differs: 5 fears depletion/being seen as incompetent; 6 fears being unable to cope without support. Both verify independently but for different reasons. This question targets the root fear directly. After this, probe body center and react/respond, then close.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**Exposed — someone will see the gap in my preparation**\n\nThough I'd push back slightly on the framing, because those two things aren't as separable as the question implies. From what I can tell, the handling part is mostly a soluble problem — you gather more information, you recalibrate — but the exposure piece is harder to reverse once it's happened. The social calculus around perceived competence doesn't really reset. So if I'm being precise about what's actually driving the anxiety, it's less about the gap itself and more about whether it becomes visible to someone whose assessment of me matters.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you've done all the analysis and the answer still isn't clear, what do you do with the uncertainty — sit with it until you find more data, or make a call and move forward?\n\n- Sit with it — I keep working the problem until I have enough to be sure\n- Make the call — I can tolerate uncertainty as long as I'm moving",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.02,
+            "3": 0.12,
+            "4": 0.05,
+            "5": 0.38,
+            "6": 0.52,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.7
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "gather more information",
+                "recalibrate",
+                "understand the model",
+                "underlying reasoning"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 6,
+              "words": [
+                "social calculus",
+                "perceived competence",
+                "weaponize",
+                "pattern recognition",
+                "low-grade loop"
+              ],
+              "context": "trust and exposure questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.35,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "analytical, self-contained, careful with trust",
+          "what": "preparation, competence, avoiding exposure",
+          "why": "fear of being caught unprepared/exposed as having missed something",
+          "how": "auditing, verifying, independent analysis",
+          "when": "persistent internal loop until resolved",
+          "where": "primarily internal, secondarily social"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "automatic audit loop, withdrawal reframed as calibration, verification before trust",
+          "respond_glimpsed": "conscious knowledge accumulation ('identify error, update model, move on')",
+          "superpower_signal": "rigorous independent analysis, pattern recognition, holding complexity",
+          "kryptonite_signal": "exposure anxiety, unreasonably high trust threshold (per Dana), loop that won't quit until resolved",
+          "domain_signals": [
+            "intellectual rigor",
+            "loyalty to accuracy",
+            "competence anxiety"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "5v6_disconfirmatory",
+        "thinking_display": "The social calculus answer was sharper than the rest.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've done all the analysis and the answer still isn't clear, what do you do with the uncertainty — sit with it until you find more data, or make a call and move forward?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Sit with it — I keep working the problem until I have enough to be sure",
+            "Make the call — I can tolerate uncertainty as long as I'm moving"
+          ],
+          "scale_range": null,
+          "context_note": "Key 5v6 differentiator: 5 can sit with unresolved questions indefinitely; 6 needs resolution or action to manage anxiety"
+        },
+        "strategy": {
+          "what_was_learned": "Exposure anxiety is clearly primary — the social calculus around perceived competence not resetting is a strong 6 signal. Five would more likely fear the gap itself (inadequate data) rather than its visibility. The 'someone whose assessment matters' framing is relational and status-aware in a way that points away from pure 5.",
+          "next_question_rationale": "This is the key 5v6 disconfirmatory question. A 5 tolerates unresolved uncertainty and can sit with open questions indefinitely — they don't need resolution, they need more data. A 6 experiences unresolved uncertainty as anxiety that must be managed through either more preparation OR action/commitment. This will differentiate cleanly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**Sit with it — I keep working the problem until I have enough to be sure.**\n\nThough I'd push back slightly on the framing — there's a meaningful difference between productive waiting and avoidance, and from what I can tell, what I'm actually doing in that gap is usually narrowing the uncertainty rather than just tolerating it. Finding more data, running sensitivity analyses, testing what the conclusion looks like under different assumptions. The goal isn't certainty exactly, more like... reducing the range of ways I could be wrong. Making a call before I've done that work tends to feel less like confidence and more like just picking something, which doesn't sit well with me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "The analysis is what keeps the exposure from happening.\n\nWhen you're in a situation that genuinely requires you to trust someone else's judgment — and you can't verify, can't run your own analysis — do you tend to comply and feel vaguely uneasy about it, or find yourself getting skeptical of the person rather than the situation?\n\n- Comply and feel uneasy — I go along but something stays unresolved inside\n- Get skeptical of the person — something about them starts to seem less reliable",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.05,
+            "5": 0.52,
+            "6": 0.18,
+            "7": 0.02,
+            "8": 0.04,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.15,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "model",
+                "variables",
+                "audit",
+                "calibrate",
+                "sensitivity analyses",
+                "assumptions",
+                "underlying reasoning"
+              ],
+              "context": "throughout — describes thinking in systems/models language"
+            },
+            {
+              "type": 6,
+              "words": [
+                "exposed",
+                "weaponize",
+                "pattern recognition",
+                "assessment of me matters"
+              ],
+              "context": "trust/exposure questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who processes analytically first, finds emotional expression draining, calibrates sharing carefully",
+          "what": "Reducing uncertainty, understanding models deeply, protecting against exposure",
+          "why": "Being caught off guard is the core fear — exposure of a gap in preparation",
+          "how": "Audit, verify independently, sit with uncertainty until it narrows",
+          "when": "Loops internally until resolved to own satisfaction regardless of external pressure",
+          "where": "Private/internal — social context is monitored but secondary"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Retreats into analysis under uncertainty; withholds access without noticing; loops internally",
+          "respond_glimpsed": "Can engage with emotional material in small doses when rigor is present; acknowledges Dana's feedback",
+          "superpower_signal": "Extraordinary analytical precision; models within models; genuine intellectual rigor",
+          "kryptonite_signal": "Exposure anxiety drives the analysis engine; connection conditional on demonstrated safety",
+          "domain_signals": [
+            "intellectual competence",
+            "preparation",
+            "trust-calibration",
+            "self-sufficiency"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "The analysis is what keeps the exposure from happening.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a situation that genuinely requires you to trust someone else's judgment — and you can't verify, can't run your own analysis — do you tend to comply and feel vaguely uneasy about it, or do you find yourself getting skeptical of the person rather than the situation?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Comply and feel uneasy — I go along but something stays unresolved inside",
+            "Get skeptical of the person — something about them starts to seem less reliable"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 would more likely comply/withdraw with unease; Type 6 would more likely project doubt onto the person/authority"
+        },
+        "strategy": {
+          "what_was_learned": "Sitting with uncertainty is framed as narrowing the range of ways to be wrong — not tolerance, not avoidance, but active reduction. The goal is defensible position, not certainty. This is highly consistent with 5's hoarding of competence and preparation. The exposure fear (vs. inability to cope) is the clearest signal yet — social calculus around perceived competence. This could be 6-ish but the internal locus is dominant. Need disconfirmatory question to separate 5 from 6: the key distinction is whether doubt projects outward onto others/authority (6) or stays internal as a quiet gap to manage (5).",
+          "next_question_rationale": "Disconfirmatory 5v6: When forced to trust without verification, does doubt stay internal (5 pattern) or project onto the person/authority (6 pattern)? This is the cleanest differentiator for this pair. Also need to probe body center and react/respond before closing.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**Comply and feel uneasy — I go along but something stays unresolved inside.**\n\nThough I'd push back slightly on the framing — it's not always a clean either/or. From what I can tell, my default is to comply functionally, meaning I'll act on someone else's judgment if I have to, but there's a kind of... background process running, looking for disconfirming evidence. It's less that the person becomes suspect and more that the unresolved uncertainty just stays open, like a tab I haven't closed. I've noticed that's not always comfortable to sit with.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "That background process — the open tab — is worth looking at more closely.\n\nWhen that unresolved feeling eventually settles, what usually closes it: finding new information, or just deciding you've sat with it long enough?\n\n- Finding new information — the loop closes when the data does\n- Deciding I've sat with it long enough — at some point I have to let it go",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.05,
+            "5": 0.82,
+            "6": 0.45,
+            "7": 0.04,
+            "8": 0.07,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.18,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "variables",
+                "model",
+                "sensitivity analyses",
+                "calibrate",
+                "mechanism",
+                "disconfirming evidence"
+              ],
+              "context": "throughout"
+            },
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "weaponize",
+                "unresolved",
+                "background process"
+              ],
+              "context": "trust and uncertainty questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.22,
+          "SX": 0.16
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, highly self-aware, values competence and precision",
+          "what": "Shrinking uncertainty gaps, protecting perceived competence",
+          "why": "Fear of exposure — being seen as underprepared or having missed something",
+          "how": "Pre-analysis, verification, staying with problems until uncertainty narrows",
+          "when": "Especially when stakes involve others' assessment of their judgment",
+          "where": "Internal — low-grade loops, background processes, unresolved tabs"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Compliance with persistent background scanning for disconfirming evidence — unresolved uncertainty stays open rather than releasing",
+          "respond_glimpsed": "Not yet directly probed",
+          "superpower_signal": "Exceptional analytical rigor, model-building, calibrated uncertainty management",
+          "kryptonite_signal": "Withdrawal from intimacy framed as 'pacing', exposure fear driving analysis",
+          "domain_signals": [
+            "work/competence",
+            "trust/relationships",
+            "uncertainty management"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v6_disconfirmatory",
+        "thinking_display": "The tab stays open. That's the tell.",
+        "response_parts": {
+          "guide_text": "That background process — the open tab — is worth looking at more closely.",
+          "question_text": "When that unresolved feeling eventually settles, what usually closes it: finding new information, or just... deciding you've thought about it enough?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Finding new information — the loop closes when the data does",
+            "Deciding I've sat with it long enough — at some point I have to let it go"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 closes uncertainty via information; Type 6 closes via internal decision/commitment. This separates the two."
+        },
+        "strategy": {
+          "what_was_learned": "Comply + uneasy is Type 5 and Type 6 compatible. The 'background process / open tab' language is very 5. But the social calculus concern (exchange 6) and the exposure fear (exchange 7) have some 6 coloring. Need to test whether the resolution mechanism is data-driven (5) or authority/commitment-driven (6).",
+          "next_question_rationale": "This is the disconfirmatory question — what closes the loop. Type 5 resolves through information acquisition; Type 6 resolves through internal commitment or external authority validation. This directly differentiates the two and serves as the hard-gate disconfirmatory question.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "Finding new information — the loop closes when the data does.\n\nThough I'd push back slightly on the framing — it's not always *new* information so much as reaching a point where I feel like I've sufficiently mapped the problem space. Once I can see the edges of what I don't know, and confirm they're not hiding something critical, that's usually when the discomfort recedes. Deciding I've 'sat with it long enough' implies a kind of arbitrary cutoff that doesn't really track with how I actually operate — it tends to feel less like a decision and more like running out of productive angles.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you're part of a group you actually care about — a team, a close circle, a community — how much of your mental energy goes toward the group's health versus your own private work and interests? On a scale of 1 to 5, where 1 is almost entirely your own projects and 5 is almost entirely the group.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.06,
+            "5": 0.82,
+            "6": 0.55,
+            "7": 0.05,
+            "8": 0.08,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Observer/Investigator",
+          "whole_type": "head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.15,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "model",
+                "variables",
+                "mechanism",
+                "sensitivity analyses",
+                "problem space",
+                "map the problem"
+              ],
+              "context": "describing response to uncertainty and error"
+            },
+            {
+              "type": 6,
+              "words": [
+                "weaponize",
+                "pattern recognition",
+                "disconfirming evidence",
+                "unresolved",
+                "open tab"
+              ],
+              "context": "describing trust and unresolved uncertainty"
+            },
+            {
+              "type": 5,
+              "words": [
+                "calibrate",
+                "pacing",
+                "productive waiting",
+                "narrowing the uncertainty"
+              ],
+              "context": "describing withdrawal and information gathering"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, self-contained, highly internal processor",
+          "what": "Manages uncertainty by mapping problem space exhaustively",
+          "why": "Core fear: exposure of incompetence/unpreparedness — social calculus around competence",
+          "how": "Analytical withdrawal, independent verification, staying with uncertainty until resolved",
+          "when": "Pulls back after the fact, noticed by others naming it",
+          "where": "Internal pressure dominates; external scrutiny secondary but present"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Continuous background analysis loop — can't close open tabs without data closure",
+          "respond_glimpsed": "Awareness that Dana's feedback has some validity — self-aware about high trust threshold",
+          "superpower_signal": "Exceptional capacity to map problem space, anticipate failure modes, hold complexity",
+          "kryptonite_signal": "Withdrawal from connection under guise of calibration/pacing; can't tolerate unresolvable uncertainty",
+          "domain_signals": [
+            "competence/mastery",
+            "trust/vulnerability",
+            "withdrawal pattern",
+            "independent verification as safety mechanism"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "The loop closes on its own terms, not on a schedule.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a group you belong to — a team, a community, a circle you care about — how much of your mental energy goes toward the group's wellbeing versus your own private projects and interests?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5,
+            "anchor_low": "Almost entirely my own work",
+            "anchor_high": "Almost entirely the group"
+          },
+          "context_note": "disconfirmatory: Type 5 SP/SX would anchor low, Type 6 SO would anchor higher"
+        },
+        "strategy": {
+          "what_was_learned": "Data closure is the mechanism — not willpower or decision. Strong 5 signal: exhaustive mapping as anxiety management. Also 6-adjacent: exposure fear, social calculus around competence. Need to probe group vs private orientation to differentiate 5 from 6. Also need: react/respond probe, body center probe, instinct variant confirmation.",
+          "next_question_rationale": "This is the disconfirmatory question. Type 5 would heavily anchor toward private projects; Type 6 would show more group-orientation/loyalty investment. Also surfaces SO vs SP variant signal. Will set disconfirmatory_asked = true.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**6 out of 10 toward the group.**\n\nThough I'd push back slightly on the framing — the distinction between 'group wellbeing' and 'private projects' isn't always clean. A lot of what I'm doing independently feeds back into what the group can actually use. From what I can tell, the most effective contribution I make tends to happen when I've done enough background work on my own to bring something substantive to the table. So some of what looks like private focus is functionally group-oriented, just with a longer lag time before it's visible.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you're in a group you trust — people who've proven themselves — do you find yourself still watching for who's reliable and who might let things slip, or do you mostly stop tracking once trust is established?\n\n- Still watching — trust is ongoing, not settled\n- Mostly stop tracking — if someone's earned it, I let it go",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.06,
+            "5": 0.82,
+            "6": 0.45,
+            "7": 0.04,
+            "8": 0.07,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.15,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "audit",
+                "variables",
+                "model",
+                "mapping the problem space",
+                "running out of productive angles",
+                "sensitivity analyses"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 6,
+              "words": [
+                "weaponize",
+                "pattern recognition",
+                "disconfirming evidence",
+                "exposure",
+                "open tab"
+              ],
+              "context": "exchanges 4-9"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Private, analytical, selectively trusting",
+          "what": "Competence, predictive accuracy, managing exposure",
+          "why": "Fear of being caught off guard, anxiety around visible gaps",
+          "how": "Independent verification, mapping problem space, background monitoring",
+          "when": "Loops stay open until data closes them",
+          "where": "Operates best alone, contributes with lag time"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal into analysis when uncertain; background surveillance of environment for disconfirming signals; compliance with unresolved internal loop running",
+          "respond_glimpsed": "Not yet surfaced",
+          "superpower_signal": "Extraordinary capacity to map complexity, reduce uncertainty, think independently",
+          "kryptonite_signal": "Preparation as armor against exposure; loops that never fully close; withholding until 'enough' is known",
+          "domain_signals": [
+            "intellectual domain strong",
+            "relational domain costly",
+            "group domain functional but arms-length"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "More sure about the edges of uncertainty than about what's in the middle.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a group you trust — people who've proven themselves — do you find yourself watching for who's reliable and who might let things slip, or do you mostly stop tracking once trust is established?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Still watching — trust is ongoing, not settled",
+            "Mostly stop tracking — if someone's earned it, I let it go"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 6 stays vigilant even with trusted others; Type 5 withdraws attention once adequately mapped."
+        },
+        "strategy": {
+          "what_was_learned": "SP dominant signals: protecting private work, contribution with lag time, group involvement framed as functional rather than relational. Strong 5 signature throughout. 6 remains a meaningful secondary — the background surveillance loop, fear of exposure, compliance-with-unease pattern. Need disconfirmatory question to separate 5 from 6, and need react/respond identification. Body center still unprobed.",
+          "next_question_rationale": "This is the key 5v6 differentiator: Type 5 maps people once and withdraws attention; Type 6 maintains ongoing vigilance even with trusted others because the threat model never fully closes. The answer here will cleanly separate the two.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "**Still watching — trust is ongoing, not settled.**\n\nI don't think that's the same as distrust, to be clear — it's more that reliability isn't a static property, it's a pattern you're continuously sampling. People's circumstances change, their attention changes. From what I can tell, the people who assume trust is fully \"settled\" are usually the ones who get blindsided.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you're in a situation where something feels off — wrong tone, wrong result, something you can't yet name — what's your first move?\n\n- Pull back and observe — I gather before I engage\n- Ask questions — I'd rather surface it directly",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.72,
+            "6": 0.55,
+            "7": 0.04,
+            "8": 0.06,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Witness",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.18,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "map the problem space",
+                "update the model",
+                "sensitivity analyses",
+                "run out of productive angles"
+              ],
+              "context": "describing how uncertainty resolves"
+            },
+            {
+              "type": 6,
+              "words": [
+                "weaponize",
+                "pattern recognition",
+                "get blindsided",
+                "reliability isn't static",
+                "background process"
+              ],
+              "context": "describing trust and ongoing vigilance"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who maintains ongoing surveillance of relationships and systems for signs of failure",
+          "what": "Maps uncertainty, reduces exposure, verifies independently",
+          "why": "Fear of being caught unprepared and exposed — competence as social protection",
+          "how": "Analysis, pattern recognition, background monitoring",
+          "when": "Especially under uncertainty or when dependent on others",
+          "where": "Head-led across domains — professional, relational"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Background monitoring loop runs automatically — unresolved tabs stay open until data closes them",
+          "respond_glimpsed": "Can comply functionally and act despite unease — shows capacity to move with uncertainty",
+          "superpower_signal": "Maps problem spaces with extraordinary precision — sees edges of what isn't known",
+          "kryptonite_signal": "Ongoing vigilance as default — trust never fully settles, which maintains distance",
+          "domain_signals": [
+            "intellectual rigor",
+            "independence from authority",
+            "relational caution",
+            "competence protection"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "The vigilance never fully switches off.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a situation where something feels off — wrong tone, wrong result, something you can't yet name — what's your first move: pull back and observe until you can identify it, or start asking questions to surface what you're missing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Pull back and observe — I gather before I engage",
+            "Ask questions — I'd rather surface it directly"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 typically withdraws to observe; Type 6 typically engages/questions to resolve doubt. This is the hard gate question."
+        },
+        "strategy": {
+          "what_was_learned": "Trust never settles — ongoing vigilance even with trusted people. This is strong 6 signal (loyalty/security system never fully off). Combined with prior data: exposure fear, compliance with unease, verification independence, internal pressure. 5 and 6 are closely matched. Need disconfirmatory question to separate. Core differentiator: 5 withdraws to think; 6 engages to resolve doubt through external checking. Also need body center probe and react/respond reflection.",
+          "next_question_rationale": "This is the disconfirmatory question. Expected 5 response: pull back and observe. Expected 6 response: ask questions to surface it. The answer will help separate these two types cleanly. Must ask this before closing.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "Pull back and observe — I gather before I engage.\n\nAsking questions before you've formed even a rough hypothesis tends to signal more uncertainty than you want to broadcast, and it also shapes the information you get back — people respond to the framing of a question, not necessarily the underlying reality. My default is to collect until I have enough to ask something useful rather than something anxious. Though I'll admit the line between 'strategic patience' and just... waiting too long to act is probably blurrier than I'd like it to be.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "When something goes wrong and someone you're close to is visibly upset about it, what pulls at you more — the urge to solve the problem, or to be with them in it?\n\n- Solve the problem — that's what actually helps\n- Be with them in it — presence matters more than solutions",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.04,
+            "5": 0.52,
+            "6": 0.18,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Witness",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.12,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "gather before I engage",
+                "rough hypothesis",
+                "strategic patience",
+                "collect until I have enough"
+              ],
+              "context": "describing response to ambiguity"
+            },
+            {
+              "type": 6,
+              "words": [
+                "still watching",
+                "who might let things slip",
+                "trust is ongoing"
+              ],
+              "context": "describing group trust dynamics"
+            },
+            {
+              "type": 5,
+              "words": [
+                "map the problem space",
+                "edges of what I don't know",
+                "running sensitivity analyses"
+              ],
+              "context": "describing uncertainty management"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.65
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analytically rigorous, emotionally guarded, self-contained",
+          "what": "Reducing uncertainty, mapping problem space, maintaining competence perception",
+          "why": "Fear of exposure — gap between preparation and reality becoming visible",
+          "how": "Pull back, observe, gather before engaging; verify independently",
+          "when": "Under pressure: more withdrawal, more analysis",
+          "where": "Head-dominant; private mental space preferred"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws to gather more data; keeps unresolved tabs open; complies but stays internally unsettled",
+          "respond_glimpsed": "Acknowledged 'strategic patience vs waiting too long' as a real tension — some self-awareness of the reaction pattern",
+          "superpower_signal": "Pattern recognition, model-building, identifying where assumptions break down",
+          "kryptonite_signal": "Sustained withdrawal, trust calibration so high it delays connection, exposure anxiety driving over-preparation",
+          "domain_signals": [
+            "competence",
+            "preparation",
+            "trust",
+            "observation",
+            "exposure"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v6_body_probe",
+        "thinking_display": "The blurrier line was the honest part.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong and someone you're close to is visibly upset about it, what pulls at you more — the urge to solve the problem, or to be with them in it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Solve the problem — that's what actually helps",
+            "Be with them in it — presence matters more than solutions"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory probe: 5s typically move toward solving/withdrawing from emotional intensity; 6s often move toward the person — loyalty, solidarity"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 signals: pull back and observe, form hypothesis before asking, strategic patience framing. The self-acknowledged blur between strategic patience and waiting too long is a 5 kryptonite signal. 6 signals persist in trust-monitoring and exposure anxiety. Need disconfirmatory probe on emotional response and body center to close. This forced_choice directly differentiates 5 (solve/withdraw from feeling) from 6 (move toward person, loyalty).",
+          "next_question_rationale": "This is the disconfirmatory question — 5s tend to move toward solving (managing the emotional situation analytically), 6s tend to move toward the person (relational solidarity). Also surfaces body/heart center signals.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "**Solve the problem — that's what actually helps.**\n\nThough I'd push back a little on the framing — those aren't always mutually exclusive. From what I can tell, most people who say 'I just need you to be present' are actually asking, underneath that, for someone to make the uncertainty more manageable. Solving the problem *is* a form of presence, in my view. Sitting with someone in their distress without offering any traction feels like... I don't know, a kind of performance of empathy rather than the actual thing.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "When you're anxious about something — genuinely anxious, not just uncertain — do you mostly trust your own read of the situation, or do you find yourself checking whether the people you respect agree with your assessment?\n\n- Trust my own read — if my analysis holds, that's enough\n- Check with people I respect — I want to know if I'm missing something they see",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.04,
+            "5": 0.82,
+            "6": 0.45,
+            "7": 0.03,
+            "8": 0.06,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Observer",
+          "whole_type": "5",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.1,
+            "head": 0.85
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "variables",
+                "model",
+                "mapping",
+                "hypothesis",
+                "mechanism",
+                "sensitivity analyses",
+                "probability space"
+              ],
+              "context": "throughout — dominant analytical framing"
+            },
+            {
+              "type": 6,
+              "words": [
+                "still watching",
+                "blindsided",
+                "pattern recognition",
+                "weaponize",
+                "not comfortable to sit in",
+                "open tab",
+                "unresolved"
+              ],
+              "context": "trust, vigilance, and anxiety framing"
+            },
+            {
+              "type": 5,
+              "words": [
+                "calibrate",
+                "pacing",
+                "strategic patience",
+                "gather before I engage",
+                "strategic withdrawal"
+              ],
+              "context": "information management and withdrawal patterns"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "differentiation_5v6"
+        },
+        "oyn_dimensions": {
+          "who": "Self-contained, analytically oriented, watches more than engages",
+          "what": "Information gathering, preparation, competence management",
+          "why": "Avoid exposure of gaps in preparation; minimize being caught off guard",
+          "how": "Audit, verify independently, reduce range of ways to be wrong",
+          "when": "Prolonged uncertainty held open until edges of unknowns mapped",
+          "where": "Internal — external social calculus tracked but internal pressure dominant"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pulls back to gather before engaging; keeps open tabs on unresolved uncertainty; complies functionally but runs background disconfirmation process",
+          "respond_glimpsed": "Aware that 'strategic patience' blurs into waiting too long; knows Dana's critique of high trust bar has merit; acknowledges line between productive waiting and avoidance",
+          "superpower_signal": "Exceptional analytical precision; maps problem space to find edges of unknowns; brings substantive preparation to groups",
+          "kryptonite_signal": "Exposure anxiety drives the analysis engine; trust bar possibly unreasonably high; solving-as-presence may be a deflection from genuine emotional contact",
+          "domain_signals": [
+            "work/intellectual",
+            "relationships",
+            "trust"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "Solving as presence — or presence as an exit from feeling.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're anxious about something — genuinely anxious, not just uncertain — do you mostly trust your own read of the situation, or do you find yourself checking whether the people you respect agree with your assessment?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Trust my own read — if my analysis holds, that's enough",
+            "Check with people I respect — I want to know if I'm missing something they see"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 trusts internal analysis; Type 6 seeks external validation even when they distrust authority"
+        },
+        "strategy": {
+          "what_was_learned": "Consistent head center dominance confirmed. Solving over presence suggests detachment from emotional contact, not just a practical preference. The 'performance of empathy' framing is a strong 5 tell — emotions as performance vs. functional reality. 5v6 still needs sharpening: the vigilance/trust patterns could be 6, but the internal-over-external pressure and independent verification lean 5. Disconfirmatory question required before close.",
+          "next_question_rationale": "Classic 5v6 differentiator: under genuine anxiety, does the person trust their own internal analysis (5) or seek validation from trusted external sources (6)? A 6 will check with people they respect even when they distrust authority in general. A 5 will rely on their own model having internal coherence.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "persona",
+      "content": "Check with people I respect — I want to know if I'm missing something they see.\n\nThough I'd qualify that — it's less about reassurance and more about data integrity. If I've built an analysis and someone whose judgment I trust has access to variables I might have missed, ignoring that would just be epistemic arrogance. The anxiety, from what I can tell, usually comes from knowing that no model is complete. So checking isn't a confidence problem — it's a methodology preference.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "system",
+      "content": "When you imagine the thing you're most afraid others will see — is it that you don't have enough to offer, or that you've built the wrong picture of something that mattered?\n\n- I don't have enough to offer — the resources aren't there\n- I've built the wrong picture — the analysis failed somewhere",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.04,
+            "5": 0.78,
+            "6": 0.72,
+            "7": 0.03,
+            "8": 0.04,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.12,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "map the problem space",
+                "data integrity",
+                "epistemic arrogance",
+                "model",
+                "variables",
+                "sensitivity analyses"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 6,
+              "words": [
+                "not comfortable to sit in",
+                "checks with trusted others",
+                "still watching",
+                "trust is ongoing"
+              ],
+              "context": "trust and anxiety questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone who maintains analytical distance, careful with access",
+          "what": "Reducing uncertainty, mapping the problem space",
+          "why": "Fear of exposure — being seen as unprepared or incompetent",
+          "how": "Pull back, observe, gather, then engage with hypothesis",
+          "when": "Continuous background processing, especially under uncertainty",
+          "where": "Head center dominant; less comfortable in body/heart territory"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws to gather more information; keeps open tabs on unresolved uncertainty; audit loop after failure",
+          "respond_glimpsed": "Checking in with trusted others; acknowledging the blurriness of strategic patience vs. waiting too long",
+          "superpower_signal": "Extraordinary analytical depth, epistemic rigor, maps the edges of what is unknown",
+          "kryptonite_signal": "Withholding as pacing, distrust framed as methodology, solving as substitute for presence",
+          "domain_signals": [
+            "intellectual mastery",
+            "preparation",
+            "competence",
+            "trust calibration"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "The framing as methodology is doing real work there.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the thing you're most afraid others will see — is it that you don't have enough to offer, or that you've built the wrong picture of something that mattered?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I don't have enough to offer — the resources aren't there",
+            "I've built the wrong picture — the analysis failed somewhere"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 fear = not having enough/being depleted; Type 6 fear = being wrong/betrayed/failing to see what was coming. This directly separates them."
+        },
+        "strategy": {
+          "what_was_learned": "Checking with trusted others framed as methodology not reassurance — this is a classic 6 rationalization, but the epistemic framing and depletion language ('costs me more than it gives me') remain strongly 5. The gap between 5 and 6 is narrowing. Need disconfirmatory question now — hard gate.",
+          "next_question_rationale": "Core fear differentiation: 5s fear depletion/inadequacy of internal resources; 6s fear being wrong, betrayed, or caught without a reliable framework. The answer will separate these cleanly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "persona",
+      "content": "**I've built the wrong picture — the analysis failed somewhere.**\n\nThough I'd push back slightly on the framing — those two aren't as cleanly separable as the question implies. From what I can tell, my actual fear isn't resource scarcity, it's more like... structural error. That I've been operating from a model that seemed internally consistent but was built on a flawed assumption somewhere upstream, and everything downstream from that is quietly wrong in ways I haven't caught yet. The 'not enough to offer' version feels like a quantity problem, which is easier to solve. This other thing is harder to locate.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "system",
+      "content": "When you do all that checking — verifying expertise, keeping trust as ongoing, running the analysis again — is the driving force that you genuinely might have missed something important, or that something important might be held against you?\n\n- I might have missed something — the analysis has to hold\n- Something might be held against me — the gap can't become visible",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "0": 0.05,
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.05,
+            "5": 0.28,
+            "6": 0.35,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.1,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "I'm watching",
+                "blindsided",
+                "disconfirming evidence",
+                "structural error"
+              ],
+              "context": "throughout"
+            },
+            {
+              "type": 5,
+              "words": [
+                "map the problem space",
+                "data integrity",
+                "epistemic",
+                "sensitivity analyses"
+              ],
+              "context": "methodology and analysis responses"
+            },
+            {
+              "type": 6,
+              "words": [
+                "someone whose assessment of me matters",
+                "social calculus around perceived competence",
+                "background process running"
+              ],
+              "context": "trust and exposure questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "differentiation_5v6"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who monitors reliability continuously, checks trusted perspectives under anxiety, fears exposure of analytical failure",
+          "what": "Comprehensive analysis, mapping problem spaces, reducing range of error",
+          "why": "Closing the gap between expected and actual — reducing being caught off guard",
+          "how": "Gather before engaging, verify independently, hold uncertainty until it resolves with data",
+          "when": "Background process always running — trust never fully settled",
+          "where": "Head-centered, with strong interpersonal monitoring thread"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Compliance with unresolved inner loop — goes along but keeps background process running; analysis as protection from exposure",
+          "respond_glimpsed": "Named the blurriness between strategic patience and waiting too long — self-awareness is present",
+          "superpower_signal": "Rigorous analysis, epistemic humility, pattern recognition for reliability",
+          "kryptonite_signal": "Structural error fear — operating from a flawed upstream assumption; loop that doesn't close without data",
+          "domain_signals": [
+            "professional competence",
+            "interpersonal trust monitoring",
+            "epistemic methodology"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v6_disconfirmatory",
+        "thinking_display": "Fear of structural error is different from fear of scarcity. That distinction matters.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you do all that checking — running sensitivity analyses, verifying expertise, keeping trust as ongoing rather than settled — is the driving force that you genuinely might have missed something important, or that something important might be held against you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I might have missed something important — the analysis has to hold",
+            "Something might be held against me — the gap can't become visible"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 5 would orient toward epistemic completeness; Type 6 would orient toward social consequences of the gap"
+        },
+        "strategy": {
+          "what_was_learned": "Person fears structural/upstream error more than resource scarcity. This is a strong 6 signal — the fear is about being caught operating from a wrong model, with social exposure implications. The 5 framing (epistemic arrogance, data integrity, methodology preference) is present but functions as rationalization of anxiety rather than pure intellectual drive. The ongoing trust monitoring, checking with respected others under anxiety, compliance-with-unresolved-loop pattern — all strong 6 markers. Need disconfirmatory question to separate 5 from 6.",
+          "next_question_rationale": "Disconfirmatory question: Type 5 checks with others for data integrity (information completeness); Type 6 checks with others because the social consequences of being wrong matter. The person framed it as methodology but disclosed 'someone whose assessment of me matters' — that's the 6 tell. This question targets that exact split.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "persona",
+      "content": "I might have missed something important — the analysis has to hold.\n\nThough I'd push back slightly on the framing, because those two aren't as separable as the question implies — if the analysis doesn't hold, *that's* what gets held against you. From what I can tell, the anxiety is mostly methodological: incomplete models cause real downstream harm in policy contexts, and I'd rather catch the error than have it surface in a city council briefing. Whether there's some secondary concern about professional exposure... I mean, I'm not going to pretend that's entirely absent, but it's not what's running the process.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "system",
+      "content": "When there's no more data to gather — the problem is genuinely unresolvable from the outside — do you find peace in having mapped it as thoroughly as possible, or does the loop stay open regardless?\n\n- Peace in the mapping — thorough analysis is enough\n- The loop stays open — resolution requires certainty, not just coverage",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.04,
+            "5": 0.82,
+            "6": 0.58,
+            "7": 0.03,
+            "8": 0.06,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.18,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "model",
+                "analysis",
+                "variables",
+                "epistemic",
+                "data integrity",
+                "structural error",
+                "upstream"
+              ],
+              "context": "across multiple answers"
+            },
+            {
+              "type": 6,
+              "words": [
+                "held against you",
+                "pattern recognition",
+                "weaponize",
+                "blindsided",
+                "disconfirming evidence"
+              ],
+              "context": "trust and anxiety questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.58
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, guarded, self-reliant, builds trust slowly",
+          "what": "Analysis, preparation, models, competence",
+          "why": "Avoid exposure through incomplete models — structural error is the core fear",
+          "how": "Gather first, then engage; verify independently; reduce uncertainty range",
+          "when": "Delays action until model is sufficiently mapped",
+          "where": "Works best in solitude; finds groups draining unless contributing substantively"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Retreats into analysis to avoid exposure; keeps open tabs rather than acting; compliance with unease",
+          "respond_glimpsed": "Bringing genuinely useful analysis to group problems; checking others not for reassurance but for data integrity",
+          "superpower_signal": "Rigorous, precise thinking; catches errors others miss; builds models of exceptional depth",
+          "kryptonite_signal": "Perpetual verification loop; withdrawal as 'strategic patience'; reducing connection to data exchange",
+          "domain_signals": [
+            "policy work mentioned — city council briefing",
+            "colleague named Dana",
+            "professional exposure concern acknowledged but rationalized away"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "The methodology framing is doing a lot of work there.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When there's no more data to gather — the problem is genuinely unresolvable from the outside — do you find peace in having mapped it as thoroughly as possible, or does the unresolved loop stay open regardless?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Peace in the mapping — thorough analysis is enough",
+            "The loop stays open — resolution requires certainty, not just coverage"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 finds containment in having mapped the boundary; Type 6 keeps the loop open because the threat feels external and ongoing"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 5 confirmation: core fear is structural error, not scarcity. Secondary 6 signals (checking, ongoing trust monitoring, exposure concern) are present but rationalized as methodology. The 'city council briefing' grounds this in policy work. The professional exposure acknowledgment was immediately rationalized — classic 5 move. Confidence is 0.82, need one more sharp differentiator before closing. 5v6 gap: 5 contains uncertainty by mapping edges; 6 keeps uncertainty open because the threat persists externally.",
+          "next_question_rationale": "Final disconfirmatory — 5 vs 6. Type 5 finds a kind of containment in having mapped the problem space even if unresolved; Type 6 stays vigilant because the danger is external and doesn't close when the analysis is complete. This question directly targets that distinction.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "persona",
+      "content": "**The loop stays open — resolution requires certainty, not just coverage.**\n\nThough I'd push back slightly on the framing. It's not that the mapping is worthless — a thorough analysis genuinely narrows the uncertainty space, and that has value. But 'peace' isn't really the word I'd use for what I feel when I've done rigorous work on an unresolvable problem. It's more like... a provisional tolerance of ambiguity. The loop doesn't close, it just becomes a better-characterized loop. From what I can tell, that's probably not the same thing as being comfortable with it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "system",
+      "content": "When you're working on something that genuinely matters to you and a trusted colleague reaches a different conclusion — do you find yourself more interested in understanding their reasoning, or more suspicious that they've missed something you've already accounted for?\n\n- Interested in their reasoning — they might have variables I missed\n- Suspicious they've missed something — I've probably covered the ground",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.04,
+            "5": 0.82,
+            "6": 0.68,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Witness",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.15,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "model",
+                "variables",
+                "analysis",
+                "map the problem space",
+                "data integrity",
+                "epistemic",
+                "internally consistent",
+                "methodology"
+              ],
+              "context": "repeated across multiple responses"
+            },
+            {
+              "type": 6,
+              "words": [
+                "held against you",
+                "someone whose assessment of me matters",
+                "reliability isn't static",
+                "blindsided",
+                "disconfirming evidence"
+              ],
+              "context": "trust, loyalty, exposure anxiety"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.65
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "analytical, self-contained, guards access carefully, Dana named",
+          "what": "policy analysis context, city council briefings mentioned",
+          "why": "to prevent structural error, to maintain model integrity, to avoid being caught unprepared",
+          "how": "systematic verification, background monitoring, strategic patience before acting",
+          "when": "loops stay open until data resolves them, not arbitrary cutoffs",
+          "where": "professional and interpersonal contexts both named"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws to gather before engaging; keeps trust provisional; runs background verification process; won't act without sufficient data",
+          "respond_glimpsed": "Brings rigor as genuine contribution; checks with trusted others for data integrity not reassurance; distinguishes strategic patience from avoidance",
+          "superpower_signal": "Systematic analysis, model-building, identifying structural errors before they cascade",
+          "kryptonite_signal": "Loop stays open even when coverage is thorough; provisional tolerance vs actual peace; exposure fear drives as much as methodology",
+          "domain_signals": [
+            "policy",
+            "professional competence",
+            "interpersonal trust calibration"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "5v6_disconfirmatory",
+        "thinking_display": "The loop staying open matters more than the coverage. That's a telling distinction.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're working on something that genuinely matters to you and a trusted colleague reaches a different conclusion — do you find yourself more interested in understanding their reasoning, or more suspicious that they're missing something you've already accounted for?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Interested in their reasoning — they might have variables I missed",
+            "Suspicious they've missed something — I've probably covered the ground"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 leans toward confidence in own model; Type 6 leans toward genuine concern the other person sees something real"
+        },
+        "strategy": {
+          "what_was_learned": "Loop stays open even with thorough coverage — suggests anxiety is not purely methodological. SP variant signals strong. 5/6 differentiation critical: the 'exposure' fear is there but person consistently reframes it as methodology. Need to test whether doubt runs toward own analysis (5) or toward whether they've been seen accurately by others (6). Disconfirmatory question required before close.",
+          "next_question_rationale": "This is the disconfirmatory question for 5v6. Type 5 trusts their own model over others' conclusions; Type 6 genuinely worries the other person has caught something real. The answer will break the tie. Also sets up react/respond framing naturally.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "persona",
+      "content": "Interested in their reasoning — they might have variables I missed.\n\nThough I'd add some nuance there, because in practice it's not always a clean split. My first instinct is genuinely to ask what inputs they're working from — there's usually a methodological explanation for divergent conclusions, and that's worth understanding before assuming error on either side. That said, if I've spent significant time building out a model and someone reaches a conflicting result without being able to show their work clearly, I'd be lying if I said skepticism doesn't enter the picture.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 22,
+      "role": "system",
+      "content": "When you pull back from a decision because you need more data — is the pull coming from wanting to get the analysis right, or from not wanting to be responsible for what happens if you're wrong?\n\n- Get the analysis right — the work has to hold on its own terms\n- Not be responsible for the outcome — if the model fails, I don't want to own that",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.04,
+            "5": 0.82,
+            "6": 0.55,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5v6"
+          ],
+          "defiant_spirit_type_name": "The Sage",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.15,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "model",
+                "variables",
+                "analysis",
+                "epistemic",
+                "hypothesis",
+                "methodology",
+                "map the problem space"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "disconfirming evidence",
+                "reliability isn't static",
+                "held against you"
+              ],
+              "context": "trust and verification questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.6
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analytical, systems-oriented, policy context professional (city council reference), has a partner named Dana",
+          "what": "Model-building, information gathering, verification, narrowing uncertainty",
+          "why": "Fear of structural error in analysis, exposure of flawed model, being caught off guard",
+          "how": "Withdraw and observe, run sensitivity analysis, verify independently, keep trust ongoing",
+          "when": "Loop stays open until certainty not just coverage; provisional tolerance of ambiguity",
+          "where": "Professional analytical context; close relationships managed carefully"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Retreats to analysis when uncertain; withholds until pattern recognition establishes safety; keeps loops open; background verification process runs continuously",
+          "respond_glimpsed": "Genuine curiosity about others' reasoning; acknowledges Dana's pushback; admits blurriness in strategic patience vs waiting too long",
+          "superpower_signal": "Rigorous systems thinking, epistemic integrity, thorough model-building",
+          "kryptonite_signal": "Loop stays open even after thorough mapping; isolation masked as methodology; emotional presence reframed as solving",
+          "domain_signals": [
+            "professional/policy work",
+            "close personal relationship (Dana)",
+            "intellectual communities"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "The methodology is load-bearing — it's doing emotional work too.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you pull back from a decision because you need more data — is the pull coming from wanting to get the analysis right, or from not wanting to be responsible for what happens if you're wrong?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Get the analysis right — the work has to hold on its own terms",
+            "Not be responsible for the outcome — if the model fails, I don't want to own that"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 5 would answer analysis integrity; Type 6 would lean toward responsibility/blame avoidance. Checking where the fear actually lives."
+        },
+        "strategy": {
+          "what_was_learned": "Still strong 5 signals — model integrity, epistemic rigor, independent verification. But the 6 signals are meaningful: ongoing trust monitoring, checking with respected others when anxious, exposure fear, 'held against you' framing. The 'policy context / city council briefing' detail grounds it professionally. Need to probe whether the core fear is about the quality of thinking (5) or about what happens socially/professionally if it fails (6). This is the key disconfirmatory question. Also need body center probe and react/respond identification before closing.",
+          "next_question_rationale": "This is the hardest 5v6 differentiator: does the person care about analysis integrity for its own sake, or because error = blame/exposure? Type 5 fears the structural error itself. Type 6 fears the social consequence of being caught with a bad model. Their answer to 'I've built the wrong picture' was interesting — they named structural error but also noted professional exposure 'not entirely absent.' This question forces the distinction.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 22,
+      "role": "persona",
+      "content": "**Get the analysis right — the work has to hold on its own terms.**\n\nThough I'll be honest — that's probably not as clean a distinction as I just made it sound. From what I can tell, both things are operating, but the primary driver is methodological integrity. If a model is going to inform actual policy decisions — real displacement numbers, real people — then it has to be right, not just defensible. That said, I'm not naive enough to claim there's zero self-protective calculation in wanting to be thorough. I'd just push back on framing that as fear — it's more that I've seen what happens when analysts rush outputs to meet political timelines, and I'd rather be the person who said 'we need more data' than the one whose confidence interval is quietly laundering someone else's assumptions.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 23,
+      "role": "system",
+      "content": "When you're in a room where a decision is being pushed through — a meeting, a briefing, a vote — and you can feel the momentum going somewhere you think is wrong, what do you do with that?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.82,
+            "6": 0.55,
+            "7": 0.03,
+            "8": 0.06,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Observer",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.15,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "model",
+                "variables",
+                "analysis",
+                "map",
+                "methodology",
+                "inputs"
+              ],
+              "context": "throughout — consistent epistemic framing"
+            },
+            {
+              "type": 6,
+              "words": [
+                "exposed",
+                "held against me",
+                "reliable",
+                "weaponize",
+                "scrutiny",
+                "disconfirming evidence"
+              ],
+              "context": "trust and exposure questions"
+            },
+            {
+              "type": 5,
+              "words": [
+                "energy cost",
+                "smaller doses",
+                "pacing",
+                "calibrate"
+              ],
+              "context": "social energy management"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Policy analyst context strongly signaled; works with data that affects real people; references Dana (partner/close person); colleagues whose assessment matters",
+          "what": "Rigorous model-building, analysis, shrinking the gap between expected and actual",
+          "why": "Methodological integrity; not wanting to be caught off guard; preventing downstream harm from flawed models",
+          "how": "Gather before engaging; verify independently; sit with uncertainty until edges of not-knowing are mapped",
+          "when": "Delays action until sufficient analysis is complete",
+          "where": "Professional context most prominent; private/intimate context acknowledged but guarded"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Retreats into analysis when uncertain or exposed; loop stays open until certainty achieved; calibrates disclosure automatically without noticing",
+          "respond_glimpsed": "Genuine interest in others' reasoning when they can show their work; cares about downstream harm to real people; acknowledges own blind spots with some honesty",
+          "superpower_signal": "Ability to map problem space rigorously; holds uncertainty without collapsing; identifies where models break down",
+          "kryptonite_signal": "Loop never fully closes; provisional tolerance of ambiguity not actual peace; social calculus around perceived competence drives withdrawal",
+          "domain_signals": [
+            "professional/policy",
+            "intellectual rigor",
+            "interpersonal caution"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "body_probe_gut_reaction",
+        "thinking_display": "The policy context landed differently than the rest.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a room where a decision is being pushed through — a meeting, a briefing, a vote — and you can feel the momentum going somewhere you think is wrong, what do you do with that?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Body center probe — gut/instinct/action in real-time pressure; also surfaces anger type vs fear type distinction"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 5 signature: epistemic framing, energy conservation, withdrawal to gather, loop stays open. Type 6 secondary: exposure fear, checking with trusted others, disconfirming evidence scanning, ongoing trust monitoring. The 5 vs 6 differentiation is the key remaining task. The 'analysis has to hold on its own terms' answer + 'I've built the wrong picture' fear + 'loop stays open' all point strongly to 5. The social calibration/exposure concerns point to 6. Need body center probe AND to see how they handle real-time pressure where they can't gather first — this will differentiate 5 (withdrawal, observation) from 6 (compliance + internal doubt). Also need react/respond frame used explicitly once.",
+          "next_question_rationale": "Body center not yet probed. Scenario-based question about real-time pressure in a room where decision is wrong — this surfaces gut instinct vs analysis paralysis, whether they act or observe, and whether anger/push-back emerges (body) or anxiety/compliance (head). Critical for 5v6 differentiation and body center coverage.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 23,
+      "role": "persona",
+      "content": "Depends on what I mean by 'wrong,' which is actually the more interesting question. If it's factually wrong — if the model they're working from has bad inputs or they're extrapolating past a reasonable confidence interval — I'll say something, pretty directly. That's just... a correctable problem. But if it's more of a values disagreement, or a political calculation I don't have full visibility into, I'm more likely to hold back and gather more information before committing to a position.\n\nWhat I've noticed is that most of the momentum in those rooms isn't actually about the decision itself — it's about social signaling, who's aligned with whom, that kind of thing. So intervening in a way that just reads as obstruction doesn't actually change the outcome, it just costs you standing. From what I can tell, the more durable influence happens outside those rooms — in the framing, in what data surfaces beforehand.\n\nI'll admit there are times I've left a meeting knowing something was off and didn't say it cleanly enough. That's not always strategic patience, sometimes it's just... timing that doesn't come together.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 24,
+      "role": "system",
+      "content": "When that unresolved feeling is at its worst — the loop won't close, the data isn't coming — is the thing you're most protecting your understanding of the situation, or your position in relation to it?\n\n- My understanding — I need the picture to be right\n- My position — I need to know where I stand and what's coming",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.04,
+            "5": 0.82,
+            "6": 0.58,
+            "7": 0.03,
+            "8": 0.05,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Wise One",
+          "whole_type": "5",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.32,
+            "heart": 0.18,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "model",
+                "variables",
+                "methodology",
+                "analysis",
+                "data",
+                "map the problem space",
+                "confidence interval",
+                "inputs"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 6,
+              "words": [
+                "distrust",
+                "reliable",
+                "watching",
+                "pattern recognition",
+                "held against me",
+                "strategic patience",
+                "visibility"
+              ],
+              "context": "trust and exposure questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.35,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.38
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Analyst/policy professional, values rigor, maintains carefully managed inner circle",
+          "what": "Builds models, maps uncertainty, delivers analysis into policy contexts",
+          "why": "To have the picture right — not to be right, but because wrong models cause real downstream harm",
+          "how": "Verification, independent analysis, mapping problem space, strategic positioning outside decision rooms",
+          "when": "Pulls back when unprepared; acts when analysis is sufficiently developed",
+          "where": "Policy/analytical professional context, city council briefings mentioned"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws to gather data when uncertain; stays observing rather than engaging; loops on unresolved uncertainty; holds back in high-momentum rooms when stakes feel socially complex",
+          "respond_glimpsed": "Speaks directly when factually wrong; checks with trusted others as methodology not reassurance; recognizes gap between strategic patience and avoidance",
+          "superpower_signal": "Intellectual rigor, systemic thinking, ability to map complexity, durable influence through framing",
+          "kryptonite_signal": "Loop stays open without certainty; difficulty tolerating ambiguity; withholds in rooms when intervention is needed; pulls back from connection after the fact",
+          "domain_signals": [
+            "analytical rigor",
+            "professional competence",
+            "trust calibration",
+            "strategic withdrawal",
+            "policy context"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "The gap between strategic patience and avoidance — named without prompting.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When that unresolved feeling is at its worst — the loop won't close, the data isn't coming — is the thing you're most protecting your understanding of the situation, or your position in relation to it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "My understanding — I need the picture to be right",
+            "My position — I need to know where I stand and what's coming"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 5 fear centers on incompetence/emptiness (understanding); Type 6 fear centers on security/abandonment (position/what's coming). This question should differentiate."
+        },
+        "strategy": {
+          "what_was_learned": "Person self-corrects mid-answer (timing that doesn't come together — not strategic patience). Shows 5-6 tension clearly: epistemic rigor as primary motive, but social calculus, standing, and visibility as real secondary concerns. SP variant likely — policy context, resources of analysis and standing. Disconfirmatory question needed now. The 5v6 distinction is: 5 fears emptiness/incapacity; 6 fears being without support/exposed to threat. The exposure fear named earlier was 'wrong picture' not 'abandoned/unsupported.' But the ongoing trust-monitoring, checking with respected others, and concern about standing all have 6 texture. Need to test directly.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 24,
+      "role": "persona",
+      "content": "My understanding — I need the picture to be right.\n\nThough I'd push back slightly on the framing, because I'm not sure those are as separable as the question implies. From what I can tell, my discomfort in those moments is less about status anxiety and more about operating with incomplete information — which, if you think about it, is a legitimate problem when your actual job is to model systems that affect real people's housing stability. That said... I'll grant that 'needing the picture to be right' and 'needing to feel competent' probably overlap more than I'd instinctively claim they do.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 25,
+      "role": "system",
+      "content": "When anxiety spikes — genuinely spikes, not just low-grade uncertainty — what's the dominant experience: your own thinking becomes untrustworthy, or the people around you become harder to read and rely on?\n\n- My own thinking — I can't trust my own conclusions\n- The people around me — I lose confidence in who I can count on",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.04,
+            "5": 0.82,
+            "6": 0.55,
+            "7": 0.03,
+            "8": 0.07,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Observer",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.15,
+            "head": 0.88
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "model",
+                "variables",
+                "analysis",
+                "map",
+                "uncertainty",
+                "methodology",
+                "epistemic"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 6,
+              "words": [
+                "exposed",
+                "held against",
+                "watch for",
+                "ongoing trust",
+                "loop stays open"
+              ],
+              "context": "trust and exposure questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.35,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Policy analyst working in housing/displacement modeling, references Dana as close relationship",
+          "what": "Analytical, model-building, information-gathering before action",
+          "why": "Understanding as primary drive — needs the picture right, not just defensible",
+          "how": "Systematic reduction of uncertainty, strategic patience, background processing",
+          "when": "Waits until sufficient hypothesis formed before engaging",
+          "where": "More effective outside the room than in it"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdrawal to gather — pulls back when data is insufficient, loops on uncertainty, delays action until model is 'complete enough'",
+          "respond_glimpsed": "Brief moment of honesty about sometimes not speaking up cleanly — awareness that 'strategic patience' can be avoidance",
+          "superpower_signal": "Systematic analytical rigor that genuinely protects people (housing models, policy) — wisdom as gift",
+          "kryptonite_signal": "Loop that never fully closes — provisional tolerance of ambiguity that never becomes peace, withholding until the model is right while the moment passes",
+          "domain_signals": [
+            "policy/housing analyst",
+            "close relationship with Dana",
+            "values independence of judgment",
+            "aware of own blind spots but resists naming them directly"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 18,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_5v6",
+        "thinking_display": "The self-awareness is real. The resistance to naming it fully is also real.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When anxiety spikes — genuinely spikes, not just low-grade uncertainty — what's the dominant experience: your own thinking becomes untrustworthy, or the people around you become harder to read and rely on?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "My own thinking — I can't trust my own conclusions",
+            "The people around me — I lose confidence in who I can count on"
+          ],
+          "scale_range": null,
+          "context_note": "disconfirmatory 5v6: 5s distrust their own adequacy/analysis; 6s distrust external support and people"
+        },
+        "strategy": {
+          "what_was_learned": "Person grants the overlap between 'needing the picture right' and 'needing to feel competent' — this is a significant self-disclosure. Primary driver confirmed as epistemic/methodological (5), but the secondary 6 signal remains meaningful. The self-protective calculation is present but not primary. Need disconfirmatory to separate 5 from 6.",
+          "next_question_rationale": "This is the key 5v6 differentiator: 5s distrust their own analysis/resources when stressed; 6s distrust others and the external environment. Both types have anxiety loops, but the direction of distrust is different. This should push confidence above 0.85 for one type and significantly drop the other.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 25,
+      "role": "persona",
+      "content": "**The people around me — I lose confidence in who I can count on.**\n\nThough I'd qualify that slightly — it's less that I suddenly distrust specific people and more that the whole social infrastructure starts to feel... porous, I suppose. Like I become acutely aware of how much of what I assumed was reliable was actually just inference. My own thinking tends to stay operational under pressure — if anything it accelerates, which isn't always useful — but my read on what other people will actually do when it matters, that's where the ground gets uncertain.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

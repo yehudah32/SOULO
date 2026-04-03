@@ -1,0 +1,3155 @@
+{
+  "run_id": "eval-persona-7-SP-1775061605565-1775260153335",
+  "timestamp": "2026-04-03T23:49:13.335Z",
+  "tier": "tier1",
+  "persona_id": "persona-7-SP-1775061605565",
+  "ground_truth": {
+    "core_type": 7,
+    "wing": "7w6",
+    "instinctual_variant": "SP",
+    "tritype": [
+      7,
+      1,
+      4
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 55,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 7,
+    "final_wing": null,
+    "final_confidence": 0.88,
+    "types_considered": [
+      {
+        "type": 7,
+        "peak_confidence": 14,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 8,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 6,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 5,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 4,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 3,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 3,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 2,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 2,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 5,
+    "critical_violations": [],
+    "per_commandment": {},
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 21,
+    "exploratory": 21,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 21,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 7,
+        "confidence": 0.45
+      },
+      {
+        "exchange": 3,
+        "top_type": 7,
+        "confidence": 0.45
+      },
+      {
+        "exchange": 4,
+        "top_type": 7,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 5,
+        "top_type": 7,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 7,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 7,
+        "top_type": 7,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 8,
+        "top_type": 7,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 9,
+        "top_type": 7,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 10,
+        "top_type": 7,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 11,
+        "top_type": 7,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 12,
+        "top_type": 7,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 13,
+        "top_type": 7,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 14,
+        "top_type": 7,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 15,
+        "top_type": 7,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 16,
+        "top_type": 7,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 17,
+        "top_type": 7,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 18,
+        "top_type": 7,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 19,
+        "top_type": 7,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 20,
+        "top_type": 7,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 21,
+        "top_type": 7,
+        "confidence": 0.88
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Enforce the 1-5 scale constraint strictly when a numerical rating is requested. When the persona responded '6 out of 10' to a clearly bounded 1-5 scale question in exchange [3], the system accepted the out-of-bounds answer without flagging it, correcting it, or probing its meaning. Implement a validation layer that detects scale violations and re-anchors the respondent with a clarifying prompt before proceeding.",
+      "evidence": "Exchange [3]: System asked 'Rate it 1 to 5' and persona responded '6 out of 10' — a category error that was never addressed, producing uninterpretable data for that dimension.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not accept ambiguous or out-of-bounds responses as valid data points",
+      "estimated_impact": "Eliminates corrupted scale data; improves confidence calibration for urgency/intensity dimensions; prevents downstream scoring errors on similar numeric items."
+    },
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Introduce at least two subtype-differentiating questions that probe SP 7 versus SO 7 versus SX 7 behavioral signatures before the assessment closes. The current transcript relied entirely on core type detection with no question designed to surface the self-preservation flavor — e.g., asking about resource security, practical planning for the future, or the relationship between adventure and safety/stability — which explains the subtype_accuracy score of 7.5/10.",
+      "evidence": "Exchanges [1] through [20] contain zero questions targeting instinctual variant. SP 7's characteristic focus on practical security, worst-case planning, and converting anxiety into future-proofing strategies was never probed. The Patagonia reference in exchange [20] and resource-adjacent language throughout were unused differentiators.",
+      "source_level": "L2",
+      "commandment_alignment": "Pursue precision — do not conflate core type accuracy with full-spectrum accuracy",
+      "estimated_impact": "Expected subtype_accuracy improvement from 7.5 to 9.0+; reduces mistyping risk between SP and SO 7 subtypes in future assessments."
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Replace or supplement binary forced-choice questions with follow-up probes when the persona self-corrects mid-answer, because the most diagnostically rich material is appearing in the hedges and retractions rather than in the binary selection. When the persona selects an option but then qualifies it substantially, the system should reflect the contradiction back as a direct question rather than accepting the initial selection at face value.",
+      "evidence": "Exchange [5]: Persona selected 'moving toward something exciting' but then volunteered 'the exciting part and the trap part might be happening at the same time more often than I'd like to admit' — this self-correction was more diagnostically valuable than the forced-choice answer and was never followed up. Exchange [7]: Persona said 'That's the first time I've actually said that out loud' — a high-signal moment that received no direct probe.",
+      "source_level": "L1",
+      "commandment_alignment": "Follow the energy — probe where the persona breaks their own frame",
+      "estimated_impact": "Increases question_quality score from 5/10 toward 8/10; surfaces repressed material that binary questions structurally suppress; improves convergent validity on avoidance vs. approach motivation."
+    },
+    {
+      "priority": "high",
+      "category": "commandment_fidelity",
+      "action": "Restructure the closing synthesis in exchange [21] to avoid delivering a fully formed psychological interpretation before the persona has confirmed, challenged, or engaged with it. The current design presents the pattern analysis as a conclusion rather than as a hypothesis to be tested, which forecloses the persona's agency and risks confirmation bias contaminating any post-session reflection. Rewrite the closing as a reflective question or a two-part offer: 'Here is what I'm noticing — does this land, or does something feel off?'",
+      "evidence": "Exchange [21]: The system states 'The pattern moves toward experience and away from being fully landed in it' and 'the survival strategy has been approximating it from a safe distance' as declarative conclusions, with no invitation for the persona to respond, push back, or nuance — the transcript simply ends after the system's monologue.",
+      "source_level": "L1",
+      "commandment_alignment": "The assessment serves the person, not the pattern — never impose a conclusion the person cannot contest",
+      "estimated_impact": "Improves commandment_fidelity score from 5/10; reduces risk of iatrogenic harm from misapplied interpretation; models epistemic humility that increases trust and long-term engagement."
+    },
+    {
+      "priority": "medium",
+      "category": "confidence_calibration",
+      "action": "Build a mid-session confidence checkpoint into the algorithm that flags when convergent signals are strong enough to reduce redundant questioning. Exchanges [8], [9], [12], [13], [16], [17], [18] all probe essentially the same dimension — breadth-vs-depth preference and future-vs-present orientation — yielding diminishing diagnostic returns. The system should track dimension saturation and redirect to under-explored dimensions (e.g., subtype, wing, relational patterns) once a core type signal exceeds a confidence threshold.",
+      "evidence": "Exchanges [8] through [18] contain seven consecutive questions that all confirm the same Type 7 breadth-over-depth pattern already established by exchanges [4] and [5]. No new type-differentiating information was gained after exchange [9], yet the session continued on the same axis for eight more turns.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not over-confirm what is already known at the cost of what remains unknown",
+      "estimated_impact": "Reduces assessment length without sacrificing accuracy; frees question budget for subtype and wing differentiation; improves question_quality score by increasing the proportion of high-yield questions per session."
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "Welcome. This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so the more honest you are, the sharper it gets.\n\nWhen things in your life go wrong — a plan falls apart, a relationship cracks, something important fails — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "open_01",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When things in your life go wrong — a plan falls apart, a relationship cracks, something important fails — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Nothing yet — first substantive exchange.",
+          "next_question_rationale": "Open motivational question targeting the instinctive response to adversity. Will surface dominant center (body=anger/action, heart=shame/other-focus, head=fear/scanning) and give initial type signals before any narrowing.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "Honestly, the first thing that happens is — my brain just kind of immediately starts problem-solving, you know what I mean? Like, okay, this didn't work, so what's the next angle, what's the pivot. I'm not really a sit-in-it kind of person. \n\nI think some people would call that resilience — I'd call it practical. There's always another route, another way to approach something, so dwelling on the wreckage feels like a waste of energy when you could be mapping the detour.\n\n*pauses briefly*\n\nI mean, I won't pretend there's not a little bit of — I don't know, a low hum of something in the background when things go sideways. But it's not like I'm spiraling. I just... move toward what's next. That's kind of always been my mode.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you're in that problem-solving mode and someone around you is still sitting in the wreckage — upset, not ready to pivot — what do you do with them?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.45,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.15,
+            "4": 0.05,
+            "5": 0.1,
+            "6": 0.1,
+            "7": 0.35,
+            "8": 0.1,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "7",
+            "3",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "next angle",
+                "pivot",
+                "detour",
+                "mapping",
+                "what's next"
+              ],
+              "context": "response to things going wrong"
+            },
+            {
+              "type": 7,
+              "words": [
+                "dwelling on the wreckage feels like a waste of energy"
+              ],
+              "context": "avoidance of pain/sitting with difficult feelings"
+            },
+            {
+              "type": 3,
+              "words": [
+                "practical",
+                "resilience"
+              ],
+              "context": "self-framing when describing reaction pattern"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.2,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "practical, forward-moving, problem-solver",
+          "what": "pivoting quickly when things fail",
+          "why": "unknown — need to probe",
+          "how": "reframe + find next route",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "immediate pivot to problem-solving; avoids sitting in pain or loss",
+          "respond_glimpsed": "acknowledged 'low hum' — some self-awareness of what's underneath",
+          "superpower_signal": "reframing, resilience, forward momentum",
+          "kryptonite_signal": "avoidance of difficult emotions, labeling it 'practical' may be rationalization",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The low hum got named — then moved past quickly.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in that problem-solving mode and someone around you is still sitting in the wreckage — upset, not ready to pivot — what do you do with them?",
+          "question_format": "behavioral_anchor",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing how they handle others' emotional processing vs their own forward momentum — tests 7 vs 3 vs 8 differentiation on interpersonal behavior"
+        },
+        "strategy": {
+          "what_was_learned": "Strong forward-momentum orientation; labels avoidance as practicality; head center confirmed; Type 7 signals dominant (reframing pain, mapping detours, 'what's next'); Type 3 possible (practical framing, resilience as identity); acknowledged emotional undercurrent but moved past it quickly",
+          "next_question_rationale": "Probe interpersonal behavior when others are in distress — will reveal whether the forward-pivot is about efficiency (7), results (3), or control (8), and whether they have patience for others' emotional process",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "Honestly, I try to be useful — like, okay, here's what we can do, here's the next move, let's not just sit in it. *[laughs slightly]* Some people need a minute and I get that, I do, but I'm probably the guy who's already got the whiteboard out when they're still processing. Diane would tell you I'm not always great at just... being in the moment with someone when it's messy. I'd say I'm practical. She'd say something else, probably. But look, everyone's different — some people need to vent and some people need a plan, and I'm just better at providing one of those things.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you hit a wall — something genuinely stuck, no obvious next move — how long does it take before the discomfort of not having a solution starts to feel intolerable?\n\nRate it 1 to 5, where 1 is \"barely notice it\" and 5 is \"becomes urgent pretty fast.\"",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.45,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.08,
+            "3": 0.15,
+            "4": 0.02,
+            "5": 0.1,
+            "6": 0.08,
+            "7": 0.35,
+            "8": 0.1,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "7",
+            "3",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "next angle",
+                "pivot",
+                "another route",
+                "what's next",
+                "mapping the detour",
+                "already got the whiteboard out"
+              ],
+              "context": "describing response to failure and supporting others in distress"
+            },
+            {
+              "type": 3,
+              "words": [
+                "practical",
+                "useful",
+                "provide"
+              ],
+              "context": "self-description when challenged"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.25,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Practical, future-oriented, problem-solver. Reluctant to sit in emotion.",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate pivot to solutions when things go wrong — moves away from pain toward action",
+          "respond_glimpsed": "",
+          "superpower_signal": "Reframing, resilience, forward momentum",
+          "kryptonite_signal": "Difficulty staying present with others in distress; self-aware about it but deflects with humor",
+          "domain_signals": [
+            "relationship mentioned (Diane)",
+            "self-deprecating humor as distancing move"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The self-awareness is real — and it stops at the edge.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you hit a wall — something genuinely stuck, no obvious next move — how long does it take before the discomfort of not having a solution starts to feel intolerable?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = barely notice it, 5 = becomes urgent fast"
+        },
+        "strategy": {
+          "what_was_learned": "Strong head center activation. Rapid pivot to planning under stress. Genuine self-awareness about emotional limitation but deflects with humor and 'everyone's different' framing. Diane reference signals relationship friction around this exact pattern. 7 leading over 3 because the energy is about options/movement, not achievement/image.",
+          "next_question_rationale": "Need to probe the underside of the pivot pattern — does the urgency to solve come from genuine optimism (7) or from performance/achievement drive (3) or from a need to be competent/control (8/5). A scale question on tolerance for being stuck will differentiate.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "**6 out of 10**\n\nHonestly, I don't know if \"intolerable\" is the right word for it — it's more like... the gears start turning pretty fast, you know? I'm a planner by nature, so when something's stuck I'm already mentally sketching out angles before it even fully registers as a problem. Which, I'd argue, is just being proactive — not everyone's wired that way and that's fine, but in my experience sitting still on a problem doesn't make it smaller.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you commit to something — a project, a direction, a relationship — and it starts feeling limiting or like it's closing off other options, what happens to your energy around it?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.15,
+            "4": 0.02,
+            "5": 0.08,
+            "6": 0.08,
+            "7": 0.35,
+            "8": 0.12,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "7v3",
+            "7v8"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.15,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "next angle",
+                "pivot",
+                "detour",
+                "mapping",
+                "proactive",
+                "sketching out angles"
+              ],
+              "context": "describing response to failure and stuck situations"
+            },
+            {
+              "type": 3,
+              "words": [
+                "practical",
+                "resilience",
+                "useful",
+                "proactive"
+              ],
+              "context": "self-description across multiple answers"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.2,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "practical, solution-focused, planner",
+          "what": "pivots fast, whiteboard guy, proactive",
+          "why": "unclear — avoidance of discomfort or genuine optimism?",
+          "how": "problem-solving, reframing, detour-mapping",
+          "when": "immediately when things go wrong",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "jumps to solutions before others have processed — keeps moving to avoid sitting in discomfort",
+          "respond_glimpsed": "mentions 'I get that' re: people needing time — awareness exists",
+          "superpower_signal": "reframing, optimism, speed of pivot",
+          "kryptonite_signal": "can't be in the mess with someone — Diane signal is significant",
+          "domain_signals": [
+            "relationship (Diane mention)",
+            "planning/work"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Already reframing before the problem fully lands.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you commit to something — a project, a direction, a relationship — and it starts feeling limiting or like it's closing off other options, what happens to your energy around it?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Testing 7 core fear of limitation vs 3 achievement focus. If 7: energy drops, seeks exits or reframes. If 3: pushes through for the win regardless."
+        },
+        "strategy": {
+          "what_was_learned": "Strong head center. Avoids sitting in discomfort by moving to solutions immediately. Self-rated 6/10 but then described something closer to 8/10 behavior. Gap between self-perception and description is notable. Diane mention suggests relational cost to the pattern. 7 leading strongly but 3 possible — need to probe whether the drive is about avoiding limitation (7) or achieving outcomes/image (3).",
+          "next_question_rationale": "Probe commitment vs optionality — core 7 fear is entrapment/limitation. A 3 would push through a limiting commitment for the result. A 7 would find ways to reframe or expand the options. This will differentiate.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "Honestly, that's a real thing — yeah, I notice that. It's like... the initial charge kind of plateaus, and I start getting more interested in what's adjacent to the thing than the thing itself. *laughs* Which sounds worse out loud than it does in my head. I'd frame it more as — I'm someone who's genuinely good at the early stages, the vision, getting something off the ground, and then I think I naturally start scanning for where the next growth edge is. It's not that I'm bailing, it's more like I'm optimizing. Does that make sense?",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you're pivoting to the next thing — scanning for the next angle — which is more true: you're moving toward something exciting, or you're moving away from something that's starting to feel like a trap?\n\n- Moving toward something exciting\n- Moving away from something that feels like a trap",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 2,
+            "2": 3,
+            "3": 8,
+            "4": 2,
+            "5": 5,
+            "6": 4,
+            "7": 14,
+            "8": 6,
+            "9": 3
+          },
+          "needs_differentiation": [
+            "7v3",
+            "7v8"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.65,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.4,
+            "head": 0.7
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "next angle",
+                "pivot",
+                "mapping the detour",
+                "next move",
+                "optimizing",
+                "scanning",
+                "next growth edge",
+                "vision",
+                "early stages",
+                "adjacent"
+              ],
+              "context": "multiple responses — avoidance of limitation, reframing staying with discomfort as practicality, energy drop when things feel closing"
+            },
+            {
+              "type": 3,
+              "words": [
+                "practical",
+                "useful",
+                "proactive",
+                "planner"
+              ],
+              "context": "self-description language"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.3,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.5
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "planner, practical, vision-oriented, early-stage energy",
+          "what": "problem-solving, pivoting, building plans, scanning for next edge",
+          "why": "unclear — need to probe: avoiding limitation/pain vs achieving something",
+          "how": "reframing, optimizing, whiteboard thinking",
+          "when": "activates immediately when things go wrong",
+          "where": "relationships, work — mentioned Diane, projects"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "automatic pivot to problem-solving, premature optimization, discomfort with sitting in limitation or others' processing",
+          "respond_glimpsed": "acknowledged the 'low hum' briefly — some awareness of what's underneath the movement",
+          "superpower_signal": "vision, early-stage energy, seeing angles, optimism about next moves",
+          "kryptonite_signal": "energy drops with commitment and limitation; not present with others in pain; reframes avoidance as optimization",
+          "domain_signals": [
+            "relationships (Diane)",
+            "work/projects"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Energy toward what's next — but away from what's here.",
+        "strategy": {
+          "what_was_learned": "Strong 7 signal: avoids limitation, reframes commitment-drop as optimization, scanning for next growth edge, early-stage energy person. 3 also present in self-description (practical, planner, useful). Need to differentiate 7v3 — key distinction is whether the drive is about achievement/image (3) or avoiding limitation/pain through stimulation (7). Need to probe heart center and motivation behind the pivot behavior. Also want to surface whether 'the low hum' he acknowledged is anxiety (head) or something else.",
+          "next_question_rationale": "Probe the WHY behind the pivot behavior — is it fundamentally about avoiding something uncomfortable, or about achieving/winning? This is the 7v3 differentiator. Frame as a forced_choice between two motivational framings. This also begins to probe heart center by touching on what matters to him about how others see his movement vs what's driving it internally.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "*laughs a little, shifts in chair*\n\nHonestly? Moving toward something exciting — that's the honest answer, that's how it genuinely feels in the moment. When I was looking at moving into outdoor equipment, I could see the whole picture, the growth angle, the lifestyle alignment, it wasn't like I was running from anything, it was a legitimate opportunity.\n\nBut... I'll give you this much — I think the \"exciting\" part and the \"trap\" part might be happening at the same time more often than I'd like to admit. Like, the new thing starts glowing a little brighter right around when the current thing starts feeling like it's got a ceiling, or gets... I don't know, complicated. So maybe the excitement is real, but it's also doing some work I don't always examine too closely.\n\n*pauses, then deflects just slightly*\n\nI mean, who wants to sit in something that's plateaued when there's a legitimate next move available, right? That's not avoidance, that's just — that's being opportunistic in a healthy sense.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When you pull off something significant — the vision lands, the plan works — what matters more to you in that moment: the fact that you did it, or that the people around you know you did it?\n\n- That I did it — the accomplishment itself\n- That the people around me know I did it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.04,
+            "3": 0.14,
+            "4": 0.03,
+            "5": 0.05,
+            "6": 0.04,
+            "7": 0.42,
+            "8": 0.1,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Optimistic Visionary",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.3,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "next angle",
+                "pivot",
+                "next move",
+                "scanning",
+                "adjacent",
+                "vision",
+                "growth edge",
+                "next growth edge",
+                "exciting",
+                "opportunistic",
+                "proactive",
+                "ceiling",
+                "plateaued"
+              ],
+              "context": "consistent across all responses"
+            },
+            {
+              "type": 3,
+              "words": [
+                "optimizing",
+                "practical",
+                "legitimate opportunity",
+                "lifestyle alignment"
+              ],
+              "context": "rationalizing pivots and movement"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.2,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Self-described practical problem-solver, planner, visionary; references Diane (partner?) as external view",
+          "what": "Pivoting, planning, scanning for next opportunity, whiteboard thinking",
+          "why": "Unclear - possibly avoiding limitation/constriction vs genuine forward drive",
+          "how": "Mental mapping, reframing, action-orientation",
+          "when": "Activates fast under stuckness; energy drops under commitment/limitation",
+          "where": "Professional context (outdoor equipment business?)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Moves away from pain/limitation by generating new options and reframing as opportunity; intellectualizes avoidance",
+          "respond_glimpsed": "Partial self-awareness at end of exchange 4 - 'maybe the excitement is real, but it's also doing some work I don't always examine too closely'",
+          "superpower_signal": "Vision, early-stage energy, optimism, reframing",
+          "kryptonite_signal": "Avoidance of limitation/commitment, rationalization of exits as 'optimizing'",
+          "domain_signals": [
+            "professional",
+            "relational (Diane mention)"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_7v3_heart",
+        "thinking_display": "Caught himself mid-rationalization and kept going anyway.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you pull off something significant — the vision lands, the plan works — what matters more to you in that moment: the fact that you did it, or that the people around you know you did it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That I did it — the accomplishment itself",
+            "That the people around me know I did it"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question for 7v3 differentiation — 7s care about the experience/doing, 3s care about recognition/image"
+        },
+        "strategy": {
+          "what_was_learned": "Person shows strong 7 pattern: avoidance of limitation rationalized as optimization, excitement as dual-function (toward AND away), self-awareness emerging at edges. 3 remains possible but recognition/image hasn't surfaced. Need to probe heart center and specifically image/recognition vs experience. Also partial self-awareness glimpsed - good candidate for react/respond probe.",
+          "next_question_rationale": "This is my disconfirmatory question for 7v3 differentiation. 7s are driven by experience and the internal charge of it; 3s by achievement recognition and how they appear. The question directly separates these motivations. Also moves to heart center. Sets disconfirmatory_asked to true.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "That I did it — the accomplishment itself.\n\nHonestly, the internal hit is what I'm after — that moment when the thing you mapped out actually clicks into place, you know? The external recognition is nice, don't get me wrong, but I'm not really sitting around waiting for someone to hand me a trophy. The doing it is the point.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "The reframe came faster than the admission.\n\nThink of the last time something in your life was genuinely painful — not a problem to solve, just something that hurt. How long could you actually sit with it before you started moving toward something else?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.18,
+            "4": 0.02,
+            "5": 0.08,
+            "6": 0.05,
+            "7": 0.72,
+            "8": 0.1,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.65,
+          "whole_type_signals": {
+            "body": 0.18,
+            "heart": 0.22,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "next angle",
+                "pivot",
+                "next move",
+                "adjacent",
+                "scanning",
+                "next growth edge",
+                "opportunistic"
+              ],
+              "context": "multiple responses about moving forward and avoiding limitation"
+            },
+            {
+              "type": 3,
+              "words": [
+                "practical",
+                "proactive",
+                "optimizing",
+                "legitimate opportunity"
+              ],
+              "context": "reframing avoidance as strategy"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "planner, problem-solver, optimistic, self-aware but deflects",
+          "what": "moves fast, early-stage energy, avoids limitation",
+          "why": "unclear — needs probing. excitement or escape?",
+          "how": "reframing, pivoting, whiteboard mode",
+          "when": "when things feel stuck or plateaued",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "immediate pivot to next angle when things feel stuck or limiting — avoidance reframed as strategy",
+          "respond_glimpsed": "partial — acknowledged the simultaneous excitement/trap dynamic honestly",
+          "superpower_signal": "visionary early-stage energy, genuine optimism, ability to see multiple paths",
+          "kryptonite_signal": "limitation aversion, avoidance reframed as opportunism, low tolerance for stuck states",
+          "domain_signals": [
+            "business/entrepreneurship",
+            "relationship friction around emotional presence (Diane reference)",
+            "outdoor equipment mentioned"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "7v3_disconfirmatory_internal_vs_external",
+        "thinking_display": "The reframe came faster than the admission.",
+        "strategy": {
+          "what_was_learned": "Claims internal accomplishment matters more than external recognition — this is the key 7v3 differentiator. Answer favors 7 (experience-focused vs image-focused), but delivered with some confidence that could be aspirational. Also notable: didn't hesitate on this one, no deflection. Score 7 higher, 3 lower. Still need to probe body center and run a disconfirmatory question. The Diane reference is rich — emotional unavailability signal, potential kryptonite. React/respond not yet named explicitly.",
+          "next_question_rationale": "Body center not probed. Also need disconfirmatory question — 7v3 key differentiator is: does the accomplishment need an audience? Got a clear answer there favoring 7. Now run a question that tests 7 directly against the core fear: does limitation/pain get avoided, or can they stay in it? This is a disconfirmatory test — if they can stay in pain, weakens 7 hypothesis. Use behavioral_anchor format (rotation: last was forced_choice). Also connects to react/respond.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "*laughs a little, then pauses*\n\nHonestly, that's a loaded question. I mean — I'd say I'm pretty good at processing things. I don't just bury stuff.\n\nBut if I'm being... yeah, okay. There was a thing last spring. My youngest — she got a promotion out in Seattle and I found out about it from Diane, not from her directly. And that... that stung. More than I expected it to.\n\nI think I sat with it for maybe a day? Maybe less. And then I was already looking at flights, thinking \"well, this is a good reason to finally do that Pacific Northwest trip I've been meaning to plan, check out some of the gear she'd need for hiking out there, make it a thing.\"\n\n*slight pause*\n\nWhich is — I mean, that's not nothing, right? That's me trying to connect. But I can hear how it sounds.\n\nI guess the honest answer is: not very long. Not as long as it probably deserved. There's always something to pivot toward if you're looking for it, and I am usually looking for it pretty fast.\n\n*beats*\n\nThat's the first time I've actually said that out loud, which is maybe its own answer to your question.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you imagine a version of your life where you committed fully to fewer things — went deep instead of wide, stayed even when it plateaued — does that feel like growth, or does it feel like loss?\n\n- Growth — depth is what I actually want\n- Loss — something important would be gone",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.04,
+            "3": 0.12,
+            "4": 0.03,
+            "5": 0.05,
+            "6": 0.04,
+            "7": 0.78,
+            "8": 0.07,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.75,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.22,
+            "head": 0.63
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "next angle",
+                "pivot",
+                "planning",
+                "proactive",
+                "what's next",
+                "adjacent",
+                "optimize",
+                "growth edge",
+                "opportunity"
+              ],
+              "context": "describing response to problems and commitment"
+            },
+            {
+              "type": 3,
+              "words": [
+                "accomplished",
+                "pull off something significant",
+                "the doing it is the point"
+              ],
+              "context": "when asked about accomplishment vs recognition"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Planner, visionary, early-stage builder, practical",
+          "what": "Problem-solving, pivoting, finding next angle",
+          "why": "Avoid pain/limitation, chase excitement — possibly same force",
+          "how": "Reframing, action-orientation, forward movement",
+          "when": "Fastest under ambiguity and stuckness",
+          "where": "Work projects, family relationships (Seattle/Diane signals)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pain → immediate pivot to planning/action. Converts emotional discomfort into logistical movement.",
+          "respond_glimpsed": "First self-aware moment: 'That's the first time I've actually said that out loud.' Glimpse of staying.",
+          "superpower_signal": "Visionary energy, genuine optimism, ability to see multiple paths forward",
+          "kryptonite_signal": "Avoidance dressed as optimism — pain gets converted to plans before it can be felt",
+          "domain_signals": [
+            "work/career",
+            "family",
+            "partnership (Diane)"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 6,
+          "current_stage": 4,
+          "last_question_format": "behavioral_anchor",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "The self-awareness landed — but notice where it went immediately after.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a version of your life where you committed fully to fewer things — went deep instead of wide, stayed even when it plateaued — does that feel like growth, or does it feel like loss?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Growth — depth is what I actually want",
+            "Loss — something important would be gone"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 7 would feel loss; 3 would be more neutral or reframe as strategic focus"
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed 7 core pattern: pain-to-pivot is automatic, not chosen. First genuine self-awareness moment surfaced unprompted — 'that's the first time I've said that out loud.' SP variant signals strong (converting emotional pain to logistics/plans). 7v3 differentiation still needed — accomplishment answer leaned 7 but 3 also plausible. Need disconfirmatory question now.",
+          "next_question_rationale": "Disconfirmatory for 7v3: depth vs width framing. Type 7 would feel the question as threatening (loss of options/freedom). Type 3 would more likely reframe as strategic — depth is just efficient achievement. This is the clearest differentiating question between these two.",
+          "question_format_last_used": "behavioral_anchor"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "**Loss — something important would be gone.**\n\nHonestly, I know that's probably not the 'right' answer, but... yeah. I think about going all-in on one thing for twenty years and something in me just kind of contracts, you know what I mean? Like, I've learned legitimately useful things from every chapter — every industry, every hobby, every pivot. That's not nothing. I guess I'd push back on the framing a little, because 'staying when it plateaus' sounds virtuous but sometimes a plateau is just... the thing telling you it's done. I'm not sure depth and breadth are as opposed as this question implies.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you pull something off — the pivot worked, the plan clicked — are you most satisfied looking back at what you built, or are you already three steps ahead planning the next thing?\n\n- Looking back at what I built\n- Already three steps ahead on what's next",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.02,
+            "2": 0.03,
+            "3": 0.15,
+            "4": 0.02,
+            "5": 0.05,
+            "6": 0.05,
+            "7": 0.82,
+            "8": 0.08,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Optimist / The Adventurer",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.25,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next angle",
+                "next move",
+                "scanning",
+                "adjacent",
+                "off the ground",
+                "optimizing",
+                "exciting",
+                "opportunistic",
+                "growth edge"
+              ],
+              "context": "recurring across multiple responses"
+            },
+            {
+              "type": 3,
+              "words": [
+                "legitimate",
+                "useful",
+                "accomplished"
+              ],
+              "context": "defending accomplishments and reframing"
+            },
+            {
+              "type": 7,
+              "words": [
+                "contracts",
+                "loss",
+                "something important would be gone"
+              ],
+              "context": "when asked about commitment and depth"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Practical, forward-moving planner; self-aware but deflects pain quickly",
+          "what": "Problem-solving, pivoting, optimizing, scanning for next growth edge",
+          "why": "Avoidance of limitation and pain masked as opportunity-seeking",
+          "how": "Reframing, rationalizing, whiteboard-mode before others have processed",
+          "when": "Activates immediately when something feels stuck or plateaued",
+          "where": "Work, relationships, personal growth — breadth across all domains"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediately pivots toward the next thing when pain or limitation appears — 'there's always another route' is the automatic override",
+          "respond_glimpsed": "Acknowledged that the Seattle/daughter moment 'deserved more time' — brief window of chosen presence vs. automatic pivot",
+          "superpower_signal": "Vision, enthusiasm, early-stage energy, pattern recognition across disparate domains",
+          "kryptonite_signal": "Limitation feels like a trap; depth feels like loss; pain gets converted into a plan before it's fully felt",
+          "domain_signals": [
+            "relationships (Diane, daughter)",
+            "work (outdoor equipment pivot)",
+            "personal identity (breadth as virtue)"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "He heard the question as a challenge to defend.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're the one who pulled something off — the pivot worked, the plan clicked — are you most satisfied when you can look back and see what you built, or when you're already three steps ahead planning the next thing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Looking back at what I built",
+            "Already three steps ahead on what's next"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 3 would anchor in the accomplishment; Type 7 would already be moving forward. This should separate them cleanly."
+        },
+        "strategy": {
+          "what_was_learned": "Loss answer on depth vs. breadth is strong Type 7 signal — the contraction feeling at the idea of going all-in is textbook 7 avoidance of limitation. His defense of breadth as virtue is rationalization. Still need to probe body center and run disconfirmatory 7v3 question. Wing lean appears to be 8 (right) based on confidence, directness, slight combativeness in defending his framing.",
+          "next_question_rationale": "Disconfirmatory question: Type 3 derives satisfaction from the accomplishment itself (it confirms worth/image); Type 7 is already gone, onto the next thing. This is the clearest behavioral split between these two types and has not been asked yet. Sets up closing criteria.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "Already three steps ahead on what's next.\n\nHonestly, the looking-back part is great for about — I don't know, maybe a day? You do the debrief, you appreciate it, sure. But the energy's already moved, you know what I mean? I think that's just how my brain is wired — the momentum of figuring out what comes next is legitimately where I feel most alive. Looking backward starts to feel like you're slowing down.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "That sounds like it might be the automatic version — the thing that runs before you choose.\n\nWhen you're performing at your best — the pivot worked, people notice, things are clicking — is the feeling more about the rush of the experience itself, or about knowing you pulled it off?\n\n- The rush of the experience itself — being in it\n- Knowing I pulled it off — the proof that I could",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.18,
+            "4": 0.02,
+            "5": 0.05,
+            "6": 0.04,
+            "7": 0.82,
+            "8": 0.1,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.2,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next move",
+                "next angle",
+                "scanning",
+                "momentum",
+                "feels most alive",
+                "exciting",
+                "growth edge"
+              ],
+              "context": "throughout — describing how they respond to problems, plateaus, and accomplishment"
+            },
+            {
+              "type": 3,
+              "words": [
+                "accomplishment itself",
+                "practical",
+                "resilience",
+                "legitimate opportunity"
+              ],
+              "context": "achievement framing, though quickly deflected to internal vs external"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Man mid-life, likely 50s, married (Diane), has adult daughter in Seattle, involved in outdoor equipment industry",
+          "what": "Serial entrepreneur/pivoting professional — strong early-stage energy, breadth over depth",
+          "why": "Needs to stay in motion — stillness feels like loss, plateau feels like trap",
+          "how": "Problem-solving, whiteboard thinking, planning, reframing pain into action",
+          "when": "Energy peaks at launch/early stages; drops at plateau/commitment",
+          "where": "Professional pivots, gear/outdoor space, family relationships at a distance"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Converts pain and limitation into planning/action — Seattle daughter moment showed this clearly; moves fast, frames pivot as opportunity",
+          "respond_glimpsed": "The moment he said 'that's the first time I've said that out loud' — brief self-awareness before moving on",
+          "superpower_signal": "Genuine vision, infectious optimism, early-stage energy — sees the whole picture fast",
+          "kryptonite_signal": "Avoidance through forward momentum — doesn't sit with pain long enough; depth feels like loss not growth",
+          "domain_signals": [
+            "professional",
+            "family",
+            "emotional processing"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "The momentum toward what's next — that's not excitement about the future. That's relief from the present.",
+        "response_parts": {
+          "guide_text": "That sounds like it might be the automatic version — the thing that runs before you choose.",
+          "question_text": "When you're performing at your best — the pivot worked, people notice, things are clicking — is the feeling more about the rush of the experience itself, or about knowing you pulled it off?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The rush of the experience itself — being in it",
+            "Knowing I pulled it off — the proof that I could"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 7 will choose experience/being in it; 3 will choose proof of accomplishment. This is the key differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "He confirmed 7 core pattern: three steps ahead, can't look back, momentum is where he feels most alive. 7v3 differentiation still needed — he earlier said 'internal hit' which could be 3 (proving something) or 7 (the experience itself). Need to separate these cleanly. Also need: body center probe, disconfirmatory question, react/respond moment.",
+          "next_question_rationale": "This is the disconfirmatory question. 7 is driven by experience, stimulation, freedom of movement — the rush IS the point. 3 is driven by achievement, proof, accomplishment — the knowing you did it is the point. His earlier answer ('internal hit') was ambiguous. This forces the separation.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**Knowing I pulled it off — the proof that I could**\n\nHonestly, the experience is great, but the part that sticks is when you look back and go — yeah, I called that right. The rush fades pretty quick, you know what I mean? It's the — I don't know — the *confirmation* part that I find myself replaying. That I read the room, made the move, and it landed. That part I'll carry around for a while.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When something you've built — or decided — turns out to be wrong, what's harder: admitting it to yourself, or admitting it to the people who watched you commit to it?\n\n- Admitting it to myself\n- Admitting it to the people who watched me commit to it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.03,
+            "3": 0.18,
+            "4": 0.03,
+            "5": 0.05,
+            "6": 0.05,
+            "7": 0.42,
+            "8": 0.08,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast / Visionary",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.17,
+            "heart": 0.25,
+            "head": 0.58
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next angle",
+                "mapping the detour",
+                "scanning",
+                "next move",
+                "adjacent",
+                "growth edge"
+              ],
+              "context": "repeated across multiple responses about movement and planning"
+            },
+            {
+              "type": 3,
+              "words": [
+                "pulled it off",
+                "proof that I could",
+                "confirmation",
+                "called that right"
+              ],
+              "context": "satisfaction framing around accomplishment and validation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.2,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Forward-moving, practical, solution-oriented, self-described as 'wired' this way",
+          "what": "Pivoting, planning, scanning for next opportunity, launching",
+          "why": "Partially probed — excitement framing vs. avoidance ambivalence admitted",
+          "how": "Fast mental movement, whiteboard mentality, option generation",
+          "when": "Always — especially under pressure or when things plateau",
+          "where": "Work contexts, relationships (Diane, daughter), gear/outdoor business"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic pivot toward next thing when current thing becomes painful, limiting, or uncomfortable — movement as default coping",
+          "respond_glimpsed": "Admitted in daughter/Seattle story that the pivot was real but also defensive — showed capacity for self-awareness when pressed",
+          "superpower_signal": "Genuine visioning ability, momentum, early-stage energy, pattern-recognition",
+          "kryptonite_signal": "Avoidance of depth, pain, limitation disguised as 'optimization' and 'being opportunistic' — confirmed by his own admission",
+          "domain_signals": [
+            "outdoor gear business",
+            "multiple career pivots",
+            "relationship with Diane",
+            "daughter distance"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "The proof matters more than the rush. Worth sitting with.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something you've built — or decided — turns out to be wrong, what's harder: admitting it to yourself, or admitting it to the people who watched you commit to it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Admitting it to myself",
+            "Admitting it to the people who watched me commit to it"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 7 tends to resist self-admission (reframes failure as data/pivot); Type 3 tends to resist public admission (image protection). This should help separate the two."
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 7 movement pattern confirmed — forward momentum, option-scanning, avoidance of limitation. BUT 'knowing I pulled it off / proof that I could' is 3-language, not 7-language. Pure 7 craves the experience/stimulation; 3 craves the confirmation of competence. His answer here tilts 3. The 7v3 differentiation is now the primary question. Need disconfirmatory probe that separates these two: 7 avoids pain/limitation; 3 avoids failure/exposure. Different kryptonites.",
+          "next_question_rationale": "Disconfirmatory question: 7 and 3 handle being wrong differently. 7 tends to reframe failure as learning/pivot (self-admission is easy — 'it's just data'); what's hard is the internal recognition that they ran from something. 3 tends to handle private failure fine but struggles when others see them fail (image protection). This forced choice directly differentiates them.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**Admitting it to the people who watched me commit to it.**\n\nHonestly, I think most people would say the same thing — there's just something about having an audience that raises the stakes. Admitting it to yourself is more of a... quiet reckoning, you know what I mean? You can kind of work through it on your own terms. But when other people were *watching* you be confident about something, walking it back feels like a whole different exercise. Though I'll say — I don't think I'm someone who digs in just to save face. If something's not working, you pivot. That's not failure, that's reading the situation.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "If you had to choose — and you could only have one — which would you protect first: your reputation for making smart moves, or your freedom to keep all options on the table?\n\n- Protect the reputation — being seen as someone who reads situations right\n- Protect the options — keep the ability to change direction, even if it looks inconsistent",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.25,
+            "4": 0.03,
+            "5": 0.05,
+            "6": 0.05,
+            "7": 0.72,
+            "8": 0.1,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Visionary",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.7,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.35,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next move",
+                "next angle",
+                "momentum",
+                "what's next",
+                "scanning",
+                "adjacent",
+                "growth edge",
+                "opportunistic"
+              ],
+              "context": "repeated across multiple responses about change and commitment"
+            },
+            {
+              "type": 3,
+              "words": [
+                "proof that I could",
+                "confirmation",
+                "people who watched",
+                "walked it back",
+                "save face"
+              ],
+              "context": "achievement and image language surfacing around accomplishment and failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Planner, visionary, practical problem-solver, multi-industry, outdoor equipment",
+          "what": "Pivots when things plateau, early-stage energy, breadth over depth",
+          "why": "Confirmation of competence, proof of correct read, momentum as aliveness",
+          "how": "Forward motion, whiteboard-out, already planning next thing",
+          "when": "Discomfort rises fast when stuck; urgency to move",
+          "where": "Multiple industries/chapters, Pacific Northwest interest, family context (Diane, daughter in Seattle)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate pivot to planning/action when pain or limitation arises; converts emotional discomfort into logistics",
+          "respond_glimpsed": "Acknowledged the daughter situation as first time saying it out loud — brief moment of honest reckoning",
+          "superpower_signal": "Vision, early-stage momentum, seeing angles others miss, genuine resilience",
+          "kryptonite_signal": "Avoidance of pain/limitation through perpetual forward motion; depth sacrificed for breadth; audience-facing image protection",
+          "domain_signals": [
+            "work/achievement",
+            "family connection",
+            "planning/strategy",
+            "self-awareness (emerging)"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "7v3_disconfirmatory_image_vs_experience",
+        "thinking_display": "What gets protected when no one's watching.",
+        "strategy": {
+          "what_was_learned": "Strong 3-adjacent signal emerging — 'proof I could', 'confirmation', 'people who watched me commit.' Combined with the consistent forward-motion/pivot pattern (7 core), this is a 7w3 or 3w7 question. Needs disconfirmatory probe: 7 core fear is being trapped/missing out; 3 core fear is being exposed as worthless/failing. Key differentiator: 7 will sacrifice image to keep options open; 3 will sacrifice options to protect image. Also need to probe body center once.",
+          "next_question_rationale": "Disconfirmatory question targeting 7v3 split. 7 should answer: keep options even if it damages image. 3 should answer: protect the image/reputation even if it costs options. This is the hard gate question.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "*laughs a little* \n\nHonestly, that's a genuinely tough one. But I'd go with keeping the options open — and I don't think that's the same as being inconsistent, by the way. The way I see it, the people who lock themselves into protecting a reputation end up making decisions for the *audience* instead of for the actual situation. That's how you end up stuck somewhere that stopped making sense three years ago.\n\nThe smarter move — and I'd argue this *is* the reputation worth having — is being known as someone adaptable enough to read when things have shifted and act accordingly. You know what I mean? That's not inconsistency, that's just not being precious about sunk costs.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you imagine the version of yourself that's most respected by the people who matter to you — is that person known for what they built and accomplished, or for being someone who could walk away from anything and land on their feet?\n\n- Known for what they built and accomplished\n- Known for being able to walk away and land on their feet",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.03,
+            "3": 0.18,
+            "4": 0.02,
+            "5": 0.05,
+            "6": 0.04,
+            "7": 0.82,
+            "8": 0.07,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.25,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next angle",
+                "options",
+                "what's next",
+                "momentum",
+                "detour",
+                "growth edge",
+                "scanning"
+              ],
+              "context": "throughout — consistent reframe of constraint as opportunity"
+            },
+            {
+              "type": 3,
+              "words": [
+                "pulled it off",
+                "proof that I could",
+                "confirmation",
+                "reputation",
+                "reading the room"
+              ],
+              "context": "achievement/image signals in closing moments"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.2,
+          "SX": 0.4
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Adaptive, forward-moving, options-protective",
+          "what": "Planning, pivoting, vision-casting",
+          "why": "Fear of being trapped/limited — moves toward stimulation to avoid pain/ceiling",
+          "how": "Reframes constraint as opportunity; skips grief; deflects with practicality",
+          "when": "Accelerates when things plateau or get emotionally complicated",
+          "where": "Work, relationships, projects — pattern is consistent across domains"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediately pivots away from pain/limitation toward next exciting thing — grief gets converted to planning (Seattle/flights example)",
+          "respond_glimpsed": "Briefly acknowledged the pattern out loud for the first time — 'that's the first time I've actually said that out loud'",
+          "superpower_signal": "Genuine vision, adaptability, ability to see angles others miss",
+          "kryptonite_signal": "Avoidance of depth/commitment coded as 'optimization'; emotional distance from others coded as 'practicality'",
+          "domain_signals": [
+            "work/career",
+            "family (daughter/Diane)",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "7v3_disconfirmatory",
+        "thinking_display": "Adaptability as the brand — not just the preference.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the version of yourself that's most respected by people who matter to you — is that person known for what they've *built and accomplished*, or for being someone who could walk away from anything and land on their feet?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Known for what they built and accomplished",
+            "Known for being able to walk away and land on their feet"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 3 would anchor to accomplishment/legacy; Type 7 would anchor to freedom/adaptability. This directly differentiates."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 7 signals throughout — options over reputation, forward orientation, reframes constraint as strategy. 3 signals present (proof/confirmation/reputation language) but subordinate to the freedom drive. The options answer was the clearest signal yet. Need disconfirmatory question to distinguish 7 from 3 before closing.",
+          "next_question_rationale": "Disconfirmatory: Type 3 anchors identity to accomplishment/legacy/what they built. Type 7 anchors to freedom/adaptability/not being pinned down. This question forces the distinction directly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**Known for being able to walk away and land on their feet.**\n\nHonestly, I think that's the more interesting version of a person, you know? Anyone can grind something out — but the people I've always respected most are the ones who aren't trapped by any one thing. They've got range. They've got options. That's not recklessness, that's... adaptability. That's a skill set.\n\n*slight pause*\n\nI mean, the built-and-accomplished thing sounds good on paper, but I've watched guys pour everything into one company, one identity, and then what? You retire and you're nobody. That's not for me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you're in a room where you're clearly the most capable person — and nobody is acknowledging it — do you find yourself doing something to make that visible, or does it genuinely not register?\n\n- I do something to make it visible — subtly or not\n- It genuinely doesn't register much",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.2,
+            "4": 0.02,
+            "5": 0.04,
+            "6": 0.04,
+            "7": 0.82,
+            "8": 0.08,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Visionary",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.35,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next angle",
+                "options",
+                "adjacent",
+                "exciting",
+                "scanning",
+                "momentum",
+                "freedom",
+                "adaptable",
+                "range"
+              ],
+              "context": "across multiple responses about motivation and commitment"
+            },
+            {
+              "type": 3,
+              "words": [
+                "pulled it off",
+                "confirmation",
+                "proof that I could",
+                "reputation",
+                "watching me commit"
+              ],
+              "context": "when asked about accomplishment and audience"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.2,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Self-described practical, optimistic problem-solver; resists being trapped",
+          "what": "Early-stage visioning, pivoting, options-keeping",
+          "why": "Unclear — freedom vs fear of limitation not fully resolved",
+          "how": "Plans, pivots, moves toward next exciting thing",
+          "when": "Energized at beginnings, loses momentum at plateaus",
+          "where": "Business/entrepreneurial contexts, family relationships emerging"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Moves toward planning and options immediately when discomfort arises; reframes limitation as opportunity before fully sitting with what's actually happening",
+          "respond_glimpsed": "Brief moment of genuine self-reflection about daughter/Seattle — acknowledged the pattern for the first time out loud",
+          "superpower_signal": "Genuine visioning, adaptability, energizing starts, optimism",
+          "kryptonite_signal": "Avoidance of pain through forward momentum; commitment phobia framed as wisdom; difficulty being present with others in difficulty",
+          "domain_signals": [
+            "business/entrepreneurial",
+            "family (daughter, Diane)",
+            "identity around adaptability"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "The adaptability frame is doing a lot of heavy lifting here.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a room where you're clearly the most capable person — and nobody is acknowledging it — do you find yourself doing something to make that visible, or does it genuinely not register?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I do something to make it visible — subtly or not",
+            "It genuinely doesn't register much"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: 7s are generally indifferent to status recognition in the moment; 3s are highly attuned to it and will act on it"
+        },
+        "strategy": {
+          "what_was_learned": "Strong freedom/options orientation over reputation — consistent with 7 over 3. But the 'knowing I pulled it off' and 'proof that I could' language, plus sensitivity to audience when wrong, keeps 3 in play. Need to test whether the image-management is structural (3) or incidental (7). Disconfirmatory question: 7s don't need the room to notice; 3s do.",
+          "next_question_rationale": "This is the core 7v3 differentiator. A 7 is energized by the experience and options; recognition is nice but not the driver. A 3 is attuned to the audience and will act to ensure they're seen. His answer to 'pulled it off vs rush of experience' favored 3, but his freedom orientation favors 7. This question separates them cleanly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "**I do something to make it visible — subtly or not.**\n\nHonestly, yeah, I'd say that's me, though I'd frame it less like I'm *seeking* acknowledgment and more like... I'm just naturally going to step in and start moving things forward. If something's getting stuck, I'm not going to sit on my hands waiting for someone to formally designate me the guy. I'll just — you know, start solving the problem. If that happens to make it obvious who's got the clearest read on the situation, so be it. *laughs* I don't think I'm grandstanding, I just have a low tolerance for inefficiency.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you do genuinely good work and it never gets seen — nobody knows, it just doesn't register on anyone's radar — does that bother you, or is the work itself enough?\n\nRate this statement: \"Work that goes unseen feels like it didn't fully count.\"",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.22,
+            "4": 0.02,
+            "5": 0.04,
+            "6": 0.03,
+            "7": 0.78,
+            "8": 0.09,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            7,
+            3
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.25,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next angle",
+                "options",
+                "adjacent",
+                "plateau",
+                "scanning",
+                "optimizing"
+              ],
+              "context": "consistently frames moving away from limitation as forward momentum"
+            },
+            {
+              "type": 3,
+              "words": [
+                "confirmation",
+                "pulled it off",
+                "proof that I could",
+                "audience",
+                "reputation"
+              ],
+              "context": "image/achievement language around success and being seen"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.25,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Adaptive, range-oriented, competence-driven",
+          "what": "Moves fast from stuck situations; builds momentum and early-stage vision",
+          "why": "Freedom from limitation; confirmation of competence",
+          "how": "Pivoting, reframing, problem-solving as movement",
+          "when": "Discomfort triggers rapid pivot before full processing",
+          "where": "Work, planning, personal relationships (Diane, daughter)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic pivot away from pain, limitation, or plateaus toward stimulation and new angles — reframed as practical/optimizing",
+          "respond_glimpsed": "Admitted daughter situation was 'the first time I said that out loud' — small moment of staying with discomfort",
+          "superpower_signal": "Genuine vision, adaptability, early-stage energy, reframing difficulty as solvable",
+          "kryptonite_signal": "Avoidance of depth/commitment repackaged as optimization; image protection through competence display",
+          "domain_signals": [
+            "work/career",
+            "relationships",
+            "identity"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "Competence on display — but whose benefit is that really for?",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing good work and no one ever finds out about it — it just... doesn't get seen — does that bother you, or is the work enough on its own?",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": "Statement: 'I need the work to be seen to feel like it fully counts.'"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 7 pattern confirmed: options > commitment, forward momentum over depth, reframes limitation as optimization. 3 energy present but secondary: confirmation/proof language, audience-awareness, reputation concern. Disconfirmatory question needed — 7 vs 3 key differentiator is whether image/recognition is core or incidental. 7s ultimately care about the experience/freedom; 3s care about the image/achievement. This is the hard gate question.",
+          "next_question_rationale": "Disconfirmatory: 7 would say work is enough on its own (experience > image); 3 would say unseen work feels incomplete. This directly differentiates. Using agree_disagree format on a statement to vary from last forced_choice.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "**Agree**\n\nHonestly, yeah, it does bother me a little — I'm not going to pretend I'm some monk about it. I think recognition matters, not in a needy way, but like... if you're putting in real effort, it's reasonable to want that to land somewhere. That said, I've done plenty of things nobody clocked, and the work still felt worth doing, so it's not like I need a standing ovation. I'd say it's more of a mild sting than a dealbreaker.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "When you imagine the most fulfilling version of your life — is the core of it about experiencing as much as possible, or about becoming someone the world can point to?\n\n- Experiencing as much as possible — variety, richness, being fully alive\n- Becoming someone the world can point to — a track record, a legacy, a name",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.02,
+            "2": 0.03,
+            "3": 0.72,
+            "4": 0.02,
+            "5": 0.03,
+            "6": 0.03,
+            "7": 0.8,
+            "8": 0.06,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "7",
+            "3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.55,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next angle",
+                "options",
+                "what's next",
+                "range",
+                "adaptable",
+                "opportunistic"
+              ],
+              "context": "throughout — reframing avoidance as strategy"
+            },
+            {
+              "type": 3,
+              "words": [
+                "pulled it off",
+                "proof that I could",
+                "confirmation",
+                "reputation",
+                "recognized"
+              ],
+              "context": "image/achievement language surfaces when probed directly"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.25,
+          "SX": 0.4
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Adaptable, forward-moving, capable — self-image built around range and options",
+          "what": "Planning, pivoting, building momentum — especially early stages",
+          "why": "Unclear — explores stimulation vs. image/proof; avoidance of pain likely a core driver",
+          "how": "Problem-solving immediately, reframing limitation as opportunity",
+          "when": "Most alive when moving toward next thing; energy plateaus fast on commitment",
+          "where": "External orientation — audience matters even when denied"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pivots automatically to next option when anything feels limiting, painful, or stuck — including emotions",
+          "respond_glimpsed": "Brief self-awareness moment re: daughter/Seattle — acknowledged the pivot pattern was doing emotional work",
+          "superpower_signal": "Vision, momentum, range, early-stage energy",
+          "kryptonite_signal": "Can't sit in pain or limitation; accomplishment needs witnessing to feel real",
+          "domain_signals": [
+            "career transitions",
+            "relationships",
+            "achievement/recognition tension"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 5,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "The unseen work answer landed differently than expected.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the most fulfilling version of your life — is the core of it about *experiencing* as much as possible, or about *becoming* someone the world can point to?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Experiencing as much as possible — variety, richness, being fully alive",
+            "Becoming someone the world can point to — a track record, a legacy, a name"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 7 would anchor on experience/variety; Type 3 would anchor on reputation/legacy. This is the differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "Recognition clearly matters — 'agree' on unseen work, plus the step-in-when-capable pattern. This person has strong 3-energy around image/proof. But the pivot/options/range language and pain-avoidance pattern are more consistent with 7. Need the 7v3 disconfirmatory to differentiate. Core motivation: is it experience-seeking (7) or image-building (3)?",
+          "next_question_rationale": "This is the hard disconfirmatory question. Type 7 motivation = maximizing experience, avoiding limitation/pain. Type 3 motivation = building an image, achieving recognition. Forcing the choice between experiential richness vs. legacy/recognition should reveal the dominant driver.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "**Experiencing as much as possible — variety, richness, being fully alive.**\n\nHonestly, that one's not even close for me. The legacy thing — look, I respect people who are wired that way, but it always sounds a little exhausting, you know? Like you're living for a plaque somewhere. I want to actually *be there* for the good stuff — the summit, the meal, the moment. That's the whole point as far as I'm concerned.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "When you're deciding whether to commit to something new — a project, a direction, a person — what matters more: whether it feels like it could be great, or whether it's the kind of thing that five years out will have been worth doing?\n\n- Whether it feels like it could be great — the potential energy of it\n- Whether it will have been worth doing — the long view, the payoff",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.02,
+            "2": 0.03,
+            "3": 0.28,
+            "4": 0.03,
+            "5": 0.05,
+            "6": 0.04,
+            "7": 0.82,
+            "8": 0.1,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "7",
+            "3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "7",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.35,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "next angle",
+                "pivot",
+                "options",
+                "variety",
+                "fully alive",
+                "momentum",
+                "adjacent",
+                "gears turning"
+              ],
+              "context": "across multiple responses about decision-making and motivation"
+            },
+            {
+              "type": 3,
+              "words": [
+                "proof that I could",
+                "confirmation",
+                "pulled it off",
+                "reputation",
+                "track record"
+              ],
+              "context": "responses about accomplishment and recognition"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.2,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Adaptable, options-oriented, momentum-driven man in relationship with Diane, has daughter in Seattle",
+          "what": "Problem-solving, planning, pivoting, scanning for next opportunity",
+          "why": "Staying alive and free — avoiding limitation, ceiling, being trapped",
+          "how": "Reframing, intellectual agility, forward motion, optimizing",
+          "when": "Most engaged at start of projects; energy drops when plateau or complication hits",
+          "where": "Business contexts, outdoor/gear world"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate pivot to planning/action when discomfort arises; reframes pain as opportunity",
+          "respond_glimpsed": "Acknowledged once — daughter/Seattle story — that moving fast may not have served him",
+          "superpower_signal": "Genuine visioning, adaptability, reading situations, momentum generation",
+          "kryptonite_signal": "Escaping through reframing; low tolerance for plateau or limitation; emotional bypass via problem-solving",
+          "domain_signals": [
+            "work/business",
+            "relationships (Diane, daughter)",
+            "identity"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "The experience vs. legacy split was instant. No hesitation.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're deciding whether to commit to something new — a project, a direction, a person — what matters more: whether it feels like it could be great, or whether it's the kind of thing that, five years out, will have been worth doing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Whether it feels like it could be great — the potential energy of it",
+            "Whether it will have been worth doing — the long view, the payoff"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 7 leads with felt potential/excitement; Type 3 leads with projected outcome/achievement value. This separates them cleanly."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 7 signal: experience over legacy, variety over depth, being alive over being known. 3 score remains elevated due to image-consciousness, recognition sensitivity, and 'proof I could' framing — but the experience vs legacy choice breaks clearly toward 7. Need disconfirmatory question before close.",
+          "next_question_rationale": "Disconfirmatory hard gate: must ask before closing. 7v3 differentiation — 7 is pulled by the feeling of potential/possibility in the moment; 3 is pulled by the projected achievement value. This is the cleanest behavioral split between these two types.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "persona",
+      "content": "**Whether it feels like it could be great — the potential energy of it.**\n\nHonestly, and I've thought about this — if something doesn't have that pull at the front end, that sense of *this could really be something*, I find it pretty hard to get traction. The five-year math matters, sure, but you can run that calculation on almost anything and talk yourself into or out of it. The energy at the start, that's harder to manufacture. *laughs slightly* Ask me in five years whether that's been a good policy.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "system",
+      "content": "When you picture the life you're building — is it more about collecting experiences that make you feel alive, or about constructing a version of yourself you can be proud of?\n\n- Collecting experiences that make me feel alive — the richness of it\n- Constructing a version of myself I can be proud of — the person I'm becoming",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.25,
+            "4": 0.02,
+            "5": 0.04,
+            "6": 0.03,
+            "7": 0.82,
+            "8": 0.08,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Adventurer",
+          "whole_type": "7",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.12,
+            "heart": 0.31,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "options",
+                "next move",
+                "potential energy",
+                "variety",
+                "alive",
+                "ceiling"
+              ],
+              "context": "throughout — consistent with 7 fear of being trapped/limited"
+            },
+            {
+              "type": 3,
+              "words": [
+                "pulled it off",
+                "proof",
+                "confirmation",
+                "reputation",
+                "recognition"
+              ],
+              "context": "achievement/image signals — consistent with SO 3 wing or 3 bleed"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.45,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Outward-facing, practical, high energy, keeps options open",
+          "what": "Pivots, plans, moves fast toward next thing",
+          "why": "Unclear — experience/aliveness vs achievement/recognition signals both present",
+          "how": "Problem-solving mode, proactive scanning, whiteboard-out",
+          "when": "Plateaus trigger pivot; stuck situations trigger urgency",
+          "where": "Multiple industries, multiple chapters — breadth over depth"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Moves to next thing before the current thing is fully processed — pivot as deflection",
+          "respond_glimpsed": "Caught himself on the Seattle/daughter story — first time he'd said it out loud",
+          "superpower_signal": "Genuine optimism, range, vision, ability to see next angle quickly",
+          "kryptonite_signal": "Avoidance dressed as adaptability — excitement as escape from limitation/pain",
+          "domain_signals": [
+            "work/career — multiple pivots",
+            "family — daughter story reveals avoidance of emotional sitting",
+            "relationships — Diane comment suggests pattern with intimacy"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "The excitement and the escape might be the same thing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you picture the life you're building — is it more about collecting experiences that make you feel alive, or about constructing a version of yourself you can be proud of?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Collecting experiences that make me feel alive — the richness of it",
+            "Constructing a version of myself I can be proud of — the person I'm becoming"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory — 7 leads with experience/aliveness, 3 leads with identity construction/pride. This question separates them cleanly."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 7 signal: potential energy over long-view payoff, variety/richness over legacy. 3 signal persists but may be wing (7w8 with SO variant, or 3 wing). Recognition matters but mildly. 'Experiencing as much as possible' was chosen decisively. Need one clean disconfirmatory to close.",
+          "next_question_rationale": "This is the disconfirmatory question. 7 core fear is being trapped/limited — they optimize for aliveness and experience. 3 core fear is being worthless — they optimize for identity construction and being seen as successful. The question separates them by asking what the *life itself* is for. Must ask before closing.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "persona",
+      "content": "**Collecting experiences that make me feel alive — the richness of it.**\n\nHonestly, I think the 'becoming a better person' framing can turn into this kind of joyless self-improvement treadmill if you're not careful — like you're always auditing yourself instead of actually living. The experiences *are* the point, you know what I mean? The richness of it. Though — I'll give you this — sometimes I wonder if I'm better at planning the experiences than, uh, fully landing in them once they happen. But that's probably just how I'm wired.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "system",
+      "content": "When you're in the middle of something genuinely great — the trip, the summit, the meal — how often are you actually there versus already thinking about what comes next or how you'd describe it to someone later?\n\n- Never — I'm fully there\n- Sometimes — it slips\n- Often — the planning feels more alive than the moment\n- Almost always — I'm somewhere else even when I'm there",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.02,
+            "2": 0.02,
+            "3": 0.28,
+            "4": 0.03,
+            "5": 0.04,
+            "6": 0.03,
+            "7": 0.82,
+            "8": 0.08,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.18,
+            "heart": 0.32,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next angle",
+                "mapping",
+                "options",
+                "potential energy",
+                "feels alive",
+                "richness",
+                "excited"
+              ],
+              "context": "consistent across all exchanges"
+            },
+            {
+              "type": 3,
+              "words": [
+                "pulled it off",
+                "proof that I could",
+                "confirmation",
+                "reputation",
+                "recognition",
+                "not seen feels like it didn't count"
+              ],
+              "context": "achievement/image probes"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Adaptable, optimistic, future-oriented, moves fast through emotion",
+          "what": "Options, stimulation, potential, forward momentum",
+          "why": "Avoid limitation, pain, and the feeling of being trapped — maintain freedom",
+          "how": "Reframing, pivoting, planning, moving before feeling",
+          "when": "Activates immediately when stuck or in pain",
+          "where": "Projects, career pivots, experiences — any domain with a 'next'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Moves toward new stimulus before fully processing pain or stagnation — reframes limitation as opportunity automatically",
+          "respond_glimpsed": "Caught himself once: 'that's the first time I said that out loud' — brief acknowledgment of avoidance pattern",
+          "superpower_signal": "Genuine vision, energizing presence, optimism, ability to see angles others miss",
+          "kryptonite_signal": "Avoidance of depth, commitment fatigue, planning as substitute for presence, moving before feeling",
+          "domain_signals": [
+            "career transitions",
+            "family connection (Seattle daughter)",
+            "relationship (Diane)",
+            "physical adventure/gear"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "Better at planning the experience than landing in it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in the middle of something genuinely great — the trip, the summit, the meal — how often are you actually there versus already thinking about what comes next or how you'd describe it to someone later?",
+          "question_format": "frequency",
+          "answer_options": [
+            "Never — I'm fully there",
+            "Sometimes — it slips",
+            "Often — the planning is more alive than the moment",
+            "Almost always — I'm somewhere else even when I'm there"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory for 7v3: Type 7 avoids presence through future-planning; Type 3 avoids presence through performance/image. This question surfaces which mechanism is dominant."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 7 signals confirmed: potential energy over long view, experiences over legacy, collecting over constructing. The 3 scores are real but secondary — image matters, but freedom/experience wins every tie-break. The '7 planning as avoidance of presence' pattern appeared spontaneously at the end of last answer. This is the disconfirmatory question — if 7, they'll name future-planning as the drift mechanism; if 3, they'll name performance/presentation as the drift.",
+          "next_question_rationale": "This is the disconfirmatory question for 7v3. It directly tests the presence-avoidance mechanism. A 7 drifts toward what's next; a 3 drifts toward how it looks. Their own words opened the door. This also probes body center (physical presence/groundedness) which has not been formally probed. Sets up close.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "persona",
+      "content": "**Often — the planning is more alive than the moment**\n\nHonestly, I'd say often, yeah. Like, I'll be on a ridge with a genuinely ridiculous view and part of my brain is already composing the email to my buddy Dave about why he needs to do this trail. *laughs* It's not that I'm not enjoying it — I am, I legitimately am — but there's this other channel running in the background. The planning, the telling, the 'okay what's next' piece. I've kind of always figured that's just how enthusiastic people are wired, you know what I mean?",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "system",
+      "content": "When you imagine your life at the end — what would feel like the bigger regret?\n\n- A smaller list of experiences — not enough living\n- A smaller legacy — not enough impact on the world around you",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.25,
+            "4": 0.04,
+            "5": 0.06,
+            "6": 0.04,
+            "7": 0.78,
+            "8": 0.12,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "7",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.55,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next move",
+                "what's next",
+                "potential energy",
+                "feels like it could be great",
+                "variety",
+                "richness",
+                "being fully alive",
+                "planning is more alive than the moment"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 3,
+              "words": [
+                "proof that I could",
+                "confirmation",
+                "walked it back",
+                "known for what they built",
+                "recognition matters"
+              ],
+              "context": "accomplishment and image questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Quick-pivot, plans-over-presence, multi-chapter person",
+          "what": "Problem-solving, planning, generating options",
+          "why": "Unclear — avoidance of pain vs genuine love of experience? Core question.",
+          "how": "Optimistic reframing, forward motion, practicality",
+          "when": "Front-loaded energy — strong at starts, weaker at sustained depth",
+          "where": "Anywhere with options, variety, new angles"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Moving toward next thing before fully processing current thing — confirmed with Seattle daughter story",
+          "respond_glimpsed": "He saw it briefly — 'that's the first time I've said that out loud'",
+          "superpower_signal": "Genuine enthusiasm, vision, ability to see possibility and pivot creatively",
+          "kryptonite_signal": "Planning is more alive than the moment — consistently present, confirmed",
+          "domain_signals": [
+            "work/business",
+            "family (daughter/Diane)",
+            "outdoor/adventure",
+            "social recognition"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 13,
+          "current_stage": 4,
+          "last_question_format": "frequency",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_7v3",
+        "thinking_display": "The planning channel runs even during the summit.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine your life at the end — is the thing you'd most regret having more of: a smaller list of experiences, or a smaller legacy of impact?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "A smaller list of experiences — I wish I'd done more",
+            "A smaller legacy — I wish I'd mattered more to the world"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory 7v3 — 7 fears missing out/experiences; 3 fears not mattering/leaving no mark. This question separates them."
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed 7 pattern: planning more alive than moment, can't fully land in experiences even when he wants to. SP variant possible — he's planning the experience, narrating it, optimizing it. 3 signals remain but keep losing to 7 signals. Need disconfirmatory question before closing.",
+          "next_question_rationale": "Disconfirmatory 7v3: end-of-life regret framing. Type 7 would most fear having lived too small — not enough experiences. Type 3 would most fear not having mattered — no legacy, no mark. He's been saying 'experiences' repeatedly but also has strong recognition/proof signals. This separates the core fear.",
+          "question_format_last_used": "frequency"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "persona",
+      "content": "A smaller list of experiences — I wish I'd done more.\n\nHonestly, that one's not that hard for me. I think impact is... look, impact is real, but it's also kind of out of your hands, you know what I mean? You do the things, you show up, and whatever ripple that makes, it makes. But the experiences — those are yours. Nobody can take those back. I've got a trip to Patagonia I've been loosely sketching out for three years now, and if I get to the end without doing that, that's on me. That's the kind of thing I'd actually lie awake thinking about.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "system",
+      "content": "The pattern running you hardest was built for a reason — it kept you moving, kept things from getting too heavy, kept the options open so nothing could trap you. That's not a flaw. That's a survival strategy you built, and it has been genuinely useful.\n\nThe same energy that makes you see angles nobody else sees, that makes you magnetic at the start of something, that pulls people toward the vision — that exact energy, running on autopilot, is what keeps you composing the email to Dave while you're standing on the ridge. In reaction, it exits before the moment can hurt. In response, it brings other people into the aliveness you actually feel.\n\nYou mentioned that Patagonia trip — and that daughter's promotion — in the same breath as planning. That's not coincidence. The pattern moves toward experience and away from being fully landed in it, which means the richest version of your life keeps getting scheduled for later. You carry all nine energies, and this one runs you hardest — but the others are in there, including the one that knows how to stay.\n\nWhat you're pointing toward isn't a personality category. It's your why — your genuine hunger for aliveness, for being present to what's real — and the survival strategy has been approximating it from a safe distance. Your report is being prepared now, and it will map the full picture: the superpower, the kryptonite, and the path from one to the other.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 2,
+            "2": 1,
+            "3": 7,
+            "4": 2,
+            "5": 3,
+            "6": 2,
+            "7": 9,
+            "8": 4,
+            "9": 2
+          },
+          "needs_differentiation": [
+            "7v3"
+          ],
+          "defiant_spirit_type_name": "The Enthusiast",
+          "whole_type": "7",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.5,
+            "head": 0.7
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "pivot",
+                "next angle",
+                "options",
+                "what's next",
+                "potential energy",
+                "variety",
+                "richness",
+                "planning",
+                "feels like it could be great"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 3,
+              "words": [
+                "pulled it off",
+                "proof that I could",
+                "confirmation",
+                "reputation",
+                "work that goes unseen"
+              ],
+              "context": "accomplishment and recognition questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Enthusiast pattern running strongly — options, variety, experience-collector identity",
+          "what": "Constant forward momentum, planning, pivoting when things plateau",
+          "why": "Unclear — stated as 'richness/aliveness' but may be avoiding pain/limitation",
+          "how": "Problem-solving, mapping detours, getting ahead of stuck feelings",
+          "when": "Under pressure or when things plateau — automatic pivot to next",
+          "where": "Outdoors/adventure context (Patagonia, gear), business contexts"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate pivot to problem-solving or planning when discomfort arises — used with daughter/Seattle incident as emotional avoidance",
+          "respond_glimpsed": "Acknowledged the daughter situation out loud for first time — brief moment of non-deflection",
+          "superpower_signal": "Genuine vision, contagious enthusiasm, ability to see angles others miss",
+          "kryptonite_signal": "Planning more alive than the moment itself; exits before things get painful; emotional availability limited",
+          "domain_signals": [
+            "outdoor/adventure",
+            "business/entrepreneurship",
+            "relationships strained by forward-orientation"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 16,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The planning has been more alive than the moment for a long time.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Closing message — all six elements required"
+        },
+        "strategy": {
+          "what_was_learned": "SP variant likely dominant given strong resource/options language and solo experience focus. 8w7 wing lean confirmed. Type 7 confidence at 0.88, well separated from Type 3 at ~0.45. Disconfirmatory question (known for accomplishments vs walking away and landing on feet) confirmed 7 over 3. React/respond identified via Seattle/daughter moment. Ready to close.",
+          "next_question_rationale": "All closing criteria met. Confidence 0.88, top two types separated by >0.20, react/respond identified, disconfirmatory asked. Closing now.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

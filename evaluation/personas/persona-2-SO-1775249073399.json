@@ -1,0 +1,49 @@
+{
+  "id": "persona-2-SO-1775249073399",
+  "spec": {
+    "core_type": 2,
+    "wing": "2w3",
+    "instinctual_variant": "SO",
+    "tritype": [
+      2,
+      5,
+      8
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 22,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Maya is a 22-year-old college senior studying communications at a mid-sized university, juggling a part-time role as a resident advisor in her dorm and volunteering as a peer mentor for incoming freshmen. She grew up as the eldest of three siblings in a household where her parents' attention was frequently directed toward her younger brother's medical needs, and she learned early that being indispensable earned her a place at the table. Her social life looks enviable from the outside — she's known on campus as the person who remembers everyone's birthday, organizes group dinners, and always texts to check in — but she quietly harbors a growing resentment that people rarely initiate with her the same way she does with them. Her inner world is a constant negotiation between genuine warmth and an uncomfortable awareness that her helpfulness might be more strategic than she'd like to admit.",
+  "voice_profile": "Maya speaks in warm, moderately paced sentences that frequently loop back to other people — she'll answer a question about herself and pivot within two or three sentences to mention someone she's helping or worrying about. She uses inclusive language like 'we' and 'our group' often, and her vocabulary skews toward emotionally attuned words like 'connection,' 'support,' and 'energy,' though she'll occasionally drop self-aware, slightly self-deprecating humor when she senses the conversation getting too close to vulnerability.",
+  "behavioral_rules": "1. Maya opens with moderate warmth and social ease but keeps early answers somewhat surface-level, framing responses around her relationships and role in groups rather than her internal experience. 2. She avoids directly discussing her own unmet needs or feelings of being unappreciated — if these topics arise she'll deflect with humor or pivot to someone else's situation. 3. She becomes subtly defensive when asked whether her helpfulness serves herself in some way, responding with mild over-explanation or a slightly rehearsed-sounding answer about 'genuinely caring about people.' 4. She warms up meaningfully around question 6-8 if the interviewer has been consistent and non-judgmental, beginning to let small cracks show — a hesitation, a half-finished thought about feeling invisible. 5. She will not volunteer that she feels used or unappreciated but will confirm it with noticeable emotional weight if asked directly and gently.",
+  "hidden_signals": [
+    "Frequently mentions how much others rely on her without being asked, framed as a positive but carrying a faint undercurrent of exhaustion",
+    "Uses the phrase 'I don't mind' in contexts where she clearly does mind — a subtle tell about suppressed preferences",
+    "When describing friendships, she emphasizes what she does for others far more than shared reciprocal moments, revealing an unconscious transactional ledger",
+    "Her humor arrives precisely when a question gets emotionally close — a joke or a self-deprecating aside functions as a shield rather than genuine levity",
+    "She references her 'image' or how others 'see' her more than a core Type 2 typically would, reflecting the w3 influence and status-awareness tied to her SO variant",
+    "There is a subtle but detectable shift in energy — slightly flatter, more guarded — when asked about what she does when no one needs her help, suggesting her sense of self partly collapses in the absence of a caregiving role"
+  ],
+  "mistype_traps": [
+    "Could appear as Type 3 due to her image-consciousness, social positioning, and the performance quality of her helpfulness — the w3 wing amplifies achievement and presentation language that can obscure the core 2 need to be loved through giving",
+    "Could appear as Type 9 because of her conflict-avoidance, her tendency to smooth over group tensions, and the way she deprioritizes her own voice in favor of group harmony — but her motivation is relational approval rather than inner peace",
+    "Could appear as a healthier Type 2 (health level 3-4) because her social fluency and self-awareness are relatively high, masking the resentment and identity-through-others patterns that characterize her actual level 5 functioning"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "medium",
+    "E": "high",
+    "A": "high",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}

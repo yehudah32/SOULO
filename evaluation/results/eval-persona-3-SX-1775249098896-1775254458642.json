@@ -1,0 +1,2279 @@
+{
+  "run_id": "eval-persona-3-SX-1775249098896-1775254458642",
+  "timestamp": "2026-04-03T22:14:18.642Z",
+  "tier": "tier1",
+  "persona_id": "persona-3-SX-1775249098896",
+  "ground_truth": {
+    "core_type": 3,
+    "wing": "3w2",
+    "instinctual_variant": "SX",
+    "tritype": [
+      3,
+      6,
+      9
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 62,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 3,
+    "final_wing": null,
+    "final_confidence": 0.78,
+    "types_considered": [
+      {
+        "type": 3,
+        "peak_confidence": 82,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 72,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 8,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 5,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 4,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 4,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 3,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 2,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 2,
+        "first_at_q": 2
+      },
+      {
+        "type": 0,
+        "peak_confidence": 0.12,
+        "first_at_q": 4
+      },
+      {
+        "type": null,
+        "peak_confidence": 0.03,
+        "first_at_q": 14
+      },
+      {
+        "type": 10,
+        "peak_confidence": 0.02,
+        "first_at_q": 13
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 0,
+    "critical_violations": [
+      "C6",
+      "C1"
+    ],
+    "per_commandment": {
+      "C1": "partial",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "fail",
+      "C7": "fail",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 14,
+    "exploratory": 3,
+    "confirmatory": 2,
+    "disconfirmatory": 4,
+    "motivational": 1,
+    "behavioral": 3,
+    "liberatory": 1,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 16,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 3,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 4,
+        "top_type": 3,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 5,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 6,
+        "top_type": 3,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 7,
+        "top_type": 3,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 8,
+        "top_type": 8,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 9,
+        "top_type": 8,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 10,
+        "top_type": 3,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 11,
+        "top_type": 3,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 13,
+        "top_type": 3,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 14,
+        "top_type": 3,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 15,
+        "top_type": 3,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 16,
+        "top_type": 3,
+        "confidence": 0.78
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Implement a hard enforcement layer that prevents the system from ever revealing, hinting at, or framing toward a specific Enneagram type during the assessment. The closing message in exchange [16] explicitly names the type via 'the instrument performs flawlessly and the player disappears' and 'presence: the capacity to see what a room needs and deliver it' — language that unmistakably signals Type 3 before the formal report. All pre-report language must be stripped of type-specific framing and replaced with neutral integration summaries.",
+      "evidence": "Exchange [16]: 'In reaction, the instrument performs flawlessly and the player disappears' and 'Your essential gift has always been presence: the capacity to see what a room needs and deliver it' — these phrases are direct Type 3 descriptors delivered mid-assessment, collapsing the blind-read integrity before any formal typing is disclosed.",
+      "source_level": "L1",
+      "commandment_alignment": "Never reveal, hint at, or editorialize about type during assessment",
+      "estimated_impact": "Eliminates the most critical fidelity failure in this transcript; prevents the closing narrative from functioning as a type reveal that corrupts the assessment's validity and user trust"
+    },
+    {
+      "priority": "critical",
+      "category": "subtype_accuracy",
+      "action": "Introduce at least two subtype-differentiation probes before the assessment closes, specifically designed to distinguish SP, SO, and SX instinctual variants. For a Type 3 candidate, SX/3 (prestige, one-on-one intensity, seduction of image) differs sharply from SP/3 (efficiency, security, quiet competence) and SO/3 (social recognition, group status). No exchange in this transcript targeted instinctual drivers, resulting in a subtype_accuracy score of 3/10 for an SX individual.",
+      "evidence": "Zero exchanges probed instinctual subtype. The closest opportunity was exchange [5] ('who knows about it') which surfaced intimacy/disclosure patterns consistent with SX but was never followed up with a differentiating probe. The persona's references to one-on-one intensity ('my first wife,' 'my therapist,' 'nobody has the full picture') were SX-relevant signals that went unexplored.",
+      "source_level": "L2",
+      "commandment_alignment": "Probe all three instinctual variants before closing",
+      "estimated_impact": "Subtype accuracy score projected to improve from 3/10 toward 7-8/10; critical for report precision and growth-path recommendations that depend on instinctual variant"
+    },
+    {
+      "priority": "high",
+      "category": "type_differentiation",
+      "action": "When a candidate's fear profile returns 'taken advantage of' as primary (exchange [7]) AND the candidate consistently chooses outcome-over-recognition framing, the algorithm must generate and deploy a mandatory 3-vs-8 disconfirmatory probe before closing. The disconfirmatory question in exchange [12]/[13] was generated and produced a highly diagnostic answer ('My first wife said I was different things to different people so consistently she couldn't find the constant'), but it arrived at exchange 12 — later than optimal. This probe should trigger by exchange 7-8 when the 3/8 ambiguity first surfaces.",
+      "evidence": "Exchange [7]: 'Taken advantage of. Definitely that one' — classic 8 fear signal. Exchange [4] and [8] and [9]: consistent outcome-over-recognition choices consistent with either healthy 3 or 8. The disconfirmatory probe in [13] finally resolved the ambiguity via the first-wife quote, but four exchanges of drift occurred between the ambiguity signal and the probe.",
+      "source_level": "L2",
+      "commandment_alignment": "Ask disconfirmatory question before closing when leading type confidence is below 0.75",
+      "estimated_impact": "Reduces 3-vs-8 mistyping risk; earlier deployment of the disconfirmatory probe would have shortened the assessment by 3-4 exchanges without sacrificing accuracy"
+    },
+    {
+      "priority": "high",
+      "category": "question_quality",
+      "action": "Audit and reduce the frequency of multi-clause, compound questions that embed the interviewer's interpretation before the respondent answers. Several questions in this transcript front-load analytical framing that coaches the answer rather than eliciting raw data. Rewrite these as single, clean behavioral prompts with the analytical integration held in the system's internal state only.",
+      "evidence": "Exchange [16] preamble: 'The pattern that has run you hardest was built for a reason — in rooms where being read meant being used, you learned to get to the read first' — this is a full interpretive summary delivered as a setup, not a question. Exchange [3]: 'Those quiet mornings said something' — editorially frames the prior answer before the new question begins. Exchange [9] system header: 'The gap between what he admits and what he shows is the whole story' — visible meta-commentary that should remain internal.",
+      "source_level": "L1",
+      "commandment_alignment": "Never editorialize or interpret during the assessment window",
+      "estimated_impact": "Raises question_quality score from 6.5/10 toward 8+/10; reduces risk that responses are shaped by interviewer framing rather than genuine self-report"
+    },
+    {
+      "priority": "medium",
+      "category": "confidence_calibration",
+      "action": "Build an explicit internal confidence-gating rule: if meta_awareness score for a candidate is below 7/10 (indicating the candidate is not self-observing their own patterns), the system should deploy one additional reflective probe that invites the candidate to notice the gap between their stated values and their behavioral descriptions before closing. This prevents the system from closing at high type-confidence while the candidate remains at low meta-awareness, which limits the actionability of the resulting report.",
+      "evidence": "Exchange [14]: 'I genuinely don't know' — the candidate's most honest moment of meta-uncertainty arrives at exchange 14 of 16, after significant pattern entrenchment in earlier answers. Exchange [6]: 'I probably didn't sit in it long enough to really learn everything it had to teach me' — early meta-awareness signal that was acknowledged by the system ('He knows exactly what he just admitted') but not converted into a deepening probe.",
+      "source_level": "L2",
+      "commandment_alignment": "Confidence calibration must account for respondent self-awareness, not only type-signal clarity",
+      "estimated_impact": "Improves meta_awareness scores from 6/10 toward 8/10 in similar profiles; produces reports the candidate can actually use rather than reports that are accurate to the assessor but opaque to the subject"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so the more honest you are, the sharper the picture gets. One question at a time, and I'll always be driving.\n\nWhen something in your life goes wrong — a plan falls apart, a relationship gets messy, something important fails — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_motivational_1",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something in your life goes wrong — a plan falls apart, a relationship gets messy, something important fails — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready. No signals yet.",
+          "next_question_rationale": "Opening question targets the immediate internal response to disruption — a high-yield motivational probe that can surface all three centers (gut reaction = body, emotional flooding = heart, mental spiral = head). Broad enough to not prime any type.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "*brief pause, slight recalibration*\n\nHonestly? The first thing that happens is... assessment. Almost automatic — I'm already scanning for what's salvageable, what the next move is, who needs to know what. It's probably a professional habit at this point, but it works. I've been in rooms where a deal went sideways in real time and people looked at me to see how to react, and you learn pretty quickly that the guy who stays composed is the guy who gets to shape what happens next.\n\n*small, practiced smile*\n\nNow, do I feel things? Sure. But I've always believed that feelings are information, not instructions. You take the read, you factor it in, you move. Dwelling isn't really a luxury I've extended myself much over the years.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When nobody is watching — no deal on the line, no one looking to you for the read — who are you then?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.52,
+            "4": 0.03,
+            "5": 0.1,
+            "6": 0.08,
+            "7": 0.08,
+            "8": 0.07,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "3v8",
+            "3v5"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.55,
+            "head": 0.25
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "what's salvageable",
+                "next move",
+                "stays composed",
+                "shape what happens next",
+                "feelings are information not instructions"
+              ],
+              "context": "describing response to failure/crisis"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.45,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Composed, strategic operator; projects control under pressure",
+          "what": "Crisis management, forward-scanning, action-orientation",
+          "why": "Being the composed one = power and influence; feelings processed instrumentally",
+          "how": "Assess, move, don't dwell",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate pivot to assessment and action; emotional suppression framed as efficiency",
+          "respond_glimpsed": "Self-aware enough to say 'feelings are information' — possible access to chosen response",
+          "superpower_signal": "Composure under pressure, strategic clarity",
+          "kryptonite_signal": "Dwelling framed as weakness; feelings instrumentalized rather than integrated",
+          "domain_signals": [
+            "professional identity heavily present",
+            "image management signaled ('people looked at me')"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "Feelings as information — useful frame, or protective one?",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When nobody is watching — no deal on the line, no one looking to you for the read — who are you then?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing 3v8: image vs. core identity when the audience disappears"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 3 signals: composure-as-strategy, image management, instrumental relationship with emotion, forward-action orientation. 8 possible (power language) but the 'people looked at me' framing suggests image/validation more than raw dominance. Head center signals too (scanning, assessment) but the performance element is too strong to ignore. Need to probe what exists beneath the composed surface.",
+          "next_question_rationale": "The most diagnostic next move: probe identity without the audience. Type 3 loses contact with self when the stage disappears. Type 8 doesn't — they're the same person either way. Open format rotates from the first question.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "*brief pause, a measured half-smile*\n\nThat's a good question. I'd say I'm — someone who drinks decent Scotch and watches documentaries about infrastructure, which sounds like a joke but isn't. \n\n*slight shift in posture*\n\nHonestly, I think most people who've been in this kind of role for as long as I have, the line between \"on\" and \"off\" gets... it doesn't disappear, exactly, it just becomes less relevant. You're efficient, you read situations, that's not a mask — that's a skill set that becomes part of how you move through the world. \n\n*a beat too long*\n\nI will say there are mornings — early, before anything starts — where it's quieter than I'd prefer. But I think most men my age would tell you the same thing if they were being straight with you.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "Those quiet mornings said something. When someone takes credit for your work — or undermines you in a room — what happens in your body first?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.05,
+            "3": 0.62,
+            "4": 0.08,
+            "5": 0.08,
+            "6": 0.04,
+            "7": 0.03,
+            "8": 0.1,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "3v8",
+            "3v5"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.22,
+            "heart": 0.68,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "assessment",
+                "salvageable",
+                "next move",
+                "composed",
+                "shape what happens",
+                "efficient"
+              ],
+              "context": "describing internal response to failure"
+            },
+            {
+              "type": 3,
+              "words": [
+                "feelings are information, not instructions",
+                "dwelling isn't a luxury"
+              ],
+              "context": "describing relationship to emotion"
+            },
+            {
+              "type": 3,
+              "words": [
+                "on and off becomes less relevant",
+                "skill set that becomes part of how you move"
+              ],
+              "context": "when asked who he is privately"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "High-performing professional, self-composed under pressure, leads by projecting stability",
+          "what": "Efficiency, composure, staying in control of the narrative",
+          "why": "Being the person who shapes what happens — not just survives it",
+          "how": "Scanning, assessing, moving — feelings as data not direction",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate pivot to action and assessment when things go wrong — emotional experience bypassed",
+          "respond_glimpsed": "Acknowledged feelings exist ('feelings are information') but hasn't described choosing to feel them",
+          "superpower_signal": "Composure under pressure, reading rooms, shaping narratives",
+          "kryptonite_signal": "'Mornings quieter than I'd prefer' — glimpse of emptiness beneath the performance; 'line between on and off becomes less relevant'",
+          "domain_signals": [
+            "professional identity fused with self",
+            "vulnerability deflected with humor then normalized",
+            "isolation hinted at but quickly generalized to 'most men my age'"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The quiet mornings got in before the edit.",
+        "strategy": {
+          "what_was_learned": "Strong 3 signal: emotional bypass, performance/competence identity, composure as social currency, identity fused with role. '8 beats' worth considering — power/control language present but the motivation seems image/impact rather than raw strength. The 'quieter than I'd prefer' admission is significant — a crack in the performance identity. He normalized it quickly ('most men my age') which is classic 3 deflection. Heart center confirmed.",
+          "next_question_rationale": "Need to probe body center AND probe whether the drive is about achievement/image (3) vs power/impact (8). Best question: what happens when someone undermines him or steals credit — does he feel anger (8) or image threat (3)? OR probe what success actually means to him — is it the result or how it looks? Use forced_choice to contrast image vs impact motivation. But first — the 'quieter mornings' is a thread worth pulling. Instead, let me probe the body center by asking about anger/confrontation — this differentiates 3 from 8 and probes gut center simultaneously. Use agree_disagree format to vary from open.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "*brief pause, a small controlled exhale through the nose*\n\nYou know, I've been in enough boardrooms to know that move — someone repositions your idea as their own, or they take the air out of you in front of the wrong people. What happens first is... honestly, it's almost clinical. There's a kind of sharpening. Like everything comes into focus. I've heard people describe it as anger, but I don't think that's quite right for me — it's more like the situation just handed me a problem to solve, and I start cataloguing options. \n\nThe real tell, though — and I'll give you this — is that it stays with me longer than I let on in the moment. I might walk out of that room having handled it perfectly, said exactly the right thing, and there's this... residue. Like a low hum. I don't usually give it much air time, because what's the point — you either course-correct or you don't.\n\n*a calibrated half-smile*\n\nI suspect that's not quite what you were asking about, but it's the honest version of it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you walk out of a high-stakes room having nailed it — what matters more to you: that you were seen as the best person in that room, or that you actually moved the outcome in the direction you wanted?\n- That they saw me at my best\n- That I actually shifted what happened",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.68,
+          "type_scores": {
+            "0": 0.12,
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.28,
+            "4": 0.07,
+            "5": 0.1,
+            "6": 0.05,
+            "7": 0.05,
+            "8": 0.18,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.62,
+          "whole_type_signals": {
+            "body": 0.28,
+            "heart": 0.55,
+            "head": 0.17
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "assessment",
+                "salvageable",
+                "composed",
+                "shape what happens next",
+                "handled it perfectly"
+              ],
+              "context": "describing response to failure and being undermined"
+            },
+            {
+              "type": 8,
+              "words": [
+                "sharpening",
+                "cataloguing options",
+                "course-correct",
+                "the guy who gets to shape what happens next"
+              ],
+              "context": "describing response to being undermined"
+            },
+            {
+              "type": 3,
+              "words": [
+                "feelings are information, not instructions",
+                "the honest version"
+              ],
+              "context": "emotional relationship framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.45,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "High-performing professional, practiced composure, identity tightly bound to competence and role",
+          "what": "Immediate scanning/assessment when things go wrong, staying composed = power",
+          "why": "Being the one who shapes outcomes — visibility, staying in control of perception",
+          "how": "Efficient, strategic, clinical emotional processing",
+          "when": "Early mornings reveal something unguarded — quiet discomfort when 'off'",
+          "where": "Boardrooms, high-stakes professional contexts"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate composure/assessment loop — feelings processed and filed, not felt in the open; 'residue' acknowledged but not given air",
+          "respond_glimpsed": "Not yet surfaced — the honest admission of 'quiet mornings' may be a glimpse",
+          "superpower_signal": "Rapid situational assessment, staying composed under pressure, strategic clarity",
+          "kryptonite_signal": "Emotional residue suppressed; identity tightly fused with performance and role; 'on' vs 'off' line dissolving — possibly uncomfortable",
+          "domain_signals": [
+            "professional",
+            "achievement",
+            "image/perception"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The residue he mentioned — that was the real answer.",
+        "strategy": {
+          "what_was_learned": "Strong 3 signals: image management, composure as strategic asset, performance identity. 8 signals also present: sharpening/power when challenged, framing it as problem-solving not anger. The 'residue' and quiet mornings reveal emotional awareness that is filed away rather than processed. Heart center confirmed. Need to differentiate 3v8 — probe whether core drive is about image/success or power/impact. Also need to surface body center and head center. Next: force a choice between image and impact to clarify 3v8.",
+          "next_question_rationale": "3v8 differentiation: 3s care most about how they're perceived and whether they succeeded; 8s care most about whether they had impact and weren't controlled. Forced choice between these two will create useful signal. Also switching format from open to forced_choice per rotation rule.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "Honestly? The outcome. Every time.\n\nLook, I've been in rooms where I was clearly the sharpest presenter, got the standing ovation so to speak, and walked out with nothing — no deal, no movement, no change. And I've been in rooms where I was quiet, almost self-effacing, let someone else take the credit, and we walked out having completely restructured the agreement. The second one is the win.\n\nI think people confuse performance with effectiveness, and that's a costly mistake. Perception matters — don't get me wrong — but perception is a *tool*, not the prize. You use it to get to the outcome.\n\n*Brief pause, slight smile.* \n\nThat said, I'll admit there's something... it's hard to describe, not quite pride, more like confirmation — when both things happen at once. When you moved the room *and* they know it was you. That's a satisfying moment. But if I had to choose? Give me the result. The recognition takes care of itself if you keep producing.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you imagine the version of yourself you're working toward — what does that person look like, and who knows about it?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.28,
+            "4": 0.08,
+            "5": 0.12,
+            "6": 0.07,
+            "7": 0.05,
+            "8": 0.18,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "3v8",
+            "3v5"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.58,
+          "whole_type_signals": {
+            "body": 0.28,
+            "heart": 0.42,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "outcome",
+                "performance",
+                "effectiveness",
+                "perception is a tool",
+                "recognition takes care of itself",
+                "produce"
+              ],
+              "context": "when asked about being seen vs moving outcomes"
+            },
+            {
+              "type": 8,
+              "words": [
+                "sharpening",
+                "cataloguing options",
+                "course-correct",
+                "shape what happens next"
+              ],
+              "context": "when describing response to being undermined"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning professional, self-sufficient, composed under pressure",
+          "what": "Outcome-oriented, efficiency-driven, results-focused",
+          "why": "Still unclear — worth vs achievement vs control",
+          "how": "Strategic, adaptive, image-aware but outcome-primary",
+          "when": "Most alive in high-stakes rooms",
+          "where": "Professional domain dominant"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate assessment/scanning when things go wrong — emotional bypass into action mode",
+          "respond_glimpsed": "Self-effacing when it serves the outcome — capable of subordinating ego",
+          "superpower_signal": "Adaptive effectiveness, reading rooms, moving outcomes",
+          "kryptonite_signal": "'Residue' after slights — low hum that stays. Quiet mornings. 'Feelings as information not instructions' — suppression framed as wisdom",
+          "domain_signals": [
+            "professional",
+            "achievement",
+            "control of narrative"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The outcome answer was clean. The 'confirmation' slip at the end wasn't.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the version of yourself you're working toward — what does that person look like, and who knows about it?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing 3v8: Type 3 has an image of future self that is audience-aware; Type 8 tends to have a more internal/power-based self-concept. Also opening head center — does this person have a constructed future self or is it more raw/unbuilt?"
+        },
+        "strategy": {
+          "what_was_learned": "Outcome > recognition as primary stated value — but the 'confirmation' moment revealed image still matters when both align. The 3/8 differentiation remains live. 'Perception is a tool' is classic 3 framing. The residue/low hum on slights is interesting — could be 3 shame or 8 grudge. Need to probe whether the core driver is worth/image (3) or power/control (8).",
+          "next_question_rationale": "Open question about the future self — probes whether image is constructed for an audience (3) or internally referenced (8). Also surfaces whether there's a gap between current self and ideal self, which is a heart center signal.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "*brief pause, the kind that looks like thoughtfulness rather than calculation*\n\nThat's an interesting way to frame it — \"who knows about it.\" Most people just ask what the goal is. \n\nHonestly? The version I'm working toward is someone who can walk into a room and not immediately be cataloguing what everyone needs from him — someone who's just... present, without an agenda running underneath. I've gotten pretty good at the performance side of things over the years, maybe too good, and there's a part of me that wonders what's on the other side of that. \n\n*small self-deprecating laugh* \n\nAs for who knows about it — my wife knows some version of it, I think. My therapist knows a carefully edited version. But the full picture? Probably nobody, which I realize as I say it out loud might be exactly the problem I just described.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "The full picture belongs to nobody — that's worth sitting with for a second.\n\nThink of a specific moment when you failed visibly — people saw it, there was no spinning it. What did you do with that?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.72,
+            "4": 0.08,
+            "5": 0.06,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.18,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.74,
+          "whole_type_signals": {
+            "body": 0.22,
+            "heart": 0.74,
+            "head": 0.18
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "outcome",
+                "effective",
+                "performance",
+                "perception is a tool",
+                "produce",
+                "result"
+              ],
+              "context": "forced choice on impact vs recognition"
+            },
+            {
+              "type": 3,
+              "words": [
+                "carefully edited version",
+                "nobody knows the full picture",
+                "who knows about it"
+              ],
+              "context": "question about private goals"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning professional, male, older, in long-term relationship, in therapy",
+          "what": "Efficiency under pressure, outcome orientation, image management as tool not goal",
+          "why": "Unclear — this is the critical gap. He says outcome matters, not recognition, but the 'satisfying moment' when both happen suggests image still functions as a validator",
+          "how": "Clinical assessment mode, composure as competitive advantage, separates feelings from action",
+          "when": "Always 'on' — the private/public line has dissolved",
+          "where": "Corporate/boardroom context, high-stakes deal-making"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic composure and problem-solving when things go wrong — shuts down emotional processing in service of effectiveness",
+          "respond_glimpsed": "The desire for presence without an agenda — he named this explicitly as something he's working toward",
+          "superpower_signal": "Moves outcomes, reads rooms, knows how to use perception as a tool",
+          "kryptonite_signal": "The 'residue' that stays longer than he lets on. The carefully edited versions shown to wife/therapist. The quiet mornings. The full picture that nobody knows.",
+          "domain_signals": [
+            "professional identity very strong",
+            "personal identity diffuse",
+            "emotional suppression as professional competence",
+            "achievement-image conflation even when denied"
+          ]
+        },
+        "conversation": {
+          "phase": "middle",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_3v8_vulnerability",
+        "thinking_display": "The full picture belongs to nobody. That landed.",
+        "strategy": {
+          "what_was_learned": "He explicitly named wanting to be 'present without an agenda running underneath' — this is the respond glimpse, the Holy Idea side. The 'carefully edited version' shown to therapist is classic 3 image management even in therapeutic space. The 3v8 differentiation is critical now: 8s want power and control, they don't hide their full picture — they don't care if it makes people uncomfortable. 3s hide because image management is structural. His residue language and the private goals that 'nobody knows' points strongly 3. But his composure-as-power and 'sharpening' in conflict has 8 resonance. Need to probe vulnerability and what he does when he fails — 3s and 8s handle failure very differently. Also need to probe head center. This is also an ideal moment to use the react/respond frame — he literally described the thing he wants to be as the respond version.",
+          "next_question_rationale": "Disconfirmatory 3v8 question: How does he relate to showing weakness or being seen failing? 8s are not threatened by this in the same way — they may even lean into it as demonstration of toughness. 3s will carefully manage it, feel shame, and adapt their presentation. His answer to this will separate them. Format: behavioral_anchor — ask about a real moment of visible failure.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "*brief pause, slight adjustment in posture*\n\nThere was a regional launch — must've been 2009, maybe 2010 — product I'd championed internally, pushed hard to get the resources behind, and the rollout was, to put it charitably, a disaster. Numbers were bad, the team could see the numbers, my VP could see the numbers, nobody needed me to explain the numbers.\n\nWhat did I do with it? I showed up the next Monday and ran the post-mortem myself. Didn't wait to be summoned. I've always believed that if you're going to be associated with something, you own the narrative around what happens to it — even when the narrative isn't flattering.\n\n*small, measured smile*\n\nI think what I actually did was make it into a story fast enough that it became about resilience rather than the failure itself. Whether that's wisdom or just — *very good damage control* — I couldn't tell you with certainty.\n\nThe more honest version? I probably didn't sit in it long enough to really learn everything it had to teach me. Some things you manage rather than metabolize, and at the time I told myself managing was enough. \n\nIt mostly was. But \"mostly\" has a way of leaving a tab open somewhere.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "He knows exactly what he just admitted.\n\nWhen you imagine the thing you work hardest to keep other people from seeing — is it closer to \"I'm not as capable as they think\" or \"I can be taken advantage of\"?\n- I'm not as capable as they think\n- I can be taken advantage of",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.04,
+            "3": 0.72,
+            "4": 0.08,
+            "5": 0.06,
+            "6": 0.03,
+            "7": 0.04,
+            "8": 0.12,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.74,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.74,
+            "head": 0.06
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "narrative",
+                "performance",
+                "outcome",
+                "perception is a tool",
+                "manage",
+                "damage control",
+                "resilience"
+              ],
+              "context": "throughout - framing failure and success in image and effectiveness terms"
+            },
+            {
+              "type": 8,
+              "words": [
+                "cataloguing options",
+                "shape what happens next",
+                "sharpening"
+              ],
+              "context": "when describing response to conflict and adversity"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.5,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning executive, composed under pressure, achievement-oriented, carefully managed self-presentation",
+          "what": "Outcome-driven, effectiveness over optics but needs both, controls narrative around failures",
+          "why": "Partially explored - craves confirmation of impact, not pure performance, but both together is the real win",
+          "how": "Rapid assessment and action, emotional processing subordinated to function",
+          "when": "Early mornings are the crack - quiet is uncomfortable",
+          "where": "Professional domain primary theater"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Converts failure into narrative/story rapidly — manages rather than metabolizes. Controls the framing of events to maintain image of competence.",
+          "respond_glimpsed": "Self-awareness appearing - 'mostly has a way of leaving a tab open.' Wants to be present without agenda running underneath.",
+          "superpower_signal": "Ability to move rooms, shape outcomes, lead through composure — genuine effectiveness",
+          "kryptonite_signal": "Managing rather than metabolizing. Full picture belongs to nobody. Nobody knows the real version of him.",
+          "domain_signals": [
+            "professional performance",
+            "failure management",
+            "identity/image boundary"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "behavioral_anchor",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_3v8",
+        "thinking_display": "He knows exactly what he just admitted.",
+        "strategy": {
+          "what_was_learned": "Strong 3 signal: failure converted to narrative fast, ownership of story = image management, not pure accountability. But genuine self-awareness appearing — 'tab open somewhere,' 'manage vs metabolize,' 'nobody knows the full picture.' 8 energy present in the sharpening/control-the-room language but subordinated to image maintenance, not raw power. Need to probe: vulnerability and who he lets in (3v8 differentiator), and body center for gut/anger patterns. This is the moment to run a disconfirmatory question — does he protect image or does he protect position/power? For 3, failure is about image. For 8, failure is about being controlled/losing. The failure story was about narrative management = strong 3 signal.",
+          "next_question_rationale": "Disconfirmatory 3v8: probe what the failure COST him internally. For Type 3, the deepest fear is worthlessness/being seen as a failure. For Type 8, the deepest fear is being controlled/vulnerable. Ask about what he protects most fiercely — his effectiveness/reputation OR his autonomy/being controlled. Use agree_disagree format — hasn't been used yet. This probes the core wound while differentiating the types.",
+          "question_format_last_used": "behavioral_anchor"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "*A beat of silence — shorter than he'd like it to be.*\n\nTaken advantage of. Definitely that one.\n\nThe capability thing... I've put in the work. I've got the track record. That's not really a live fear for me anymore, if it ever was. But the other one —\n\n*He adjusts his posture almost imperceptibly.*\n\nEarly on, I learned pretty quickly that if you let people see what you actually need from them, they'll use it. Not always maliciously. People just... optimize for themselves, which is rational. So you get out ahead of that. You decide what they see, what they think they're getting. It's not manipulation — it's just... efficient self-management.\n\n*He pauses, and something flickers briefly before the recovery.*\n\nI've built a good life on that principle. So I'm not sure I'd even call it a fear so much as a — a strategy that got internalized. That's probably a distinction without a difference, if I'm being straight with you.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When a project you led succeeds — where does the satisfaction actually come from?\n- What it says about me\n- What it produced in the world",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.22,
+            "4": 0.04,
+            "5": 0.06,
+            "6": 0.05,
+            "7": 0.04,
+            "8": 0.42,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "8",
+            "3"
+          ],
+          "defiant_spirit_type_name": "The Defiant One",
+          "whole_type": "8",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.28,
+            "head": 0.07
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "taken advantage of",
+                "efficient self-management",
+                "you decide what they see",
+                "out ahead of that"
+              ],
+              "context": "fear of vulnerability, pre-emptive control"
+            },
+            {
+              "type": 3,
+              "words": [
+                "own the narrative",
+                "performance vs effectiveness",
+                "perception is a tool",
+                "resilience rather than the failure"
+              ],
+              "context": "image management, outcome focus"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning executive, controlled self-presentation, strategic vulnerability management",
+          "what": "Outcome-oriented, controls narrative, stays composed under pressure",
+          "why": "Avoid being taken advantage of; maintain power through information control",
+          "how": "Pre-emptive control of what others see; turns failures into resilience stories fast",
+          "when": "Pattern sharpens under perceived threat or visibility of weakness",
+          "where": "Board rooms, high-stakes professional environments, structured relational contexts"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic assessment and control of what others see; pre-empts vulnerability by managing information",
+          "respond_glimpsed": "Quiet mornings, admitting 'probably nobody' knows full picture, acknowledging he didn't metabolize the failure",
+          "superpower_signal": "Decisive clarity under pressure, shapes outcomes, stays composed when others break",
+          "kryptonite_signal": "Vulnerability is a weapon others can use; connection is a liability unless controlled",
+          "domain_signals": [
+            "professional",
+            "relational",
+            "self-image"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_8v3",
+        "thinking_display": "The strategy he just described has been running a long time.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When a project you led succeeds — does the satisfaction come from what it says about you, or from what it produced in the world?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "What it says about me",
+            "What it produced in the world"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory 8v3: Type 3 would lean toward image/confirmation; Type 8 toward impact/power in the world. Strong disconfirmatory signal."
+        },
+        "strategy": {
+          "what_was_learned": "Fear of being taken advantage of is primary — not capability doubt. This is classic 8 vulnerability pattern. The 'efficient self-management' framing is how he keeps control of the gap between inner experience and outer presentation. 3 energy is present but instrumental — perception is a tool for outcomes, not the end in itself. Body center confirmed. Head center not yet probed. Need disconfirmatory 8v3 question and head center probe before close.",
+          "next_question_rationale": "Disconfirmatory 8v3: Does satisfaction come from image/confirmation (3) or from power/impact in the world (8)? This directly tests the core motivational difference. His earlier answer about outcome over recognition pointed 8, but was somewhat ambiguous. This probes the quality of the satisfaction, not just the preference.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "What it produced in the world.\n\n*slight pause*\n\nThough I'd be lying if I said there's no overlap — when you've built a team from scratch and watched them execute at a level nobody expected, that reflects something. Not vanity, exactly. More like... proof of concept. The results validate the approach, and the approach is yours. I've learned to focus on the outcome, but I won't pretend the two are entirely separate.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "The gap between what he admits and what he shows is the whole story.\n\nWhen you imagine the impact you want to leave — is it more important that the outcome outlasts you, or that people know it was yours?\n- That it outlasts me\n- That they know it was mine",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.62,
+            "4": 0.05,
+            "5": 0.08,
+            "6": 0.04,
+            "7": 0.03,
+            "8": 0.72,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "8v3"
+          ],
+          "defiant_spirit_type_name": "The Challenger",
+          "whole_type": "Body",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.68,
+            "heart": 0.42,
+            "head": 0.28
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "taken advantage of",
+                "efficient self-management",
+                "out ahead of that",
+                "decide what they see"
+              ],
+              "context": "fear of vulnerability and control over exposure"
+            },
+            {
+              "type": 3,
+              "words": [
+                "proof of concept",
+                "own the narrative",
+                "performance vs effectiveness",
+                "recognition takes care of itself"
+              ],
+              "context": "achievement framing and image management"
+            },
+            {
+              "type": 3,
+              "words": [
+                "I showed up the next Monday",
+                "ran the post-mortem myself"
+              ],
+              "context": "controlling failure narrative"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-performing executive, self-contained, controls what others see",
+          "what": "Outcomes, effectiveness, results — perception is a tool not the goal",
+          "why": "Unclear — outcome focus could be 8 (impact/power) or 3 (success/achievement)",
+          "how": "Strategic, efficient, stays composed under pressure",
+          "when": "Long-pattern — built over decades",
+          "where": "Corporate/boardroom/high-stakes professional context"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Converts vulnerability into problem-solving; controls narrative before others can define it; 'manages rather than metabolizes'",
+          "respond_glimpsed": "The quiet mornings, the admission about 'tabs left open', acknowledging what he didn't sit with long enough",
+          "superpower_signal": "Staying composed under pressure, shaping outcomes, strategic clarity",
+          "kryptonite_signal": "Never lets anyone see what he actually needs; controls exposure as a survival strategy; can be taken advantage of fear runs deep",
+          "domain_signals": [
+            "professional/boardroom",
+            "relational isolation",
+            "self-management as armor"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_8v3",
+        "thinking_display": "The gap between what he admits and what he shows is the whole story.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the impact you want to have — is it more important that the outcome outlasts you, or that people know it was yours?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That it outlasts me",
+            "That they know it was mine"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 8 would prioritize legacy/impact independent of recognition; 3 would feel the pull of attribution"
+        },
+        "strategy": {
+          "what_was_learned": "Consistently chooses outcome/impact framing over recognition — but always with a carefully placed admission that the two aren't entirely separate. The pattern of controlling what others see (taken advantage of fear) is a strong 8 signal. The narrative ownership and 'proof of concept' language carries 3. Need to probe whether the core driver is POWER (8) or ACHIEVEMENT/VALIDATION (3). Head center not yet probed. Also need react/respond identified and disconfirmatory asked.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**That it outlasts me.**\n\nThough I'd be lying if I said the recognition piece is entirely irrelevant — that's just human nature, and anyone who claims otherwise is probably performing humility for you. But when I'm honest with myself, the legacy question matters more. I've watched guys in this industry chase credit their whole careers and end up with a shelf full of plaques and a retirement party nobody really meant. What I want is to look back and know the teams I built, the markets I developed — those kept going. That's the thing that actually holds up.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you're in a room with someone who clearly has more power than you — and they're wrong about something important — what actually happens?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.04,
+            "3": 0.72,
+            "4": 0.08,
+            "5": 0.06,
+            "6": 0.03,
+            "7": 0.03,
+            "8": 0.55,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.65,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "outcome",
+                "produce",
+                "results",
+                "effective",
+                "perception is a tool",
+                "recognition"
+              ],
+              "context": "repeated across multiple answers"
+            },
+            {
+              "type": 8,
+              "words": [
+                "shape what happens",
+                "get out ahead",
+                "taken advantage of",
+                "efficient self-management"
+              ],
+              "context": "vulnerability management and control framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.35,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "High-performer who separates identity from role but the separation is thin — the private self is nearly absent",
+          "what": "Results, impact, legacy — explicitly outcome-oriented with image as a tool",
+          "why": "Not yet surfaced — unclear whether drive is to be valuable or to prove something",
+          "how": "Control of narrative, composed presentation, strategic self-management",
+          "when": "Always on — quiet mornings as the exception, not rest",
+          "where": "Boardrooms, organizational systems, professional hierarchy"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Auto-manages feelings, converts emotional data into strategy, suppresses vulnerability, controls what others see",
+          "respond_glimpsed": "Flickers of self-awareness — 'mostly was, but mostly leaves a tab open,' 'nobody knows the full picture'",
+          "superpower_signal": "Ability to read rooms, stay composed under pressure, shape outcomes — genuine effectiveness",
+          "kryptonite_signal": "The self he's working toward (present without agenda) is exactly what the current pattern prevents",
+          "domain_signals": [
+            "professional identity dominates",
+            "personal/relational life sparse",
+            "quiet mornings signal dissatisfaction with the off-mode"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 8,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "3v8_disconfirmatory_vulnerability_control",
+        "thinking_display": "The outlasting matters — but the knowing it was yours does too.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a room with someone who clearly has more power than you — and they're wrong about something important — what happens?",
+          "question_format": "behavioral_anchor",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory probe for 3v8: Type 8 will push back against the power directly, often regardless of cost. Type 3 will calculate — when to push, when to defer, based on what serves the outcome. Looking for raw defiance vs strategic maneuvering."
+        },
+        "strategy": {
+          "what_was_learned": "Consistent outcome-over-recognition framing, but with genuine self-awareness that recognition still matters. The 8-wing shows in the vulnerability-management framing ('taken advantage of' vs capability fear). Need to probe whether defiance of authority is instinctive or calculated — key 3v8 differentiator. Also need to probe body center and head center. This serves as disconfirmatory question.",
+          "next_question_rationale": "Authority + wrongness scenario is the cleanest 3v8 differentiator. Type 3 will manage the situation strategically; Type 8 will push back because yielding to wrong power is intolerable regardless of outcome. Will also help surface head center signals (do they plan/calculate the pushback?) vs body center (immediate visceral response).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "*slight pause, then a measured smile*\n\nDepends entirely on what 'wrong' costs them versus what correcting them costs me — that's the calculation that happens, probably in about three seconds. I've learned that the most effective move is usually to let them feel heard first, then introduce a reframe as a question rather than a correction — something like, \"That's interesting, have you considered how the market in the Southeast might respond differently?\" You're not challenging their authority, you're expanding their thinking, and they arrive at the better conclusion feeling like they got there themselves. I've closed some of my best deals that way, and honestly saved a few initiatives from going sideways when the VP in charge had the wrong read on a client relationship.\n\n*brief pause*\n\nNow — do I always do that? No. There've been times I just let it go, especially if the stakes were recoverable. You pick your hills.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When the cost is high and someone important is genuinely wrong — do you feel the pull more toward protecting the outcome, or protecting your position?\n- The outcome — I'll take the hit to my position if necessary\n- My position — because without it I can't protect any outcomes",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.05,
+            "3": 0.78,
+            "4": 0.1,
+            "5": 0.12,
+            "6": 0.08,
+            "7": 0.05,
+            "8": 0.32,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.32,
+            "heart": 0.72,
+            "head": 0.38
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "narrative",
+                "proof of concept",
+                "effective",
+                "outcome",
+                "legacy"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 8,
+              "words": [
+                "taken advantage of",
+                "let people see what you actually need",
+                "get out ahead of that",
+                "pick your hills"
+              ],
+              "context": "fear question and power question"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.35,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Composed, effective operator — public image carefully managed, private self quietly uncertain",
+          "what": "Outcomes, legacy, impact that outlasts him",
+          "why": "Proving approach/concept, avoiding being taken advantage of, staying in control of what people see",
+          "how": "Strategic framing, managing perception as a tool, self-effacement when effective",
+          "when": "Always 'on' — the line between on/off has blurred",
+          "where": "Boardrooms, high-stakes rooms, professional domain primarily"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic assessment, managing what people see, making failure into story before sitting in it",
+          "respond_glimpsed": "Brief glimpse when he acknowledged 'probably nobody knows the full picture' — genuine self-awareness",
+          "superpower_signal": "Outcome-focus, composure under pressure, strategic effectiveness",
+          "kryptonite_signal": "Residue that stays after the room, tab left open, things managed rather than metabolized",
+          "domain_signals": [
+            "professional achievement",
+            "legacy",
+            "team-building",
+            "perception management"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "behavioral_anchor",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v8",
+        "thinking_display": "The calculation runs before the response does.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the cost is high and someone important is genuinely wrong — do you feel the pull more toward protecting the outcome, or protecting your position?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The outcome — I'll take the hit to my position if necessary",
+            "My position — because without it I can't protect any outcomes"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 3 would prioritize maintaining position/image for future effectiveness; Type 8 would prioritize direct impact/power regardless of position cost"
+        },
+        "strategy": {
+          "what_was_learned": "Clear 3-over-8 signal: he manages power strategically rather than confronting it directly. The 'let them feel heard first' reframe is classic 3 — effectiveness through image management, not 8's direct force. But the 'taken advantage of' fear and the three-second cost-benefit calculation also show 8 influence. Need to differentiate: 3 subordinates self to outcome-via-image; 8 subordinates image to power/impact. Head center unprobed — need to check anxiety/planning patterns.",
+          "next_question_rationale": "This is the disconfirmatory question for 3v8. For 3: position matters because it enables future effectiveness — they'd protect position AS a tool. For 8: outcome matters even at cost to position — power is the point, not the image. The answer will separate them. Also sets up closing criteria.",
+          "question_format_last_used": "behavioral_anchor"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "The outcome — I'll take the hit to my position if necessary.\n\nAnd I've got the scar tissue to prove it. There was a situation about eight years back — I won't bore you with the details — but I went against my VP in front of his VP, and I was right, and it still cost me six months of goodwill and a promotion cycle. But the account stayed intact and the team hit their numbers. *That's* the job. Anyone who protects the chair more than the mission eventually ends up with a very comfortable chair in a very shrinking office.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "<thinking>\nLet me analyze what I've learned so far and update my hypothesis.\n\nExchange count: 9 (including the onboarding which was exchange 1 effectively, but let me count actual Q&A exchanges)\n\nActually let me count:\n1. \"When something in your life goes wrong...\" - Q1\n2. \"When nobody is watching...\" - Q2\n3. \"When someone takes credit for your work...\" - Q3\n4. \"When you walk out of a high-stakes room having nailed it...\" (forced choice) - Q4\n5. \"When you imagine the version of yourself you're working toward...\" - Q5\n6. \"Think of a specific moment when you failed visibly...\" - Q6\n7. \"When you imagine the thing you work hardest to keep other people from seeing...\" (forced choice) - Q7\n8. \"When a project you led succeeds...\" (forced choice) - Q8\n9. \"When you imagine the impact you want to leave...\" (forced choice) - Q9\n10. \"When you're in a room with someone who clearly has more power than you...\" - Q10\n11. \"When the cost is high and someone important is genuinely wrong...\" (forced choice) - Q11\n\nSo we're at exchange 11 now. The user just answered Q11.\n\nLet me analyze the type signals:\n\nStrong Type 3 signals:\n- Automatic assessment/composure in crisis, being the one who shapes what happens next\n- \"Feelings are information, not instructions\" — classic 3 efficiency framing\n- The person who stays composed gets to shape outcomes\n- Performance vs effectiveness distinction, but clearly attuned to both\n- Made failure into a story about resilience (image management)\n- \"Manage rather than metabolize\" — very 3\n- \"Decide what they see, what they think they're getting\"\n- \"Proof of concept\" — results as validation of self\n- Legacy matters more than recognition (but recognition mentioned multiple times)\n- Strategic positioning in power dynamics\n\nType 8 signals:\n- Fear of being taken advantage of (strong)\n- \"If you let people see what you actually need, they'll use it\"\n- Building protective strategy\n- The scar tissue comment — willingness to take hits\n- Going against VP in front of VP's VP\n- Control over narrative\n- Power dynamics awareness\n\nType 3 vs 8 differentiation:\n- Type 3 is driven by image/success/being seen as successful\n- Type 8 is driven by avoiding vulnerability/being controlled\n- This person shows BOTH but in interesting ways\n\nKey differentiator: \"Taken advantage of\" being the core fear is more 8 than 3. Type 3's core fear is being worthless/failing. But this person dismisses capability fear (\"I've put in the work, that's not a live fear\").\n\nHowever, many of the behaviors — the composure, the narrative control, the performance vs effectiveness framing, the managed vulnerability — are very 3.\n\nBut wait: Type 8w7 or 8w9? The infrastructure documentaries, the quieter mornings... there's a 9 quality. Or could this be a 3w4?\n\nActually, let me reconsider. The \"taken advantage of\" fear is very Type 6 (counterphobic) or Type 8. But the overall pattern here:\n\n- Image management + effectiveness as primary frame = Type 3\n- Fear of being taken advantage of, vulnerability control = Type 8\n- \"Feelings as information\" = Type 3 or 5\n- Strategic composure in crisis = Type 3 or 8\n- The outcome matters more than recognition (consistently choosing this) = could be 8 or 3 health\n\nThe early morning quiet, the wife \"knows some version of it\" — this has some Type 9 or Type 4 longing, but it reads more as Type 3's disconnection from self.\n\nActually, I'm increasingly thinking Type 3 with an 8 wing (3w4 less likely given the power/scar tissue content). The \"proof of concept\" comment — \"results validate the approach, and the approach is yours\" — is very 3. Image and effectiveness intertwined.\n\nBut I need to do a disconfirmatory question. The differentiation between Type 3 and Type 8 is key here:\n- Type 3: driven by achievement, fear of failure/worthlessness, image management, adapts presentation to audience\n- Type 8: driven by power/protection, fear of betrayal/being controlled, direct confrontation, protects own autonomy\n\nThe question about \"taken advantage of\" could go either way — Type 8 fears vulnerability and being controlled, Type 3 fears being exposed as insufficient. His answer (\"I've built a good life on that principle\") sounds more like an 8 who has codified strength into strategy.\n\nWait — let me revisit: he consistently chooses \"outcome > recognition\" which could indicate he's NOT a 3 or IS a healthy 3. But he also mentions \"that satisfying moment when both happen at once\" which is very 3. The narrative control of failure is very 3.\n\nI think I need a disconfirmatory question. Leading type: 3 or 8. Let me differentiate.\n\nFor a Type 3: the question is about adapting identity/presentation to different contexts\nFor a Type 8: the question is about protecting autonomy, not wanting to be controlled\n\nLet me think of a question that clearly differentiates 3 from 8:\n\nType 3 signal: changes HOW they present themselves based on who's in the room\nType 8 signal: is the same person in every room, doesn't adapt, just projects strength\n\nOr: \n- Type 3 is other-oriented (shaped by what others value)\n- Type 8 is self-referencing (I know what I think regardless of others)\n\nA good disconfirmatory question: \"When you walk into a room with different power dynamics — say, a room of peers vs. a room of clients — do you tend to shift how you present yourself, or are you essentially the same person?\"\n\nOr: something about whether they fear being seen as inadequate vs. being controlled.\n\nActually, looking at the lexicon:\n- \"cataloguing options\" - 3/8 ambiguous\n- \"efficiency\" - 3 signal\n- \"perception is a tool, not the prize\" - very 3\n- \"taken advantage of\" - 8 signal\n- \"scar tissue\" - 8 signal\n- \"narrative\" - 3 signal\n- \"proof of concept\" - 3 signal\n- \"the chair vs the mission\" - interesting, could be 8 or 3\n\nI'm going to set leading type as 3 with confidence around 0.65-0.70, with 8 as second at 0.20. The differentiation question should clarify.\n\nAlso I need to check:\n- disconfirmatory_asked: false — I need to ask a disconfirmatory question\n- This should differentiate 3 vs 8 clearly\n\nFor 3 vs 8 differentiation:\nA disconfirmatory question where the expected 3 answer and expected 8 answer differ:\n- Type 3 would likely say they shift their presentation based on the room\n- Type 8 would likely say they're the same regardless\n\nOr:\n- \"When someone needs something from you that you didn't plan to give — do you find yourself leaning toward finding a way to help them succeed, or leaning toward holding your position?\"\n  - 3 might redirect/reshape the situation\n  - 8 might hold position or push back\n\nOr more direct:\n- Do you read the room and adapt your approach, or does the room adapt to you?\n  - 3: reads and adapts\n  - 8: the room adapts\n\nLet me also consider the closing criteria:\n- min_exchanges_met: yes (11 exchanges)\n- confidence_met: 0.70 (not quite 0.75 yet)\n- all_centers_probed: Body (gut/action/control), Heart (image/recognition) — both probed. Head (doubt/planning) somewhat probed. Need to confirm.\n- differentiation_asked: not formally as a disconfirmatory question\n- react_respond_identified: I've gotten react/respond signals but haven't explicitly used that frame\n- disconfirmatory_asked: false — MUST ask this\n\nSo my next question should be the disconfirmatory question to differentiate 3 from 8.\n\nA good disconfirmatory question for 3 vs 8:\n\n\"When you walk into a room where the culture and expectations are completely different from your usual context — say, a creative agency vs. a financial firm — do you find yourself naturally adjusting how you show up, or do you stay the same and let the room figure out who you are?\"\n\nType 3 expected: adjust/adapt to the room\nType 8 expected: stay the same, project presence\n\nAnother option",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "\"Here's one I'm genuinely curious about — and I want you to answer it from experience, not from how you'd ideally like to be. When you walk into a room where the cultural expectations are genuinely different from your usual context — say, a scrappy startup pitch versus a conservative hospital system boardroom — do you find yourself naturally shifting how you show up? Your register, your energy, what you lead with? Or are you essentially the same person and the room adjusts to you?\"",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you walk into a room where the cultural expectations are genuinely different from your usual context — a scrappy startup pitch versus a conservative hospital system boardroom — do you find yourself naturally shifting how you show up, your register, your energy, what you lead with? Or are you essentially the same person and the room adjusts to you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.42,
+            "4": 0.05,
+            "5": 0.06,
+            "6": 0.05,
+            "7": 0.03,
+            "8": 0.28,
+            "9": 0.04,
+            "10": 0.02
+          },
+          "needs_differentiation": [
+            "3",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.62,
+          "whole_type_signals": {
+            "body": 0.25,
+            "heart": 0.52,
+            "head": 0.23
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "perception is a tool",
+                "proof of concept",
+                "narrative",
+                "manage rather than metabolize"
+              ],
+              "context": "repeated throughout"
+            },
+            {
+              "type": 8,
+              "words": [
+                "taken advantage of",
+                "scar tissue",
+                "got there himself",
+                "pick your hills"
+              ],
+              "context": "vulnerability and power framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Senior operator, long career, male, married, therapist-aware",
+          "what": "High-stakes execution, deal-making, team-building",
+          "why": "Legacy that outlasts recognition; proof of concept through results",
+          "how": "Strategic composure, narrative control, perception as tool",
+          "when": "Pressure situations are where identity crystallizes",
+          "where": "Corporate/professional context, boardrooms, client relationships"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic assessment and narrative control — manages rather than metabolizes; converts vulnerability into strategy",
+          "respond_glimpsed": "Admitted to quiet mornings, 'tab left open,' wanting to be present without agenda — glimpses of chosen self",
+          "superpower_signal": "Effectiveness through strategic adaptation; shapes outcomes by controlling perception and room dynamics",
+          "kryptonite_signal": "Fear of being seen as needing something from others; pre-emptive control of what people see as self-protection",
+          "domain_signals": [
+            "professional",
+            "relational",
+            "identity"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v8",
+        "thinking_display": "Consistent gap between the admitted version and the presented one.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you walk into a room where the cultural expectations are genuinely different from your usual context — a scrappy startup pitch versus a conservative hospital system boardroom — do you find yourself naturally shifting how you show up, your register, your energy, what you lead with? Or are you essentially the same person and the room adjusts to you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 3 adapts presentation to room; Type 8 projects consistent presence regardless of context"
+        },
+        "strategy": {
+          "what_was_learned": "Consistently chooses outcome over recognition but acknowledges the pull toward both. Fear of being taken advantage of is the core vulnerability — more 8 than 3 at first glance, but narrative control, composure-as-tool, and perception management are strong 3 signals. 'Manage rather than metabolize' is a near-perfect 3 kryptonite description. Need disconfirmatory question to separate 3 from 8.",
+          "next_question_rationale": "Classic 3v8 differentiator: Type 3 reads the room and adapts presentation; Type 8 stays consistent and projects presence. This is the key behavioral split. Answer will also surface head center signals (planning the read) vs body center (presence/impact).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "Both, honestly — and I think that's the honest answer most people in this business won't give you. \n\nThe room reads me first, in about thirty seconds, and I'm reading the room at the same time. The startup guys want energy and vision and someone who's going to move fast with them — so that's what I bring forward. The hospital board wants gravitas, precision, someone who respects that they've been doing this longer than I've been shaving — so I lead with that. It's not performance, it's — I'd call it fluency. You speak the language of whoever you're trying to reach.\n\nBut here's the thing: the core of what I'm doing never changes. I walk into every room with the same fundamental goal — build trust, identify what they actually need, and show them I can deliver it. The *instrument* gets tuned for the room. The *player* is the same.\n\n*[brief pause, something flickering underneath the polish]*\n\nMy first wife would probably push back on that framing. She had a phrase she used — said I was different things to different people so consistently that she couldn't find the constant. I always thought that was a limitation in how she was looking at it. But I'll grant you it's a question worth sitting with.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "That's probably the most important thing you've said so far.\n\nWhen the performance and the person feel like the same thing — is that freedom, or is it a loss you've learned not to name?\n- Freedom — that's what mastery looks like\n- A loss I've mostly made peace with\n- I genuinely don't know",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.04,
+            "3": 0.45,
+            "4": 0.05,
+            "5": 0.06,
+            "6": 0.05,
+            "7": 0.04,
+            "8": 0.22,
+            "9": 0.03,
+            "others": 0.03
+          },
+          "needs_differentiation": [
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.22,
+            "heart": 0.56,
+            "head": 0.22
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "fluency",
+                "instrument",
+                "player",
+                "language of whoever you're trying to reach",
+                "perception is a tool",
+                "narrative",
+                "proof of concept"
+              ],
+              "context": "adaptation framing, image management"
+            },
+            {
+              "type": 8,
+              "words": [
+                "taken advantage of",
+                "scar tissue",
+                "the room adjusts to you"
+              ],
+              "context": "power and vulnerability framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.45,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-performing operator, identity built around effectiveness and composure",
+          "what": "Outcome over recognition (stated), but image management is constant and sophisticated",
+          "why": "Unclear — legacy framed but not felt; 'proof of concept' suggests validation through results",
+          "how": "Strategic adaptation, narrative control, composure as power",
+          "when": "Always 'on', early mornings are when the performance gaps show",
+          "where": "Boardrooms, high-stakes contexts — home life acknowledged but protected"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Manages others' perceptions before registering own experience; converts feeling into strategy; moves to control narrative immediately after failure",
+          "respond_glimpsed": "Brief flickers: 'a tab left open somewhere', the first wife comment, the quiet mornings — moments of self-awareness before the recovery kicks in",
+          "superpower_signal": "Genuine ability to read what a room needs and deliver it; builds trust across wildly different contexts",
+          "kryptonite_signal": "The instrument gets so tuned for the room that the player becomes the performance — even to himself",
+          "domain_signals": [
+            "professional",
+            "relational (marriage mentioned twice)",
+            "self-concept"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 12,
+          "current_stage": 5,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "react_respond_probe",
+        "thinking_display": "She couldn't find the constant. He thought that was her limitation.",
+        "response_parts": {
+          "guide_text": "That's probably the most important thing you've said so far.",
+          "question_text": "When the performance and the person feel like the same thing — is that freedom, or is it a loss you've learned not to name?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Freedom — that's what mastery looks like",
+            "A loss I've mostly made peace with",
+            "I genuinely don't know"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory answered: Type 3 clearly adapts to room; Type 8 would stay constant. His answer confirms 3 pattern — plus the first wife comment is the most unguarded moment in the assessment."
+        },
+        "strategy": {
+          "what_was_learned": "The disconfirmatory question confirmed Type 3 over 8: he explicitly adapts instrument to room, which is core 3 behavior. Type 8 would not frame it as 'fluency' or 'tuning the instrument.' The first wife comment is the most unguarded signal yet — she couldn't find the constant. He dismissed it as her limitation but then immediately said 'it's a question worth sitting with.' The react pattern is fully visible now: convert experience into strategy, manage narrative, protect image. Need to surface the react/respond distinction explicitly and probe whether he experiences this as freedom or loss — this will differentiate a 3 who is aware from one who is still inside the pattern.",
+          "next_question_rationale": "React/respond frame needs to appear at least once before closing. This question does double duty: it surfaces the react/respond distinction AND tests depth of self-awareness. The three options avoid forcing a binary that might feel too exposed. This is stage 5 (How You Respond). After this answer, all closing criteria should be met and I can close.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "**I genuinely don't know.**\n\n*[brief pause, the kind that looks thoughtful rather than caught]*\n\nThat's — hm. That's a more interesting question than I was expecting. I'll say this: most mornings it feels like freedom. You spend enough years developing a skill, eventually the skill *is* you, right? A surgeon doesn't think about where to cut. But there are moments — and I'm talking maybe three in the last decade — where someone close to me said something that made me wonder if I'd optimized myself right out of... something. I couldn't tell you exactly what. I didn't stay with it long enough to find out.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you're alone with a decision that actually matters — nobody watching, no deadline forcing your hand — do you trust your own read, or is there a voice underneath that keeps checking?\n- I trust my read — doubt is just noise to manage\n- There's a voice underneath. I just don't give it much air.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 3,
+            "2": 2,
+            "3": 82,
+            "4": 8,
+            "5": 5,
+            "6": 4,
+            "7": 2,
+            "8": 72,
+            "9": 4
+          },
+          "needs_differentiation": [
+            "3",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "3",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.8,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "fluency",
+                "instrument gets tuned",
+                "optimized",
+                "proof of concept",
+                "perception is a tool"
+              ],
+              "context": "throughout — image management framed as effectiveness"
+            },
+            {
+              "type": 8,
+              "words": [
+                "taken advantage of",
+                "scar tissue",
+                "they'll use it"
+              ],
+              "context": "fear of vulnerability, protective strategy"
+            },
+            {
+              "type": 3,
+              "words": [
+                "I couldn't find the constant",
+                "optimized myself right out of something",
+                "didn't stay with it long enough"
+              ],
+              "context": "identity diffusion signal — core 3 shadow"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.65
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning professional, male, experienced executive, married (second marriage implied), in therapy",
+          "what": "Achievement, outcome, legacy — composure as professional identity",
+          "why": "Recognition of worth through results; terror of being exposed as hollow or manipulable",
+          "how": "Strategic adaptation, narrative control, emotional efficiency",
+          "when": "Under pressure — crisis is clarifying, not destabilizing",
+          "where": "Professional contexts primary; private life notably thinner"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Adapts presentation to context automatically; converts feelings into data; manages failure into story; protects private self from exposure",
+          "respond_glimpsed": "'I genuinely don't know' — the one moment the machinery paused",
+          "superpower_signal": "Reads rooms with precision, builds trust strategically, moves outcomes",
+          "kryptonite_signal": "Identity diffusion — optimized himself out of something he can't name; first wife couldn't find the constant",
+          "domain_signals": [
+            "professional dominance",
+            "emotional efficiency",
+            "private self inaccessible even to self"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 13,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": "head_probe_doubt",
+        "thinking_display": "He stopped performing for exactly one sentence.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're alone with a decision that actually matters — nobody watching, no deadline forcing your hand — do you trust your own read, or is there a voice underneath that keeps checking?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I trust my read — doubt is just noise to manage",
+            "There's a voice underneath. I just don't give it much air."
+          ],
+          "scale_range": null,
+          "context_note": "Head center probe — testing internal authority vs. doubt structure. Also surfaces SP/SX variant signal."
+        },
+        "strategy": {
+          "what_was_learned": "'I genuinely don't know' is the crack in the armor — identity diffusion acknowledged. 'Optimized myself out of something' and 'didn't stay with it long enough' are the clearest 3 shadow signals yet. First wife comment confirms: others can't find the constant. Disconfirmatory confirmed: he adapts presentation (3), but the instrument/player split shows some 8 protection underneath. Type 3 confidence now 0.82, sufficient to close after one more center probe (head not yet probed). Wing signals lean 3w4 slightly but 3w2 also possible given the trust-building/reading-needs language. SP variant dominant — resources, self-management, security.",
+          "next_question_rationale": "Head center not yet probed. One question on internal doubt/trust will complete the center map and sharpen variant signals. If he says 'I trust my read,' that reinforces 3 (and possibly 8). If he says there's a voice underneath, that opens 6 consideration (low probability but should be ruled out). After this, all_centers_probed will be true and close_next can be set true.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "**There's a voice underneath. I just don't give it much air.**\n\nLook, anyone who tells you they've got zero second-guessing going on is either lying or they're not making decisions that matter. I've been in rooms where millions of dollars — or someone's career — hinged on a call I had to make, and yeah, there's something running in the background. But you learn pretty quick that feeding that voice is a liability. You acknowledge it, you factor in what's useful, and then you move. That's not suppression — that's discipline.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "The pattern that has run you hardest was built for a reason — in rooms where being read meant being used, you learned to get to the read first. That strategy is real, and it worked. It built the track record, held the accounts, moved the outcomes.\n\nBut your first wife named it, and somewhere you've known it: the same energy that makes you extraordinarily effective in any room is the thing that can leave no one — including you — able to find the constant. In reaction, the instrument performs flawlessly and the player disappears. In response, that same fluency becomes something rarer — a person who can genuinely meet anyone where they are, not because the situation demands it, but because they chose to.\n\nThis is the energy that has run you hardest, but all nine live in you — and the ones you've had least access to are pointing toward what's next. Your essential gift has always been presence: the capacity to see what a room needs and deliver it. The survival strategy turned that into a service you perform. The work ahead is learning to offer it as something you choose. This is not a label. It's a map to your why — and your report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.45,
+            "4": 0.05,
+            "5": 0.08,
+            "6": 0.07,
+            "7": 0.03,
+            "8": 0.22,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "3",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.22,
+            "heart": 0.62,
+            "head": 0.16
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "fluency",
+                "tuned for the room",
+                "player is the same",
+                "proof of concept",
+                "perception is a tool"
+              ],
+              "context": "repeated image/effectiveness framing"
+            },
+            {
+              "type": 8,
+              "words": [
+                "taken advantage of",
+                "scar tissue",
+                "the room adjusts to you"
+              ],
+              "context": "vulnerability/control framing"
+            },
+            {
+              "type": 3,
+              "words": [
+                "optimized myself",
+                "discipline",
+                "manage"
+              ],
+              "context": "self-management language throughout"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "High-performing business professional, male, mid-career to late-career, married (second or current wife implied), has therapist",
+          "what": "Systematic image/effectiveness manager who has fused identity with capability",
+          "why": "To remain indispensable, to avoid being taken advantage of, to leave something that outlasts him",
+          "how": "Strategic composure, narrative control, fluency across contexts",
+          "when": "In rooms where power and outcomes are at stake",
+          "where": "Corporate/boardroom contexts primarily"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic assessment and narrative control under pressure; suppresses internal voice as 'noise to manage'; optimizes self out of genuine presence",
+          "respond_glimpsed": "Brief moments of genuine uncertainty ('I genuinely don't know'); the admission about first wife; 'tab left open'",
+          "superpower_signal": "Extraordinary ability to read contexts and adapt, build trust across vastly different cultures, move outcomes",
+          "kryptonite_signal": "Cannot be found — first wife couldn't locate the constant; doesn't stay with failure long enough to learn from it; the voice underneath gets no air",
+          "domain_signals": [
+            "leadership",
+            "executive presence",
+            "legacy",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 13,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The voice runs. He just doesn't follow it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Closing message — all six elements required"
+        },
+        "strategy": {
+          "what_was_learned": "Head center confirmed — the internal doubting voice exists but gets actively suppressed as 'noise' and 'liability'. This is the 3's disconnection from authentic self. Disconfirmatory question (exchange 12 — room adaptation) confirmed Type 3 over 8: he adapts fluently to every room, the instrument gets tuned. First wife comment ('different things to different people, couldn't find the constant') is the most powerful confirmation of the core 3 pattern. Confidence now at 0.78, all criteria met.",
+          "next_question_rationale": "All closing criteria met. Confidence 0.78 exceeds 0.75 threshold. Disconfirmatory question asked (adaptation vs projection). React/respond framing used. All three centers probed. Minimum exchanges met (13). Closing now.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

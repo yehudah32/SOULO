@@ -1,0 +1,3783 @@
+{
+  "run_id": "eval-persona-6-SX-1775249173087-1775259386449",
+  "timestamp": "2026-04-03T23:36:26.449Z",
+  "tier": "tier1",
+  "persona_id": "persona-6-SX-1775249173087",
+  "ground_truth": {
+    "core_type": 6,
+    "wing": "6w7",
+    "instinctual_variant": "SX",
+    "tritype": [
+      6,
+      9,
+      3
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 58,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 6,
+    "final_wing": null,
+    "final_confidence": 0.82,
+    "types_considered": [
+      {
+        "type": 6,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.72,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.68,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.4,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.25,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.18,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 0,
+        "peak_confidence": 0.07,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 4,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "liberated"
+  },
+  "question_quality": {
+    "total_questions": 25,
+    "exploratory": 25,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 25,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 6,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 6,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 4,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 5,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 6,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 7,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 8,
+        "top_type": 6,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 9,
+        "top_type": 6,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 10,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 11,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 12,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 13,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 14,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 15,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 16,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 17,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 18,
+        "top_type": 6,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 19,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 20,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 21,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 22,
+        "top_type": 6,
+        "confidence": 0.81
+      },
+      {
+        "exchange": 23,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 24,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 25,
+        "top_type": 6,
+        "confidence": 0.82
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "subtype_differentiation",
+      "action": "Introduce dedicated SX-subtype probing questions that distinguish Sexual/SX instinct from Social and Self-Preservation stacking. The current question set never directly probed intensity of one-on-one bonds, merging behavior, or the SX drive for depth and chemistry in close relationships. Add at least two questions targeting whether the respondent seeks intense dyadic connection versus group belonging versus personal security.",
+      "evidence": "Exchanges [9], [10], [21], and [25] contain clear SX-subtype signals (deep one-on-one loyalty, the Reuben parking-lot disclosure, 'I don't lay it out flat for anybody,' Denise seeing 'the edges') that were never followed up with explicit SX differentiation questions, contributing to the 3/10 subtype_accuracy score.",
+      "source_level": "L1",
+      "commandment_alignment": "Ask what the transcript cannot yet see",
+      "estimated_impact": "Expected to raise subtype_accuracy from 3/10 toward 7-8/10 by surfacing the SX instinct's signature patterns rather than leaving them as ambient signal in generic loyalty questions."
+    },
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Remove or restructure all binary forced-choice questions that offer only two labeled options and instead allow the respondent to self-generate the contrast. Forced binaries (as used in exchanges [2], [3], [5], [7], [8], [10], [11], [13], [14], [15], [16], [17], [18], [22], [23], [24]) pre-load the frame and violate the commandment against leading the witness. Replace with open-ended prompts followed by a reflective paraphrase check.",
+      "evidence": "Fourteen of twenty-five exchanges use binary forced-choice framing (e.g., [2]: 'Trust the read and act on it / Keep looking for proof before I move'; [7]: 'Setting the record straight / Making sure I'm protected'). The 4/10 commandment_fidelity score directly reflects this structural over-reliance on leading binaries that hand the respondent pre-interpreted language.",
+      "source_level": "L2",
+      "commandment_alignment": "Never lead the witness",
+      "estimated_impact": "Raising commandment_fidelity from 4/10 toward 8/10 and improving convergent_validity by ensuring type signals emerge organically rather than from assessor-supplied labels."
+    },
+    {
+      "priority": "high",
+      "category": "question_quality",
+      "action": "Develop a mid-assessment pivot protocol that detects when a respondent's language has already confirmed a core type and shifts questioning toward differentiation of adjacent types and stress/integration patterns. Once Type 6 was strongly indicated by exchanges [1]-[4], subsequent questions should have introduced Type 8 and Type 1 contrast probes to rule out misidentification rather than continuing to accumulate confirmatory 6 evidence.",
+      "evidence": "By exchange [6] the transcript had accumulated strong 6w7 evidence (hypervigilance, coalition-building, authority ambivalence, scanning for next threat). Exchanges [7]-[23] largely re-confirmed the same signals. No question ever probed 8-style territorial dominance, 1-style internal critic, or 6-to-9 security behavior, leaving the question_quality score at 5/10 for redundancy and missed differentiation.",
+      "source_level": "L2",
+      "commandment_alignment": "Earn each question",
+      "estimated_impact": "Improving question_quality from 5/10 toward 8/10 and strengthening convergent_validity by stress-testing the type hypothesis rather than only confirming it."
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Add explicit health-level probing questions targeting the distinction between Level 5 (defensive, reactive, divisive alliances) and adjacent levels. Specifically, probe whether the respondent experiences their vigilance as draining or generative, whether they feel genuinely supported by their alliances or secretly uncertain of them, and whether worst-case thinking feels protective or compulsive. These probes should appear in the final third of the assessment.",
+      "evidence": "Exchange [19] ('The quiet makes me suspicious... someone somewhere is getting ready to pull something'), exchange [24] ('Did I give someone more credit than they deserved'), and exchange [25] ('Whether the story I've been telling about myself holds up') all encode Level 5 health signals — defensive suspicion, projection risk, identity instability — but the system never explicitly surfaced or named the health dimension, leaving it as ambient inference rather than assessed data.",
+      "source_level": "L1",
+      "commandment_alignment": "See the whole person, not just the type",
+      "estimated_impact": "Enabling reliable health-level scoring as a distinct output dimension, improving clinical utility and allowing the system to flag when a respondent may benefit from support resources."
+    },
+    {
+      "priority": "medium",
+      "category": "meta_awareness",
+      "action": "Insert one explicit meta-reflection question near the assessment midpoint that invites the respondent to name what they notice about how they are engaging with the assessment itself — hesitations, things left unsaid, or patterns in their own answers. This surfaces meta-cognitive access and provides a validity check on the respondent's self-report accuracy.",
+      "evidence": "Exchange [25] produced the richest self-aware material in the transcript ('whether the story I've been telling about myself holds up') only because the question was unusually intimate, not because the system systematically created space for meta-reflection. The 6/10 meta_awareness score suggests the system captured some of this but inconsistently, and no question directly invited the respondent to observe their own engagement pattern.",
+      "source_level": "L1",
+      "commandment_alignment": "Hold space without filling it",
+      "estimated_impact": "Raising meta_awareness from 6/10 toward 8/10 and improving overall transcript richness by creating a deliberate opening for the respondent to surface blind spots or reservations that binary questions structurally suppress."
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "Welcome. This is a structured assessment — about 15 minutes, different question types, and it adapts as it goes. No right or wrong answers, just honest ones.\n\nWhen something in your life feels wrong — a situation, a relationship, a decision — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_01",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something in your life feels wrong — a situation, a relationship, a decision — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Opening motivational probe — designed to surface dominant center (body/gut reaction, heart/emotional response, or head/mental scanning)"
+        },
+        "strategy": {
+          "what_was_learned": "Nothing yet — user confirmed readiness.",
+          "next_question_rationale": "First question must surface the dominant center. An open question about what happens internally when something feels wrong will reveal whether the person leads with gut (anger/instinct), heart (emotion/relational concern), or head (worry/mental analysis). This is the highest-information first question available.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "*exhales slowly, shifts in seat*\n\nSomething clicks on, I guess. Like a switch. I start running through it — who said what, what changed, what I might've missed. It's not panic exactly, more like... alertness. Heightened alertness, that's probably the right phrase for it. \n\nI've been in enough situations at the table — negotiating contracts, dealing with management that smiles too much — where you learn pretty quick that if something feels off, it usually is. So I trust that. I take it seriously.\n\n*pauses, then adds dryly*\n\nWhether I do anything useful with it, that's a different question.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you sense something is off with a person — not what they said, but something underneath it — do you trust that read, or do you keep looking for proof?\n\n- Trust the read and act on it\n- Keep looking for proof before I move",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.52,
+          "type_scores": {
+            "0": 0.05,
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.15,
+            "6": 0.4,
+            "7": 0.03,
+            "8": 0.12,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "6",
+            "5",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.05,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "if something feels off, it usually is",
+                "smiles too much",
+                "what I might've missed"
+              ],
+              "context": "describing internal response to something feeling wrong"
+            },
+            {
+              "type": 5,
+              "words": [
+                "running through it",
+                "alertness"
+              ],
+              "context": "analytical scanning response to threat"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "negotiator, contract table, dealing with management",
+          "what": "scanning for threat, heightened alertness when something feels off",
+          "why": "trust of instinct built from experience",
+          "how": "internal scan — who said what, what changed, what was missed",
+          "when": "when something feels wrong",
+          "where": "professional/negotiating context"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "automatic threat-scanning when something feels off",
+          "respond_glimpsed": "self-aware about whether the scanning leads to useful action ('that's a different question')",
+          "superpower_signal": "reads situations and people quickly, trusts instinct",
+          "kryptonite_signal": "alertness may not translate to action — doubt about own effectiveness",
+          "domain_signals": [
+            "professional",
+            "negotiation",
+            "authority"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The scan starts before the decision does.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you sense something is off with a person — not what they said, but something underneath it — do you trust that read, or do you keep looking for proof?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Trust the read and act on it",
+            "Keep looking for proof before I move"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Head center dominant. Threat-scanning response is automatic and pre-panic — this is 6 or 5. The dry self-deprecation at the end ('whether I do anything useful with it') signals 6 doubt pattern, not 5 detachment. Professional context: negotiation, reading authority figures who perform friendliness. SP/SO instinct signals from 'at the table' framing.",
+          "next_question_rationale": "Probe trust-in-own-reads vs need-for-external-validation. 6 will second-guess their own read and look for corroboration; 5 will trust internal analysis and not need external proof. Forced choice to get clean signal.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "Trust the read and act on it.\n\nI mean — thirty years in rooms where people are negotiating against you, you learn real fast that waiting for proof is usually waiting too long. By the time you've got proof, the thing's already happened to you. So yeah, I go with the gut. Not recklessly, but... I move. I start paying closer attention, I reposition a little. It's not paranoia, it's — pattern recognition, I guess that's the term for it. You see enough people operate, you start to know what the setup looks like before the punchline lands.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you've trusted that read and moved — and turned out to be right — does it feel like relief, or does part of you immediately start looking for the next thing that might go wrong?\n\n- Relief — I got it right, I can relax\n- Already scanning for the next thing",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.52,
+          "type_scores": {
+            "0": 0.07,
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.1,
+            "4": 0.04,
+            "5": 0.12,
+            "6": 0.38,
+            "7": 0.03,
+            "8": 0.15,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "6",
+            "8",
+            "5"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.25,
+            "heart": 0.1,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "waiting too long",
+                "usually is",
+                "setup",
+                "proof"
+              ],
+              "context": "describing how they respond when something feels off"
+            },
+            {
+              "type": 8,
+              "words": [
+                "move",
+                "reposition",
+                "thirty years",
+                "act on it"
+              ],
+              "context": "describing action tendency in high-stakes situations"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "30-year negotiator, high-stakes table experience",
+          "what": "trust gut reads, move before proof arrives",
+          "why": "",
+          "how": "heightened alertness, pattern recognition, repositioning",
+          "when": "when something feels off",
+          "where": "contract negotiations, management dynamics"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "alertness switch flips — scans for what changed, repositions",
+          "respond_glimpsed": "not reckless — moves with intention",
+          "superpower_signal": "pattern recognition, reading people beneath the surface",
+          "kryptonite_signal": "'whether I do anything useful with it, that's a different question' — self-doubt signal",
+          "domain_signals": [
+            "professional",
+            "trust/betrayal",
+            "authority figures"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The self-doubt at the end contradicted everything before it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've trusted that read and moved — and turned out to be right — does it feel like relief, or does part of you immediately start looking for the next thing that might go wrong?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Relief — I got it right, I can relax",
+            "I'm already scanning for the next thing"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong head-center signal — scanning, pattern recognition, vigilance. But the dry self-deprecating aside ('whether I do anything useful with it') is a significant 6 tell — the doubt that undermines the competence. Also possible 8 — power posture, decades of experience framing, 'I move.' Need to separate 6 from 8: 6 scans for threats and doubts themselves; 8 scans for threats and doesn't doubt themselves. The closing aside is the differentiator. Need to probe whether the alertness is about self-protection from betrayal (6) or about staying in control/power (8).",
+          "next_question_rationale": "This question directly differentiates 6 from 8. An 8 gets it right and moves on — threat neutralized, power maintained. A 6 gets it right and keeps scanning — the relief is temporary, the vigilance doesn't stop. This is a disconfirmatory/differentiating question for the 6v8 pair. Will also probe body center indirectly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "Already scanning for the next thing.\n\nRelief's there, sure — maybe a couple seconds of it. But it's like... I don't know, it's like winning a hand and immediately wondering what the dealer's hiding. You were right this time, okay. That just means the stakes feel higher on the next call. I've seen too many guys in this work get comfortable after a win and miss what was building right underneath them. So I guess I've trained myself out of the relief part. Whether that's smart or just — I don't know, exhausting, probably both.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you're in a situation where the right move is unclear — no obvious threat, nothing's wrong, just a genuine fork in the road — how do you make the call?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.1,
+            "4": 0.05,
+            "5": 0.12,
+            "6": 0.45,
+            "7": 0.03,
+            "8": 0.1,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "6v5",
+            "6v8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.08,
+            "head": 0.77
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "something clicks on",
+                "heightened alertness",
+                "pattern recognition",
+                "waiting for proof is waiting too long",
+                "what the setup looks like before the punchline lands",
+                "scanning for the next thing"
+              ],
+              "context": "describing internal response to sensing something is wrong"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "30 years in negotiation/contracts, reads people, experienced",
+          "what": "heightened alertness to threat, pattern recognition, perpetual scanning",
+          "why": "unclear yet — fear-based vigilance or competence-based mastery?",
+          "how": "reposition, pay closer attention, act before proof",
+          "when": "immediately when something feels off",
+          "where": "professional contexts primarily mentioned"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "perpetual scanning, trained out of relief — vigilance on autopilot",
+          "respond_glimpsed": "trusting the gut consciously, moving deliberately",
+          "superpower_signal": "exceptional threat detection, loyalty to truth under the surface",
+          "kryptonite_signal": "can't stop scanning even when safe — exhausting self-described",
+          "domain_signals": [
+            "professional",
+            "power dynamics",
+            "negotiation"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "center_body_probe",
+        "thinking_display": "Already knows the exhaustion is in there. Said it himself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a situation where the right move is unclear — no obvious threat, nothing's wrong, just a genuine fork in the road — how do you make the call?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Moving from head/vigilance to decision-making process — probing whether authority/trust framework or inner knowing drives the call. Key 6v5v8 differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 6 signals: perpetual vigilance, pattern recognition as threat detection, trained out of relief, win-to-next-threat cycle. Self-aware about the exhaustion. Head center clearly dominant. Now need to differentiate 6 from 5 (does he seek internal knowing or external validation/trusted authority?) and from 8 (is the 'moving' driven by power/control or by managing uncertainty?)",
+          "next_question_rationale": "Open question about decision-making at a genuine fork — no threat present. A 6 will reference trusted input, inner doubt, or need to stress-test. A 5 will retreat to data/analysis. An 8 will trust their own authority. This is the key differentiator for the 6v5v8 cluster.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "Usually I talk it through with someone I trust — not because I need them to tell me what to do, but just to hear myself say it out loud, y'know? Sometimes that's enough. But I'll be honest, there's usually a point where I've already got a read on the situation before I even open my mouth, and the talking is more about... confirming it, I guess. Making sure I'm not missing something I should've caught. I mean, I've been burned before by moving too fast, so I try to sit with it a little. That's probably the smarter way to put it — I sit with it until the discomfort of *not* deciding gets bigger than the discomfort of deciding wrong.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When someone you've trusted in that process — your sounding board — gives you a read that differs from yours, what happens?\n\n- Their read shifts mine — I take it seriously\n- I listen, but I usually come back to my own read",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.04,
+            "5": 0.12,
+            "6": 0.72,
+            "7": 0.03,
+            "8": 0.1,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "6v5",
+            "6v8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.75,
+          "whole_type_signals": {
+            "body": 0.18,
+            "heart": 0.08,
+            "head": 0.74
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "burned before",
+                "not paranoia",
+                "waiting for proof",
+                "confirm it",
+                "make sure I'm not missing something"
+              ],
+              "context": "describing how he handles uncertainty and threat detection"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.5
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Experienced negotiator, 30 years in high-stakes environments, distrustful of surface signals",
+          "what": "Scans constantly for threats, repositions pre-emptively, talks through decisions to validate",
+          "why": "Safety through vigilance — staying one step ahead of betrayal",
+          "how": "Pattern recognition, trusted confidants, sitting with discomfort until action threshold is reached",
+          "when": "Triggered by misalignment between what's said and what's felt",
+          "where": "Professional/negotiation contexts primary — 'rooms where people negotiate against you'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic vigilance kicks in, scans for threat, repositions before confirmation",
+          "respond_glimpsed": "Sits with discomfort, uses trusted others to reality-check, waits for threshold",
+          "superpower_signal": "Pattern recognition under pressure, loyalty to what's real over what's comfortable",
+          "kryptonite_signal": "Inability to sustain relief — chronic scanning exhausts and may erode trust capacity",
+          "domain_signals": [
+            "professional",
+            "relational trust",
+            "decision-making under uncertainty"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The certainty came before the conversation — the conversation was just insurance.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone you've trusted in that process — your sounding board — gives you a read that differs from yours, what happens?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Their read shifts mine — I take it seriously",
+            "I listen, but I usually come back to my own read"
+          ],
+          "scale_range": null,
+          "context_note": "Differentiating 6 from 8/5: 6 weighs outside authority/trusted sources heavily; 8 overrides with own read; 5 prefers solo analysis"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 6 signal: pre-existing read + validation loop, chronic scanning after wins, 'burned before' language, sitting with discomfort until threshold. SP variant likely (personal security frame). 8 wing possible (moves decisively, not paralyzed). Need to probe: does he trust inner or outer authority more? Body center next for 6v8 differentiation.",
+          "next_question_rationale": "Forced choice to differentiate 6 (defers to trusted authority when uncertain) from 8 (overrides trusted input with own read) and 5 (doesn't need external validation at all). This is a clean discriminator.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "Their read shifts mine — I take it seriously, I listen, but I usually come back to my own read.\n\nYeah, that's the honest answer. I mean, I'll genuinely sit with what they're saying — it's not like I'm just waiting for them to finish talking. But thirty years in rooms where people are trying to move you off your position, you develop a pretty solid sense of when something's actually changing your mind versus when you're just being... worn down, I guess. There's a difference. I think I know the difference.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When someone in authority is clearly wrong — not ambiguous, just wrong — what's your move?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.04,
+            "5": 0.12,
+            "6": 0.68,
+            "7": 0.02,
+            "8": 0.18,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "6v5",
+            "6v8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.2,
+            "heart": 0.05,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "what I might've missed",
+                "burned before",
+                "not paranoia",
+                "already scanning",
+                "discomfort of not deciding"
+              ],
+              "context": "hypervigilance, threat detection, doubt-checking own reads"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Experienced negotiator, 30 years, high-stakes rooms, professional identity strong",
+          "what": "Pattern recognition, threat detection, repositioning pre-emptively",
+          "why": "Fear of missing something that gets used against him — not paranoia but trained alertness",
+          "how": "Talk through with trusted source, but anchors to own read",
+          "when": "Continuous — scan doesn't stop after wins",
+          "where": "Professional domain dominant — contracts, management, negotiations"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Hypervigilance loop — trust gut, move, win, immediately scan for next threat",
+          "respond_glimpsed": "Aware it's exhausting — self-aware about the cost, hints at choice available",
+          "superpower_signal": "Pattern recognition under pressure, reading people accurately",
+          "kryptonite_signal": "Cannot rest in safety — victory immediately becomes new threat surface",
+          "domain_signals": [
+            "professional",
+            "trust",
+            "authority"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Interesting what he chose to add — 'I think I know the difference.'",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When someone in authority is wrong — clearly wrong, not just disagreeing with you — what's your move?",
+          "question_format": "scenario",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory probe: 6 tends to internally question authority while publicly managing it; 8 confronts directly and doesn't manage the relationship around it."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 6 profile — hypervigilance, scanning for threat post-win, trust-but-verify with sounding board, anchors to own read but takes trusted input seriously. SP variant signals strong (security, staying safe, not getting burned). 8 possible as wing (directness, 'I move', professional dominance frame) but the doubt-checking and 'burned before' language is classically 6. Need to differentiate 6 from 8 — 8 doesn't worry about being burned, they'd rather be the one burning. This exchange is the disconfirmatory moment.",
+          "next_question_rationale": "The scenario of authority-being-wrong differentiates 6 from 8 cleanly. An 8 confronts without managing the relationship. A 6 calculates — internal dissent, careful positioning, watches before moving. Also probes body center (action, confrontation) which hasn't been touched yet.",
+          "question_format_last_used": "forced_choice → now scenario"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "You call it out. That's the short answer.\n\nBut it's not like you just walk in guns blazing, y'know — there's a way to do it that actually works and a way that just makes you feel righteous for about forty-five minutes before everything blows up in your face. I've seen guys go in swinging at management over something legitimate and lose the whole room because they made it personal too fast.\n\nSo my move is — you document first, you build your case, you make sure you've got people behind you before you step into that room. Not because I'm afraid of the confrontation, but because I've learned the hard way that being right isn't enough. You have to *be* right in a way they can't dismiss.\n\nI'll tell you one thing though — sitting on it isn't something I'm good at. If I know something's wrong, I know it, and eventually that's coming out one way or another.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you go into one of those confrontations — the ones where you've built the case, lined up the people — what's driving you more?\n\n- Setting the record straight — the wrong needs to be named\n- Making sure I'm protected once the dust settles",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.45,
+            "2": 0.1,
+            "3": 0.25,
+            "4": 0.1,
+            "5": 0.35,
+            "6": 0.72,
+            "7": 0.1,
+            "8": 0.45,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "6v1",
+            "6v8"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "head",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.45,
+            "heart": 0.15,
+            "head": 0.68
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "burning before",
+                "might've missed",
+                "waiting for proof",
+                "confirm",
+                "not paranoid"
+              ],
+              "context": "describing threat detection and decision-making"
+            },
+            {
+              "type": 6,
+              "words": [
+                "someone I trust",
+                "talk it through",
+                "make sure I'm not missing something"
+              ],
+              "context": "describing uncertainty management"
+            },
+            {
+              "type": 6,
+              "words": [
+                "build your case",
+                "people behind you",
+                "they can't dismiss"
+              ],
+              "context": "describing how to challenge authority"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.4,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "experienced negotiator, 30 years, reads rooms and people",
+          "what": "pattern recognition, coalition building, strategic confrontation",
+          "why": "partially surfaced — safety through preparation and alignment",
+          "how": "deliberate, methodical, talks it through to confirm",
+          "when": "moves when discomfort of not deciding exceeds discomfort of deciding wrong",
+          "where": "contractual/management/labor context"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "immediate hypervigilance scan when something feels off; can't sit on known wrongs; exhausted by never landing in relief",
+          "respond_glimpsed": "building cases, finding allies, strategic timing — shows capacity for chosen action",
+          "superpower_signal": "pattern recognition, loyalty to truth, strategic coalition building",
+          "kryptonite_signal": "can't rest in relief; hypervigilance that never turns off; may substitute external confirmation for genuine inner trust",
+          "domain_signals": [
+            "professional negotiation",
+            "authority challenge",
+            "team/coalition dynamics"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "The relief never quite lands.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you go into one of those confrontations — the ones where you've built the case, lined up the people — is what's driving you more about setting the record straight, or more about making sure you're protected once the dust settles?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Setting the record straight — the wrong needs to be named",
+            "Making sure I'm protected — I need to come out the other side intact"
+          ],
+          "scale_range": null,
+          "context_note": "disconfirmatory: 8s are primarily motivated by impact/dominance/correcting the wrong; 6s by security/survival/not being exposed"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 6 markers: alliance building before confrontation, documenting first, confirmation-seeking with trusted others, vigilance that doesn't turn off, strategic not impulsive. 8 energy visible in the confrontational willingness but it's methodical not dominating. Inner critic not prominent — less likely 1. Now need to differentiate 6 from 8 on core motivation: justice/impact (8) vs security/protection (6). Also need to probe heart center.",
+          "next_question_rationale": "Disconfirmatory question for 6v8: the same behavior (strategic confrontation) has different motivations. Type 8 is driven by righting the wrong, impact, dominance. Type 6 is driven by protection, not being caught out, survival. This will sharpen the distinction. Also meets the hard gate requirement.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "Setting the record straight — the wrong needs to be named.\n\nThough I'll tell you, that's not as clean an answer as it sounds. You don't last thirty years doing this work without knowing where the exits are — that's not protection, that's just... competence. But when I'm standing in that room, what's got me there is that somebody did something wrong and somebody needs to say it out loud. The protection part, that's — I mean, that's almost automatic at this point. The *reason* I'm there is the record.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When something you've fought hard to get right starts going sideways — after you've put yourself on the line — what hits first?\n\n- Anger at the situation\n- Doubt that I read it wrong",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.2,
+            "4": 0.1,
+            "5": 0.25,
+            "6": 0.72,
+            "7": 0.05,
+            "8": 0.5,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6v1",
+            "6v8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.65,
+          "whole_type_signals": {
+            "body": 0.4,
+            "heart": 0.1,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "miss something",
+                "burned before",
+                "discomfort of not deciding",
+                "confirming it",
+                "trust that read"
+              ],
+              "context": "repeated scanning for threat and validation-seeking before committing"
+            },
+            {
+              "type": 8,
+              "words": [
+                "call it out",
+                "guns blazing",
+                "standing in that room",
+                "the wrong needs to be named"
+              ],
+              "context": "confrontation style and protective strength"
+            },
+            {
+              "type": 1,
+              "words": [
+                "wrong needs to be named",
+                "setting the record straight",
+                "document first",
+                "build your case"
+              ],
+              "context": "principled confrontation and fairness"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.5,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "30-year veteran negotiator, reads rooms, trusts pattern recognition",
+          "what": "Scans for threats, builds cases, confronts wrongs through structure not impulse",
+          "why": "Wrongness needs naming — not for protection but for the record",
+          "how": "Documents, builds coalitions, times confrontation strategically",
+          "when": "Acts when discomfort of inaction exceeds fear of being wrong",
+          "where": "High-stakes contract/management environments"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic scanning — threat detection runs continuously even after wins",
+          "respond_glimpsed": "Knows difference between being worn down vs genuinely persuaded",
+          "superpower_signal": "Loyalty to truth — confronts wrong not for ego but for the record",
+          "kryptonite_signal": "Cannot relax — relief lasts seconds before next scan begins; exhausting by own admission",
+          "domain_signals": [
+            "negotiation",
+            "authority challenges",
+            "trust calibration"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Something interesting in how protection and purpose got separated just then.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something you've fought to get right starts going sideways — after you've put yourself on the line — is the first feeling anger at the situation, or doubt that you read it wrong?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Anger at the situation",
+            "Doubt that I read it wrong"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 8 would go to anger first; 6 would go to self-doubt/second-guessing first"
+        },
+        "strategy": {
+          "what_was_learned": "Clear separation of protection (competence) from purpose (naming the wrong). Strong 6 signal: validation-seeking before committing, scanning even after wins. 8 energy is real but appears instrumental — the strength is deployed in service of rightness, not dominance. 1 signal in moral framing. Need to probe: does the inner critic run toward self-doubt when things go wrong, or outward anger? This disconfirmatory question splits 6 from 8. Also need heart center probe.",
+          "next_question_rationale": "Disconfirmatory question for 6v8: when things go wrong after commitment, 8s go to anger/blame-outward, 6s go to self-doubt/second-guessing. This is the cleanest split between the two leading hypotheses.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "Anger at the situation.\n\n...Though, I mean — look, the doubt comes, but it's not *first*. First is the anger, because usually I've done the homework, I know what I'm walking into. The doubt kind of sneaks in later, usually around 2 a.m. when I'm staring at the ceiling running back through every conversation wondering if somebody told me what I wanted to hear instead of what was true. But that's later. In the moment? Anger. Directed outward. That's probably the right word for it — directed.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "The person at your back — the one you'd go to war for without needing much of a reason. When you think about what keeps that bond solid, what is it?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.03,
+            "5": 0.08,
+            "6": 0.72,
+            "7": 0.02,
+            "8": 0.55,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "6",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.05,
+            "head": 0.65
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "trust the read",
+                "make sure I'm not missing something",
+                "been burned before",
+                "confirming it",
+                "sitting with it",
+                "whether I do anything useful with it",
+                "2 a.m. staring at the ceiling",
+                "somebody told me what I wanted to hear instead of what was true"
+              ],
+              "context": "across multiple responses about trust, decision-making, and aftermath of being wrong"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.35,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "30-year negotiator, experienced, reads people professionally",
+          "what": "calls out wrongdoing, builds cases methodically, uses trusted sounding boards",
+          "why": "the wrong needs to be named — record matters more than protection",
+          "how": "documents first, builds coalition, then confronts; moves before proof is in",
+          "when": "acts when discomfort of not deciding exceeds discomfort of deciding wrong",
+          "where": "high-stakes professional environments — contracts, management, labor disputes likely"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate scan for threat, anger directed outward when things go wrong, 2am doubt cycle — hypervigilance that never fully rests",
+          "respond_glimpsed": "Deliberate case-building, seeking trusted counsel, naming wrongs — when he chooses his response instead of reacting",
+          "superpower_signal": "Pattern recognition, loyalty to truth, capacity to hold the line under pressure",
+          "kryptonite_signal": "Hypervigilance that trains out relief; scanning for next threat; 2am doubt loop; questions whether he's been told what he wanted to hear",
+          "domain_signals": [
+            "professional trust and betrayal",
+            "authority and confrontation",
+            "loyalty vs self-protection"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "6v8_disconfirmatory_01",
+        "thinking_display": "The anger is real. So is the 2 a.m. part.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "The person at your back — the one you'd go to war for without needing much of a reason. When you think about what keeps that bond solid, what is it?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory probe: 6 bonds through demonstrated loyalty and proven reliability over time; 8 bonds through mutual strength and willingness to fight — trust through power, not just reliability. This question surfaces which pull is dominant."
+        },
+        "strategy": {
+          "what_was_learned": "Anger comes first, directed outward — that's body energy, not head. But the 2am doubt loop, the 'did somebody tell me what I wanted to hear' rumination — that's classic 6. The 8 overlay is strong in presentation (confrontational, strategic, physical metaphors) but the underlying anxious scanning and coalition-building before confronting authority points strongly to 6. Need to probe the heart center AND run disconfirmatory 6v8 question. Key differentiator: 8s trust through strength/capability; 6s trust through proven loyalty and shared history.",
+          "next_question_rationale": "This is the disconfirmatory question. 6: bond held by proven reliability, shared history, mutual loyalty — the person showed up. 8: bond held by strength, directness, willingness to fight — the person can handle themselves. Framing around 'what keeps the bond solid' will reveal which pull dominates. Also surfaces heart center and instinctual variant simultaneously.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "Loyalty, I think. That's probably the right word for it. You show up when it matters — not just the easy times, not just when there's something in it for you — and that builds something over thirty years that's... hard to explain, actually. I've got guys on my team, we've been through plant closings, we've been through management trying to break us, and you don't need to sit down and talk about your *feelings* to know that person's got your back. The work proves it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you think about the people you've gone to war for — what do you actually need from them in return?\n\n- That they hold the line the same way I would — no wavering under pressure\n- That they're straight with me, even when what they've got to say isn't what I want to hear",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.15,
+            "3": 0.2,
+            "4": 0.1,
+            "5": 0.35,
+            "6": 0.78,
+            "7": 0.1,
+            "8": 0.6,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6v8"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.6,
+            "heart": 0.15,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "trust but verify",
+                "loyalty",
+                "somebody told me what I wanted to hear",
+                "2 a.m. doubt",
+                "build your case",
+                "lined up the people"
+              ],
+              "context": "across multiple exchanges"
+            },
+            {
+              "type": 8,
+              "words": [
+                "directed outward",
+                "call it out",
+                "guns blazing",
+                "thirty years in rooms",
+                "won't sit on it"
+              ],
+              "context": "authority confrontation responses"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.6,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.6,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Union negotiator/labor organizer type, 30+ years experience, tight-knit team loyalty",
+          "what": "Pattern-reading, coalition-building before confrontation, documentation instinct",
+          "why": "The wrong needs to be named — moral imperative to call out injustice",
+          "how": "Build case, line up allies, then move strategically",
+          "when": "Acts when discomfort of not deciding exceeds discomfort of deciding wrong",
+          "where": "High-stakes negotiation rooms, management confrontations"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "2am ceiling scan — doubt sneaks in after anger, questions who told him what he wanted to hear vs truth",
+          "respond_glimpsed": "Strategic patience — sitting with discomfort, building the case before acting",
+          "superpower_signal": "Loyalty and showing up when it matters — bond forged through shared adversity",
+          "kryptonite_signal": "Cannot rest after a win; perpetual scanning suggests underlying anxiety about when the threat will come",
+          "domain_signals": [
+            "Labor/union work",
+            "Authority resistance",
+            "Coalition building"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Loyalty described without warmth — as something proven, not felt.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about the people you've gone to war for — what do you actually need from them in return?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That they hold the line the same way I would — no wavering under pressure",
+            "That they're straight with me, even when what they've got to say isn't what I want to hear"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory probe — Type 6 needs loyalty and truth-telling from trusted others; Type 8 needs people to stand firm/not fold. This differentiates the underlying fear driving loyalty."
+        },
+        "strategy": {
+          "what_was_learned": "Loyalty is framed as demonstrated through action under adversity, not emotional closeness. 'The work proves it' — no need for feelings talk. This is consistent with both 6 (loyalty as security) and 8 (loyalty as strength/reliability). The 2am doubt sequence is a strong 6 signal — the question of 'did someone tell me what I wanted to hear' is quintessential 6 skepticism about whether their inner authority/read can be trusted. Need to differentiate: does loyalty serve his security needs (6) or his need for people who won't fold on him (8)?",
+          "next_question_rationale": "Disconfirmatory question: 6 needs truth-telling and reliable sounding boards because their core doubt is about their own read; 8 needs people who won't waver/fold because their core fear is betrayal of strength. This forced choice directly differentiates the underlying fear driving the loyalty pattern. Also probes heart center indirectly.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**That they're straight with me, even when what they've got to say isn't what I want to hear.**\n\nThe holding-the-line thing — yeah, obviously, I want that too. But I've seen plenty of people who'll stand firm on the picket line and still look you dead in the eye and tell you half the story. That's its own kind of betrayal, maybe worse. I mean, I can work with someone who breaks under pressure. I can't work with someone I can't read right. That's the one that... yeah. That's the one.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you're at your best — the version of you that feels most fully yourself — are you the one people rely on for strength, or the one who makes sure strength is being aimed in the right direction?\n\n- The one people rely on for strength\n- The one making sure strength is aimed right",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.35,
+            "2": 0.1,
+            "3": 0.2,
+            "4": 0.1,
+            "5": 0.25,
+            "6": 0.78,
+            "7": 0.05,
+            "8": 0.55,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6v8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "head",
+          "whole_type_confidence": 0.75,
+          "whole_type_signals": {
+            "body": 0.4,
+            "heart": 0.15,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "trust the read",
+                "sitting with it",
+                "missing something",
+                "burned before",
+                "somebody told me what I wanted to hear",
+                "can't read right"
+              ],
+              "context": "threat detection, authority confrontation, alliance trust"
+            },
+            {
+              "type": 8,
+              "words": [
+                "thirty years",
+                "I move",
+                "directed outward",
+                "guns blazing",
+                "going to war for",
+                "hold the line"
+              ],
+              "context": "authority challenge, loyalty, confrontation style"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.65,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Labor negotiator, 30 years, team-oriented, loyalty-based relationships",
+          "what": "Confronts authority strategically, builds cases, moves on gut reads",
+          "why": "Wrongs need to be named — not personal gain, not protection alone",
+          "how": "Pattern recognition, coalition building, strategic confrontation",
+          "when": "Sits with it until discomfort of not deciding > discomfort of deciding wrong",
+          "where": "Negotiating tables, union/management dynamics, high-stakes rooms"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate threat-scanning after wins; anger directed outward when things go wrong; 2am doubt spiral — security vigilance running in background",
+          "respond_glimpsed": "Builds case before confronting; uses trusted sounding board; distinguishes being worn down vs. genuinely persuaded",
+          "superpower_signal": "Reads situations before others see the setup; loyalty that builds over decades; strategic truth-telling",
+          "kryptonite_signal": "Never fully relaxes after a win; 2am doubt loops; skepticism about whether trusted people told him what he wanted to hear",
+          "domain_signals": [
+            "occupational: labor relations 30 years",
+            "relational: loyalty-tested bonds",
+            "values: honesty over comfort"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Easier to name what you can't forgive than what you actually need.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're at your best — the version of you that feels most fully yourself — are you the one people rely on for strength, or the one who makes sure strength is being aimed in the right direction?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The one people rely on for strength",
+            "The one making sure strength is aimed right"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory 6v8 — Type 8 would identify with raw strength/force; Type 6 would identify with directional integrity, coalition, rightness of aim"
+        },
+        "strategy": {
+          "what_was_learned": "Honesty/transparency is the bond anchor — not performance of solidarity. Betrayal via selective truth is worse than breaking under pressure. Confirms 6 pattern: trust as a surveillance system, loyalty earned through radical honesty. Also strong 8 behavioral overlay. Need to probe what's underneath the strength — fear of betrayal (6) vs fear of weakness (8). Disconfirmatory question required before close.",
+          "next_question_rationale": "6v8 disconfirmatory: Type 8 leads with their own power and expects others to match it; Type 6 leads with the cause/coalition and distrusts power disconnected from rightness. This question surfaces whether the self-concept is power-as-force (8) or power-as-directed-toward-something-true (6).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**The one making sure strength is aimed right.**\n\nThough I'll be honest, that distinction took me a minute. People would probably say I'm the reliable one — I've had guys tell me I'm the rock of the local, that kind of thing. And I don't mind it. But if I'm being straight with you, what keeps me up at night isn't whether I'm strong enough. It's whether we're pointed at the right target. You can have a room full of fired-up workers and still lose everything if nobody's asking the harder questions about strategy, about who's actually pulling the strings on the other side. That's the part I think I'm... that's probably where I do my best work. If I'm being honest about it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When the cause you've been fighting for finally wins — the contract gets signed, management backs down — how long before it actually feels like a real victory?\n\nRate it: 1 means it almost never lands as a full win, 5 means you can actually sit in it for a while.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.42,
+            "2": 0.15,
+            "3": 0.2,
+            "4": 0.12,
+            "5": 0.35,
+            "6": 0.78,
+            "7": 0.1,
+            "8": 0.55,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "6",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.45,
+            "heart": 0.2,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "burned before",
+                "somebody told me what I wanted to hear",
+                "can't read right"
+              ],
+              "context": "trust and verification patterns"
+            },
+            {
+              "type": 6,
+              "words": [
+                "loyalty",
+                "holds the line",
+                "got your back"
+              ],
+              "context": "bond and alliance building"
+            },
+            {
+              "type": 8,
+              "words": [
+                "call it out",
+                "guns blazing",
+                "directed outward",
+                "anger first"
+              ],
+              "context": "confrontation with authority"
+            },
+            {
+              "type": 6,
+              "words": [
+                "2am running back through every conversation",
+                "discomfort of not deciding"
+              ],
+              "context": "doubt cycle after action"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.65,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "30-year union organizer/negotiator, senior figure in local",
+          "what": "reads rooms, builds coalitions, confronts authority strategically",
+          "why": "naming what's wrong matters — the record must be set straight",
+          "how": "document, build case, get people behind you first",
+          "when": "moves when discomfort of not deciding exceeds discomfort of deciding wrong",
+          "where": "workplaces, negotiating tables, plant closings"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger outward when something goes wrong; 2am doubt cycle creeps in after",
+          "respond_glimpsed": "strategic confrontation — builds case, protects coalition before moving",
+          "superpower_signal": "seeing who's pulling the strings; asking the harder questions about strategy",
+          "kryptonite_signal": "trained himself out of relief; always scanning for next threat; 2am doubt",
+          "domain_signals": [
+            "labor organizing",
+            "coalition building",
+            "authority confrontation",
+            "trust calibration"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "6v8_disconfirmatory",
+        "thinking_display": "More certain about what's wrong than what's right.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the cause you've been fighting for finally wins — the contract gets signed, management backs down — how long before it actually feels like a victory?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = almost never feels like a real victory / 5 = feels like a full win, at least for a while"
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed: strength-aimed-right over strength-itself — classic 6 counterphobic with SO instinct. Explicitly deprioritizes personal recognition, focused on coalition and correct targeting. 8 wing strong — anger outward, authority confrontation, strategic aggression. Key differentiator needed: 6 will doubt the victory (was it real? did we get played?); 8 will absorb it and move. 2am doubt cycle already surfaced — this is 6's anxiety signature. Need to probe whether the victory feels complete or suspicious.",
+          "next_question_rationale": "Disconfirmatory question needed — 6 vs 8 differentiation. The 6 will rarely feel a full win; they stay vigilant, suspect it might fall apart or that something was missed. The 8 settles into the win more cleanly (though they move to the next fight). Using scale format after forced_choice as required rotation.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**Scale: 3 out of 10 — doesn't feel like much of a victory, honestly.**\n\nMaybe a day, two days tops where it feels real. Then you're already looking at what they slipped into the fine print, or what the next fight's gonna be, or whether the members even understand what they actually won. I don't know if that's cynicism or just — experience, I guess. You stop letting yourself land on it too long because the landing usually hurts more than keeping moving.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you're carrying the fight — the strategy, the risk, the decisions — and things go wrong, where does the weight actually land?\n\n- On me — I'm the one who called it, I own it\n- On the situation — I did what I could with what I had",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.2,
+            "4": 0.15,
+            "5": 0.4,
+            "6": 0.82,
+            "7": 0.1,
+            "8": 0.65,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "6v8",
+            "6v1"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.2,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "trust but verify",
+                "burned before",
+                "who's pulling the strings",
+                "half the story",
+                "2am doubt"
+              ],
+              "context": "describing threat-scanning and trust patterns"
+            },
+            {
+              "type": 8,
+              "words": [
+                "directed outward",
+                "call it out",
+                "go to war",
+                "guns blazing",
+                "you move"
+              ],
+              "context": "describing response to authority and confrontation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.7,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "30-year labor organizer, union leader",
+          "what": "scanning for threat, building cases, confronting wrong",
+          "why": "loyalty, making sure strength is aimed right, named wrongs",
+          "how": "document first, build coalition, then confront",
+          "when": "under pressure, after a win, at 2am",
+          "where": "negotiating table, plant floors, coalition rooms"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "already scanning for the next threat before relief can land; doubt at 2am after the anger cools",
+          "respond_glimpsed": "sitting with discomfort until a real decision forms; asking the harder strategic questions",
+          "superpower_signal": "loyalty, strategic skepticism, making sure strength is aimed right",
+          "kryptonite_signal": "can't let victories land; exhausting vigilance loop; 2am doubt; can't fully trust the read",
+          "domain_signals": [
+            "work/career",
+            "relationships/loyalty",
+            "authority/power"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Can't let the victory land. That's the whole pattern right there.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're carrying the fight — the strategy, the risk, the decisions — and things go wrong, where does the weight actually land?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "On me — I'm the one who called it, I own it",
+            "On the situation — I did what I could with what I had"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 8 owns it fully with no residual doubt; Type 6 owns it but the doubt loop at 2am reveals something different underneath"
+        },
+        "strategy": {
+          "what_was_learned": "Victory doesn't land — already scanning fine print, already moving. This is the 6 vigilance loop fully on display. The 3/10 score on a major win is highly diagnostic. No heart center data yet. Need disconfirmatory question before close.",
+          "next_question_rationale": "This is the disconfirmatory 6v8 question. An 8 owns failure cleanly with minimal self-doubt residue. A 6 owns it but has the inner tribunal running underneath. The answer + elaboration will reveal which pattern is dominant. This also probes heart center slightly.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**On me — I'm the one who called it, I own it.**\n\nLook, I'm not gonna sit here and blame the situation. That's what guys who can't look in the mirror do. If I made the call, I wear it — that's the deal you make when you step into this role. \n\nI mean... sometimes the situation does matter. I'm not an idiot about that. But the second you start leaning on 'circumstances,' you've already started losing the room. Your people can smell that.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you go against someone in charge and it costs you — what's the harder part to sit with: that you took the hit, or that you were right and they still didn't listen?\n\n- That I took the hit\n- That I was right and it didn't matter",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.65,
+            "2": 0.1,
+            "3": 0.2,
+            "4": 0.1,
+            "5": 0.3,
+            "6": 0.78,
+            "7": 0.1,
+            "8": 0.6,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6v8",
+            "6v1"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "6",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.6,
+            "heart": 0.2,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "who's pulling the strings",
+                "what I might've missed",
+                "make sure I'm not missing something",
+                "worried",
+                "whether somebody told me what I wanted to hear"
+              ],
+              "context": "multiple exchanges — vigilance, doubt, trust architecture"
+            },
+            {
+              "type": 8,
+              "words": [
+                "directed outward",
+                "guns blazing",
+                "own it",
+                "step into that room",
+                "you call it out"
+              ],
+              "context": "confrontation framing, ownership language"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.65,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Union negotiator/leader, 30 years, trusted authority figure in team",
+          "what": "Strategic scanning, confrontation-ready, loyalty-driven, case-building before moving",
+          "why": "Needs things to be right — named correctly, aimed correctly. Betrayal by deception > betrayal by weakness",
+          "how": "Gut read + validation through trusted others, document before confronting",
+          "when": "2am doubt cycle — doubt comes later, anger comes first",
+          "where": "Union context — plant closings, management conflict, collective action"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Perpetual scanning — wins don't land, next threat already forming; owns all outcomes, carries weight",
+          "respond_glimpsed": "Making sure strength is aimed right — strategic clarity over raw force",
+          "superpower_signal": "Pattern recognition, loyalty architecture, strategic truth-telling",
+          "kryptonite_signal": "Can't let wins land; 2am doubt loop; exhaustion from never-off vigilance",
+          "domain_signals": [
+            "loyalty",
+            "confrontation",
+            "strategy",
+            "trust",
+            "authority"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Owns the loss faster than the win.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you go against someone in charge and it costs you — what's the harder part to sit with: that you took the hit, or that you were right and they still didn't listen?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That I took the hit",
+            "That I was right and it didn't matter"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 8 would weight the hit (power/cost); Type 6 would weight the broken trust/futility of being ignored"
+        },
+        "strategy": {
+          "what_was_learned": "Strong ownership of outcomes, directed anger, strategic patience in confrontation — 6w5/SO pattern. The 2am doubt loop is classic 6. The 'aimed right' vs 'raw strength' distinction distinguishes 6 from 8. Need to probe heart center AND run disconfirmatory to separate 6 from 8.",
+          "next_question_rationale": "This is the disconfirmatory question: Type 8 would weight personal cost/power loss; Type 6 would weight the futility of being ignored by authority despite being right — broken trust in the system. Also probes heart center adjacently (what hurts).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "That I was right and it didn't matter.\n\nTaking the hit — okay, that's part of the job. You know going in that standing up costs something. I made peace with that a long time ago, or I thought I did. But when you've done the work, you've got the facts, you've laid it out clear as day, and the guy at the top just... doesn't care — that one sits different. That one's harder to shake. Because it's not just that you lost, it's that the whole system that's supposed to respond to truth just kind of shrugged. And then you start wondering, I don't know, whether any of it actually moves the needle. Which is — that's probably the more dangerous thought, honestly.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you're deciding whether to trust someone — not in crisis, just the normal course of things — what's the default?\n\n- Start from trust, pull back when they break it\n- Start from neutral, wait and see what they show me",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.62,
+            "2": 0.1,
+            "3": 0.15,
+            "4": 0.18,
+            "5": 0.35,
+            "6": 0.78,
+            "7": 0.08,
+            "8": 0.55,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "6v8",
+            "6v1"
+          ],
+          "defiant_spirit_type_name": "The Loyal Rebel",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.22,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "whether I'm missing something",
+                "whether any of it actually moves the needle",
+                "dangerous thought",
+                "who's actually pulling the strings"
+              ],
+              "context": "ongoing — threat scanning, doubt loop, systemic suspicion"
+            },
+            {
+              "type": 8,
+              "words": [
+                "you call it out",
+                "directed outward",
+                "you wear it",
+                "losing the room"
+              ],
+              "context": "authority confrontation, ownership of outcomes"
+            },
+            {
+              "type": 1,
+              "words": [
+                "the wrong needs to be named",
+                "setting the record straight",
+                "someone did something wrong"
+              ],
+              "context": "justice/correctness framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.75,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.5,
+          "right": 0.6
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "30-year union negotiator/organizer, trusted loyalist, team-oriented",
+          "what": "confronting authority, naming wrongs, building coalitions, strategic positioning",
+          "why": "truth/justice must be named; the system should respond to evidence; loyalty must be earned",
+          "how": "documents first, builds case, lines up support, then acts; talks it through to confirm existing read",
+          "when": "acts when discomfort of not deciding exceeds discomfort of deciding wrong",
+          "where": "negotiating rooms, labor contexts, hierarchical power structures"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger first when things go wrong, then 2am doubt spiral; immediate scanning after wins; unable to sit in victory",
+          "respond_glimpsed": "Distinguishes 'being worn down' from 'genuinely changing my mind' — knows the difference; builds case before acting",
+          "superpower_signal": "Strategic loyalty, coalition-building, pointing strength in the right direction, naming wrongs with precision",
+          "kryptonite_signal": "Hypervigilance that prevents landing on wins; the 2am doubt loop; danger of nihilism when right doesn't matter",
+          "domain_signals": [
+            "labor",
+            "authority",
+            "loyalty",
+            "justice",
+            "strategy"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "The most dangerous thought is the one he named last.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're deciding whether to trust someone — not in crisis, just in the normal course of things — what's the default? Do you start from trust and pull back when they break it, or do you start from neutral and wait to see what they show you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Start from trust, pull back when broken",
+            "Start from neutral, wait to see what they show me"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 6 defaults to skepticism/testing; Type 8 often says they give trust freely but pull back hard when broken. This should differentiate."
+        },
+        "strategy": {
+          "what_was_learned": "Right-and-it-didn't-matter is harder to sit with than personal cost. This is pure 6: the system's failure to respond to truth is existential, not just strategic. The nihilism signal ('whether any of it actually moves the needle') is the kryptonite landing. 8s would more typically frame the frustration as personal power being thwarted, not systemic truth being ignored. This is a disconfirmatory opportunity for 6v8.",
+          "next_question_rationale": "Must ask disconfirmatory question now — exchange 11. 6v8 key differentiator: 6s test trust before granting it; 8s often grant trust quickly but pull back completely when broken. The trust baseline question is a clean differentiator. Also probes the head center more directly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "Start from neutral, wait to see what they show me.\n\nYeah, that's... that's accurate. I mean, people will tell you they're open-minded, give everyone a fair shot — and maybe they believe it. But in my experience, you watch what someone does before you decide what they're worth. Words are cheap. I've seen guys shake your hand in a negotiation and look you right in the eye and just — lie. Fluently. So you learn. You watch the pattern, not the introduction.\n\nThat's not cynicism, I want to be clear. That's just — I don't know, call it calibration. Maybe wariness. It's probably the right word for it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "When you're at your most useful to the people around you — is it because you saw the threat before they did, or because you were willing to be the one who walked into it first?\n\n- I saw it coming — I kept us from walking into it\n- I walked in first — so they didn't have to",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.2,
+            "4": 0.15,
+            "5": 0.35,
+            "6": 0.82,
+            "7": 0.05,
+            "8": 0.6,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6v8"
+          ],
+          "defiant_spirit_type_name": "The Loyal Warrior",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.52,
+            "heart": 0.18,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "calibration",
+                "wariness",
+                "wait and see",
+                "who's pulling the strings",
+                "whether any of it actually moves the needle"
+              ],
+              "context": "trust, authority, scanning for threats"
+            },
+            {
+              "type": 8,
+              "words": [
+                "directed outward",
+                "I own it",
+                "you call it out",
+                "going in guns blazing",
+                "you watch what someone does"
+              ],
+              "context": "confrontation with authority, accountability"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.72,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.58
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Labor negotiator/organizer, ~30 years experience, leadership role in union local",
+          "what": "Strategy, confrontation with authority, loyalty networks, sustained vigilance",
+          "why": "Naming what's wrong — not protection, the record matters",
+          "how": "Build case first, move deliberately, trust the gut but verify with trusted others",
+          "when": "Sits with decisions until discomfort of not-deciding > discomfort of deciding wrong",
+          "where": "Negotiating tables, plant closings, management confrontations"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Perpetual scanning — can't land in a win, immediately moves to next threat. Takes weight of outcomes personally. Anger directed outward when betrayed.",
+          "respond_glimpsed": "Making sure strength is aimed in the right direction — the strategic, questioning function. Choosing the confrontation that actually works, not the one that feels righteous.",
+          "superpower_signal": "Strategic loyalty — knowing who to trust, when to move, how to build coalition before confrontation",
+          "kryptonite_signal": "Can't land in a victory — always scanning for what got slipped past. The 2am ceiling-staring. Wondering if any of it moves the needle.",
+          "domain_signals": [
+            "work/vocation",
+            "social/community",
+            "authority/power"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Wariness dressed up as calibration. That's worth noting.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're at your most useful to the people around you — is it because you saw the threat before they did, or because you were willing to be the one who walked into it first?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I saw it coming — I kept us from walking into it",
+            "I walked in first — so they didn't have to"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 6 = anticipating/scanning/protecting the group; Type 8 = taking the hit personally, being the force that moves first. This will differentiate."
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed head center: default to neutral/watchful, calibrated wariness, pattern-watching over impression-taking. Strong 6 signal. The 8 energy shows in confrontation style and accountability ownership, but the underlying motivation is threat-detection and loyalty, not dominance. SO variant continues to strengthen — 'the room,' 'your people,' 'the local.' Need disconfirmatory question to push past 0.85 before closing. Also need to probe heart center briefly.",
+          "next_question_rationale": "This is the disconfirmatory question for 6v8. Type 8 answer: 'I walked in first — so they didn't have to.' Type 6 answer: 'I saw it coming — I kept us from walking into it.' The motivation differs fundamentally: 8s protect by absorbing impact; 6s protect by anticipating and warning. This will move confidence past 0.85 or reveal genuine 8 lean.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "**I walked in first — so they didn't have to.**\n\nThough, I mean — it's not like I was oblivious going in. I usually see it coming. I just don't think warning people is worth much if you're not willing to back it up. Anybody can stand at the edge and point. That's the easier job, honestly.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "When you're pushing hard for something — a position, a strategy, a call you've made — and the people around you start to waver, what's the pull you feel most strongly?\n\n- Hold the line — I'm right and wavering now undermines everything we built\n- Check myself — maybe I'm pushing too hard and I need to make sure I haven't lost the room",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.45,
+            "2": 0.1,
+            "3": 0.2,
+            "4": 0.1,
+            "5": 0.25,
+            "6": 0.78,
+            "7": 0.05,
+            "8": 0.55,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6vs8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.48,
+            "heart": 0.15,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "calibration",
+                "wariness",
+                "whether any of it actually moves the needle",
+                "waiting too long",
+                "confirm",
+                "burned before"
+              ],
+              "context": "throughout — hypervigilance, scanning, trust-testing"
+            },
+            {
+              "type": 8,
+              "words": [
+                "I walked in first",
+                "you call it out",
+                "I own it",
+                "fired-up",
+                "I move"
+              ],
+              "context": "action orientation, confrontation framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.65,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.6
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Union negotiator, 30 years, carries the local — strategic protector role",
+          "what": "Pattern scanning, confrontation, loyalty bonds, being the one who walks in first",
+          "why": "Truth needs naming; people need protection; systems need accountability",
+          "how": "Document, build coalitions, move when discomfort of not deciding exceeds risk of deciding wrong",
+          "when": "Always scanning — no full landing after wins",
+          "where": "High-stakes collective contexts — the room, the negotiating table"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Vigilance loops that don't resolve — scanning for next threat immediately after winning, 2am doubt cycles, never fully landing",
+          "respond_glimpsed": "Choosing to walk in first — not reactive panic but deliberate protective action",
+          "superpower_signal": "Strategic loyalty — seeing the threat AND being willing to be the one who meets it",
+          "kryptonite_signal": "The system shrugged — loss of faith in whether truth moves anything. The dangerous thought.",
+          "domain_signals": [
+            "collective loyalty",
+            "strategic protection",
+            "confrontation as duty",
+            "authority skepticism"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Walked in first — but named the cost of pointing without backing it up.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're pushing hard for something — a position, a strategy, a call you've made — and the people around you start to waver, what's the pull you feel most strongly?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Hold the line — I'm right and wavering now undermines everything we built",
+            "Check myself — maybe I'm pushing too hard and I need to make sure I haven't lost the room"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory 6v8: Type 8 holds line from certainty/strength; Type 6 self-checks from doubt and concern about coalition. This distinguishes the two."
+        },
+        "strategy": {
+          "what_was_learned": "Walked in first so others didn't have to — but qualified it: 'I usually see it coming.' Protective action over warning-only. Strong 8 flavor in the action but the WHY is protective/collective, not dominance. Need to test the self-doubt / coalition-check pattern vs pure strength-hold to confirm 6cp over 8.",
+          "next_question_rationale": "Disconfirmatory question — hard gate. 6 (especially counterphobic) will often self-check when coalition wavers because their security is in the group holding. 8 will hold the line regardless because their certainty comes from internal strength. This is the key differentiator.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "persona",
+      "content": "**Hold the line — I'm right and wavering now undermines everything we built.**\n\nLook, I've been in rooms where the second you flinch, management smells it and the whole thing collapses. So yeah, you hold. That said — and I mean this — it's not blind stubbornness, or at least it's not supposed to be. You're reading the room constantly, you're just not *showing* that you're reading it. There's a difference between checking yourself internally and letting doubt bleed out where people can see it. One keeps you sharp, the other gets you eaten alive.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "system",
+      "content": "When something is genuinely wrong — not just strategically wrong, but morally wrong — do you push back hardest because people are counting on you not to flinch, or because the wrong itself is something you can't let stand?\n\n- Because people are counting on me not to flinch\n- Because the wrong itself can't go unanswered",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.15,
+            "4": 0.1,
+            "5": 0.35,
+            "6": 0.78,
+            "7": 0.05,
+            "8": 0.65,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "6",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Loyal Warrior",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.6,
+            "heart": 0.15,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "whether any of it actually moves the needle",
+                "wariness",
+                "calibration",
+                "see it coming",
+                "making sure I'm not missing something"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walked in first",
+                "hold the line",
+                "you own it",
+                "directed outward",
+                "strength"
+              ],
+              "context": "confrontation and loyalty questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.7,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Union leader, 30 years experience, values loyalty and directness",
+          "what": "Confronting authority, building coalitions, calling out wrongs",
+          "why": "Setting the record straight — truth needs to be named",
+          "how": "Builds case, gathers allies, moves decisively but strategically",
+          "when": "Scans constantly, never fully relaxes after wins",
+          "where": "Negotiating tables, labor rooms, confrontations with management"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Hold the line publicly while scanning internally; anger directed outward before doubt arrives at 2am",
+          "respond_glimpsed": "Making sure strength is aimed at the right target — strategic vs reactive",
+          "superpower_signal": "Sees threats early, walks in first so others don't have to, builds coalitions, holds under pressure",
+          "kryptonite_signal": "Can't land on victory, 2am doubt about whether information was reliable, hypervigilance that doesn't turn off",
+          "domain_signals": [
+            "labor relations",
+            "authority confrontation",
+            "loyalty/betrayal",
+            "coalition building"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 13,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Holds the line outward. Something else runs at 2am.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something is genuinely wrong — not just strategically wrong, but morally wrong — do you push back hardest because people are counting on you not to flinch, or because the wrong itself is something you can't let stand?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Because people are counting on me not to flinch",
+            "Because the wrong itself can't go unanswered"
+          ],
+          "scale_range": null,
+          "context_note": "disconfirmatory: 8 leads with loyalty/others counting on them; 6 leads with the wrong itself needing to be named"
+        },
+        "strategy": {
+          "what_was_learned": "Holds line publicly, internal doubt comes later. Walking in first so others don't have to. This is SO-dominant 6 with strong 8 wing — the courage reads as 8 but the motivation (truth must be named, right must be aimed correctly, can't trust until proven) is 6. The 2am ceiling-staring and 'whether any of it moves the needle' is quintessential 6 doubt pattern. The hypervigilance never turning off is 6 head center. Needs disconfirmatory 6v8 question — 8 is driven by strength/impact, 6 by the cause/loyalty to what's right.",
+          "next_question_rationale": "This is the critical differentiator: 8s push back because they can and because they're the one with the strength; 6s push back because the wrong itself violates something they're committed to. The 'record needs to be straight' language he uses is very 6. Must ask disconfirmatory before closing. After this, can close if 6 answer confirmed.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "persona",
+      "content": "Because the wrong itself can't go unanswered.\n\nI mean, look — the accountability piece matters, it does. If you're standing in front of four hundred workers who need someone to hold the line, you don't get to have a bad day. But if I'm honest? The times I've pushed hardest, really dug in, it wasn't because someone was watching. It was because something just... sits wrong, you know? Like a splinter you can't stop touching. People counting on me keeps me *showing up.* The wrong itself is what makes me *fight.*",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "system",
+      "content": "When things are genuinely quiet — no fight on the table, no one needing anything from you — what do you actually do with that?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.68,
+            "2": 0.15,
+            "3": 0.2,
+            "4": 0.1,
+            "5": 0.35,
+            "6": 0.82,
+            "7": 0.08,
+            "8": 0.72,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6",
+            "8",
+            "1"
+          ],
+          "defiant_spirit_type_name": "The Loyal Sentinel",
+          "whole_type": "6",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.68,
+            "heart": 0.2,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "wariness",
+                "calibration",
+                "who's actually pulling the strings",
+                "whether any of it actually moves the needle",
+                "2 a.m. staring at the ceiling",
+                "somebody told me what I wanted to hear"
+              ],
+              "context": "throughout assessment — vigilance, scanning, doubt loop, late-night second-guessing"
+            },
+            {
+              "type": 8,
+              "words": [
+                "I walked in first",
+                "hold the line",
+                "you call it out",
+                "directed outward",
+                "you don't get to have a bad day"
+              ],
+              "context": "strength, protection through force, confrontation framing"
+            },
+            {
+              "type": 1,
+              "words": [
+                "the wrong itself can't go unanswered",
+                "setting the record straight",
+                "the wrong needs to be named",
+                "sits wrong like a splinter"
+              ],
+              "context": "moral wrongness as intrinsic motivator"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.55,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Union leader, 30 years, negotiation veteran — protector identity, reads rooms, earns trust through track record",
+          "what": "Fights wrongs, holds the line, strategic confrontation — documentation, coalition building, then action",
+          "why": "Moral wrongness is intrinsically intolerable — 'the wrong itself can't go unanswered' — AND protection of the group",
+          "how": "Patience + preparation + decisive action; internal scanning before showing anything",
+          "when": "Moves when discomfort of not-deciding exceeds discomfort of deciding wrong",
+          "where": "Labor/negotiation rooms, collective context always present"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Perpetual scanning for threats after wins; holding the line when people waver; anger directed outward when things go wrong; default wariness with new people",
+          "respond_glimpsed": "Choosing to walk in first so others don't have to; ensuring strength is aimed right vs just asserting it; sitting with doubt at 2am rather than acting on it impulsively",
+          "superpower_signal": "Exceptional threat detection, coalition intelligence, loyalty under pressure, courage in confrontation",
+          "kryptonite_signal": "Relief never lands; victory dissolves immediately; perpetual scanning; midnight doubt loops; 'whether any of it actually moves the needle'",
+          "domain_signals": [
+            "labor relations",
+            "collective protection",
+            "moral accountability",
+            "strategic positioning"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "The wrong as intrinsic — that's not the same as protecting the group.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When things are finally quiet — no fight on the table, no one needing anything — what do you actually do with that?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 6 finds quiet uncomfortable/suspicious, 8 expands/rests/dominates new territory. Also probes heart center indirectly."
+        },
+        "strategy": {
+          "what_was_learned": "Moral wrongness as intrinsic motivator is very strong — 'like a splinter you can't stop touching.' This is 1-ish language BUT the underlying structure is clearly 6: the wrong matters because it threatens the system of trust and right-order that makes the group safe. The 8 wing is strong but the motivation is head-center (threat detection, loyalty, doubt) not gut-center (power/impact for its own sake). Need to distinguish 6 from 8 more cleanly. Key differentiator: 8s expand into quiet, 6s scan it for threat. Also need to probe heart center — haven't touched it. And disconfirmatory hasn't been asked yet — this is a hard gate. Will use quiet/rest as the disconfirmatory: a 6 will fill quiet with vigilance or unease; an 8 will fill it with expansion or genuine rest.",
+          "next_question_rationale": "Disconfirmatory for 6v8: What happens in genuine quiet/rest. 6s find it unsettling or fill it with scanning. 8s expand, rest, or move to new territory. Also opens heart center — what does he actually do for himself when not fighting? Open format after long string of forced_choice.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "persona",
+      "content": "*exhales slowly through his nose*\n\nHonestly? I don't know that I do much with it. I'll sit down, maybe have a beer, tell myself this is what I've been working toward — some peace and quiet. And then about twenty minutes in I'm checking my phone, or I'm thinking about the grievance from last week that didn't get resolved the right way, or I'm — *small dry laugh* — reorganizing something that didn't need reorganizing.\n\nDenise says I don't know how to just be somewhere. She's probably not wrong about that.\n\nI think the quiet makes me... suspicious, is probably the right word for it. Like something's about to go sideways that I'm not seeing yet. Thirty years of this work, you learn that when it gets too calm, someone somewhere is getting ready to pull something.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "system",
+      "content": "When you walk into a room cold — no intel, no coalition, no case built yet — and something goes sideways fast, what's the move?\n\n- Take control of the room — I'm the one who needs to drive this now\n- Read the room first — I need to know who I can trust before I commit",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.15,
+            "3": 0.2,
+            "4": 0.15,
+            "5": 0.3,
+            "6": 0.82,
+            "7": 0.1,
+            "8": 0.65,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.15,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "calibration",
+                "wariness",
+                "suspicious",
+                "pattern recognition",
+                "too calm"
+              ],
+              "context": "describing trust and quiet periods"
+            },
+            {
+              "type": 6,
+              "words": [
+                "it depends",
+                "whether any of it actually moves the needle"
+              ],
+              "context": "describing doubt at 2am after fights"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walk in first",
+                "hold the line",
+                "directed outward",
+                "owns it"
+              ],
+              "context": "describing conflict approach"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.65,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.5,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Labor negotiator/union leader, 30 years, people call him the rock of the local",
+          "what": "Fights for truth/record, builds cases, ensures strength is aimed right",
+          "why": "Because the wrong itself can't go unanswered",
+          "how": "Systematic: document, build coalition, reposition, then move",
+          "when": "Already scanning before relief lands; quiet triggers suspicion",
+          "where": "Negotiating tables, plant closings, management confrontations"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Hypervigilance in quiet; scanning for threat; holds the line even when checking internally; 2am doubt cycles",
+          "respond_glimpsed": "Consciously distinguishes internal check from visible doubt; recognizes exhaustion pattern; names 'dangerous thought' about futility",
+          "superpower_signal": "Pattern recognition, loyalty, strategic truth-telling, willing to walk in first",
+          "kryptonite_signal": "Cannot sit in victory; suspicious of quiet; doubt at 2am about whether truth moves the needle; hypervigilance",
+          "domain_signals": [
+            "work/vocation",
+            "relationships/loyalty",
+            "conflict/authority"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 13,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "Something about the quiet being suspicious.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you walk into a room cold — no intel, no coalition, no case built yet — and something goes sideways fast, what's the move?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Take control of the room — I'm the one who needs to drive this now",
+            "Read the room first — I need to know who I can trust before I commit"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 8 would take control, 6 would read/scan first"
+        },
+        "strategy": {
+          "what_was_learned": "Quiet triggers hypervigilance — 'suspicious' is his exact word. Denise's observation about not knowing how to 'just be somewhere' confirms the underlying anxiety pattern. This is 6 with significant 8 coloring. The fight instinct (walk in first, hold the line, own the call) reads as 8 but is better explained as counterphobic 6 — fighting as a defense against fear rather than from innate power drive. Need disconfirmatory question to confirm 6 vs 8: core motivation is loyalty/doubt/trust vs power/control/autonomy.",
+          "next_question_rationale": "Hard disconfirmatory gate: not yet asked. 6 vs 8 is the key pair. The clearest differentiator is: does he need to READ the room before committing (6 scanning for who to trust) vs TAKE CONTROL of the room (8 asserting power). Put him in a cold, no-prep scenario where both options are real. If 6, he reads first. If 8, he drives.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 20,
+      "role": "persona",
+      "content": "**Read the room first — I need to know who I can trust before I commit.**\n\nAnd look, that's not hesitation — don't misread it as that. Charging in blind is how you hand people ammunition. You spend sixty seconds, maybe ninety, and you figure out who's got an agenda, who's nervous, who's actually listening. *Then* you move. The times I've ignored that instinct and just grabbed the wheel... I mean, let's just say I learned some things the hard way. You can control a room a lot better once you know which floor it's built on.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "system",
+      "content": "The people who've really gotten through to you — not the ones you respect, but the ones who've actually *reached* you — what did they do that most people don't?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.2,
+            "4": 0.15,
+            "5": 0.4,
+            "6": 0.82,
+            "7": 0.05,
+            "8": 0.65,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6vs8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.2,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "calibration",
+                "wariness",
+                "something sits wrong",
+                "suspicious",
+                "who I can trust"
+              ],
+              "context": "repeated across multiple exchanges"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.65,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.65
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Union leader, 30 years, trusted figure — 'rock of the local'",
+          "what": "Strategy, confrontation, coalition-building, loyalty maintenance",
+          "why": "The wrong itself can't go unanswered — not for approval or protection",
+          "how": "Read the room first, build case, move with backing — but willing to walk in first",
+          "when": "Acts when discomfort of not deciding exceeds discomfort of deciding wrong",
+          "where": "Negotiating tables, grievance rooms, coalition management"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Constant scanning even after wins — relief replaced by vigilance; quiet triggers suspicion",
+          "respond_glimpsed": "Naming the wrong even when no one is watching; staying with discomfort of uncertainty before moving",
+          "superpower_signal": "Loyalty, courage under pressure, moral clarity — walks in first so others don't have to",
+          "kryptonite_signal": "Can't rest; trust withheld until proven; 2am doubt cycles; victory doesn't land",
+          "domain_signals": [
+            "work/vocation",
+            "relationships/loyalty",
+            "authority/power"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "6v8_disconfirmatory_vulnerability",
+        "thinking_display": "Strength aimed outward — but what protects the inside?",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "The people who've really gotten through to you — not the ones you respect, but the ones who've actually reached you — what did they do that most people don't?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 6 will reference being seen/trusted despite wariness; 8 will reference someone who matched their strength or refused to be intimidated"
+        },
+        "strategy": {
+          "what_was_learned": "Read-room-first before committing — classic 6 orientation toward safety and coalition. 8 would more likely take control even without intel. The gap between 6 and 8 is narrowing toward 6: the motivation is the wrong itself (6's counter-phobic loyalty to truth/justice) not raw power or dominance. But 8 wing is present — walks in first, owns outcomes, directed anger. Need to probe vulnerability/who gets through — 6 lets people in through trust built over time; 8 lets people in through matching strength.",
+          "next_question_rationale": "This is the critical disconfirmatory question for 6v8: who gets through. 6 will describe someone who was steady, honest, didn't push them — creating safety. 8 will describe someone who stood up to them or didn't flinch. Heart center also not probed — this question opens that space without naming it.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 21,
+      "role": "persona",
+      "content": "*pauses, taps fingers once on the table*\n\nThey didn't try to impress me, for one thing. And they didn't... perform concern, you know what I mean? Most people, they're asking you something but they're already halfway to their next point. The ones who actually got through — they just waited. Let the silence sit there without rushing to fill it. \n\nMy old shop steward, Reuben, back in '94 — guy barely said ten words at a stretch. But he'd look at you like whatever you were saying was the only thing happening in the world right now. I told him things in a parking lot after a late meeting that I hadn't told my own wife at the time. That's probably... I don't know if that says something good or bad about me, honestly.\n\n*small, dry laugh*\n\nI guess what I'm saying is — they didn't need anything back from me while I was talking. That's rarer than it sounds.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 22,
+      "role": "system",
+      "content": "When you think about what makes you fight hardest for something — is it more that you can't stand injustice going unanswered, or that you need to know the people you're fighting with are solid before you fully commit?\n\n- Can't stand the injustice going unanswered — that's what drives me\n- Need to know my people are solid first — then I can go all in",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.81,
+          "type_scores": {
+            "1": 0.62,
+            "2": 0.15,
+            "3": 0.1,
+            "4": 0.18,
+            "5": 0.3,
+            "6": 0.81,
+            "7": 0.05,
+            "8": 0.72,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "6",
+            "8",
+            "1"
+          ],
+          "defiant_spirit_type_name": "The Loyal Challenger",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.2,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "who's got an agenda",
+                "calibration",
+                "wariness",
+                "trust",
+                "loyalty",
+                "it usually is"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 8,
+              "words": [
+                "hold the line",
+                "walk in first",
+                "control a room",
+                "you call it out"
+              ],
+              "context": "conflict and authority questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.7,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.62
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Union rep/negotiator, 30 years, named Denise's partner — deeply relational in a functional/loyalty frame",
+          "what": "Pattern scanning, coalition building, confronting wrong, protecting the group",
+          "why": "The wrong itself can't go unanswered — moral clarity drives action, not just loyalty",
+          "how": "Read room first, build case, don't flinch publicly, hold the line",
+          "when": "Always — even in quiet, suspicious something's building",
+          "where": "Negotiating rooms, grievances, management confrontations"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Constant scanning, can't rest in victory or quiet — hypervigilance as default mode; holding line even when checking himself internally",
+          "respond_glimpsed": "Choosing to walk in first so others don't have to — conscious courage vs reactive armor",
+          "superpower_signal": "Loyalty, strategic clarity, truth-telling, coalition building — the one who names what others won't",
+          "kryptonite_signal": "Can't land in wins, suspicious of calm, 2am doubt, running hot on inner critic at self when things go wrong",
+          "domain_signals": [
+            "Work/vocation dominant",
+            "Relationship through loyalty lens",
+            "Rest/stillness strongly repressed"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 16,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "The person who reached him didn't need anything from him. He noticed that like it was rare.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about what makes you fight hardest for something — is it more that you can't stand injustice going unanswered, or that you need to know the people you're fighting with are solid before you fully commit?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Can't stand the injustice going unanswered — that's what drives me",
+            "Need to know my people are solid first — then I can go all in"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 8s lead with injustice as personal affront and move on strength; 6s need coalition and certainty before fully committing — this separates the two"
+        },
+        "strategy": {
+          "what_was_learned": "He values people who don't need anything from him while he's talking — this is a 6 trust signal, not an 8 one. 8s don't typically notice or articulate what makes them feel reached; 6s scan for authenticity constantly. The Reuben story is deeply 6: found safety in someone who didn't perform, who waited, who let silence sit. Also notable: he admits things to Reuben he hadn't told his wife — compartmentalization consistent with 6 over 8.",
+          "next_question_rationale": "Disconfirmatory 6v8: 8s act first from inner certainty about the wrong; 6s need the coalition to feel solid before they can fully commit. He's said both — 'the wrong can't go unanswered' (8) AND 'read the room first, know who I can trust' (6). This question forces him to rank which one actually comes first in his gut. If he chooses injustice/certainty-first, lean 8. If coalition/people-solid-first, confirms 6.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 22,
+      "role": "persona",
+      "content": "**Can't stand the injustice going unanswered — that's what drives me.**\n\nThough I'll say — and this is maybe where it gets complicated — I've walked into fights where the cause was clear as day, and then watched it fall apart because the people around me weren't who I thought they were. So over time you learn, right? You start reading the room before you commit fully. But at the core of it, yeah, it's the injustice. That's the thing that gets me out of bed. The people question — that's more like... damage control from experience, I guess.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 23,
+      "role": "system",
+      "content": "When the cause is right but the people around you are unreliable — do you push through anyway, or does the unreliability actually change whether the fight is worth having at all?\n\n- Push through — the cause is the cause, regardless of who's with me\n- The unreliability changes the calculus — I need to trust the people to fully commit",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.15,
+            "4": 0.1,
+            "5": 0.25,
+            "6": 0.82,
+            "7": 0.05,
+            "8": 0.65,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "6v8",
+            "6v1"
+          ],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.45,
+            "heart": 0.2,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "calibration",
+                "wariness",
+                "read the room",
+                "who I can trust",
+                "suspicious",
+                "something feels off"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walk in first",
+                "hold the line",
+                "directed outward",
+                "take the hit",
+                "can't let stand"
+              ],
+              "context": "confrontation and accountability questions"
+            },
+            {
+              "type": 1,
+              "words": [
+                "the wrong needs to be named",
+                "sits wrong like a splinter",
+                "the record"
+              ],
+              "context": "injustice questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.6,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.65,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Union leader, 30 years, coalition-builder, walking-in-first type",
+          "what": "Fights injustice, builds trust slowly, reads rooms, holds line under pressure",
+          "why": "Wrong itself can't go unanswered — injustice is the driver, not performance or recognition",
+          "how": "Document, build case, read room, then move — strategic but driven by moral clarity",
+          "when": "Operates from sustained alertness — never truly off, quiet makes him suspicious",
+          "where": "Negotiation rooms, union halls, late-night parking lots"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Alertness switch flips on automatically — scans for threat, holds line even when internally checking, can't settle in quiet",
+          "respond_glimpsed": "When he named 'whether any of it moves the needle' — the doubt underneath the drive; also the Reuben story — he knows what real presence looks like",
+          "superpower_signal": "Loyalty, strategic intelligence, moral courage — walking in first so others don't have to",
+          "kryptonite_signal": "Can't land on wins, 2am doubt spiral, suspicious of quiet, exhausted by constant scanning",
+          "domain_signals": [
+            "work/career dominant",
+            "relationship signals present but guarded",
+            "body/instinctual awareness high"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 16,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "disconfirmatory_6v8",
+        "thinking_display": "The injustice answer and the people answer — he ranked them. That order matters.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the cause is right but the people around you are unreliable — do you push through anyway, or does the unreliability actually change whether it's worth fighting at all?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Push through — the cause is the cause, regardless of who's with me",
+            "The unreliability changes the calculus — I need to trust the people to fully commit to the fight"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 8s push through regardless of coalition; 6s need to trust the people to fully commit"
+        },
+        "strategy": {
+          "what_was_learned": "He explicitly ranked injustice over people-reliability as his driver — strong 6 signal (injustice-driven moral clarity) with 8 overlay (walks in first). The 'damage control from experience' framing of the people-question is classic 6 — learned wariness layered over a core moral drive. Need disconfirmatory 6v8 question: 8s act on the cause regardless of coalition; 6s need to trust the people to fully commit.",
+          "next_question_rationale": "This is the disconfirmatory question: a pure 8 pushes through regardless of who's behind them; a 6 needs coalition trust to fully commit. His answer will separate the types. Also need heart center probe — has not been directly probed.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 23,
+      "role": "persona",
+      "content": "**The unreliability changes the calculus — I need to trust the people to fully commit to the fight.**\n\nAnd I'll tell you why — because I've seen guys who'd die on the hill for an abstract principle while the people around them fell apart, and at the end of the day they were just... alone on a hill. The cause doesn't exist in a vacuum. You need people who'll actually show up, who won't fold when management starts making offers, who aren't already halfway out the door. I mean — the cause is the cause, sure. But if I can't trust who's standing next to me, that changes the math. It changes it significantly.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 24,
+      "role": "system",
+      "content": "When you're lying awake at 2 a.m. running back through a decision — is the worry more that you misread the situation, or that someone around you wasn't who you thought they were?\n\n- That I misread the situation — I got the read wrong\n- That someone around me wasn't who I thought they were — I trusted wrong",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.15,
+            "4": 0.1,
+            "5": 0.2,
+            "6": 0.82,
+            "7": 0.05,
+            "8": 0.7,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "6",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.45,
+            "heart": 0.2,
+            "head": 0.75
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "calibration",
+                "wariness",
+                "read the room",
+                "who I can trust",
+                "something's off",
+                "suspicious",
+                "damage control",
+                "changes the calculus"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walked in first",
+                "hold the line",
+                "directed outward",
+                "own it",
+                "you call it out"
+              ],
+              "context": "confrontation and accountability questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.65,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.6,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "differentiation_6v8"
+        },
+        "oyn_dimensions": {
+          "who": "30-year union leader, seen as the rock but identifies as the strategist/pointer",
+          "what": "fights injustice, builds coalitions, confronts wrongdoing with documentation",
+          "why": "the wrong can't go unanswered — injustice is the driver, but trust scaffolds the commitment",
+          "how": "reads room first, builds case, moves decisively but only when floor is solid",
+          "when": "alert when things get quiet — scans for threats continuously",
+          "where": "negotiating tables, management confrontations, union rooms"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Continuous threat-scanning, can't rest in victories, already reading for next danger, 2am doubt spirals",
+          "respond_glimpsed": "Chooses to walk in first so others don't have to — this is chosen, not automatic",
+          "superpower_signal": "Reads threat before it materializes, loyalty that doesn't need words, strategic patience under pressure",
+          "kryptonite_signal": "Can't sit in victory, suspicious of calm, people question changes the calculus — fear-driven loyalty testing",
+          "domain_signals": [
+            "work/professional",
+            "relationships/trust",
+            "authority/confrontation"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 17,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "6v8_disconfirmatory_fear_vs_power",
+        "thinking_display": "The cause and the people — both matter, but in different ways.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're lying awake at 2 a.m. running back through a decision — is the worry more that you misread the situation, or that someone around you wasn't who you thought they were?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That I misread the situation — I got the read wrong",
+            "That someone around me wasn't who I thought they were — I trusted wrong"
+          ],
+          "scale_range": null,
+          "context_note": "disconfirmatory: Type 6 → fear of misreading/misjudging people/situation; Type 8 → anger at betrayal but not self-doubt about read"
+        },
+        "strategy": {
+          "what_was_learned": "Trust of coalition is load-bearing for commitment — this is 6 logic not 8 logic. 8 pushes through regardless. The 'changes the calculus' framing is pure 6: fear-based risk assessment about whether the support structure is reliable. Confidence now 0.82 but need disconfirmatory to close. Also need react/respond moment and heart center probe.",
+          "next_question_rationale": "This is the key disconfirmatory question: 6 fears misreading/being deceived (internal doubt); 8 fears betrayal but anger is outward, self-doubt about the READ is less characteristic. The 2am ceiling-staring moment he already named makes this a natural follow. If he says 'trusted wrong' that's 6. If he says 'misread the situation' equally 6 but from different angle. If he deflects entirely toward anger/outward — more 8. Also probes whether the doubt is about himself or others.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 24,
+      "role": "persona",
+      "content": "That someone around me wasn't who I thought they were — I trusted wrong.\n\nThough I'll say... sometimes those two things are harder to separate than you'd think. If I misread a situation badly enough, maybe that means I wanted to see something that wasn't there. Which is still on me, in a way. But yeah, at 2 a.m. it's usually some version of — did I give someone more credit than they deserved. That's the one that keeps the lights on.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 25,
+      "role": "system",
+      "content": "When you're close to someone — not colleagues, I mean the short list of people you'd let see you at your worst — what's the thing they almost never get to see?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.15,
+            "4": 0.1,
+            "5": 0.3,
+            "6": 0.82,
+            "7": 0.05,
+            "8": 0.65,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "6",
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Loyalist",
+          "whole_type": "Head",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.2,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "pattern recognition",
+                "trust the read",
+                "who I can trust",
+                "trusted wrong",
+                "someone wasn't who I thought"
+              ],
+              "context": "repeated throughout assessment"
+            },
+            {
+              "type": 8,
+              "words": [
+                "walked in first",
+                "hold the line",
+                "the wrong itself can't go unanswered",
+                "directed outward"
+              ],
+              "context": "authority confrontation and strength framing"
+            },
+            {
+              "type": 6,
+              "words": [
+                "2 a.m.",
+                "suspicious when it's quiet",
+                "already scanning for the next thing"
+              ],
+              "context": "hypervigilance pattern"
+            },
+            {
+              "type": 6,
+              "words": [
+                "need to know my people are solid",
+                "the unreliability changes the calculus"
+              ],
+              "context": "loyalty/coalition dependency"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.6,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Labor negotiator, 30 years, union organizer — 'the rock of the local'",
+          "what": "Pattern recognition for threat, building coalitions, strategic confrontation",
+          "why": "Injustice can't go unanswered — but needs trusted people to fully commit",
+          "how": "Document, build coalition, move deliberately but with force",
+          "when": "Scanning constantly — quiet makes him suspicious",
+          "where": "Union rooms, negotiations, management confrontations"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Hypervigilance — scanning for threat even after wins, can't sit in relief or quiet",
+          "respond_glimpsed": "Deliberate strategic action — builds case, reads room before committing, names the wrong",
+          "superpower_signal": "Loyalty, coalition building, unflinching truth-telling under pressure",
+          "kryptonite_signal": "Trust wound — 2am ruminations about who wasn't who he thought, unreliability changes calculus",
+          "domain_signals": [
+            "work/vocation (primary)",
+            "relationships (sounding board, Denise, Reuben)",
+            "self-concept (the one who walks in first)"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 17,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": "heart_probe_connection",
+        "thinking_display": "The coalition matters as much as the cause.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're close to someone — not colleagues, I mean the short list of people you'd let see you at your worst — what's the thing they almost never get to see?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Heart center probe — need to complete all three centers before closing. Also surfacing vulnerability pattern which differentiates 6 from 8."
+        },
+        "strategy": {
+          "what_was_learned": "Confirmation of 6 over 8 — the trust wound is primary, not dominance drive. The unreliability of others changes the calculus of the fight — this is Type 6's loyalty/doubt axis, not 8's power axis. Injustice drives him but coalition is the prerequisite. 2am ruminations about trust betrayal, not about whether he was strong enough. Need heart center probe to complete all three centers before closing.",
+          "next_question_rationale": "Heart center is unprobed. Need to surface what he allows himself to be seen in — vulnerability vs. strength. This differentiates 6 from 8 further: 8s guard vulnerability fiercely and often can't name what the inner circle sees; 6s often have a deep need for the inner circle to see the doubt beneath the certainty.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 25,
+      "role": "persona",
+      "content": "*exhales slowly through his nose*\n\nThat's... that's a hell of a question to lead with.\n\nI guess the thing nobody really gets to see is when I'm not sure. About myself, I mean — not about strategy or negotiations or any of that, I can sit with uncertainty there all day. But when I start wondering whether I've been the person I thought I was, whether the story I've been telling about myself holds up — that part I keep pretty close to the chest. Denise probably sees the edges of it sometimes. She'll notice I've gone quiet and she'll say something like \"you're doing the thing\" and I'll say \"what thing\" and we both know exactly what thing.\n\nBut I don't — I don't lay it out flat for anybody. That's probably the right way to say it. I don't lay it out flat.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

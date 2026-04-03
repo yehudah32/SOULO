@@ -1,0 +1,389 @@
+{
+  "run_id": "eval-persona-3-SX-1775061498937-1775253814888",
+  "timestamp": "2026-04-03T22:03:34.888Z",
+  "tier": "tier1",
+  "persona_id": "persona-3-SX-1775061498937",
+  "ground_truth": {
+    "core_type": 3,
+    "wing": "3w4",
+    "instinctual_variant": "SX",
+    "tritype": [
+      3,
+      6,
+      9
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 63,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 0,
+    "final_wing": null,
+    "final_confidence": 0,
+    "types_considered": [
+      {
+        "type": 3,
+        "peak_confidence": 0.45,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": null,
+    "mistype_as": 0,
+    "mistype_harm_severity": "low",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 4,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "partial",
+      "C9": "fail",
+      "C10": "fail"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 2,
+    "exploratory": 1,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 1
+  },
+  "efficiency": {
+    "total_exchanges": 2,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 3,
+        "confidence": 0.45
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "The system's follow-up in [2] presents a false binary between 'strategy landing' and 'reaching them as people,' which fails to probe the Type 3's core motivation of image, performance, and achievement validation. Redesign the binary choice to instead contrast external validation/admiration (Type 3) against authentic connection (Type 2) or mastery/competence (Type 5), so the fork genuinely discriminates between adjacent types rather than collapsing two non-diagnostic options.",
+      "evidence": "Exchange [2]: 'which part mattered more: that the strategy landed and they bought in, or that you'd actually reached them as people?' — both options are consistent with Type 3 and do not differentiate it from Types 2, 1, or 8. The persona's [1] response already flagged classic Type 3 markers ('energy shift,' 'all the parts moving together,' performance + outcome fusion) that were not followed up diagnostically.",
+      "source_level": "L1",
+      "commandment_alignment": "Ask questions that actually discriminate between types",
+      "estimated_impact": "Would likely raise core_type_accuracy from 3/10 toward 7+/10 by forcing the persona to reveal whether the driver is the win, the image, or the relational bond — the critical Type 2/3/4 fork."
+    },
+    {
+      "priority": "critical",
+      "category": "question_quality",
+      "action": "The assessment generated only one follow-up question in the visible transcript before analysis, which is grossly insufficient for a 15-minute adaptive protocol targeting type, wing, and subtype. Implement a minimum branching depth of 6-8 substantive exchanges before any typing inference, with each branch triggered by the specific Enneagram-relevant signal detected in the prior response (e.g., the persona's focus on the room's reaction in [1] should trigger a motivation-source probe, not a generic preference binary).",
+      "evidence": "Exchange [1] persona response contains rich diagnostic signals: 'they were genuinely with me,' 'communicating something true and doing it well,' 'all the parts were moving together' — these suggest Type 3 image-performance fusion, yet exchange [2] pivots to a shallow binary instead of drilling into what 'felt right' actually meant internally vs. externally.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not settle for surface-level responses; probe the underlying motivation",
+      "estimated_impact": "Improving question depth and count would directly address the question_quality score of 3/10 and provide the data needed to improve core_type_accuracy and subtype differentiation."
+    },
+    {
+      "priority": "high",
+      "category": "commandment_fidelity",
+      "action": "The system must probe the SX (Sexual) subtype distinction explicitly by asking about the intensity, exclusivity, and merger-quality of the persona's peak experiences, rather than accepting a group-performance narrative at face value. For a Type 3 SX, the board room moment would likely carry a charged, almost competitive one-on-one quality even in a group setting; a question such as 'Was there a specific person in the room whose reaction mattered most to you?' would discriminate SX from SO (Social) subtype effectively.",
+      "evidence": "Exchange [1]: The persona describes a group board presentation, which is ambiguous between SX and SO subtypes. Exchange [2] fails to probe subtype at all. Ground truth is SX, but the current question set cannot distinguish it from SO Type 3, which would present nearly identically in this scenario.",
+      "source_level": "L1",
+      "commandment_alignment": "Always assess subtype; do not conflate social context with Social subtype",
+      "estimated_impact": "Would raise subtype_accuracy from 5/10 toward 8/10 by surfacing the SX characteristic of intensity and singular focus within relational dynamics, even in group contexts."
+    },
+    {
+      "priority": "high",
+      "category": "confidence_calibration",
+      "action": "The system's confidence scoring must be suppressed or flagged as 'insufficient data' when fewer than six diagnostic exchanges have occurred. Implement a confidence-gating rule that prevents the algorithm from returning a type estimate above 40% confidence until branching questions have covered at minimum: core motivation, stress/disintegration behavior, wing behavior, and subtype indicator. Display explicit uncertainty language to the user when gating is active.",
+      "evidence": "Only two exchanges are present ([1] and [2]), yet the system's confidence_calibration score of 5/10 implies some estimate was returned or implied. With a harm_severity of 6.4/10, premature confident typing poses real risk of anchoring the persona to an incorrect self-concept.",
+      "source_level": "L2",
+      "commandment_alignment": "Never type someone prematurely; confidence must be earned through evidence",
+      "estimated_impact": "Reduces harm_severity from 6.4/10 by preventing early false-positive typing, and directly improves confidence_calibration by aligning stated confidence to actual evidential depth."
+    },
+    {
+      "priority": "medium",
+      "category": "harm_reduction",
+      "action": "Given a harm_severity score of 6.4/10 and a Health Level 5 persona (average-to-unhealthy range), the system should embed at least one psychologically safe reframe before asking about failure, shame, or performance anxiety. For Type 3 at Health Level 5, direct probing of deceit, image collapse, or value-detachment can be activating; questions should approach these themes via third-person distancing or hypothetical framing ('Some people notice that when a project doesn't land the way they hoped...') before shifting to first-person inquiry.",
+      "evidence": "The persona in [1] describes a peak success experience with high affect ('all the parts moving together'), suggesting emotional investment in performance identity. Health Level 5 Type 3s are prone to shame activation when failure or inauthenticity is directly named. The current exchange [2] does not yet show harm, but the trajectory toward motivation-probing creates escalating risk if not scaffolded.",
+      "source_level": "L1",
+      "commandment_alignment": "Do no harm; protect the psychological safety of the person being assessed",
+      "estimated_impact": "Reducing harm_severity from 6.4/10 toward 3-4/10 by ensuring that deeper motivational probing is introduced with appropriate emotional scaffolding, preserving engagement and data quality simultaneously."
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, adaptive, no right or wrong answers. Different question types will come at you: some choices, some ratings, some open-ended. It adjusts as it learns.\n\nThink about a moment when you felt most like yourself — fully in your element, doing what you do best. What was happening, and what made it feel right?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_motivational_01",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Think about a moment when you felt most like yourself — fully in your element, doing what you do best. What was happening, and what made it feel right?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready. No signal yet.",
+          "next_question_rationale": "Broad motivational open question to surface dominant center (body/heart/head) and initial type signals. Looking for language around doing/fixing/anger (body), feeling/image/connection (heart), or thinking/planning/safety (head).",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "There was a moment — I was presenting a brand repositioning strategy to a board of directors, maybe twelve people in the room, and about thirty seconds in I could feel the energy shift. They'd come in skeptical, the way boards do, and then something clicked and they were genuinely with me. Not just following — *with* me. That's the only way I can describe it. There's a particular kind of clarity that comes when you're communicating something true and doing it well, when the thinking and the delivery are both working at once. That felt right. It felt like all the parts were moving together.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When that shift happened in the room — the board coming with you — which part of it mattered more: that the strategy landed and they bought in, or that you'd actually reached them as people?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.45,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.1,
+            "3": 0.45,
+            "4": 0.1,
+            "5": 0.1,
+            "6": 0.05,
+            "7": 0.05,
+            "8": 0.1,
+            "9": 0
+          },
+          "needs_differentiation": [
+            "3v8",
+            "3v2"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.5,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "clarity",
+                "doing it well",
+                "all the parts moving together",
+                "communicating something true"
+              ],
+              "context": "describing peak performance moment — emphasis on execution and impact"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.1,
+          "SO": 0.25,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "strategic communicator, board-level presenter",
+          "what": "brand repositioning — high-stakes performance",
+          "why": "unknown — superpower language visible but motivation unclear",
+          "how": "thinking + delivery working simultaneously",
+          "when": "professional high-stakes environment",
+          "where": "boardroom"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "clarity when 'communicating something true' — possible authenticity driver",
+          "superpower_signal": "impact through communication, bringing people along",
+          "kryptonite_signal": "unknown yet — need to probe failure/conflict",
+          "domain_signals": [
+            "professional",
+            "communication",
+            "influence"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The shift in the room mattered as much as the thinking.",
+        "strategy": {
+          "what_was_learned": "Peak state involves simultaneous mastery of thinking AND delivery, with strong awareness of audience response. 'Communicating something true' is a notable phrase — could signal 3 (authenticity language used by self-aware 3s) or 4 (depth/truth orientation). The energy shift in the room being noticed and named suggests high social/SX awareness. Need to probe: is the high about the ACHIEVEMENT (3), the IMPACT on others (2/8), or the TRUTH of what was communicated (1/4/5)?",
+          "next_question_rationale": "Need to differentiate whether the core drive is about being effective/successful (3), making a real difference to those people (2/8), or getting the truth across (1/4/5). A forced_choice between 'the outcome was right' vs 'the connection was real' will probe this axis. Vary format from open to forced_choice.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

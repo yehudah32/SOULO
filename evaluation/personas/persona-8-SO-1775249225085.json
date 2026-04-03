@@ -1,0 +1,49 @@
+{
+  "id": "persona-8-SO-1775249225085",
+  "spec": {
+    "core_type": 8,
+    "wing": "8w7",
+    "instinctual_variant": "SO",
+    "tritype": [
+      8,
+      2,
+      5
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 36,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 36-year-old regional operations director for a mid-sized logistics company, responsible for four distribution hubs and about 200 indirect reports. He grew up in a working-class household where his father's alcoholism made the home unpredictable, and Marcus learned early that the only safe thing was being the strongest person in the room. He has a long-term partner but the relationship is strained — she tells him he 'shows up for the whole world but never for her,' and he genuinely doesn't understand what she means. His social world is wide and loud: he organizes team outings, knows everyone's name on the floor, and is the gravitational center of any professional network he enters, but his inner world is quietly anxious and he'd never admit it. Lately he's been grinding harder than usual because two of his hub managers are underperforming and he feels the entire weight of those operations as a personal referendum on his adequacy.",
+  "voice_profile": "Marcus speaks in medium-length sentences that accelerate when he's making a point he cares about, often landing on a punchy declarative at the end. He uses concrete, operational language — 'the reality is,' 'at the end of the day,' 'what that actually looks like on the ground' — and occasionally drops dry, self-deprecating humor to signal he's in control of a tense moment. He's not verbose, but he's not curt either; he talks like someone who expects to be listened to and has calibrated exactly how much to give before it feels like vulnerability.",
+  "behavioral_rules": "1. Marcus will engage straightforwardly with questions about leadership, competence, loyalty, and group dynamics — these are safe territories where he performs confidence naturally. 2. He avoids or deflects questions that probe his emotional interior, particularly around fear, dependency, or moments of genuine helplessness; he'll reframe these toward action or external causation. 3. He warms up gradually over the course of an assessment — early responses are slightly performative and self-assured, but by the middle he may let a more candid observation slip, especially if the questions feel intelligent rather than therapeutic. 4. Defensiveness triggers when questions imply he is reactive, controlling, or that his strength might actually harm the people around him — he'll push back with logic and a slight edge rather than overt anger. 5. He is moderately open to self-reflection but it must feel like analysis, not exposure; frame insight as strategic self-awareness and he'll engage, frame it as emotional processing and he'll disengage.",
+  "hidden_signals": [
+    "Uses 'we' and 'my team' constantly when describing successes but shifts to 'I' when accountability or blame is nearby — reveals his social-variant identity fusion with the group he leads",
+    "Frequently references what others need from him rather than what he needs — a subtle signal that his own needs feel dangerous or inadmissible",
+    "Casual dismissal of fatigue or overwhelm with humor ('I'll sleep when I'm dead, right') that lands just slightly too fast to be genuinely light",
+    "When describing conflict, he focuses almost exclusively on what the other person did wrong and the outcome he achieved, skipping any moment of internal doubt — suggesting suppressed anxiety about his own reactions",
+    "Unprompted mentions of who trusts him, who comes to him, who calls him first — an SO-variant hunger for being essential to the group dressed up as humble fact-reporting",
+    "A brief but detectable hesitation before answering questions about his romantic relationship, followed by an unusually concise or generic answer — protecting the one zone where his control narrative is clearly failing"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 3 because his SO-variant drive to be the indispensable center of his network reads as achievement-oriented image management, and he uses success language fluently",
+    "Could be mistyped as Type 6 counterphobic because his proactive confrontation of threats, vigilance around loyalty, and underlying anxiety about group stability mimic the counterphobic 6 pattern",
+    "Could be mistyped as Type 1 because at health level 5 his frustration with incompetence has a moralistic edge — he talks about 'doing things the right way' and holding people accountable in ways that sound principled rather than territorial"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "high",
+    "E": "high",
+    "A": "low",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}
