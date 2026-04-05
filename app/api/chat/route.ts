@@ -179,14 +179,15 @@ async function updateSessionFromParsed(
     const typeScores = finalInternal?.hypothesis?.type_scores ?? {};
     const { first, second, gap } = getTopTwoTypes(typeScores);
 
-    // Simple structural heuristic: any forced_choice or paragraph_select question
-    // at stage 5+ where the top two types are within 0.20 of each other counts
-    // as disconfirmatory. Don't match text — the structural signal is sufficient.
-    const isLateStage = stage >= 5;
+    // Structural heuristic: any forced_choice or paragraph_select question
+    // from exchange 3+ where the top two types are within 0.40 of each other
+    // counts as disconfirmatory. Check early — by stage 5, confirmatory
+    // questions have already widened the gap past useful thresholds.
+    const isActiveStage = session.exchangeCount >= 3;
     const isBinaryFormat = questionFormat === 'forced_choice' || questionFormat === 'paragraph_select';
-    const isCloseRace = gap < 0.20 && first > 0 && second > 0;
+    const isCloseRace = gap < 0.40 && first > 0 && second > 0;
 
-    if (isLateStage && isBinaryFormat && isCloseRace) {
+    if (isActiveStage && isBinaryFormat && isCloseRace) {
       disconfirmatoryAsked = true;
       console.log(`[chat] Disconfirmatory detected: stage ${stage}, format ${questionFormat}, gap ${gap.toFixed(3)} (${first}v${second})`);
     }

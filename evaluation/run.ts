@@ -721,7 +721,7 @@ async function runEvaluate(): Promise<void> {
 
 // ─── 7. Report Command ──────────────────────────────
 
-async function runReport(): Promise<void> {
+async function runReport(sinceTimestamp?: number): Promise<void> {
   ensureDir(RESULTS_DIR);
   ensureDir(REPORTS_DIR);
 
@@ -731,15 +731,26 @@ async function runReport(): Promise<void> {
     return;
   }
 
-  console.log(`\n📊 Generating report from ${files.length} result(s)\n`);
-
   const results: EvaluationResult[] = [];
   for (const file of files) {
     const result: EvaluationResult = JSON.parse(
       fs.readFileSync(path.join(RESULTS_DIR, file), 'utf-8')
     );
+    // If --since filter is set, only include results from this batch
+    if (sinceTimestamp) {
+      const resultTime = new Date(result.timestamp).getTime();
+      if (resultTime < sinceTimestamp) continue;
+    }
     results.push(result);
   }
+
+  if (results.length === 0) {
+    console.log('\n⚠️  No results match the filter. Check --since value.\n');
+    return;
+  }
+
+  const filterLabel = sinceTimestamp ? ` (filtered: ${results.length} of ${files.length} total)` : '';
+  console.log(`\n📊 Generating report from ${results.length} result(s)${filterLabel}\n`);
 
   // Aggregate
   console.log('  📈 Aggregating batch...');
@@ -779,10 +790,12 @@ async function runFull(count: number, tier: string): Promise<void> {
   console.log('║         SOULO EVALUATION — FULL PIPELINE                ║');
   console.log('╚══════════════════════════════════════════════════════════╝');
 
+  const batchStartTime = Date.now();
+
   await runGenerate(count, tier);
   await runGate();
   await runEvaluate();
-  await runReport();
+  await runReport(batchStartTime); // Only report results from THIS batch
 
   console.log('╔══════════════════════════════════════════════════════════╗');
   console.log('║         PIPELINE COMPLETE                               ║');
@@ -791,12 +804,13 @@ async function runFull(count: number, tier: string): Promise<void> {
 
 // ─── CLI Argument Parsing ────────────────────────────
 
-function parseArgs(): { command: string; count: number; tier: string } {
+function parseArgs(): { command: string; count: number; tier: string; since?: number } {
   const args = process.argv.slice(2);
   const command = args[0] ?? 'help';
 
   let count = 9;
   let tier = 'tier1';
+  let since: number | undefined;
 
   for (let i = 1; i < args.length; i++) {
     if (args[i] === '--count' && args[i + 1]) {
@@ -805,10 +819,13 @@ function parseArgs(): { command: string; count: number; tier: string } {
     } else if (args[i] === '--tier' && args[i + 1]) {
       tier = args[i + 1];
       i++;
+    } else if (args[i] === '--since' && args[i + 1]) {
+      since = new Date(args[i + 1]).getTime();
+      i++;
     }
   }
 
-  return { command, count, tier };
+  return { command, count, tier, since };
 }
 
 function printHelp(): void {
@@ -849,7 +866,7 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  const { command, count, tier } = parseArgs();
+  const { command, count, tier, since } = parseArgs();
 
   switch (command) {
     case 'generate':
@@ -862,7 +879,7 @@ async function main(): Promise<void> {
       await runEvaluate();
       break;
     case 'report':
-      await runReport();
+      await runReport(since);
       break;
     case 'full':
       await runFull(count, tier);

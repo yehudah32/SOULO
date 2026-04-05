@@ -4,6 +4,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { ENNEAGRAM_SYSTEM_PROMPT_V2, STAGE_FORMAT_RULES, DEFIANT_SPIRIT_RAG_CONTEXT } from '../lib/system-prompt-v2';
 import { parseAIResponse } from '../lib/parse-response';
+import { getQuestionBank, type Question } from '../lib/question-bank';
 import { CONFIG } from './config';
 import type { Persona, TranscriptTurn, SimulationResult } from './types';
 
@@ -19,14 +20,43 @@ function deriveStage(exchangeCount: number): number {
   return 7;
 }
 
-function buildSystemPrompt(exchangeCount: number): string {
+function getAllowedFormats(stage: number): string {
+  if (stage <= 2) return 'forced_choice, agree_disagree';
+  if (stage <= 4) return 'agree_disagree, scale, frequency';
+  if (stage <= 6) return 'behavioral_anchor, paragraph_select, scenario, forced_choice';
+  return 'open';
+}
+
+async function buildSystemPrompt(
+  exchangeCount: number,
+  leadingType: number,
+  lastFormat: string,
+  needsDiff: string | null
+): Promise<string> {
   const stage = deriveStage(exchangeCount);
   const stageRules = STAGE_FORMAT_RULES[stage] || STAGE_FORMAT_RULES[1];
+  const allowedFormats = getAllowedFormats(stage);
+
+  // Fetch candidate questions from the question bank — same as chat/route.ts
+  let candidateQsBlock = '';
+  try {
+    const candidates = await getQuestionBank(leadingType, needsDiff, stage, lastFormat, 8);
+    if (candidates.length > 0) {
+      candidateQsBlock = `\n\nCANDIDATE QUESTIONS FOR THIS TURN (stage ${stage}, allowed formats: ${allowedFormats}):\n` +
+        candidates
+          .map((q: Question, i: number) => `${i + 1}. [ID:${q.id}] [format:${q.format}] [oyn:${q.oyn_dim}] [lens:${q.react_respond_lens}]\n   "${q.question_text}"`)
+          .join('\n') +
+        `\n\nIf one of these fits your current hypothesis and information needs, use it (rephrase freely to match your voice) and report its ID in selected_question_id. CRITICAL: If you select a candidate question, you MUST use the format specified in its [format:] tag. If none fit, generate your own and set selected_question_id to null. REMEMBER: only ${allowedFormats} formats are allowed at stage ${stage}.`;
+    }
+  } catch {
+    // Question bank unavailable — continue without candidates
+  }
 
   return (
     ENNEAGRAM_SYSTEM_PROMPT_V2 +
     `\n\n${stageRules}` +
-    `\n\n${DEFIANT_SPIRIT_RAG_CONTEXT}`
+    `\n\n${DEFIANT_SPIRIT_RAG_CONTEXT}` +
+    candidateQsBlock
   );
 }
 
@@ -87,12 +117,15 @@ export async function runSimulation(persona: Persona): Promise<SimulationResult>
   let status: SimulationResult['status'] = 'timeout';
   let resultsDelivered = false;
   let postResultsExchanges = 0;
+  let lastFormat = '';
+  let leadingType = 0;
+  let needsDiff: string | null = null;
 
   const personaSystemPrompt = buildPersonaPrompt(persona);
 
   for (let turn = 0; turn < CONFIG.MAX_TURNS; turn++) {
     // ── SYSTEM TURN: Soulo AI generates question ──
-    const systemPrompt = buildSystemPrompt(exchangeCount);
+    const systemPrompt = await buildSystemPrompt(exchangeCount, leadingType, lastFormat, needsDiff);
 
     const systemResult = await client.messages.create({
       model: CONFIG.MODEL,
@@ -124,9 +157,16 @@ export async function runSimulation(persona: Persona): Promise<SimulationResult>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const closeNext = (internal as any)?.conversation?.close_next === true;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const leadingType = (internal as any)?.hypothesis?.leading_type ?? 0;
+    leadingType = (internal as any)?.hypothesis?.leading_type ?? 0;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const confidence = (internal as any)?.hypothesis?.confidence ?? 0;
+
+    // Track format and differentiation needs for question bank injection
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    lastFormat = (internal as any)?.response_parts?.question_format ?? (internal as any)?.conversation?.last_question_format ?? lastFormat;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const diffNeeds = (internal as any)?.hypothesis?.needs_differentiation;
+    needsDiff = Array.isArray(diffNeeds) && diffNeeds.length > 0 ? String(diffNeeds[0]) : null;
 
     // Log system turn
     const systemTurn: TranscriptTurn = {
