@@ -171,6 +171,42 @@ async function updateSessionFromParsed(
     });
   }
 
+  // ── Disconfirmatory gate — detect and track disconfirmatory questions ──
+  let disconfirmatoryAsked = session.disconfirmatoryAsked || false;
+
+  if (!disconfirmatoryAsked) {
+    const questionText = ((finalInternal as Record<string, unknown>)?.response_parts as Record<string, unknown>)?.question_text as string || '';
+    const typeScores = finalInternal?.hypothesis?.type_scores ?? {};
+    const { first, second, gap } = getTopTwoTypes(typeScores);
+
+    // Method 1: Heuristic — top 2 types are close AND question contains differentiation language
+    if (gap < 0.15 && first > 0 && second > 0) {
+      const pair = findPairForTypes(first, second);
+      if (pair) {
+        const coreDiffWords = pair.coreDifference.toLowerCase().split(/\s+/).filter(w => w.length > 5);
+        const questionLower = questionText.toLowerCase();
+        const matchCount = coreDiffWords.filter(w => questionLower.includes(w)).length;
+        if (matchCount >= 2) {
+          disconfirmatoryAsked = true;
+          console.log(`[chat] Disconfirmatory detected (heuristic): "${questionText.substring(0, 60)}..." for pair ${first}v${second}`);
+        }
+      }
+    }
+
+    // Method 2: Pattern match — question contains explicit differentiation phrasing
+    if (!disconfirmatoryAsked && /\bor is it more\b|\bwhich is closer\b|\bis it because.*or because\b|\bis the driving force\b|\bor (?:a |more of a )?sense (?:of|that)\b/i.test(questionText)) {
+      disconfirmatoryAsked = true;
+      console.log(`[chat] Disconfirmatory detected (pattern match): "${questionText.substring(0, 60)}..."`);
+    }
+  }
+
+  // ── Disconfirmatory gate enforcement ──
+  // If Claude wants to close but no disconfirmatory question was asked, block it
+  if (finalInternal?.conversation?.close_next === true && !disconfirmatoryAsked && session.exchangeCount >= 5) {
+    finalInternal.conversation.close_next = false;
+    console.log(`[chat] Disconfirmatory gate: BLOCKING close — no disconfirmatory question asked yet (exchange ${session.exchangeCount + 1})`);
+  }
+
   // Calculate Whole Type from type_scores using center-based algorithm (one per center)
   // Do NOT trust the AI's tritype field — it may use top-3 overall instead of top-per-center (whole type)
   const rawScores = finalInternal?.hypothesis?.type_scores ?? {};
@@ -306,6 +342,7 @@ async function updateSessionFromParsed(
     resultsData,
     clarificationState: updatedClarificationState,
     allQuestionsAsked,
+    disconfirmatoryAsked,
   });
 
   // Persist progress to Supabase — fire-and-forget (non-blocking for speed)

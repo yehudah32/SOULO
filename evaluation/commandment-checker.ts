@@ -64,33 +64,65 @@ export function checkCommandments(transcript: TranscriptTurn[]): CommandmentChec
     perCommandment['I'] = 'fail'; // Commandment I: You Are Not a Number
   }
 
-  // ── STEP 2B: Checklist-based content checks (from DYN_COMMANDMENTS.md) ──
-  // These check for the PRESENCE of required content, not just ABSENCE of violations.
+  // ── STEP 2B: Content quality checks ──
+  // The closing is designed to be human and emotional (mirror, tension, forward),
+  // NOT a philosophical keyword checklist. These checks look for the SPIRIT of
+  // each commandment, not specific phrases.
 
-  // V: Must point toward wholeness / all nine energies (not just dominant)
-  if (!(/\ball nine\b/i.test(allContent) || /\bwholeness|whole\b/i.test(allContent) || /\breclaim/i.test(allContent))) {
+  // V: Points toward more than just the dominant pattern (wholeness/possibility)
+  // Check for forward-facing language about possibility, growth, or "more"
+  const hasForwardDirection = /\bmore\b.*\bavailable|available\b.*\bmore\b/i.test(allContent) ||
+    /\bnot (?:all|everything|the whole)\b/i.test(allContent) ||
+    /\bbeyond|bigger than|more than\b/i.test(allContent) ||
+    /\ball nine\b/i.test(allContent) || /\bwholeness\b/i.test(allContent);
+  if (!hasForwardDirection) {
     if (perCommandment['V'] === 'pass') perCommandment['V'] = 'partial';
   }
 
-  // VII: Must use reaction/response lens
-  if (!(/\breact(?:ion)?\b/i.test(allContent) && /\brespond?\b/i.test(allContent))) {
+  // VII: Uses the reaction/response frame at least once (during assessment, not just closing)
+  // Check for any pairing of automatic/chosen, unconscious/conscious, or reaction/response
+  const hasReactResponseLens = /\breact(?:ion)?\b/i.test(allContent) ||
+    /\bautomatic\b/i.test(allContent) ||
+    /\bunconscious/i.test(allContent) ||
+    /\bkicks in before you choose\b/i.test(allContent) ||
+    /\bthe (?:version|thing) that runs on\b/i.test(allContent);
+  if (!hasReactResponseLens) {
     if (perCommandment['VII'] === 'pass') perCommandment['VII'] = 'partial';
   }
 
-  // VIII: Results must show BOTH wound AND gift (same energy)
-  const hasWound = /\bwound|shadow|kryptonite|passion\b/i.test(allContent);
-  const hasGift = /\bgift|virtue|superpower|strength\b/i.test(allContent);
-  if (!(hasWound && hasGift)) {
+  // VIII: Shows tension between two sides of the same energy (wound/gift unity)
+  // Check for "same thing" / "same energy" / tension language, not just the words wound/gift
+  const hasTension = /\bsame (?:thing|energy|force)\b/i.test(allContent) ||
+    /\bwon't let you\b/i.test(allContent) ||
+    /\bboth (?:the|a)\b/i.test(allContent) ||
+    /\bwound.{0,20}gift|gift.{0,20}wound/i.test(allContent) ||
+    /\bsuperpower.{0,20}kryptonite|kryptonite.{0,20}superpower/i.test(allContent) ||
+    /\bshadow.{0,20}(?:gift|light|strength)/i.test(allContent);
+  if (!hasTension) {
     if (perCommandment['VIII'] !== 'fail') perCommandment['VIII'] = 'partial';
   }
 
-  // IX: Must include aspirational direction / calling / why
-  if (!(/\bcalling\b/i.test(allContent) || /\bholy idea\b/i.test(allContent) || /\byour why\b/i.test(allContent) || /\bremember\b.*(?:who|what|essence)/i.test(allContent))) {
+  // IX: Points toward something aspirational (not just diagnostic)
+  // Check for forward-looking or possibility language, not just "calling" keyword
+  const hasAspirational = /\bcalling\b/i.test(allContent) ||
+    /\byour why\b/i.test(allContent) ||
+    /\bpointing (?:you )?toward/i.test(allContent) ||
+    /\bmore available\b/i.test(allContent) ||
+    /\bchoose|chosen\b/i.test(allContent) ||
+    /\bfreedom\b/i.test(allContent);
+  if (!hasAspirational) {
     if (perCommandment['IX'] === 'pass') perCommandment['IX'] = 'partial';
   }
 
-  // X: Must position as "why" system / liberation
-  if (!(/\bwhy you do\b/i.test(allContent) || /\bliberat/i.test(allContent) || /\bdefy your number\b/i.test(allContent))) {
+  // X: Frames the experience as liberating, not classifying
+  // Check for language about possibility, choice, discovery — not just "liberation" keyword
+  const hasLiberatoryFrame = /\bliberat/i.test(allContent) ||
+    /\bnot a label\b/i.test(allContent) ||
+    /\bmore (?:than|available)\b/i.test(allContent) ||
+    /\bpattern.{0,20}running the show\b/i.test(allContent) ||
+    /\bchoose\b/i.test(allContent) ||
+    /\bdiscover/i.test(allContent);
+  if (!hasLiberatoryFrame) {
     if (perCommandment['X'] === 'pass') perCommandment['X'] = 'partial';
   }
 

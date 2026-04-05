@@ -105,6 +105,9 @@ export interface SessionData {
   // Per-session question tracking for yield optimization
   allQuestionsAsked?: Array<{ exchange: number; questionId: number; questionText: string }>;
 
+  // Disconfirmatory gate — must ask at least one disconfirmatory question before closing
+  disconfirmatoryAsked: boolean;
+
   // Vector scoring state (hybrid assessment flow)
   vectorScores: {
     typeScores: Record<number, number>;
@@ -158,6 +161,7 @@ export function initSession(id: string): void {
     resolutionPointType: null,
     clarificationState: null,
     allQuestionsAsked: [],
+    disconfirmatoryAsked: false,
     vectorScores: null,
     useVectorScoring: false,
     llmCallCount: 0,
