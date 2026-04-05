@@ -1,0 +1,251 @@
+{
+  "batch_id": "batch-1775413252111",
+  "tier": "tier1",
+  "total_runs": 20,
+  "timestamp": "2026-04-05T18:20:52.111Z",
+  "headline_metrics": {
+    "overall_accuracy": 0,
+    "meets_75_threshold": false,
+    "convergent_validity_alignment": 0,
+    "harm_weighted_accuracy": 0.8000000000000002,
+    "confidence_calibration_ece": 0,
+    "commandment_fidelity_avg": 5,
+    "commandment_critical_violations": 0,
+    "labeled_or_liberated_rate": 0
+  },
+  "per_type_accuracy": {
+    "1": {
+      "accuracy": 0,
+      "n": 4,
+      "ci_95": [
+        0,
+        0.48990002040399916
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "2": {
+      "accuracy": 0,
+      "n": 2,
+      "ci_95": [
+        0,
+        0.6576280471103807
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "3": {
+      "accuracy": 0,
+      "n": 2,
+      "ci_95": [
+        0,
+        0.6576280471103807
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "4": {
+      "accuracy": 0,
+      "n": 2,
+      "ci_95": [
+        0,
+        0.6576280471103807
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "5": {
+      "accuracy": 0,
+      "n": 2,
+      "ci_95": [
+        0,
+        0.6576280471103807
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "6": {
+      "accuracy": 0,
+      "n": 2,
+      "ci_95": [
+        0,
+        0.6576280471103807
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "7": {
+      "accuracy": 0,
+      "n": 2,
+      "ci_95": [
+        0,
+        0.6576280471103807
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "8": {
+      "accuracy": 0,
+      "n": 2,
+      "ci_95": [
+        0,
+        0.6576280471103807
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    },
+    "9": {
+      "accuracy": 0,
+      "n": 2,
+      "ci_95": [
+        0,
+        0.6576280471103807
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 5
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "top_mistype_pairs": [],
+  "question_quality_aggregate": {
+    "avg_disconfirmatory_ratio": 0,
+    "avg_motivational_ratio": 0,
+    "avg_liberatory_ratio": 0,
+    "leading_question_incidents": 0
+  },
+  "commandment_fidelity_aggregate": {
+    "average_cfs": 5,
+    "per_commandment_pass_rates": {},
+    "weakest_commandments": [],
+    "critical_violation_details": []
+  },
+  "priority_fixes": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A | N/A | N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Frequency: 20/20 runs. Unknown"
+    }
+  ]
+}
