@@ -175,28 +175,20 @@ async function updateSessionFromParsed(
   let disconfirmatoryAsked = session.disconfirmatoryAsked || false;
 
   if (!disconfirmatoryAsked) {
-    const questionText = ((finalInternal as Record<string, unknown>)?.response_parts as Record<string, unknown>)?.question_text as string || '';
+    const questionFormat = ((finalInternal as Record<string, unknown>)?.response_parts as Record<string, unknown>)?.question_format as string || '';
     const typeScores = finalInternal?.hypothesis?.type_scores ?? {};
     const { first, second, gap } = getTopTwoTypes(typeScores);
 
-    // Method 1: Heuristic — top 2 types are close AND question contains differentiation language
-    if (gap < 0.15 && first > 0 && second > 0) {
-      const pair = findPairForTypes(first, second);
-      if (pair) {
-        const coreDiffWords = pair.coreDifference.toLowerCase().split(/\s+/).filter(w => w.length > 5);
-        const questionLower = questionText.toLowerCase();
-        const matchCount = coreDiffWords.filter(w => questionLower.includes(w)).length;
-        if (matchCount >= 2) {
-          disconfirmatoryAsked = true;
-          console.log(`[chat] Disconfirmatory detected (heuristic): "${questionText.substring(0, 60)}..." for pair ${first}v${second}`);
-        }
-      }
-    }
+    // Simple structural heuristic: any forced_choice or paragraph_select question
+    // at stage 5+ where the top two types are within 0.20 of each other counts
+    // as disconfirmatory. Don't match text — the structural signal is sufficient.
+    const isLateStage = stage >= 5;
+    const isBinaryFormat = questionFormat === 'forced_choice' || questionFormat === 'paragraph_select';
+    const isCloseRace = gap < 0.20 && first > 0 && second > 0;
 
-    // Method 2: Pattern match — question contains explicit differentiation phrasing
-    if (!disconfirmatoryAsked && /\bor is it more\b|\bwhich is closer\b|\bis it because.*or because\b|\bis the driving force\b|\bor (?:a |more of a )?sense (?:of|that)\b/i.test(questionText)) {
+    if (isLateStage && isBinaryFormat && isCloseRace) {
       disconfirmatoryAsked = true;
-      console.log(`[chat] Disconfirmatory detected (pattern match): "${questionText.substring(0, 60)}..."`);
+      console.log(`[chat] Disconfirmatory detected: stage ${stage}, format ${questionFormat}, gap ${gap.toFixed(3)} (${first}v${second})`);
     }
   }
 
