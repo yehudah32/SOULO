@@ -27,8 +27,17 @@ export async function getQuestionBank(
         console.log('[question-bank] No DB questions found, using fallbacks for stage', stage);
       }
       let fallbacks = FALLBACK_QUESTIONS.filter((q) => q.stage === stage);
-      if (tier) fallbacks = fallbacks.filter((q) => (q.tier ?? 1) === tier);
-      return fallbacks;
+      if (tier) {
+        const tierFiltered = fallbacks.filter((q) => (q.tier ?? 1) === tier);
+        // If no tier-specific fallbacks, use any stage-matching fallbacks
+        fallbacks = tierFiltered.length > 0 ? tierFiltered : fallbacks;
+      }
+      // Rotate format in fallback selection
+      if (lastFormat && fallbacks.length > 1) {
+        const rotated = fallbacks.filter((q) => q.format !== lastFormat);
+        if (rotated.length > 0) fallbacks = rotated;
+      }
+      return fallbacks.slice(0, limit);
     }
 
     let results = data as Question[];

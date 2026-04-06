@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 import { ENNEAGRAM_SYSTEM_PROMPT } from '@/lib/system-prompt';
-import { initSession, setSession } from '@/lib/session-store';
+import { initSession, setSession, getSession } from '@/lib/session-store';
 import { parseAIResponse } from '@/lib/parse-response';
 import { hasTypeSignatures } from '@/lib/vector-scorer';
 
@@ -28,10 +28,14 @@ export async function POST(request: Request) {
 
     // Check if hybrid mode should be enabled for this session
     if (HYBRID_MODE_ENABLED) {
-      const signaturesReady = await hasTypeSignatures();
-      if (signaturesReady) {
-        setSession(sessionId, { useVectorScoring: true });
-        console.log(`[init] Hybrid mode enabled for session ${sessionId}`);
+      try {
+        const signaturesReady = await hasTypeSignatures();
+        if (signaturesReady) {
+          setSession(sessionId, { useVectorScoring: true });
+          console.log(`[init] Hybrid mode enabled for session ${sessionId}`);
+        }
+      } catch (err) {
+        console.warn('[init] Could not check type signatures, continuing Claude-only:', err);
       }
     }
 
@@ -58,6 +62,26 @@ export async function POST(request: Request) {
       });
     }
 
+    // HYBRID MODE: Skip Claude init call — use pre-written opening
+    const session = getSession(sessionId);
+    if (session?.useVectorScoring) {
+      const openingMessage = `This is a structured adaptive assessment — not a quiz. There are no right or wrong answers, and it takes about 15 minutes.\n\n- You'll be asked different types of questions — some yes/no, some scales, some short reflections\n- The experience adapts as it learns more about you\n\nAre you ready to begin?`;
+
+      setSession(sessionId, {
+        conversationHistory: [{ role: 'assistant', content: openingMessage }],
+      });
+
+      console.log('[init] Hybrid mode — pre-written opening (no Claude call)');
+      return NextResponse.json({
+        sessionId,
+        message: openingMessage,
+        response: openingMessage,
+        internal: null,
+        currentSection: 'Who You Are',
+      });
+    }
+
+    // CLAUDE MODE: Standard init with Claude call
     const result = await client.messages.create({
       model: 'claude-sonnet-4-6',
       max_tokens: 1024,

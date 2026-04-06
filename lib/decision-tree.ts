@@ -217,6 +217,9 @@ export function inferInstinctFromTier1(
 
   // Normalize to sum to 1
   const total = sp + sx + so;
+  if (total <= 0) {
+    return { likelySP: 0.33, likelySX: 0.33, likelySO: 0.34 };
+  }
   return {
     likelySP: Math.max(0, sp / total),
     likelySX: Math.max(0, sx / total),

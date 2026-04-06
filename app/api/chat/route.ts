@@ -325,7 +325,9 @@ async function updateSessionFromParsed(
     // Yield updates now happen in the evaluator with per-question contribution measurement
 
     console.log('[evaluator] Post-assessment evaluation triggered for session:', sessionId);
-    runPostAssessmentEvaluation(sessionId).catch(() => {});
+    runPostAssessmentEvaluation(sessionId).catch(err => {
+      console.error('[evaluator] Post-assessment evaluation failed for session', sessionId, ':', err);
+    });
   }
 
   // Increment clarification questionsAsked if we were in active clarification this turn
@@ -433,11 +435,31 @@ The type_scores must sum to 1.0. Be honest about your confidence.`;
       return;
     }
 
-    const claudeHypothesis = JSON.parse(jsonMatch[0]) as {
-      leading_type: number;
-      confidence: number;
-      type_scores: Record<string, number>;
+    let parsed: Record<string, unknown>;
+    try {
+      parsed = JSON.parse(jsonMatch[0]);
+    } catch (parseErr) {
+      console.error('[reverse-shadow] JSON parse failed:', parseErr);
+      return;
+    }
+
+    // Validate fields with fallbacks to vector values
+    const claudeHypothesis = {
+      leading_type: typeof parsed.leading_type === 'number' && parsed.leading_type >= 1 && parsed.leading_type <= 9
+        ? parsed.leading_type : vectorTopType,
+      confidence: typeof parsed.confidence === 'number'
+        ? Math.max(0, Math.min(1, parsed.confidence)) : vectorConfidence,
+      type_scores: (typeof parsed.type_scores === 'object' && parsed.type_scores !== null)
+        ? parsed.type_scores as Record<string, number> : {},
     };
+
+    // Validate type_scores sum
+    const scoreValues = Object.values(claudeHypothesis.type_scores).filter(v => typeof v === 'number') as number[];
+    const scoreTotal = scoreValues.reduce((s, v) => s + v, 0);
+    if (scoreTotal < 0.5 || scoreTotal > 1.5) {
+      console.warn(`[reverse-shadow] Claude type_scores invalid (total: ${scoreTotal}) — keeping vector hypothesis`);
+      return;
+    }
 
     const claudeTopType = claudeHypothesis.leading_type;
     const agreement = claudeTopType === vectorTopType;
@@ -465,7 +487,7 @@ The type_scores must sum to 1.0. Be honest about your confidence.`;
     // Log to shadow_mode_log table
     adminClient.from('shadow_mode_log').insert({
       session_id: sessionId,
-      exchange_number: session.exchangeCount,
+      exchange_number: session.exchangeCount + 1,
       claude_top_type: claudeTopType,
       claude_confidence: claudeHypothesis.confidence,
       vector_top_type: vectorTopType,
@@ -531,78 +553,132 @@ export async function POST(req: NextRequest) {
 
       // If still in vector-scorable phases, handle without Claude
       if (!phaseResult.shouldEscalateToClaude) {
-        console.log(`[chat/hybrid] Vector phase: ${phaseResult.currentPhase} — ${phaseResult.reason}`);
+        try {
+          console.log(`[chat/hybrid] Vector phase: ${phaseResult.currentPhase} — ${phaseResult.reason}`);
 
-        // Score the user's response with vector system
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const questionId = String((session.internalState as any)?.selected_question_id ?? session.exchangeCount);
-        const vectorResult = await scoreResponse(
-          latestUserMessage.content,
-          questionId,
-          session.vectorScores,
-          session.exchangeCount
-        );
+          // Score the user's response with vector system
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const questionId = String((session.internalState as any)?.selected_question_id ?? session.exchangeCount);
+          const vectorResult = await scoreResponse(
+            latestUserMessage.content,
+            questionId,
+            session.vectorScores,
+            session.exchangeCount
+          );
 
-        // Select next question based on phase
-        let nextQuestion;
-        if (phaseResult.currentPhase === 'instinct_probing') {
-          nextQuestion = await selectTier2Question(
-            vectorResult.typeScores,
-            vectorResult.topTypes[0] ?? 0,
-            (session.allQuestionsAsked ?? []).map(q => String(q.questionId)),
-            lastFormat
-          );
-        } else {
-          nextQuestion = await selectNextQuestion(
-            vectorResult,
-            phaseResult.currentPhase as 'center_id' | 'type_narrowing',
-            (session.allQuestionsAsked ?? []).map(q => String(q.questionId)),
-            lastFormat
-          );
+          // Select next question based on phase
+          let nextQuestion;
+          if (phaseResult.currentPhase === 'instinct_probing') {
+            nextQuestion = await selectTier2Question(
+              vectorResult.typeScores,
+              vectorResult.topTypes[0] ?? 0,
+              (session.allQuestionsAsked ?? []).map(q => String(q.questionId)),
+              lastFormat
+            );
+          } else {
+            nextQuestion = await selectNextQuestion(
+              vectorResult,
+              phaseResult.currentPhase as 'center_id' | 'type_narrowing',
+              (session.allQuestionsAsked ?? []).map(q => String(q.questionId)),
+              lastFormat
+            );
+          }
+
+          if (nextQuestion) {
+            const guideText = session.exchangeCount === 0
+              ? getTransitionText('opening')
+              : phaseResult.currentPhase === 'instinct_probing'
+                ? ''
+                : getTransitionText('center_to_narrowing');
+
+            const response = formatQuestionResponse(
+              nextQuestion, guideText, vectorResult, session.exchangeCount + 1
+            );
+
+            // Track disconfirmatory in vector phase
+            const isDisconfirmatory = session.exchangeCount >= 3 &&
+              (nextQuestion.format === 'forced_choice' || nextQuestion.format === 'paragraph_select');
+
+            // Update session
+            setSession(sessionId, {
+              vectorScores: vectorResult,
+              exchangeCount: session.exchangeCount + 1,
+              lastQuestionFormat: nextQuestion.format,
+              currentStage: stage,
+              disconfirmatoryAsked: session.disconfirmatoryAsked || isDisconfirmatory,
+              conversationHistory: [
+                ...session.conversationHistory,
+                { role: 'user', content: latestUserMessage.content },
+                { role: 'assistant', content: response.response },
+              ],
+              allQuestionsAsked: [
+                ...(session.allQuestionsAsked ?? []),
+                { exchange: session.exchangeCount + 1, questionId: nextQuestion.id, questionText: nextQuestion.question_text },
+              ],
+            });
+
+            console.log(`[chat/hybrid] Vector response: "${nextQuestion.question_text.substring(0, 60)}..." | Type ${vectorResult.topTypes[0]} @ ${(vectorResult.confidence * 100).toFixed(0)}%`);
+            return NextResponse.json(response);
+          }
+          // If no question found, fall through to Claude
+          console.log('[chat/hybrid] No vector question available, falling through to Claude');
+        } catch (err) {
+          console.error('[chat/hybrid] Vector scoring failed, falling through to Claude:', err);
+          // Graceful degradation — continue to Claude path below
         }
-
-        if (nextQuestion) {
-          const guideText = session.exchangeCount === 0
-            ? getTransitionText('opening')
-            : phaseResult.currentPhase === 'instinct_probing'
-              ? ''
-              : getTransitionText('center_to_narrowing');
-
-          const response = formatQuestionResponse(
-            nextQuestion, guideText, vectorResult, session.exchangeCount + 1
-          );
-
-          // Update session
-          setSession(sessionId, {
-            vectorScores: vectorResult,
-            exchangeCount: session.exchangeCount + 1,
-            lastQuestionFormat: nextQuestion.format,
-            currentStage: stage,
-            conversationHistory: [
-              ...session.conversationHistory,
-              { role: 'user', content: latestUserMessage.content },
-              { role: 'assistant', content: response.message },
-            ],
-            allQuestionsAsked: [
-              ...(session.allQuestionsAsked ?? []),
-              { exchange: session.exchangeCount + 1, questionId: nextQuestion.id, questionText: nextQuestion.question_text },
-            ],
-            llmCallCount: session.llmCallCount, // No LLM call used
-          });
-
-          console.log(`[chat/hybrid] Vector response: "${nextQuestion.question_text.substring(0, 60)}..." | Type ${vectorResult.topTypes[0]} @ ${(vectorResult.confidence * 100).toFixed(0)}%`);
-          return NextResponse.json(response);
-        }
-        // If no question found, fall through to Claude
-        console.log('[chat/hybrid] No vector question available, falling through to Claude');
       } else {
-        // Escalating to Claude — run checkpoint first, then disable vector scoring
+        // Escalating to Claude — run checkpoint first, then initialize state
         console.log(`[chat/hybrid] Escalating to Claude: ${phaseResult.reason}`);
 
         // REVERSE SHADOW MODE: Claude validates vector hypothesis at handoff
         await runCheckpoint(session, sessionId, session.vectorScores!);
 
-        setSession(sessionId, { useVectorScoring: false });
+        // Initialize internal state from vector scores for Claude handoff
+        const vs = getSession(sessionId)?.vectorScores ?? session.vectorScores!;
+        setSession(sessionId, {
+          useVectorScoring: false,
+          internalState: {
+            hypothesis: {
+              leading_type: vs.topTypes[0] ?? 0,
+              confidence: vs.confidence,
+              type_scores: Object.fromEntries(Object.entries(vs.typeScores).map(([k, v]) => [k, v])) as Record<string, number>,
+              ruling_out: [],
+              needs_differentiation: vs.topTypes.slice(0, 2).map(Number),
+            },
+            variant_signals: { SP: 0.33, SO: 0.33, SX: 0.34 },
+            wing_signals: { left: 0, right: 0 },
+            centers: {
+              body_probed: vs.centerScores.Body > 0.1,
+              heart_probed: vs.centerScores.Heart > 0.1,
+              head_probed: vs.centerScores.Head > 0.1,
+              last_probed: '',
+              next_target: '',
+            },
+            defiant_spirit: {
+              react_pattern_observed: '',
+              respond_glimpsed: '',
+              domain_signals: [],
+            },
+            oyn_dimensions: { who: '', what: '', why: '', how: '', when: '', where: '' },
+            conversation: {
+              phase: 'differentiation',
+              exchange_count: session.exchangeCount,
+              current_stage: deriveStage(session.exchangeCount),
+              close_next: false,
+              closing_criteria: {
+                min_exchanges_met: session.exchangeCount >= 8,
+                confidence_met: vs.confidence >= 0.75,
+                all_centers_probed: true,
+                differentiation_asked: false,
+                react_respond_identified: false,
+                disconfirmatory_asked: session.disconfirmatoryAsked || false,
+              },
+              ready_to_close: false,
+            },
+            current_section: 'Your Core Pattern',
+            strategy: { what_was_learned: '', next_question_rationale: '', question_format_last_used: '' },
+          },
+        });
       }
     }
 
