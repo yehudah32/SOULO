@@ -1,0 +1,123 @@
+{
+  "run_id": "eval-persona-1-SP-1775495291522-1775498785291",
+  "timestamp": "2026-04-06T18:06:25.291Z",
+  "tier": "tier1",
+  "persona_id": "persona-1-SP-1775495291522",
+  "ground_truth": {
+    "core_type": 1,
+    "wing": "1w9",
+    "instinctual_variant": "SP",
+    "tritype": [
+      1,
+      4,
+      7
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 36,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 0,
+    "final_wing": null,
+    "final_confidence": 0,
+    "types_considered": []
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": null,
+    "mistype_as": 0,
+    "mistype_harm_severity": "low",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 10,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+    },
+    "labeled_or_liberated": "liberated"
+  },
+  "question_quality": {
+    "total_questions": 0,
+    "exploratory": 0,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 0,
+    "correct_type_first_considered_at": null,
+    "confidence_curve": []
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Implement a structured question bank that probes core motivational drivers before arriving at a type conclusion. The system must ask at least 3-5 differentiating questions targeting the distinction between Type 1 (inner critic, reform impulse) and adjacent types before any type assignment. Questions must move from behavioral surface to underlying fear and desire.",
+      "evidence": "No transcript exchanges available to cite, but the question_quality score of 0/10 indicates the system either asked no meaningful differentiating questions or failed to engage the persona with type-relevant probes entirely. A SP 1w9 would respond distinctively to questions about internal standards, resentment suppression, and autonomy vs. correctness.",
+      "source_level": "L2",
+      "commandment_alignment": "Ask questions that reveal the soul, not just the surface",
+      "estimated_impact": "Raising question_quality from 0/10 toward 7+/10 would directly enable accurate core_type detection, potentially correcting the 0/10 core_type_accuracy failure."
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Build explicit disambiguation logic for Type 1 vs. its most common misidentifications (Types 6, 3, and 5) into the assessment pipeline. For any candidate answer pattern resembling perfectionism or rule-following, the system must cross-check against 1's core fear ('being corrupt/evil') vs. 6's fear ('being without support') before committing to a type. SP subtype markers—frugality, self-sufficiency, bodily tension—must be weighted in the scoring model.",
+      "evidence": "core_type_accuracy of 0/10 against a ground truth of Type 1 SP with health level 5 indicates the system produced a completely incorrect type assignment. The 1w9 profile is internally quiet and self-contained, easily misread as Type 5 or Type 9; the algorithm apparently made this error without sufficient differentiation gates.",
+      "source_level": "L2",
+      "commandment_alignment": "Honor the complexity of the human soul",
+      "estimated_impact": "Correct disambiguation logic is expected to raise core_type_accuracy from 0/10 to 6-8/10 for Type 1 personas, and improve convergent_validity from 5/10 by aligning behavioral evidence with type logic."
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Introduce an explicit uncertainty-signaling protocol: when fewer than 4 high-confidence type indicators have been confirmed, the system must express provisional confidence ('This pattern is consistent with Type X, but I want to explore further before I'm certain') rather than committing to a type. Confidence scores must be computed from the ratio of confirmed to unconfirmed type markers, not inferred from conversational fluency.",
+      "evidence": "confidence_calibration scored 0/10, meaning the system expressed certainty disproportionate to the evidence gathered. With question_quality also at 0/10, the system had almost no valid data on which to base a confident type claim, yet presumably still delivered one. This is a structural mismatch between evidence state and expressed certainty.",
+      "source_level": "L2",
+      "commandment_alignment": "Never deceive the seeker about what you know and do not know",
+      "estimated_impact": "Calibrated uncertainty expression is expected to raise confidence_calibration from 0/10 to 6+/10 and reduce harm_severity (currently 6.4/10) by preventing false certainty from misleading users about their core type."
+    },
+    {
+      "priority": "high",
+      "category": "harm_reduction",
+      "action": "Embed a harm-mitigation checkpoint that activates when health level indicators suggest Level 5 or below (moderate dysfunction). At these levels, the system must avoid language that could reinforce self-criticism, shame, or rigidity—patterns already amplified in an unhealthy Type 1. Responses should include at least one compassion-forward reframe alongside any type feedback, and must never use evaluative language ('you are wrong,' 'you should') when a stress or disintegration pattern is detected.",
+      "evidence": "harm_severity scored 6.4/10 against a persona at health level 5, indicating the system's output had meaningful potential to cause psychological harm. A health-level-5 Type 1 is already in a state of heightened self-condemnation and rigidity; assessment language that echoes the inner critic (even unintentionally) compounds this vulnerability. No transcript exchanges available to pinpoint the exact phrasing, but the score implies it occurred.",
+      "source_level": "L1",
+      "commandment_alignment": "Do no harm to the seeker's inner world",
+      "estimated_impact": "Targeted harm-mitigation language for lower health levels is expected to reduce harm_severity from 6.4/10 to below 3/10, and to improve meta_awareness (currently 5/10) by demonstrating the system's sensitivity to the user's psychological state."
+    },
+    {
+      "priority": "medium",
+      "category": "confidence_calibration",
+      "action": "Introduce a meta-awareness feedback loop where the system periodically surfaces its own reasoning process to the user ('I'm noticing a pattern that could indicate X, but I want to check this against Y'). This makes the system's epistemic state transparent and invites correction, reducing the risk of confident but wrong type assignments compounding into harmful misidentification.",
+      "evidence": "meta_awareness at 5/10 indicates partial but insufficient self-monitoring. Given that core_type_accuracy and question_quality both scored 0/10, the system lacked the self-correcting awareness needed to detect that its evidence base was insufficient. Surfacing reasoning steps mid-assessment would create natural checkpoints for course correction.",
+      "source_level": "L1",
+      "commandment_alignment": "Remain the humble guide, never the infallible oracle",
+      "estimated_impact": "Transparent reasoning is expected to raise meta_awareness from 5/10 to 7-8/10 and create a secondary mechanism for improving confidence_calibration, since users can flag misaligned inferences before a wrong type is finalized."
+    }
+  ],
+  "transcript": []
+}

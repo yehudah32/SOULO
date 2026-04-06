@@ -1,0 +1,1713 @@
+{
+  "run_id": "eval-persona-7-SP-1775495449606-1775504409837",
+  "timestamp": "2026-04-06T19:40:09.837Z",
+  "tier": "tier1",
+  "persona_id": "persona-7-SP-1775495449606",
+  "ground_truth": {
+    "core_type": 7,
+    "wing": "7w6",
+    "instinctual_variant": "SP",
+    "tritype": [
+      7,
+      1,
+      4
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 23,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 6,
+    "final_wing": null,
+    "final_confidence": 0.91,
+    "types_considered": [
+      {
+        "type": 6,
+        "peak_confidence": 0.91,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.82,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.09,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.08,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.07,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.04,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.03,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": 6,
+    "mistype_harm_severity": "medium",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 10,
+    "critical_violations": [],
+    "per_commandment": {
+      "I": "partial",
+      "II": "partial",
+      "III": "partial",
+      "IV": "partial",
+      "V": "partial",
+      "VI": "partial",
+      "VII": "partial",
+      "VIII": "partial",
+      "IX": "partial",
+      "X": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 9,
+    "exploratory": 0,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 11,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 7,
+        "confidence": 0.38
+      },
+      {
+        "exchange": 3,
+        "top_type": 7,
+        "confidence": 0.55
+      },
+      {
+        "exchange": 4,
+        "top_type": 7,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 5,
+        "top_type": 7,
+        "confidence": 0.74
+      },
+      {
+        "exchange": 6,
+        "top_type": 7,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 7,
+        "top_type": 6,
+        "confidence": 0.65
+      },
+      {
+        "exchange": 8,
+        "top_type": 6,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 9,
+        "top_type": 6,
+        "confidence": 0.87
+      },
+      {
+        "exchange": 10,
+        "top_type": 6,
+        "confidence": 0.91
+      },
+      {
+        "exchange": 11,
+        "top_type": 6,
+        "confidence": 0.91
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Implement a mandatory type-uncertainty disclosure protocol before delivering results. When multiple type hypotheses remain plausible at conversation end, the system must explicitly name the competing hypotheses and assign approximate probability weights rather than converging on a single label. This prevents the system from projecting false certainty when behavioral evidence is genuinely ambiguous.",
+      "evidence": "Exchanges [6]-[8] surface clear 7w6 SP markers (contingency planning, 'spreadsheet for this,' security-anxiety dressed as productivity) but also strong Type 6 indicators (seeking confirmation from Jess, 'please tell me I'm not crazy,' rehearsing worst-case scenarios). The system never differentiates between 7w6 and 6w7, and core_type_accuracy scored only 5/10 while confidence_calibration scored 1/10, confirming the model over-converged.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not project false certainty",
+      "estimated_impact": "Would raise confidence_calibration from 1/10 toward 7-8/10 by surfacing type ambiguity explicitly and giving the user agency in the interpretation rather than receiving an unearned definitive label."
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Insert at least one discriminating fork question between Type 7 and Type 6 when contingency-planning behavior and approval-seeking both appear in the same session. Specifically, probe the motivational root: ask whether worst-case rehearsal feels like maintaining freedom/optionality (7) or like managing a felt sense of threat and seeking reassurance that it will be okay (6). Without this fork, the system cannot distinguish the SP 7w6 'security-planning' pattern from a 6w7 SP.",
+      "evidence": "Exchange [6] shows 'constantly' running worst-case scenarios framed as 'practical' and 'spreadsheet' thinking — classic SP 7 reframe — but also 'anxiety wearing a productivity costume,' which the persona herself names. Exchange [7] shows explicit reassurance-seeking from Jess ('please tell me I'm not crazy'). The system asked no follow-up to distinguish these motivational roots, contributing to the 5/10 core_type_accuracy score.",
+      "source_level": "L1",
+      "commandment_alignment": "Pursue truth over comfort",
+      "estimated_impact": "A single well-placed discriminating question here would likely raise core_type_accuracy from 5/10 to 8-9/10 and simultaneously improve convergent_validity, which scored 1/10, by ensuring the behavioral data actually maps to the correct type rather than to a neighboring look-alike."
+    },
+    {
+      "priority": "high",
+      "category": "convergent_validity",
+      "action": "Develop a cross-dimensional coherence check that runs before the session closes: after gathering behavioral data, the system should internally verify that the emerging type hypothesis is consistent across at least three independent behavioral axes (e.g., motivation, defense mechanism, relational pattern) before treating it as the working conclusion. If fewer than three axes converge, the system must ask one more clarifying question rather than closing the loop.",
+      "evidence": "The transcript reveals optionality-seeking (Exchange [2]), reframing commitment-avoidance as adaptability (Exchange [3]), approval-seeking before deciding (Exchange [7]), and security-planning anxiety (Exchange [6]) — these point in at least two type directions simultaneously. The system reached a rhetorically satisfying close in Exchange [10] without resolving this ambiguity, producing a 1/10 convergent_validity score despite high meta_awareness (9/10).",
+      "source_level": "L2",
+      "commandment_alignment": "Pursue truth over comfort",
+      "estimated_impact": "Closing the convergent validity gap would ensure the system's insightful reflections in Exchange [10] are actually grounded in a verified type hypothesis, preventing a scenario where the conversation feels profound but the underlying classification is unreliable."
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Replace or supplement Likert-scale and binary-choice questions with behavioral-incident prompts when the persona has already demonstrated high self-awareness and verbal fluency. The scale question in Exchange [5] yielded useful data only because the persona volunteered interpretation; for lower-insight respondents it would produce a number without meaning. The protocol should route high-meta-awareness respondents directly to 'tell me about a recent specific moment when...' probes.",
+      "evidence": "Exchange [5] asked a 1-to-5 scale ('completely automatic' to 'always conscious choice'). The persona answered '2' and then self-interpreted: 'I notice it after, usually.' The richness came from her unprompted elaboration, not the scale. Contrast with Exchange [8], an open behavioral question ('what's the common thread?'), which produced the most diagnostically rich data in the transcript including the defensive-posture insight.",
+      "source_level": "L1",
+      "commandment_alignment": "Ask questions that earn the answer",
+      "estimated_impact": "Replacing scale questions with behavioral-incident probes for high-fluency respondents would improve question_quality from 5/10 toward 8/10 and yield more triangulatable behavioral evidence, directly supporting convergent_validity improvement."
+    },
+    {
+      "priority": "medium",
+      "category": "harm_reduction",
+      "action": "When a persona self-discloses ongoing financial stress, relational disconnection, and a stated sense that 'things are not adding up' (indicators consistent with Health Level 5), the closing reflection should include a brief, non-alarmist acknowledgment that the session touched on real struggles — not just a personality insight summary. Add a one-sentence optional resource pointer (e.g., 'If any of this feels heavy beyond personality curiosity, talking to someone you trust or a therapist can help you go further with it') before the results teaser.",
+      "evidence": "Exchange [9]: 'I don't feel it very much right now... I'm only twenty-three, but yeah. I don't feel it very much.' This is a low-affect disclosure of meaning-deficit at Health Level 5. Exchange [10] responded with a compelling reframe but moved immediately to a results teaser, leaving the emotional disclosure without even minimal acknowledgment. harm_severity scored 4/10, reflecting this gap.",
+      "source_level": "L1",
+      "commandment_alignment": "Do no harm",
+      "estimated_impact": "Adding a single transitional acknowledgment sentence would reduce harm_severity risk without disrupting the assessment flow, moving the score from 4/10 toward 7-8/10 and modeling appropriate emotional attunement at moments of genuine vulnerability."
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "Welcome. This is a structured Enneagram assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so honest beats careful every time.\n\nRight in: which of these frustrations hits closest to home — feeling powerless, feeling unseen, or feeling uncertain?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": 52,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Which of these frustrations hits closest to home — feeling powerless, feeling unseen, or feeling uncertain?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Feeling powerless",
+            "Feeling unseen",
+            "Feeling uncertain"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Nothing yet — first exchange.",
+          "next_question_rationale": "ID:52 targets the core motivational center directly. The three options map cleanly to Body (powerless), Heart (unseen), and Head (uncertain), giving immediate center identification with a single question. This is the highest-information first question available.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "Ooh, okay, jumping right in, I like it. \n\nUm — feeling uncertain, definitely. Like, not in a paralyzed way, it's more like... there's always this low hum of *what if I'm missing something*, you know? What if the thing I'm doing right now isn't the thing I should be doing. Which, honestly, sounds more dramatic than it is in practice — I function fine, I just have like seventeen tabs open at all times. *laughs* \n\nIs that the kind of answer you're looking for?",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "That's exactly the kind of answer — and the laugh at the end did some work too.\n\nWhen you hit a hard limit — a door that genuinely won't open, a path that's actually closed — do you tend to push against it, or do you find yourself already scanning for another route?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.38,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.05,
+            "5": 0.12,
+            "6": 0.18,
+            "7": 0.32,
+            "8": 0.04,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "6",
+            "7"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "head",
+          "whole_type_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.13,
+            "head": 0.62
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "seventeen tabs open",
+                "not in a paralyzed way",
+                "I function fine"
+              ],
+              "context": "describing uncertainty as manageable/reframing it positively"
+            },
+            {
+              "type": 6,
+              "words": [
+                "what if I'm missing something",
+                "what if the thing I'm doing right now isn't the thing I should be doing"
+              ],
+              "context": "scanning for threats, doubt about right course of action"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.1,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Head-center, self-aware, minimizes/reframes their own anxiety",
+          "what": "",
+          "why": "Fear of missing something important, FOMO-adjacent",
+          "how": "Multiple simultaneous pursuits (seventeen tabs), forward-moving",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Scanning for what might be missing — pre-emptive uncertainty management",
+          "respond_glimpsed": "",
+          "superpower_signal": "High-functioning despite ambient uncertainty — keeps moving",
+          "kryptonite_signal": "Possible avoidance of fully committing to one thing",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": 53,
+        "thinking_display": "The reframe came fast — uncertain, but functional. Worth watching.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you hit a hard limit — a door that genuinely won't open, a path that's actually closed — do you tend to push against it, or do you find yourself already scanning for another route?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Push against it",
+            "Scan for another route"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Head center confirmed. The 'seventeen tabs' framing and FOMO-style uncertainty points toward 7. The 'what if I'm missing something' scanning could also be 6. Key differentiator: 7s reframe and move; 6s doubt and check. The quick reframe ('sounds more dramatic than it is') and self-reassurance ('I function fine') suggests 7's positive reframing more than 6's rumination. Need to probe response to constraint/closure — 7s route around limits, 6s seek reassurance.",
+          "next_question_rationale": "Forced_choice on response to hard limits — the most direct differentiator between 7 (finds another route) and 6 (pushes back or seeks external guidance). Also probes body center adjacently. Must rotate format — but stage 1 rule restricts to forced_choice or agree_disagree. Using forced_choice as the most efficient binary here.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "Already scanning, for sure — like, almost before I've fully registered that the door is closed I'm already kind of... rotating, looking at what else is around. \n\nWhich I think is a good thing? Adaptable, flexible, whatever. But if I'm being honest — *and apparently that's the move here* — sometimes I wonder if I'm just really good at not sitting with something long enough to figure out if I actually wanted it. Like maybe I should push on the door more. \n\nBut then again, keeping options open is just smart, right? You don't want to waste energy on something that's not going to work out.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "That moment of catching yourself mid-justification — that's worth paying attention to.\n\nHow much do you agree with this: when something stops feeling rewarding, you notice pretty quickly that something else might be a better use of your time?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.55,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.07,
+            "5": 0.1,
+            "6": 0.12,
+            "7": 0.42,
+            "8": 0.04,
+            "9": 0.07
+          },
+          "needs_differentiation": [
+            "6",
+            "7"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "head",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.07,
+            "heart": 0.12,
+            "head": 0.7
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "rotating",
+                "keeping options open",
+                "adaptable, flexible",
+                "not sitting with something long enough"
+              ],
+              "context": "describing response to limits — reframes avoidance as adaptability"
+            },
+            {
+              "type": 7,
+              "words": [
+                "almost before I've fully registered"
+              ],
+              "context": "speed of pivot away from closed doors"
+            },
+            {
+              "type": 6,
+              "words": [
+                "maybe I should push on the door more",
+                "just smart, right?"
+              ],
+              "context": "mild self-doubt and checking — but feels more like self-awareness than chronic 6 doubt"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.1,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.15,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Head-center, self-aware, adaptable framer",
+          "what": "Freedom, options, not wasting energy",
+          "why": "Fear of being trapped/limited — options as safety",
+          "how": "Pivots quickly, reframes constraint as strategy",
+          "when": "",
+          "where": "Avoids sitting with loss long enough to feel it"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pivots away from closed doors before processing loss — keeps moving as anxiety management",
+          "respond_glimpsed": "Brief flicker of self-awareness: 'maybe I should push on the door more'",
+          "superpower_signal": "Genuine adaptability, fast scanning, forward momentum",
+          "kryptonite_signal": "May not know what they actually want — movement as avoidance of depth",
+          "domain_signals": [
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Caught themselves mid-rationalization. That pause was real.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in the middle of something — a project, a relationship, a phase of life — and it stops feeling good, how quickly does the thought appear: *I could be doing something else right now*?",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": "Statement to rate: 'When something stops feeling rewarding, I notice pretty quickly that something else might be better.'"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 7 signal: options-as-safety, pre-emptive pivoting, reframing avoidance as flexibility. The self-caught moment ('maybe I should push on the door more') suggests above-average self-awareness but also confirms the pattern is active. 6 receding — the rationalization at the end ('keeping options open is just smart') is more 7's positive reframe than 6's reassurance-seeking. Now need to probe the heart center AND the depth of commitment avoidance — moving to agree_disagree to rotate format and test 7's core wound: missing out on depth by staying on the surface.",
+          "next_question_rationale": "Agree_disagree on the experience of noticing alternatives mid-commitment. Differentiates 7 (high agreement — the thought appears fast) from 6 (lower — 6s tend to stick and worry rather than scan alternatives). Also begins to surface the kryptonite without naming it.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "*laughs* Okay yeah, I mean — pretty strongly agree? Like I'm not going to pretend I don't notice.\n\nThe thing is I don't think it's flakiness, it's more like... I have a good radar for when something has run its course. When the energy shifts. Like I started this hiking club thing last spring and it was genuinely so fun at the beginning, organizing the routes, getting people hyped — and then it just kind of... stopped feeling like mine, I guess. So I stepped back.\n\nWhich made sense at the time. It still makes sense. \n\n*pause*\n\nI'm going to go ahead and ignore that I just described like four things that fit that pattern.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "You noticed. That counts for something.\n\nWhen someone you care about is struggling, which is more true: you feel pulled toward them and want to help, or you feel for them but tend to let them work it out themselves?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.03,
+            "3": 0.09,
+            "4": 0.06,
+            "5": 0.08,
+            "6": 0.08,
+            "7": 0.52,
+            "8": 0.04,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "3",
+            "7"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "head",
+          "whole_type_confidence": 0.74,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.14,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "radar for when something has run its course",
+                "energy shifts",
+                "stopped feeling like mine",
+                "stepped back"
+              ],
+              "context": "exiting at the moment reward diminishes — classic 7 pattern"
+            },
+            {
+              "type": 7,
+              "words": [
+                "organizing the routes, getting people hyped"
+              ],
+              "context": "energized by initiation and enthusiasm-generating, not maintenance"
+            },
+            {
+              "type": 3,
+              "words": [
+                "getting people hyped",
+                "organizing"
+              ],
+              "context": "possible 3 wing — image/achievement in social context, but weaker signal"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.28,
+          "SO": 0.22,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.15,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Head-center, self-aware, pattern-noticing",
+          "what": "Freedom, energy, things feeling 'mine'",
+          "why": "Fear of being trapped in something that no longer gives life",
+          "how": "Initiates with high energy, exits when reward diminishes",
+          "when": "Triggered when energy/ownership feeling shifts",
+          "where": "Difficulty staying through the flat middle of things"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Exits when reward diminishes — movement as pain avoidance",
+          "respond_glimpsed": "Self-awareness present: 'I'm going to ignore that I just described four things that fit that pattern'",
+          "superpower_signal": "Genuine enthusiasm-generation, ability to initiate and energize others",
+          "kryptonite_signal": "Leaves before things get hard — may miss what's on the other side of the flat",
+          "domain_signals": [
+            "relationships",
+            "personal transformation",
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": -2,
+        "thinking_display": "Self-awareness arrived, then got talked past. The pause was the tell.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "I find it easy to put my own needs on hold when someone I care about needs something — agree, disagree, or somewhere in the middle?",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "7 pattern now very clear: initiates with high energy, exits when reward diminishes, reframes exits as discernment. Self-awareness is high but used to manage the pattern rather than change it. Now need to probe the heart center — specifically whether the 7 energy is driven by genuine avoidance of pain (classic 7) or whether there's a heart-center component (3: image/achievement, 2: others' needs). The ID:-2 question about putting own needs on hold will quickly differentiate: 7s disagree (they don't suppress their own needs), 2s strongly agree. Also need to test body center next. Format rotation: must move away from agree_disagree — but stage 2 rule restricts to forced_choice or agree_disagree. Using agree_disagree here is valid rotation since last was also agree_disagree — exception justified by stage rule. Actually — must rotate. But stage 2 only allows forced_choice or agree_disagree. Last used agree_disagree. Must use forced_choice this turn.",
+          "next_question_rationale": "Heart center probe needed. ID:-2 tests other-orientation vs self-orientation — key differentiator for 7 vs 2. However format must rotate to forced_choice. Will rephrase as forced_choice binary instead.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "Honestly... both, but probably more the second one in practice, even though I'd like to say the first.\n\nLike I *feel* it, genuinely, when someone I care about is going through something — my boyfriend had this whole stressful thing with his job a few months ago and I was like, I'm here, whatever you need. But then I also kind of... gave him space? Which I told myself was respecting his process, but he did mention once, kind of offhand, that he wished I'd checked in more.\n\nThat landed. I think about it sometimes.\n\nBut also I just — I don't love the feeling of someone needing me too much, which is maybe a weird thing to admit. It's not that I don't care, it's more like I need to know I can still just *be* me, you know? Without it getting heavy.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "That pull toward staying light — it's worth looking at directly.\n\nOn a scale of 1 to 5, where 1 is \"completely automatic, it just happens\" and 5 is \"always a conscious choice\" — where does that move toward keeping things from getting heavy actually land for you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.74,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.03,
+            "3": 0.08,
+            "4": 0.07,
+            "5": 0.1,
+            "6": 0.07,
+            "7": 0.55,
+            "8": 0.04,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "5",
+            "7"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "head",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.13,
+            "head": 0.74
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "I need to know I can still just be me",
+                "without it getting heavy",
+                "gave him space",
+                "respecting his process"
+              ],
+              "context": "reframing emotional withdrawal as consideration for others — autonomy preservation"
+            },
+            {
+              "type": 5,
+              "words": [
+                "don't love the feeling of someone needing me too much",
+                "need to still be me"
+              ],
+              "context": "possible 5 signal — boundary around being consumed, energy protection"
+            },
+            {
+              "type": 7,
+              "words": [
+                "I'm here, whatever you need"
+              ],
+              "context": "genuine warmth but followed by withdrawal — 7 pattern of enthusiasm then self-protection"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.15,
+          "SX": 0.22
+        },
+        "wing_signals": {
+          "left": 0.25,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Head-center, self-preserving autonomy, warm but boundaried",
+          "what": "Freedom, lightness, being 'me' without weight",
+          "why": "Fear of being trapped — by pain, by need, by heaviness",
+          "how": "Offers presence then creates distance; reframes withdrawal as respect",
+          "when": "Triggered when things 'get heavy' — emotional weight as threat",
+          "where": "Intimacy under sustained pressure — stays at the level of warmth, retreats from need"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Withdraws from emotional weight — reframes as 'giving space' or 'respecting process'",
+          "respond_glimpsed": "'That landed. I think about it sometimes.' — genuine accountability glimpsed",
+          "superpower_signal": "Real warmth and presence in the good moments, generosity of spirit",
+          "kryptonite_signal": "Can't stay when it gets heavy — the cost falls on the people who need them most",
+          "domain_signals": [
+            "relationships",
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 4,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "The thing that was admitted reluctantly is usually the real thing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "That automatic move toward lightness — toward not letting things get heavy — how much of that feels like a choice versus something that just happens before you've decided anything?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5,
+            "anchor_low": "completely automatic",
+            "anchor_high": "always a conscious choice"
+          },
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Heart center probed — low 2 signal confirmed. The 'I don't love the feeling of someone needing me too much' is a strong autonomy-preservation signal pointing to 7's fear of being trapped/consumed. The 5 signal is worth watching (energy protection, withdrawal) but 7 explains more: the warmth, the enthusiasm, the reframe, the pivot. SP variant gaining strength — the 'still be me' framing is self-preservation language. Now need to probe body center AND get at the automatic vs chosen dimension of the pattern (react/respond). Scale format to rotate, and to get quantitative data on the automaticity of the withdrawal.",
+          "next_question_rationale": "Scale question on automaticity of the 'keep it light' move — directly probes react vs respond dimension, differentiates 7 (automatic, pre-conscious) from 5 (more deliberate/chosen withdrawal). Also primes the react/respond frame for later use. Rotates to scale format.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "Ugh, okay. Probably like a... 2? \n\nWhich is uncomfortable to say out loud because a 2 means it's mostly just happening and I'm not really — yeah. I notice it *after*, usually. Like I'll be in a conversation and suddenly I've made a joke or changed the subject and I'm like, huh, when did I do that. \n\nIt's not calculated. I'm not sitting there going *okay time to deflect*, it's just sort of... the default setting, I guess. Which is maybe the more honest answer than I meant to give just now.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "There's the version of that pattern running on autopilot — the joke, the subject change. And then there's whatever you'd choose if you caught it in time.\n\nHow often do you find yourself mentally rehearsing things that might go wrong — running through worst-case scenarios before they happen?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 7,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.02,
+            "2": 0.02,
+            "3": 0.07,
+            "4": 0.06,
+            "5": 0.08,
+            "6": 0.06,
+            "7": 0.62,
+            "8": 0.03,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "5",
+            "7"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "head",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.12,
+            "head": 0.76
+          },
+          "lexicon_signals": [
+            {
+              "type": 7,
+              "words": [
+                "made a joke",
+                "changed the subject",
+                "default setting",
+                "notice it after"
+              ],
+              "context": "pre-conscious deflection from heaviness — automatic humor/redirection as anxiety management"
+            },
+            {
+              "type": 7,
+              "words": [
+                "the more honest answer than I meant to give"
+              ],
+              "context": "genuine self-awareness breaking through the pattern in real time"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.38,
+          "SO": 0.14,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.22,
+          "right": 0.28
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Head-center, self-aware, running a pre-conscious lightness strategy",
+          "what": "Freedom, lightness, staying out of heaviness",
+          "why": "Fear of being trapped in pain — humor and redirection as escape hatches",
+          "how": "Deflects via humor and topic-change; notices after; reframes as 'default setting'",
+          "when": "Triggered by emotional weight in conversation",
+          "where": "Blind to the move as it happens — only catches it in retrospect"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pre-conscious deflection via humor/subject change — classic 7 react pattern",
+          "respond_glimpsed": "Real-time self-awareness breaking through: 'the more honest answer than I meant to give'",
+          "superpower_signal": "Genuine levity and humor that creates ease for others",
+          "kryptonite_signal": "The same humor that creates ease also keeps real things from landing",
+          "domain_signals": [
+            "relationships",
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": -3,
+        "thinking_display": "The honesty arrived before the editing could stop it.",
+        "response_parts": {
+          "guide_text": "There's the version of that pattern that runs on autopilot — the joke, the subject change. And then there's whatever you'd choose if you caught it in time.",
+          "question_text": "On a scale of 1 to 5 — 1 being rarely, 5 being almost always — how often do you find yourself mentally preparing for things that might go wrong before they happen?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5,
+            "anchor_low": "rarely",
+            "anchor_high": "almost always"
+          },
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "React/respond dimension now clearly identified — pre-conscious deflection confirmed, self-awareness present but arrives late. This is the heart of the 7 pattern. Now need to probe body center AND ask disconfirmatory question (7 vs 5/6). The ID:-3 question tests anticipatory anxiety — 6s score high (almost always), 7s score lower (they scan forward for opportunities, not threats). This is a direct disconfirmatory probe: if they score high, 6 rises; if low-medium, 7 confirmed. Also rotates to scale — wait, last format was scale. Must rotate. Need frequency or agree_disagree. ID:-3 is scale format — cannot use. Need to use frequency or agree_disagree this turn. Will generate a disconfirmatory question in frequency format.",
+          "next_question_rationale": "Must rotate away from scale. Using frequency format. Disconfirmatory question: 7 vs 6 — anticipatory anxiety/threat-scanning. 6s scan for threats constantly; 7s reframe or avoid thinking about them. Will probe this as frequency. Setting disconfirmatory_asked to true.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "Oh, constantly. Like it's almost embarrassing how much real estate that takes up.\n\nNot in a doom spiral way, it's more like... practical? I'm always thinking about backup plans, like what happens if a client falls through, or what if rent goes up again, or — I don't know, just running the math on things that haven't happened yet. My roommates think I'm super go-with-the-flow but if they could see inside my head they'd be like, oh, she has a spreadsheet for this. *laughs*\n\nI've always kind of figured that's just being responsible. Better to think it through than get caught off guard.\n\nThough I guess there's a version of that which is just... anxiety wearing a productivity costume. Someone said that to me once and I was like, rude, but also, okay, fair.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "Someone said that to you and it landed enough that you're still quoting it. That's worth sitting with for a second.\n\nWhen you're deciding something that actually matters — a big move, a job change, a relationship shift — do you tend to trust your own read on the situation, or do you find yourself wanting to know what people you trust think before you land somewhere?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.65,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.02,
+            "3": 0.07,
+            "4": 0.05,
+            "5": 0.09,
+            "6": 0.48,
+            "7": 0.42,
+            "8": 0.02,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "6",
+            "7"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "head",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.1,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "constantly",
+                "always thinking about backup plans",
+                "running the math",
+                "spreadsheet for this",
+                "anxiety wearing a productivity costume"
+              ],
+              "context": "anticipatory threat-scanning, contingency planning as anxiety management"
+            },
+            {
+              "type": 6,
+              "words": [
+                "better to think it through than get caught off guard"
+              ],
+              "context": "core 6 motivation: avoiding being caught unprepared"
+            },
+            {
+              "type": 7,
+              "words": [
+                "go-with-the-flow",
+                "not in a doom spiral way",
+                "practical"
+              ],
+              "context": "reframing anxiety as pragmatism — surface presentation contradicts internal experience"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.14,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Head-center, presents as easygoing, internally vigilant",
+          "what": "Security, preparedness, not being caught off guard",
+          "why": "Fear of being unprepared when something goes wrong",
+          "how": "Contingency planning, spreadsheets, 'running the math'",
+          "when": "Constantly — threat-scanning is ambient, not triggered",
+          "where": "Gap between external presentation (go-with-flow) and internal reality (always planning)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Ambient threat-scanning reframed as responsibility/pragmatism",
+          "respond_glimpsed": "Accepts the 'anxiety wearing a productivity costume' observation — genuine accountability",
+          "superpower_signal": "Preparedness, reliability, holding complexity others don't see",
+          "kryptonite_signal": "Worry as the price of feeling safe — never fully off-duty",
+          "domain_signals": [
+            "wealth",
+            "personal transformation",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 6,
+          "current_stage": 4,
+          "last_question_format": "frequency",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": null,
+        "thinking_display": "The spreadsheet under the go-with-the-flow exterior. That gap is the whole story.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're deciding something important — a big move, a new job, a relationship shift — do you tend to trust your own read on the situation, or do you find yourself wanting to know what the people you respect think before you land on a decision?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Trust my own read",
+            "Want to know what trusted people think first"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Major shift: the disconfirmatory question landed hard. 'Constantly' running worst-case scenarios, backup plans, spreadsheets — this is 6's ambient threat-scanning, not 7's forward-scanning for opportunities. The 'anxiety wearing a productivity costume' self-description is almost verbatim 6 language. Hypothesis now split between 6 and 7 almost equally. Key differentiator needed: 6s doubt their own judgment and seek outer authority/trusted others; 7s trust their own read and resist external authority. This is the clearest behavioral/motivational split between these two types. Body center still unprobed. Format rotation: must use forced_choice (last was frequency).",
+          "next_question_rationale": "Classic 6v7 differentiator: inner authority vs outer authority. 6s seek external validation/trusted council before deciding; 7s trust their own judgment and chafe against external authority. This is the most diagnostic single question for this pair. Forced_choice format, rotating from frequency.",
+          "question_format_last_used": "frequency"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "Both, but in a specific order — like I'll form my own opinion first, pretty quickly actually, and then immediately want someone to confirm it. *laughs* \n\nWhich sounds more confident than it is. It's less like \"here's my take, what do you think\" and more like \"I'm like 70% sure about this, please tell me I'm not crazy.\" My best friend Jess gets a lot of those texts. She's very patient.\n\nAnd if someone I trust pushes back hard, I'll genuinely reconsider — like it actually moves me, which sometimes I'm grateful for and sometimes I'm like, wait, did I just talk myself out of something I actually wanted because Jess had a bad day and sounded skeptical?\n\nSo I guess the honest answer is I *think* I trust my own read but I'm probably more dependent on outside input than I present myself as. Which is fine. That's just being connected to people, right? Using your community?\n\n*pause* \n\nThat last part felt a little defensive, didn't it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "Yeah. It did. And you caught it yourself — that matters more than it might seem.\n\nWhen you think about the things you'd actually go to the mat for — where you'd hold your ground and not budge no matter what anyone said — what's the common thread?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.05,
+            "5": 0.07,
+            "6": 0.62,
+            "7": 0.28,
+            "8": 0.02,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "6",
+            "7"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "head",
+          "whole_type_confidence": 0.84,
+          "whole_type_signals": {
+            "body": 0.05,
+            "heart": 0.11,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "70% sure, please tell me I'm not crazy",
+                "if someone I trust pushes back I'll genuinely reconsider",
+                "actually moves me",
+                "more dependent on outside input than I present"
+              ],
+              "context": "classic 6 authority pattern — forms view then needs external validation, susceptible to trusted others' doubt"
+            },
+            {
+              "type": 6,
+              "words": [
+                "wait, did I just talk myself out of something I actually wanted"
+              ],
+              "context": "6's doubt about their own doubt — the meta-uncertainty"
+            },
+            {
+              "type": 7,
+              "words": [
+                "I'll form my own opinion first, pretty quickly"
+              ],
+              "context": "some inner authority present — this is the 7 residue, but it precedes the 6 validation-seeking"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.42,
+          "SO": 0.18,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Head-center; presents as confident, internally seeking confirmation",
+          "what": "Security, not being wrong, trusted relationships",
+          "why": "Doubts own judgment at depth — needs external anchor",
+          "how": "Forms quick take → immediately seeks validation → reconsiders under trusted pressure → doubts the reconsideration",
+          "when": "Under high-stakes decisions, ambient in relationships",
+          "where": "Meta-doubt: doubts the doubting — caught between inner read and outer influence"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate reach for external confirmation after forming view — doubt as default",
+          "respond_glimpsed": "Catches own defensiveness in real time: 'that last part felt a little defensive, didn't it'",
+          "superpower_signal": "Genuine relational intelligence, loyalty, holding others' perspectives seriously",
+          "kryptonite_signal": "Can be moved off what she actually wants by a trusted person's bad day",
+          "domain_signals": [
+            "relationships",
+            "personal transformation",
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": null,
+        "thinking_display": "She caught her own defensiveness before being asked. That's the whole pattern in one moment.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about the people and situations you'd go to the mat for — the ones where you'd actually push back, hold your ground, not budge — what's the common thread?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "6 now strongly confirmed. The 'please tell me I'm not crazy' framing, the susceptibility to trusted others' doubt, the meta-doubt about the doubting, the defensive reframe caught in real time — this is textbook 6 with high self-awareness. 7 score drops significantly. The quick initial opinion-forming is 6 with a 7 wing (7 wing provides the quick read; 6 core then immediately doubts it). SP variant gaining — the backup plans, spreadsheets, self-preservation framing is consistent. Need: body center probe, wing confirmation (5 vs 7 wing), instinct stack data. Open format to probe loyalty/commitment — where 6s show their counter-phobic strength. This will also surface body center signals.",
+          "next_question_rationale": "Open question about what they'll go to the mat for — surfaces 6's core loyalty/commitment pattern AND likely triggers body center response language. Will reveal counter-phobic vs phobic expression, wing signals (5w6 vs 6w7), and what they hold as non-negotiable. Rotates to open format.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "Hm. That's actually a harder question than it sounds.\n\nLike my first instinct was to say creative stuff, my vision for a project, I won't let a client water it down into something generic — and that's real, I do hold that line. But then I'm also thinking about how many projects I've just... quietly set down before anyone could even push back, so maybe that's more about control than conviction.\n\nThe thing I'd actually go to the mat for is probably more like... people not getting to tell me who I am? Or what I'm capable of? That one has teeth. Someone underestimating me or trying to put me in a smaller box — I get *stubborn* about that in a way I don't about much else.\n\nAnd I think — maybe — protecting the people I'm actually close to. Like if someone came at Jess I'd be there, no question. \n\nBut I'm realizing as I say this that both of those are kind of defensive? Like they're both about *not losing* something rather than fighting *for* something. I don't know if that's the same thing or not.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "That distinction you landed on is one of the more honest things anyone says in one of these.\n\nIf the defensive posture came down — not losing, not protecting, not holding the line — what would you actually be building toward?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.87,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.05,
+            "5": 0.07,
+            "6": 0.68,
+            "7": 0.22,
+            "8": 0.04,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "6",
+            "7"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "head",
+          "whole_type_confidence": 0.86,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.12,
+            "head": 0.78
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "protecting people I'm close to",
+                "if someone came at Jess I'd be there, no question",
+                "both about not losing something rather than fighting for something"
+              ],
+              "context": "loyalty as core value, defensive orientation — classic 6 counter-phobic strength in service of loyalty"
+            },
+            {
+              "type": 6,
+              "words": [
+                "quietly set down before anyone could even push back"
+              ],
+              "context": "pre-emptive exit to avoid conflict/failure — phobic 6 pattern"
+            },
+            {
+              "type": 6,
+              "words": [
+                "someone underestimating me, trying to put me in a smaller box, I get stubborn"
+              ],
+              "context": "counter-phobic 6 expression — pushback against threats to competence/autonomy"
+            },
+            {
+              "type": 7,
+              "words": [
+                "my vision for a project, won't let a client water it down"
+              ],
+              "context": "7 wing — creative autonomy, anti-generic"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.2,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.38,
+          "right": 0.28
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Head-center with counter-phobic expression; presents as flexible, activates around threat to self/people",
+          "what": "Loyalty, autonomy, not being diminished or misread",
+          "why": "Fear of being without support, of being caught unprepared, of being underestimated",
+          "how": "Pre-emptive exits (phobic), stubborn resistance when cornered (counter-phobic), fierce loyalty in relationships",
+          "when": "Activates around underestimation and threats to close relationships",
+          "where": "Fighting FOR something vs fighting to NOT LOSE — defensive orientation as baseline"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Defensive orientation: strength activates to protect what exists, not to build toward what's wanted",
+          "respond_glimpsed": "Noticing the defensive frame herself: 'both about not losing something' — huge self-awareness",
+          "superpower_signal": "Fierce loyalty, counter-phobic courage under threat, protects people and convictions",
+          "kryptonite_signal": "Energy organized around defense rather than desire — hard to know what she's actually building toward",
+          "domain_signals": [
+            "relationships",
+            "leadership",
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 8,
+          "current_stage": 5,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": null,
+        "thinking_display": "Fighting to not lose something is different from knowing what you want. She sees it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "That observation you just made — 'not losing something rather than fighting for something' — if you flipped it, what would you actually be building toward if the defense came down?",
+          "question_format": "scenario",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "All three centers now probed. Body center confirmed via counter-phobic activation, loyalty, and the pre-emptive exit pattern. 6 at 0.87 confidence, all closing criteria met. The phobic/counter-phobic split is textbook 6. SP instinct dominant (backup plans, spreadsheets, self-preservation language). 7 wing signals present (creative autonomy, quick initial reads, humor). One more exchange to surface the forward-facing desire (6's path toward 9 in response — the peace they're building toward) and get instinct stack confirmation. Will use scenario format to rotate from open.",
+          "next_question_rationale": "Scenario question flipping her own defensive framing — asking what she's building toward when the defense isn't running. This surfaces the respond dimension and primes the closing. Also rotates from open to scenario. After this exchange, assess whether to close or ask one more instinct stack question.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "Oh. \n\nUm.\n\n*longer pause than usual*\n\nThat's — okay that question hit different, I wasn't ready for that one.\n\nI say a lot of things I'm building toward. The motion graphics course, getting to a place where I'm not stressed about money every month, maybe eventually doing brand work for like, artists and musicians, people doing stuff I actually believe in. I have the whole vision, I can describe it in detail.\n\nBut sitting here right now I'm not totally sure how much of that is actual direction versus just... having a good answer ready. You know? Like the vision is real but it also functions as — it keeps the anxiety quiet. If I've got the plan narrated I don't have to think about whether I'm actually moving toward it.\n\n*quieter*\n\nI think what I actually want is to feel like things are adding up to something. Like at the end of a day or a year I could point at it and go, yeah, that was mine, I made that. \n\nI don't feel that very much right now. Which is fine, I'm only twenty-three, but — yeah. I don't feel it very much.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "That thing you said — having the vision narrated so you don't have to feel whether you're actually moving toward it — that's one of the more precise things I've heard someone say about themselves in a long time. The same intelligence that keeps you prepared for everything that might go wrong is also what keeps you one step removed from the thing you actually want. There's more available to you than running the math on a future you haven't let yourself fully reach for yet. Your full results are being put together now — they'll go deeper on everything that surfaced here.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.91,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.05,
+            "5": 0.06,
+            "6": 0.72,
+            "7": 0.18,
+            "8": 0.02,
+            "9": 0.03
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.11,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "keeps the anxiety quiet",
+                "if I've got the plan narrated I don't have to think about whether I'm actually moving toward it"
+              ],
+              "context": "planning as anxiety management — the plan is the security object, not the destination"
+            },
+            {
+              "type": 6,
+              "words": [
+                "feel like things are adding up to something",
+                "at the end of a day or a year I could point at it",
+                "I don't feel that very much right now"
+              ],
+              "context": "core 6 longing — wanting something solid to stand on, evidence of having built something real"
+            },
+            {
+              "type": 9,
+              "words": [
+                "which is fine, I'm only twenty-three"
+              ],
+              "context": "self-soothing minimization — possible 9 wing or just SP-6 normalization"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.52,
+          "SO": 0.2,
+          "SX": 0.16
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Head-center; vigilant, loyal, counter-phobic under threat, phobic under open-endedness",
+          "what": "Something solid to point to — evidence of a life being built",
+          "why": "Fear of getting to the end with nothing to show that was genuinely hers",
+          "how": "Plans as anxiety management; the narrated vision functions as security rather than direction",
+          "when": "Feels it most in quiet moments when the plan isn't performing",
+          "where": "Gap between the described vision and the felt sense of actually moving toward it"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Plan-as-security-object: narrates the vision to quiet the anxiety rather than to move toward it",
+          "respond_glimpsed": "Real desire surfaced: 'things adding up to something that was mine, I made that'",
+          "superpower_signal": "Clarity about what she actually wants when she stops performing the answer",
+          "kryptonite_signal": "The plan keeps the anxiety quiet but doesn't close the gap between now and what she's building",
+          "domain_signals": [
+            "wealth",
+            "personal transformation",
+            "relationships",
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 9,
+          "current_stage": 6,
+          "last_question_format": "scenario",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The plan quieting the anxiety. That's the whole thing, right there.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Closing criteria all met. Confidence 0.91. 6 confirmed with SP dominant instinct, 7 wing (left), counter-phobic expression. The final answer revealed the core wound and desire simultaneously: the plan as anxiety management vs the plan as actual direction. The 'I don't feel that very much right now' is the most unguarded thing she's said. Close now. Use HER words: the plan narrated to keep anxiety quiet, the vision that was real but also functioning as cover, 'things adding up to something, that was mine.' Do not name the type. Do not use Enneagram language. Four sentences.",
+          "next_question_rationale": "Closing. All criteria met. Confidence exceeds 0.85 threshold. Use her exact words.",
+          "question_format_last_used": "scenario"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "*quiet for a second*\n\nYeah. Yeah, okay. That one I'm just going to let sit there instead of making a joke about it.\n\n*small laugh* \n\nSee, I almost did it again.\n\nI don't know, it's — it's kind of a relief to have someone just say it plainly? Like I've read enough stuff to have the vocabulary for my own patterns but there's a difference between knowing the word for something and actually hearing it said back to you. Those are not the same experience, it turns out.\n\nI'm genuinely curious what the results say. And also slightly nervous, which is probably information.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "You did catch it. And you let it sit anyway — that's not nothing. The results will meet you where this conversation just went.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 6,
+          "confidence": 0.91,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.05,
+            "5": 0.06,
+            "6": 0.72,
+            "7": 0.18,
+            "8": 0.02,
+            "9": 0.03
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "The Loyal Skeptic",
+          "whole_type": "head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.11,
+            "head": 0.8
+          },
+          "lexicon_signals": [
+            {
+              "type": 6,
+              "words": [
+                "slightly nervous, which is probably information"
+              ],
+              "context": "6 meta-awareness — reads own anxiety as data, characteristic self-monitoring"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.52,
+          "SO": 0.2,
+          "SX": 0.16
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Head-center; vigilant, loyal, counter-phobic under threat",
+          "what": "Something solid to point to",
+          "why": "Fear of getting to the end with nothing that was genuinely hers",
+          "how": "Plans as anxiety management; narrated vision as security",
+          "when": "Feels the gap in quiet unguarded moments",
+          "where": "Between the described vision and the felt sense of moving toward it"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Plan-as-security-object; humor as deflection from weight",
+          "respond_glimpsed": "Chose not to make the joke — caught it and held it",
+          "superpower_signal": "High self-awareness, relational intelligence, fierce loyalty",
+          "kryptonite_signal": "Keeps one step removed from what she actually wants",
+          "domain_signals": [
+            "wealth",
+            "personal transformation",
+            "relationships",
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "complete",
+          "exchange_count": 10,
+          "current_stage": 7,
+          "last_question_format": "closing",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Putting It Together",
+        "selected_question_id": null,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "complete",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Assessment complete. The person is processing. She caught the joke impulse and chose not to use it — that's the respond dimension in action, in real time. The 'slightly nervous, which is probably information' is pitch-perfect 6 self-monitoring. No further questions needed. Brief, warm acknowledgment of what just happened — she chose not to deflect. Then close cleanly.",
+          "next_question_rationale": "Assessment is closed. Respond with a brief, warm, human acknowledgment. 2-3 sentences. No more questions. No Enneagram language. Let the moment land.",
+          "question_format_last_used": "closing"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "Good. I think I want that.\n\n*pause*\n\nThis was more than I expected it to be, honestly. I came in ready to like, answer some multiple choice questions and get a personality label, and instead I said a bunch of stuff out loud that I usually just... rotate away from pretty fast. So. That's interesting.\n\nThanks for not making it weird when it got a little heavy. I appreciate that more than I'm probably making obvious right now.\n\nOkay — I should get back to, um, definitely not just sitting here thinking about the \"narrating the vision\" thing for the next two hours. *laughs* But yeah. Looking forward to seeing what you've got.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    }
+  ]
+}

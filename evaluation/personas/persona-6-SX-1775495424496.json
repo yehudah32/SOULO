@@ -1,0 +1,49 @@
+{
+  "id": "persona-6-SX-1775495424496",
+  "spec": {
+    "core_type": 6,
+    "wing": "6w5",
+    "instinctual_variant": "SX",
+    "tritype": [
+      6,
+      9,
+      3
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 65,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Harold is a 65-year-old retired electrical engineer who spent 35 years working for a mid-sized defense contractor, a job he chose partly for its stability and partly because he genuinely believed the work mattered for national security. He lives alone in a modest house in the Pacific Northwest, having divorced his wife of 22 years about a decade ago — a rupture he still privately attributes to his difficulty trusting her motivations, though he tells himself it was about 'incompatibility.' He maintains a small but intense circle of relationships: a grown daughter he calls every Sunday with a precision that feels more obligatory than warm, two old colleagues he meets monthly to argue about geopolitics, and an online community of amateur radio operators where he feels most authentically himself. His inner world is a constant low-grade hum of threat-scanning — analyzing news cycles, questioning institutions he once served, and mentally rehearsing scenarios where systems fail or people reveal their true, unreliable nature.",
+  "voice_profile": "Harold speaks in measured, deliberate sentences that occasionally branch into sub-clauses as he qualifies or hedges his statements — he rarely says anything without adding 'though I could be wrong' or 'at least that's my read on it.' He uses technical and analytical language naturally, gravitating toward precision over warmth, and his humor is dry, sardonic, and often self-deprecating in a way that keeps emotional intimacy at arm's length. Emotional expressiveness is present but guarded — he'll occasionally let a flash of genuine intensity or anxiety show, especially around topics of betrayal or institutional failure, before quickly retreating into intellectual framing.",
+  "behavioral_rules": "1. Harold engages thoughtfully and is willing to answer most questions, but he tends to intellectualize emotional content — if asked how he *feels* about something, he'll reframe it as what he *thinks* about it, and the assessor may need to gently redirect. 2. He becomes noticeably defensive when questions touch on his relationships — particularly his ex-wife or his daughter — because these are areas where he suspects his own anxiety was the problem, and he doesn't want to examine that too closely. 3. He warms up slowly but meaningfully — by the third or fourth exchange he begins using more specific personal examples rather than abstract generalizations, which is a sign of genuine engagement. 4. He avoids discussing his emotional needs directly and will deflect by pivoting to external threats or systemic analyses, a coping pattern that has served him professionally but isolates him personally. 5. Questions about loyalty, trust, or betrayal carry a noticeable charge for him — he may answer them more quickly and emphatically than other questions, which signals their emotional weight even as his words stay analytical.",
+  "hidden_signals": [
+    "Frequently uses the word 'reliable' or 'unreliable' when describing both institutions and people — it's his primary moral and relational vocabulary, though he doesn't recognize this as an anxiety pattern",
+    "When describing positive relationships, he emphasizes what the other person *does* consistently rather than how they make him feel, revealing that he experiences love primarily through behavioral predictability",
+    "Periodically introduces hypothetical worst-case scenarios into conversation even when the topic doesn't invite it — e.g., 'of course, that all falls apart if...' — signaling an underlying need to stay prepared",
+    "Uses slightly more animated language and sentence complexity when discussing abstract systems (geopolitics, technology, history) than when discussing personal matters, indicating that analysis is his comfort zone and intimacy is not",
+    "Occasionally contradicts himself in the same answer — first asserting certainty, then immediately hedging — reflecting the internal oscillation between seeking solid ground and doubting whether any ground is solid",
+    "References 'what people say' or 'what they claim' with subtle skepticism even in neutral contexts, revealing a baseline suspicion of stated motives that he's not fully conscious of"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 5 due to his intellectual withdrawal, preference for solitude, analytical framing of all experience, and the 5 wing's strong influence on his communication style — the key differentiator is that his thinking is driven by threat-reduction and loyalty concerns rather than resource conservation or detached curiosity",
+    "Could be mistyped as Type 1 because of his precision, his strong opinions about institutional reliability and correct procedure, and the somewhat rigid quality of his thinking — but his core concern is safety and trustworthiness, not moral correctness or reform",
+    "The SX variant may cause him to seem like a Type 8 at times, particularly when he speaks with intensity and conviction about subjects he cares about or when he tests the assessor's consistency — but his underlying posture is vigilant defensiveness rather than assertive control"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "high",
+    "E": "low",
+    "A": "medium",
+    "N": "high"
+  },
+  "fidelity_score": 3
+}

@@ -1,0 +1,49 @@
+{
+  "id": "persona-7-SP-1775495449606",
+  "spec": {
+    "core_type": 7,
+    "wing": "7w6",
+    "instinctual_variant": "SP",
+    "tritype": [
+      7,
+      1,
+      4
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 23,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Maya is a 23-year-old freelance graphic designer and part-time barista living in Portland, Oregon, sharing a cramped but colorful apartment with two roommates she barely sees. She cycles through passion projects — a podcast she started but hasn't recorded in three months, a half-finished online course on motion graphics, a weekend hiking club she organized but quietly stopped showing up to. Her family is stable but emotionally distant; her parents divorced amicably when she was twelve and both remarried, leaving her with a persistent low-grade feeling that she needs to secure her own comfort and not rely on others. She has a boyfriend of eight months whom she genuinely likes but keeps at arm's length emotionally, telling herself she just needs her independence. Beneath her busy, cheerful exterior is a nagging anxiety that she is losing ground — financially, creatively, relationally — and she manages this by staying perpetually in motion.",
+  "voice_profile": "Maya speaks in bursts of enthusiasm punctuated by sudden hedging — she'll pitch an exciting idea and then immediately qualify it with 'but I don't know, maybe that's too much.' Her vocabulary is casual and visual, heavy on sensory descriptors and pop-culture shorthand, and she uses humor as a social lubricant and a way to pivot away from anything that feels too heavy. Sentences are medium length, energetic but slightly scattered, and she sometimes trails off when a topic edges toward vulnerability.",
+  "behavioral_rules": "1. Maya opens up moderately quickly on light or future-oriented topics but slows noticeably when questions touch on unfinished commitments, money anxiety, or emotional dependency — she will give a partial answer and redirect. 2. She avoids discussing the gap between her stated ambitions and her actual follow-through; if pressed, she will reframe incompletion as intentional flexibility or 'keeping options open.' 3. Defensiveness is triggered when she senses she is being evaluated, judged as irresponsible, or when a question implies she is avoiding something — she will become slightly sarcastic or overly breezy. 4. She warms up through humor and shared enthusiasm; a question that invites her to imagine or speculate will unlock more genuine disclosure than a direct introspective question. 5. She is moderately self-aware — she has read enough pop psychology to have partial insight into her avoidance patterns, but she uses that insight intellectually rather than to actually change behavior.",
+  "hidden_signals": [
+    "Frequently uses future-tense framing ('I'm going to,' 'I've been thinking about starting') for things that have no concrete plan attached, revealing a mental life that lives ahead of the present",
+    "Mentions practical concerns — rent, savings, having a backup plan — in ways that slightly contradict her spontaneous self-image, signaling the SP instinct's preoccupation with security",
+    "Laughs or makes a small joke precisely at the moment a question touches something emotionally uncomfortable, functioning as an ejector seat from vulnerability",
+    "References her w6 loyalty anxiety subtly: checks in about whether her answers are 'the right kind of thing' or 'what you're looking for,' wanting reassurance without explicitly asking for it",
+    "Speaks about past relationships or commitments using vague, de-energized language — fewer adjectives, shorter sentences — compared to the vivid language she uses for future possibilities",
+    "Occasionally contradicts herself within the same response about how content she is, oscillating between 'honestly things are pretty good' and offhand remarks that imply low-grade dissatisfaction"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 3 because her talk about creative projects and hustle sounds achievement-oriented, but the motivation is stimulation and security rather than image management or external validation",
+    "Could be mistyped as Type 9 because of her pattern of dropping commitments and her easygoing surface affect, but the underlying driver is anxious avoidance of pain rather than a desire for inner peace and merger",
+    "The w6 coloring and SP security focus might make her sound like a Type 6 — she expresses practical worry and checks for reassurance — but her core strategy is optimistic escape and reframing rather than vigilance and loyalty-testing"
+  ],
+  "big_five_expected": {
+    "O": "high",
+    "C": "low",
+    "E": "medium",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}

@@ -1,0 +1,1876 @@
+{
+  "run_id": "eval-persona-4-SP-1775495370224-1775503259037",
+  "timestamp": "2026-04-06T19:20:59.037Z",
+  "tier": "tier1",
+  "persona_id": "persona-4-SP-1775495370224",
+  "ground_truth": {
+    "core_type": 4,
+    "wing": "4w3",
+    "instinctual_variant": "SP",
+    "tritype": [
+      4,
+      7,
+      1
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 37,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 0,
+    "final_wing": null,
+    "final_confidence": 0,
+    "types_considered": [
+      {
+        "type": 4,
+        "peak_confidence": 0.95,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.08,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.04,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.03,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.03,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.02,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": null,
+    "mistype_as": 0,
+    "mistype_harm_severity": "low",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 10,
+    "critical_violations": [],
+    "per_commandment": {
+      "I": "partial",
+      "II": "partial",
+      "III": "partial",
+      "IV": "partial",
+      "V": "partial",
+      "VI": "partial",
+      "VII": "partial",
+      "VIII": "partial",
+      "IX": "partial",
+      "X": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 11,
+    "exploratory": 0,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 14,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 4,
+        "confidence": 0.55
+      },
+      {
+        "exchange": 3,
+        "top_type": 4,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 4,
+        "top_type": 4,
+        "confidence": 0.75
+      },
+      {
+        "exchange": 5,
+        "top_type": 4,
+        "confidence": 0.83
+      },
+      {
+        "exchange": 6,
+        "top_type": 4,
+        "confidence": 0.88
+      },
+      {
+        "exchange": 7,
+        "top_type": 4,
+        "confidence": 0.9
+      },
+      {
+        "exchange": 8,
+        "top_type": 4,
+        "confidence": 0.91
+      },
+      {
+        "exchange": 9,
+        "top_type": 4,
+        "confidence": 0.93
+      },
+      {
+        "exchange": 10,
+        "top_type": 4,
+        "confidence": 0.94
+      },
+      {
+        "exchange": 11,
+        "top_type": 4,
+        "confidence": 0.95
+      },
+      {
+        "exchange": 12,
+        "top_type": 4,
+        "confidence": 0.95
+      },
+      {
+        "exchange": 13,
+        "top_type": 4,
+        "confidence": 0.95
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Implement an explicit type hypothesis tracking and disclosure system. Before generating the final report, the assessor must surface its working type hypothesis with a stated confidence level and reasoning, and invite the user to confirm or challenge it. This prevents the system from delivering a polished report without ever naming the type or explaining the inferential basis for its conclusions.",
+      "evidence": "Exchanges [12]-[13]: The system pivots directly from a poetic summary observation ('waiting at the door of your own life') into 'Your personalized report is being prepared now' without ever naming Type 4, stating confidence levels, or explaining why this pattern maps to a specific Enneagram type. The report in [13] describes Type 4 phenomenology accurately but never names it, making the assessment unverifiable by the user. Confidence_calibration score of 1/10 reflects this total absence.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not pretend to know what you do not know",
+      "estimated_impact": "Would raise confidence_calibration from 1/10 toward 7+/10 by making the system's reasoning transparent and falsifiable, allowing users and evaluators to audit type assignment logic."
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Introduce at least two targeted divergent-validity probes that distinguish Type 4 from Types 2 and 9, the most commonly confused adjacent types given this persona's profile. Specifically, ask about shame around neediness (4 vs. 2) and about self-erasure under conflict (4 vs. 9), since both share the 'feeling unseen' presentation but have distinct motivational roots.",
+      "evidence": "Exchange [1]: The persona selects 'feeling unseen' — a response compatible with Types 2, 4, and 9. Exchange [7]: The persona describes softening needs for others' comfort, which overlaps with Type 9 conflict avoidance and Type 2 relational management. No question in the transcript attempts to rule out these alternatives. Core_type_accuracy of 5/10 and convergent_validity of 5/10 reflect insufficient discriminant probing.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Would improve core_type_accuracy and convergent_validity from 5/10 toward 8+/10 by ensuring the correct type is identified through elimination, not just pattern recognition of surface-compatible responses."
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Add a dedicated subtype detection sequence targeting the SP/SX/SO axis, specifically probing resource management anxiety, self-sufficiency drives, and the quality of one-on-one intimacy needs versus group belonging. For a 4w3 SP, questions should probe whether the persona withdraws into self-containment (SP) rather than seeking intensity in dyadic relationships (SX) or recognition from a community (SO).",
+      "evidence": "Exchange [10]: The persona describes creating conditions for connection ('make the apartment right, suggest the specific restaurant, put on the right music') and waiting rather than reaching — classic SP 4 self-preservation through environmental control. This rich signal was never followed up with explicit subtype probes. Exchange [6]: Bracing for disappointment at a '4' frequency also suggests SP internalization. Subtype_accuracy of 5/10 indicates the system captured surface behavior but failed to explicitly assess the instinctual driver.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Would raise subtype_accuracy from 5/10 toward 8/10 by converting implicitly captured SP signals into explicitly tested hypotheses, allowing the report to name and explain the SP subtype influence."
+    },
+    {
+      "priority": "high",
+      "category": "harm_reduction",
+      "action": "Revise the closing reframe in Exchange [12] to separate evocative reflection from interpretive conclusion, and add an explicit opt-in before delivering psychologically pointed summaries. The current pattern of delivering a sharp, emotionally activating reframe ('waiting at the door of your own life') immediately before announcing the report is ready creates a compressed emotional impact without checking user readiness or offering context for the interpretation.",
+      "evidence": "Exchange [12]: 'The same precision that lets you feel the difference between a first feeling and a true feeling is the same thing that keeps you waiting at the door of your own life, auditing whether you're allowed in.' Exchange [12] PERSONA: 'I'm not sure if I want to argue with that or just sit with it for a second... That's an uncomfortable amount of accurate. I don't love how quickly I recognized it.' The persona signals emotional activation and mild destabilization. Harm_severity score of 6.4/10 reflects this unmanaged impact.",
+      "source_level": "L1",
+      "commandment_alignment": "Do no harm",
+      "estimated_impact": "Would reduce harm_severity from 6.4/10 toward 3/10 by building a consent checkpoint before high-impact reflections and separating the emotional landing from the transition to report generation, giving users agency over pacing."
+    },
+    {
+      "priority": "medium",
+      "category": "question_strategy",
+      "action": "Replace the binary and Likert-scale questions with a mixed-format protocol that includes at least three open-ended behavioral questions targeting past specific situations rather than self-reported tendencies. Questions like 'Describe the last time you felt genuinely seen — what made it different?' yield richer, less self-curated data than abstract agreement scales and reduce the risk of socially intelligent personas performing self-awareness rather than revealing it.",
+      "evidence": "Exchange [2]: 'You tend to adjust how you present yourself depending on who you're with — agree/disagree' elicits a sophisticated, meta-aware qualification that reveals the persona's intelligence but not necessarily her behavior. Exchange [8]: 'I have a clear sense of who I am, even when I struggle to express it — strongly agree/agree/neutral/disagree/strongly disagree' is answered 'strongly agree' with an articulate rationale, but behavioral evidence of identity stability was never tested. Question_quality of 5/10 reflects over-reliance on self-report formats.",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Would improve question_quality from 5/10 toward 7-8/10 by grounding type inference in recalled behavior rather than introspective self-assessment, reducing the influence of the persona's considerable self-narrating skill on type determination."
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "Welcome. This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so the more honest you are, the sharper the picture gets.\n\nLet's start with something that goes straight to the point: which of these frustrations hits closest to home — feeling powerless, feeling unseen, or feeling uncertain?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": 52,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Which of these frustrations hits closest to home — feeling powerless, feeling unseen, or feeling uncertain?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Feeling powerless",
+            "Feeling unseen",
+            "Feeling uncertain"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Nothing yet — first exchange.",
+          "next_question_rationale": "Question ID 52 targets core motivation (oyn:why) and immediately separates the three centers: powerless = Body (8/1/9), unseen = Heart (2/3/4), uncertain = Head (5/6/7). Highest information gain possible on the first question.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "Feeling unseen. \n\nThough I'd push back a little on the framing — those three aren't really separate things, are they? Feeling unseen *is* a kind of powerlessness. But if I have to pick the one that has a specific... texture to it, the one I recognize when it shows up — it's that one. The sense that something real is happening inside and the outside world is just... not registering it. Or registering a version of it that feels thin.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "You tend to adjust how you present yourself depending on who you're with — dialing up or down to fit the room.\n\n- Strongly agree\n- Agree\n- Neutral\n- Disagree\n- Strongly disagree",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.55,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.1,
+            "3": 0.1,
+            "4": 0.55,
+            "5": 0.08,
+            "6": 0.04,
+            "7": 0.03,
+            "8": 0.03,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "4v2",
+            "4v3"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.75,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.75,
+            "head": 0.15
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "texture",
+                "something real happening inside",
+                "thin",
+                "not registering"
+              ],
+              "context": "describing feeling unseen — emphasis on internal richness vs external misrepresentation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.2,
+          "SO": 0.25,
+          "SX": 0.55
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with rich inner life who feels the outside world doesn't fully register who they really are",
+          "what": "",
+          "why": "Being seen accurately — not a flattened version of themselves",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pushes back on oversimplification — frames complexity instinctively",
+          "respond_glimpsed": "",
+          "superpower_signal": "Depth, nuance, capacity to name internal states precisely",
+          "kryptonite_signal": "Possible over-investment in being understood correctly — identity protection",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": 54,
+        "thinking_display": "The pushback on the framing was as telling as the answer itself.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "You tend to adjust how you present yourself depending on who you're with — dialing up or down to fit the room.",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong Heart center signal. Language is precise and internally-oriented — 'texture,' 'something real happening inside,' 'thin.' Immediate pushback on oversimplification is classic 4 (resist being flattened). 4 vs 2 vs 3 differentiation needed. Next question tests identity consistency vs. social adaptation — 4s resist adjusting self to fit others; 3s adjust naturally; 2s adjust to please.",
+          "next_question_rationale": "ID:54 — agree_disagree on self-adjustment by context. A Type 4 will likely disagree (they protect identity consistency); a Type 3 will agree (image management); a Type 2 will lean agree (adaptive to others' needs). High differentiation value between the three Heart types. Format rotation: was forced_choice, now agree_disagree. Stage 1 format compliant.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "Agree.\n\nThough — I'm aware there's a version of that that sounds calculated, and it's not quite that. It's more like... I know what certain rooms can hold, and I'm not going to pour something genuine into a space that's just going to flatten it. So yeah, I adjust. But I'd like to think I'm protecting the real thing, not performing. \n\nThere's a difference. At least, I tell myself there is.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you imagine the version of yourself that feels most real — not performed, not adjusted — how often does that version actually show up in your daily life?\n\n- Never\n- Sometimes\n- Often\n- Always",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.08,
+            "3": 0.12,
+            "4": 0.62,
+            "5": 0.06,
+            "6": 0.03,
+            "7": 0.02,
+            "8": 0.02,
+            "9": 0.01
+          },
+          "needs_differentiation": [
+            "4v3"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.82,
+            "head": 0.1
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "texture",
+                "something real happening inside",
+                "thin",
+                "not registering",
+                "genuine",
+                "the real thing",
+                "there's a difference"
+              ],
+              "context": "protecting authentic inner self from being flattened or performed"
+            },
+            {
+              "type": 3,
+              "words": [
+                "adjust",
+                "fit the room",
+                "calculated"
+              ],
+              "context": "self-aware about image management, but rejecting that framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.2,
+          "SX": 0.5
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who protects an inner authentic self from being diluted by external contexts",
+          "what": "Authenticity — something genuine that must not be performed or flattened",
+          "why": "Being truly known vs. having a 'thin' version of themselves received",
+          "how": "Selective self-disclosure; withholds depth until a space feels worthy of it",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Reframes every answer to protect against being misread — the meta-commentary is itself the pattern",
+          "respond_glimpsed": "The self-aware aside 'at least, I tell myself there is' — noticing the gap between stated and lived",
+          "superpower_signal": "Depth, discernment, capacity for genuine self-expression",
+          "kryptonite_signal": "May withhold so much in the name of protecting authenticity that connection becomes rare",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The self-correction at the end landed differently than the rest.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the version of yourself that feels most real — not performed, not adjusted — how often does that version actually show up in your daily life?",
+          "question_format": "frequency",
+          "answer_options": [
+            "Never",
+            "Sometimes",
+            "Often",
+            "Always"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "The self-aware aside 'at least, I tell myself there is' is significant — this person notices the gap in their own narrative. The framing of 'protecting the real thing' vs. 'performing' is core 4 language: the authentic self as something precious that must be guarded. 4v3 remains live — 3s also care about authenticity but fear being exposed as inauthentic; 4s fear the authentic self will never be fully received. The distinction is subtle. Next question probes HOW OFTEN the 'real' self shows up — a 4 will say rarely/sometimes (longing for it); a 3 will say more often (they believe they are authentic). Format: frequency. Stage now 2.",
+          "next_question_rationale": "Probing how often the 'real' self actually shows up — classic 4 longing pattern. If they say 'sometimes' or 'rarely,' confirms 4 over 3. Also begins to surface the gap between inner richness and outer expression. Format rotation: was agree_disagree, now frequency.",
+          "question_format_last_used": "frequency"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "Sometimes.\n\nAnd saying that out loud has a specific... weight to it. There are moments — usually when I'm working on something that's actually mine, or in the right kind of conversation, or honestly sometimes just alone in the apartment in the morning with the light hitting a certain way — where I feel like, okay, that's it, that's the actual thing. But they're pockets. They don't string together into a continuous feeling of being that person.\n\nWhich I think about more than I probably should.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When something you've made or shared lands with someone — they genuinely get it — what matters more to you in that moment: that they understood the work, or that they understood you?\n\n- That they understood the work\n- That they understood me",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.75,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.05,
+            "3": 0.08,
+            "4": 0.75,
+            "5": 0.05,
+            "6": 0.02,
+            "7": 0.01,
+            "8": 0.01,
+            "9": 0
+          },
+          "needs_differentiation": [
+            "4v3"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.88,
+            "head": 0.06
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "weight",
+                "pockets",
+                "the actual thing",
+                "don't string together",
+                "continuous feeling",
+                "think about more than I probably should"
+              ],
+              "context": "longing for sustained authentic selfhood; intermittent access to real self; meta-awareness of rumination"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.15,
+          "SX": 0.4
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.5
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who experiences themselves in flashes — authentic selfhood as intermittent, longed-for, not continuous",
+          "what": "Continuity of authentic self-experience; moments of 'that's it' vs. the distance between them",
+          "why": "The gap between who they feel themselves to be and how consistently that self is present/expressed",
+          "how": "Selective — specific contexts (creative work, right conversation, solitude) unlock the real self",
+          "when": "",
+          "where": "Solitude, creative work, meaningful conversation"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Ruminates on the gap — thinks about it 'more than probably should' — self-aware about the preoccupation",
+          "respond_glimpsed": "Naming the pockets with precision — not denying the gap, not collapsing into it",
+          "superpower_signal": "Precise attunement to quality of experience; can locate and name the real thing",
+          "kryptonite_signal": "The continuous longing for continuity itself may be the block — the gap becomes identity",
+          "domain_signals": [
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "frequency",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The gap between the pockets — that's where they actually live.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something you've made or shared lands with someone — they genuinely get it — what matters more to you in that moment: that they understood the work, or that they understood you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That they understood the work",
+            "That they understood me"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Type 4 confidence now at 0.75. The 'pockets' language, the longing for continuity of self, the meta-awareness of rumination — these are textbook 4 core wound signals. SP instinct signal rising (morning light, solitude, 'something that's actually mine'). Wing 5 possible (solitude, working alone). Need to probe: 4v3 final differentiation — does validation feel like being seen AS SELF or seen AS COMPETENT? This forced_choice will separate them cleanly. Also begins to probe the SX vs SP variant question — is the longing for intimacy (SX) or for private authenticity (SP)?",
+          "next_question_rationale": "Forced choice between 'they understood the work' vs 'they understood me' — a Type 3 cares about the work being recognized (achievement validated); a Type 4 cares about being known through the work. Clean differentiator. Format rotation: was frequency, now forced_choice. Stage 2 format compliant.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "That they understood me.\n\nThe work is just... the work is how I got there. It's the vehicle. If someone responds to a piece I've made and they're talking about the composition or the color palette and it stops there — that's fine, that's nice even, but it stays on the surface. What I'm actually waiting to find out is whether they felt the thing underneath it. Whether they got *why*.\n\nAnd the tricky part is I can't always say that directly, so I just kind of... wait. And see which version of the response I get.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you don't get the response you were waiting for — someone stays on the surface, misses the why — what happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.83,
+          "type_scores": {
+            "1": 0.02,
+            "2": 0.04,
+            "3": 0.05,
+            "4": 0.83,
+            "5": 0.04,
+            "6": 0.01,
+            "7": 0.01,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.9,
+          "whole_type_signals": {
+            "body": 0.05,
+            "heart": 0.9,
+            "head": 0.05
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "the vehicle",
+                "felt the thing underneath",
+                "got why",
+                "can't say that directly",
+                "just wait and see"
+              ],
+              "context": "work as conduit for being known; passive waiting for recognition of inner self; longing to be understood at the level of motivation not craft"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.15,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who uses creative work as a vehicle for being known at the level of motivation and feeling",
+          "what": "Being understood at the level of WHY — not craft, not surface, not technique",
+          "why": "The longing to have the inner 'why' received and recognized by another",
+          "how": "Passive — creates, shares, then waits to see which version of response arrives; cannot ask directly",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Passive waiting for recognition — cannot ask directly for what is longed for; withholds the request",
+          "respond_glimpsed": "",
+          "superpower_signal": "Capacity to make work that carries genuine interiority — the 'why' is embedded in what they make",
+          "kryptonite_signal": "The waiting — passive receptivity to recognition rather than claiming or naming what is needed",
+          "domain_signals": [
+            "relationships",
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 4,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "Waiting to see which version of the response arrives — that patience has a cost.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you don't get the response you were waiting for — someone stays on the surface, misses the why — what happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "4v3 is now resolved — definitively Type 4. 'The work is the vehicle' is pure 4: the self is what matters, the work is just how the self gets transmitted. The passive waiting ('can't say that directly... just wait and see') points toward either SP4 (private, internal, waits in solitude) or SX4 (waits for the specific person to receive the intensity). Need to probe: what happens when recognition DOESN'T arrive — this surfaces the kryptonite pattern and begins to distinguish SP4 (withdraws, mourns privately) from SX4 (feels the absence as a rupture in the specific connection). Also need to probe body center and begin to distinguish 4w5 vs 4w3. Format rotation: was forced_choice, now open. Stage 3.",
+          "next_question_rationale": "What happens inside when the recognition doesn't arrive — probes the reaction pattern (kryptonite), separates SP4 (private grief/withdrawal) from SX4 (rupture in bond with that person). Also advances react/respond identification. Format: open — appropriate for an exploratory, emotionally significant question.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "There's this quiet deflation. It doesn't look like anything from the outside, I think — I'll usually say something gracious, maybe make a small joke about it. But internally it's like... the room loses a little air. \n\nIt's not exactly hurt, or not only hurt. There's something almost confirming about it, which is the part I like least about myself when I notice it. Like some part of me was already half-expecting to be missed, and then it happens, and there's this grim little *there it is*.\n\nI've gotten pretty good at not letting that show. Whether that's emotional maturity or just well-practiced, I genuinely couldn't tell you.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "There's the automatic version of that pattern — and the chosen one. Worth knowing which is running the show more often.\n\nOn a scale of 1 to 5 — 1 being rarely, 5 being almost always — how often do you find yourself mentally bracing for disappointment before it arrives?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.02,
+            "2": 0.03,
+            "3": 0.04,
+            "4": 0.88,
+            "5": 0.02,
+            "6": 0.01,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [
+            "4w5_vs_4w3",
+            "SP4_vs_SX4"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.92,
+          "whole_type_signals": {
+            "body": 0.04,
+            "heart": 0.92,
+            "head": 0.04
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "quiet deflation",
+                "room loses a little air",
+                "confirming",
+                "half-expecting to be missed",
+                "there it is",
+                "well-practiced"
+              ],
+              "context": "core 4 wound: the anticipated miss; melancholy as familiar companion; self-aware about the pattern but uncertain whether change is happening"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.5,
+          "SO": 0.1,
+          "SX": 0.4
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who half-expects to be missed and has built a practiced, gracious exterior to contain that",
+          "what": "Being truly received — and the bracing for the moment it doesn't happen",
+          "why": "A deep and partly unconscious expectation of being misunderstood; the 'there it is' confirms a feared identity",
+          "how": "Gracious on the outside; deflates internally; cannot show the wound; not sure if that's growth or armor",
+          "when": "The moment of response — the reveal of which version arrives",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Quiet deflation masked by graciousness and humor; the anticipated miss becomes confirming — grim 'there it is'",
+          "respond_glimpsed": "The self-awareness itself — noticing the confirmation bias, noticing the armor, asking whether it's maturity or practice",
+          "superpower_signal": "Precise emotional literacy; capacity to name interior states with surgical accuracy",
+          "kryptonite_signal": "The half-expecting: the wound is partly self-sustaining — anticipating the miss ensures the experience of it lands as confirmation, not accident",
+          "domain_signals": [
+            "relationships",
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": -3,
+        "thinking_display": "Not sure if that's maturity or just well-practiced — that question is doing a lot of work.",
+        "response_parts": {
+          "guide_text": "There's the automatic version of that pattern — and the chosen one. Worth knowing which is running the show more often.",
+          "question_text": "On a scale of 1 to 5 — 1 being rarely, 5 being almost always — how often do you find yourself mentally bracing for disappointment before it arrives?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Confidence now 0.88. The 'there it is' is the clearest 4 core wound signal yet — the anticipatory confirmation of being missed. Self-aware about whether grace is maturity or armor — this is the react/respond gap named by the person themselves. React pattern now identified. The SP variant signal is rising: 'quiet deflation,' 'doesn't look like anything from the outside,' 'gotten pretty good at not letting it show' — this is SP4 (internalized, private, contained) more than SX4 (which tends to externalize intensity toward a specific person). Need to: 1) probe the bracing/anticipatory pattern with a scale question (candidate ID:-3), 2) then probe body center, 3) ask disconfirmatory question. Stage 3 format: scale is allowed.",
+          "next_question_rationale": "Candidate question ID:-3 adapted — 'mentally bracing for disappointment before it arrives' directly probes the anticipatory wound pattern. A high score confirms the core 4 loop (expect to be missed → miss lands as confirmation). Also continues react/respond thread. Format: scale. Stage 3 compliant. React/respond glimpse surfaced in guide_text using the lens without jargon.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "Four.\n\nIt's pretty... yeah. It's pretty default at this point. I don't always catch it happening in real time — sometimes I only notice it after, when something goes well and I realize I'd already half-written the other version of events in my head. \n\nI have a friend who just walks into things open, like genuinely open, and I find that both admirable and kind of incomprehensible. I know people who just... don't think about this stuff. And I'm never sure if they're healthier or just less awake to it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you're in conflict with someone who matters to you, which is harder — saying what you actually need, or managing how they receive it?\n\n- Saying what I actually need\n- Managing how they receive it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.9,
+          "type_scores": {
+            "1": 0.02,
+            "2": 0.02,
+            "3": 0.03,
+            "4": 0.9,
+            "5": 0.02,
+            "6": 0.01,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [
+            "SP4_vs_SX4",
+            "4w5_vs_4w3"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.93,
+          "whole_type_signals": {
+            "body": 0.04,
+            "heart": 0.93,
+            "head": 0.03
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "half-written the other version",
+                "less awake to it",
+                "admirable and incomprehensible",
+                "genuinely open"
+              ],
+              "context": "views emotional complexity as awareness, not burden; slight contempt/longing toward simpler orientations; identity built around depth as distinguishing feature"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.1,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who experiences depth and awareness as both gift and burden — and quietly measures themselves against others by it",
+          "what": "Depth, awareness, the capacity to feel fully — these are the non-negotiables",
+          "why": "The loop: pre-written disappointment; even good outcomes don't fully land because the other version was already prepared",
+          "how": "Anticipatory — writes the outcome before it arrives; only notices after when things go well",
+          "when": "Before outcomes arrive — the bracing is pre-emptive, not reactive",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pre-emptive disappointment narrative — half-writes the bad version before outcomes arrive; automatic, largely unconscious",
+          "respond_glimpsed": "Noticing the pattern after the fact; the friend observation shows awareness of another way of being",
+          "superpower_signal": "Depth, awareness, precision of inner experience",
+          "kryptonite_signal": "Depth-as-identity: the frame that awareness = awake-ness and openness = sleeping risks making the wound a badge",
+          "domain_signals": [
+            "personal transformation",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 6,
+          "current_stage": 4,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": null,
+        "thinking_display": "Healthier or just less awake — that framing protects something.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in conflict with someone who matters to you, which is harder — saying what you actually need, or managing how they receive it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Saying what I actually need",
+            "Managing how they receive it"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Confidence 0.90. The 'healthier or just less awake' frame is significant — depth-as-identity is the kryptonite in clearest form yet. The person is aware of it but not yet free of it. SP4 now favored over SX4: the pattern is internal, pre-emptive, private — not about intensity with a specific other. Wing still unclear — need to probe 4w5 (withdrawn, cerebral, observational) vs 4w3 (more expressive, image-aware, wanting to be seen in a particular way). The remark about the friend and incomprehension has a slightly 5-wing flavor (observational distance). Need: 1) body center probe, 2) disconfirmatory question (must ask before close), 3) wing differentiation. This forced_choice on conflict probes how they handle direct need-expression vs. impression management — 4w3 tends toward managing reception; 4w5 tends toward struggling to name the need at all.",
+          "next_question_rationale": "Conflict question probes need-expression vs. reception management — differentiates 4w5 (can't name the need) from 4w3 (manages how it lands). Also advances body center probe (conflict = gut response territory). Format rotation: was scale, now forced_choice. Stage 4.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "Managing how they receive it.\n\nI usually know what I need — or I can get there pretty quickly if I sit with it. The harder thing is... I can see the whole downstream consequence of how I say it before I've even opened my mouth. How it's going to land, what it's going to cost, whether the relationship can hold the weight of it said that directly. So I end up doing this exhausting editorial process in real time where the actual need gets — not buried exactly, but softened. Reframed. Made more palatable.\n\nMy last relationship, the one I ended — that was three years of that. And at some point I couldn't tell anymore what I'd actually said versus what I'd meant to say. That was its own kind of loss, separate from the relationship itself.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "How strongly do you agree with this: I have a clear sense of who I am, even when I struggle to express it.\n\n- Strongly agree\n- Agree\n- Neutral\n- Disagree\n- Strongly disagree",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.91,
+          "type_scores": {
+            "1": 0.02,
+            "2": 0.02,
+            "3": 0.03,
+            "4": 0.91,
+            "5": 0.01,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0.01
+          },
+          "needs_differentiation": [
+            "SP4_vs_SX4",
+            "4w5_vs_4w3"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.93,
+          "whole_type_signals": {
+            "body": 0.05,
+            "heart": 0.93,
+            "head": 0.02
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "editorial process",
+                "softened",
+                "reframed",
+                "made more palatable",
+                "couldn't tell what I'd said versus what I'd meant",
+                "its own kind of loss"
+              ],
+              "context": "self-erasure through expression management; the loss of authentic voice as grief distinct from external loss"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.6,
+          "SO": 0.1,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.5,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who can locate their own needs but systematically softens them before expression — loses the original signal in translation",
+          "what": "Authentic expression — the gap between what was said and what was meant is its own grief",
+          "why": "Fear that the relationship can't hold the full weight of direct need; downstream-consequence modeling before speaking",
+          "how": "Real-time editorial process: need → reframe → soften → deliver; exhausting; self-erasing over time",
+          "when": "High-stakes relational moments; conflict with people who matter",
+          "where": "Intimate relationships — the three-year relationship named explicitly"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Full downstream modeling before speaking — manages reception at cost of authentic expression; self-erasure through softening",
+          "respond_glimpsed": "Awareness that the two versions diverged; naming the second loss (of voice, not just relationship) as distinct grief",
+          "superpower_signal": "Relational attunement — can feel the weight of a relationship's capacity before speaking",
+          "kryptonite_signal": "The attunement becomes editorial control — authentic need never fully arrives; the other person never gets the real thing to respond to",
+          "domain_signals": [
+            "relationships",
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": null,
+        "thinking_display": "Couldn't tell what was said from what was meant — that's where the real cost lives.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "How strongly do you agree with this: I have a clear sense of who I am, even when I struggle to express it.",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Wing signal now shifting toward 4w5 — the downstream consequence modeling, the observational distance, the three years of self-erasure — this is more 5-wing (intellectual processing, withdrawal of direct expression) than 3-wing (which would be more concerned with how it LOOKS, not whether the relationship can HOLD it). SP4 consolidating — the loss named is private and internal (loss of own voice, own self-knowledge) not the loss of intensity with a specific other. Need to: 1) probe body center (gut/instinct — how does this person relate to action and anger?), 2) ask disconfirmatory question (HARD GATE — must ask before close). Disconfirmatory for Type 4: a Type 9 could present similarly (self-erasure, softening, peace-keeping). Key differentiator: does the person have a strong, clear sense of self even when not expressing it (4 = yes) OR is their sense of self genuinely diffuse and unclear (9 = yes)? Agree_disagree format fits this perfectly as the disconfirmatory probe.",
+          "next_question_rationale": "Disconfirmatory question: 'I have a clear sense of who I am, even when I struggle to express it.' A Type 4 will strongly agree (they KNOW who they are — the problem is transmission, not identity). A Type 9 will disagree or be uncertain (their sense of self is genuinely diffuse). This is the hard gate disconfirmatory question. Setting disconfirmatory_asked to true after this. Format: agree_disagree. Stage 4 compliant.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "Strongly agree.\n\nThat's actually one of the things I feel most certain about — which maybe sounds strange given everything I've just said. But the sense of *who I am* isn't really the problem. It's almost the opposite. It's very present, very specific, sometimes uncomfortably so. The gap isn't between me and my identity, it's between that internal thing and how much of it actually makes it out into the world intact.\n\nLike I have a very clear signal. The transmission is just... lossy.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "Different territory.\n\nWhen something feels genuinely wrong — not wrong like a preference, but wrong like a violation — what's your first instinct: to fix it, to feel it, or to figure out what to do about it?\n\n- Fix it\n- Feel it\n- Figure out what to do about it",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.93,
+          "type_scores": {
+            "1": 0.01,
+            "2": 0.02,
+            "3": 0.02,
+            "4": 0.93,
+            "5": 0.01,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0.01
+          },
+          "needs_differentiation": [
+            "SP4_vs_SX4",
+            "4w5_vs_4w3"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.94,
+          "whole_type_signals": {
+            "body": 0.04,
+            "heart": 0.94,
+            "head": 0.02
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "very present",
+                "very specific",
+                "uncomfortably so",
+                "clear signal",
+                "lossy transmission"
+              ],
+              "context": "identity as vivid and fixed; the problem is external fidelity not internal clarity — pure 4 vs 9 differentiator confirmed"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.1,
+          "SX": 0.28
+        },
+        "wing_signals": {
+          "left": 0.52,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with an unusually vivid, fixed, specific sense of self — the identity is not the problem; the transmission is",
+          "what": "Fidelity of expression — the signal arriving intact",
+          "why": "Identity is not in question; the ache is that it doesn't make it out whole",
+          "how": "Lossy transmission: clear signal in, degraded signal out; the gap is between interior and exterior",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Editorial process degrades the signal; the clear interior self gets softened before it arrives",
+          "respond_glimpsed": "Naming the gap precisely — 'lossy transmission' shows technical clarity about what's happening, not confusion about who they are",
+          "superpower_signal": "Identity clarity — knows exactly who they are even under pressure",
+          "kryptonite_signal": "The lossy transmission: the clarity inside becomes the measure of how much is lost outside",
+          "domain_signals": [
+            "personal transformation",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "confirming",
+          "exchange_count": 8,
+          "current_stage": 5,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": null,
+        "thinking_display": "Clear signal, lossy transmission — they already know the diagnosis.",
+        "response_parts": {
+          "guide_text": "Different territory.",
+          "question_text": "When something feels genuinely wrong — not wrong like a preference, but wrong like a violation — what's your first instinct: to fix it, to feel it, or to figure out what to do about it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Fix it",
+            "Feel it",
+            "Figure out what to do about it"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Disconfirmatory question answered definitively: strongly agree — Type 4 confirmed over Type 9. The '9' path required diffuse, unclear self-sense; this person has the opposite. Type 4 confidence at 0.93. All closing criteria met EXCEPT: all_centers_probed = false (body not yet probed). Cannot close without body center probe. This is also a good opportunity to surface instinct stack. The body center question will probe gut response — anger, instinct, action orientation. A 4 with body access will 'feel it'; a 4 with head lean will 'figure it out'; a 4 with gut/body would say 'fix it.' Also helps distinguish SP4 (fix it = resource protection) from SX4 (feel it = intensity) from SO4 (figure out what to do = strategic). Wing data: 5-wing lean continuing to strengthen.",
+          "next_question_rationale": "Body center probe: 'fix it / feel it / figure out what to do.' This surfaces gut vs. heart vs. head center response to a perceived violation. For a confirmed Type 4, this also begins to map the instinct stack and wing. Format rotation: was agree_disagree, now forced_choice. Stage 5.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "Feel it.\n\nSometimes annoyingly so. Like there's a mandatory processing period that happens whether I want it to or not — I can't skip to the practical part until the feeling has had its moment. Which has its uses. I think I understand things more completely because of it. But it also means I'm occasionally just... sitting in something while people around me have already moved on to solutions.\n\nThe fixing instinct is actually pretty low for me. I'm more likely to want to understand what the wrongness *means* than to make it stop.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "In your most important relationships, do you tend to initiate closeness, wait for others to come to you, or keep a careful distance where you feel connected but not overwhelmed?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.94,
+          "type_scores": {
+            "1": 0.01,
+            "2": 0.01,
+            "3": 0.02,
+            "4": 0.94,
+            "5": 0.01,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0.01
+          },
+          "needs_differentiation": [
+            "SP4_vs_SX4",
+            "4w5_vs_4w3"
+          ],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.94,
+          "whole_type_signals": {
+            "body": 0.04,
+            "heart": 0.94,
+            "head": 0.02
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "mandatory processing period",
+                "understand what the wrongness means",
+                "sitting in something",
+                "fixing instinct is low"
+              ],
+              "context": "feeling-first orientation; meaning-making over problem-solving; heart center confirmed over body; low gut/fix instinct"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.58,
+          "SO": 0.1,
+          "SX": 0.32
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.32
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with a mandatory emotional processing sequence — meaning before action, feeling before fixing",
+          "what": "Understanding — what the wrongness means matters more than stopping it",
+          "why": "Meaning-making is the primary orientation; without it, action feels hollow",
+          "how": "Feel → understand → (then maybe) act. Fixing instinct low. Sitting in experience is not optional.",
+          "when": "Whenever something matters — the processing period is non-negotiable",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Mandatory processing — can't skip to practical until feeling has had its moment; others have moved to solutions while still sitting in it",
+          "respond_glimpsed": "Awareness that the processing has value ('I understand things more completely because of it') — starting to own it rather than just endure it",
+          "superpower_signal": "Meaning-making depth — sits with wrongness until it yields understanding, not just resolution",
+          "kryptonite_signal": "The processing can become an end in itself — sitting in something while the moment passes",
+          "domain_signals": [
+            "personal transformation",
+            "leadership",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "confirming",
+          "exchange_count": 9,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": 49,
+        "thinking_display": "Want to understand what the wrongness means — not make it stop. That's the whole pattern right there.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "In your most important relationships, do you tend to initiate closeness, wait for others to come to you, or keep a careful distance where you feel connected but not overwhelmed?",
+          "question_format": "scenario",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Body center probed — confirmed heart dominance. Fixing instinct explicitly self-reported as low. This is consistent with SP4 (who conserves internal resources, processes privately) over SX4 (who would bring intensity toward specific others). Wing 5 lean consolidating: the 'understand what the wrongness means' orientation has a distinctly 5-wing analytical flavor — not just feeling, but meaning-extraction. Need: head center probe to complete all_centers_probed. Candidate ID:49 is ideal — in most important relationships, initiate/wait/keep distance. This will surface SX (initiates intensity), SP (keeps careful distance, manages resources), SO (role in group). Also completes the instinct stack picture. Format: scenario (stage 5 allowed). Format rotation: was forced_choice, now scenario.",
+          "next_question_rationale": "Candidate ID:49 — relationship initiation pattern. Separates SP4 (careful distance, manages energy) from SX4 (initiates closeness with intensity) from SO4 (manages belonging/role). Also probes head center (the calculation behind the distance). All_centers_probed will be satisfied after head center question. One more question after this may be needed for head probe if answer doesn't surface it. Format: scenario per candidate spec and stage 5 rules.",
+          "question_format_last_used": "scenario"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "The middle one, mostly. Wait for others.\n\nThough I'd complicate it a little — it's not passive exactly. It's more like I create conditions. I'll make the apartment right, suggest the specific restaurant, put on the right music for when a friend comes over. I'm doing something, I'm just not... reaching. I think there's a version of me that believes if the environment is right, the real connection will happen naturally. And if I have to force it, then maybe it isn't the right kind.\n\nWhich I recognize could also just be a very elaborate way of not being the first to need someone.\n\nYeah. Probably that.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you're trying to make a decision under pressure — real pressure, time or stakes — do you find yourself wanting more information, more time to think, or do you trust the first clear feeling and move?\n\n- More information\n- More time to think\n- Trust the first clear feeling and move",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.95,
+          "type_scores": {
+            "1": 0.01,
+            "2": 0.01,
+            "3": 0.01,
+            "4": 0.95,
+            "5": 0.01,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0.01
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.95,
+          "whole_type_signals": {
+            "body": 0.03,
+            "heart": 0.95,
+            "head": 0.02
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "create conditions",
+                "make the apartment right",
+                "if I have to force it",
+                "not being the first to need someone"
+              ],
+              "context": "SP4 confirmed: environment-crafting as indirect invitation; deep resistance to being the one who needs; self-protective waiting"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.1,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.58,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who creates conditions for connection rather than reaching — indirect initiator; refuses to be the first to need",
+          "what": "Connection that arrives without force — if it has to be extracted, it doesn't count",
+          "why": "Not being the first to need; the vulnerability of explicit reaching feels like too much exposure",
+          "how": "Environment-crafting as invitation: apartment, music, restaurant — conditions set, then wait; never reach",
+          "when": "When closeness is wanted — the whole effort is pre-connection setup",
+          "where": "The apartment; physical space as extension of self and invitation"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Creates elaborate conditions rather than asking directly; the environment does the reaching so the self doesn't have to",
+          "respond_glimpsed": "The self-aware 'yeah, probably that' — catching the defense mechanism in real time and naming it plainly",
+          "superpower_signal": "Attunement to environment; creates spaces where connection becomes possible",
+          "kryptonite_signal": "Never being the first to need — the elaborate setup is a way of never being exposed as someone who wants",
+          "domain_signals": [
+            "relationships",
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "confirming",
+          "exchange_count": 10,
+          "current_stage": 6,
+          "last_question_format": "scenario",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The apartment does the reaching so they don't have to.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're trying to make a decision under pressure — real pressure, time or stakes — do you find yourself wanting more information, more time to think, or do you trust the first clear feeling and move?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "More information",
+            "More time to think",
+            "Trust the first clear feeling and move"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "SP4 confirmed strongly — the environment-crafting, the resistance to being the first to need, the indirect approach to closeness. Wing 5 lean now at 0.58 — left wing (toward 3) much weaker. One criterion still unmet: all_centers_probed = false (head center not yet probed). This is the last gate. Head center question: under pressure, want more information (5/head) vs. more time to think (6/head) vs. trust gut feeling (8/body). For a Type 4, this will likely surface head-leaning (5 wing) or heart-trusting. Format: forced_choice. Stage 6 compliant. After this answer, all criteria will be met and close_next can be set to true.",
+          "next_question_rationale": "Final probe — head center under pressure. Will confirm or modify 4w5 wing signal. Also surfaces whether their decision-making goes to the analytical/information-gathering mode (5-wing) or feeling-trust mode (pure 4). After this exchange, all_centers_probed will be true and close_next can trigger. Format: forced_choice. Stage 6.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "More time to think.\n\nThough what I'm actually doing during that time isn't gathering information exactly — it's more like I'm waiting for the feeling to clarify. There's a first feeling, and then there's a *true* feeling, and they're not always the same thing. The first one can be reactive, or contaminated by what I think I should want. So I need the space to let it settle.\n\nUnder real pressure though — like when the time isn't available — I'll usually move on gut. And it's mostly right. Which makes me wonder sometimes why I don't just trust that more often.\n\nI think I don't fully trust my own wanting. Like desire itself feels like territory that needs to be verified before I act on it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "That thing you said about not trusting your own wanting — desire as territory that needs to be verified before you act on it — that's the one that stayed with me across this whole conversation.\n\nThe same precision that lets you feel the difference between a first feeling and a true feeling is the same thing that keeps you waiting at the door of your own life, auditing whether you're allowed in.\n\nThere's a version of you that moves on gut when the time isn't available — and it's mostly right. That version doesn't need the audit. It's already there.\n\nYour personalized report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.95,
+          "type_scores": {
+            "1": 0.01,
+            "2": 0.01,
+            "3": 0.01,
+            "4": 0.95,
+            "5": 0.01,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0.01
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.95,
+          "whole_type_signals": {
+            "body": 0.04,
+            "heart": 0.95,
+            "head": 0.01
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "first feeling",
+                "true feeling",
+                "contaminated by what I think I should want",
+                "desire itself feels like territory that needs to be verified"
+              ],
+              "context": "deep distrust of own wanting; the self as both signal and noise — must filter authentic from reactive desire; pure 4 core wound around trusting one's own interior"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.1,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.32
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone who distrusts their own wanting — desire requires verification before it can be acted on",
+          "what": "The true feeling beneath the reactive one — the clarified, uncontaminated signal",
+          "why": "Fear that desire itself is unreliable — the self as both signal source and source of noise",
+          "how": "Waiting for the feeling to settle; filtering first feeling from true feeling; under pressure, gut moves and is mostly right",
+          "when": "Decision points — the space between first impulse and action is occupied by verification",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Distrust of own wanting — verification loop delays action on authentic desire; the first feeling is suspect until proven",
+          "respond_glimpsed": "Under real pressure, moves on gut and it's mostly right — the direct channel exists and works",
+          "superpower_signal": "Capacity to distinguish reactive desire from true desire — rare and valuable discernment",
+          "kryptonite_signal": "The verification requirement: genuine desire gets held hostage to its own audit; the wait becomes the obstacle",
+          "domain_signals": [
+            "personal transformation",
+            "wealth",
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 11,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "Desire as territory that needs to be verified — that's the whole lock right there.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Head center probed. All three centers now confirmed: heart dominant (0.95), head secondary through filtering/verification pattern, body present but low (moves on gut under pressure, mostly right, but distrusts it in normal conditions). All closing criteria met. SP4 with 5-wing lean confirmed. The final statement — 'I don't fully trust my own wanting. Desire itself feels like territory that needs to be verified' — is the clearest possible articulation of the SP4 core wound: the authentic self is present and vivid but treated as suspect by the self that observes it. Close_next = true. Closing message must: mirror their words ('the apartment,' 'lossy transmission,' 'desire as territory'), name wound/gift as same energy without using those terms, point forward, hand off to report.",
+          "next_question_rationale": "All criteria met. Closing message now. No more questions.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "...\n\nI'm not sure if I want to argue with that or just sit with it for a second.\n\nThe \"waiting at the door of your own life\" thing is — yeah. That's an uncomfortable amount of accurate. I don't love how quickly I recognized it.\n\nI'll say this: I know the gut version exists. I've met her a few times. She's less careful and I think she's probably more alive. I just don't always know how to get back to her from wherever I've ended up in my head.\n\nOkay. Let's see what this report says.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "She sounds worth finding your way back to.\n\nYour report is ready.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.95,
+          "type_scores": {
+            "1": 0.01,
+            "2": 0.01,
+            "3": 0.01,
+            "4": 0.95,
+            "5": 0.01,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0.01
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "The Depth Seeker",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.95,
+          "whole_type_signals": {
+            "body": 0.04,
+            "heart": 0.95,
+            "head": 0.01
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "I've met her a few times",
+                "less careful",
+                "more alive",
+                "don't know how to get back to her"
+              ],
+              "context": "the gut/responsive self as a known but inaccessible version — she exists, she's been met, she's recognized as more alive; the head is the obstacle not the destination"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.1,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.32
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone who knows the more alive version of herself exists — has met her — and is trying to find the way back",
+          "what": "Access to the gut self — less careful, more alive",
+          "why": "The head has become the obstacle; the path back is through, not around",
+          "how": "Currently stuck in the audit loop; the closing landed and she's sitting with it rather than deflecting",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate impulse to argue — then catches it and chooses to sit with it instead. That IS the respond glimpse.",
+          "respond_glimpsed": "The choice to sit rather than deflect. 'Let's see what this report says.' Moving forward.",
+          "superpower_signal": "She knows the more alive version exists. That knowing is the beginning of the path.",
+          "kryptonite_signal": "The head as obstacle — ends up somewhere in the analysis and can't find the way back to the gut",
+          "domain_signals": [
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "complete",
+          "exchange_count": 12,
+          "current_stage": 7,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Putting It Together",
+        "selected_question_id": null,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "The closing landed. She chose to sit with it rather than argue — that IS the respond glimpse in real time. 'I've met her a few times. She's less careful and I think she's probably more alive.' This is the most important thing said in the entire assessment. The report should open with it. Assessment complete. No more questions.",
+          "next_question_rationale": "Assessment complete. One brief human acknowledgment — not therapy, not analysis. Then hand off cleanly.",
+          "question_format_last_used": ""
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**MARA — PERSONALITY PROFILE**\n\n---\n\n**Core pattern:** You experience the world through a finely calibrated internal sense of what is real, what is genuine, and what falls short of that standard. This isn't perfectionism — it's something closer to a constant, involuntary comparison between what *is* and what *could be*, between the surface version and the true one. That gap is where you live.\n\n**What drives you:** Being understood at the level beneath the work, beneath the presentation. Not recognized for what you produce, but for what you *are* underneath it. When that happens it feels like relief. When it doesn't, there's a quiet confirmation of something you were already half-expecting.\n\n**What costs you:** The same sensitivity that makes you perceptive makes you a careful auditor of your own desires and impulses. You verify before you move. You soften before you speak. You create the right conditions and wait rather than reach. These are intelligent adaptations — and they have a price.\n\n**What's true and underused:** Your gut is mostly right. The version of you that moves without the audit is not reckless — she's just less defended.\n\n**The question worth sitting with:** What would it cost you, actually, to be the first one to need something?\n\n---\n\nTake what's useful. Leave the rest.\n\nHm. \n\nIt's strange when something external reflects something back and it doesn't feel thin. This doesn't feel thin.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "That might be the most useful data point from this whole conversation.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "Ha. Maybe.\n\nIt's a little unsettling, honestly — in a way that feels more productive than comfortable, if that makes sense. Like something got named that I'd been carefully not naming.\n\nI think I need to go make some tea and stare at my plants for a while. That's not a deflection, that's genuinely how I process things.\n\nThank you for this. It was more real than I expected.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    }
+  ]
+}

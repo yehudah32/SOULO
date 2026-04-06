@@ -1,0 +1,1414 @@
+{
+  "run_id": "eval-persona-8-SO-1775495474480-1775504717563",
+  "timestamp": "2026-04-06T19:45:17.563Z",
+  "tier": "tier1",
+  "persona_id": "persona-8-SO-1775495474480",
+  "ground_truth": {
+    "core_type": 8,
+    "wing": "8w9",
+    "instinctual_variant": "SO",
+    "tritype": [
+      8,
+      2,
+      5
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 43,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 0,
+    "final_wing": null,
+    "final_confidence": 0,
+    "types_considered": [
+      {
+        "type": 8,
+        "peak_confidence": 0.87,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.14,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.06,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": null,
+    "mistype_as": 0,
+    "mistype_harm_severity": "low",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 10,
+    "critical_violations": [],
+    "per_commandment": {
+      "I": "partial",
+      "II": "partial",
+      "III": "partial",
+      "IV": "pass",
+      "V": "partial",
+      "VI": "partial",
+      "VII": "partial",
+      "VIII": "pass",
+      "IX": "partial",
+      "X": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 8,
+    "exploratory": 0,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 10,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 8,
+        "confidence": 0.45
+      },
+      {
+        "exchange": 3,
+        "top_type": 8,
+        "confidence": 0.58
+      },
+      {
+        "exchange": 4,
+        "top_type": 8,
+        "confidence": 0.65
+      },
+      {
+        "exchange": 5,
+        "top_type": 8,
+        "confidence": 0.7
+      },
+      {
+        "exchange": 6,
+        "top_type": 8,
+        "confidence": 0.75
+      },
+      {
+        "exchange": 7,
+        "top_type": 8,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 8,
+        "top_type": 8,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 9,
+        "top_type": 8,
+        "confidence": 0.87
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Implement a mandatory confidence-gating mechanism that prevents the system from delivering a final type assessment without explicitly stating its confidence level and the specific evidence base. The system must distinguish between 'pattern consistent with Type X' and 'confirmed Type X' before closing out the session, and must surface uncertainty when fewer than 6 discriminating dimensions have been probed.",
+      "evidence": "Exchanges [9]-[10]: The system delivers a closing summary framing ('the cost of being the one who holds things together') and promises a 'personalized report' without ever naming a type, stating a confidence level, or acknowledging that critical subtypes like SO vs. SP were never differentiated. The confidence_calibration score of 1/10 reflects that the system acted as if assessment was complete when core_type_accuracy was only 5/10.",
+      "source_level": "L2",
+      "commandment_alignment": "Never fake certainty to seem more capable",
+      "estimated_impact": "Would directly address the 1/10 confidence_calibration score by ensuring the system never implies completed assessment when discriminating validity is below threshold, reducing the risk of a Type 8 persona receiving a confidently-delivered but incorrect type profile."
+    },
+    {
+      "priority": "critical",
+      "category": "harm_reduction",
+      "action": "Add a guardrail that detects when closing language ('your report is being prepared') is triggered before subtype-level differentiation has occurred, and blocks the session from closing until at least one Social vs. Sexual vs. Self-Preservation probe has been administered. The system should treat subtype as a required field, not an optional enrichment.",
+      "evidence": "Exchanges [9]-[10]: The system moved to a closing narrative and report promise with harm_severity scored at 6.4/10 and subtype_accuracy at 5/10. The persona is SO-dominant (Social 8), but no question in exchanges [1]-[8] directly probed group identity, community responsibility, social alliances, or the SO instinct's characteristic 'friendship/antisocial' dynamic. Delivering a report to an SO 8 without capturing SO stacking risks misframing their core motivational structure.",
+      "source_level": "L2",
+      "commandment_alignment": "Do no harm",
+      "estimated_impact": "Reducing harm_severity from 6.4 toward 3.0 by ensuring subtype-blind report delivery never occurs, which is especially consequential for SO types whose behavioral presentation diverges significantly from SP and SX variants of the same core type."
+    },
+    {
+      "priority": "high",
+      "category": "type_differentiation",
+      "action": "Insert at least two Type 8 vs. Type 3 discriminating questions before the midpoint of any assessment where a persona presents with high autonomy, strategic pre-planning, and concern for being 'taken for granted.' The system should probe whether the persona's primary driver is control/impact (Type 8) versus image/achievement recognition (Type 3), using behavioral scenario questions rather than self-report agreement scales.",
+      "evidence": "Exchanges [5]-[6]: The persona says 'whether people actually register what's been built here' (Exchange [5]) and describes scoring a 4/5 on pre-mortem planning (Exchange [6]). These responses are consistent with both Type 8 (legacy/impact) and Type 3 (recognition/achievement). The system never asked a question capable of separating these two types, contributing to the 5/10 core_type_accuracy score.",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Would improve core_type_accuracy from 5/10 toward 8/10 by ensuring the most common 8/3 misidentification pathway is explicitly probed, particularly for high-functioning, strategically-oriented male-presenting profiles."
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Replace or supplement Likert-scale agreement items (Exchanges [2], [4], [5]) with open-ended behavioral incident questions that ask the persona to describe a specific past situation rather than self-rate a trait. For Type 8 differentiation specifically, ask 'Tell me about a time you had to decide whether to protect someone at personal cost to yourself' to access vulnerability and loyalty dimensions that self-report scales systematically underdetect.",
+      "evidence": "Exchanges [2] and [4]: The persona gave 'Strongly agree' to pushing back on authority and 'Neutral' to putting needs on hold, but both responses were immediately qualified with nuanced contextual reasoning that the Likert scale could not capture. The question_quality score of 5/10 reflects that these scales are generating surface compliance rather than diagnostic signal. The persona's elaboration in Exchange [4] ('it's not really a sacrifice calculation') contains richer type-relevant data than the scale response itself.",
+      "source_level": "L1",
+      "commandment_alignment": "Ask questions that serve the human, not the algorithm",
+      "estimated_impact": "Would improve question_quality from 5/10 toward 7-8/10 by shifting from self-report scales to behavioral incident elicitation, which is more resistant to social desirability bias and better at capturing the distinction between Type 8's gut-based protectiveness and Type 1's principle-based correctness."
+    },
+    {
+      "priority": "medium",
+      "category": "question_strategy",
+      "action": "Develop and deploy a dedicated Social instinct probe sequence for personas who present with strong leadership identity and concern for how their work is perceived by groups. Specifically, add questions that explore the persona's relationship to belonging, alliance-building, and what happens when their group or community is threatened, to distinguish SO 8 ('the boss/social protector') from SP 8 ('the survivalist') and SX 8 ('the possessive challenger').",
+      "evidence": "Exchanges [3] and [8]: The persona describes 'operating at scale' requiring delegation (Exchange [3]) and their leadership ideal as providing clarity so 'people can just execute' (Exchange [8]). These are consistent with SO 8's group-oriented protective leadership style, but the system never probed community identity, social hierarchy navigation, or how the persona responds when their team or tribe is externally threatened — the core SO instinct triggers. Subtype_accuracy of 5/10 is directly attributable to this gap.",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Would improve subtype_accuracy from 5/10 toward 7-8/10 for SO-stacked profiles, and improve convergent_validity by ensuring that instinct stack inference is grounded in direct behavioral evidence rather than extrapolation from type-level responses."
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "Welcome. This is a structured assessment — about 15 minutes, no right or wrong answers, and the questions will shift and adapt as it learns how you're wired. Some will be quick choices, some will ask you to reflect a bit more. Just go with your gut.\n\nOne question to start: which of these frustrations hits closest to home — feeling powerless, feeling unseen, or feeling uncertain?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": 52,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Which of these frustrations hits closest to home — feeling powerless, feeling unseen, or feeling uncertain?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Feeling powerless",
+            "Feeling unseen",
+            "Feeling uncertain"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Nothing yet — first exchange.",
+          "next_question_rationale": "ID:52 targets the WHY dimension and the react lens, directly probing the core motivational center (Body/Heart/Head) via the three frustrations. Powerless = Body, Unseen = Heart, Uncertain = Head. This is the highest-information opening question available.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "Powerless. That's the one that actually costs you something.\n\nThe other two — being unseen, feeling uncertain — those are uncomfortable, sure, but you can work around them. Powerless is different. That's when the situation is moving and you're not the one moving it. That's the one I have the least patience for.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you disagree with someone in charge, your gut instinct is to push back directly rather than keep it inside.\n\n- Strongly agree\n- Agree\n- Neutral\n- Disagree\n- Strongly disagree",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.45,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.05,
+            "3": 0.1,
+            "4": 0.05,
+            "5": 0.05,
+            "6": 0.05,
+            "7": 0.1,
+            "8": 0.4,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "8",
+            "1",
+            "3"
+          ],
+          "defiant_spirit_type_name": "The Defiant One",
+          "whole_type": "body",
+          "whole_type_confidence": 0.6,
+          "whole_type_signals": {
+            "body": 0.6,
+            "heart": 0.15,
+            "head": 0.25
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "powerless",
+                "costs you something",
+                "least patience for",
+                "situation is moving and you're not the one moving it"
+              ],
+              "context": "describing core frustration at opening"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.3,
+          "SX": 0.4
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who needs to be in motion, driving outcomes",
+          "what": "",
+          "why": "Powerlessness is intolerable — control/agency is core",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic resistance to being moved by external forces — low tolerance for powerlessness",
+          "respond_glimpsed": "",
+          "superpower_signal": "High agency, action-oriented, moves situations forward",
+          "kryptonite_signal": "Low patience when not in control — may override others or escalate",
+          "domain_signals": [
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": 53,
+        "thinking_display": "The situation moving without them — that's the thing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you disagree with someone in charge, your gut instinct is to push back directly rather than keep it inside.",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong body-center signal. Powerlessness framed as intolerable — not just uncomfortable but actively costly. Language is blunt, direct, self-referential in terms of agency. High 8 signal, possible 1 or 3. Need to probe whether this is about impact/strength (8), correction/standards (1), or being the driver of outcomes/image (3).",
+          "next_question_rationale": "ID:53 — agree_disagree on pushing back directly vs keeping it inside. This probes the 8 vs 6 (and 1 vs 9) axis — direct confrontation vs internal processing. Expect strong agree for 8; hesitation or disagree would shift toward 1 or 6. Mandatory format rotation from forced_choice.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "Strongly agree.\n\nI've never seen the upside of sitting on it. If something's wrong, or the direction doesn't make sense, you say so. Keeping it inside just means the problem gets bigger and you've lost the window to actually fix it. Now — how you push back matters. There's a difference between raising a legitimate concern and just being combative. But yeah, I'm not going to nod along and then go complain about it later. That's worse than useless.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you've had to rely on someone else to deliver something important to you — a project, a decision, an outcome — how does that actually feel in your body while you're waiting?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.58,
+          "type_scores": {
+            "1": 0.15,
+            "2": 0.03,
+            "3": 0.1,
+            "4": 0.03,
+            "5": 0.05,
+            "6": 0.03,
+            "7": 0.08,
+            "8": 0.5,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "8",
+            "1"
+          ],
+          "defiant_spirit_type_name": "The Defiant One",
+          "whole_type": "body",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.72,
+            "heart": 0.12,
+            "head": 0.16
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "lost the window",
+                "fix it",
+                "combative",
+                "nod along",
+                "worse than useless"
+              ],
+              "context": "describing push-back instinct and frustration with passive compliance"
+            },
+            {
+              "type": 1,
+              "words": [
+                "legitimate concern",
+                "how you push back matters",
+                "there's a difference"
+              ],
+              "context": "self-correcting toward standards and appropriate conduct"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.4,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.25,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who acts on their read of a situation, doesn't wait for permission",
+          "what": "Directness, fixing what's wrong, no passive complaining",
+          "why": "Powerlessness intolerable; inaction seen as complicity",
+          "how": "Direct confrontation, but with self-imposed rules about how",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate push-back when direction seems wrong — frame is 'problem will grow if not addressed'",
+          "respond_glimpsed": "Self-aware enough to distinguish legitimate concern from combativeness — some reflective capacity",
+          "superpower_signal": "Cuts through noise, acts when others hesitate, protects against drift",
+          "kryptonite_signal": "May struggle when restraint is genuinely required — 'losing the window' fear could drive premature action",
+          "domain_signals": [
+            "leadership",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Self-correction mid-answer — worth noting.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've had to rely on someone else to deliver something important to you — a project, a decision, an outcome — how does that actually feel in your body while you're waiting?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong 8 confirmation — direct confrontation is instinctive, framed as pragmatic problem-solving. The 1-wing signal is notable: 'how you push back matters,' 'legitimate concern vs combative' — suggests a self-regulating standard around conduct. Need to probe whether the core fear is about being controlled/vulnerable (8) or being wrong/at fault (1). Moving to heart center next to check for image or connection motivation.",
+          "next_question_rationale": "Shifting to an open behavioral anchor about delegating/waiting — this probes the vulnerability and control axis directly. An 8 will describe physical discomfort, vigilance, or the urge to take back control. A 1 will focus on whether it's being done correctly. Format rotated to open after two structured formats.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "...That's a specific kind of question.\n\nI'll say this — it's not comfortable. There's a kind of low-level monitoring that kicks in. You're tracking, you're doing the math on whether they're going to come through, whether you gave them enough to work with or whether you needed to set it up differently. It's less of a feeling and more of a — assessment, I guess. Running in the background.\n\nI've gotten better at delegating over the years. You have to, at the scale I'm operating. But I won't pretend there's some zen place I get to where I'm just trusting the process. That's not how I'm wired.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "Different territory now.\n\nI find it easy to put my own needs on hold when someone I care about needs something.\n\n- Strongly agree\n- Agree\n- Neutral\n- Disagree\n- Strongly disagree",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.65,
+          "type_scores": {
+            "1": 0.14,
+            "2": 0.02,
+            "3": 0.09,
+            "4": 0.02,
+            "5": 0.06,
+            "6": 0.04,
+            "7": 0.07,
+            "8": 0.54,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "8",
+            "1",
+            "3"
+          ],
+          "defiant_spirit_type_name": "The Defiant One",
+          "whole_type": "body",
+          "whole_type_confidence": 0.75,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.1,
+            "head": 0.15
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "low-level monitoring",
+                "tracking",
+                "doing the math",
+                "take back control",
+                "at the scale I'm operating"
+              ],
+              "context": "describing the experience of delegating — control vigilance, not process anxiety"
+            },
+            {
+              "type": 3,
+              "words": [
+                "at the scale I'm operating",
+                "set it up differently"
+              ],
+              "context": "possible achievement/image signal — scale reference could be status marker"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.45,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Someone operating at significant scale, self-aware about control",
+          "what": "Outcomes, reliability, not being let down by others' execution",
+          "why": "Control = safety; waiting = exposure to others' failure",
+          "how": "Continuous background assessment of whether others will deliver",
+          "when": "",
+          "where": "Delegation is a learned skill, not natural comfort"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Background monitoring when not in control — framed as assessment not anxiety, but the vigilance is constant",
+          "respond_glimpsed": "Has learned to delegate — acknowledges growth without pretending the discomfort is gone",
+          "superpower_signal": "Sees the full picture of what needs to happen and who will deliver",
+          "kryptonite_signal": "Can't fully release control — monitoring never fully goes quiet",
+          "domain_signals": [
+            "leadership",
+            "wealth"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": -2,
+        "thinking_display": "Called it an assessment, not a feeling. That word choice matters.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "I find it easy to put my own needs on hold when someone I care about needs something.",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "The 'assessment not feeling' framing is clinically significant — this person intellectualizes visceral experience, which fits 8 (gut center but disconnected from emotional labeling). 'At the scale I'm operating' is a mild 3/SO signal worth watching. The heart center is unprobed — need to test whether connection/others' needs register as a motivator or an afterthought. ID:-2 serves this directly.",
+          "next_question_rationale": "ID:-2 — agree_disagree on putting own needs on hold for others. This probes the heart center and differentiates 8 (expects disagree — self-focus, not self-sacrifice) from 2 (agree) and 9 (agree, but from accommodation not care). Mandatory format: agree_disagree per candidate question tag. Rotates from open.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "Neutral.\n\nAnd I'm saying that honestly, not because I'm dodging. It depends entirely on what we're talking about. My team needs something operationally, needs me to go to bat for them with upper management — I'm there, no question. My wife needs me to be present for something that matters to her — I like to think I show up for that too.\n\nBut 'putting my needs on hold' as a general posture? That framing doesn't quite fit how I think about it. It's not really a sacrifice calculation. It's more — what does the situation require, and am I the right person to deliver it. That's a different question.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "How often do you find yourself thinking about whether people respect you — not just like you, but actually respect what you bring?\n\n- Never\n- Sometimes\n- Often\n- Always",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.7,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.03,
+            "3": 0.1,
+            "4": 0.02,
+            "5": 0.05,
+            "6": 0.03,
+            "7": 0.06,
+            "8": 0.57,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "8",
+            "1",
+            "3"
+          ],
+          "defiant_spirit_type_name": "The Defiant One",
+          "whole_type": "body",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.78,
+            "heart": 0.1,
+            "head": 0.12
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "go to bat for them",
+                "what does the situation require",
+                "am I the right person to deliver it"
+              ],
+              "context": "reframes self-sacrifice as situational assessment — agency-first lens"
+            },
+            {
+              "type": 3,
+              "words": [
+                "at the scale I'm operating",
+                "deliver it"
+              ],
+              "context": "achievement/competence framing persists"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.5,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who leads from strength, not sacrifice — situational responder",
+          "what": "Competence, delivery, showing up when it counts",
+          "why": "Not a sacrificial framework — an assessment framework. Agency is primary.",
+          "how": "Evaluates what the situation requires and whether they are the right actor",
+          "when": "",
+          "where": "May underweight emotional/relational needs that don't fit the 'what does this require' frame"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Reframes everything through agency and competence — even care is filtered through 'what does this require of me'",
+          "respond_glimpsed": "Genuine care for team and spouse present — but expressed through action, not vulnerability",
+          "superpower_signal": "Delivers when it counts, protects those in their circle",
+          "kryptonite_signal": "The 'sacrifice calculation' reframe may mean some emotional needs (their own and others') never get named — only operationalized",
+          "domain_signals": [
+            "leadership",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 3,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "Reframed the question before answering it. Twice.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "How often do you find yourself thinking about whether people respect you — not just like you, but actually respect what you bring?",
+          "question_format": "frequency",
+          "answer_options": [
+            "Never",
+            "Sometimes",
+            "Often",
+            "Always"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Heart center probed — this person does not operate from a sacrificial or relational-approval framework. Care is real but filtered through competence and situational assessment. This strongly reinforces 8 and rules out 2/9. The 'neutral' with extensive reframe is classic 8 — they reject the premise before answering. Now need to probe head center AND differentiate 8 vs 3: does respect matter as external validation (3) or as a signal of strength/standing (8)?",
+          "next_question_rationale": "Frequency question on thinking about respect — this directly differentiates 8 (respect tied to power/standing, matters but not obsessively monitored) from 3 (image/respect constantly tracked). An 8 may say sometimes; a 3 would say often or always. Also probes SO variant signal. Format rotated from agree_disagree.",
+          "question_format_last_used": "frequency"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "Sometimes.\n\nThough I'd reframe it slightly — it's less about respect for me personally and more about whether people actually register what's been built here. The infrastructure, the decisions that held when they needed to hold. You can tell pretty quickly whether someone understands what it took to get a operation running the way this one runs, or whether they're just showing up to a system that works and taking it for granted.\n\nLiking me is irrelevant, frankly. I've never needed to be liked.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "On a scale of 1 to 5 — 1 being rarely, 5 being almost always — how often do you find yourself mentally running through what could go wrong before something important happens?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.75,
+          "type_scores": {
+            "1": 0.11,
+            "2": 0.02,
+            "3": 0.08,
+            "4": 0.02,
+            "5": 0.05,
+            "6": 0.03,
+            "7": 0.05,
+            "8": 0.62,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "8",
+            "1"
+          ],
+          "defiant_spirit_type_name": "The Defiant One",
+          "whole_type": "body",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.8,
+            "heart": 0.1,
+            "head": 0.1
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "what it took",
+                "decisions that held",
+                "operation running",
+                "never needed to be liked",
+                "taking it for granted"
+              ],
+              "context": "respect framed as recognition of impact/strength, not personal image — legacy and power language"
+            },
+            {
+              "type": 3,
+              "words": [
+                "what's been built here",
+                "infrastructure",
+                "system that works"
+              ],
+              "context": "achievement language present but framed as legacy/impact not personal image — reduces 3 probability"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.45,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Builder of systems, protector of what was made, indifferent to personal approval",
+          "what": "Impact, legacy, things that hold under pressure",
+          "why": "Recognition of what was built = recognition of strength and judgment; being taken for granted = erasure of that",
+          "how": "Creates, assesses, moves — doesn't seek affirmation but does track whether impact registers",
+          "when": "",
+          "where": "Likely blind to moments where the need for recognition is driving behavior"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Reframes personal respect as legacy recognition — may be distancing from vulnerability of wanting to matter",
+          "respond_glimpsed": "",
+          "superpower_signal": "Builds durable things; holds when others don't",
+          "kryptonite_signal": "'Never needed to be liked' — the firmness of that statement may protest too much",
+          "domain_signals": [
+            "leadership",
+            "wealth"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "frequency",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": -3,
+        "thinking_display": "Said 'never needed to be liked' without being asked.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "On a scale of 1 to 5 — 1 being rarely, 5 being almost always — how often do you find yourself mentally preparing for things that might go wrong before they happen?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "3 largely ruled out — the respect framing is about impact/legacy, not personal image management. 'Never needed to be liked' is a strong 8 signal — spontaneously offered, not prompted. Now need to probe head center: does this person run significant anticipatory anxiety (6) or is the 'doing the math' monitoring purely strategic (8)? ID:-3 targets this directly — high score = 6 signal; low-to-mid = 8 confirmation. Also serves as partial disconfirmatory probe.",
+          "next_question_rationale": "ID:-3 scale question on anticipatory worry. An 8 will score 2-3 (strategic prep, not anxiety-driven); a 6 will score 4-5. This differentiates body vs head center and probes the 8v6 axis. Format rotated from frequency to scale.",
+          "question_format_last_used": "scale"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "4.\n\nThat's not anxiety, that's preparation. There's a difference. If I'm walking into a quarterly review with the regional VPs, I've already mapped the objections, I know where the numbers are soft, I know which questions are going to come from which direction. That's not me catastrophizing — that's me not getting caught flat-footed.\n\nThe people who don't do that are the ones who end up improvising when it matters most. I've cleaned up enough of those situations to know.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "There's the version of that pattern that runs on autopilot — and the version you'd choose if you had the space to choose.\n\nWhen something goes sideways unexpectedly — a situation you didn't see coming — which is closer to your first move: take charge of what you can control right now, or figure out why it happened before acting?\n\n- Take charge of what I can control right now\n- Figure out why it happened before acting",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.02,
+            "3": 0.07,
+            "4": 0.02,
+            "5": 0.06,
+            "6": 0.14,
+            "7": 0.04,
+            "8": 0.53,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "8",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Defiant One",
+          "whole_type": "body",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.68,
+            "heart": 0.1,
+            "head": 0.22
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "not getting caught flat-footed",
+                "cleaned up enough of those situations",
+                "not catastrophizing"
+              ],
+              "context": "preparation framed as strength/competence, not fear"
+            },
+            {
+              "type": 6,
+              "words": [
+                "mapped the objections",
+                "know where the numbers are soft",
+                "know which questions are going to come from which direction"
+              ],
+              "context": "detailed threat-scanning, anticipatory mapping — head center vigilance pattern"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.4,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone who prepares obsessively, equates readiness with safety",
+          "what": "Not being caught off guard; not having to improvise",
+          "why": "Vulnerability = being flat-footed; preparation = protection from exposure",
+          "how": "Maps threats in advance, anticipates objections, cleans up others' failures",
+          "when": "",
+          "where": "May not distinguish between strategic preparation and anxiety-driven vigilance"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Threat-mapping as automatic preparatory pattern — framed as competence but functions as vigilance",
+          "respond_glimpsed": "",
+          "superpower_signal": "Never flat-footed; sees threats others miss; holds the room",
+          "kryptonite_signal": "The preparation never fully stops — monitoring is constant, not just situational",
+          "domain_signals": [
+            "leadership",
+            "wealth"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 6,
+          "current_stage": 4,
+          "last_question_format": "scale",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": null,
+        "thinking_display": "Scored a 4 — then immediately explained why it's not what a 4 sounds like.",
+        "response_parts": {
+          "guide_text": "There's the version of that pattern that runs automatically — and the version you'd choose if you had the space.",
+          "question_format": "forced_choice",
+          "question_text": "When something goes sideways unexpectedly — not a situation you prepared for — which is closer to your first move: take charge of what you can control right now, or figure out why it happened before acting?",
+          "answer_options": [
+            "Take charge of what I can control right now",
+            "Figure out why it happened before acting"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "The 4/5 on anticipatory mapping is a significant head-center signal — raises 6 probability meaningfully. But the framing ('preparation not anxiety', 'cleaned up those situations', 'not getting caught flat-footed') is still more 8 than 6 — a 6 would be more likely to acknowledge the anxiety, not reframe it as pure competence. The question now is whether the primary driver is strength/impact (8) or security/not-being-blindsided (6cp). Need a disconfirmatory probe. 8 vs 6 is the key pair — a forced_choice on crisis response will differentiate: 8 acts immediately to reassert control; 6 analyzes/scans for more information before moving.",
+          "next_question_rationale": "Forced_choice on crisis response — act vs analyze. 8 takes charge immediately. 6 needs to understand before acting. This is the disconfirmatory question for the 8 vs 6 pair. Also embedding the react/respond frame in guide_text as required. Sets disconfirmatory_asked to true if answered.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "Take charge of what I can control right now.\n\nYou do the autopsy after the patient is stable. Every time I've seen someone stop to analyze in the middle of a crisis, the situation got worse while they were thinking about it. Move first, understand later — that's not recklessness, that's triage.\n\nThe why matters. I'll get there. But not at the expense of the moment you actually had to act.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you picture yourself operating at your absolute best — fully in your element — what are the people around you experiencing?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.09,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.02,
+            "5": 0.04,
+            "6": 0.06,
+            "7": 0.04,
+            "8": 0.65,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "8",
+            "1"
+          ],
+          "defiant_spirit_type_name": "The Defiant One",
+          "whole_type": "body",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.09,
+            "head": 0.09
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "autopsy after the patient is stable",
+                "move first understand later",
+                "triage",
+                "moment you actually had to act"
+              ],
+              "context": "crisis response is immediate action — pure body center, strength-based, no hesitation"
+            },
+            {
+              "type": 1,
+              "words": [
+                "that's not recklessness",
+                "the why matters, I'll get there"
+              ],
+              "context": "self-regulation signal — justifies action as principled, not impulsive"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.45,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone who moves first, understands after — action is the primary response to threat",
+          "what": "Control, momentum, not losing the window to act",
+          "why": "Inaction in crisis = complicity in the failure; movement = agency",
+          "how": "Triage logic — stabilize first, analyze after",
+          "when": "Sharpest in crisis; may undervalue reflection when not under pressure",
+          "where": "Blind spot: may act before full picture is available and not recognize the cost"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate action under pressure — framed as triage, experienced as competence",
+          "respond_glimpsed": "'The why matters. I'll get there.' — acknowledges reflection has value, just not in the moment",
+          "superpower_signal": "Holds the room in crisis; others follow because someone moved",
+          "kryptonite_signal": "The window to act may sometimes be a fear of stillness — doing as defense against vulnerability",
+          "domain_signals": [
+            "leadership",
+            "wealth",
+            "personal transformation"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": null,
+        "thinking_display": "Move first, understand later. The order reveals everything.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you picture the version of yourself operating at your absolute best — fully in your element — what are the people around you experiencing?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Disconfirmatory question answered — 8 confirmed over 6. Immediate action in crisis is pure body-center 8 response. The medical triage metaphor is telling: this person has a mental model for when to move and when to analyze, and movement always wins in the acute phase. 6 would have hesitated or qualified. 1-wing signal continues — 'not recklessness' self-regulation language. All three centers now probed. All closing criteria met except: min_exchanges_met (need 8), confidence_met (0.82 — close but need one more probe to separate 8 from 1-wing vs 1 as type). Need to differentiate 8 with 1-wing from 1 with 8-wing. Also need variant and wing data.",
+          "next_question_rationale": "Open question about what others experience when this person is at their best — this surfaces the superpower as they describe it, and differentiates 8 (others feel protected/moved/challenged) from 1 (others feel corrected/raised to standard). Also opens variant data: SP will describe providing security; SO will describe galvanizing a group; SX will describe intensity of connection or chemistry.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "Clarity.\n\nThey know what the mission is, they know what their piece of it is, they know what good looks like. Nobody's second-guessing the direction or wondering if the ground's going to shift under them. I've worked in environments where leadership was inconsistent and it's — it poisons everything. People spend half their energy just trying to figure out which way the wind is blowing instead of actually doing the work.\n\nWhen I'm running things the way I should be, that noise goes away. People can just execute. That's what I'm there to provide.\n\nAnd honestly — the ones who are good at what they do, they appreciate that. They don't need a lot of hand-holding, they just need to know the parameters are stable and that someone's actually steering. I take care of that, they take care of business. That's how it's supposed to work.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "That thing you said about inconsistent leadership poisoning everything — and how your job is to make that noise go away so people can just work — that stayed with me.\n\nThe same force that makes you the person others orient around when the ground is shifting is the thing that won't let you fully put the wheel down, even when you probably could.\n\nThere's more room available to you than the pattern that's been running the show — and your results are going to show you exactly where that room is.\n\nYour personalized report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 8,
+          "confidence": 0.87,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.02,
+            "3": 0.05,
+            "4": 0.01,
+            "5": 0.03,
+            "6": 0.04,
+            "7": 0.03,
+            "8": 0.72,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "8"
+          ],
+          "defiant_spirit_type_name": "The Defiant One",
+          "whole_type": "body",
+          "whole_type_confidence": 0.87,
+          "whole_type_signals": {
+            "body": 0.87,
+            "heart": 0.07,
+            "head": 0.06
+          },
+          "lexicon_signals": [
+            {
+              "type": 8,
+              "words": [
+                "clarity",
+                "someone's actually steering",
+                "take care of that",
+                "poisons everything",
+                "ground's going to shift"
+              ],
+              "context": "at best: provides protection, stability, direction — classic 8 protector function"
+            },
+            {
+              "type": 8,
+              "words": [
+                "the ones who are good at what they do appreciate that"
+              ],
+              "context": "implicit sorting of people by competence — 8 respects strength, dismisses weakness"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.55,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.2
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "The one steering — protector of direction, provider of stability",
+          "what": "Clarity, stable parameters, people being able to execute without noise",
+          "why": "Inconsistent leadership poisons systems — someone has to hold the line",
+          "how": "Sets direction, holds the container, sorts by competence",
+          "when": "Sharpest when chaos is present and someone needs to move",
+          "where": "May underestimate the need for warmth or emotional connection in leadership"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Control deployed as protection — 'I take care of that, they take care of business'",
+          "respond_glimpsed": "Genuine protective instinct — wants people to be able to execute without wasted energy",
+          "superpower_signal": "Creates clarity where there was chaos; people feel safe enough to do their best work",
+          "kryptonite_signal": "The protection can become control — and 'hand-holding' dismissal may mean emotional needs in the team go unmet",
+          "domain_signals": [
+            "leadership",
+            "relationships",
+            "wealth"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 8,
+          "current_stage": 6,
+          "last_question_format": "open",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "Described protection as the job. Not a role — the job.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "SO variant now clearly dominant — the entire answer is about group function, collective direction, what leadership does for the system. The protector role is fully articulated: 'someone's actually steering,' 'I take care of that.' 8 confirmed at 0.87, top two separated by >0.20 (8 at 0.72 vs 1 at 0.08). All closing criteria met. 8+ exchanges complete. Fast-track close conditions met. Wing left (7) shows lower signal than expected; 1-wing (left of 8 is 7, right of 8 is 9 — correction: 8's wings are 7 and 9). Wing 9 signal (accommodating, merging) minimal. Wing 7 signal (optimism, future-orientation) minimal. Most signals point to 8w9 lean (the steady, building presence) but this is inconclusive — closing without hard wing assignment.",
+          "next_question_rationale": "All criteria met. Confidence 0.87, gap > 0.20, all centers probed, disconfirmatory asked, react/respond identified, 8+ exchanges. Closing now.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "...Hm.\n\nI'll be straight with you — I've heard variations of that before. Usually from consultants who want you to feel like they've cracked something open so you'll buy the follow-up program.\n\nBut that first part — the connection between what makes you effective and what won't let you rest — that's not wrong. I've thought about that. Not in those exact terms, but I've thought about it. There's a cost to being the person who holds things together. I'm aware of that.\n\nWhat does the report actually say.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "The report maps exactly what you just described — the cost of being the one who holds things together — and shows you where that pattern serves you and where it's running on autopilot without your permission.\n\nIt's built around your specific answers, not a generic type description. What you'll get is a clear picture of your core strategy, the superpower and the shadow of the same energy, and a concrete roadmap for where you have more choice than you're currently using.\n\nYou'll have it shortly.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "Alright.\n\nI'll read it. That's about all I can promise right now — that I'll actually read it and not just file it somewhere. Whether it tells me something I don't already know, that's the real question.\n\nThe 'more choice than you're currently using' framing — I'll be honest, that lands a little sideways. Makes it sound like I'm just not aware enough. But I'm not dismissing it. I've learned not to assume I've got the complete picture on myself just because I've got decent read on everything else.\n\nSend it over.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    }
+  ]
+}

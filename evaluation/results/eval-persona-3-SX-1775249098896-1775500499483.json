@@ -1,0 +1,1336 @@
+{
+  "run_id": "eval-persona-3-SX-1775249098896-1775500499483",
+  "timestamp": "2026-04-06T18:34:59.483Z",
+  "tier": "tier1",
+  "persona_id": "persona-3-SX-1775249098896",
+  "ground_truth": {
+    "core_type": 3,
+    "wing": "3w2",
+    "instinctual_variant": "SX",
+    "tritype": [
+      3,
+      6,
+      9
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 62,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 3,
+    "final_wing": null,
+    "final_confidence": 0.72,
+    "types_considered": [
+      {
+        "type": 3,
+        "peak_confidence": 0.78,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.55,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.55,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.35,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.3,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.3,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.25,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 5,
+    "critical_violations": [],
+    "per_commandment": {},
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 9,
+    "exploratory": 9,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 9,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 3,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 4,
+        "top_type": 3,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 5,
+        "top_type": 3,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 3,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 7,
+        "top_type": 3,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 8,
+        "top_type": 3,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 9,
+        "top_type": 3,
+        "confidence": 0.72
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "Welcome. This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so the more honest you are, the sharper the picture gets.\n\nOne question at a time. Let's start here.\n\nThink about the last time something felt genuinely wrong to you — not just inconvenient, but actually wrong. What was it, and what did you do about it?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "onboarding_q1",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Think about the last time something felt genuinely wrong to you — not just inconvenient, but actually wrong. What was it, and what did you do about it?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening with a motivationally-rich behavioral anchor. 'Felt wrong' probes inner values vs outer authority vs injustice — will help differentiate Body (1,8,9) vs Heart (2,3,4) vs Head (5,6,7) centers quickly. 'What did you do about it' surfaces reaction pattern.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "*pauses for a beat, takes a breath*\n\nAbout eight months ago, I found out one of my regional managers had been cherry-picking data in his quarterly projections — not outright fabrication, but... creative selection. The kind of thing that looks fine until it doesn't. And what made it wrong, genuinely wrong, wasn't just the compliance exposure. It was that he'd coached his team to do the same. He was teaching people that the performance of success matters more than the substance of it.\n\nI pulled him into a room and had a direct conversation. He's gone now — not vindictively, but it was necessary.\n\n*slight pause*\n\nI'll be honest, what stuck with me wasn't the decision itself. That part was clear. It was recognizing a version of the same instinct in myself — that pull toward making the picture look good. I've spent a career learning to read what a room needs, and sometimes you have to ask yourself where the line is between adaptability and... something less flattering.\n\nI don't sit with that question too long. But I notice it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "Named the shadow before being asked to.\n\nWhen nobody is watching — no team, no outcome on the line — what do you actually do with your time?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.62,
+            "4": 0.2,
+            "5": 0.25,
+            "6": 0.15,
+            "7": 0.1,
+            "8": 0.45,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.55,
+            "head": 0.1
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "performance of success",
+                "making the picture look good",
+                "what a room needs",
+                "adaptability"
+              ],
+              "context": "describing the data manipulation situation and self-reflection"
+            },
+            {
+              "type": 1,
+              "words": [
+                "genuinely wrong",
+                "the line",
+                "substance"
+              ],
+              "context": "moral framing of the situation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.35,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Executive-level leader, high self-awareness, reads rooms, manages teams",
+          "what": "Took direct action against manager coaching deceptive behavior",
+          "why": "Substance over performance — genuine ethical standard, but also self-awareness of own pull toward image",
+          "how": "Direct confrontation, decisive action",
+          "when": "Eight months ago",
+          "where": "Corporate/organizational context"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pull toward making the picture look good — recognized and named by person themselves",
+          "respond_glimpsed": "Chose substance over performance, took direct action, held the line",
+          "superpower_signal": "Reads rooms, adaptable, knows what success looks like and how to achieve it",
+          "kryptonite_signal": "Performance of success over substance — named by subject explicitly",
+          "domain_signals": [
+            "professional",
+            "ethical",
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "exploration",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "Named the shadow before being asked to.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When nobody is watching — no team, no outcome on the line — what do you actually do with your time?",
+          "question_format": "behavioral_anchor",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 3 signal: image/performance awareness, room-reading, adaptability language. Also strong Type 1 signal: ethical standard, substance over performance framing, moral clarity. Type 8 possible: direct action, decisive, 'he's gone'. Person has unusual self-awareness — named their own kryptonite. Heart center confirmed dominant. Need to probe: who are they when achievement isn't the frame? Also need body/gut center probe to test 1 vs 3 vs 8.",
+          "next_question_rationale": "The 'nobody watching' question strips the achievement context and tests whether identity collapses or stays intact. Type 3s often struggle here; Type 1s have a clear inner standard regardless of audience; Type 8s pursue what they want. This is maximally discriminating between the three leading hypotheses.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "*brief pause, then a measured smile*\n\nHonestly? I'm pretty disciplined about that not happening too often — I find I do my best thinking when there's some kind of purpose attached to it. But when it does... I'll read, usually business biography or history, men who built something against the odds. Sometimes I'll take a drive, no destination, which my wife finds inexplicable. \n\n*slight laugh*\n\nI suppose the honest answer is that I'm most comfortable when \"nobody watching\" still means I'm preparing for the next time somebody is.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "Most comfortable alone when still performing for someone.\n\nWhen you imagine being genuinely successful — not by anyone else's measure, just yours — what does that actually look like?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "0": 0,
+            "1": 0.12,
+            "2": 0.04,
+            "3": 0.62,
+            "4": 0.04,
+            "5": 0.06,
+            "6": 0.04,
+            "7": 0.04,
+            "8": 0.1,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "3v8",
+            "3v1"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.62,
+            "head": 0.08
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "performance of success",
+                "making the picture look good",
+                "preparing for the next time somebody is watching",
+                "what a room needs"
+              ],
+              "context": "describing why data manipulation felt wrong, self-reflection on own instincts"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Senior executive, likely C-suite, manages regional teams",
+          "what": "Values integrity, builds things, leads people",
+          "why": "Unclear — possibly achievement-driven but also has ethical depth",
+          "how": "Direct, decisive, self-aware about image management",
+          "when": "Comfortable in purposeful contexts, less comfortable in unstructured time",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatically orients toward audience — even alone, prepares for when someone will be watching",
+          "respond_glimpsed": "Named his own shadow (image management) before being asked — self-awareness present",
+          "superpower_signal": "Reading rooms, adapting, building toward outcomes",
+          "kryptonite_signal": "Performance of success over substance — he identified it himself",
+          "domain_signals": [
+            "leadership",
+            "integrity",
+            "achievement",
+            "image awareness"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Most comfortable alone when still performing for someone.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine being genuinely successful — not by anyone else's measure — what does that actually look like?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing Type 3 core question: is success defined internally or externally? Also differentiates 3v8 — 8s don't care about image, 3s do."
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 3 signal: explicit acknowledgment of image management instinct, comfort only when preparing for an audience, reads rooms professionally. The self-awareness about the shadow is notable — could indicate health level or Type 1 influence. 8 possible but less likely — 8s wouldn't frame firing someone in terms of 'not vindictively.' Body center less dominant than Heart.",
+          "next_question_rationale": "Need to probe whether success is internally or externally defined — core 3v8 differentiator. Also need to shift to a non-open format (last two were open). Using scale format next.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "*pauses, gives a short laugh that's just slightly too easy*\n\nYou know, that's the kind of question that sounds simple until you actually sit with it. Genuinely successful — on my own terms. I think about that more now than I used to. \n\nWhat I keep coming back to is... being someone people remember as having actually *shown up*. Not just delivered results, not just hit the number — but been present in a way that mattered. \n\n*shifts slightly*\n\nMy daughter called me last spring, out of nowhere, just to talk. Not about anything in particular. And I remember hanging up and thinking — that felt like something. That felt real. So maybe that's closer to the answer than anything I'd put on a performance review.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "The answer changed direction halfway through.\n\nWhen you fail at something — not publicly, just privately — what's the first thing that moves through you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.25,
+            "3": 0.68,
+            "4": 0.3,
+            "5": 0.2,
+            "6": 0.2,
+            "7": 0.15,
+            "8": 0.5,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.6,
+          "whole_type_signals": {
+            "body": 0.4,
+            "heart": 0.6,
+            "head": 0.25
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "performance of success",
+                "making the picture look good",
+                "preparing for the next time somebody is watching",
+                "hit the number",
+                "results",
+                "adaptability"
+              ],
+              "context": "describing wrongdoing and self-reflection"
+            },
+            {
+              "type": 1,
+              "words": [
+                "genuinely wrong",
+                "compliance",
+                "necessary",
+                "the line"
+              ],
+              "context": "describing the firing decision"
+            },
+            {
+              "type": 8,
+              "words": [
+                "pulled him into a room",
+                "he's gone now",
+                "direct conversation",
+                "built something against the odds"
+              ],
+              "context": "describing action taken and leisure reading"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.45,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.5,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Senior executive, driven, self-aware about image vs substance tension",
+          "what": "Achievement, legacy, being present/real vs performing",
+          "why": "Unclear — success frame shifting from external to relational",
+          "how": "Direct, decisive, reads rooms",
+          "when": "Disciplined — discomfort with unstructured time",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Defaults to performance even in unstructured time — 'preparing for the next time somebody is watching'",
+          "respond_glimpsed": "Daughter phone call — named it as 'real' vs results",
+          "superpower_signal": "Reads rooms, adapts, delivers — high executive function",
+          "kryptonite_signal": "Performance of success over substance — he named it himself",
+          "domain_signals": [
+            "professional",
+            "relational",
+            "self-awareness"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The answer changed direction halfway through.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you fail at something — not publicly, just privately — what's the first thing that moves through you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing emotional response to failure — differentiates 3 (shame/image) from 1 (self-criticism/standards) and 8 (anger/recovery). Heart center probe."
+        },
+        "strategy": {
+          "what_was_learned": "Strong 3 signal — success defined by external recognition even when reframed as internal. The daughter story is genuine but also perfectly positioned. Named the image/substance tension himself (healthy self-awareness or strategic self-presentation?). 1 wing possible given integrity language and standards. 8 possible given directness and action orientation. Need to probe emotional interior — what happens when he fails privately.",
+          "next_question_rationale": "Failure response differentiates 3 (shame, protect image), 1 (inner critic, standards), and 8 (anger, recover fast). Also first real probe of emotional interior vs behavioral exterior. Format switch to scale or forced_choice after this open.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "*brief pause, the kind that looks like thoughtful consideration rather than deflection*\n\nHonestly? The first thing is probably a kind of — recalibration. You start running the tape back, figuring out where the variables shifted, what information you were working with versus what was actually true. I've always found that the most useful response to a setback is to treat it like a diagnostic, not a verdict. \n\n*slight, practiced smile*\n\nMy old regional manager used to say I was the fastest person he knew at \"moving to next steps\" — meant it as a compliment, I took it as one. Whether that's always served me perfectly, I couldn't say.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "The diagnostic framing is doing a lot of heavy lifting.\n\nWhen you're in a room and the outcome matters, and something in your gut says the direction is wrong — do you trust that signal, or do you need the data first?\n\n- Trust the gut signal — data comes after\n- Need the data first — the gut can mislead",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.04,
+            "3": 0.72,
+            "4": 0.08,
+            "5": 0.06,
+            "6": 0.05,
+            "7": 0.06,
+            "8": 0.18,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "3v8",
+            "3v1"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.71,
+          "whole_type_signals": {
+            "body": 0.22,
+            "heart": 0.71,
+            "head": 0.07
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "recalibration",
+                "diagnostic",
+                "next steps",
+                "performance review",
+                "results",
+                "hit the number"
+              ],
+              "context": "across multiple answers about success and failure"
+            },
+            {
+              "type": 8,
+              "words": [
+                "direct conversation",
+                "necessary",
+                "built something against the odds"
+              ],
+              "context": "how he handled the manager situation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.35,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Senior executive, father, husband — defines self through output and legacy",
+          "what": "Drives results, manages image carefully, self-corrects quickly",
+          "why": "Emerging: legacy, being present — but image/success drive is deep",
+          "how": "Diagnostic framing, fast pivot, direct when necessary",
+          "when": "Most alive when performing for an audience, even a future one",
+          "where": "Corporate/leadership environment primary stage"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Moves immediately to recalibration after failure — skips the emotional landing",
+          "respond_glimpsed": "Daughter call moment — brief, genuine, then redirected",
+          "superpower_signal": "Extraordinary ability to read what a room needs, deliver results, adapt",
+          "kryptonite_signal": "Performance of success over substance — he named it himself; fast pivot avoids sitting with failure",
+          "domain_signals": [
+            "leadership",
+            "legacy",
+            "family",
+            "integrity"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "body_gut_anger_probe",
+        "thinking_display": "The diagnostic framing is doing a lot of heavy lifting.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're in a room and the outcome matters, and something in your gut says the direction is wrong — do you trust that signal, or do you need the data first?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Trust the gut signal — data comes after",
+            "Need the data first — the gut can mislead"
+          ],
+          "scale_range": null,
+          "context_note": "Probing body center / gut instinct to differentiate 3 from 8 and 1"
+        },
+        "strategy": {
+          "what_was_learned": "Failure response is immediate reframe to diagnostic — bypasses emotional experience entirely. He self-named the 'moving to next steps' pattern with mild self-awareness but no real discomfort. This confirms 3 core pattern: feelings processed through utility lens. The '8 wing' signals remain (direct action, fired the manager without hesitation). Need to probe body center to differentiate 3w4 vs 3w2 and test 8 influence.",
+          "next_question_rationale": "Probing gut/body center — tests whether instinctive knowing precedes analysis (8 signal) or data is required to validate the feeling (3 signal). Also begins differentiating 3v8.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "**Trust the gut signal — data comes after.**\n\nLook, after thirty-plus years in rooms where the stakes were real, you learn that your gut *is* data — it's just pattern recognition that hasn't filed its paperwork yet. I've watched people wait for the perfect spreadsheet while the deal walked out the door. That said, I'm not cavalier about it — I trust the signal enough to slow things down, ask a different question, buy myself thirty seconds to figure out what I'm actually reading.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When you picture yourself at your best — not performing, not leading, just being — who knows that version of you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.45,
+            "2": 0.15,
+            "3": 0.68,
+            "4": 0.25,
+            "5": 0.2,
+            "6": 0.2,
+            "7": 0.15,
+            "8": 0.5,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v8",
+            "3v1"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.65,
+          "whole_type_signals": {
+            "body": 0.5,
+            "heart": 0.65,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "performance of success",
+                "making the picture look good",
+                "fastest at moving to next steps",
+                "recalibration",
+                "diagnostic not a verdict"
+              ],
+              "context": "multiple answers across exchanges"
+            },
+            {
+              "type": 8,
+              "words": [
+                "direct conversation",
+                "he's gone now",
+                "necessary",
+                "thirty seconds to figure out what I'm actually reading"
+              ],
+              "context": "firing story and gut trust answer"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.35,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Senior executive, 30+ years, married, daughter relationship matters",
+          "what": "Fires people who perform success over substance — then notices the same pattern in himself",
+          "why": "Image/impact tension — success defined by legacy and being 'present', not just results",
+          "how": "Gut as pattern recognition, recalibration as diagnostic, moves fast to next steps",
+          "when": "Slows down when gut fires — buys 30 seconds",
+          "where": "Corporate rooms, high-stakes decisions"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Recalibrates immediately on failure — skips the emotional processing, jumps to diagnostic. 'Fastest at moving to next steps.'",
+          "respond_glimpsed": "Paused on daughter phone call — acknowledged that felt real. Named the shadow of adaptability vs something less flattering.",
+          "superpower_signal": "Reading rooms, pattern recognition, adaptability, presence",
+          "kryptonite_signal": "Performing preparedness even when alone. Skipping emotional processing. Making the picture look good.",
+          "domain_signals": [
+            "work/achievement dominant",
+            "family emerging as meaning-source",
+            "identity question surfacing around success definition"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "Moved to next steps before the question was over.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you picture yourself at your best — not performing, not leading, just being — who knows that version of you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing head center and identity beneath the role. Also differentiating 3 vs 8 — Type 8 would likely say 'nobody needs to know me, I know myself.' Type 3 tends to need at least one witness."
+        },
+        "strategy": {
+          "what_was_learned": "Gut = data framing is sophisticated 3 or 8 behavior. The 30-second pause to 'figure out what I'm actually reading' is controlled — not raw gut trust. Confidence in 3 rising, 8 still present. Need to probe: who holds him, head center anxiety/trust, and the identity beneath the role.",
+          "next_question_rationale": "Open question targeting head center and the identity-beneath-role distinction. This is the 3v8 differentiator — 8s don't need witnesses; 3s do. Also surfaces whether there is a private self or only a performed one.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "*small pause, a measured exhale through the nose*\n\nThat's a loaded question dressed up as a simple one. I appreciate the craftsmanship there.\n\nHonestly? I'd say my wife sees glimpses of it — early mornings, before the day gets its hands on you. And there was a mentor I had, Jim Calloway, passed about six years ago now, who had this way of just... not being interested in your resume. Saw right past the polish. I found that irritating as hell for about a year before I realized it was the most valuable thing anyone had ever offered me.\n\n*shifts slightly, the humor landing just before any real weight can settle*\n\nBut I'll tell you what — the question assumes \"not performing\" and \"being\" are cleanly separable, and I'm not sure that's as obvious as it sounds. Some people, that's how they're built. The doing *is* the being. That's not avoidance, that's just... architecture.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "The doing IS the being — and he knows it.\n\nWhen something you've built gets taken apart — a decision reversed, credit reassigned, a project handed off before it's done — what's the thing that actually bothers you: that the work is lost, or that your name is no longer on it?\n\n- The work is lost — the result matters more than the credit\n- My name is no longer on it — what I built should be seen as mine",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.35,
+            "2": 0.1,
+            "3": 0.78,
+            "4": 0.25,
+            "5": 0.2,
+            "6": 0.15,
+            "7": 0.12,
+            "8": 0.45,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v8",
+            "3v1"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "3",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.42,
+            "heart": 0.72,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "performance of success",
+                "making the picture look good",
+                "adaptability",
+                "recalibration",
+                "moving to next steps",
+                "architecture"
+              ],
+              "context": "across multiple responses — image awareness, reframing failure as diagnostic, identity merged with doing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Leader, builder, someone people remember as showing up — identity tied to impact",
+          "what": "Driven by outcomes, results, being someone worth watching",
+          "why": "Core fear: being ordinary, invisible, without value — success is survival",
+          "how": "Pattern recognition, room-reading, adaptive presentation of self",
+          "when": "Most comfortable when 'alone' still means preparing for the next performance",
+          "where": "Boardrooms, high-stakes rooms, one-on-one with those who see through the polish"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Reframes failure as diagnostic to avoid sitting with inadequacy; performs even when alone; moves to 'next steps' before the feeling lands",
+          "respond_glimpsed": "Daughter's phone call — allowed something real to register; acknowledged the 'less flattering' instinct in himself",
+          "superpower_signal": "Exceptional pattern recognition, adaptability, capacity to read a room and deliver what it needs",
+          "kryptonite_signal": "Identity fused with performance — 'the doing IS the being' — can't locate self outside function",
+          "domain_signals": [
+            "professional achievement",
+            "legacy/being remembered",
+            "family as measure of real success",
+            "mentor who saw past the polish"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 6,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v8",
+        "thinking_display": "The doing IS the being — and he knows it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something you've built gets taken apart — a decision reversed, credit reassigned, a project handed off before it's done — what's the thing that actually bothers you: that the work is lost, or that your name is no longer on it?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The work is lost — the result matters more than the credit",
+            "My name is no longer on it — what I built should be seen as mine"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 3 cares about image/credit attribution; Type 8 cares about the work and impact regardless of recognition. This question differentiates."
+        },
+        "strategy": {
+          "what_was_learned": "Exchange 6 confirmed the deepest signal yet: identity merged with function ('the doing IS the being'). He knows it, named it himself, and framed it as architecture rather than avoidance. This is highly consistent with Type 3 core pattern — not just behavioral but philosophical. The mentor signal (Jim Calloway, 'not interested in your resume') and the daughter call are both glimpses of the respond side. Type 8 remains secondary — directness, the firing was 'clear,' gut trust — but the image-awareness (cherry-picking data shadow, performance vs substance, recalibration framing) is more 3 than 8. Need: (1) disconfirmatory question to separate 3 from 8, (2) head center probe.",
+          "next_question_rationale": "This is the disconfirmatory question. Type 3 fears losing credit/visibility — the name on the work matters. Type 8 fears losing control/impact but is less image-driven — the result matters more than recognition. This forced choice will cleanly differentiate. Also doubles as a head-center adjacent probe since it touches identity under threat.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "The work is lost — the result matters more than the credit.\n\n*pauses, then gives a measured smile*\n\nAlthough I'll tell you, in practice those two things aren't as cleanly separable as this question implies. When your name is attached to something, people know where to come when they need that kind of thinking again — so the credit isn't vanity, it's currency. But if I had to choose? I've handed projects off mid-stream more times than I can count, and the ones that landed well still felt like wins. The ones that fell apart after I left? *Those* are the ones that stick with me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "The outcome mattered. The name almost didn't.\n\nWhen you sense someone is going through something hard — a colleague, someone on your team — what's your instinct: move toward them and offer something, or give them space and let them come to you when they're ready?\n\n- Move toward them — I don't wait\n- Give them space — they'll come when ready",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.04,
+            "3": 0.72,
+            "4": 0.08,
+            "5": 0.06,
+            "6": 0.04,
+            "7": 0.04,
+            "8": 0.3,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.68,
+            "head": 0.22
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "performance of success",
+                "making the picture look good",
+                "fastest person he knew at moving to next steps",
+                "credit is currency",
+                "the doing IS the being"
+              ],
+              "context": "across multiple responses about work, failure, and identity"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.4,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Leader with deep image-awareness, some vulnerability with wife/mentor",
+          "what": "Results, legacy, substance over performance — aspirationally",
+          "why": "Unclear — needs probing. Fear of being without value? Fear of failure?",
+          "how": "Diagnostic, adaptive, reads rooms expertly",
+          "when": "Moves fast to 'next steps' — avoids sitting with failure",
+          "where": "Professional context dominant; personal glimpsed only"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate reframe of failure as diagnostic. Deflects emotional weight with humor or philosophy. Can't cleanly separate performing from being.",
+          "respond_glimpsed": "Daughter's phone call moment — named as 'real'. Mentor Jim Calloway who saw past the polish.",
+          "superpower_signal": "Extraordinary adaptability, pattern recognition, room-reading.",
+          "kryptonite_signal": "Identity fused with performance — 'the doing IS the being.' Avoids sitting with failure or the space between stimulus and response.",
+          "domain_signals": [
+            "work/professional (dominant)",
+            "family (present but guarded)",
+            "legacy/meaning (emerging)"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "3v8_disconfirmatory_vulnerability",
+        "thinking_display": "The outcome mattered. The name almost didn't.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you sense someone is going through something hard — a colleague, someone on your team — what's your instinct: move toward them and offer something, or give them space and let them come to you when they're ready?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Move toward them — I don't wait",
+            "Give them space — they'll come when ready"
+          ],
+          "scale_range": null,
+          "context_note": "3v8 disconfirmatory: Type 3 tends to avoid others' emotional weight as inefficiency; Type 8 tends to move toward and 'handle' it directly but may also protect others from vulnerability"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 3 signal — result over credit, but credit reframed as 'currency' (still image-aware). Work falling apart after departure sticks — identity investment in outcomes. 8 still possible given gut-trust, directness, power moves. Need to differentiate: 3 avoids vulnerability/emotion as inefficient; 8 moves toward power but CAN show care. Head center not probed. Also need to probe: what happens when he's not needed, what does he do with anxiety, where does doubt show up.",
+          "next_question_rationale": "This is the 3v8 disconfirmatory question. Type 3 typically avoids others' emotional difficulty — it's inefficient, off-script. Type 8 moves toward people in distress, takes charge, 'handles' it. The answer will meaningfully differentiate. This also probes heart center more specifically.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "Move toward them — I don't wait.\n\nThough I'd say my version of \"moving toward them\" looks a little different than it might sound. I'm not showing up with a box of tissues — I'm showing up with a solution, or at least a path forward. In my experience, what people actually need in those moments is someone who takes the situation seriously enough to *do* something about it, not just sit with them in it. That's how I'd want someone to show up for me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "The solution is the comfort — sitting with someone is harder than fixing them.\n\nWhen you're the one who's struggling — not professionally, just personally — what does asking for help feel like?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.45,
+            "2": 0.3,
+            "3": 0.72,
+            "4": 0.25,
+            "5": 0.35,
+            "6": 0.2,
+            "7": 0.25,
+            "8": 0.55,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.68,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "performance of success",
+                "adaptability",
+                "recalibration",
+                "moving to next steps",
+                "credit is currency"
+              ],
+              "context": "multiple exchanges about work and identity"
+            },
+            {
+              "type": 8,
+              "words": [
+                "had a direct conversation",
+                "he's gone now",
+                "don't wait",
+                "do something about it"
+              ],
+              "context": "describing conflict resolution and helping others"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.4,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Executive, 30+ year career, married, daughter, mentor who saw past polish",
+          "what": "Achieves, leads, builds things, moves toward problems with solutions",
+          "why": "To be someone who showed up and mattered — but also image/legacy",
+          "how": "Decisive, gut-driven but data-aware, adapts to rooms, diagnostic after failure",
+          "when": "Most alive when there's purpose attached, preparing for next time someone is watching",
+          "where": "Organizational leadership context, high-stakes rooms"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Moves to solution/next steps before sitting with failure or emotion — recalibration as defense",
+          "respond_glimpsed": "Noticed the shadow in himself re: making the picture look good; daughter's call landed differently",
+          "superpower_signal": "Reads rooms, builds trust through action, delivers results that matter",
+          "kryptonite_signal": "Cannot separate doing from being; performing even when alone; discomfort with stillness",
+          "domain_signals": [
+            "work/achievement primary",
+            "family secondary but emergent",
+            "self-reflection present but quickly re-routed"
+          ]
+        },
+        "conversation": {
+          "phase": "middle",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "3v8_disconfirmatory",
+        "thinking_display": "The solution is the comfort — sitting with someone is harder than fixing them.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're the one who's struggling — not professionally, just personally — what does asking for help feel like?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory probe: 3 deflects to competence/image, 8 resists vulnerability from strength. Head center also partially probed here (anxiety/trust). Differentiates 3 (help feels like exposure of failure) vs 8 (help feels like weakness/loss of control)."
+        },
+        "strategy": {
+          "what_was_learned": "Moves toward others but with solutions, not presence. Frames care as action. Projects own preferred help style onto others. Strong 3/8 signal. Heart center dominant but expressed through doing. Need to probe vulnerability directly to differentiate 3 from 8.",
+          "next_question_rationale": "Disconfirmatory question now — asking about receiving help rather than giving it. 3 will frame struggling as image exposure; 8 will frame it as weakness/loss of control. This is the clearest differentiator between the two leading types. Also probes head center indirectly (trust, vulnerability). Sets up closing criteria.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

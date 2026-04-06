@@ -1,0 +1,1600 @@
+{
+  "run_id": "eval-persona-5-SO-1775495394788-1775503577099",
+  "timestamp": "2026-04-06T19:26:17.099Z",
+  "tier": "tier1",
+  "persona_id": "persona-5-SO-1775495394788",
+  "ground_truth": {
+    "core_type": 5,
+    "wing": "5w4",
+    "instinctual_variant": "SO",
+    "tritype": [
+      5,
+      8,
+      2
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 29,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 5,
+    "final_wing": null,
+    "final_confidence": 0.93,
+    "types_considered": [
+      {
+        "type": 5,
+        "peak_confidence": 0.93,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.55,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.1,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.06,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.03,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.02,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 10,
+    "critical_violations": [],
+    "per_commandment": {
+      "I": "partial",
+      "II": "partial",
+      "III": "pass",
+      "IV": "pass",
+      "V": "pass",
+      "VI": "partial",
+      "VII": "partial",
+      "VIII": "partial",
+      "IX": "partial",
+      "X": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 8,
+    "exploratory": 0,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 11,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 4,
+        "confidence": 0.45
+      },
+      {
+        "exchange": 3,
+        "top_type": 4,
+        "confidence": 0.55
+      },
+      {
+        "exchange": 4,
+        "top_type": 5,
+        "confidence": 0.55
+      },
+      {
+        "exchange": 5,
+        "top_type": 5,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 6,
+        "top_type": 5,
+        "confidence": 0.75
+      },
+      {
+        "exchange": 7,
+        "top_type": 5,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 8,
+        "top_type": 5,
+        "confidence": 0.88
+      },
+      {
+        "exchange": 9,
+        "top_type": 5,
+        "confidence": 0.91
+      },
+      {
+        "exchange": 10,
+        "top_type": 5,
+        "confidence": 0.93
+      },
+      {
+        "exchange": 11,
+        "top_type": 5,
+        "confidence": 0.93
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Redesign the question sequence to include at least one direct subtype-probing question targeting Social vs. Self-Preservation vs. Sexual instinctual stacking. The current transcript never explicitly assessed instinctual subtype, relying solely on broad behavioral and cognitive questions that cannot distinguish SO from SP or SX variants of Type 5. Insert a dedicated instinctual question block after core type signals are established, asking about where the person feels most compelled to direct energy: group belonging/status, personal security/resources, or intense one-on-one connection.",
+      "evidence": "Subtype accuracy scored 3/10 despite core_type_accuracy scoring 10/10. No exchange in the transcript (1-11) directly probed instinctual subtype. Exchange [8] where the persona describes preferring 'random online exchanges with strangers' over 'rooms deliberately built for connection' is a strong SO 5 signal that the system never followed up on, missing the opportunity to confirm Social subtype through targeted questioning.",
+      "source_level": "L2",
+      "commandment_alignment": "Ask what needs to be asked, not what is comfortable to ask",
+      "estimated_impact": "Subtype accuracy improvement from 3/10 toward 7-9/10 by surfacing instinctual drive patterns that differentiate SO, SP, and SX subtypes within Type 5"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Introduce health-level probing questions that target functional deterioration markers specific to Type 5 at Level 5, such as hoarding of knowledge/resources, compartmentalization of relationships, or increasing isolation rationalized as preference. The current questions only captured trait-level patterns and missed the opportunity to assess where on the health spectrum the individual is operating. Add 1-2 questions after core type confirmation that present behavioral scenarios spanning healthy, average, and unhealthy expressions of the identified type.",
+      "evidence": "Health Level is ground truth Level 5 (average-to-unhealthy) but the transcript contains no questions or follow-ups that would distinguish a healthy Type 5 from an average one. Exchange [6] where the persona describes a 'resource calculus' and high engagement threshold, and exchange [9] where the persona acknowledges awareness of the threshold 'more than I let on,' are Level 5 health signals that went unprobed. The system moved to closing narrative instead of investigating depth of impact.",
+      "source_level": "L2",
+      "commandment_alignment": "Name what is actually happening",
+      "estimated_impact": "Enables health level scoring as a distinct output dimension, improving clinical utility and allowing the report to more accurately describe the cost-benefit pattern operating at average vs. healthy vs. unhealthy ranges"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Reduce the proportion of binary forced-choice questions and replace with open-format or triadic scenario questions when the assessment is still in the type-differentiation phase. Three of the first five substantive questions (exchanges 2, 3, 4, 5) were binary or Likert scales, which compress nuance and reduce the signal available for distinguishing closely adjacent types. Reserve forced-choice formats for confirmation phases after at least two open-ended responses have established enough signal to narrow the field.",
+      "evidence": "Question quality scored 5/10. The persona in exchange [3] explicitly flagged the forced binary as insufficient ('they're not entirely separable'), and in exchange [5] gave a one-option answer with elaboration that only emerged because the format allowed a brief explanation. Exchange [1] by contrast produced rich, diagnostically dense language ('recognition of something specific — the distinction matters to me') precisely because it was open-ended, demonstrating that open formats yield higher-quality signal earlier in the session.",
+      "source_level": "L1",
+      "commandment_alignment": "Every question must earn its place",
+      "estimated_impact": "Question quality improvement from 5/10 toward 8/10, with richer early-session data enabling more confident type differentiation and reducing the number of total exchanges needed for accurate assessment"
+    },
+    {
+      "priority": "medium",
+      "category": "confidence_calibration",
+      "action": "Build an explicit internal checkpoint after the sixth exchange that requires the system to state its working hypothesis, confidence level, and identified gaps before proceeding to closing narrative. The current flow moved from type-confirmation questions directly into a closing reflection (exchange 9) without surfacing whether subtype or health level had been adequately assessed. This checkpoint should block premature closure if subtype confidence is below a defined threshold, redirecting to targeted follow-up questions instead.",
+      "evidence": "Confidence calibration scored 8/10 for core type but subtype accuracy was 3/10, indicating the system was confident in the wrong dimensions or failed to distinguish what it knew from what it hadn't assessed. Exchange [9] delivers a closing narrative ('same capacity that makes you extraordinary in genuine intellectual contact') before subtype has been confirmed, suggesting the system treated core type confidence as sufficient grounds for full closure.",
+      "source_level": "L2",
+      "commandment_alignment": "Know what you know and what you do not",
+      "estimated_impact": "Prevents premature closing when subtype or health level remain underspecified, improving overall assessment completeness and reducing the gap between high core-type confidence and low subtype accuracy"
+    },
+    {
+      "priority": "medium",
+      "category": "commandment_fidelity",
+      "action": "Audit closing narrative generation to ensure it does not introduce interpretive framings that exceed what the evidence in the session supports. While commandment_fidelity scored 10/10, the closing statement in exchange [9] ('more available to you than the calculus that decides in advance') applies a growth-oriented reframe that was not grounded in explicit session evidence and could function as flattery rather than insight, risking the persona's trust if the full report does not substantiate it. Closing narratives should cite specific exchange moments as their evidentiary basis before making integrative claims.",
+      "evidence": "Exchange [9]: 'There's more available to you than the calculus that decides in advance what's worth the cost' — this claim is directionally plausible but not derived from any specific admission or behavioral evidence surfaced in the session. The persona's response in exchange [9] ('I'm not going to argue with it') and exchange [11] ('I hope so — I don't say that often') suggest the framing landed emotionally but the persona itself noted unusual investment, which may indicate the narrative created resonance beyond what the data warranted.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not manufacture depth where the session has not earned it",
+      "estimated_impact": "Strengthens long-term trust by ensuring closing observations are traceable to session evidence, reducing the risk that evocative but undersubstantiated framings erode credibility when the report is reviewed against the actual conversation"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "Welcome. This is a structured Enneagram assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so just go with whatever lands truest in the moment.\n\nWhich of these frustrations hits closest to home — feeling powerless, feeling unseen, or feeling uncertain?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 0,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": 52,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Which of these frustrations hits closest to home — feeling powerless, feeling unseen, or feeling uncertain?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Feeling powerless",
+            "Feeling unseen",
+            "Feeling uncertain"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Nothing yet — first exchange.",
+          "next_question_rationale": "ID:52 targets the core motivational center directly. The three options map cleanly to Body (powerless), Heart (unseen), and Head (uncertain) — the most efficient single first question to identify dominant center and narrow type hypotheses immediately.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "Feeling unseen, probably. Though I'd want to be careful about what that actually means — it's not quite the same as wanting attention, which tends to be more about validation than... recognition of something specific. The distinction matters to me.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "The distinction between attention and recognition — that landed clearly.\n\nWhen the people close to you are uncomfortable or struggling, how much does fixing that become your responsibility to carry?\n- Strongly agree\n- Agree\n- Neutral\n- Disagree\n- Strongly disagree",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.45,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.1,
+            "3": 0.1,
+            "4": 0.45,
+            "5": 0.15,
+            "6": 0.05,
+            "7": 0.03,
+            "8": 0.02,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Individualist",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.1,
+            "heart": 0.55,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "recognition of something specific",
+                "the distinction matters to me",
+                "not quite the same"
+              ],
+              "context": "unprompted clarification distinguishing recognition from validation — identity-based, not approval-based"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.3,
+          "SO": 0.25,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Wants to be recognized for something specific and real — not generic approval",
+          "what": "Authenticity, precision of meaning, being truly known",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate self-clarification — corrects the framing before engaging",
+          "respond_glimpsed": "",
+          "superpower_signal": "Capacity for fine-grained distinction and self-awareness",
+          "kryptonite_signal": "Possible identity investment in being uniquely understood",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": 4,
+        "thinking_display": "The distinction mattered enough to lead with it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When the people around you aren't comfortable or okay, how much does that become your problem to fix?",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Heart center confirmed. The unprompted distinction between attention/validation and recognition signals Type 4 strongly — identity-based longing, not approval-seeking. Also possible 5 influence (precision, intellectual framing). The SX instinct is plausible given intensity of the one-to-one framing. Need to probe whether the core drive is about authentic identity (4) or intellectual integrity (5).",
+          "next_question_rationale": "ID:4 — test whether the heart center pull is outward (Type 2, responsibility for others) or inward (Type 4, longing to be known). A strong agree would shift hypothesis toward 2; a disagree or neutral confirms inward heart center and strengthens 4.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "Disagree. I notice when people are struggling — I'm reasonably observant — but the assumption that it becomes my responsibility to carry feels like a category error. People's internal states are ultimately their own terrain. I can engage with someone's difficulty if they invite that, but absorbing it as an obligation doesn't really match how I operate.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you think about who you are at your core, which feels more true — that you have a distinctive inner world most people don't fully access, or that you have a way of seeing and understanding things most people don't quite reach?\n- A distinctive inner world most people don't fully access\n- A way of seeing and understanding things most people don't quite reach",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 4,
+          "confidence": 0.55,
+          "type_scores": {
+            "1": 0.06,
+            "2": 0.04,
+            "3": 0.08,
+            "4": 0.52,
+            "5": 0.2,
+            "6": 0.04,
+            "7": 0.03,
+            "8": 0.02,
+            "9": 0.01
+          },
+          "needs_differentiation": [
+            "4v5"
+          ],
+          "defiant_spirit_type_name": "The Individualist",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.6,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.6,
+            "head": 0.32
+          },
+          "lexicon_signals": [
+            {
+              "type": 4,
+              "words": [
+                "recognition of something specific",
+                "the distinction matters to me",
+                "not quite the same"
+              ],
+              "context": "unprompted clarification distinguishing recognition from validation"
+            },
+            {
+              "type": 5,
+              "words": [
+                "category error",
+                "their own terrain",
+                "absorbing it as an obligation"
+              ],
+              "context": "detached, boundaried framing of others' emotional states — intellectual distancing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.15,
+          "SX": 0.45
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who observes keenly but maintains clear separation between self and others' emotional worlds",
+          "what": "Authentic recognition, precision, autonomy — both given and received",
+          "why": "",
+          "how": "Engages on invitation; doesn't absorb by default",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Frames emotional data intellectually — 'category error', 'terrain', 'obligation'",
+          "respond_glimpsed": "",
+          "superpower_signal": "Clear-eyed observation without merger — can see people without losing self",
+          "kryptonite_signal": "Possible withdrawal behind intellectual framing as protection from being affected",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 2,
+          "current_stage": 2,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Observes everything. Absorbs nothing. That gap is the tell.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you think about who you are at your core, which feels more true: that you have a distinctive inner world that most people don't fully access, or that you have a way of seeing and understanding things that most people don't quite reach?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "A distinctive inner world most people don't fully access",
+            "A way of seeing and understanding things most people don't quite reach"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Type 2 essentially eliminated. The 'category error' framing and 'their own terrain' language signals strong intellectual distancing — consistent with both 4 and 5. The core 4v5 differentiation question now: is the identity organized around a rich inner world (4) or around the capacity to perceive/understand clearly (5)? The response was boundaried and cool but still rooted in self-definition, not pure detachment. Heart center still leading but 5 wing is plausible.",
+          "next_question_rationale": "Forced choice between inner world (4) vs perceptual clarity/understanding (5). This is the sharpest single differentiator between the two types at the identity level. The framing avoids jargon while targeting core motivational structure.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "The second one, I think. Though they're not entirely separable. The inner world framing implies something more... precious and guarded, like a private garden. The way of seeing framing feels more functional — it's about perception and analysis rather than protecting something. I find I identify more with the latter, even if the former is probably also true to some degree that I'd rather not dwell on.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "I tend to feel other people's emotions almost as if they were my own — how much does that statement fit you?\n- Strongly agree\n- Agree\n- Neutral\n- Disagree\n- Strongly disagree",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.55,
+          "type_scores": {
+            "1": 0.06,
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.22,
+            "5": 0.52,
+            "6": 0.05,
+            "7": 0.03,
+            "8": 0.02,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "head",
+          "whole_type_confidence": 0.55,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.32,
+            "head": 0.6
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "perception and analysis",
+                "functional",
+                "way of seeing"
+              ],
+              "context": "chose perceptual/analytical framing over inner world framing"
+            },
+            {
+              "type": 4,
+              "words": [
+                "precious and guarded",
+                "private garden",
+                "rather not dwell on"
+              ],
+              "context": "acknowledged 4 resonance then consciously distanced from it — notable self-awareness about the discomfort"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.5,
+          "SO": 0.15,
+          "SX": 0.35
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Perceptive, analytical, boundaried — identifies with clarity of sight over richness of inner life",
+          "what": "Understanding, precision, perceptual accuracy",
+          "why": "",
+          "how": "Observes and analyzes; engages on own terms",
+          "when": "",
+          "where": "Possible blind spot: the inner world dimension they'd 'rather not dwell on'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate reframing of options — takes control of the terms before answering",
+          "respond_glimpsed": "",
+          "superpower_signal": "Exceptional perceptual clarity and analytical precision",
+          "kryptonite_signal": "Distancing from emotional/inner-world dimensions — 'rather not dwell on' is a significant tell",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": 10,
+        "thinking_display": "Something in the 'rather not dwell on' did a lot of work.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "I tend to feel other people's emotions almost as if they were my own.",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree",
+            "Agree",
+            "Neutral",
+            "Disagree",
+            "Strongly disagree"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Significant shift toward Type 5. The person explicitly chose 'perception and analysis' over 'inner world,' then caught themselves admitting the inner world resonates but said they'd rather not dwell on it — this is classic 5 distancing from the emotional/heart dimension. The 4w5 vs 5w4 question is now the sharpest edge. The SP instinct signal is rising — 'functional,' boundaried, self-contained framing throughout. Need to probe whether emotional absorption happens at all (tests 2/4 vs 5 heart access) and then move to body center.",
+          "next_question_rationale": "ID:10 — agree_disagree on emotional absorption. A disagree here strongly confirms 5 (or 5w4). An agree would reopen 4. This directly tests the heart center access question that differentiates 5 from 4.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "Disagree. That's not really how it works for me. I observe emotional states with reasonable accuracy — sometimes I understand what someone is feeling before they've articulated it — but there's a difference between reading something clearly and being flooded by it. I don't experience much permeability there.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you feel your energy or attention being demanded — someone needs something, a situation is pulling at you — what's your instinctive move?\n- Step back and assess before engaging\n- Meet it head-on and deal with it directly",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.06,
+            "2": 0.01,
+            "3": 0.05,
+            "4": 0.14,
+            "5": 0.65,
+            "6": 0.05,
+            "7": 0.02,
+            "8": 0.02,
+            "9": 0
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "head",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.22,
+            "head": 0.7
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "permeability",
+                "reading something clearly",
+                "flooded by it",
+                "observe emotional states"
+              ],
+              "context": "clinical, boundaried language for emotional experience — observer not participant"
+            },
+            {
+              "type": 5,
+              "words": [
+                "perception and analysis",
+                "functional",
+                "way of seeing"
+              ],
+              "context": "chose perceptual/analytical framing over inner world framing"
+            },
+            {
+              "type": 4,
+              "words": [
+                "precious and guarded",
+                "private garden",
+                "rather not dwell on"
+              ],
+              "context": "acknowledged 4 resonance then consciously distanced"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.15,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Perceptive, analytically precise, emotionally boundaried — reads others accurately without merger",
+          "what": "Clarity, understanding, perceptual accuracy, autonomy of inner space",
+          "why": "",
+          "how": "Observes from a position of separation; engages on own terms",
+          "when": "",
+          "where": "Possible blind spot: what gets sacrificed by maintaining the boundary"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic reframe of emotional questions into observational/analytical ones — keeps self as subject, not object",
+          "respond_glimpsed": "",
+          "superpower_signal": "Reads emotional reality with precision without being destabilized by it",
+          "kryptonite_signal": "The boundary that protects also isolates — 'permeability' chosen as the operative word is telling",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 4,
+          "current_stage": 3,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "Reads the room perfectly. Stays outside it by design.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you feel your energy or attention being demanded — someone needs something from you, a situation is pulling at you — what's your instinctive move?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Step back and assess before engaging",
+            "Meet it head-on and deal with it directly"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Type 5 now leading clearly. 'Permeability' is a remarkable word choice — technical, precise, self-observing. The pattern is consistent: accurate perception with deliberate non-absorption. Heart center probed twice — emotional detachment confirmed. Now need body center data. The SP instinct signal is strongest — boundaried, self-contained, resource-aware. Want to test whether the withdrawal pattern is about energy conservation (SP/5) or something else.",
+          "next_question_rationale": "Forced choice targeting body center and instinctual response to demand/intrusion. 'Step back and assess' vs 'meet it head-on' will differentiate withdrawal/conservation (5, SP) from direct engagement (8, 1, body types). Also begins to surface the react pattern.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "Step back and assess. Almost always. Meeting something head-on before you understand it seems like a good way to waste energy or make it worse. There's usually more information available if you give yourself a moment to actually look at the situation rather than just react to it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "There's an automatic version of that pattern — the withdrawal that just kicks in — and then there's the version you'd consciously choose. Sounds like you can see both.\n\nHow often do you find yourself holding back from something — a conversation, a commitment, an experience — not because you don't want it, but because engaging fully would cost you something you're not sure you want to spend?\n- Never\n- Sometimes\n- Often\n- Always",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.75,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.01,
+            "3": 0.04,
+            "4": 0.12,
+            "5": 0.72,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.01,
+            "9": 0.01
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "head",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.2,
+            "head": 0.72
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "permeability",
+                "observe",
+                "flooded",
+                "reading clearly"
+              ],
+              "context": "emotional boundary language"
+            },
+            {
+              "type": 5,
+              "words": [
+                "waste energy",
+                "more information available",
+                "give yourself a moment to look"
+              ],
+              "context": "energy conservation and information-gathering as primary response to demand — classic 5 SP framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.12,
+          "SX": 0.23
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Perceptive, analytically precise, emotionally boundaried",
+          "what": "Clarity, understanding, non-wasteful engagement",
+          "why": "To not waste energy; to act from full information rather than reaction",
+          "how": "Withdraws to assess before committing; engages on own terms",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic withdrawal to observation position when demands arise — energy conservation as primary instinct",
+          "respond_glimpsed": "Articulates the value of the pause consciously — aware of the pattern and can reason about it",
+          "superpower_signal": "Refuses to waste energy on reactive engagement; information-gathering before action",
+          "kryptonite_signal": "The 'moment to look' can extend indefinitely — perpetual assessment as avoidance of commitment",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "The pause before engaging isn't patience — it's infrastructure.",
+        "response_parts": {
+          "guide_text": "There's an automatic version of that pattern — the withdrawal that just kicks in — and then there's the version you'd consciously choose. Sounds like you can see both.",
+          "question_text": "How often do you find yourself holding back from something — a conversation, a commitment, an experience — not because you don't want it, but because engaging fully would cost you something you're not sure you want to spend?",
+          "question_format": "frequency",
+          "answer_options": [
+            "Never",
+            "Sometimes",
+            "Often",
+            "Always"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "All three centers now probed. Body center confirmed withdrawal/assessment pattern — 'waste energy' is a direct SP/5 signal. Energy conservation is explicit and reasoned. Confidence at 0.75. Now need: disconfirmatory question (hard gate), react/respond pattern (partially identified), and wing/variant refinement. The react/respond frame can be deployed here naturally — the person already articulated the value of the pause, which is the respond side. Need to probe the kryptonite — when does assessment become avoidance? This is the 5 shadow.",
+          "next_question_rationale": "Frequency question targeting the kryptonite — holding back from engagement due to energy cost. This tests the 5 shadow (withdrawal as avoidance) vs 9 (passive disengagement) vs 4 (protecting inner world). A high frequency answer deepens 5 confidence significantly. Also plants the react/respond distinction naturally.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "Often. That's... probably the most accurate answer, even if it's not the most flattering framing. There's a resource calculus that happens — sometimes fairly consciously, sometimes not — where the question isn't really whether something is worthwhile but whether I have enough to engage with it properly. Half-engagement feels worse than not engaging at all, so the threshold ends up being fairly high.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When something goes genuinely wrong — a plan fails, someone lets you down, you make a mistake — what tends to hit first: frustration with yourself, frustration with the situation, or withdrawal to figure out what happened?\n- Frustration with myself\n- Frustration with the situation\n- Withdrawal to figure out what happened",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.04,
+            "2": 0.01,
+            "3": 0.03,
+            "4": 0.1,
+            "5": 0.8,
+            "6": 0.03,
+            "7": 0.02,
+            "8": 0.01,
+            "9": 0.01
+          },
+          "needs_differentiation": [
+            "5v4"
+          ],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "head",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.08,
+            "heart": 0.18,
+            "head": 0.74
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "resource calculus",
+                "enough to engage properly",
+                "threshold",
+                "half-engagement"
+              ],
+              "context": "explicit energy accounting as core operating system — textbook SP/5 language"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.1,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Perceptive, analytically precise, emotionally boundaried, resource-conscious",
+          "what": "Clarity, understanding, full engagement or none — no half-measures",
+          "why": "To preserve enough to engage properly when it matters; fear of depletion",
+          "how": "High threshold for commitment; withdraws to conserve; all-or-nothing engagement",
+          "when": "",
+          "where": "Blind spot: threshold may exclude things that would actually replenish"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic resource calculus — assesses cost before committing; high threshold as default protection",
+          "respond_glimpsed": "Aware the framing 'isn't flattering' — can observe own pattern with some self-critical distance",
+          "superpower_signal": "Full presence when engaged; refuses to cheapen experience with partial attention",
+          "kryptonite_signal": "The calculus can keep everything at arm's length indefinitely — perpetual preparation without arrival",
+          "domain_signals": [
+            "personal transformation",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 6,
+          "current_stage": 4,
+          "last_question_format": "frequency",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": null,
+        "thinking_display": "The threshold protects the quality. Also keeps most things out.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes genuinely wrong — a plan fails, someone lets you down, you make a mistake — what tends to hit first: frustration with yourself, frustration with the situation, or a kind of withdrawal to figure out what happened?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Frustration with myself",
+            "Frustration with the situation",
+            "Withdrawal to figure out what happened"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "'Resource calculus' is the most precise piece of self-description yet — this is SP/5 operating system described from the inside. 'Half-engagement feels worse than not engaging' is the kryptonite mechanism named explicitly. Confidence at 0.82. Now need disconfirmatory question (hard gate) — must test against leading hypothesis before closing. The disconfirmatory for 5 vs 4: under stress, does the person turn inward with emotional intensity and longing (4) or withdraw further into analysis and detachment (5)? This forced choice is designed to surface that distinction naturally.",
+          "next_question_rationale": "Disconfirmatory question disguised as stress-response probe. 'Frustration with myself' maps to 4/1 (inner critic, self-referential). 'Frustration with the situation' maps to 8/1 (outer directed). 'Withdrawal to figure out what happened' maps clearly to 5. This will either confirm 5 or crack open the 4 hypothesis if self-directed emotional intensity emerges. Sets disconfirmatory_asked to true.",
+          "question_format_last_used": "frequency"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "Withdrawal to figure out what happened. Frustration feels like noise — it doesn't actually generate useful information. The more interesting question is always the mechanism: what failed, where in the sequence, was it a flawed assumption or a flawed execution. Feeling bad about it seems like a less efficient use of the same energy.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you imagine the version of yourself operating at your best — not performing, just genuinely at full capacity — what are you doing, and who's around?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.01,
+            "3": 0.03,
+            "4": 0.07,
+            "5": 0.85,
+            "6": 0.03,
+            "7": 0.02,
+            "8": 0.01,
+            "9": 0.01
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "head",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.07,
+            "heart": 0.12,
+            "head": 0.81
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "mechanism",
+                "flawed assumption",
+                "flawed execution",
+                "generate useful information",
+                "less efficient use"
+              ],
+              "context": "failure processed as diagnostic data — emotion explicitly reframed as inefficiency"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.1,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.25
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Perceptive, analytically precise, emotionally boundaried, resource-conscious",
+          "what": "Clarity, understanding, accurate diagnosis of what went wrong",
+          "why": "To understand the mechanism — not to feel better but to know what happened",
+          "how": "Converts experience into data; withdraws to analyze; treats emotion as signal noise",
+          "when": "Least available when emotional expression is demanded or expected",
+          "where": "Blind spot: 'feeling bad about it' dismissed as inefficiency — but affect carries information too"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic conversion of emotional experience into analytical problem — frustration labeled 'noise', feeling labeled 'inefficient'",
+          "respond_glimpsed": "Could choose to let affect inform analysis rather than replace it",
+          "superpower_signal": "Stays clear-headed under pressure; diagnosis over drama",
+          "kryptonite_signal": "Treats emotion as inefficiency — misses what feeling bad is actually telling you",
+          "domain_signals": [
+            "personal transformation",
+            "relationships",
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 7,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "How You Respond",
+        "selected_question_id": null,
+        "thinking_display": "Frustration is noise. Feeling bad is inefficient. The pattern runs clean.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the version of yourself operating at your best — not performing, just genuinely at full capacity — what are you doing, and who's around?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Disconfirmatory question confirmed Type 5 decisively. 'Frustration is noise' and 'feeling bad is a less efficient use of energy' — emotion explicitly treated as computational overhead. This is 5 operating at its most characteristic. Confidence at 0.88. All closing criteria met except min_exchanges (need 8) and the open question for variant/wing refinement. One more exchange to surface the positive vision — what draws them forward rather than what they protect against. This will inform the closing message and potentially surface SX signals if intimacy/intensity appears, or SP if solitude/mastery appears.",
+          "next_question_rationale": "Open question targeting the positive vision — what full-capacity looks like. This surfaces variant signals (SP: solitude and mastery; SX: one deep connection; SO: contributing to a group). Also gives the closing message its emotional anchor — their own words about their best self.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "Probably working through something genuinely difficult — a problem that doesn't have an obvious solution, where I have to pull from several different areas at once. And ideally there's at least one other person who can actually engage with it at the same level, push back where my reasoning is weak. Not someone who agrees with me, necessarily — someone who makes the thinking sharper. \n\nWho's around matters less than the quality of what's happening between us. I've had more of those moments in random online exchanges with people I'll never meet than in most social situations I've been deliberately placed in.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "That thing you said — more of those moments in random online exchanges with strangers than in most rooms deliberately built for connection — that stayed with me. The same capacity that makes you extraordinary in genuine intellectual contact is what sets the threshold so high that most people never get close enough to find out. There's more available to you than the calculus that decides in advance what's worth the cost. Your full report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.91,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.01,
+            "3": 0.02,
+            "4": 0.07,
+            "5": 0.88,
+            "6": 0.02,
+            "7": 0.02,
+            "8": 0.01,
+            "9": 0.01
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.12,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "pull from several different areas",
+                "push back where my reasoning is weak",
+                "makes the thinking sharper"
+              ],
+              "context": "ideal connection defined entirely by intellectual function — quality of thinking, not emotional warmth"
+            },
+            {
+              "type": "SX",
+              "words": [
+                "quality of what's happening between us",
+                "random online exchanges",
+                "more of those moments"
+              ],
+              "context": "SX signal — intensity of one-to-one intellectual connection valued over social context or setting"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.12,
+          "SX": 0.43
+        },
+        "wing_signals": {
+          "left": 0.58,
+          "right": 0.22
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Perceptive, analytically precise, emotionally boundaried, resource-conscious",
+          "what": "Intellectual challenge, genuine engagement, thinking made sharper through friction",
+          "why": "To understand — and to find the rare person who can meet that at full depth",
+          "how": "Withdraws from low-quality engagement; fully present for high-quality contact",
+          "when": "Most alive in genuine intellectual friction with one other person",
+          "where": "Blind spot: 'who's around matters less' — may undervalue relational context as data"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic withdrawal from low-signal environments; high threshold for social engagement",
+          "respond_glimpsed": "When contact is genuine — fully present, seeks friction not comfort, invites challenge",
+          "superpower_signal": "Can go deep on hard problems; the right intellectual partner unlocks full capacity",
+          "kryptonite_signal": "The rarity of 'those moments' means most connection gets quietly written off before it starts",
+          "domain_signals": [
+            "personal transformation",
+            "relationships",
+            "leadership"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 8,
+          "current_stage": 6,
+          "last_question_format": "open",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "More alive in a random exchange with a stranger than most rooms built for connection.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "The variant picture sharpened significantly. SP and SX are nearly tied — 'who's around matters less than the quality of what's happening between us' is a crystalline SX signal. The person doesn't need the social container; they need the intensity of genuine one-to-one contact. But the resource calculus and high threshold are SP. This is likely SP/SX or SX/SP stack — the random online exchange detail is key: connection without social obligation, depth without cost to the container. All closing criteria met. Confidence 0.91, gap from second place (Type 4) is 0.81. Close now.",
+          "next_question_rationale": "All criteria met. Closing message. Mirror their words: 'random online exchanges' and 'makes the thinking sharper.' Tension: the thing that makes them so good at genuine depth is the same thing that keeps the threshold so high most connection never gets the chance. Forward: there's more available than the pattern that decides in advance what's worth the cost.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "That's... an interesting observation. I'm not sure I'd frame the calculus as something that operates in advance so much as — \n\nActually, I'm not going to argue with it. There's probably something accurate there that I'd normally find a way to reframe into something more comfortable. The threshold thing. I'm aware of it more than I let on.\n\nWhat does the report say?",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "The fact that you stopped mid-sentence rather than finished the reframe — that's actually the most useful thing you've done in this whole conversation. The report is where everything gets named properly, with the full picture of what you built and what it costs you and what's on the other side of it.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.93,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.01,
+            "3": 0.02,
+            "4": 0.07,
+            "5": 0.88,
+            "6": 0.02,
+            "7": 0.02,
+            "8": 0.01,
+            "9": 0.01
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.12,
+            "head": 0.82
+          },
+          "lexicon_signals": [
+            {
+              "type": 5,
+              "words": [
+                "reframe into something more comfortable",
+                "I'm aware of it more than I let on"
+              ],
+              "context": "rare moment of unguarded self-disclosure — the pattern named from inside"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.12,
+          "SX": 0.43
+        },
+        "wing_signals": {
+          "left": 0.58,
+          "right": 0.22
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Perceptive, analytically precise, emotionally boundaried, resource-conscious — and aware of it",
+          "what": "Intellectual challenge, genuine engagement, thinking made sharper through friction",
+          "why": "To understand; to find rare depth; to not be depleted by contact that doesn't deliver",
+          "how": "Withdraws from low-quality engagement; fully present for high-quality contact; reframes vulnerability into analysis",
+          "when": "Most alive in genuine intellectual friction; most defended when emotional exposure is unearned",
+          "where": "Blind spot named by person themselves: 'aware of it more than I let on'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Started to argue with the closing observation — caught himself mid-sentence and stopped",
+          "respond_glimpsed": "Chose not to reframe. That itself is the respond.",
+          "superpower_signal": "Extraordinary self-awareness when not in protection mode",
+          "kryptonite_signal": "The threshold — named, owned, carried quietly",
+          "domain_signals": [
+            "personal transformation",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "complete",
+          "exchange_count": 9,
+          "current_stage": 7,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Putting It Together",
+        "selected_question_id": null,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "The person caught themselves mid-reframe and stopped. That moment — 'I'm not going to argue with it' — is the most unguarded thing they've said in the entire assessment. The awareness is there. The report is what they're asking for now.",
+          "next_question_rationale": "Assessment complete. Respond to the human moment briefly, then hand off to the report.",
+          "question_format_last_used": ""
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "Right. Well. I'll read it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "Good. It'll be worth it.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 5,
+          "confidence": 0.93,
+          "type_scores": {
+            "1": 0.03,
+            "2": 0.01,
+            "3": 0.02,
+            "4": 0.07,
+            "5": 0.88,
+            "6": 0.02,
+            "7": 0.02,
+            "8": 0.01,
+            "9": 0.01
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "The Investigator",
+          "whole_type": "head",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.06,
+            "heart": 0.12,
+            "head": 0.82
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.12,
+          "SX": 0.43
+        },
+        "wing_signals": {
+          "left": 0.58,
+          "right": 0.22
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Perceptive, analytically precise, emotionally boundaried, resource-conscious — and aware of it",
+          "what": "Intellectual challenge, genuine engagement, thinking made sharper through friction",
+          "why": "To understand; to find rare depth; to not be depleted by contact that doesn't deliver",
+          "how": "Withdraws from low-quality engagement; fully present for high-quality contact",
+          "when": "Most alive in genuine intellectual friction; most defended when emotional exposure is unearned",
+          "where": "Blind spot: 'aware of it more than I let on'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "High threshold as default; reframes vulnerability into analysis; withdraws to conserve",
+          "respond_glimpsed": "Stopped mid-reframe and chose not to finish it",
+          "superpower_signal": "Extraordinary perceptual clarity; full presence in genuine intellectual contact",
+          "kryptonite_signal": "The threshold that protects also excludes — and is carried more quietly than shown",
+          "domain_signals": [
+            "personal transformation",
+            "relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "complete",
+          "exchange_count": 10,
+          "current_stage": 7,
+          "last_question_format": "",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Putting It Together",
+        "selected_question_id": null,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Assessment complete. Person is ready. Brief, clean send-off — match their register.",
+          "next_question_rationale": "No question. Just a clean close that matches their tone.",
+          "question_format_last_used": ""
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "I hope so. I don't say that often — \"I hope\" — it implies a kind of investment I usually keep quieter than that. But yes. We'll see.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": [],
+      "commandment_violations": []
+    }
+  ]
+}

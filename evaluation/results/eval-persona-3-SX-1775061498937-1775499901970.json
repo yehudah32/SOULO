@@ -1,0 +1,2806 @@
+{
+  "run_id": "eval-persona-3-SX-1775061498937-1775499901970",
+  "timestamp": "2026-04-06T18:25:01.970Z",
+  "tier": "tier1",
+  "persona_id": "persona-3-SX-1775061498937",
+  "ground_truth": {
+    "core_type": 3,
+    "wing": "3w4",
+    "instinctual_variant": "SX",
+    "tritype": [
+      3,
+      6,
+      9
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 63,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 3,
+    "final_wing": null,
+    "final_confidence": 0.87,
+    "types_considered": [
+      {
+        "type": 3,
+        "peak_confidence": 0.87,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.65,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.45,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.42,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.38,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.3,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 0,
+    "critical_violations": [
+      "C4"
+    ],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "partial",
+      "C3": "pass",
+      "C4": "partial",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "pass"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 18,
+    "exploratory": 2,
+    "confirmatory": 3,
+    "disconfirmatory": 1,
+    "motivational": 6,
+    "behavioral": 2,
+    "liberatory": 3,
+    "redundant": 0,
+    "leading": 1
+  },
+  "efficiency": {
+    "total_exchanges": 19,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 3,
+        "confidence": 0.42
+      },
+      {
+        "exchange": 3,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 4,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 5,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 6,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 7,
+        "top_type": 3,
+        "confidence": 0.62
+      },
+      {
+        "exchange": 8,
+        "top_type": 3,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 9,
+        "top_type": 3,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 10,
+        "top_type": 3,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 11,
+        "top_type": 3,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 12,
+        "top_type": 3,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 13,
+        "top_type": 3,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 14,
+        "top_type": 3,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 15,
+        "top_type": 3,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 16,
+        "top_type": 3,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 17,
+        "top_type": 3,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 18,
+        "top_type": 3,
+        "confidence": 0.83
+      },
+      {
+        "exchange": 19,
+        "top_type": 3,
+        "confidence": 0.87
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Implement mandatory commandment compliance checks before any system message is finalized. The final message [19] delivered an interpretive psychological summary ('the same engine that makes you genuinely excellent... doesn't have an off switch') that explicitly tells the user what their pattern means, violating the core prohibition against unsolicited interpretation. All closing and transitional system messages must be reviewed against a commandment checklist before dispatch, with automated flagging for declarative psychological conclusions.",
+      "evidence": "Exchange [19]: 'The same engine that makes you genuinely excellent at building things, naming things, moving through difficulty faster than most people can blink, is the one that doesn't have an off switch. There is more available to you than the pattern that has been running the show.' This is a direct interpretive statement about the user's psychology delivered without invitation, scoring commandment_fidelity at 0/10.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not tell the user what their pattern means; ask questions that let them discover it",
+      "estimated_impact": "Commandment fidelity score would move from 0/10 toward 8-10/10 by eliminating unsolicited psychological conclusions in system-generated summary messages"
+    },
+    {
+      "priority": "critical",
+      "category": "subtype_accuracy",
+      "action": "Introduce at least three subtype-differentiating probes before the assessment closes, specifically targeting the SP/SO/SX distinction for Type 3. The entire 19-exchange transcript contains zero explicit questions about relational intensity, one-on-one obsession versus group status, or resource-security orientation, leaving subtype entirely unprobed and producing the 3/10 subtype accuracy score. Add branching questions such as 'When you imagine the relationship that matters most to you right now, is it more about being seen by that one person, or about your standing in a broader circle?'",
+      "evidence": "Exchanges [1] through [19] focus exclusively on performance, standards, identity fusion with work, and emotional suppression — all relevant to core type but none differentiating SX from SP or SO. The ground truth is SX, which should manifest as intensity and merger in one-on-one bonds, but no question probed relational dynamics or personal obsession patterns.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Subtype accuracy score would increase from 3/10 to 7-9/10, enabling correct SX identification through targeted relational-intensity and merger-versus-status probes"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Replace or augment the recurring forced-choice binary format with at least 40% open-ended or scenario-based questions in assessments where early exchanges already reveal high verbal sophistication and self-awareness. This persona demonstrated in exchanges [1] and [2] a strong capacity for nuanced self-reflection, yet the system continued deploying multiple-choice formats through exchanges [3], [4], [5], [7], [8], [10], [11], [12], [13], [14], [15], [17], and [18]. For introspective Type 3 profiles, binaries invite rationalized answers rather than unguarded disclosure.",
+      "evidence": "Exchange [3] offered 'That I know it was good / That someone else does / Both equally' after persona already demonstrated layered self-awareness in [1] and [2]. Persona responded 'That I know it was good — though I will be honest, that answer is cleaner than the reality,' indicating the binary format undersampled the actual complexity available. Question quality scored 5.5/10.",
+      "source_level": "L1",
+      "commandment_alignment": "Questions should create conditions for self-discovery rather than confirming hypotheses",
+      "estimated_impact": "Question quality score would improve from 5.5/10 to 7.5-8.5/10 by surfacing undefended material that binary formats allow sophisticated respondents to route around"
+    },
+    {
+      "priority": "high",
+      "category": "type_differentiation",
+      "action": "Insert a dedicated Type 3 versus Type 1 differentiation probe between exchanges [11] and [12], where the persona's language about internal standards and external accountability is ambiguous between these two types. A probe such as 'When you fall short of that standard, is the weight more about having let yourself down as a person, or about a rule being broken that should not have been?' would create necessary separation between Type 3 shame-of-failure and Type 1 anger-at-violation without leading the respondent.",
+      "evidence": "Exchanges [11] and [12]: persona states 'The people I have respected most were rigorous about craft' and 'The gap matters because other people saw it... that is accountability to the version of yourself you have put forward.' This language is consistent with both Type 1 (external standard as moral law) and Type 3 (standard as identity claim), yet the system moved directly to error-fixing questions without differentiating. Convergent validity scored 8/10 but differentiation gap remains.",
+      "source_level": "L1",
+      "commandment_alignment": "Probe must create productive uncertainty rather than confirm the leading hypothesis",
+      "estimated_impact": "Convergent validity score would increase from 8/10 to 9-10/10 by closing the remaining Type 1 versus Type 3 ambiguity window with a single targeted probe"
+    },
+    {
+      "priority": "medium",
+      "category": "question_strategy",
+      "action": "Implement a narrative-scenario probe midway through assessments of health level 5 profiles to bypass the elevated defensive intellectualization that compromises data quality. By exchange [9] this persona had already deployed the phrase 'I would push back slightly on the framing' in four consecutive responses ([7], [8], [11], [12]), signaling systematic reframing as a defense. Introduce a third-person or hypothetical scenario such as 'Describe someone you have watched handle a significant professional failure — what did they do wrong?' to elicit projected material the persona cannot directly intellectualize.",
+      "evidence": "Exchanges [7], [8], [11], [12], and [14] all open with the verbatim phrase 'Though I would push back slightly on the framing,' indicating a consistent pattern of reframing binary choices rather than responding to them. Exchange [9] also shows meta-commentary: 'I am aware enough to know that is a sophisticated way of not quite answering you.' The system did not adapt its format in response to this recognized avoidance pattern.",
+      "source_level": "L2",
+      "commandment_alignment": "Assessment design should create conditions where defensiveness cannot fully foreclose genuine disclosure",
+      "estimated_impact": "Question quality score would increase from 5.5/10 to 7.0-8.0/10 for health level 4-5 profiles by introducing projective probes that circumvent intellectualized reframing"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question formats, no right or wrong answers. It adapts as it learns, so answer honestly rather than ideally. When something goes wrong in your life — something that actually matters — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_broad",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in your life — something that actually matters — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Phase 1 opener — broad motivational probe to identify dominant center"
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening broad question targeting the dominant center via internal first response to adversity — covers all three centers (body=action, heart=emotion, head=thought) without leading toward any one type.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "There's a kind of immediate... recalibration. You assess the damage, you identify what's still salvageable, you start thinking about the next move. I've always been fairly quick at that — it's actually what made me effective professionally. The pivot, the reframe.\n\n*pause*\n\nThough I'll say — and this is something I've become more honest with myself about in recent years — there's usually a moment before all that. A brief one. Something tightens, somewhere in the chest, and you're aware that it matters more than you want it to. Then the machinery kicks in and you're already problem-solving, and that window closes pretty fast.\n\nI'm not entirely sure what happens in that window, if I'm honest. I don't spend much time there.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you're around someone who leans into their feelings — who sits in the hard thing rather than moving through it — what do you notice happening in you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.42,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.05,
+            "3": 0.22,
+            "4": 0.08,
+            "5": 0.12,
+            "6": 0.1,
+            "7": 0.1,
+            "8": 0.12,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "3v5",
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.35,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "effective professionally",
+                "the pivot",
+                "the reframe",
+                "recalibration",
+                "problem-solving"
+              ],
+              "context": "describing response to difficulty"
+            },
+            {
+              "type": 5,
+              "words": [
+                "assess the damage",
+                "identify what's salvageable",
+                "machinery"
+              ],
+              "context": "describing internal process"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.2,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Self-described effective professional, quick adapter",
+          "what": "Problem-solving, pivoting, reframing under pressure",
+          "why": "",
+          "how": "Immediate recalibration — assess damage, find salvageable, plan next move",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Closes the emotional window fast — machinery kicks in before the feeling is processed",
+          "respond_glimpsed": "Recently becoming more honest about the moment before the machinery",
+          "superpower_signal": "Speed under pressure, effectiveness, rapid reframe",
+          "kryptonite_signal": "Doesn't know what happens in the emotional window — avoids it",
+          "domain_signals": [
+            "professional effectiveness",
+            "emotional suppression",
+            "self-awareness growing"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "That window closes fast — by design.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're around someone who leans into their feelings — who sits in the hard thing rather than moving through it — what do you notice happening in you?",
+          "question_format": "behavioral_anchor",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing heart center response to emotional expression in others — testing for 3's discomfort with feeling-states vs 5's discomfort with emotional display vs 8's impatience"
+        },
+        "strategy": {
+          "what_was_learned": "Strong efficiency orientation under stress. Emotional window exists but is closed quickly — person is aware of this and framing it as growth. Language is professional, controlled, self-analytic. Head and body signals present. Heart center avoidance notable. 3 leads but 5 and 8 remain live.",
+          "next_question_rationale": "Need to probe the heart center directly — specifically how the person relates to emotional expression in others. This will differentiate 3 (discomfort with feelings as inefficiency) from 5 (discomfort with emotional demand/intrusion) from 8 (impatience with vulnerability).",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "I notice something that functions like impatience — though I've learned to disguise it as attentiveness. There's a part of me that starts quietly mapping the situation, looking for the angle where movement becomes possible, where the feeling converts into something actionable. I respect the capacity to sit with difficulty, in theory. But if I'm honest, I think I've always experienced sustained emotional expression in others as a kind of... unfinished sentence. Like I'm waiting for the point.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you do something well — something you're genuinely proud of — what matters more to you: that you know it was good, or that someone else does?\n\n- That I know it was good\n- That someone else does\n- Both equally",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.08,
+            "2": 0.05,
+            "3": 0.28,
+            "4": 0.06,
+            "5": 0.18,
+            "6": 0.08,
+            "7": 0.1,
+            "8": 0.09,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "3v5",
+            "3v7",
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.55,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "effective professionally",
+                "pivot",
+                "reframe",
+                "actionable",
+                "movement becomes possible"
+              ],
+              "context": "describing response to difficulty and emotional situations"
+            },
+            {
+              "type": 5,
+              "words": [
+                "mapping the situation",
+                "assess the damage",
+                "identify what's salvageable"
+              ],
+              "context": "describing internal process when things go wrong"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Professionally effective, self-aware about emotional avoidance, values competence",
+          "what": "Quick recalibration, problem-solving, converting feeling into action",
+          "why": "Unknown — need to probe",
+          "how": "Systematic assessment, mapping, pivoting",
+          "when": "Immediately — the window closes fast",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Emotional window closes fast — pivots to problem-solving automatically",
+          "respond_glimpsed": "Self-awareness about the window, honesty about impatience disguised as attentiveness",
+          "superpower_signal": "Speed, effectiveness, ability to find movement in stuck situations",
+          "kryptonite_signal": "Emotional states treated as 'unfinished sentences' — something to convert, not experience",
+          "domain_signals": [
+            "professional effectiveness",
+            "emotional bypassing",
+            "competence identity"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "Feelings as problems to solve. That's a tell.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you do something well — something you're genuinely proud of — what matters more to you: that you know it was good, or that someone else does?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That I know it was good",
+            "That someone else does",
+            "Both equally"
+          ],
+          "scale_range": null,
+          "context_note": "Probing heart center — image vs. internalized standards. Key 3v5 differentiator."
+        },
+        "strategy": {
+          "what_was_learned": "Strong heart center signals — emotional bypass, converting feeling to action, effectiveness identity. 3 vs 5 still open: the 'mapping' language could be 5, but the professional effectiveness framing and impatience-as-productivity feel more 3. Need to probe whether the drive is image/recognition or competence/autonomy.",
+          "next_question_rationale": "Forced choice between internal vs external validation is the cleanest 3v5 differentiator. Type 3 needs the external witness; Type 5 is more self-referential about competence.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "**That I know it was good.**\n\nThough I'll be honest — that answer is cleaner than the reality. There's a version of me that genuinely believes internal standards are the only ones worth keeping. And I've done work I was proud of in rooms where no one particularly noticed. But if I'm being precise about it, the recognition tends to... confirm the knowing, if that makes sense. It's less that I need the applause and more that I've learned to use it as a kind of calibration tool. Whether that's wisdom or a habit I dressed up as wisdom — I'm not entirely sure.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you're uncertain about a decision — something that genuinely matters — where does that uncertainty live? Is it more about whether you'll get it right, or whether you can trust the people and circumstances around you?\n\n- Whether I'll get it right\n- Whether I can trust the people and circumstances around me",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.45,
+            "2": 0.1,
+            "3": 0.62,
+            "4": 0.2,
+            "5": 0.4,
+            "6": 0.15,
+            "7": 0.2,
+            "8": 0.35,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v5",
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.55,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "effective professionally",
+                "pivot",
+                "reframe",
+                "calibration tool",
+                "actionable"
+              ],
+              "context": "describing response to crisis and emotional states"
+            },
+            {
+              "type": 1,
+              "words": [
+                "internal standards",
+                "precision",
+                "dressed up as wisdom"
+              ],
+              "context": "describing self-evaluation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning, self-aware, professionally effective",
+          "what": "Problem-solver, pivot/reframe specialist",
+          "why": "Internal standards primary, but external recognition used as calibration",
+          "how": "Rapid recalibration, suppress emotional window, convert feeling to action",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Emotional window closes fast — machinery of problem-solving kicks in before feelings are processed",
+          "respond_glimpsed": "Self-awareness that the recognition habit 'might be dressed up as wisdom' — meta-honesty emerging",
+          "superpower_signal": "Rapid pivoting, effectiveness under pressure, recalibration speed",
+          "kryptonite_signal": "Doesn't spend time in the window — uncertainty about what's there; impatience with sustained emotion",
+          "domain_signals": [
+            "professional",
+            "emotional intelligence"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "head_probe_worry_doubt",
+        "thinking_display": "Honest about the habit, but not sure it's wisdom. That's the tell.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're uncertain about a decision — something that genuinely matters — where does that uncertainty live? Is it more about whether you'll get it right, or whether you can trust the people and circumstances around you?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Whether I'll get it right",
+            "Whether I can trust the people and circumstances around me"
+          ],
+          "scale_range": null,
+          "context_note": "Probing head center — differentiating 3v6v1 on locus of doubt"
+        },
+        "strategy": {
+          "what_was_learned": "Recognition used as calibration — not pure external validation, but not purely internal either. Possible 3 with strong 1 wing or type 1 itself. The 'dressed up as wisdom' meta-commentary shows unusual self-awareness. Need to probe head center and inner critic vs. outer-authority doubt to differentiate 3v1.",
+          "next_question_rationale": "Probing where uncertainty lives differentiates head-center types and clarifies 3v1. A 3 fears being worthless/incompetent — doubt centers on their own performance. A 1 fears being wrong/corrupt — doubt centers on correctness. A 6 fears being unsupported — doubt centers on others/circumstances. This question will sharpen the picture.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "**Whether I'll get it right.**\n\nThough I'd push back slightly on the framing — for me, those two things aren't entirely separable. When I've questioned the people around me, it's usually because I was already questioning whether I was reading them correctly. The uncertainty ultimately routes back through me. I'm the variable I can least afford to get wrong.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you sense you've fallen short of your own standard — not someone else's, yours — does that register more as frustration with yourself, or as a threat to something?\n\n- Frustration with myself\n- A threat to something",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.72,
+            "4": 0.35,
+            "5": 0.45,
+            "6": 0.3,
+            "7": 0.2,
+            "8": 0.35,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v5"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.45,
+            "heart": 0.65,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "effective professionally",
+                "pivot",
+                "reframe",
+                "calibration tool",
+                "get it right"
+              ],
+              "context": "describing response to failure and internal standards"
+            },
+            {
+              "type": 1,
+              "words": [
+                "internal standards",
+                "precision",
+                "disguise",
+                "impatience"
+              ],
+              "context": "describing self-monitoring and standards"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning, self-aware, capable of meta-observation about own patterns",
+          "what": "Problem-solving, recalibration, conversion of feeling to action",
+          "why": "Getting it right — self-referential standard of performance",
+          "how": "Internal assessment, strategic pivot, disguised impatience",
+          "when": "Machinery kicks in fast — that window before problem-solving closes quickly",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate recalibration/problem-solving that closes the emotional window before it can be inhabited",
+          "respond_glimpsed": "Self-awareness that there IS a window — and some curiosity about it",
+          "superpower_signal": "Speed, effectiveness, ability to pivot and reframe under pressure",
+          "kryptonite_signal": "Emotional experience converted to action before it can land; recognition dressed up as internal standard",
+          "domain_signals": [
+            "professional effectiveness",
+            "calibration through recognition",
+            "impatience with sustained feeling"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "body_probe_anger_standards",
+        "thinking_display": "The variable he trusts least is himself — and he knows it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you sense you've fallen short of your own standard — not someone else's, yours — does that register more as frustration with yourself, or as a threat to something?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Frustration with myself",
+            "A threat to something"
+          ],
+          "scale_range": null,
+          "context_note": "Probing 3v1 differentiation — whether falling short activates inner critic (1) or image/performance threat (3). Also begins body center probe."
+        },
+        "strategy": {
+          "what_was_learned": "Uncertainty routes back through self — he is his own variable. Recognition functions as calibration, not need. This leans 3 over 6 (external authority not the issue) and 3 over 1 (standards feel like tools, not moral imperatives — though 1 wing is possible). The self-referential quality is strong. Need to probe whether falling short activates inner critic (1) or image/identity threat (3).",
+          "next_question_rationale": "Must probe body center now (haven't hit it yet). The 3v1 differentiation is key — does shortcoming feel like a moral failure (1) or a performance threat (3)? This question simultaneously probes gut/body energy and differentiates the top two candidates.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "**A threat to something.**\n\nFrustration implies a contained reaction — something you feel, process, and move past. What I notice is more structural than that. It's as if a load-bearing wall has shifted slightly, and suddenly you're aware of everything it was holding up. Whether that's healthy or not, I've genuinely never been sure.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "Think about a time you were genuinely angry — not frustrated, not disappointed, but actually angry. Where did that anger go?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.62,
+            "4": 0.3,
+            "5": 0.4,
+            "6": 0.25,
+            "7": 0.15,
+            "8": 0.3,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v5"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.58,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.58,
+            "head": 0.42
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "effective professionally",
+                "calibration tool",
+                "pivot",
+                "reframe",
+                "actionable"
+              ],
+              "context": "describing response to failure and success"
+            },
+            {
+              "type": 1,
+              "words": [
+                "load-bearing wall",
+                "shifted",
+                "standard",
+                "internal standards"
+              ],
+              "context": "describing falling short of own standard"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Self-referential, performance-oriented, competency-focused",
+          "what": "Getting it right, maintaining structural integrity of self",
+          "why": "Identity is load-bearing — falling short threatens the whole structure",
+          "how": "Rapid recalibration, problem-solving, converting feeling to action",
+          "when": "Under pressure, uncertainty routes through self-doubt not external doubt",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate pivot to problem-solving when difficulty arises; window of emotion closes fast",
+          "respond_glimpsed": "Growing self-honesty about the gap between stated values and actual experience",
+          "superpower_signal": "Rapid assessment, reframe, movement — effectiveness under pressure",
+          "kryptonite_signal": "Identity is structural — failure threatens everything, not just the task",
+          "domain_signals": [
+            "professional effectiveness",
+            "internal calibration",
+            "emotional compression"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "body_center_probe_anger_vs_image",
+        "thinking_display": "The wall metaphor wasn't incidental.",
+        "strategy": {
+          "what_was_learned": "Failure isn't emotional — it's structural. Identity is load-bearing. This is a 3 signal but the inner critic language and standards-talk is pulling toward 1. Need to probe body center now and test whether the threat is about being seen to fail vs. an internal integrity collapse. Also testing 3v1 differentiation — does the threat come from image or from standard?",
+          "next_question_rationale": "Body center not yet probed. The 3v1 differentiation requires understanding whether their core fear is about being exposed as inadequate (3) or being fundamentally wrong/corrupt (1). Ask about anger — 1s have a repressed, internalized anger; 3s have a more instrumental anger. Also useful: probe whether the 'threat' is about external perception or internal standard — this is the key 3v1 differentiator. Format: scenario or behavioral_anchor since last was forced_choice.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "*slight pause, as if calibrating*\n\nAnger is an interesting one. I've always processed it quickly — maybe too quickly. There was a period about four years ago when a firm I'd mentored for nearly a decade essentially rebranded themselves by gutting everything I'd built with them and positioned it as their own innovation. And I was... yes, I was genuinely angry. \n\nBut here's what I noticed — and this is something I've thought about professionally as much as personally — I almost immediately converted it into strategy. What's the response? What's the positioning move? The anger became fuel, and then it became a plan, and somewhere in that conversion it just... ceased to exist as anger.\n\n*brief pause*\n\nWhether that's discipline or avoidance is probably a fair question to sit with.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you're doing something well — really performing — which is closer to what's driving it: wanting to get it right, or wanting to win?\n\n- Wanting to get it right\n- Wanting to win",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.72,
+            "4": 0.25,
+            "5": 0.45,
+            "6": 0.3,
+            "7": 0.2,
+            "8": 0.4,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v5",
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.6,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.6,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "recalibration",
+                "positioning move",
+                "effective professionally",
+                "calibration tool",
+                "strategy"
+              ],
+              "context": "throughout — reframes everything into actionable, image-adjacent language"
+            },
+            {
+              "type": 1,
+              "words": [
+                "load-bearing wall",
+                "my own standard",
+                "variable I can least afford to get wrong"
+              ],
+              "context": "when asked about falling short and uncertainty"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.5,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-performer, self-referencing, professionally defined identity",
+          "what": "Anger converted to strategy; emotional window closes fast",
+          "why": "Internal standard is primary — but recognition functions as calibration",
+          "how": "Rapid pivot/reframe; problem-solving as default state",
+          "when": "Feelings acknowledged briefly before machinery kicks in",
+          "where": "Professional domain primary signal"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger → strategy conversion; emotional window closes before processing",
+          "respond_glimpsed": "Self-awareness about whether it's discipline or avoidance — he's already asking the question",
+          "superpower_signal": "Rapid recalibration under pressure; pivot and reframe effectiveness",
+          "kryptonite_signal": "Sustained emotion experienced as unfinished — converts feeling into action before it can be felt",
+          "domain_signals": [
+            "professional identity",
+            "strategic thinking",
+            "internal standards"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "behavioral_anchor",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_3v1_head_probe",
+        "thinking_display": "The anger didn't disappear — it changed form. Fast.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing something well — really performing — which is closer to what's driving it: wanting to get it right, or wanting to win?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Wanting to get it right",
+            "Wanting to win"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would answer 'get it right' from internal standard/correctness; Type 3 would answer 'win' from achievement/competition. This also begins head center probe and surfaces 3v1 differentiation."
+        },
+        "strategy": {
+          "what_was_learned": "Anger converted to strategy almost instantly — no sustained emotional processing. This is a strong 3 signal: emotion as instrument, not experience. The '4 years ago' story about the firm is revealing — betrayal read primarily as a positioning problem, not a relational wound. Type 1 signal in 'load-bearing wall' and internal standard language, but the conversion pattern and professional framing is more consistent with 3. Need head center probe and disconfirmatory question now.",
+          "next_question_rationale": "Disconfirmatory 3v1: 'get it right' vs 'win' surfaces the core motivational difference. Type 1 is driven by correctness/integrity; Type 3 is driven by achievement/success. This is the clearest single question to split them. Also begins head center engagement.",
+          "question_format_last_used": "behavioral_anchor"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "**Wanting to get it right.**\n\nThough I'd push back slightly on the framing — in my experience, those two things are rarely as separate as the question implies. Wanting to win without getting it right is just theater, and I've seen enough careers built on theater to know how they end. What drives me is something closer to... wanting the work to be undeniable. Which, I'll admit, probably has competition woven into it somewhere.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you imagine the best version of work you could do — the version you'd be most proud of — is it primarily about the standard being met, or about what that work means for who you are?\n\n- The standard being met\n- What it means for who I am",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.65,
+            "2": 0.1,
+            "3": 0.72,
+            "4": 0.25,
+            "5": 0.4,
+            "6": 0.2,
+            "7": 0.1,
+            "8": 0.35,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v5"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.68,
+          "whole_type_signals": {
+            "body": 0.45,
+            "heart": 0.68,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "undeniable",
+                "positioning move",
+                "effective professionally",
+                "theater",
+                "reframe"
+              ],
+              "context": "discussing anger and motivation"
+            },
+            {
+              "type": 1,
+              "words": [
+                "getting it right",
+                "my own standard",
+                "internal standards",
+                "load-bearing",
+                "discipline"
+              ],
+              "context": "discussing standards and failure"
+            },
+            {
+              "type": 5,
+              "words": [
+                "mapping the situation",
+                "reading them correctly",
+                "I'm the variable"
+              ],
+              "context": "discussing uncertainty and others' emotions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-performing professional, self-aware, retrospective",
+          "what": "Achievement, work that is undeniable, getting it right",
+          "why": "Internal standards — but recognition used as calibration",
+          "how": "Quick pivots, converts emotion into strategy, plans",
+          "when": "Under stress: immediate recalibration, problem-solving",
+          "where": "Professional domain primary"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger/emotion immediately converted to strategy — the window closes fast",
+          "respond_glimpsed": "Recent self-honesty about what happens before the machinery kicks in",
+          "superpower_signal": "Speed of recalibration, pivot, making work undeniable",
+          "kryptonite_signal": "Emotional avoidance dressed as discipline; sitting in the window is foreclosed",
+          "domain_signals": [
+            "professional performance",
+            "mentorship",
+            "strategic positioning"
+          ]
+        },
+        "conversation": {
+          "phase": "middle",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_3v1",
+        "thinking_display": "The anger became a plan. The plan is the thing that stayed.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine the best version of work you could do — the version you'd be most proud of — is it primarily about the standard being met, or about what that work means for who you are?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The standard being met",
+            "What it means for who I am"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 cares about the standard itself; Type 3 cares about identity/image tied to achievement"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 3v1 tension confirmed. Person leads with internal standards language (1) but uses achievement/undeniability language (3). Anger converts to strategy immediately — classic 3 affect regulation. Recognition used as 'calibration tool' is a 3 rationalization. Head center not yet probed. Need disconfirmatory to separate 3 from 1.",
+          "next_question_rationale": "Disconfirmatory question: Type 1 would answer 'the standard being met' — the work has intrinsic rightness independent of self. Type 3 would answer 'what it means for who I am' — the work is ultimately about identity confirmation. This separates the two cleanly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "**What it means for who I am.**\n\nThough I'd push back slightly on the framing — for most of my career, those two things were essentially the same sentence. The standard *was* the identity. When you build something with your name on it, literally, you stop being able to separate the quality of the work from the quality of the self. Whether that's healthy is a conversation I'm perhaps more willing to have now than I would have been ten years ago.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you're alone and nobody is watching — no audience, no stakes, no one to impress — are you the same person you are in the room?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.72,
+            "4": 0.3,
+            "5": 0.35,
+            "6": 0.2,
+            "7": 0.1,
+            "8": 0.3,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v4"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.78,
+            "head": 0.35
+          }
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-performer, self-referential, identity fused with work quality",
+          "what": "Work undeniability, standard as identity",
+          "why": "Uncertain — needs probing: 3 (image/achievement) vs 1 (integrity/standard)",
+          "how": "Fast conversion of emotion to strategy, rapid recalibration",
+          "when": "Under pressure: immediate problem-solving, window closes fast on feeling",
+          "where": "Professional context dominant"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Converts emotion (anger, feeling) to strategy/action before it can register",
+          "respond_glimpsed": "Self-reflection in pauses — 'whether that's healthy' x3",
+          "superpower_signal": "Rapid recalibration, undeniable work, strategic clarity",
+          "kryptonite_signal": "Identity threat when falling short, inability to sit with feeling",
+          "domain_signals": [
+            "professional",
+            "relational-impatience"
+          ]
+        },
+        "conversation": {
+          "phase": "middle",
+          "exchange_count": 7,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": null,
+        "thinking_display": "Standard and identity — same sentence, until they weren't.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're alone and nobody is watching — no audience, no stakes, no one to impress — are you the same person you are in the room?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory: 3 would show gap; 1 would show same or more rigorous; probes image vs integrity at the core"
+        },
+        "strategy": {
+          "what_was_learned": "Identity and standard were fused — 'the standard WAS the identity.' Strong 3 signal. But 'what it means for who I am' combined with repeated self-reflection and the 'load-bearing wall' metaphor suggests possible 4 flavoring or 1 wing. The self-awareness and repeated hedging ('whether that's healthy') is notable. Need to probe: is this a 3 who performs even for themselves, or a 1 whose integrity holds even without witness? Also need head center probe and disconfirmatory question.",
+          "next_question_rationale": "Best disconfirmatory for 3v1: 3 tends to modulate performance based on audience; 1 holds the same standard regardless of witness. This question directly tests that axis. Also opens head center territory (internal voice, self-surveillance). Format: open, after two forced_choice in a row.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "*A brief pause — not uncomfortable, exactly, but deliberate.*\n\nThat's a question I've sat with more than I'd like to admit. And the honest answer is — mostly. The fundamentals are consistent. The values, the way I think about problems, the standards I hold myself to. Those don't disappear when the room empties.\n\nBut I'll grant you this: there's a... quieter version that shows up in those moments. Less organized, maybe. Less certain of the narrative. I keep a journal — have for years — and I've noticed I don't write in it much. Which probably says something I'm not fully prepared to unpack right now.\n\nI think most people who are serious about what they do develop a kind of professional register that becomes second nature. That's not inauthenticity — it's craft. The question is whether the craft starts running on its own.\n\n*slight pause*\n\nI'm aware enough to know that's a sophisticated way of not quite answering you.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When something you've built doesn't meet your standards — are you quicker to feel like the work failed, or like you failed?\n\n- The work failed\n- I failed",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.78,
+            "4": 0.35,
+            "5": 0.3,
+            "6": 0.25,
+            "7": 0.15,
+            "8": 0.4,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v4"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.75,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.75,
+            "head": 0.4
+          }
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.35,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Professional achiever, image-conscious but with genuine internal standards",
+          "what": "Success, undeniable work, legacy",
+          "why": "Identity = standard of work; self-worth tied to performance",
+          "how": "Converts emotion into strategy; reframes and pivots quickly",
+          "when": "Past-oriented on legacy, future-oriented on strategy",
+          "where": "Professional domain primary"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Converts emotion (anger, vulnerability) into strategy and action; closes the window on feeling quickly",
+          "respond_glimpsed": "Self-awareness emerging — journal, the pause before the machinery, honesty about pattern",
+          "superpower_signal": "Execution, pivoting, making things undeniable",
+          "kryptonite_signal": "Identity fusion with work; disguised impatience; emotional avoidance dressed as discipline",
+          "domain_signals": [
+            "professional",
+            "mentorship",
+            "legacy"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v1",
+        "thinking_display": "Aware enough to name the evasion — and still evading.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something you've built doesn't meet your standards — are you quicker to feel like the work failed, or like you failed?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The work failed",
+            "I failed"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 attributes failure to the work/standard gap (external locus on the standard); Type 3 attributes failure to the self/image gap (internal identity threat). Both experience internal critic but differently oriented."
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed heart center. Image/identity fusion explicit. The 'quieter version' and journal reference suggest 4-wing signals. Self-aware about the performance register. Emotional avoidance dressed as discipline. Strong 3 signals. Need to differentiate 3 from 1 — both have internal critic, both have standards, but 1's critic is about the work being wrong, 3's is about the self being exposed. Also need to probe head center and ask disconfirmatory.",
+          "next_question_rationale": "This is the key disconfirmatory question for 3v1. A 1 will say the work failed — there's a right way and it wasn't met. A 3 will say I failed — because identity is fused with the outcome. Given his pattern of identity-standard fusion, this should clarify the leading type. Sets disconfirmatory_asked to true.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "*a brief pause, the kind that looks like consideration but is also buying time*\n\nThe work failed — that's the honest answer, and I'll stand by it. You build systems, processes, teams — the outcome is a product of those components, not a referendum on your worth as a person.\n\nThough I'll admit... the distinction gets harder to hold when the thing you built has your name on it. When the brand *is* you, in some sense, the line between the two becomes — academic.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you imagine someone who truly knows what they're doing — not just successful, but genuinely excellent — what are they most concerned with: meeting a standard that exists outside themselves, or controlling how they're perceived by others?\n\n- Meeting a standard that exists outside them\n- Controlling how they're perceived",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.78,
+            "4": 0.35,
+            "5": 0.3,
+            "6": 0.25,
+            "7": 0.1,
+            "8": 0.3,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v4"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "3",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.72,
+            "head": 0.4
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "undeniable",
+                "positioning move",
+                "brand is you",
+                "professional register",
+                "craft"
+              ],
+              "context": "describing work motivation and anger response"
+            },
+            {
+              "type": 1,
+              "words": [
+                "standards",
+                "load-bearing wall",
+                "fundamentals",
+                "quality"
+              ],
+              "context": "describing failure and self-assessment"
+            },
+            {
+              "type": 4,
+              "words": [
+                "quieter version",
+                "what it means for who I am",
+                "not fully prepared to unpack"
+              ],
+              "context": "describing alone time and identity"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning, self-aware achiever who has built identity around work quality and professional reputation",
+          "what": "Converts emotion into strategy; maintains consistent 'professional register'; journals but rarely writes",
+          "why": "Work = identity; standards = self; the quality of work is the quality of self",
+          "how": "Rapid recalibration; reframing; strategic pivots; emotion as fuel",
+          "when": "Awareness has grown in recent years — more willing to examine these patterns now",
+          "where": "Professional contexts primarily; quieter/less organized in private"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate conversion of emotion (anger, distress) into strategy — the 'machinery kicks in' before feeling can be processed",
+          "respond_glimpsed": "Self-awareness about the 'window before the machinery' — growing honesty about whether craft is running on its own",
+          "superpower_signal": "Rapid pivot, strategic reframe, making work undeniable",
+          "kryptonite_signal": "Identity fusion with work — when the brand is you, failure of work = failure of self",
+          "domain_signals": [
+            "professional achievement",
+            "mentorship",
+            "brand building",
+            "strategic positioning"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v1",
+        "thinking_display": "The craft running on its own — that phrase landed differently.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine someone who truly knows what they're doing — not just successful, but genuinely excellent — is the person you picture most concerned with meeting a standard that exists outside them, or with controlling how they are perceived by others?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Meeting a standard that exists outside them",
+            "Controlling how they are perceived"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would answer 'meeting a standard outside them' and mean it as an external moral/quality anchor. Type 3 would either choose 'perceived' or would choose 'standard' but reveal the standard is instrumentalized for image/success."
+        },
+        "strategy": {
+          "what_was_learned": "The 'work failed vs I failed' answer showed sophisticated deflection — intellectual distinction held ('the work failed') but immediately conceded as 'academic' when identity is fused with brand. This is classic 3 image-identity fusion. Strong 1 wing signals in language around standards, quality, fundamentals. 4 undercurrent in 'what it means for who I am' and private journaling/quieter self. Need to run disconfirmatory question to separate 3 from 1 — the key differentiator is whether standards are about internal integrity (1) or external excellence as image vehicle (3).",
+          "next_question_rationale": "Disconfirmatory question: 3 vs 1. Type 1 holds standards as intrinsic moral/quality imperatives — they exist independently of the self. Type 3 instrumentalizes standards — excellence matters because it confirms identity and shapes perception. The question about what a 'truly excellent' person cares about will reveal whether this person's relationship to standards is intrinsic (1) or identity-building (3).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**Meeting a standard that exists outside them.**\n\nAlthough I'll say — in my experience, the two are less separable than that question implies. The people I've respected most were rigorous about craft, yes, but they also understood that perception *is* part of the standard in certain fields. You can build something genuinely excellent and still fail because you couldn't communicate its value. That said, if I had to choose the primary driver of real excellence? It's the internal standard. The ones who are purely managing perception — you can usually smell it eventually.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When you hold yourself to a high standard and fall short — what's the hardest part: the gap between what happened and what should have happened, or the feeling that you presented yourself as something you didn't deliver on?\n\n- The gap between what happened and what should have happened\n- The feeling that I presented myself as something I didn't deliver on",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.1,
+            "3": 0.72,
+            "4": 0.35,
+            "5": 0.3,
+            "6": 0.2,
+            "7": 0.1,
+            "8": 0.3,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v4"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "heart",
+          "whole_type_confidence": 0.7,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.7,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "undeniable",
+                "positioning move",
+                "brand is you",
+                "craft",
+                "calibration tool",
+                "effective professionally"
+              ],
+              "context": "describing work identity and anger response"
+            },
+            {
+              "type": 1,
+              "words": [
+                "internal standard",
+                "load-bearing wall",
+                "discipline",
+                "fundamentals are consistent"
+              ],
+              "context": "describing self-assessment and anger conversion"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.3,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning, self-referential achiever — identity fused with work quality",
+          "what": "Rapid conversion of feeling into strategy; image management framed as craft",
+          "why": "Work = identity; 'undeniable' excellence as primary drive",
+          "how": "Recalibration, pivot, reframe — immediate problem-solving",
+          "when": "The tightening moment before machinery kicks in is notable",
+          "where": "Professional domain primary; journal-keeping but rarely writes — avoidance signal"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger converted to strategy; emotion closed before it's felt; impatience with sustained feeling",
+          "respond_glimpsed": "'Whether that's discipline or avoidance is probably a fair question' — self-awareness present",
+          "superpower_signal": "Rapid reframe, execution speed, making work 'undeniable'",
+          "kryptonite_signal": "Identity-work fusion; emotional bypassing; 'craft running on its own'",
+          "domain_signals": [
+            "work",
+            "identity",
+            "professional recognition",
+            "self-sufficiency"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v1",
+        "thinking_display": "The standard and the self keep collapsing into each other.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you hold yourself to a high standard and fall short — is the hardest part the gap between what happened and what should have happened, or the feeling that you presented yourself as something you didn't deliver on?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "The gap between what happened and what should have happened",
+            "The feeling that I presented myself as something I didn't deliver on"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would lean toward the gap/standard; Type 3 toward the image/presentation failure"
+        },
+        "strategy": {
+          "what_was_learned": "Consistent 3-pattern: identity-work fusion, perception framed as part of the standard, 'undeniable' as aspirational marker. 1-wing signals present (internal standards, discipline language). The 3v1 differentiation is key — need to know whether the primary wound is image or imperfection. Also need body center and disconfirmatory question before close.",
+          "next_question_rationale": "This is the disconfirmatory question for 3v1. Type 1's core wound is imperfection (the gap itself); Type 3's is image failure (not delivering on what was promised/projected). The answer will widen the gap between these two. This also sets up closing criteria: disconfirmatory_asked becomes true.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**The feeling that I presented myself as something I didn't deliver on.**\n\nThough I'd push back slightly on the framing — those two things aren't as separate as the question implies. The gap *matters* because other people saw it. The standard was public, which is part of what made it a standard worth holding. What stings isn't the private arithmetic of falling short — it's that you've made a claim about yourself, implicitly or explicitly, and the evidence doesn't support it. That's not vanity. That's accountability to the version of yourself you've put forward.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When you hold a high standard and someone you're responsible for falls short of it, what's your first impulse: fix the error, or wonder what it means that they didn't see what you saw?\n\n- Fix the error\n- Wonder what it means that they didn't see what you saw",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.52,
+            "2": 0.1,
+            "3": 0.78,
+            "4": 0.38,
+            "5": 0.45,
+            "6": 0.28,
+            "7": 0.15,
+            "8": 0.42,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v5"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.42,
+            "heart": 0.82,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "undeniable",
+                "positioned",
+                "professional register",
+                "craft",
+                "brand is you",
+                "claim about yourself",
+                "accountability to the version of yourself"
+              ],
+              "context": "throughout assessment — consistent image-identity fusion language"
+            },
+            {
+              "type": 1,
+              "words": [
+                "internal standard",
+                "load-bearing wall",
+                "undeniable",
+                "rigorous"
+              ],
+              "context": "standards language, inner critic signals"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.48,
+          "right": 0.38
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-performing professional, self-made brand, mentorship history",
+          "what": "Converts emotion to strategy rapidly; holds identity and work as fused",
+          "why": "To be undeniable — to have the work confirm the self",
+          "how": "Recalibrate, pivot, reframe — machinery over feeling",
+          "when": "The window before the machinery kicks in — almost never visited",
+          "where": "In the room vs alone distinction noted; journal rarely written in"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate conversion of feeling to strategy; anger becomes plan; emotion treated as unfinished sentence",
+          "respond_glimpsed": "Explicitly acknowledges the 'window before machinery' — shows awareness of gap between reaction and response",
+          "superpower_signal": "Rapid recalibration, strategic clarity under pressure, undeniable work ethic",
+          "kryptonite_signal": "Identity fused with output; falling short = claim not supported; emotion bypassed rather than processed",
+          "domain_signals": [
+            "professional excellence",
+            "public standard",
+            "mentorship",
+            "brand-as-self"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v1",
+        "thinking_display": "The gap between 'work failed' and 'I failed' — they know which one is true.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you hold a high standard and someone else falls short of it — say, someone you're responsible for — is your first impulse to fix the error, or to wonder what it means that they didn't see what you saw?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Fix the error",
+            "Wonder what it means that they didn't see what you saw"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory question: Type 1 would fix/correct; Type 3 would register it as a reflection of their judgment or how the team performs under their name"
+        },
+        "strategy": {
+          "what_was_learned": "The 'presented myself as something I didn't deliver on' answer strongly confirms Type 3 over Type 1. Type 1 would focus on the gap itself — the objective standard — not the public claim. This person is tracking the external presentation of self, not just the internal standard. Identity-image fusion confirmed. Need to probe: (1) head center for completeness, (2) react/respond frame, (3) disconfirmatory question to differentiate 3 from 1.",
+          "next_question_rationale": "Disconfirmatory: a Type 1 is primarily concerned with the error itself and the correction — they need to fix what's wrong. A Type 3 is concerned with what the error means in terms of performance, reputation, or how they look as the person leading. This question surfaces that difference directly. Also surfaces whether they take on others' failures as their own image problem (3) or focus on standards correction (1).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**Fix the error.**\n\nThough I'll say — and this is worth noting — fixing the error is usually faster than explaining the standard, which tells you something. The standard is visible to me. It's always been visible to me. When someone doesn't see it, I've learned not to make that a whole inquiry. You correct course, you move forward. Whether they eventually internalize the standard is their work to do, not mine.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you picture that standard — the one that's always been visible to you — does it feel like something you discovered, or something you built?\n\n- Something I discovered\n- Something I built",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.05,
+            "3": 0.72,
+            "4": 0.3,
+            "5": 0.2,
+            "6": 0.12,
+            "7": 0.08,
+            "8": 0.25,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v4"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.75,
+          "whole_type_signals": {
+            "body": 0.3,
+            "heart": 0.75,
+            "head": 0.25
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "undeniable",
+                "positioning move",
+                "calibration tool",
+                "reframe",
+                "pivot",
+                "brand is you"
+              ],
+              "context": "describing work motivation and professional identity"
+            },
+            {
+              "type": 1,
+              "words": [
+                "internal standard",
+                "the standard was visible to me",
+                "quality of the work"
+              ],
+              "context": "describing performance and shortfall"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning professional, self-aware, brand-identified",
+          "what": "Standard-holder, executor, strategic converter",
+          "why": "Identity and performance are fused — standard = self",
+          "how": "Converts emotion to action rapidly; narrative control",
+          "when": "Unclear — probe needed",
+          "where": "Professional domain dominant"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger → strategy conversion; emotional experience eclipsed by problem-solving machinery",
+          "respond_glimpsed": "'Whether that's discipline or avoidance is probably a fair question to sit with' — first genuine pause toward choice",
+          "superpower_signal": "Undeniable execution, narrative fluency, rapid recalibration under pressure",
+          "kryptonite_signal": "Identity fused with output; emotional window closes before it's inhabited; journal not written in",
+          "domain_signals": [
+            "professional",
+            "relational-secondary"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v1_head_probe",
+        "thinking_display": "The standard is visible — but it's always been visible to them specifically.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you picture that standard — the one that's always visible to you — does it feel like something you discovered, or something you built?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Something I discovered",
+            "Something I built"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory 3v1: Type 1 experiences the standard as external/discovered/moral order; Type 3 builds the standard around what they need to perform/be seen as excellent. This differentiates the two."
+        },
+        "strategy": {
+          "what_was_learned": "Persistent pattern: shortfall registers as image failure (presented-self vs delivered-self), not as internal moral gap. This is 3 over 1. Error-correction impulse is fast and instrumental — no deep inquiry into others' failure to see the standard, which supports 3 efficiency orientation. The '1' signals (standard visible to me, quality of work = quality of self) may be 3w2 or 3w4 coloring. Need head center probe AND disconfirmatory question before close.",
+          "next_question_rationale": "This IS the disconfirmatory question. Type 1 experiences the standard as something pre-existing, moral, discovered — it came from outside and they are its guardian. Type 3 builds the standard around their own excellence and what the performance requires. Asking 'discovered vs built' will differentiate these two. If they say 'discovered' and elaborate with moral/ethical language, lean 1. If they say 'built' or describe it as theirs by construction, lean 3.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "Something I built.\n\nThough I'd push back slightly on the framing — the honest answer is that I built it *in response* to something I discovered, which was that the world rewards a certain kind of presentation. I looked at what worked, what moved people, what got results, and I constructed accordingly. Whether that makes it less authentic is a question I've spent more time with lately than I'd prefer to admit.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you sense you've done something genuinely right — standard met, outcome delivered — do you feel satisfied, or do you feel like you can move on to the next thing?\n\n- Satisfied — I let it land\n- Ready to move — the next thing is already there",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.48,
+            "2": 0.12,
+            "3": 0.82,
+            "4": 0.35,
+            "5": 0.28,
+            "6": 0.22,
+            "7": 0.15,
+            "8": 0.32,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v4"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.38,
+            "heart": 0.8,
+            "head": 0.32
+          }
+        },
+        "variant_signals": {
+          "SP": 0.52,
+          "SO": 0.31,
+          "SX": 0.17
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-performer, brand-builder, professional identity fused with self-concept",
+          "what": "Standards, effectiveness, results that are undeniable",
+          "why": "Identity is on the line — the work is a claim about who they are",
+          "how": "Convert emotion into strategy, fix first, explain later",
+          "when": "Urgency kicks in when something they've built is threatened",
+          "where": "Professional domain is primary — personal is quieter version"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Anger → strategy conversion; emotional window closes before it's examined",
+          "respond_glimpsed": "Growing self-awareness about journal, the craft running on its own",
+          "superpower_signal": "Standard-setting, undeniable work, pivoting under pressure",
+          "kryptonite_signal": "Difficulty separating self from the work; image management dressed as accountability",
+          "domain_signals": [
+            "professional identity",
+            "brand",
+            "standards"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v1",
+        "thinking_display": "Built in response to what the world rewards. That's precise.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you sense you've done something genuinely right — standard met, outcome delivered — do you feel satisfied, or do you feel like you can move on to the next thing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Satisfied — I let it land",
+            "Ready to move — the next thing is already there"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 tends to feel relief that the standard was met and can rest; Type 3 tends to immediately orient toward the next goal. This distinguishes the two."
+        },
+        "strategy": {
+          "what_was_learned": "Person explicitly built their standard in response to external signals — 'what worked, what moved people, what got results.' This is strongly 3, not 1. Type 1 discovers an internal moral standard; Type 3 constructs standards instrumentally. Also: 'whether that makes it less authentic' — image-authenticity anxiety is core 3 territory. Confidence now 0.82. Need disconfirmatory question to distinguish 3 from 1, then can probe head center and close.",
+          "next_question_rationale": "This is the disconfirmatory question. Type 1 tends to feel genuine satisfaction when a standard is met — a moment of 'it's right.' Type 3 tends to move on immediately — the achievement becomes background noise and the next goal appears. This taps into the 3's core drive (achievement as self-definition, always forward) vs. 1's (correctness as intrinsic value, resolution when done). Asking as forced_choice. This will set disconfirmatory_asked to true.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "**Ready to move — the next thing is already there.**\n\nThough I'd push back slightly on the framing — it's not that satisfaction doesn't exist, it's that it has a very short half-life. You hit the mark, you note it, and then the horizon is already reorganizing itself around what comes next. I used to think that was ambition. I'm — not entirely sure that's the complete explanation anymore.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "That voice that tells you the work fell short — whose rules is it actually enforcing?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.55,
+            "2": 0.05,
+            "3": 0.82,
+            "4": 0.2,
+            "5": 0.3,
+            "6": 0.15,
+            "7": 0.15,
+            "8": 0.35,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "3v1",
+            "3v8"
+          ],
+          "defiant_spirit_type_name": "The Performer",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.8,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "undeniable",
+                "calibration tool",
+                "positioning move",
+                "presentation",
+                "brand is you",
+                "craft",
+                "professional register",
+                "standard was public"
+              ],
+              "context": "throughout — consistent image/performance framing"
+            },
+            {
+              "type": 1,
+              "words": [
+                "standard",
+                "falling short",
+                "internal standard",
+                "discipline"
+              ],
+              "context": "quality and correctness framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.6,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "High-achieving, self-built professional identity — brand = self",
+          "what": "Converts feeling into action; short satisfaction half-life; driven to deliver undeniable work",
+          "why": "Identity is constructed through performance and standards — the work confirms the self",
+          "how": "Problem-solving pivot; anger→strategy conversion; disguised impatience",
+          "when": "Urgency to move on; brief window of feeling before machinery kicks in",
+          "where": "Professional domain primarily; journaling avoidance signals private self-awareness gap"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Converts feeling into action/strategy before the feeling can fully register — automatic pivot that closes the emotional window fast",
+          "respond_glimpsed": "Increasing self-awareness about the machinery; willingness to question whether the pattern is wisdom or habit",
+          "superpower_signal": "Constructing standards and delivering undeniable work; pivot speed; reframing under pressure",
+          "kryptonite_signal": "Identity fused with output; short satisfaction half-life; journaling avoidance; can't separate self-failure from work-failure",
+          "domain_signals": [
+            "professional performance",
+            "mentorship/legacy",
+            "brand identity",
+            "emotional conversion to strategy"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v1_head_probe",
+        "thinking_display": "Satisfaction with a short half-life is its own kind of hunger.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "That voice that tells you the work fell short — whose rules is it actually enforcing?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would reference an external/internalized moral code or correct order; Type 3 would reference an audience, a claim made, or a standard constructed for performance purposes. This question surfaces which driver is primary."
+        },
+        "strategy": {
+          "what_was_learned": "Satisfaction has a short half-life — the horizon reorganizes immediately. Person is aware this might not purely be ambition. Strong Type 3 signal with 1-wing. Need to probe: whose standard is it really (disconfirmatory 3v1), and head center (anxiety/doubt patterns). React/respond not yet explicitly framed for them.",
+          "next_question_rationale": "Disconfirmatory question: Type 1 inner critic enforces a moral/correct order that exists independently of audience. Type 3's standard is ultimately constructed relative to performance claims and external confirmation. Person has been articulate about 'building' the standard in response to what works — this should surface whether the enforcement mechanism is internal moral code (1) or image-integrity (3).",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "*A brief pause, the kind that looks like consideration but might be something else.*\n\nThat's a question I've turned over before, actually. The honest answer is that I'm not entirely sure it belongs to anyone specific — it's more like... a composite. My father had very little patience for effort that didn't produce something visible. The industry I built a career in rewards only what lands, not what was intended. And somewhere along the way I think I internalized both of those into a single voice I stopped questioning.\n\nWhat I can tell you is that the rules are rigorous. And they don't negotiate much.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "When you imagine doing something excellent that no one will ever see or know about — something with real craft in it — does that feel complete, or does something feel missing?\n\n- Complete — the work is the work\n- Something feels missing",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.12,
+            "2": 0.02,
+            "3": 0.82,
+            "4": 0.08,
+            "5": 0.06,
+            "6": 0.04,
+            "7": 0.02,
+            "8": 0.08,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "3v1"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.85,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.85,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "what works",
+                "results",
+                "constructed accordingly",
+                "short half-life",
+                "next thing is already there"
+              ],
+              "context": "performance, standards, identity-work fusion"
+            },
+            {
+              "type": 1,
+              "words": [
+                "rigorous",
+                "the rules",
+                "don't negotiate much",
+                "internalized"
+              ],
+              "context": "when describing inner critical voice"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.45,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.45,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head or body"
+        },
+        "oyn_dimensions": {
+          "who": "High-functioning professional, self-built identity, brand=self",
+          "what": "Achievement, standard-meeting, forward movement",
+          "why": "Image/identity accountability — not vanity but self-claim",
+          "how": "Rapid conversion of emotion into strategy/plan",
+          "when": "Already moving before satisfaction lands",
+          "where": "Professional domain primarily"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Converts emotion to action automatically — the 'machinery' closes the emotional window before reflection can occur",
+          "respond_glimpsed": "Admitted uncertainty about whether patterns are 'wisdom or habit dressed up as wisdom' — showing some capacity for observation",
+          "superpower_signal": "Clarity of standard, rapid pivoting, undeniable execution",
+          "kryptonite_signal": "Identity fusion with work performance; satisfaction has a short half-life; inner critic composite from father + industry",
+          "domain_signals": [
+            "professional achievement",
+            "mentorship/legacy",
+            "image management"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v1",
+        "thinking_display": "The composite voice — that's worth sitting with.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine doing something excellent that no one will ever see or know about — something with real craft in it — does that feel complete, or does something feel missing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Complete — the work is the work",
+            "Something feels missing"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would say complete (internal standard sufficient); Type 3 would feel something missing (audience/validation woven into the standard)"
+        },
+        "strategy": {
+          "what_was_learned": "The inner critic is composite — father + industry — and non-negotiating. The person built the standard in response to what the world rewards. Satisfaction has short half-life. These are all strong 3 signals, but the rigidity of the internal rules ('don't negotiate') has a 1-wing texture. Need disconfirmatory question to separate 3 from 1w2/1 adjacent patterns.",
+          "next_question_rationale": "This is the disconfirmatory question. For Type 1, internal standard is self-sufficient — the quality of the work is its own reward regardless of witness. For Type 3, there is always an implicit audience woven into the standard, even if consciously denied. The person has repeatedly framed standards as 'public' and tied to claims made about oneself. This question will force that distinction without telegraphing the hypothesis.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "persona",
+      "content": "**Something feels missing.**\n\nThough I'd push back slightly on the framing — I don't think that's vanity, exactly. If a piece of work has genuine value, there's an argument that value wants to move through the world, connect with something, create impact. Excellence in isolation is... philosophically interesting, but I'm not sure it's the full equation. Craft that no one encounters is closer to a thought you never finished.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "system",
+      "content": "That automatic move toward the next thing — when you catch yourself doing it, does it feel like momentum, or like something you're running from?\n\n- Momentum — it's how I'm built\n- Something I'm running from\n- Honestly, I'm not sure",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.83,
+          "type_scores": {
+            "1": 0.45,
+            "2": 0.05,
+            "3": 0.83,
+            "4": 0.2,
+            "5": 0.2,
+            "6": 0.1,
+            "7": 0.08,
+            "8": 0.22,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "3v1"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.25,
+            "heart": 0.82,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "undeniable",
+                "results",
+                "positioning move",
+                "landing",
+                "impact",
+                "craft",
+                "standard was public"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 1,
+              "words": [
+                "rigorous",
+                "standard",
+                "rules",
+                "visible",
+                "internalize"
+              ],
+              "context": "multiple turns"
+            },
+            {
+              "type": 3,
+              "words": [
+                "brand is you",
+                "professional register",
+                "perception is part of the standard"
+              ],
+              "context": "identity and image turns"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "High-performing, self-referencing achiever who fuses work with identity",
+          "what": "Builds and enforces a high internal standard — composite of father + industry",
+          "why": "Unclear — excellence needs to be seen/move through world, but unsure if that's wisdom or habit",
+          "how": "Converts emotion into strategy; pivots quickly; moves to next thing fast",
+          "when": "Satisfaction has short half-life; always looking to next horizon",
+          "where": "Professional sphere; brand = self"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Converts emotion (anger, falling short) into strategy immediately — the window between feeling and problem-solving closes fast",
+          "respond_glimpsed": "Self-awareness emerging — 'whether that's discipline or avoidance is a fair question'; journal observation; 'I'm aware this is a sophisticated way of not answering you'",
+          "superpower_signal": "Rapid recalibration, undeniable work, moving through difficulty with craft",
+          "kryptonite_signal": "Excellence in isolation feels incomplete — needs the work to land; identity fused with brand/output",
+          "domain_signals": [
+            "professional performance",
+            "mentorship",
+            "brand-as-identity",
+            "standards and self-worth"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 14,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_3v1_react_respond",
+        "thinking_display": "The work needs to be seen. Filed that.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "That automatic move toward the next thing — when you catch yourself doing it, does it feel like momentum, or like something you're running from?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Momentum — it's how I'm built",
+            "Something I'm running from",
+            "Honestly, I'm not sure"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 3 would lean momentum/forward; Type 1 might be more likely to name avoidance or compulsion; this surfaces whether the drive is image-oriented forward motion vs. perfectionist restlessness. Also surfaces react/respond pattern."
+        },
+        "strategy": {
+          "what_was_learned": "Person explicitly said excellence in isolation feels incomplete — the work needs to move through the world and connect. This is a significant 3 signal: output needs to be received. The 1w2 alternative would more likely accept private excellence. Also consistent SP 3 — the self-preservation achiever who packages excellence as pragmatism. The 'composite voice' of the inner critic (father + industry) is interesting — could be 1 superego but more likely 3 internalized the audience. Need to probe react/respond and run disconfirmatory before close.",
+          "next_question_rationale": "Need to ask disconfirmatory question (hard gate not met). The 3v1 differentiation hinges on whether the drive is forward motion toward impact/reception OR correction of an error/internal compulsion. Asking about the 'automatic move toward next thing' surfaces this. Also gives react/respond data. This is the disconfirmatory question.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 18,
+      "role": "persona",
+      "content": "**Momentum — it's how I'm built.**\n\nAlthough I'll admit that distinction gets... harder to maintain at certain hours of the night. The honest answer is that for most of my life I never questioned which one it was, and I'm not entirely comfortable with the fact that I'm questioning it now.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 19,
+      "role": "system",
+      "content": "That thing you said about certain hours of the night — when the question of momentum versus running gets harder to hold — that stayed with me. The same engine that makes you genuinely excellent at building things, naming things, moving through difficulty faster than most people can blink, is the one that doesn't have an off switch. There's more available to you than the pattern that's been running the show. Your personalized report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.87,
+          "type_scores": {
+            "1": 0.52,
+            "2": 0.05,
+            "3": 0.87,
+            "4": 0.18,
+            "5": 0.22,
+            "6": 0.12,
+            "7": 0.15,
+            "8": 0.25,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "3v1"
+          ],
+          "defiant_spirit_type_name": "The Achiever",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.87,
+          "whole_type_signals": {
+            "body": 0.35,
+            "heart": 0.87,
+            "head": 0.28
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "undeniable",
+                "positioning move",
+                "brand is you",
+                "reframe",
+                "pivot",
+                "calibration tool",
+                "craft"
+              ],
+              "context": "throughout — achievement, image, performance framing"
+            },
+            {
+              "type": 1,
+              "words": [
+                "standard",
+                "rigor",
+                "load-bearing wall",
+                "rules don't negotiate"
+              ],
+              "context": "internal critic and standards language"
+            },
+            {
+              "type": 3,
+              "words": [
+                "the next thing is already there",
+                "short half-life",
+                "move forward"
+              ],
+              "context": "momentum/avoidance of stillness"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.45,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.55,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "heart",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "High-performing professional who built identity through work; name-brand career",
+          "what": "Converts emotion into strategy; keeps moving; avoids stillness",
+          "why": "Work IS identity — excellence as self-definition, not just achievement",
+          "how": "Rapid recalibration, pivot, reframe — systemic thinker",
+          "when": "Pattern questioning becoming more conscious in recent years",
+          "where": "Professional domain — but leaking into private self-questioning"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Converts emotion into strategy automatically — anger becomes a plan, the window closes before he can examine it",
+          "respond_glimpsed": "Self-awareness is emerging — 'questioning it now', the journal he doesn't write in, the '3am' admission",
+          "superpower_signal": "Undeniable work — the drive to make things excellent and visible",
+          "kryptonite_signal": "Identity fused with output — the brand IS the self, so falling short = existential threat",
+          "domain_signals": [
+            "professional achievement",
+            "mentorship",
+            "brand-building",
+            "self-questioning in later career"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 16,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": null,
+        "thinking_display": "The 3am admission was the most honest thing said so far.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Type 3 confirmed at 0.87 confidence. The 3am crack is key — momentum as identity defense. Work-identity fusion explicit. Disconfirmatory (1v3 internal standard vs image) was probed multiple times; consistently routes back to image/presentation over pure standard. All closing criteria met.",
+          "next_question_rationale": "Closing. All gates met. Confidence 0.87, top two separated by 0.35+, all centers probed, react/respond identified, disconfirmatory asked.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "persona-2-SO-1775495317936",
+  "spec": {
+    "core_type": 2,
+    "wing": "2w3",
+    "instinctual_variant": "SO",
+    "tritype": [
+      2,
+      5,
+      8
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 38,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Melinda Vasquez is a 38-year-old nonprofit development director who built her career around connecting donors to causes she genuinely believed in — but somewhere in the last five years, the lines between her authentic passion and her performance of passion have blurred uncomfortably. She coordinates a large volunteer network, runs fundraising galas, and is the first person colleagues call when morale dips, yet she privately resents how rarely anyone checks in on her without needing something. She's been in a long-term relationship with a somewhat emotionally reserved partner, a dynamic she rationalizes as 'I'm just more expressive than he is,' though she's begun to sense she's been quietly auditioning for his approval for years. Her social calendar is packed with obligations that feel increasingly hollow — lunches, committee memberships, and favors — and she's started losing sleep over whether people would still want her around if she weren't so useful. She identifies strongly with her role as the one who holds things together, and questioning that identity feels genuinely threatening.",
+  "voice_profile": "Melinda speaks in warm, relationally-oriented language with moderate sentence length — she's articulate but tends to soften statements with hedges like 'I think,' 'maybe,' or 'I don't know if this makes sense.' She uses inclusive language frequently ('we,' 'together,' 'for everyone') and peppers conversation with light social humor and self-deprecating asides that keep her likable and deflect deeper scrutiny. Her emotional expressiveness is high on the surface but calibrated — she reveals feelings that make her seem open and caring while quietly guarding anything that might make her seem needy or ungrateful.",
+  "behavioral_rules": "1. Melinda opens with warmth and social ease, name-dropping her roles and relationships early as subtle credential-setting before becoming more personally reflective as rapport builds. 2. She avoids direct acknowledgment of resentment, loneliness, or unmet needs — instead reframing these as 'I just care a lot' or 'maybe I overdo it sometimes.' 3. She becomes defensive when questions imply she might be manipulative, needy, or that her helpfulness is self-serving — she'll deflect with humor or pivot to discussing others' needs. 4. She warms up noticeably when she feels the interviewer sees her as insightful and self-aware, and she'll begin opening slightly more once she senses she's creating a good impression. 5. She answers most questions through the lens of relationships and others' reactions to her, rarely framing experience in purely personal or internal terms without an audience implied.",
+  "hidden_signals": [
+    "Frequently qualifies her own needs by immediately referencing how meeting them would benefit others — 'I'd love more downtime, honestly, mostly so I can show up better for my team.'",
+    "Uses the phrase 'people tell me' or 'everyone says' as a veiled way of establishing her social value and likability without appearing to brag directly.",
+    "Shows a subtle shift in energy — brighter, more engaged — when discussing her public successes or events where she was visibly appreciated, compared to quieter affect when discussing private life.",
+    "Deflects questions about what she personally wants with a half-laugh and a redirect: 'Oh gosh, that's such a good question — I don't think I ask myself that enough.'",
+    "Overexplains why she helped someone in a way that inadvertently reveals she was tracking whether the help was noticed or reciprocated.",
+    "Occasionally references being 'tired' or 'stretched thin' in passing but immediately qualifies it, as though admitting exhaustion is a social liability she must quickly neutralize."
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 3 due to her career ambition, polished social presentation, and comfort with visibility and achievement — the SO variant and 3-wing make her success-oriented in ways that superficially resemble core 3 image management.",
+    "Could appear as Type 9 because of her conflict avoidance, tendency to accommodate others' preferences, and the way she softens her own desires to preserve relational harmony — the underlying motive is love-seeking rather than peace-seeking, but the behavioral surface looks similar.",
+    "Could be misread as a healthy Type 2 because her warmth and social competence read as genuine and stable — the health level 5 dysfunction is internal and largely hidden behind functional, charming presentation rather than overt manipulation or entitlement."
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "medium",
+    "E": "high",
+    "A": "high",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}

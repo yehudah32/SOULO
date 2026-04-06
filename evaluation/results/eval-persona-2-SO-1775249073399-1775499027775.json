@@ -1,0 +1,123 @@
+{
+  "run_id": "eval-persona-2-SO-1775249073399-1775499027775",
+  "timestamp": "2026-04-06T18:10:27.775Z",
+  "tier": "tier1",
+  "persona_id": "persona-2-SO-1775249073399",
+  "ground_truth": {
+    "core_type": 2,
+    "wing": "2w3",
+    "instinctual_variant": "SO",
+    "tritype": [
+      2,
+      5,
+      8
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 22,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 0,
+    "final_wing": null,
+    "final_confidence": 0,
+    "types_considered": []
+  },
+  "accuracy": {
+    "core_type_correct": false,
+    "wing_correct": null,
+    "instinctual_variant_correct": null,
+    "mistype_as": 0,
+    "mistype_harm_severity": "low",
+    "big_five_aligned": false
+  },
+  "commandment_fidelity": {
+    "score": 10,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "pass",
+      "C10": "pass"
+    },
+    "labeled_or_liberated": "liberated"
+  },
+  "question_quality": {
+    "total_questions": 0,
+    "exploratory": 0,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 0,
+    "correct_type_first_considered_at": null,
+    "confidence_curve": []
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Implement a structured diagnostic protocol that explicitly differentiates Type 2 from adjacent types (Types 1, 3, 4, and 9) before arriving at a conclusion. The system must ask targeted questions about the subject's primary motivation (helping to gain love vs. achieving status, maintaining peace, or self-expression) and cross-validate against behavioral patterns before finalizing a type assessment.",
+      "evidence": "No transcript exchanges available to cite specific quotes, but the core_type_accuracy score of 0/10 indicates a complete failure to identify the ground truth Type 2, suggesting the system either misidentified the type entirely or failed to apply discriminating questions between types.",
+      "source_level": "L2",
+      "commandment_alignment": "Thou shalt not flatten the human into a caricature — accurate type identification is the foundation of meaningful reflection.",
+      "estimated_impact": "Raising core_type_accuracy from 0/10 toward 7+/10 by ensuring the assessment pipeline includes explicit type-elimination logic before commitment."
+    },
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Replace generic or leading questions with open-ended, behaviorally anchored probes that surface motivation, fear, and desire without telegraphing type labels. Each question must target a specific Enneagram dimension (e.g., core fear, relational pattern, stress response) and be validated against a question-quality rubric before deployment.",
+      "evidence": "The question_quality score of 0/10 indicates that no questions in the session met the minimum standard for eliciting type-discriminating information. Without transcript exchanges, the failure mode cannot be localized to specific lines, but the 0-score implies systemic question design failure across the entire session.",
+      "source_level": "L1",
+      "commandment_alignment": "Thou shalt ask before thou assumest — curiosity precedes conclusion.",
+      "estimated_impact": "Directly addresses the 0/10 question_quality score; well-designed questions are the primary lever for improving core_type_accuracy and convergent_validity simultaneously."
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Introduce an explicit uncertainty-signaling mechanism: the system must express calibrated confidence levels (e.g., 'I'm moderately confident this fits, but let me check one more area') proportional to the evidence gathered, and must never present a type conclusion without flagging when key discriminating data is missing. Confidence should rise incrementally as convergent evidence accumulates.",
+      "evidence": "The confidence_calibration score of 0/10 signals that the system either expressed unwarranted certainty about an incorrect type or failed to communicate uncertainty when it was warranted. The gap between the expressed confidence and the 0/10 accuracy outcome is the clearest indicator of miscalibration.",
+      "source_level": "L2",
+      "commandment_alignment": "Thou shalt hold thy conclusions lightly and invite correction — epistemic humility is not weakness.",
+      "estimated_impact": "A calibrated confidence model prevents the compounding harm of presenting a wrong type with high certainty, reducing harm_severity and improving user trust."
+    },
+    {
+      "priority": "high",
+      "category": "harm_reduction",
+      "action": "Audit the assessment output for pathologizing language and misattributed motivations, especially when the identified type does not match the subject's actual type. Establish a harm-review checkpoint that flags outputs which assign negative traits (e.g., manipulation, neediness) without grounding them in the subject's own words, and require the system to reframe such attributions in growth-oriented language.",
+      "evidence": "The harm_severity score of 6.4/10 is notably high and particularly damaging given that core_type_accuracy is 0/10 — this means harmful characterizations were likely applied to the wrong type, compounding the error. No specific exchanges are available to cite, but the combination of these two scores is the key signal.",
+      "source_level": "L1",
+      "commandment_alignment": "Thou shalt do no harm through reductive labeling — every shadow you name must be named with care.",
+      "estimated_impact": "Reducing harm_severity from 6.4 toward sub-3.0 by ensuring that any challenging feedback is both accurate and constructively framed, preventing misidentification from causing psychological distress."
+    },
+    {
+      "priority": "high",
+      "category": "type_differentiation",
+      "action": "Add a Social subtype disambiguation module that specifically probes for the SO 2's characteristic pattern of 'ambition through connection' — seeking influence and belonging in groups — as distinct from the SP 2's self-preservation focus or the SX 2's one-on-one seduction dynamic. Questions should surface how the subject relates to group identity, status within communities, and the impulse to be indispensable socially.",
+      "evidence": "The subtype_accuracy score of 5/10 indicates partial success in subtype identification (SO), but given the complete failure on core type, the subtype result may be coincidental rather than systematically derived. The 2w3 SO profile has a distinctive achievement-plus-belonging signature that requires targeted probing to confirm.",
+      "source_level": "L2",
+      "commandment_alignment": "Thou shalt honor the full complexity of the triadic self — instinct, wing, and core are inseparable.",
+      "estimated_impact": "Improving subtype_accuracy from 5/10 toward 8+/10 by adding structured instinctual variant questions, and reinforcing core type identification through the specific behavioral signatures each subtype produces."
+    }
+  ],
+  "transcript": []
+}

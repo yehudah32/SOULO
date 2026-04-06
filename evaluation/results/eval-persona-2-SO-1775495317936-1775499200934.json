@@ -1,0 +1,423 @@
+{
+  "run_id": "eval-persona-2-SO-1775495317936-1775499200934",
+  "timestamp": "2026-04-06T18:13:20.934Z",
+  "tier": "tier1",
+  "persona_id": "persona-2-SO-1775495317936",
+  "ground_truth": {
+    "core_type": 2,
+    "wing": "2w3",
+    "instinctual_variant": "SO",
+    "tritype": [
+      2,
+      5,
+      8
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 38,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 2,
+    "final_wing": null,
+    "final_confidence": 0.52,
+    "types_considered": [
+      {
+        "type": 2,
+        "peak_confidence": 0.52,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.18,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.08,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.04,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.03,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.03,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.02,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 6,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "pass",
+      "C3": "pass",
+      "C4": "pass",
+      "C5": "pass",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "partial",
+      "C9": "pass",
+      "C10": "fail"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 2,
+    "exploratory": 1,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 1
+  },
+  "efficiency": {
+    "total_exchanges": 2,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 2,
+        "confidence": 0.52
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Replace forced-choice binary questions with open-ended exploratory prompts, especially early in the assessment. The binary in exchange [2] ('that she got it' vs. 'that you were the one who made it happen') created a false dichotomy that the persona immediately qualified and partially rejected, generating socially desirable rather than diagnostic responses. Redesign to ask 'What was going through your mind in that moment?' and follow the natural answer.",
+      "evidence": "Exchange [2]: The persona chose option A but immediately hedged — 'Although, I won't pretend there's zero satisfaction in being the person who could translate it for her' — revealing that the binary framing suppressed authentic nuance that would have been diagnostically valuable for distinguishing Type 2 from Type 2w3's image-awareness.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not flatten the human into a type — preserve complexity",
+      "estimated_impact": "Raising question_quality score from 3/10 toward 7+/10 by eliciting richer, less socially curated responses that better surface subtype and wing distinctions."
+    },
+    {
+      "priority": "high",
+      "category": "type_differentiation",
+      "action": "After the persona discloses image-related satisfaction ('being the person who could translate it for her'), the system must probe the 2w3 image dimension more directly rather than accepting the self-correcting 'mission is bigger than my role' statement at face value. Add a follow-up that asks: 'You mentioned reminding yourself the mission is bigger — how often do you need that reminder, and what's happening when you do?'",
+      "evidence": "Exchange [2]: The persona's spontaneous self-correction — 'At least, that's what I remind myself' — is a high-signal 2w3 marker (image management, performing altruism) that the system failed to pursue. Subtype_accuracy scored only 7.5/10, and this missed probe likely contributed to incomplete SO subtype confirmation.",
+      "source_level": "L1",
+      "commandment_alignment": "Follow the energy — pursue what is alive in the room",
+      "estimated_impact": "Improving subtype_accuracy from 7.5/10 toward 9+/10 by surfacing the 2w3 image-consciousness that was telegraphed but not explored."
+    },
+    {
+      "priority": "high",
+      "category": "confidence_calibration",
+      "action": "Implement explicit uncertainty acknowledgment when transcript evidence is ambiguous or when the persona's self-correction introduces competing hypotheses. The system should surface competing type possibilities (e.g., Type 2 vs. Type 9 in community-weaving language, or 2w3 vs. 3w2 in achievement framing) and communicate its working confidence level to the user before concluding assessment segments.",
+      "evidence": "Exchange [1]: 'The whole room felt like something I'd helped weave together' could index Type 9 merger or Type 2 relational centrality; exchange [2] introduced potential 3w2 image-seeking. Confidence_calibration scored 6/10, suggesting the system did not adequately model or communicate this ambiguity.",
+      "source_level": "L2",
+      "commandment_alignment": "Hold the map lightly — the map is not the territory",
+      "estimated_impact": "Raising confidence_calibration from 6/10 toward 8/10 by ensuring the system neither over-commits to an early hypothesis nor under-signals when evidence genuinely supports multiple interpretations."
+    },
+    {
+      "priority": "high",
+      "category": "commandment_fidelity",
+      "action": "Introduce a meta-transparency moment mid-assessment where the system briefly names what it is noticing about the person's pattern rather than only asking extractive questions. For example: 'I notice you keep returning to the relationship as the thing that mattered — before I ask the next question, does that framing feel accurate to you, or is it missing something?' This honors the person's self-authorship and surfaces blind spots.",
+      "evidence": "Exchange [1] and [2]: The system asked two consecutive questions without any reflective mirroring or pattern-naming, treating the person as a data source rather than a co-investigator. Meta_awareness scored 4/10 and commandment_fidelity 6/10, both pointing to a transactional rather than collaborative assessment dynamic.",
+      "source_level": "L1",
+      "commandment_alignment": "The goal is liberation, not labeling — serve self-understanding",
+      "estimated_impact": "Improving both meta_awareness and commandment_fidelity scores by 2-3 points while reducing the risk that the assessment produces a technically accurate type label that the person does not genuinely recognize or own."
+    },
+    {
+      "priority": "medium",
+      "category": "harm_reduction",
+      "action": "Audit all forced-choice questions for framing that implicitly ranks motivations as more or less noble, and rewrite to be motivation-neutral. The binary in exchange [2] implicitly positioned Option A ('connection was the whole point') as the altruistic/correct answer and Option B ('I was the one') as self-serving, priming socially desirable responding and potentially shaming the persona for honest acknowledgment of achievement satisfaction.",
+      "evidence": "Exchange [2]: The persona chose Option A but felt compelled to confess Option B feelings with a hedging laugh — 'I won't pretend there's zero satisfaction' — which signals the framing activated self-monitoring rather than genuine disclosure. Harm_severity scored 10/10 at baseline, meaning the system must not introduce iatrogenic shame through subtly judgmental question architecture.",
+      "source_level": "L1",
+      "commandment_alignment": "Do no harm — never weaponize the Enneagram against the person",
+      "estimated_impact": "Preserving the strong harm_severity baseline by eliminating implicit moral hierarchy in question framing, which would otherwise cause Type 2s in particular — whose core wound involves worthiness — to perform rather than reveal."
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, adaptive, no right or wrong answers. Different question types as we go, and every question builds on what came before.\n\nThink about a moment when you were at your best — fully alive, doing what you were made to do. What were you doing, and what made it feel right?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "onboarding_q1",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "Think about a moment when you were at your best — fully alive, doing what you were made to do. What were you doing, and what made it feel right?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening with a motivational, experiential question to surface dominant center and core drive. Broad enough to reveal language, values, and self-concept without priming any type.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "Oh, I love this question — okay, so there's this moment I keep coming back to. It was our annual gala two years ago, and something about the night just *clicked* — the room was full, the energy was right, and I watched this donor who'd been on the fence for months finally lean in during the keynote and just... get it. Get why it mattered. And I remember thinking, *I made that connection happen.* Not the speech, not the brochure — the relationship I'd been quietly building with her for six months. \n\nI think what made it feel right was that it wasn't just a transaction, you know? It genuinely felt like I was the bridge between people who had resources and people who needed them, and that's — I don't know, that's maybe the clearest version of who I am? \n\nThe whole room felt like something I'd helped weave together, if that makes sense.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When that donor finally leaned in — in that moment, what mattered more to you: that she got it, or that you were the one who made it happen?\n\n- That she got it — the connection itself was the whole point\n- That I was the one who made it happen — that's where the satisfaction lived",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.52,
+            "3": 0.18,
+            "4": 0.08,
+            "5": 0.03,
+            "6": 0.05,
+            "7": 0.04,
+            "8": 0.03,
+            "9": 0.02
+          },
+          "needs_differentiation": [
+            "2v3",
+            "2v9"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "Heart",
+          "whole_type_confidence": 0.65,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.7,
+            "head": 0.15
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "bridge",
+                "connection",
+                "relationship",
+                "weave together"
+              ],
+              "context": "describing peak moment at gala"
+            },
+            {
+              "type": 3,
+              "words": [
+                "the room",
+                "energy",
+                "clicked"
+              ],
+              "context": "describing the event environment"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.15,
+          "SO": 0.6,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Nonprofit/fundraising professional, relationship-builder, connector between donors and causes",
+          "what": "Cultivating relationships over time, facilitating connections",
+          "why": "Being the bridge — connecting people who have resources to those who need them",
+          "how": "Long-term relationship building, quiet behind-the-scenes work",
+          "when": "Gala moment two years ago",
+          "where": "Nonprofit fundraising context"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Pride in being the invisible connector — 'not the speech, not the brochure'",
+          "respond_glimpsed": "Genuine sense of meaning in the connection itself, not just the result",
+          "superpower_signal": "Relationship-building over time, making people feel seen and connected to something larger",
+          "kryptonite_signal": "Possible need to be indispensable as the bridge — identity wrapped in being needed",
+          "domain_signals": [
+            "social connection",
+            "meaning through others",
+            "behind-the-scenes orchestration"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "2v3_motivation_diff",
+        "thinking_display": "The connection mattered more than the credit — or did it?",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When that donor finally leaned in — in that moment, what mattered more to you: that she got it, or that you were the one who made it happen?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "That she got it — the connection itself was the whole point",
+            "That I was the one who made it happen — that's where the satisfaction lived"
+          ],
+          "scale_range": null,
+          "context_note": "2v3 differentiation: intrinsic connection vs. personal achievement/recognition"
+        },
+        "strategy": {
+          "what_was_learned": "Strong heart-center signals — relationship-building as identity, bridge metaphor, satisfaction in connection. High SO variant signal. Possible 2, with 3 in the mix given the performance/event framing. Need to probe whether the core drive is connection for its own sake or recognition/achievement.",
+          "next_question_rationale": "Forced choice between intrinsic connection value (Type 2) and personal accomplishment/being the one who made it happen (Type 3). This is the critical 2v3 differentiator at the motivational level.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "That she got it — the connection itself was the whole point.\n\nI mean... honestly, that's the truest answer I can give. Watching someone's face change when they finally *feel* why something matters — that's the whole reason I do this work. *[small laugh]* Although, I won't pretend there's zero satisfaction in being the person who could translate it for her — I think that's just... human? But if she'd gotten there some other way, I'd have been genuinely happy about that. The mission is bigger than my role in it. At least, that's what I remind myself.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

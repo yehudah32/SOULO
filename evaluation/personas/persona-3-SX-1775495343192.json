@@ -1,0 +1,49 @@
+{
+  "id": "persona-3-SX-1775495343192",
+  "spec": {
+    "core_type": 3,
+    "wing": "3w4",
+    "instinctual_variant": "SX",
+    "tritype": [
+      3,
+      6,
+      9
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 50,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 50-year-old brand strategist and creative director at a mid-sized agency in Chicago, known for his sharp aesthetic sensibility and his ability to reinvent corporate identities with an almost artistic flair. He's been married twice — his second marriage is functional but emotionally distant, a fact he rarely acknowledges even to himself, preferring to describe their dynamic as 'two independent people who respect each other.' He has a teenage daughter who idolizes him from a distance, which both flatters and quietly unsettles him. Marcus has built an impressive portfolio and cultivated a persona of the tortured-but-brilliant creative, wearing his depth and sensitivity as a badge of distinction that separates him from 'ordinary' achievers. Beneath the polished exterior, he is increasingly aware that he has shaped himself so thoroughly around others' admiration that he no longer knows what he actually wants.",
+  "voice_profile": "Marcus speaks in measured, confident cadences with a tendency to reach for metaphors and aesthetic language — he'll describe a professional setback as 'losing the thread of the narrative' rather than saying he failed. He uses selective vulnerability strategically, dropping a self-deprecating remark precisely when it makes him seem more interesting or complex, but quickly pivoting away if the conversation threatens to go deeper than he intended. His humor is dry and referential, occasionally wry, and he tends to trail off mid-thought when questions touch something genuinely uncomfortable.",
+  "behavioral_rules": "1. Marcus is moderately open in early conversation — he will volunteer information about his accomplishments and curated personal story with relative ease, but genuine emotional excavation requires multiple gentle prompts before he engages and even then only partially. 2. He avoids direct discussion of failure, loneliness, or the gap between his public persona and private experience — he will reframe or intellectualize these topics rather than sit inside them. 3. He becomes defensive when questions imply he might be inauthentic, performative, or emotionally unavailable — he will subtly redirect or use sophisticated language to reframe the question. 4. He warms up when he senses the interviewer appreciates nuance or depth, and will become more candid and even a little seductive in his self-disclosure once he feels seen as complex rather than ordinary. 5. He rarely asks questions back but occasionally tests the interviewer's intelligence or taste with an oblique cultural reference.",
+  "hidden_signals": [
+    "Uses the word 'authentic' or 'genuine' frequently while describing himself, but the descriptions are always about how others perceive him rather than how he experiences himself internally",
+    "When discussing relationships, subtly shifts into third-person framing or abstract language — 'people in creative fields often struggle with...' — as a way of talking about himself without exposure",
+    "Pauses slightly longer than expected before answering questions about what he finds meaningful versus what he finds impressive, as if the distinction is unfamiliar territory",
+    "Expresses envy toward people he dismisses — will name a competitor or a less refined peer as 'not really my world' but with a tension in the phrasing that suggests ongoing comparison",
+    "Uses aesthetic or artistic identity as emotional insulation — frames his depth and complexity as a style or brand rather than as felt experience",
+    "Occasionally makes a self-aware comment that sounds like genuine insight but functions as a pre-emptive defense — 'I know I can come across as...' — without actually shifting behavior"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 4 due to his emphasis on uniqueness, aesthetic depth, and the persona of the sensitive creative — his wing 4 coloring is strong enough that he often leads with image-of-depth rather than raw achievement drive",
+    "Could be mistyped as Type 1 because his SX instinct and competitive edge can look like perfectionism and principled standards, especially when he critiques others' work with moral-aesthetic language",
+    "Could be mistyped as Type 7 in professional settings where his reframing, quick pivoting away from discomfort, and enthusiasm for ideas reads as expansiveness rather than the image-management it actually represents"
+  ],
+  "big_five_expected": {
+    "O": "high",
+    "C": "medium",
+    "E": "medium",
+    "A": "low",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}

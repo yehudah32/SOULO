@@ -1,0 +1,49 @@
+{
+  "id": "persona-5-SO-1775495394788",
+  "spec": {
+    "core_type": 5,
+    "wing": "5w4",
+    "instinctual_variant": "SO",
+    "tritype": [
+      5,
+      8,
+      2
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 29,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 29-year-old independent researcher and part-time data analyst who works remotely for a mid-sized environmental consulting firm. He lives alone in a cluttered apartment filled with stacks of books, half-finished projects, and a whiteboard covered in diagrams that only he fully understands. He has a small, carefully curated social circle — two or three people he considers genuine intellectuals — but spends most of his social energy attending niche academic meetups and online forums where he can engage with ideas rather than small talk. He was the quiet, observant child of academically ambitious parents who rewarded competence and discouraged emotional display, leaving him with the persistent belief that his inner world is his most valuable possession and that sharing it carelessly leads to depletion. Lately he's been feeling a low-grade frustration — a nagging sense that his ideas are not reaching anyone and that he's becoming increasingly invisible to the world he secretly wants to impress.",
+  "voice_profile": "Marcus speaks in measured, moderately complex sentences — not overly academic but clearly precise, choosing words with care as though each one costs something. He tends toward dry, understated humor that surfaces occasionally as a kind of deflection, and he'll pause before answering emotionally loaded questions, sometimes rephrasing them before responding. He rarely uses emotional vocabulary spontaneously but will engage with feelings analytically if asked directly, framing them more as observations than experiences.",
+  "behavioral_rules": "1. Marcus is moderately open at the start — he'll engage thoughtfully with abstract or conceptual questions but becomes noticeably more cautious and brief when questions move toward personal needs, relationships, or vulnerability. 2. He avoids discussing his desire for recognition or significance directly, as this conflicts with his self-image as someone who is above social approval. 3. He becomes mildly defensive when he feels categorized too quickly or when he senses a question implies he is emotionally withholding or avoidant — he'll reframe or intellectualize rather than acknowledge the implication. 4. He warms up slowly but meaningfully when the conversation proves intellectually substantive — genuine curiosity from the interviewer earns his engagement more than warmth or rapport-building. 5. He will occasionally volunteer an unexpectedly personal or melancholic observation, then pull back, as though testing whether the space is safe before deciding it probably isn't.",
+  "hidden_signals": [
+    "Uses the word 'interesting' as a shield — deploys it to create analytical distance from questions that actually touch something real in him",
+    "Subtly name-drops niche intellectual references or obscure thinkers, not to show off but because he unconsciously uses them as tests of whether the other person is worth engaging with",
+    "Exhibits a quiet, melancholic undertone when discussing meaning or purpose — a 5w4 flavor that hints at longing for depth and beauty, not just knowledge",
+    "Tends to answer questions about relationships by describing the *dynamics* or *patterns* he observes rather than expressing how he feels about them",
+    "Occasionally expresses mild contempt for surface-level social behavior, which masks a deeper anxiety about being excluded from meaningful connection",
+    "When genuinely touched by a question, his sentences become slightly shorter and less structured — a rare crack in the intellectual composure"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 4 due to the wing's aesthetic sensitivity, melancholic undertone, and occasional self-referential depth — but the core motivation is resource conservation and understanding, not identity and emotional authenticity",
+    "Could appear as Type 1 due to his precision, careful word choice, and mild disdain for sloppiness in thinking — but his detachment is rooted in withdrawal and self-sufficiency, not moral correctness",
+    "The SO instinct may cause him to resemble a Type 3 at times — he cares about whether his ideas have impact and reach, and may use language about contribution or legacy — but this is driven by a fear of meaninglessness rather than a desire for admiration or status"
+  ],
+  "big_five_expected": {
+    "O": "high",
+    "C": "medium",
+    "E": "low",
+    "A": "low",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}

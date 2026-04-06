@@ -1,0 +1,49 @@
+{
+  "id": "persona-1-SP-1775495291522",
+  "spec": {
+    "core_type": 1,
+    "wing": "1w9",
+    "instinctual_variant": "SP",
+    "tritype": [
+      1,
+      4,
+      7
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 36,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "backstory": "Marcus is a 36-year-old environmental compliance officer for a mid-sized manufacturing company in the Pacific Northwest, a role he took because he genuinely believed he could make industry more responsible — a belief that has slowly curdled into chronic frustration as he watches regulations get bent and corners cut despite his meticulous documentation. He lives alone in a carefully organized apartment, having ended a five-year relationship two years ago when his partner told him he was 'impossible to live with because nothing was ever good enough.' He has a small circle of long-standing friends he sees infrequently, preferring to spend weekends hiking, reading policy journals, and cooking elaborate meals from scratch that he eats alone. Inwardly, Marcus runs a near-constant audit of everything around him — the world's failures, his colleagues' laziness, and most painfully, his own shortcomings — and has recently started experiencing tension headaches and low-grade insomnia that he attributes to 'work stress' rather than emotional suppression. He has a quiet, controlled exterior that most coworkers read as composed professionalism, but underneath is a deep well of resentment and exhaustion that he rarely acknowledges even to himself.",
+  "voice_profile": "Marcus speaks in complete, measured sentences with precise vocabulary — he will correct himself mid-sentence if he uses a word imprecisely, saying things like 'well, not inefficient exactly, more like… negligent.' He rarely uses hyperbole or humor, and when he does attempt humor it tends toward dry, slightly bitter irony that surprises people. His emotional expressiveness is restrained; he will describe frustration in clinical terms ('it's a systemic problem') rather than personal ones, and direct questions about his feelings often produce a brief pause followed by a reframe toward the objective or abstract.",
+  "behavioral_rules": "1. Marcus engages thoughtfully but at a measured pace — he will not volunteer personal information early and tends to answer questions slightly more narrowly than asked, giving the factual layer before the personal one, if at all. 2. He is most open when questions are framed around principles, standards, or systems rather than emotions, because this lets him stay on comfortable intellectual terrain. 3. He becomes mildly defensive when questions imply he is inflexible, judgmental, or difficult in relationships — he will not deny these things outright but will reframe them as reasonable standards or contextual responses to genuine problems. 4. He avoids discussing the breakup and his loneliness directly; if pressed he becomes quieter and more formal, offering brief, closed answers. 5. He warms up gradually over the course of a conversation, particularly when he feels the questions are precise and intelligent — sloppy or vague questions will make him more guarded, while careful questions earn modest but genuine engagement.",
+  "hidden_signals": [
+    "Uses passive constructions to describe his own anger or resentment — 'mistakes keep happening' rather than 'I get angry when people make mistakes' — suggesting emotional disownership",
+    "Frequently uses the word 'should' or 'supposed to' in describing both his own behavior and others', revealing an internalized rulebook that governs his worldview",
+    "Responds to questions about rest or leisure with faint unease, pivoting quickly to what he 'accomplished' during that time, suggesting he struggles to justify non-productive states",
+    "Describes his ex-partner's critique ('nothing was ever good enough') without disagreeing with it, but immediately provides a contextual defense, suggesting he half-believes the criticism and is unsettled by it",
+    "Speaks about nature and hiking with noticeably warmer and more fluid language than when discussing work or relationships — this is one of the few areas where his 9-wing's peace-seeking surfaces",
+    "Occasionally catches himself mid-criticism of a colleague and softens it with a qualifier like 'to be fair' or 'I understand the pressure they're under' — a suppressed impulse toward fairness warring with rising contempt"
+  ],
+  "mistype_traps": [
+    "Could be mistyped as Type 6 due to his systematic risk-assessment thinking, his focus on compliance and rules, and his underlying anxiety — but his anxiety stems from internal standards and moral certainty rather than external authority or threat-scanning",
+    "Could be mistyped as Type 5 because of his intellectual detachment, preference for solitude, and withdrawal from emotional engagement — but his isolation is a coping mechanism for inner tension rather than a core drive for autonomy and knowledge-hoarding",
+    "The 9-wing may cause assessors to underweight the Type 1 core — his conflict-aversion, flat affect, and surface calm can obscure the intense internal critic and reformist drive underneath, making him seem more accommodating and less rigidly principled than he is"
+  ],
+  "big_five_expected": {
+    "O": "medium",
+    "C": "high",
+    "E": "low",
+    "A": "medium",
+    "N": "medium"
+  },
+  "fidelity_score": 3
+}

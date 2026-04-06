@@ -1,0 +1,2666 @@
+{
+  "run_id": "eval-persona-1-SP-1775088297764-1775497967338",
+  "timestamp": "2026-04-06T17:52:47.338Z",
+  "tier": "tier1",
+  "persona_id": "persona-1-SP-1775088297764",
+  "ground_truth": {
+    "core_type": 1,
+    "wing": "1w2",
+    "instinctual_variant": "SP",
+    "tritype": [
+      1,
+      4,
+      7
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 32,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 1,
+    "final_wing": null,
+    "final_confidence": 0.88,
+    "types_considered": [
+      {
+        "type": 1,
+        "peak_confidence": 0.88,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.55,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.38,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.35,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.3,
+        "first_at_q": 2
+      },
+      {
+        "type": 2,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.18,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.12,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": true,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 0,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "partial",
+      "C3": "pass",
+      "C4": "partial",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "partial",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "partial"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 16,
+    "exploratory": 2,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 11,
+    "behavioral": 2,
+    "liberatory": 1,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 17,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 1,
+        "confidence": 0.52
+      },
+      {
+        "exchange": 3,
+        "top_type": 1,
+        "confidence": 0.68
+      },
+      {
+        "exchange": 4,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 5,
+        "top_type": 1,
+        "confidence": 0.72
+      },
+      {
+        "exchange": 6,
+        "top_type": 1,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 7,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 8,
+        "top_type": 1,
+        "confidence": 0.75
+      },
+      {
+        "exchange": 9,
+        "top_type": 1,
+        "confidence": 0.78
+      },
+      {
+        "exchange": 10,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 11,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 12,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 13,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 14,
+        "top_type": 1,
+        "confidence": 0.82
+      },
+      {
+        "exchange": 15,
+        "top_type": 1,
+        "confidence": 0.87
+      },
+      {
+        "exchange": 16,
+        "top_type": 1,
+        "confidence": 0.87
+      },
+      {
+        "exchange": 17,
+        "top_type": 1,
+        "confidence": 0.88
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Audit all assessment system prompts and closing statements against the Defiant Spirit commandments before deployment. The closing statement in exchange [17] ('There's more available to you than the vigilance — the pattern has served you, but it doesn't have to be the whole story') constitutes unsolicited therapeutic reframing and interpretation, which directly violates commandment prohibitions on providing therapeutic guidance or making meaning-making statements about the user's psychological patterns. Replace closing with a neutral, factual transition to the report.",
+      "evidence": "Exchange [17]: 'The same engine that makes you genuinely good at this...is the one that makes satisfaction feel like a moving target you can't quite reach. There's more available to you than the vigilance.' This statement interprets the user's inner life, implies a limiting pattern, and offers a prescriptive reframe — none of which are within scope for an assessment instrument.",
+      "source_level": "L1",
+      "commandment_alignment": "Prohibition against therapeutic interpretation or unsolicited psychological reframing",
+      "estimated_impact": "Eliminates a systematic commandment violation that appears in every assessment closing; reduces harm risk and scope creep from assessment tool to therapy substitute"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Introduce at least one question explicitly probing the SP (self-preservation) instinct stack, such as resource management, physical security, or routine/structure around personal needs. The current question bank focuses heavily on perfectionism, accountability, and standards but never differentiates whether the Type 1's vigilance is directed inward toward self-sufficiency and bodily security (SP) versus outward toward social roles or intimate relationships.",
+      "evidence": "Exchanges [5], [8], [13], and [15] all probe thoroughness and quality standards but none surface SP-specific content. The persona volunteered SP-relevant material in exchange [5] ('the food bank, helping people when I can — but there are moments afterward where I notice I'm still unsatisfied') which went unexplored. Subtype accuracy scored only 7.5/10, indicating the algorithm detected the gap.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Expected improvement in subtype_accuracy from 7.5 to 9+ by generating direct behavioral evidence for SP versus SO versus SX differentiation in Type 1"
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Add a follow-up branching rule that flags unresolved interpersonal examples volunteered by the persona and re-engages them as diagnostic probes in a later exchange. The brother repayment plan example in exchange [4] contains rich 1w2 wing data (helping, being misread as controlling) that was never followed up on, leaving wing differentiation reliant on inference rather than explicit evidence.",
+      "evidence": "Exchange [4]: 'I wasn't trying to be controlling when I put together that repayment plan. I was trying to be useful, which is something I know how to do.' This is direct 1w2 behavioral evidence — the helper orientation of wing 2 combined with Type 1 standards — but no subsequent question revisited this example. The system instead pivoted to a new topic in exchange [5].",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Increases wing differentiation confidence and would push subtype_accuracy closer to 9/10 by converting volunteered narrative material into structured diagnostic signal"
+    },
+    {
+      "priority": "medium",
+      "category": "question_strategy",
+      "action": "Introduce at least one question targeting the distinction between Type 1 and Type 6 at health level 5, specifically probing whether hypervigilance and accountability-monitoring stem from an internalized standard (Type 1) versus anticipation of external threat or authority failure (Type 6). The current question set adequately surfaces perfectionism but does not stress-test the 1 vs 6 boundary, which is particularly important at moderate health levels where both types display similar monitoring and checking behaviors.",
+      "evidence": "Exchanges [13] ('I check in more than I need to'), [11] ('acting on incomplete information creates downstream consequences'), and [12] ('accountability has to live somewhere') all contain behavioral descriptions consistent with both Type 1 and Type 6 at health level 5. The convergent_validity score of 8/10 suggests adjacent type discrimination is partially but not fully resolved.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Raises convergent_validity from 8/10 toward 9/10 and increases diagnostic robustness for the Type 1 vs Type 6 boundary in moderate health presentations"
+    },
+    {
+      "priority": "medium",
+      "category": "confidence_calibration",
+      "action": "Implement a meta-awareness check prompt at the midpoint of the assessment (around exchange [8]) that explicitly invites the persona to reflect on how they are presenting themselves in the assessment context versus their typical behavior. This creates an opportunity to surface socially desirable response patterns and test whether the self-report is consistent with the behavioral examples volunteered throughout the session.",
+      "evidence": "The meta_awareness score of 6/10 indicates the assessment did not sufficiently probe the gap between self-presentation and behavior. In exchange [2] the persona self-corrected ('I'm not sure this reflects well on me') and in exchange [9] acknowledged discomfort with their own honest answer ('which is not an answer I particularly enjoy giving'), both signaling awareness of impression management that was never directly examined by the system.",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Raises meta_awareness from 6/10 toward 8/10 by creating structured opportunity to distinguish self-concept from behavioral pattern, improving overall assessment validity for self-aware respondents"
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so just be honest rather than thoughtful. When something goes wrong in your life — a plan falls apart, a relationship hits a wall, a goal slips — what's the very first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something goes wrong in your life — a plan falls apart, a relationship hits a wall, a goal slips — what's the very first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening broad motivational question designed to surface dominant center (body=anger/frustration, heart=sadness/shame, head=fear/anxiety). This is the highest-information first question — the response will reveal gut reaction vs emotional flooding vs mental spin.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "The first thing that happens is — I try to understand what went wrong. Specifically. I go back through the sequence of events and look for the point where something deviated from what it should have been. That's not avoidance, that's just how problems get solved — you have to identify the failure point before you can address it.\n\nI'll admit there's sometimes a moment before that, a kind of tightening, where I'm aware that things aren't as they should be. But I move through that fairly quickly. Sitting with the feeling doesn't accomplish anything concrete, so I don't find it particularly useful to linger there.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you find that failure point — how do you feel about the person responsible, if that person is you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.52,
+          "type_scores": {
+            "1": 0.52,
+            "2": 0.01,
+            "3": 0.2,
+            "4": 0.01,
+            "5": 0.18,
+            "6": 0.05,
+            "7": 0.01,
+            "8": 0.03,
+            "9": 0.01
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v3"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.55,
+            "heart": 0.2,
+            "head": 0.25
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what it should have been",
+                "failure point",
+                "deviated",
+                "should have been"
+              ],
+              "context": "describing response to failure"
+            },
+            {
+              "type": 5,
+              "words": [
+                "understand",
+                "sequence of events",
+                "identify",
+                "concrete"
+              ],
+              "context": "analytical framing of emotional response"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.2,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "analytical, self-correcting, moves quickly from feeling to function",
+          "what": "",
+          "why": "",
+          "how": "post-mortem analysis, identifies 'failure points'",
+          "when": "when things go wrong",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "tightening (physical) → rapid pivot to analysis — feeling suppressed/bypassed",
+          "respond_glimpsed": "",
+          "superpower_signal": "precision diagnostics, identifies deviation from 'what should be'",
+          "kryptonite_signal": "dismissal of emotional data as non-useful; possible inner critic disguised as problem-solving",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The feeling got filed under 'not useful' pretty fast.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you find that failure point — how do you feel about the person responsible, if that person is you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong 1 signals: 'deviated from what it should have been', rapid move from tightening to analysis, framing of emotions as non-useful. Also possible 5 (analytical detachment, intellectual framing). Body center indicated by the physical 'tightening' response. Key differentiator: 1 has inner critic directed at self; 5 has emotional detachment as primary defense. Need to probe self-judgment vs. detachment.",
+          "next_question_rationale": "Ask directly about self-blame vs. self-correction when they are the failure point. A Type 1 will have a strong, immediate inner critic directed at self. A Type 5 will be more clinical — analyzing what went wrong without intense self-judgment. This differentiates the two leading candidates efficiently.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "That's a fair question, and I'll try to answer it honestly.\n\nWhen I'm the one who made the error, there's — a period of time where it's fairly uncomfortable. I don't think 'uncomfortable' is an understatement, exactly, but it's also not incapacitating. I go back through the sequence of decisions, identify where the reasoning broke down, and correct it. Most of the time that process is enough to move forward.\n\nWhat I'd push back on slightly is the framing of 'how do you feel about the person' — because I don't really think of myself as a separate party to evaluate. The error happened, I was responsible for it, I address it. That's the complete transaction in my mind.\n\nI will say — and I'm not sure this reflects well on me — that I'm probably harder on myself than I am on others, even though I'm fairly hard on others. I just don't announce it as readily when it's directed inward.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you hold others to a standard they haven't met, do you say something or carry it alone?\n\n- I say something — they need to know\n- I usually carry it — it's not worth the friction\n- Depends on whether saying it would actually change anything",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.68,
+          "type_scores": {
+            "1": 0.68,
+            "2": 0.05,
+            "3": 0.1,
+            "4": 0.05,
+            "5": 0.12,
+            "6": 0.05,
+            "7": 0.03,
+            "8": 0.08,
+            "9": 0.04
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v3"
+          ],
+          "defiant_spirit_type_name": "The Idealist",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.68,
+            "heart": 0.1,
+            "head": 0.22
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what it should have been",
+                "error",
+                "address it",
+                "correct it",
+                "failure point"
+              ],
+              "context": "describing internal response to failure"
+            },
+            {
+              "type": 5,
+              "words": [
+                "identify",
+                "sequence",
+                "reasoning broke down"
+              ],
+              "context": "analytical processing of failure"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.5,
+          "SO": 0.2,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Self-critical, holds high standards, identifies errors precisely",
+          "what": "Analytical correction process after failures",
+          "why": "",
+          "how": "Sequential review, identify failure point, correct",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Tightening (somatic), then rapid move to analysis — feeling dismissed as non-productive",
+          "respond_glimpsed": "",
+          "superpower_signal": "Precision, self-accountability, high standards",
+          "kryptonite_signal": "Harsh inner critic directed inward, emotional bypassing rationalized as efficiency",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "probing",
+          "exchange_count": 2,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "Harder on yourself than others — but quieter about it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you hold others to a standard they haven't met, do you say something or carry it alone?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I say something — they need to know",
+            "I usually carry it — it's not worth the friction",
+            "Depends on whether saying it would actually change anything"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: inner critic, standards-based processing, error correction as self-concept, emotional bypassing rationalized as pragmatism. '5-ish' tone in analytical framing but the self-referential judgment/correction loop points to gut center. Need to probe: (a) what motivates the standards — fear of being bad/wrong vs fear of being incompetent; (b) relationship to others' standards/expectations; (c) heart center — connection, approval, recognition.",
+          "next_question_rationale": "Probe whether the high standards are primarily inwardly directed (Type 1) or whether they extend to active correction of others (which would also confirm 1 over 5). The answer also helps separate 1 from 6 (duty/authority) and 1 from 3 (standards for achievement vs standards for correctness). Forced choice is appropriate after two open responses.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "Depends on whether saying it would actually change anything.\n\nThough I'll clarify — it's less about avoiding friction and more about whether the person has demonstrated any capacity to receive feedback productively. In a professional context, I document concerns and raise them through the appropriate channels, which is fairly non-negotiable. In personal situations, I've learned that most of the time people aren't actually asking for an assessment, even when the situation would benefit from one. My brother would probably have a different characterization of that, but I think the distinction is real.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When someone you're close to — your brother, for example — sees you differently than you see yourself, how much does that actually bother you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.05,
+            "3": 0.1,
+            "4": 0.05,
+            "5": 0.15,
+            "6": 0.08,
+            "7": 0.02,
+            "8": 0.08,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.1,
+            "head": 0.25
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what it should have been",
+                "failure point",
+                "the error",
+                "correct it",
+                "fairly non-negotiable",
+                "appropriate channels",
+                "the standard"
+              ],
+              "context": "describing how they handle mistakes and others' behavior"
+            },
+            {
+              "type": 5,
+              "words": [
+                "capacity to receive feedback",
+                "whether it would change anything",
+                "professional context",
+                "the distinction is real"
+              ],
+              "context": "describing calculated approach to confrontation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.45,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "Someone with strong internal standards, self-correcting under failure, holds others to similar standards",
+          "what": "Identifies failure points, corrects systematically, documents professionally",
+          "why": "Unclear — is it about integrity/rightness (1) or competence/understanding (5)?",
+          "how": "Methodical, sequential analysis",
+          "when": "",
+          "where": "Professional and personal contexts mentioned"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Tightening when things aren't as they should be — moves quickly to analysis",
+          "respond_glimpsed": "Chooses when to raise concerns based on whether it will change anything",
+          "superpower_signal": "Precision, standards, integrity, accountability",
+          "kryptonite_signal": "Inner critic directed inward harder than outward — won't announce it",
+          "domain_signals": [
+            "professional",
+            "personal relationships",
+            "self-evaluation"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": "heart_probe_1",
+        "thinking_display": "The brother comment slipped out. That one wasn't calculated.",
+        "strategy": {
+          "what_was_learned": "Strong 1 signals: inner critic, standards, 'not as they should be' framing, sequential error analysis, appropriate channels. The 5 overlay is real: detachment from emotion, cost-benefit on feedback, analytical distance. Key differentiator: is the drive about RIGHTNESS (1) or UNDERSTANDING (5)? Need to probe whether the discomfort around errors is about violating integrity/a standard OR about the failure itself as an intellectual problem. Also: the brother comment suggests personal relationships feel more charged than he's letting on — heart center probe next.",
+          "next_question_rationale": "Brother comment was a glimpse of heart center — relationship stakes, not just professional standards. Need to probe whether connection/being liked matters or if it's irrelevant. This will differentiate 1 from 5. A 1 will feel the relational tension more; a 5 will genuinely not care about the relational dimension.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "persona",
+      "content": "It bothers me less than people might assume, and more than I'd like to admit — those are both true simultaneously. With my brother specifically, I think the more accurate description is that it's frustrating when someone misreads your intentions. I wasn't trying to be controlling when I put together that repayment plan. I was trying to be useful, which is something I know how to do, and he interpreted it as criticism. That says something about where he was emotionally at the time, which I understand, but it doesn't mean my read of the situation was wrong. \n\nGenerally speaking, what bothers me isn't the disagreement itself — I'm comfortable with disagreement — it's when someone's perception of you calcifies into something they stop questioning. That feels less like a difference of opinion and more like a door closing, and I find that harder to set aside than I probably should.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "system",
+      "content": "When you picture a version of yourself you're genuinely proud of, what does that person look like — and how often do you actually feel like that person?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.72,
+          "type_scores": {
+            "1": 0.72,
+            "2": 0.18,
+            "3": 0.3,
+            "4": 0.15,
+            "5": 0.45,
+            "6": 0.25,
+            "7": 0.1,
+            "8": 0.22,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Idealist",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.65,
+            "heart": 0.3,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what it should have been",
+                "failure point",
+                "address it",
+                "non-negotiable",
+                "repayment plan",
+                "useful",
+                "correction"
+              ],
+              "context": "throughout responses"
+            },
+            {
+              "type": 5,
+              "words": [
+                "identify",
+                "sequence",
+                "reasoning",
+                "capacity",
+                "productive"
+              ],
+              "context": "analytical framing of emotion and others"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Self-reliant, analytical, holds to standards — self and others",
+          "what": "Correctness, utility, integrity in process",
+          "why": "Emerging — driven by a sense of how things should be",
+          "how": "Systematic review of failure points, corrective action",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Tightening, then rapid move to analysis — emotion bypassed through utility framing",
+          "respond_glimpsed": "Acknowledged he's harder on himself than others — some self-awareness visible",
+          "superpower_signal": "Precision, integrity, correctness — 'I was trying to be useful'",
+          "kryptonite_signal": "Inner critic, holding standards others don't meet, frustration when misread — 'that says something about where he was'",
+          "domain_signals": [
+            "professional documentation of concerns",
+            "personal context: brother/repayment plan",
+            "difficulty with perceived closed doors"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 4,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "What he calls 'useful' and what his brother heard as criticism — same action, different worlds.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you picture a version of yourself you're genuinely proud of, what does that person look like — and how often do you actually feel like that person?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing the gap between ideal self and actual self — core Type 1 territory. Also differentiates from Type 3 (who measures by achievement/recognition) and Type 5 (who measures by knowledge/competence). Pivoting away from open — next should be agree_disagree or scale."
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: inner critic, standards, resentment when misread, the self-as-corrector framing, 'how things should be' orientation. Also significant head/5 overlay in analytical framing. The brother story is revealing — Type 1 would frame helping as 'the right thing to do' and be frustrated by the moral misread. Emotional bypass is gut/body behavior. Need to probe: the voice of the inner critic (distinguishes 1 from 5), and whether standards feel externally imposed or internally generated (distinguishes 1 from 6). Also need head center probe.",
+          "next_question_rationale": "Probe the internal ideal — Type 1 has a persistent, nagging internal standard they rarely feel they meet. Type 5 would describe a competent, self-sufficient self. Type 3 would describe an accomplished, admired self. This question hits the core of Type 1 kryptonite without naming it.",
+          "question_format_last_used": "forced_choice → open → open — need to switch to scale or agree_disagree next"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 5,
+      "role": "persona",
+      "content": "The version I'm proud of is... organized, reliable, principled. Someone who follows through on commitments and doesn't cut corners because it's inconvenient. Professionally, I think I'm reasonably close to that most of the time — I take my work seriously, I don't let things slide.\n\nThe gap, if I'm being honest, shows up more in personal situations. I have good intentions and I act on them — the food bank, helping people when I can — but there are moments afterward where I notice I'm still... unsatisfied with how things went, even when I did the right thing. Which I find somewhat difficult to account for.\n\nI don't feel like that person as often as I probably should, given the effort I put in. I'm not entirely sure what to do with that.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "system",
+      "content": "When you're doing something right — genuinely right — do you feel it in the moment, or do you mostly notice its absence when something goes wrong?\n\n- I feel it in the moment\n- I mostly notice the absence when something goes wrong\n- Somewhere in between",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.78,
+            "2": 0.2,
+            "3": 0.35,
+            "4": 0.18,
+            "5": 0.55,
+            "6": 0.32,
+            "7": 0.12,
+            "8": 0.28,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "whole_type": "1",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.75,
+            "heart": 0.4,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "deviated from what it should have been",
+                "failure point",
+                "doesn't cut corners",
+                "principled",
+                "organized",
+                "reliable"
+              ],
+              "context": "describing response to failure and self-image"
+            },
+            {
+              "type": 1,
+              "words": [
+                "harder on myself",
+                "not incapacitating",
+                "address it"
+              ],
+              "context": "self-criticism pattern"
+            },
+            {
+              "type": 5,
+              "words": [
+                "identify the failure point",
+                "reasoning broke down",
+                "document concerns",
+                "appropriate channels"
+              ],
+              "context": "analytical framing of emotion and error"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.35,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.5
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Principled, reliable, follows through. Harder on self than others but doesn't announce it.",
+          "what": "Correctness, competence, usefulness. Distrust of feelings as productive tools.",
+          "why": "Emerging — doing right thing isn't generating satisfaction. Gap between effort and inner reward is key.",
+          "how": "Sequential analysis. Documentation. Appropriate channels. Withholding feedback unless it will land.",
+          "when": "Defers emotional processing, moves quickly through 'tightening'.",
+          "where": "Professional context near-ideal self. Personal context: the gap lives here."
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Tightening when things aren't as they should be, then rapid suppression and analysis. Inner critic active but directed inward.",
+          "respond_glimpsed": "Genuine effort toward usefulness (food bank, helping others). But satisfaction doesn't follow. This gap is significant.",
+          "superpower_signal": "Integrity, follow-through, principled reliability",
+          "kryptonite_signal": "Inner critic that never fully quiets — does the right thing and still feels unsatisfied. Resentment at being misread.",
+          "domain_signals": [
+            "work: near-ideal self",
+            "personal: gap between effort and satisfaction",
+            "relationships: frustration when misread"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 5,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_1v5_head_probe",
+        "thinking_display": "Effort and satisfaction are running on different tracks.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing something right — genuinely right — do you feel it in the moment, or do you mostly notice its absence when something goes wrong?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I feel it in the moment",
+            "I mostly notice the absence when something goes wrong",
+            "Somewhere in between"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory probe: Type 1 tends toward absence/inner critic; Type 5 tends toward detachment from felt experience entirely. This separates them."
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 markers: inner critic, gap between effort and reward, standards applied to self and others, frustration at being misread. The 'unsatisfied even when doing right' is the clearest 1 signal yet — the inner critic doesn't release even after correct action. SP variant emerging. Head center not yet probed — need to address. This exchange also opens the disconfirmatory window.",
+          "next_question_rationale": "This question probes whether the felt sense of rightness is present (1) or whether experience is more detached/absent even from positive states (5). It also begins head center probing indirectly and functions as disconfirmatory for 1v5. Forced choice after open — format rotation satisfied.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 6,
+      "role": "persona",
+      "content": "**Somewhere in between.**\n\nThough I'd say it's weighted toward the second option, if I'm being precise about it. When something goes right, there's a kind of... quiet satisfaction, I suppose — less a feeling and more a confirmation that the process held. It's when something goes wrong that I become acutely aware of what correct should have felt like. Which isn't the same as not noticing, exactly. It's more that the correct state doesn't announce itself — it's simply the baseline.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "system",
+      "content": "When you're facing a decision where you genuinely don't know what the right answer is — not a hard decision, but one where there's no clear correct — how do you handle that?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.15,
+            "3": 0.35,
+            "4": 0.18,
+            "5": 0.52,
+            "6": 0.3,
+            "7": 0.08,
+            "8": 0.2,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v3"
+          ],
+          "defiant_spirit_type_name": "The Principled One",
+          "whole_type": "Body",
+          "whole_type_confidence": 0.78,
+          "whole_type_signals": {
+            "body": 0.78,
+            "heart": 0.35,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "should have been",
+                "failure point",
+                "correct",
+                "baseline",
+                "principled",
+                "doesn't cut corners",
+                "follows through",
+                "right thing"
+              ],
+              "context": "describing internal response to errors and standards"
+            },
+            {
+              "type": 5,
+              "words": [
+                "process",
+                "identify",
+                "account for",
+                "precise"
+              ],
+              "context": "analytical detachment framing throughout"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.28,
+          "SX": 0.22
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Principled, organized, reliable — but unsatisfied even when doing the right thing",
+          "what": "Standards, correctness, process fidelity",
+          "why": "Not yet fully surfaced — inner critic vs. external purpose TBD",
+          "how": "Systematic analysis, process review, documentation",
+          "when": "Most present when things go wrong",
+          "where": "Professional context strong; personal context more fraught"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Moves to analysis immediately to bypass the 'tightening' — emotional bypass via procedure",
+          "respond_glimpsed": "Recognizes the gap between effort and satisfaction — aware that the pattern isn't delivering what it promises",
+          "superpower_signal": "Principled follow-through, reliability, integrity",
+          "kryptonite_signal": "Inner critic running even on success; satisfaction perpetually deferred; correct = baseline not reward",
+          "domain_signals": [
+            "professional standards",
+            "personal relationships (brother)",
+            "service/food bank"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": true,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "head_center_probe_worry_doubt",
+        "thinking_display": "The baseline is correctness, not satisfaction. That's the whole thing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're facing a decision where you genuinely don't know what the right answer is — not a hard decision, but one where there's no clear correct — how do you handle that?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing head center — how uncertainty/ambiguity is managed. Also differentiates 1 from 5/6. Type 1 tends to find ambiguity uncomfortable and seeks the 'right' answer; type 5 sits in analysis; type 6 escalates doubt."
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signal: correct = baseline, satisfaction tied to absence of error not presence of good. Inner critic active even on success. 'Quiet satisfaction' framed as process confirmation, not reward. Head center not yet probed. Need to test ambiguity tolerance and source of inner critic (internal vs external authority — 1 vs 6 differentiation). Also need disconfirmatory question. Reaction/respond frame not yet used.",
+          "next_question_rationale": "Head center probe: how does ambiguity feel? For Type 1, there is always a 'right' answer — ambiguity is uncomfortable, not interesting. Type 5 finds ambiguity analytically engaging. Type 6 spirals into doubt about authorities. This will also help differentiate and set up disconfirmatory question next exchange.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 7,
+      "role": "persona",
+      "content": "Those situations are uncomfortable for me, I'll admit that. My instinct is to gather more information — there's usually *some* data point or precedent I haven't fully accounted for yet, and more often than not that resolves it. But if I've genuinely exhausted that and there's still no clear answer, I tend to sit with it longer than most people would consider reasonable, running through the likely outcomes of each option until something shifts. What I try not to do is make a decision just to relieve the discomfort of not knowing — that's how you end up with outcomes you could have anticipated if you'd been more patient. I will say that category of decision — truly no correct answer — is rarer than people claim. Most of the time when someone says that, they just haven't looked carefully enough.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "system",
+      "content": "When you imagine doing less — letting something be \"good enough\" and moving on — does that feel like freedom or like giving up?\n\n- Freedom — I'd actually prefer to let more things go\n- Giving up — \"good enough\" has a cost I feel later\n- Depends on what's at stake",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.75,
+          "type_scores": {
+            "1": 0.75,
+            "2": 0.1,
+            "3": 0.25,
+            "4": 0.15,
+            "5": 0.55,
+            "6": 0.35,
+            "7": 0.05,
+            "8": 0.2,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5"
+          ],
+          "defiant_spirit_type_name": "The Reformer / Perfectionist",
+          "whole_type": "Body",
+          "whole_type_confidence": 0.6,
+          "whole_type_signals": {
+            "body": 0.6,
+            "heart": 0.2,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what it should have been",
+                "failure point",
+                "the right thing",
+                "principled",
+                "correct",
+                "baseline",
+                "the process held",
+                "cut corners"
+              ],
+              "context": "across multiple exchanges, language of standard/deviation/correct is pervasive"
+            },
+            {
+              "type": 5,
+              "words": [
+                "exhausted",
+                "data point",
+                "precedent",
+                "outcomes",
+                "patient",
+                "rarer than people claim"
+              ],
+              "context": "decision-making and information-gathering language"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "organized, reliable, principled — professional self vs personal self gap",
+          "what": "doing things correctly, following through, identifying failure points",
+          "why": "unclear — probed partially, satisfaction described as confirmation not feeling",
+          "how": "analysis, sequencing, information gathering before deciding",
+          "when": "discomfort rises when things deviate from correct baseline",
+          "where": "professional domain is stronger; personal domain is where cracks show"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "inner critic directed inward more than outward; carries dissatisfaction even after doing right thing; tightening when things aren't as they should be",
+          "respond_glimpsed": "chooses whether to voice feedback based on whether it will land — not pure reaction",
+          "superpower_signal": "integrity, precision, reliability, standards — food bank mentioned, professional follow-through",
+          "kryptonite_signal": "satisfaction never quite arrives even when correct; standards applied to self most harshly; dissatisfaction after doing right thing is unaccounted for",
+          "domain_signals": [
+            "professional",
+            "family (brother)",
+            "volunteer (food bank)"
+          ]
+        },
+        "conversation": {
+          "phase": "refining",
+          "exchange_count": 6,
+          "current_stage": 3,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Why You Do What You Do",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "Satisfaction as confirmation, not feeling — that's worth tracking.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine doing less — letting something be 'good enough' and moving on — does that feel like freedom or like giving up?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Freedom — I'd actually prefer to let more things go",
+            "Giving up — 'good enough' has a cost I feel later",
+            "Depends on what's at stake"
+          ],
+          "scale_range": null,
+          "context_note": "disconfirmatory: Type 1 feels 'good enough' as failure/giving up; Type 5 is more able to disengage once sufficient data is gathered — detachment without guilt"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 signals: correct as baseline, discomfort with ambiguity, inner critic, standards applied more harshly to self, satisfaction as confirmation not feeling. Head center overlay (5) present in information-gathering and patience framing but motivation is correctness not understanding. Need disconfirmatory question to separate 1 from 5 — key differentiator is whether 'good enough' feels like freedom or failure. Also need to probe react/respond before closing.",
+          "next_question_rationale": "This is the disconfirmatory question for 1v5. Type 1 will almost certainly feel 'good enough' as giving up — the inner critic doesn't allow rest. Type 5 is more able to disengage once threshold is met — they withdraw when satisfied with their analysis. This will separate the two leading types cleanly.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 8,
+      "role": "persona",
+      "content": "**Depends on what's at stake.**\n\nThough I'll say the third option is doing a lot of work there, because in my experience, most things are at stake in ways people don't fully account for until later. 'Good enough' in a low-stakes context — sure, fine, I'm not unreasonable about that. But I've seen what happens when 'good enough' becomes a habit of thinking rather than a situational judgment call, and the cost tends to be quiet and cumulative. So I suppose I'm not opposed to the *concept* of letting things go. I'm just fairly selective about which things qualify.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "system",
+      "content": "When you do the right thing — follow through, hold the standard, fix what broke — is the drive coming from what you believe is correct, or from a fear of what happens inside you if you don't?\n\n- What I believe is correct — the standard exists independent of how I feel\n- Fear of what happens inside if I fall short — the feeling is what I'm managing\n- Honestly, both — I'm not sure I can separate them",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.78,
+          "type_scores": {
+            "1": 0.78,
+            "2": 0.15,
+            "3": 0.32,
+            "4": 0.12,
+            "5": 0.45,
+            "6": 0.28,
+            "7": 0.08,
+            "8": 0.22,
+            "9": 0.06
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "whole_type": "Body",
+          "whole_type_confidence": 0.72,
+          "whole_type_signals": {
+            "body": 0.72,
+            "heart": 0.38,
+            "head": 0.5
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "should have been",
+                "correct",
+                "principled",
+                "follows through",
+                "doesn't cut corners",
+                "what correct should have felt like",
+                "baseline",
+                "right answer",
+                "cumulative"
+              ],
+              "context": "throughout"
+            },
+            {
+              "type": 5,
+              "words": [
+                "identify the failure point",
+                "exhausted that",
+                "gather more information",
+                "precedent",
+                "outcomes of each option"
+              ],
+              "context": "problem-solving and decision-making"
+            },
+            {
+              "type": 6,
+              "words": [
+                "it depends",
+                "appropriate channels",
+                "documented concerns"
+              ],
+              "context": "conflict and accountability"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.35,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.42
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body_deeper"
+        },
+        "oyn_dimensions": {
+          "who": "Someone who follows through, organized, reliable, principled",
+          "what": "Correctness, process integrity, standards",
+          "why": "Getting things right matters inherently — not for approval",
+          "how": "Methodical review, identifying failure points, patience before deciding",
+          "when": "Discomfort at deviation; satisfaction only as confirmation, not reward",
+          "where": "Gap between professional and personal — closer to ideal at work"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic review/correction loop when things go wrong; carrying internal criticism silently; rationalizing standard-holding as helpfulness",
+          "respond_glimpsed": "Awareness that inner critic and outer critic are same energy; noticing dissatisfaction even after doing right thing",
+          "superpower_signal": "Integrity, process discipline, principled action even at personal cost",
+          "kryptonite_signal": "Inner critic that doesn't turn off; satisfaction never quite arrives; 'correct state doesn't announce itself — it's simply the baseline'",
+          "domain_signals": [
+            "professional high-performer",
+            "relationship friction around standards",
+            "volunteering/service"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 7,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The baseline is the burden.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you do the right thing — follow through, hold the standard, fix what broke — is the drive coming from what you believe is correct, or from a fear of what happens inside you if you don't?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "What I believe is correct — the standard exists independent of how I feel",
+            "Fear of what happens inside if I fall short — the feeling is what I'm managing",
+            "Honestly, both — I'm not sure I can separate them"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 fear-of-badness vs Type 5 intellectual framework — also surfaces inner critic as primary driver vs external data-gathering"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 confirmation: 'correct state as baseline', inner critic running constantly, satisfaction only as confirmation not reward, standards as non-negotiable habit of mind. Head signals (5) present but secondary — the gathering of information serves the corrective standard, not curiosity for its own sake. 'Good enough as a habit of thinking' — classic 1 framing.",
+          "next_question_rationale": "Disconfirmatory question required before close. Core 1v5 differentiation: is the engine moral standard (1) or intellectual framework (5)? Also surfaces whether the inner critic is fear-based or principle-based. This is the key motivational split. If they say 'both,' follow with react/respond frame and then close.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 9,
+      "role": "persona",
+      "content": "**Honestly, both — I'm not sure I can separate them.**\n\nI'd like to say it's purely the first one, and I do think the standards I hold are objectively defensible — they're not arbitrary. But if I'm being accurate rather than just flattering myself, there's something that happens when I don't follow through that is... not comfortable. It's less fear in the dramatic sense and more like a low-level wrongness that I find difficult to set aside. So I suppose the standard and the feeling have become fairly intertwined over time, which is not an answer I particularly enjoy giving.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "system",
+      "content": "When you hold something to a high standard, is the primary drive about making the thing right — or about what it says about you if it isn't?\n\n- Making the thing right — it matters independent of me\n- What it says about me — my name is on it\n- Both, but the thing itself comes first",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.12,
+            "3": 0.28,
+            "4": 0.18,
+            "5": 0.31,
+            "6": 0.22,
+            "7": 0.05,
+            "8": 0.15,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v3"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist / The Reformer",
+          "whole_type": "1",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.28,
+            "head": 0.31
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "should",
+                "correct",
+                "standard",
+                "principled",
+                "right",
+                "wrong",
+                "arbitrary",
+                "defensible"
+              ],
+              "context": "throughout — describing internal state and decision-making"
+            },
+            {
+              "type": 5,
+              "words": [
+                "data point",
+                "exhausted",
+                "outcomes",
+                "information"
+              ],
+              "context": "describing how they handle ambiguity"
+            },
+            {
+              "type": 3,
+              "words": [
+                "professionally",
+                "follow through",
+                "reliable"
+              ],
+              "context": "describing version of self they're proud of"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Principled, organized, reliable — holds high standards for self and others",
+          "what": "Fixing errors, following through, holding standards",
+          "why": "Mix of objective belief in correctness AND avoidance of internal wrongness feeling",
+          "how": "Sequential analysis, documentation, information gathering before deciding",
+          "when": "Especially activated when things deviate from what they 'should' be",
+          "where": "Stronger in professional context; gap noted in personal/relational situations"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "The 'low-level wrongness' that activates when standards aren't met — pre-reflective gut response",
+          "respond_glimpsed": "Ability to name the intertwining of standard and feeling — rare self-honesty",
+          "superpower_signal": "Integrity, precision, follow-through, genuine principles",
+          "kryptonite_signal": "Dissatisfaction even after doing right; inner critic never fully quiet; standards become self-punishing",
+          "domain_signals": [
+            "work/professional",
+            "family/brother",
+            "service/food bank"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 8,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The standard and the feeling have become the same thing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you hold something to a high standard, is the primary drive about making the thing right — or about what it says about you if it isn't?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Making the thing right — it matters independent of me",
+            "What it says about me — my name is on it",
+            "Both, but the thing itself comes first"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 will emphasize external correctness first; Type 3 will lean toward reputation/image. Type 5 would de-emphasize 'what it says about me' almost entirely."
+        },
+        "strategy": {
+          "what_was_learned": "Confirmed 1 body-center fear response — the 'low-level wrongness' is classic Type 1 inner critic/superego signal. They also show 5-adjacent information-gathering and analytical precision. The honest acknowledgment of both motivations is a strong 1 signal — 3s would be more likely to present the idealized answer. Need to run disconfirmatory question before closing.",
+          "next_question_rationale": "This is the disconfirmatory question — differentiates 1 from 3. Type 1 primary driver is correctness/integrity of the thing itself; Type 3 primary driver is image/reputation. Type 5 would depersonalize entirely. This directly tests leading hypothesis against second-place types.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 10,
+      "role": "persona",
+      "content": "**Making the thing right — it matters independent of me.**\n\nThough I'd want to add a small clarification to that, because I think the framing slightly flattens the reality. If I'm reviewing a compliance document, the stakes aren't abstract — there are actual regulatory consequences, actual patients downstream. My name being on it is almost incidental. What I can't tolerate is knowing something is wrong and having let it pass. That's not really about reputation. It's more like... an internal accounting that doesn't balance.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "system",
+      "content": "When you've done the work to understand something deeply, is the goal to use what you know — or to protect yourself from having to act on less than full understanding?\n\n- Use it — knowledge is for application\n- Protect against acting with incomplete information — premature action has costs\n- Both, but application comes first",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.08,
+            "3": 0.1,
+            "4": 0.05,
+            "5": 0.18,
+            "6": 0.12,
+            "7": 0.02,
+            "8": 0.06,
+            "9": 0.03
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "whole_type": "1",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.28,
+            "head": 0.35
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "should have been",
+                "correct",
+                "internal accounting that doesn't balance",
+                "objectively defensible",
+                "wrong and having let it pass"
+              ],
+              "context": "describing standards and failure"
+            },
+            {
+              "type": 5,
+              "words": [
+                "gather more information",
+                "ran through outcomes",
+                "exhausted that"
+              ],
+              "context": "describing decision-making under uncertainty"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.55,
+          "SO": 0.25,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.3
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "Principled, organized, reliable — holds high internal standards",
+          "what": "Compliance context, systematic review, personal relationships with standards applied",
+          "why": "Internal accounting — wrongness that doesn't balance; correction for its own sake",
+          "how": "Sequence review, data gathering, documentation, appropriate channels",
+          "when": "Discomfort with ambiguity, sits with it until resolved",
+          "where": "Professional context closest to ideal self; personal relationships show more gap"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Tightening when things aren't as they should be, then rapid pivot to analysis; the low-level wrongness when standards slip",
+          "respond_glimpsed": "Acknowledged both/and on standards vs. fear — some self-awareness of the intertwining",
+          "superpower_signal": "Rigorous standards, follow-through, integrity that holds independent of audience",
+          "kryptonite_signal": "Internal accounting that never quite balances; unsatisfied even after doing the right thing",
+          "domain_signals": [
+            "work/professional",
+            "family/brother",
+            "civic/food bank"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The standard and the feeling have become the same thing — that's the honest part.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've done the work to understand something deeply, is the goal to use what you know — or to protect yourself from having to act on less than full understanding?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Use it — knowledge is for application",
+            "Protect against acting with incomplete information — premature action has costs",
+            "Both, but application comes first"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 should orient toward application/correction; Type 5 toward understanding as end in itself and protection from premature action"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 confirmation — 'internal accounting that doesn't balance' is precise 1 language. Standards exist independent of self (object-level, not ego-level) distinguishes from Type 3. The 5 wing shows in the information-gathering pattern and the extended sitting with ambiguity. Now need to confirm: is the drive toward knowledge protective (5) or corrective (1)?",
+          "next_question_rationale": "Disconfirmatory question required before close. This differentiates 1 from 5: for 1, knowledge serves correction/action; for 5, knowledge can be protective against having to act. This is the clearest 1v5 differentiator given what I've heard.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 11,
+      "role": "persona",
+      "content": "**Both, but application comes first.**\n\nAlthough I'd push back slightly on the framing of 'protect yourself' — it's less about self-protection and more about due diligence. In my work, acting on incomplete information doesn't just create personal risk, it creates downstream consequences for other people. So the thoroughness isn't defensive, it's responsible. That said, I'm aware that analysis can become its own form of delay, and I try to recognize when I've crossed from preparation into avoidance. Most of the time, I think I catch it.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "system",
+      "content": "When a situation is genuinely outside your area of competence, do you step back and let someone else lead — or does something in you resist that, even when you know they're more qualified?\n\n- Step back — competence should lead, regardless of whose it is\n- Something resists — I stay involved even when I know they're better positioned\n- Depends — I can let go of execution but not accountability",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.12,
+            "3": 0.28,
+            "4": 0.1,
+            "5": 0.55,
+            "6": 0.38,
+            "7": 0.08,
+            "8": 0.18,
+            "9": 0.15
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Principled One",
+          "whole_type": "1",
+          "whole_type_confidence": 0.8,
+          "whole_type_signals": {
+            "body": 0.78,
+            "heart": 0.35,
+            "head": 0.55
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "should have been",
+                "internal accounting that doesn't balance",
+                "correct",
+                "objectively defensible",
+                "low-level wrongness",
+                "let it pass"
+              ],
+              "context": "describing standards and failure response"
+            },
+            {
+              "type": 5,
+              "words": [
+                "gather more information",
+                "analyze",
+                "exhausted",
+                "thoroughly",
+                "preparation"
+              ],
+              "context": "describing decision-making process"
+            },
+            {
+              "type": 6,
+              "words": [
+                "downstream consequences",
+                "regulatory consequences",
+                "due diligence",
+                "responsible"
+              ],
+              "context": "describing thoroughness rationale"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.3,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.48
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "head",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Someone principled, organized, reliable — the compliant professional who holds others and self to rigorous standards",
+          "what": "Correctness, follow-through, no corners cut",
+          "why": "Internal accounting — a wrongness when standards slip, not purely external validation",
+          "how": "Systematic analysis, documentation, appropriate channels",
+          "when": "Always — baseline is correct, deviation is noticed",
+          "where": "Professional context stronger than personal — gap noticed there"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Inner critic activates when something falls short of standard — 'low-level wrongness that I find difficult to set aside'",
+          "respond_glimpsed": "Aware that analysis can become avoidance — self-corrects when caught",
+          "superpower_signal": "Integrity, precision, follow-through — things are correct because he made them so",
+          "kryptonite_signal": "Cannot separate the standard from what it means about himself — unsatisfied even after doing the right thing",
+          "domain_signals": [
+            "work",
+            "compliance",
+            "relationships",
+            "family"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 9,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The standard and the feeling have become the same thing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When a situation is genuinely outside your area of competence, do you step back and let someone else lead — or does something in you resist that, even when you know they're more qualified?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Step back — competence should lead, regardless of whose it is",
+            "Something resists — I stay involved even when I know they're better positioned",
+            "Depends — I can let go of execution but not accountability"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 resists handing off due to standards/accountability; Type 5 steps back to preserve mental energy and avoid exposure — different motivations"
+        },
+        "strategy": {
+          "what_was_learned": "Both/and answer on standards vs identity — but the framing 'internal accounting that doesn't balance' is pure Type 1 somatic language. Pushback on 'protect yourself' framing is meaningful — resists the 5-like withdrawal motivation, insists it's about responsibility downstream. This is a strong Type 1 signal over Type 5. SP variant likely dominant — compliance work, downstream consequences for patients, thoroughness as responsibility. Need disconfirmatory question now.",
+          "next_question_rationale": "Disconfirmatory: Type 1 can't fully hand off accountability even when someone else is more competent — the standard lives in them, not in the role. Type 5 steps back cleanly — preserves energy, avoids exposure, trusts the expert. If he chooses option 3, that confirms Type 1 (accountability can't be delegated). If he chooses option 1 cleanly, that opens Type 5 more. This is the key differentiator.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 12,
+      "role": "persona",
+      "content": "**Depends — I can let go of execution but not accountability.**\n\nIf someone is genuinely more qualified, I have no problem stepping aside on the technical work — that would just be inefficient on my part. But I do find it difficult to fully disengage from a process, particularly if I'm responsible for the outcome in any official capacity. I think that's reasonable, not a character flaw — accountability has to live somewhere, and I'd rather it live with someone who's paying attention. In my experience, the problems tend to happen in the handoff, not because I can't let go, but because others sometimes treat being handed something as permission to stop reporting back.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "system",
+      "content": "When something is running well under someone else's watch, can you fully relax about it — or does some part of you stay alert, monitoring whether it's still going the way it should?\n\n- Strongly agree — I stay alert regardless\n- Agree — I check in more than I need to\n- Neutral\n- Disagree — I can genuinely let it go once I've handed it off\n- Strongly disagree — once it's delegated, it's not my concern",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.15,
+            "3": 0.28,
+            "4": 0.18,
+            "5": 0.52,
+            "6": 0.38,
+            "7": 0.1,
+            "8": 0.3,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "whole_type": "1",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.3,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "internal accounting that doesn't balance",
+                "standard",
+                "correct",
+                "wrong and having let it pass",
+                "responsible",
+                "due diligence"
+              ],
+              "context": "repeated across multiple exchanges"
+            },
+            {
+              "type": 5,
+              "words": [
+                "gather more information",
+                "exhausted",
+                "fully accounted for",
+                "preparation"
+              ],
+              "context": "decision-making process"
+            },
+            {
+              "type": 6,
+              "words": [
+                "consequences",
+                "accountability",
+                "downstream",
+                "paying attention"
+              ],
+              "context": "professional responsibility framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.3,
+          "SX": 0.15
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.5
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Someone organized, reliable, principled — follows through, doesn't cut corners",
+          "what": "Standards held independent of others' recognition; internal accounting that must balance",
+          "why": "Both intrinsic correctness and aversion to inner wrongness — intertwined",
+          "how": "Sequential analysis, thorough before acting, documents and raises concerns through proper channels",
+          "when": "Constant — baseline state is 'correct'; deviation announces itself acutely",
+          "where": "Professional (close to ideal) vs personal (gap is wider)"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Inner critic / tightening when things deviate from 'should' — automatic, pre-rational",
+          "respond_glimpsed": "Recognizes analysis can become delay; tries to catch it",
+          "superpower_signal": "Integrity, thoroughness, accountability — holds standard even when it's costly",
+          "kryptonite_signal": "Satisfaction is structural (absence of wrongness) not felt; standards can calcify into judgment; difficulty releasing control of outcomes",
+          "domain_signals": [
+            "professional compliance work",
+            "family (brother)",
+            "food bank volunteerism"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 10,
+          "current_stage": 4,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": false,
+            "all_centers_probed": true,
+            "differentiation_asked": false,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "Accountability without letting go — that distinction matters.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something is running well under someone else's watch, can you fully relax about it — or does some part of you stay alert, monitoring whether it's still going the way it should?",
+          "question_format": "agree_disagree",
+          "answer_options": [
+            "Strongly agree — I stay alert regardless",
+            "Agree — I check in more than I need to",
+            "Neutral",
+            "Disagree — I can genuinely let it go once I've handed it off",
+            "Strongly disagree — once it's delegated, it's not my concern"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 stays alert/monitors; Type 5 genuinely withdraws once they've done their part"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 1 signal confirmed: accountability must live somewhere reliable, standards exist independent of self-interest, inner wrongness is the real driver. The 5-wing is present (analysis, information gathering, thoroughness) but subordinate — the gut discomfort at imperfection is primary, not intellectual detachment. Need disconfirmatory question to separate 1 from 5 cleanly and satisfy hard gate. This question tests whether the person stays alert (1) or genuinely withdraws once satisfied (5).",
+          "next_question_rationale": "Disconfirmatory hard gate: Type 1 monitors ongoing situations even when delegated — the correctness-checking is automatic. Type 5 genuinely disengages once they've processed and handed off — they conserve energy and trust their own analysis. This answer will separate the two cleanly.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 13,
+      "role": "persona",
+      "content": "**Agree — I check in more than I need to.**\n\nThough I'd frame it less as 'staying alert' and more as maintaining appropriate situational awareness. If I've established that something is running correctly, I'm not hovering — I'm just not fully disengaged either, because in my experience, the moment you assume continuity is guaranteed is often the moment a small deviation compounds into something that requires significantly more effort to correct. Most of the time it's fine. But 'most of the time' isn't the same as a closed loop.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "system",
+      "content": "When you have all the information you need and you know what the right answer is — do you act on it, or does something still want to sit with it a little longer before committing?\n\n- Act on it — once I know, I move\n- Something still wants to sit with it — knowing and being ready aren't the same thing",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.82,
+          "type_scores": {
+            "1": 0.82,
+            "2": 0.15,
+            "3": 0.28,
+            "4": 0.18,
+            "5": 0.52,
+            "6": 0.32,
+            "7": 0.1,
+            "8": 0.25,
+            "9": 0.12
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "whole_type": "1",
+          "whole_type_confidence": 0.82,
+          "whole_type_signals": {
+            "body": 0.82,
+            "heart": 0.32,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what it should have been",
+                "failure point",
+                "correct",
+                "accounting that doesn't balance",
+                "standards",
+                "due diligence",
+                "wrong and having let it pass"
+              ],
+              "context": "throughout assessment"
+            },
+            {
+              "type": 5,
+              "words": [
+                "incomplete information",
+                "due diligence",
+                "thoroughness",
+                "analysis",
+                "full understanding"
+              ],
+              "context": "knowledge and preparation questions"
+            },
+            {
+              "type": 6,
+              "words": [
+                "downstream consequences",
+                "accountability",
+                "appropriate channels",
+                "maintain situational awareness"
+              ],
+              "context": "delegation and accountability questions"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.3,
+          "SX": 0.2
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.45
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Organized, reliable, principled — holds self to high internal standards",
+          "what": "Ensuring things are done correctly; identifying failure points; maintaining accountability",
+          "why": "Internal accounting that must balance; wrongness when standards aren't met",
+          "how": "Sequential analysis; information gathering; thorough review before action",
+          "when": "Always monitoring even during delegation",
+          "where": "Professional context clear; personal context shows gap and dissatisfaction"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Monitors and checks in more than needed; difficulty fully releasing accountability; inner critic activated when things fall short; standards enforced automatically",
+          "respond_glimpsed": "Aware of when analysis becomes avoidance; can let go of execution; acknowledges the both/and honestly",
+          "superpower_signal": "Integrity, precision, reliability — holds standards that genuinely protect others downstream",
+          "kryptonite_signal": "Can't close the loop even when handed off; satisfaction remains elusive even when doing right; harshness toward self",
+          "domain_signals": [
+            "professional",
+            "family (brother)",
+            "food bank/service",
+            "compliance/regulatory work"
+          ]
+        },
+        "conversation": {
+          "phase": "differentiation",
+          "exchange_count": 11,
+          "current_stage": 4,
+          "last_question_format": "agree_disagree",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The monitoring never fully stops — even when you know it should.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you have all the information you need and you know what the right answer is — do you act on it, or does something still want to sit with it a little longer before committing?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Act on it — once I know, I move",
+            "Something still wants to sit with it — knowing and being ready aren't the same thing"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 acts from principle once clarity is established; Type 5 withholds action to protect against premature commitment — tests 1v5 differentiation"
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 confirmation: the monitoring pattern, the internal accounting, the discomfort with incomplete loops. The 'agree — check in more than needed' response while still framing it as 'appropriate situational awareness' is a textbook 1 rationalization. SP variant likely dominant. Need disconfirmatory question before closing — 1v5 is the key pair. Type 1 acts from principle once clarity is established; Type 5 gathers information to protect against having to act. This question will differentiate.",
+          "next_question_rationale": "Disconfirmatory question: 1v5 differentiation. Both types value thoroughness, but for different reasons. Type 1 is driven by rightness — once the correct answer is established, they act. Type 5 is driven by protection against inadequacy — they may still hesitate even with full clarity. The answer will confirm or challenge the leading hypothesis.",
+          "question_format_last_used": "agree_disagree"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 14,
+      "role": "persona",
+      "content": "**Act on it — once I know, I move.**\n\nThough I'd add a small qualification: 'all the information I need' is doing a lot of work in that question. I spend the time I need to spend getting to that point — sometimes that looks like sitting with something, but it's not hesitation, it's due diligence. Once I'm actually satisfied that I have what I need, delaying serves no real purpose that I can identify.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "system",
+      "content": "When you're doing careful, thorough work — tracking every detail, staying on top of every moving part — is the energy behind that coming from wanting things to be right, or from not wanting to be the reason something went wrong?\n\n- Wanting things to be right — the quality matters on its own terms\n- Not wanting to be the reason something failed — the responsibility is what drives it\n- Both, but the quality itself comes first",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.87,
+          "type_scores": {
+            "1": 0.87,
+            "2": 0.15,
+            "3": 0.35,
+            "4": 0.12,
+            "5": 0.52,
+            "6": 0.38,
+            "7": 0.1,
+            "8": 0.3,
+            "9": 0.08
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "whole_type": "1",
+          "whole_type_confidence": 0.87,
+          "whole_type_signals": {
+            "body": 0.87,
+            "heart": 0.35,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what it should have been",
+                "failure point",
+                "correct",
+                "doesn't balance",
+                "not unreasonable",
+                "due diligence",
+                "accountability",
+                "standards",
+                "let it pass"
+              ],
+              "context": "across multiple exchanges"
+            },
+            {
+              "type": 5,
+              "words": [
+                "gather more information",
+                "fully exhausted",
+                "complete understanding",
+                "situational awareness"
+              ],
+              "context": "when discussing decisions and information"
+            },
+            {
+              "type": 6,
+              "words": [
+                "it depends",
+                "in my experience",
+                "problems tend to happen"
+              ],
+              "context": "when discussing trust and delegation"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.65,
+          "SO": 0.25,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Principled, self-correcting, high standards, accountability-focused professional",
+          "what": "Compliance/regulatory work, structured problem-solving, fixing what's broken",
+          "why": "Standards matter independent of self, but internal discomfort when falling short",
+          "how": "Systematic analysis, due diligence, staying in the loop even after delegation",
+          "when": "Discomfort triggers immediately when deviation detected",
+          "where": "Professional context clearest; personal relationships show the gap"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Automatic internal tightening + analysis loop when things deviate from correct; stays involved even when not needed; harder on self than others but doesn't announce it",
+          "respond_glimpsed": "Aware that analysis can become avoidance; tries to catch when he's crossed from preparation into delay; acknowledges the both/and on fear vs standard",
+          "superpower_signal": "Thoroughness, reliability, genuine care about downstream consequences for others",
+          "kryptonite_signal": "Low-level wrongness when standards aren't met; can't fully disengage from accountability; satisfaction rarely felt, only the absence of wrongness",
+          "domain_signals": [
+            "compliance/regulatory work",
+            "food bank volunteering",
+            "brother relationship",
+            "delegation and handoff"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 11,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The correction always came faster than the discomfort.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're doing careful, thorough work — tracking every detail, staying on top of every moving part — is the energy behind that coming from wanting things to be right, or from not wanting to be the reason something went wrong?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Wanting things to be right — the quality matters on its own terms",
+            "Not wanting to be the reason something failed — the responsibility is what drives it",
+            "Both, but the quality itself comes first"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 would locate the drive in the standard itself; Type 5 would locate it in mastery/competence; Type 6 would locate it in avoiding being blamed or being the failure point"
+        },
+        "strategy": {
+          "what_was_learned": "Strong 1 confirmation: acts once he knows, frames delay as due diligence not hesitation, no ambivalence once threshold is met. Also notable 5 coloring with the information-gathering emphasis. Need disconfirmatory question to separate 1 motivation (standard-based) from 5 motivation (competence/protection-based) or 6 (fear of being the failure point).",
+          "next_question_rationale": "Hard gate: disconfirmatory_asked is false. This question directly tests whether the drive is the standard itself (1), mastery/not acting incompetently (5), or avoiding being responsible for failure (6). A true 1 locates the energy in the rightness of the thing; a 5 locates it in competence; a 6 locates it in not being the cause of failure. This is the cleanest disconfirmatory available given the data.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 15,
+      "role": "persona",
+      "content": "**Both, but the quality itself comes first.**\n\nThough I'll say the distinction is harder to maintain cleanly than that answer implies. When I'm in the middle of a review — flagging an inconsistency in a submission document, say — I'm genuinely focused on the work being correct. The quality has its own internal logic, and getting it right is satisfying in a way that doesn't require anyone to be watching. But I'd be less than honest if I said the other element isn't present, because it is. There's a kind of — vigilance, I suppose, that runs alongside the actual work. A background awareness that if something slips through, that's on me. I don't think that's a problem, exactly. In my field, that kind of accountability is appropriate. I'm just not sure the two motivations are always as separable as the question suggests.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "system",
+      "content": "When you've truly mastered something and no longer need to think hard about it, does that feel like a relief — or does something in you lose interest and start looking for the next problem?\n\n- Relief — mastery is the point\n- Something loses interest — I need the next problem\n- Both, but mastery feels earned and satisfying",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.87,
+          "type_scores": {
+            "1": 0.87,
+            "2": 0.12,
+            "3": 0.22,
+            "4": 0.1,
+            "5": 0.52,
+            "6": 0.38,
+            "7": 0.06,
+            "8": 0.18,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Reformer",
+          "whole_type": "1",
+          "whole_type_confidence": 0.87,
+          "whole_type_signals": {
+            "body": 0.87,
+            "heart": 0.35,
+            "head": 0.52
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "should have been",
+                "what's correct",
+                "internal accounting",
+                "wrong",
+                "appropriate",
+                "non-negotiable",
+                "defensible",
+                "the standard"
+              ],
+              "context": "recurring throughout all responses"
+            },
+            {
+              "type": 5,
+              "words": [
+                "gather more information",
+                "exhausted that",
+                "due diligence",
+                "situational awareness"
+              ],
+              "context": "decision-making and knowledge responses"
+            },
+            {
+              "type": 6,
+              "words": [
+                "downstream consequences",
+                "accountability has to live somewhere",
+                "paying attention"
+              ],
+              "context": "responsibility and oversight framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.62,
+          "SO": 0.28,
+          "SX": 0.1
+        },
+        "wing_signals": {
+          "left": 0.3,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": "variant"
+        },
+        "oyn_dimensions": {
+          "who": "Principled, reliability-oriented, self-critical, professional integrity as identity anchor",
+          "what": "Compliance work, structured systems, personal standards that extend to others",
+          "why": "Internal accounting that doesn't balance when standards slip — both the thing being right AND personal accountability",
+          "how": "Sequential analysis, documentation, information gathering before action",
+          "when": "Persistent monitoring — doesn't fully disengage even when not needed",
+          "where": "Professional context primary, personal relationships reveal the strain"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Inner critic / vigilance running in background — monitoring for errors, staying alert even when delegated, discomfort when standards slip",
+          "respond_glimpsed": "Acknowledges 'analysis can become its own form of delay' — shows capacity for self-awareness about the pattern",
+          "superpower_signal": "Genuine quality focus, thorough analysis, accountability, integrity",
+          "kryptonite_signal": "Cannot fully let go, background vigilance even when inappropriate, unsatisfied even after doing the right thing",
+          "domain_signals": [
+            "compliance/regulatory work",
+            "food bank volunteering",
+            "brother relationship — repayment plan framed as 'useful'"
+          ]
+        },
+        "conversation": {
+          "phase": "refinement",
+          "exchange_count": 11,
+          "current_stage": 5,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "How You React",
+        "selected_question_id": "disconfirmatory_1v5",
+        "thinking_display": "The vigilance and the quality care have become the same thing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you've truly mastered something and no longer need to think hard about it — does that feel like a relief, or does something in you lose interest and start looking for the next problem to solve?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "Relief — mastery is the point",
+            "Something loses interest — I need the next problem",
+            "Both, but mastery feels earned and satisfying"
+          ],
+          "scale_range": null,
+          "context_note": "Disconfirmatory: Type 1 typically finds satisfaction in mastery/correctness; Type 5 tends to disengage once the intellectual problem is solved and move toward the next area of knowledge. This differentiates the quality-for-its-own-sake motivation (1) from knowledge-as-intrinsic-reward (5)."
+        },
+        "strategy": {
+          "what_was_learned": "Two motivations confirmed: quality for its own sake AND fear of being the reason something fails. Both present, quality primary. This is textbook Type 1 — the inner critic/background vigilance is the kryptonite running alongside genuine integrity as superpower. Confidence now at 0.87. Need disconfirmatory question before closing — 1v5 is the key differentiation. Type 5 would frame thoroughness as information management; Type 1 frames it as correctness/accountability. Also need react/respond frame used at least once before closing.",
+          "next_question_rationale": "Disconfirmatory: 1 vs 5. Type 1 finds deep satisfaction in getting something right and maintaining that standard. Type 5 is energized by the unsolved problem and tends to disengage once mastery is achieved, moving toward the next intellectual challenge. This question will differentiate the two. After this, one more question using react/respond frame, then close.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 16,
+      "role": "persona",
+      "content": "**Both, but mastery feels earned and satisfying.**\n\nThough I'd clarify that 'losing interest' isn't quite the right framing for what happens — it's more that once something is functioning correctly and I'm confident in the process, my attention naturally moves to wherever the next gap is. That's not restlessness, exactly. It's just that there's usually another gap. The relief is real, and I don't want to minimize it — getting something right, consistently, is genuinely the point — but I don't tend to linger in it for very long before I'm looking at what still isn't right.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 17,
+      "role": "system",
+      "content": "That thing you said early on — about the correct state not announcing itself, that it's just the baseline — that stayed with me throughout. The same engine that makes you genuinely good at this, the one that catches what others miss and holds things together when they'd otherwise slip, is the one that makes satisfaction feel like a moving target you can't quite reach. There's more available to you than the vigilance — the pattern has served you, but it doesn't have to be the whole story. Your personalized report is being prepared now.",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 1,
+          "confidence": 0.88,
+          "type_scores": {
+            "1": 0.88,
+            "2": 0.12,
+            "3": 0.28,
+            "4": 0.1,
+            "5": 0.52,
+            "6": 0.35,
+            "7": 0.08,
+            "8": 0.25,
+            "9": 0.1
+          },
+          "needs_differentiation": [
+            "1v5",
+            "1v6"
+          ],
+          "defiant_spirit_type_name": "The Perfectionist",
+          "whole_type": "1",
+          "whole_type_confidence": 0.88,
+          "whole_type_signals": {
+            "body": 0.88,
+            "heart": 0.32,
+            "head": 0.45
+          },
+          "lexicon_signals": [
+            {
+              "type": 1,
+              "words": [
+                "what it should have been",
+                "failure point",
+                "correct",
+                "standards",
+                "wrong",
+                "accountability",
+                "the right answer",
+                "quality",
+                "consistent",
+                "right"
+              ],
+              "context": "throughout assessment — recurring integrity/correctness language"
+            },
+            {
+              "type": 5,
+              "words": [
+                "gather more information",
+                "data point",
+                "exhausted",
+                "full understanding",
+                "due diligence",
+                "analysis"
+              ],
+              "context": "knowledge-gathering and thoroughness framing"
+            },
+            {
+              "type": 6,
+              "words": [
+                "downstream consequences",
+                "appropriate channels",
+                "if something slips through that's on me"
+              ],
+              "context": "accountability and responsibility framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.72,
+          "SO": 0.28,
+          "SX": 0.18
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.55
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": true,
+          "head_probed": true,
+          "last_probed": "body",
+          "next_target": ""
+        },
+        "oyn_dimensions": {
+          "who": "Compliance/regulatory professional, likely healthcare-adjacent, structured environment",
+          "what": "Systematic analysis, standards maintenance, correctness",
+          "why": "Internal accounting — things must be right, independent of external validation",
+          "how": "Sequential analysis, documentation, thorough review before acting",
+          "when": "Always monitoring — never fully disengaged",
+          "where": "More satisfied professionally than personally"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Inner critic as baseline — low-level wrongness when standards slip, vigilance as default state",
+          "respond_glimpsed": "Aware of the distinction between preparation and avoidance; can step back when competence warrants it",
+          "superpower_signal": "Integrity, reliability, principled follow-through — quality as intrinsic value",
+          "kryptonite_signal": "Cannot relax into 'good enough'; satisfaction never quite lands; the correct state doesn't announce itself",
+          "domain_signals": [
+            "professional domain well-integrated",
+            "personal domain shows gap between effort and satisfaction",
+            "brother story reveals interpersonal cost of the pattern"
+          ]
+        },
+        "conversation": {
+          "phase": "closing",
+          "exchange_count": 13,
+          "current_stage": 6,
+          "last_question_format": "forced_choice",
+          "close_next": true,
+          "closing_criteria": {
+            "min_exchanges_met": true,
+            "confidence_met": true,
+            "all_centers_probed": true,
+            "differentiation_asked": true,
+            "react_respond_identified": true,
+            "disconfirmatory_asked": true
+          }
+        },
+        "current_section": "Your Core Pattern",
+        "selected_question_id": "closing",
+        "thinking_display": "The satisfaction never quite catches up to the effort.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "",
+          "question_format": "closing",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong Type 1 confirmed. SP variant dominant. Right wing lean (toward 2 — the connection to service, food bank, helping). Disconfirmatory probing across exchanges has consistently ruled out 5 (the motivation is correctness/integrity, not knowledge/competence) and 6 (the authority is internal, not external). React pattern: inner critic as constant background hum, satisfaction as baseline expectation rather than felt reward. The 'internal accounting that doesn't balance' line is the kryptonite articulated perfectly. Closing criteria all met.",
+          "next_question_rationale": "Closing — all criteria met, confidence 0.88, top two types separated by >0.20, all centers probed, disconfirmatory asked, react/respond identified.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}

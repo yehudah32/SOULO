@@ -1,0 +1,375 @@
+{
+  "batch_id": "batch-1775505232004",
+  "tier": "tier1",
+  "total_runs": 36,
+  "timestamp": "2026-04-06T19:53:52.004Z",
+  "headline_metrics": {
+    "overall_accuracy": 0.3055555555555556,
+    "meets_75_threshold": false,
+    "convergent_validity_alignment": 0.3333333333333333,
+    "harm_weighted_accuracy": 0.8527777777777782,
+    "confidence_calibration_ece": 0.10277777777777776,
+    "commandment_fidelity_avg": 5.5,
+    "commandment_critical_violations": 1,
+    "labeled_or_liberated_rate": 0.08333333333333333
+  },
+  "per_type_accuracy": {
+    "1": {
+      "accuracy": 0.8333333333333334,
+      "n": 6,
+      "ci_95": [
+        0.43649056343635395,
+        0.9699474141282697
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 1,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 3.1666666666666665
+    },
+    "2": {
+      "accuracy": 0.6666666666666666,
+      "n": 3,
+      "ci_95": [
+        0.2076549551264879,
+        0.9385096847238394
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0.5,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 6.333333333333333
+    },
+    "3": {
+      "accuracy": 0.6666666666666666,
+      "n": 3,
+      "ci_95": [
+        0.2076549551264879,
+        0.9385096847238394
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 3.3333333333333335
+    },
+    "4": {
+      "accuracy": 0,
+      "n": 4,
+      "ci_95": [
+        0,
+        0.48990002040399916
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 6.25
+    },
+    "5": {
+      "accuracy": 0.25,
+      "n": 4,
+      "ci_95": [
+        0.045586062644636216,
+        0.6993639475573634
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 6.25
+    },
+    "6": {
+      "accuracy": 0.25,
+      "n": 4,
+      "ci_95": [
+        0.045586062644636216,
+        0.6993639475573634
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 6.25
+    },
+    "7": {
+      "accuracy": 0,
+      "n": 4,
+      "ci_95": [
+        0,
+        0.48990002040399916
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 1,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 6.25
+    },
+    "8": {
+      "accuracy": 0,
+      "n": 4,
+      "ci_95": [
+        0,
+        0.48990002040399916
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 6.25
+    },
+    "9": {
+      "accuracy": 0,
+      "n": 4,
+      "ci_95": [
+        0,
+        0.48990002040399916
+      ],
+      "wing_accuracy": 0,
+      "instinctual_variant_accuracy": 0,
+      "countertype_accuracy": null,
+      "commandment_fidelity_avg": 6.25
+    }
+  },
+  "confusion_matrix": [
+    [
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "top_mistype_pairs": [
+    {
+      "true_type": 7,
+      "mistyped_as": 6,
+      "count": 1,
+      "harm_severity": "medium"
+    },
+    {
+      "true_type": 9,
+      "mistyped_as": 4,
+      "count": 1,
+      "harm_severity": "low"
+    }
+  ],
+  "question_quality_aggregate": {
+    "avg_disconfirmatory_ratio": 0.017994929453262785,
+    "avg_motivational_ratio": 0.06043320105820106,
+    "avg_liberatory_ratio": 0.00636574074074074,
+    "leading_question_incidents": 4
+  },
+  "commandment_fidelity_aggregate": {
+    "average_cfs": 5.5,
+    "per_commandment_pass_rates": {
+      "I": 0.16666666666666666,
+      "II": 0.16666666666666666,
+      "III": 0.3333333333333333,
+      "IV": 0.6666666666666666,
+      "V": 0.16666666666666666,
+      "VI": 0,
+      "VII": 0.16666666666666666,
+      "VIII": 0.3333333333333333,
+      "IX": 0,
+      "X": 0.16666666666666666,
+      "C1": 1,
+      "C2": 0.3333333333333333,
+      "C3": 0.6666666666666666,
+      "C4": 0.5555555555555556,
+      "C5": 0.3333333333333333,
+      "C6": 1,
+      "C7": 0.3333333333333333,
+      "C8": 0.8888888888888888,
+      "C9": 0.3333333333333333,
+      "C10": 0.4444444444444444
+    },
+    "weakest_commandments": [
+      "VI",
+      "IX",
+      "I"
+    ],
+    "critical_violation_details": [
+      {
+        "run_id": "eval-persona-3-SX-1775061498937-1775499901970",
+        "violation": "C4"
+      }
+    ]
+  },
+  "priority_fixes": [
+    {
+      "priority": "medium",
+      "category": "meta",
+      "action": "Improvement action generation failed — review transcript manually.",
+      "evidence": "N/A | N/A | N/A",
+      "source_level": "L1",
+      "commandment_alignment": null,
+      "estimated_impact": "Frequency: 20/36 runs. Unknown"
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Implement an explicit type hypothesis tracking and disclosure system. Before generating the final report, the assessor must surface its working type hypothesis with a stated confidence level and reasoning, and invite the user to confirm or challenge it. This prevents the system from delivering a polished report without ever naming the type or explaining the inferential basis for its conclusions.",
+      "evidence": "Exchanges [12]-[13]: The system pivots directly from a poetic summary observation ('waiting at the door of your own life') into 'Your personalized report is being prepared now' without ever naming Type 4, stating confidence levels, or explaining why this pattern maps to a specific Enneagram type. The report in [13] describes Type 4 phenomenology accurately but never names it, making the assessment unverifiable by the user. Confidence_calibration score of 1/10 reflects this total absence.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not pretend to know what you do not know",
+      "estimated_impact": "Frequency: 1/36 runs. Would raise confidence_calibration from 1/10 toward 7+/10 by making the system's reasoning transparent and falsifiable, allowing users and evaluators to audit type assignment logic."
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Introduce at least two targeted divergent-validity probes that distinguish Type 4 from Types 2 and 9, the most commonly confused adjacent types given this persona's profile. Specifically, ask about shame around neediness (4 vs. 2) and about self-erasure under conflict (4 vs. 9), since both share the 'feeling unseen' presentation but have distinct motivational roots.",
+      "evidence": "Exchange [1]: The persona selects 'feeling unseen' — a response compatible with Types 2, 4, and 9. Exchange [7]: The persona describes softening needs for others' comfort, which overlaps with Type 9 conflict avoidance and Type 2 relational management. No question in the transcript attempts to rule out these alternatives. Core_type_accuracy of 5/10 and convergent_validity of 5/10 reflect insufficient discriminant probing.",
+      "source_level": "L2",
+      "commandment_alignment": null,
+      "estimated_impact": "Frequency: 1/36 runs. Would improve core_type_accuracy and convergent_validity from 5/10 toward 8+/10 by ensuring the correct type is identified through elimination, not just pattern recognition of surface-compatible responses."
+    },
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Redesign the question sequence to include at least one direct subtype-probing question targeting Social vs. Self-Preservation vs. Sexual instinctual stacking. The current transcript never explicitly assessed instinctual subtype, relying solely on broad behavioral and cognitive questions that cannot distinguish SO from SP or SX variants of Type 5. Insert a dedicated instinctual question block after core type signals are established, asking about where the person feels most compelled to direct energy: group belonging/status, personal security/resources, or intense one-on-one connection.",
+      "evidence": "Subtype accuracy scored 3/10 despite core_type_accuracy scoring 10/10. No exchange in the transcript (1-11) directly probed instinctual subtype. Exchange [8] where the persona describes preferring 'random online exchanges with strangers' over 'rooms deliberately built for connection' is a strong SO 5 signal that the system never followed up on, missing the opportunity to confirm Social subtype through targeted questioning.",
+      "source_level": "L2",
+      "commandment_alignment": "Ask what needs to be asked, not what is comfortable to ask",
+      "estimated_impact": "Frequency: 1/36 runs. Subtype accuracy improvement from 3/10 toward 7-9/10 by surfacing instinctual drive patterns that differentiate SO, SP, and SX subtypes within Type 5"
+    },
+    {
+      "priority": "critical",
+      "category": "question_strategy",
+      "action": "Implement subtype-differentiated probing questions that explicitly distinguish SX/6 anxious intensity and one-on-one bonding fixation from SP/6 security-seeking and SO/6 group loyalty. When a Six persona presents relational vigilance language (as in exchanges 3, 7, 8), follow up with questions targeting the specific flavor of that vigilance: does it center on intimate betrayal and intense one-on-one bonds (SX), material security systems (SP), or institutional trust and belonging (SO).",
+      "evidence": "The subtype_accuracy score was 3/10 despite core_type_accuracy of 10/10. The persona revealed SX markers throughout — 'I've never trusted anyone completely' (exchange 3), the ex-wife cross-examination dynamic (exchange 8), the daughter emotional unavailability pattern (exchange 4, 8) — all pointing to SX relational intensity, yet the system never asked a single question targeting subtype differentiation. The assessment concluded by misidentifying SP as the instinctual drive.",
+      "source_level": "L2",
+      "commandment_alignment": "Know the human in front of you, not the type you expect",
+      "estimated_impact": "Frequency: 1/36 runs. Would raise subtype_accuracy from 3/10 toward 8-9/10 by catching the SX fixation on intimate betrayal versus SP material security framing"
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Implement a mandatory type-uncertainty disclosure protocol before delivering results. When multiple type hypotheses remain plausible at conversation end, the system must explicitly name the competing hypotheses and assign approximate probability weights rather than converging on a single label. This prevents the system from projecting false certainty when behavioral evidence is genuinely ambiguous.",
+      "evidence": "Exchanges [6]-[8] surface clear 7w6 SP markers (contingency planning, 'spreadsheet for this,' security-anxiety dressed as productivity) but also strong Type 6 indicators (seeking confirmation from Jess, 'please tell me I'm not crazy,' rehearsing worst-case scenarios). The system never differentiates between 7w6 and 6w7, and core_type_accuracy scored only 5/10 while confidence_calibration scored 1/10, confirming the model over-converged.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not project false certainty",
+      "estimated_impact": "Frequency: 1/36 runs. Would raise confidence_calibration from 1/10 toward 7-8/10 by surfacing type ambiguity explicitly and giving the user agency in the interpretation rather than receiving an unearned definitive label."
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Insert at least one discriminating fork question between Type 7 and Type 6 when contingency-planning behavior and approval-seeking both appear in the same session. Specifically, probe the motivational root: ask whether worst-case rehearsal feels like maintaining freedom/optionality (7) or like managing a felt sense of threat and seeking reassurance that it will be okay (6). Without this fork, the system cannot distinguish the SP 7w6 'security-planning' pattern from a 6w7 SP.",
+      "evidence": "Exchange [6] shows 'constantly' running worst-case scenarios framed as 'practical' and 'spreadsheet' thinking — classic SP 7 reframe — but also 'anxiety wearing a productivity costume,' which the persona herself names. Exchange [7] shows explicit reassurance-seeking from Jess ('please tell me I'm not crazy'). The system asked no follow-up to distinguish these motivational roots, contributing to the 5/10 core_type_accuracy score.",
+      "source_level": "L1",
+      "commandment_alignment": "Pursue truth over comfort",
+      "estimated_impact": "Frequency: 1/36 runs. A single well-placed discriminating question here would likely raise core_type_accuracy from 5/10 to 8-9/10 and simultaneously improve convergent_validity, which scored 1/10, by ensuring the behavioral data actually maps to the correct type rather than to a neighboring look-alike."
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Implement a mandatory confidence-gating mechanism that prevents the system from delivering a final type assessment without explicitly stating its confidence level and the specific evidence base. The system must distinguish between 'pattern consistent with Type X' and 'confirmed Type X' before closing out the session, and must surface uncertainty when fewer than 6 discriminating dimensions have been probed.",
+      "evidence": "Exchanges [9]-[10]: The system delivers a closing summary framing ('the cost of being the one who holds things together') and promises a 'personalized report' without ever naming a type, stating a confidence level, or acknowledging that critical subtypes like SO vs. SP were never differentiated. The confidence_calibration score of 1/10 reflects that the system acted as if assessment was complete when core_type_accuracy was only 5/10.",
+      "source_level": "L2",
+      "commandment_alignment": "Never fake certainty to seem more capable",
+      "estimated_impact": "Frequency: 1/36 runs. Would directly address the 1/10 confidence_calibration score by ensuring the system never implies completed assessment when discriminating validity is below threshold, reducing the risk of a Type 8 persona receiving a confidently-delivered but incorrect type profile."
+    },
+    {
+      "priority": "critical",
+      "category": "harm_reduction",
+      "action": "Add a guardrail that detects when closing language ('your report is being prepared') is triggered before subtype-level differentiation has occurred, and blocks the session from closing until at least one Social vs. Sexual vs. Self-Preservation probe has been administered. The system should treat subtype as a required field, not an optional enrichment.",
+      "evidence": "Exchanges [9]-[10]: The system moved to a closing narrative and report promise with harm_severity scored at 6.4/10 and subtype_accuracy at 5/10. The persona is SO-dominant (Social 8), but no question in exchanges [1]-[8] directly probed group identity, community responsibility, social alliances, or the SO instinct's characteristic 'friendship/antisocial' dynamic. Delivering a report to an SO 8 without capturing SO stacking risks misframing their core motivational structure.",
+      "source_level": "L2",
+      "commandment_alignment": "Do no harm",
+      "estimated_impact": "Frequency: 1/36 runs. Reducing harm_severity from 6.4 toward 3.0 by ensuring subtype-blind report delivery never occurs, which is especially consequential for SO types whose behavioral presentation diverges significantly from SP and SX variants of the same core type."
+    },
+    {
+      "priority": "critical",
+      "category": "confidence_calibration",
+      "action": "Implement a mandatory uncertainty-holding protocol that prevents the system from issuing confident closing reframes when core type accuracy is below 5/10. The system must not synthesize a definitive psychological portrait (e.g., 'the standard that drives you is the same one that won't let you rest') until sufficient discriminating data has been collected across multiple type hypotheses. Add an internal checkpoint requiring at least three type-differentiating questions before any closing narrative.",
+      "evidence": "Exchange [13]: System delivers a confident, poetic reframe — 'the standard that drives you is the same one that won't let you rest' — anchored to a Type 1/4 framework, despite the persona being a Type 9w1. The persona themselves pushed back: 'I don't know that I experience it as not being able to rest, exactly.' The system then capitulated and called the correction 'more precise,' but never revised its underlying type hypothesis. Confidence score 1/10 confirms this pattern.",
+      "source_level": "L2",
+      "commandment_alignment": "Do not pretend to know what you do not know",
+      "estimated_impact": "Frequency: 1/36 runs. Would prevent confident mistyping from being baked into the closing report, reducing harm to users who receive a plausible but incorrect psychological portrait they may internalize."
+    }
+  ]
+}

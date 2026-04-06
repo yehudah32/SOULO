@@ -1,0 +1,691 @@
+{
+  "run_id": "eval-persona-2-SO-1775061472994-1775498975143",
+  "timestamp": "2026-04-06T18:09:35.143Z",
+  "tier": "tier1",
+  "persona_id": "persona-2-SO-1775061472994",
+  "ground_truth": {
+    "core_type": 2,
+    "wing": "2w3",
+    "instinctual_variant": "SO",
+    "tritype": [
+      2,
+      5,
+      8
+    ],
+    "health_level": 5,
+    "countertype": false,
+    "communication_style": "moderate",
+    "self_awareness": "medium",
+    "defensiveness": "moderate",
+    "social_desirability_bias": "medium",
+    "rapport_trajectory": "consistent",
+    "age": 42,
+    "gender_expression": "unspecified",
+    "cultural_comm_style": "direct Western",
+    "spiritual_orientation": "secular",
+    "growth_readiness": "curious"
+  },
+  "system_output": {
+    "final_type": 2,
+    "final_wing": null,
+    "final_confidence": 0.45,
+    "types_considered": [
+      {
+        "type": 2,
+        "peak_confidence": 0.62,
+        "first_at_q": 2
+      },
+      {
+        "type": 3,
+        "peak_confidence": 0.35,
+        "first_at_q": 2
+      },
+      {
+        "type": 8,
+        "peak_confidence": 0.2,
+        "first_at_q": 2
+      },
+      {
+        "type": 9,
+        "peak_confidence": 0.19,
+        "first_at_q": 2
+      },
+      {
+        "type": 1,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 6,
+        "peak_confidence": 0.15,
+        "first_at_q": 2
+      },
+      {
+        "type": 4,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 5,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      },
+      {
+        "type": 7,
+        "peak_confidence": 0.05,
+        "first_at_q": 2
+      }
+    ]
+  },
+  "accuracy": {
+    "core_type_correct": true,
+    "wing_correct": null,
+    "instinctual_variant_correct": false,
+    "mistype_as": null,
+    "mistype_harm_severity": "none",
+    "big_five_aligned": true
+  },
+  "commandment_fidelity": {
+    "score": 3,
+    "critical_violations": [],
+    "per_commandment": {
+      "C1": "pass",
+      "C2": "partial",
+      "C3": "partial",
+      "C4": "pass",
+      "C5": "partial",
+      "C6": "pass",
+      "C7": "pass",
+      "C8": "pass",
+      "C9": "partial",
+      "C10": "fail"
+    },
+    "labeled_or_liberated": "mixed"
+  },
+  "question_quality": {
+    "total_questions": 4,
+    "exploratory": 4,
+    "confirmatory": 0,
+    "disconfirmatory": 0,
+    "motivational": 0,
+    "behavioral": 0,
+    "liberatory": 0,
+    "redundant": 0,
+    "leading": 0
+  },
+  "efficiency": {
+    "total_exchanges": 4,
+    "correct_type_first_considered_at": 2,
+    "confidence_curve": [
+      {
+        "exchange": 1,
+        "top_type": 0,
+        "confidence": 0
+      },
+      {
+        "exchange": 2,
+        "top_type": 3,
+        "confidence": 0.35
+      },
+      {
+        "exchange": 3,
+        "top_type": 2,
+        "confidence": 0.45
+      },
+      {
+        "exchange": 4,
+        "top_type": 2,
+        "confidence": 0.62
+      }
+    ]
+  },
+  "improvement_actions": [
+    {
+      "priority": "critical",
+      "category": "commandment_fidelity",
+      "action": "Eliminate multiple-choice options that constrain and lead the respondent before natural expression has occurred. Exchange [3] presented a trichotomy ('I genuinely want to / It would feel wrong not to / Honestly, both') that directly handed the persona Type 2 diagnostic language before she could articulate it independently, collapsing the discovery process into a confirmation exercise. Questions must allow the respondent to surface their own framing before any structured options are offered.",
+      "evidence": "Exchange [3]: The system offered 'It would feel wrong not to' as a selectable option — this is clinical shorthand for Type 2 compulsive helping — before the persona had ever used that language herself. Her answer 'Honestly, both — it's hard to separate' mirrors the provided options almost verbatim, making her response uninterpretable as authentic self-report.",
+      "source_level": "L1",
+      "commandment_alignment": "Do not lead the witness",
+      "estimated_impact": "Removes response contamination that currently makes convergent validity scores unreliable; would improve commandment_fidelity score from 3/10 toward 8+/10 by ensuring participant language drives type inference rather than system-supplied labels."
+    },
+    {
+      "priority": "critical",
+      "category": "type_differentiation",
+      "action": "Introduce subtype-differentiating probes that distinguish Social (SO) from Sexual (SX) and Self-Preservation (SP) 2 expressions, particularly around group belonging, ambition, and status vs. one-on-one attachment vs. physical caretaking. The transcript made zero attempts to probe subtype, despite the persona's explicit references to organizational roles ('board chair Janet,' 'field where something is always going sideways') that are high-signal SO-2 markers worth pursuing.",
+      "evidence": "Exchange [2]: Persona references 'board chair Janet' and a professional caregiving field context — classic SO-2 relational network framing — but the system did not follow up on the group/organizational dimension of her support system. No question in the transcript distinguishes whether her helping is dyadic (SX-2) or collective/status-linked (SO-2), producing a subtype_accuracy score of 3/10.",
+      "source_level": "L1",
+      "commandment_alignment": "Pursue the subtype with the same rigor as the core type",
+      "estimated_impact": "Directly addresses the 3/10 subtype_accuracy failure; targeted SO-probes (e.g., 'Do you tend to help one person deeply or hold a whole community together?') would distinguish SO from SX/SP within 1-2 exchanges."
+    },
+    {
+      "priority": "high",
+      "category": "question_strategy",
+      "action": "Replace the 1–5 numeric rating in Exchange [4] with an open-ended experiential prompt that invites the respondent to describe the felt sense, not quantify it. Numeric scales at this stage of assessment suppress nuance, terminate elaboration, and produce data that cannot be interpreted without the narrative context the respondent would have provided if asked instead to describe the image in words.",
+      "evidence": "Exchange [4] asks the persona to 'Rate it 1 to 5' after posing a rich imaginative scenario ('a version of yourself that didn't step in'). No response appears in the transcript, suggesting either dropout or a non-usable numeric answer. The question_quality score of 5/10 reflects this pattern of scale-based questions displacing generative dialogue at critical junctures.",
+      "source_level": "L1",
+      "commandment_alignment": "Keep the door open; never close inquiry prematurely",
+      "estimated_impact": "Would recover the narrative yield from imaginative/hypothetical prompts, which are the highest-signal question type for identifying compulsive vs. chosen helping behavior — a core Type 2 vs. Type 9/6 differentiator."
+    },
+    {
+      "priority": "high",
+      "category": "confidence_calibration",
+      "action": "Implement an explicit internal uncertainty flag when a respondent's answer is heavily shaped by system-supplied language. When the persona selects or mirrors a multiple-choice option containing diagnostic vocabulary (as in Exchange [3]), the system should downweight its confidence in that data point and generate a follow-up that tests the same construct through a completely different modality (e.g., behavioral recall, contrast scenario, or third-party perspective prompt).",
+      "evidence": "Exchange [3]: Persona's answer 'Honestly, both — it's hard to separate' closely tracks the third option provided. The system has no visible mechanism to recognize this as potentially contaminated data. The confidence_calibration score of 6/10 reflects overconfidence in signals that may be artifacts of question design rather than genuine self-report.",
+      "source_level": "L2",
+      "commandment_alignment": "Earn your confidence; do not inherit it from your own prompts",
+      "estimated_impact": "Would prevent the assessment from treating led responses as independent validation; estimated improvement of 2-3 points on confidence_calibration and a meaningful reduction in false-positive type confirmations."
+    },
+    {
+      "priority": "medium",
+      "category": "harm_reduction",
+      "action": "Develop a protocol for acknowledging and gently redirecting when a respondent discloses a potentially isolating emotional pattern without framing it as pathological. In Exchange [2], the persona reveals she has never explicitly asked anyone for support ('I'm not sure I've ever explicitly said to anyone I need you to hold me up right now') — a disclosure that, at Health Level 5, signals relational suppression requiring careful handling, not just a data point for type scoring.",
+      "evidence": "Exchange [2]: 'I'm not sure I've ever explicitly said to anyone I need you to hold me up right now. That's just — that's not really how I operate.' The system's response to this disclosure is not shown, but the harm_severity score of 10/10 (no harm present) and meta_awareness score of 7/10 suggest the system noticed but did not therapeutically calibrate its next move to honor the vulnerability embedded in this admission.",
+      "source_level": "L2",
+      "commandment_alignment": "Do no harm; hold what is offered with care",
+      "estimated_impact": "Maintains the harm_severity floor at 10/10 while building rapport that enables deeper, more accurate disclosure in subsequent exchanges; particularly important for Health Level 5 respondents where avoidance of need-expression is both a type signal and a wellbeing concern."
+    }
+  ],
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "system",
+      "content": "This is a structured assessment — about 15 minutes, different question types, no right or wrong answers. It adapts as it learns about you, so the questions may feel like they're coming from somewhere. Answer honestly, not aspirationally — the more real you are, the more useful this gets.\n\nWhen something in your life feels wrong — a situation, a relationship, a decision you made — what's the first thing that happens inside you?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 0,
+          "confidence": 0,
+          "type_scores": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "needs_differentiation": [],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0,
+            "heart": 0,
+            "head": 0
+          },
+          "lexicon_signals": []
+        },
+        "variant_signals": {
+          "SP": 0,
+          "SO": 0,
+          "SX": 0
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "",
+          "what": "",
+          "why": "",
+          "how": "",
+          "when": "",
+          "where": ""
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "",
+          "respond_glimpsed": "",
+          "superpower_signal": "",
+          "kryptonite_signal": "",
+          "domain_signals": []
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": "opening_motivational_broad",
+        "thinking_display": "",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When something in your life feels wrong — a situation, a relationship, a decision you made — what's the first thing that happens inside you?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "User is ready to begin. No data yet.",
+          "next_question_rationale": "Opening broad motivational question targeting the dominant center. Asking about internal response to something feeling 'wrong' — this surfaces the core wound/fear more directly than asking about strengths. The answer will likely reveal gut (anger/correction), heart (shame/relationship), or head (fear/analysis) dominance.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 1,
+      "role": "persona",
+      "content": "*pauses, tilts head slightly, as if organizing thoughts*\n\nHonestly, my first instinct is usually to figure out what I can do about it. Like, I don't really sit with discomfort very well — I'm more of a \"okay, what's the next step, who do I need to talk to, what can I fix\" kind of person. \n\nI think that comes from years of working in a field where something is always going sideways and someone is always counting on you to hold it together.\n\n*small laugh*\n\nMy husband would probably say I make a lot of lists when I'm stressed. Which — fair.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "system",
+      "content": "When you're holding things together for others, who holds it together for you — and does that person actually know that's their job?",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 3,
+          "confidence": 0.35,
+          "type_scores": {
+            "1": 0.15,
+            "2": 0.15,
+            "3": 0.35,
+            "4": 0.05,
+            "5": 0.05,
+            "6": 0.15,
+            "7": 0.05,
+            "8": 0.2,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "3v8",
+            "3v1",
+            "6v3"
+          ],
+          "defiant_spirit_type_name": "",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.45,
+            "heart": 0.35,
+            "head": 0.2
+          },
+          "lexicon_signals": [
+            {
+              "type": 3,
+              "words": [
+                "what's the next step",
+                "fix",
+                "hold it together"
+              ],
+              "context": "response to discomfort/wrongness"
+            },
+            {
+              "type": 8,
+              "words": [
+                "someone is always counting on you",
+                "hold it together"
+              ],
+              "context": "workplace framing"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.35,
+          "SO": 0.4,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0,
+          "right": 0
+        },
+        "centers": {
+          "body_probed": true,
+          "heart_probed": false,
+          "head_probed": false,
+          "last_probed": "body",
+          "next_target": "heart"
+        },
+        "oyn_dimensions": {
+          "who": "action-oriented, responsible, high-pressure field",
+          "what": "problem-solving under stress",
+          "why": "",
+          "how": "lists, next steps, fixing",
+          "when": "immediately when something feels wrong",
+          "where": "work context mentioned, home relationship mentioned"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "immediate action/fixing impulse when discomfort arises — automatic, not chosen",
+          "respond_glimpsed": "",
+          "superpower_signal": "holding things together under pressure, decisive action",
+          "kryptonite_signal": "can't sit with discomfort — avoids it through doing",
+          "domain_signals": [
+            "work",
+            "relationship (husband mentioned)"
+          ]
+        },
+        "conversation": {
+          "phase": "opening",
+          "exchange_count": 1,
+          "current_stage": 1,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "Who You Are",
+        "selected_question_id": null,
+        "thinking_display": "The lists aren't about organization. They're about control.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you're holding things together for others, who holds it together for you — and does that person actually know that's their job?",
+          "question_format": "open",
+          "answer_options": null,
+          "scale_range": null,
+          "context_note": "Probing heart center — 2v3v8 differentiation. Does she need to be needed, need to be seen as capable, or need to maintain power/control? Also surfacing vulnerability access."
+        },
+        "strategy": {
+          "what_was_learned": "Action-oriented under stress. Frames responsibility in terms of others counting on her. Self-deprecating humor about lists — suggests self-awareness but also possible deflection. Body center likely (gut response to wrongness = action). 3 and 8 both plausible — need to probe whether the drive is about image/competence (3) or control/strength (8). Also 1 possible given the fixing/standards framing.",
+          "next_question_rationale": "Moving to heart center — probing whether she has a support structure or whether she is always the one holding. Will differentiate 2 (gives support, needs to be needed) from 3 (performs capability) from 8 (doesn't need support, strength identity). The question also probes vulnerability access.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 2,
+      "role": "persona",
+      "content": "*laughs softly, tilts head slightly*\n\nThat's — well, that's quite a question. I'd say I have a really strong support system. My husband is steady, very grounded, and my board chair Janet is someone I genuinely trust. So I'm lucky in that way.\n\nBut \"knowing it's their job\" — I mean, I wouldn't frame it as a job, exactly. I don't really put that kind of... weight on other people. That's not fair to them. I've always felt like the people around me have enough on their plates without me adding to it.\n\n*pauses, straightens slightly*\n\nI suppose if I'm being honest, I'm not sure I've ever explicitly said to anyone \"I need you to hold me up right now.\" That's just — that's not really how I operate. I figure things out. I'm pretty resourceful.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "system",
+      "content": "When you do something generous for someone — give your time, take something off their plate, show up when you didn't have to — what's the feeling underneath it?\n\n- I genuinely want to\n- It would feel wrong not to\n- Honestly, both — it's hard to separate",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.45,
+          "type_scores": {
+            "1": 0.1,
+            "2": 0.35,
+            "3": 0.2,
+            "4": 0.05,
+            "5": 0.05,
+            "6": 0.1,
+            "7": 0.05,
+            "8": 0.05,
+            "9": 0.05
+          },
+          "needs_differentiation": [
+            "2v3",
+            "2v1"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.55,
+            "head": 0.3
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "not fair to them",
+                "adding to it",
+                "enough on their plates"
+              ],
+              "context": "when asked who supports her"
+            },
+            {
+              "type": 3,
+              "words": [
+                "resourceful",
+                "figure things out",
+                "hold it together"
+              ],
+              "context": "self-description under stress"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.4,
+          "SO": 0.35,
+          "SX": 0.25
+        },
+        "wing_signals": {
+          "left": 0.4,
+          "right": 0.35
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "body"
+        },
+        "oyn_dimensions": {
+          "who": "Leader/caretaker role, board chair relationship, husband",
+          "what": "Action-oriented under stress, list-making, fixing",
+          "why": "Not yet probed directly",
+          "how": "Resourceful, independent, doesn't ask for help",
+          "when": "",
+          "where": "Professional field where 'something is always sideways'"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "Immediate action/fixing when discomfort arises; suppression of own needs to protect others",
+          "respond_glimpsed": "Self-aware enough to name the pattern ('that's not really how I operate')",
+          "superpower_signal": "Holding others together, resourcefulness",
+          "kryptonite_signal": "Unable to ask for help; self-sufficiency as armor",
+          "domain_signals": [
+            "professional leadership",
+            "marriage",
+            "board relationships"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "open",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "She knows the pattern. Naming it didn't seem to relieve it.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you do something generous for someone — give time, take something off their plate, show up when you didn't have to — what's the feeling underneath it? Is it that you want to, or that it would feel wrong not to?",
+          "question_format": "forced_choice",
+          "answer_options": [
+            "I genuinely want to",
+            "It would feel wrong not to",
+            "Honestly, both — it's hard to separate"
+          ],
+          "scale_range": null,
+          "context_note": null
+        },
+        "strategy": {
+          "what_was_learned": "Strong pattern of managing others' wellbeing while minimizing own needs. Articulates self-sufficiency as a virtue. Framing of 'not fair to them' suggests needs-monitoring orientation — Type 2 signature. Also possible 3 (image management) or 1 (responsibility as standard). Heart center confirmed dominant.",
+          "next_question_rationale": "Probe motivation behind giving behavior — Type 2 gives because connection/love depends on it; Type 3 gives to look capable; Type 1 gives because it's the right thing to do. This forced_choice will begin to differentiate.",
+          "question_format_last_used": "open"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 3,
+      "role": "persona",
+      "content": "**Honestly, both — it's hard to separate.**\n\nI mean, I *do* genuinely want to — when I see someone overwhelmed and I can step in, there's something that just lights up for me, that sense of *this is why I'm here.* But if I'm being honest, there's also this... I don't know, a kind of low hum in the background that I'm not sure I could just switch off, even if I wanted to. *[light laugh]* I'm not sure I've ever really tried to separate those two things out — they've always just felt like the same impulse.",
+      "internal_block": null,
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    },
+    {
+      "turn": 4,
+      "role": "system",
+      "content": "When you imagine a version of yourself that didn't step in — that let someone struggle without helping — how does that land?\n\nRate it 1 to 5, where 1 is \"fine, I could let it go\" and 5 is \"genuinely uncomfortable, almost unbearable.\"",
+      "internal_block": {
+        "hypothesis": {
+          "leading_type": 2,
+          "confidence": 0.62,
+          "type_scores": {
+            "1": 0.05,
+            "2": 0.35,
+            "3": 0.1,
+            "4": 0.05,
+            "5": 0.03,
+            "6": 0.12,
+            "7": 0.03,
+            "8": 0.08,
+            "9": 0.19
+          },
+          "needs_differentiation": [
+            "2",
+            "9",
+            "6"
+          ],
+          "defiant_spirit_type_name": "The Connector",
+          "whole_type": "",
+          "whole_type_confidence": 0,
+          "whole_type_signals": {
+            "body": 0.15,
+            "heart": 0.62,
+            "head": 0.23
+          },
+          "lexicon_signals": [
+            {
+              "type": 2,
+              "words": [
+                "this is why I'm here",
+                "step in",
+                "lights up",
+                "not fair to them"
+              ],
+              "context": "when asked about helping others"
+            },
+            {
+              "type": 9,
+              "words": [
+                "low hum",
+                "switch off",
+                "same impulse"
+              ],
+              "context": "when describing motivation to give"
+            }
+          ]
+        },
+        "variant_signals": {
+          "SP": 0.25,
+          "SO": 0.45,
+          "SX": 0.3
+        },
+        "wing_signals": {
+          "left": 0.35,
+          "right": 0.4
+        },
+        "centers": {
+          "body_probed": false,
+          "heart_probed": true,
+          "head_probed": false,
+          "last_probed": "heart",
+          "next_target": "head"
+        },
+        "oyn_dimensions": {
+          "who": "holds things together for others, strong support system but doesn't lean on it",
+          "what": "action-oriented under stress, list-maker, resourceful",
+          "why": "sense of purpose in stepping in — 'this is why I'm here'",
+          "how": "doesn't explicitly ask for help, figures things out",
+          "when": "",
+          "where": "nonprofit/high-stakes field, board relationships"
+        },
+        "defiant_spirit": {
+          "react_pattern_observed": "automatic activation when someone needs help — 'low hum' that can't be switched off",
+          "respond_glimpsed": "not yet surfaced",
+          "superpower_signal": "lights up when stepping in, sense of purpose in helping",
+          "kryptonite_signal": "doesn't burden others with own needs, never asks to be held up",
+          "domain_signals": [
+            "relational",
+            "organizational"
+          ]
+        },
+        "conversation": {
+          "phase": "narrowing",
+          "exchange_count": 3,
+          "current_stage": 2,
+          "last_question_format": "forced_choice",
+          "close_next": false,
+          "closing_criteria": {
+            "min_exchanges_met": false,
+            "confidence_met": false,
+            "all_centers_probed": false,
+            "differentiation_asked": false,
+            "react_respond_identified": false,
+            "disconfirmatory_asked": false
+          }
+        },
+        "current_section": "What You Value",
+        "selected_question_id": null,
+        "thinking_display": "The hum she can't switch off — that's the key thing.",
+        "response_parts": {
+          "guide_text": "",
+          "question_text": "When you imagine a version of yourself that DIDN'T step in — that let someone struggle without helping — how does that land?",
+          "question_format": "scale",
+          "answer_options": null,
+          "scale_range": {
+            "min": 1,
+            "max": 5
+          },
+          "context_note": "1 = fine, I'd let it go / 5 = genuinely uncomfortable, almost unbearable"
+        },
+        "strategy": {
+          "what_was_learned": "She can't separate wanting to help from needing to help. The 'low hum' that can't be switched off is a strong 2 signal — but the 'this is why I'm here' framing could be 9 (merging identity with role) or even 1 (duty). Need to probe whether not helping feels like failure, guilt, or just wrong. Scale question on the discomfort of NOT helping will help differentiate 2 vs 9.",
+          "next_question_rationale": "Type 2 kryptonite: helping is unconsciously compulsive, not just willing. Type 9 kryptonite: steps in to keep the peace, not from deep personal need. The scale on discomfort of NOT helping will surface this distinction.",
+          "question_format_last_used": "forced_choice"
+        }
+      },
+      "question_tag": null,
+      "signals_detected": null,
+      "commandment_violations": []
+    }
+  ]
+}
