@@ -17,10 +17,11 @@ import { evaluatePhaseTransition } from '@/lib/phase-manager';
 import { selectNextQuestion, selectTier2Question, formatQuestionResponse, getTransitionText } from '@/lib/decision-tree';
 import type { SessionData } from '@/lib/session-store';
 
-// Feature flag: set to true to enable hybrid vector+LLM assessment
-// When true, phases 1-2 (center_id, type_narrowing, instinct_probing) use vector scoring
-// When false, Claude handles 100% of the assessment (current behavior)
-const HYBRID_MODE_ENABLED = false;
+// Feature flag: hybrid vector+LLM assessment with reverse shadow mode
+// When true: early phases use vector scoring, Claude checkpoint at handoff,
+// then Claude handles differentiation. Logs agreement/disagreement for review.
+// When false: Claude handles 100% of the assessment.
+const HYBRID_MODE_ENABLED = true;
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -388,6 +389,101 @@ async function updateSessionFromParsed(
   return { progressSaved: false };
 }
 
+// ── Reverse Shadow Mode: Claude Checkpoint at Vector→LLM Handoff ──
+// Runs ONE Claude call to validate the vector system's hypothesis before
+// Claude takes over for differentiation. If Claude disagrees, silently
+// corrects the hypothesis. Logs everything for manual review.
+async function runCheckpoint(
+  session: SessionData,
+  sessionId: string,
+  vectorScores: NonNullable<SessionData['vectorScores']>
+): Promise<void> {
+  const vectorTopType = vectorScores.topTypes[0] ?? 0;
+  const vectorConfidence = vectorScores.confidence;
+  const history = session.conversationHistory;
+
+  if (history.length === 0) return;
+
+  try {
+    // Build a minimal prompt — just ask Claude to evaluate the conversation
+    const checkpointPrompt = `You are an expert Enneagram assessor. You have observed the following conversation between an assessment system and a person. Based ONLY on what the person has shared, provide your hypothesis.
+
+CONVERSATION:
+${history.map(m => `${m.role === 'user' ? 'PERSON' : 'ASSESSOR'}: ${m.content}`).join('\n\n')}
+
+Respond with ONLY a JSON object (no other text):
+{"leading_type": <1-9>, "confidence": <0.0-1.0>, "type_scores": {"1":N,"2":N,...,"9":N}}
+
+The type_scores must sum to 1.0. Be honest about your confidence.`;
+
+    const result = await client.messages.create({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 256,
+      messages: [{ role: 'user', content: checkpointPrompt }],
+    });
+
+    const rawText = result.content
+      .filter(b => b.type === 'text')
+      .map(b => (b as { type: 'text'; text: string }).text)
+      .join('');
+
+    const jsonMatch = rawText.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.warn('[reverse-shadow] Could not parse checkpoint response');
+      return;
+    }
+
+    const claudeHypothesis = JSON.parse(jsonMatch[0]) as {
+      leading_type: number;
+      confidence: number;
+      type_scores: Record<string, number>;
+    };
+
+    const claudeTopType = claudeHypothesis.leading_type;
+    const agreement = claudeTopType === vectorTopType;
+
+    if (agreement) {
+      console.log(`[reverse-shadow] AGREEMENT: both say Type ${vectorTopType} (vector: ${(vectorConfidence * 100).toFixed(0)}%, claude: ${(claudeHypothesis.confidence * 100).toFixed(0)}%)`);
+    } else {
+      console.log(`[reverse-shadow] DISAGREEMENT — correcting vector hypothesis (vector: Type ${vectorTopType}, claude: Type ${claudeTopType})`);
+
+      // Silently correct the hypothesis to match Claude
+      const correctedScores = { ...vectorScores };
+      const numericScores: Record<number, number> = {};
+      for (const [k, v] of Object.entries(claudeHypothesis.type_scores)) {
+        numericScores[Number(k)] = v;
+      }
+      correctedScores.typeScores = numericScores;
+      correctedScores.topTypes = Object.entries(numericScores)
+        .sort(([, a], [, b]) => b - a)
+        .map(([t]) => Number(t));
+      correctedScores.confidence = claudeHypothesis.confidence;
+
+      setSession(sessionId, { vectorScores: correctedScores });
+    }
+
+    // Log to shadow_mode_log table
+    adminClient.from('shadow_mode_log').insert({
+      session_id: sessionId,
+      exchange_number: session.exchangeCount,
+      claude_top_type: claudeTopType,
+      claude_confidence: claudeHypothesis.confidence,
+      vector_top_type: vectorTopType,
+      vector_confidence: vectorConfidence,
+      vector_type_scores: vectorScores.typeScores,
+      agreement,
+      center_agreement: agreement, // simplified for checkpoint
+      phase: 'checkpoint',
+    }).then(({ error }) => {
+      if (error) console.error('[reverse-shadow] Log error:', error.message);
+    });
+
+  } catch (err) {
+    console.error('[reverse-shadow] Checkpoint failed:', err);
+    // If checkpoint fails, continue without correction — vector hypothesis stands
+  }
+}
+
 export async function POST(req: NextRequest) {
   const t0 = performance.now();
   try {
@@ -500,8 +596,12 @@ export async function POST(req: NextRequest) {
         // If no question found, fall through to Claude
         console.log('[chat/hybrid] No vector question available, falling through to Claude');
       } else {
-        // Escalating to Claude — disable vector scoring for rest of session
+        // Escalating to Claude — run checkpoint first, then disable vector scoring
         console.log(`[chat/hybrid] Escalating to Claude: ${phaseResult.reason}`);
+
+        // REVERSE SHADOW MODE: Claude validates vector hypothesis at handoff
+        await runCheckpoint(session, sessionId, session.vectorScores!);
+
         setSession(sessionId, { useVectorScoring: false });
       }
     }

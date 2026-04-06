@@ -8,7 +8,7 @@ import { hasTypeSignatures } from '@/lib/vector-scorer';
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // Must match the flag in chat/route.ts
-const HYBRID_MODE_ENABLED = false;
+const HYBRID_MODE_ENABLED = true;
 
 export async function POST(request: Request) {
   try {
