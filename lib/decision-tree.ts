@@ -2,6 +2,7 @@ import { adminClient } from './supabase';
 import { CENTER_MAP } from './enneagram-lines';
 import type { Question } from './fallback-questions';
 import type { VectorScorerResult } from './vector-scorer';
+import { getQuestionBank } from './question-bank';
 
 /**
  * Decision tree for selecting the next question during vector-scored phases.
@@ -145,6 +146,119 @@ export async function selectCenterIdQuestion(
   // Prefer format rotation
   const rotated = data.filter((q: { format: string }) => q.format !== lastFormat);
   return (rotated.length > 0 ? rotated[0] : data[0]) as Question;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TIER CASCADE — Tier 1 data informs Tier 2 question selection
+// Per DYN_SYSTEM_ARCHITECTURE.md: "The prior tier always lightens
+// the load in determination for the next tier."
+// ═══════════════════════════════════════════════════════════════
+
+/**
+ * Infer likely instinct leanings from Tier 1 (Core Type) data.
+ * This is a SECONDARY input — not definitive, but narrows the search space.
+ *
+ * Patterns per DYN_SYSTEM_ARCHITECTURE.md:
+ * - Counterphobic 6 (high 8/4 energy in top scores) → likely SX or SO dominant
+ * - Phobic 6 (high 9/1 energy) → likely SP dominant
+ * - Type with high adjacent scores → wing energy hints at instinct
+ * - Reactive triad (4, 6, 8) with high intensity → SX lean
+ * - Withdrawn triad (4, 5, 9) with low social scores → SP or SX lean
+ * - Assertive triad (3, 7, 8) with high social engagement → SO lean
+ */
+export function inferInstinctFromTier1(
+  typeScores: Record<number, number>,
+  leadingType: number
+): { likelySP: number; likelySX: number; likelySO: number } {
+  // Start with uniform priors
+  let sp = 0.33, sx = 0.33, so = 0.34;
+
+  if (leadingType === 0) return { likelySP: sp, likelySX: sx, likelySO: so };
+
+  // Reactive triad types (4, 6, 8) with high intensity scores → SX lean
+  const reactiveTypes = [4, 6, 8];
+  const reactiveEnergy = reactiveTypes.reduce((sum, t) => sum + (typeScores[t] ?? 0), 0);
+  if (reactiveEnergy > 0.4) {
+    sx += 0.1;
+    sp -= 0.05;
+    so -= 0.05;
+  }
+
+  // Withdrawn triad (4, 5, 9) dominant → SP or SX lean (less social)
+  const withdrawnTypes = [4, 5, 9];
+  const withdrawnEnergy = withdrawnTypes.reduce((sum, t) => sum + (typeScores[t] ?? 0), 0);
+  if (withdrawnEnergy > 0.4) {
+    so -= 0.1;
+    sp += 0.05;
+    sx += 0.05;
+  }
+
+  // Assertive triad (3, 7, 8) dominant → SO lean
+  const assertiveTypes = [3, 7, 8];
+  const assertiveEnergy = assertiveTypes.reduce((sum, t) => sum + (typeScores[t] ?? 0), 0);
+  if (assertiveEnergy > 0.4) {
+    so += 0.1;
+    sp -= 0.05;
+    sx -= 0.05;
+  }
+
+  // Type 6 specific: counterphobic (high 8 energy) → SX/SO; phobic (high 9 energy) → SP
+  if (leadingType === 6) {
+    const eightScore = typeScores[8] ?? 0;
+    const nineScore = typeScores[9] ?? 0;
+    if (eightScore > nineScore) {
+      sx += 0.1;
+      sp -= 0.1;
+    } else {
+      sp += 0.1;
+      sx -= 0.1;
+    }
+  }
+
+  // Normalize to sum to 1
+  const total = sp + sx + so;
+  return {
+    likelySP: Math.max(0, sp / total),
+    likelySX: Math.max(0, sx / total),
+    likelySO: Math.max(0, so / total),
+  };
+}
+
+/**
+ * Select a Tier 2 (instinct) question, using Tier 1 cascade data to
+ * prioritize which instinct pair to differentiate first.
+ *
+ * Strategy: if Tier 1 data suggests two instincts are close, ask a
+ * question that distinguishes between them. If one instinct is clearly
+ * dominant, ask a question that confirms it.
+ */
+export async function selectTier2Question(
+  typeScores: Record<number, number>,
+  leadingType: number,
+  questionsAsked: string[],
+  lastFormat: string
+): Promise<Question | null> {
+  const inferred = inferInstinctFromTier1(typeScores, leadingType);
+  console.log(`[tier-cascade] Inferred instinct leanings from Tier 1: SP=${inferred.likelySP.toFixed(2)} SX=${inferred.likelySX.toFixed(2)} SO=${inferred.likelySO.toFixed(2)}`);
+
+  // Get Tier 2 questions from the bank
+  // Use tier parameter if available, otherwise get stage 5-6 questions
+  const candidates = await getQuestionBank(leadingType, null, 5, lastFormat, 8, 2);
+
+  if (candidates.length > 0) {
+    // Filter out already-asked questions
+    const available = candidates.filter(q =>
+      !questionsAsked.includes(String(q.id))
+    );
+    if (available.length > 0) return available[0];
+  }
+
+  // Fallback: get any stage 5-6 question not yet asked
+  const fallback = await getQuestionBank(leadingType, null, 6, lastFormat, 5);
+  const availableFallback = fallback.filter(q =>
+    !questionsAsked.includes(String(q.id))
+  );
+  return availableFallback.length > 0 ? availableFallback[0] : null;
 }
 
 /**

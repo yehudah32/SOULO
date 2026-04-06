@@ -1,7 +1,11 @@
 import type { VectorScorerResult } from './vector-scorer';
 import { CENTER_MAP } from './enneagram-lines';
 
-export type AssessmentPhase = 'center_id' | 'type_narrowing' | 'differentiation';
+// Phases map to DYN tiers:
+// center_id + type_narrowing = Tier 1 (Core Type + Whole Type)
+// instinct_probing = Tier 2 (Instinct + Subtype) — uses Tier 1 cascade
+// differentiation = Tier 3+ (Wings/Lines, final refinement via Claude)
+export type AssessmentPhase = 'center_id' | 'type_narrowing' | 'instinct_probing' | 'differentiation';
 
 export interface PhaseTransitionResult {
   currentPhase: AssessmentPhase;
@@ -142,10 +146,11 @@ export function evaluatePhaseTransition(
         (topRatio >= THRESHOLDS.narrowingToDifferentiation.minTypeConfidence ||
          gap >= THRESHOLDS.narrowingToDifferentiation.topTwoGap)
       ) {
+        // Tier cascade: go to instinct probing (Tier 2) before differentiation
         return {
-          currentPhase: 'differentiation',
-          shouldEscalateToClaude: true,
-          reason: `Type narrowed: Type ${sortedTypes[0][0]} leads (ratio: ${topRatio.toFixed(2)}, gap: ${gap.toFixed(3)}). Switching to Claude for differentiation.`,
+          currentPhase: 'instinct_probing',
+          shouldEscalateToClaude: false, // Tier 2 can use vector + question bank
+          reason: `Type narrowed: Type ${sortedTypes[0][0]} leads (ratio: ${topRatio.toFixed(2)}, gap: ${gap.toFixed(3)}). Moving to Tier 2 instinct probing.`,
         };
       }
 
@@ -166,9 +171,30 @@ export function evaluatePhaseTransition(
     };
   }
 
+  // ── Phase: instinct_probing (Tier 2 — uses question bank + vector) ──
+  if (currentPhase === 'instinct_probing') {
+    // Ask 2-3 instinct questions, then move to differentiation
+    const instinctQuestionsAsked = exchangeCount -
+      (THRESHOLDS.centerIdToNarrowing.maxQuestions + THRESHOLDS.narrowingToDifferentiation.maxQuestions);
+
+    if (instinctQuestionsAsked >= 3) {
+      return {
+        currentPhase: 'differentiation',
+        shouldEscalateToClaude: true,
+        reason: `Instinct probing complete (${instinctQuestionsAsked} questions). Moving to Claude for differentiation.`,
+      };
+    }
+
+    return {
+      currentPhase: 'instinct_probing',
+      shouldEscalateToClaude: false,
+      reason: `Probing instinct stack (${instinctQuestionsAsked} of 3 questions). Tier 1 data informing Tier 2 selection.`,
+    };
+  }
+
   // ── Phase: differentiation (always uses Claude) ──
   // Enforce a max questions limit to prevent infinite loops
-  const diffQuestionsAsked = exchangeCount - (THRESHOLDS.centerIdToNarrowing.maxQuestions + THRESHOLDS.narrowingToDifferentiation.maxQuestions);
+  const diffQuestionsAsked = exchangeCount - (THRESHOLDS.centerIdToNarrowing.maxQuestions + THRESHOLDS.narrowingToDifferentiation.maxQuestions + 3);
   if (diffQuestionsAsked >= THRESHOLDS.differentiationMax.maxQuestions) {
     return {
       currentPhase: 'differentiation',

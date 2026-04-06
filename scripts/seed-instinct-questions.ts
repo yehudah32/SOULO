@@ -116,7 +116,7 @@ async function main() {
     if (error) {
       console.error(`  Error: ${error.message}`);
     } else {
-      console.log(`  ✅ Tier ${q.tier}: "${q.question_text.substring(0, 50)}..."`);
+      console.log(`  ✅ Tier 2: "${q.question_text.substring(0, 50)}..."`);
       inserted++;
     }
   }

@@ -17,7 +17,7 @@ export interface VectorScorerResult {
   centerScores: Record<string, number>;
   confidence: number;
   topTypes: number[];
-  phase: 'center_id' | 'type_narrowing' | 'differentiation';
+  phase: 'center_id' | 'type_narrowing' | 'instinct_probing' | 'differentiation';
 }
 
 /**
