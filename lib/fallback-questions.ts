@@ -13,6 +13,7 @@ export interface Question {
   times_used: number;
   avg_information_yield: number;
   is_baruch_sourced?: boolean;
+  tier?: number; // 1=Core/Whole, 2=Instinct/Subtype, 3=Wings/Lines
 }
 
 export const FALLBACK_QUESTIONS: Question[] = [

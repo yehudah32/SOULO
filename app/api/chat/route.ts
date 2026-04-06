@@ -17,6 +17,23 @@ import type { SessionData } from '@/lib/session-store';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
+// ── Variant Signal Normalization ──
+// DYN Architecture requires instinct stack to sum to 100% (shared-resource model)
+function normalizeVariantSignals(
+  signals: { SP: number; SO: number; SX: number } | Record<string, number>
+): { SP: number; SO: number; SX: number } {
+  const sp = (signals as Record<string, number>).SP ?? 0;
+  const so = (signals as Record<string, number>).SO ?? 0;
+  const sx = (signals as Record<string, number>).SX ?? 0;
+  const total = sp + so + sx;
+  if (total === 0) return { SP: 0.33, SO: 0.33, SX: 0.34 }; // Uniform if no data
+  return {
+    SP: sp / total,
+    SO: so / total,
+    SX: sx / total,
+  };
+}
+
 // ── Confidence Gate ──
 // Enforces 0.85 confidence threshold for close type pairs before allowing completion.
 function evaluateConfidenceGate(
@@ -256,7 +273,7 @@ async function updateSessionFromParsed(
       leadingType: finalInternal?.hypothesis?.leading_type ?? 0,
       confidence: finalInternal?.hypothesis?.confidence ?? 0,
       typeScores: finalInternal?.hypothesis?.type_scores ?? {},
-      variantSignals: finalInternal?.variant_signals ?? {},
+      variantSignals: normalizeVariantSignals(finalInternal?.variant_signals ?? {}),
       wingSignals: finalInternal?.wing_signals ?? {},
       wholeType,
       wholeTypeConfidence,
@@ -277,7 +294,7 @@ async function updateSessionFromParsed(
       leading_type: finalInternal?.hypothesis?.leading_type ?? 0,
       confidence: finalInternal?.hypothesis?.confidence ?? 0,
       type_scores: finalInternal?.hypothesis?.type_scores ?? {},
-      variant_signals: finalInternal?.variant_signals ?? {},
+      variant_signals: normalizeVariantSignals(finalInternal?.variant_signals ?? {}),
       wing_signals: finalInternal?.wing_signals ?? {},
       tritype: wholeType, // Supabase column is 'tritype', TS variable is 'wholeType'
       tritype_confidence: wholeTypeConfidence,

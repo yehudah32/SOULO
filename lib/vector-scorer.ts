@@ -4,6 +4,14 @@ import { CENTER_MAP } from './enneagram-lines';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
+// Counter-types: types that don't look like their center
+// Per DYN_SYSTEM_ARCHITECTURE.md
+const COUNTER_TYPES: Record<number, string> = {
+  9: 'Body',  // Type 9 doesn't look like an action type
+  3: 'Heart', // Type 3 doesn't look like a feeling type
+  7: 'Head',  // Type 7 doesn't look like a thinking type
+};
+
 export interface VectorScorerResult {
   typeScores: Record<number, number>;
   centerScores: Record<string, number>;
@@ -99,6 +107,35 @@ function computeCenterScores(typeScores: Record<number, number>): Record<string,
 }
 
 /**
+ * Apply counter-type awareness to center scores.
+ * Types 9, 3, 7 don't look like their centers — if they're the highest-scoring
+ * type in their center, apply a 15% confidence discount to prevent false positives.
+ */
+function applyCounterTypeAwareness(
+  typeScores: Record<number, number>,
+  centerScores: Record<string, number>
+): Record<string, number> {
+  const adjusted = { ...centerScores };
+
+  for (const [typeStr, center] of Object.entries(COUNTER_TYPES)) {
+    const type = Number(typeStr);
+    const typeScore = typeScores[type] ?? 0;
+
+    // Check if this counter-type is the highest-scoring type in its center
+    const centerTypes = Object.entries(typeScores)
+      .filter(([t]) => CENTER_MAP[Number(t)] === center)
+      .sort(([, a], [, b]) => b - a);
+
+    if (centerTypes.length > 0 && Number(centerTypes[0][0]) === type && typeScore > 0) {
+      adjusted[center] *= 0.85; // 15% discount
+      console.log(`[vector-scorer] Counter-type awareness: Type ${type} is highest in ${center} center — applying 15% confidence discount`);
+    }
+  }
+
+  return adjusted;
+}
+
+/**
  * Compute confidence as the normalized gap between the top type and the runner-up.
  * Higher gap = higher confidence that we've identified the right type.
  */
@@ -182,7 +219,8 @@ export async function scoreResponse(
   );
 
   // 4. Compute derived metrics
-  const centerScores = computeCenterScores(updatedScores);
+  const rawCenterScores = computeCenterScores(updatedScores);
+  const centerScores = applyCounterTypeAwareness(updatedScores, rawCenterScores);
   const confidence = computeConfidence(updatedScores);
 
   // 5. Sort types by score for easy access

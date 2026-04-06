@@ -8,7 +8,8 @@ export async function getQuestionBank(
   needsDifferentiation: string | null,
   stage: number,
   lastFormat: string,
-  limit = 8
+  limit = 8,
+  tier?: number
 ): Promise<Question[]> {
   try {
     const { data, error } = await adminClient.rpc('get_candidate_questions', {
@@ -16,7 +17,7 @@ export async function getQuestionBank(
       p_needs_differentiation: needsDifferentiation,
       p_stage: stage,
       p_last_format: lastFormat,
-      p_limit: limit,
+      p_limit: tier ? limit * 2 : limit, // Fetch more if filtering by tier
     });
 
     if (error || !data || (data as Question[]).length === 0) {
@@ -25,10 +26,17 @@ export async function getQuestionBank(
       } else {
         console.log('[question-bank] No DB questions found, using fallbacks for stage', stage);
       }
-      return FALLBACK_QUESTIONS.filter((q) => q.stage === stage);
+      let fallbacks = FALLBACK_QUESTIONS.filter((q) => q.stage === stage);
+      if (tier) fallbacks = fallbacks.filter((q) => (q.tier ?? 1) === tier);
+      return fallbacks;
     }
 
-    return data as Question[];
+    let results = data as Question[];
+    // Post-filter by tier if specified (until RPC supports tier parameter)
+    if (tier) {
+      results = results.filter((q: Question & { tier?: number }) => (q.tier ?? 1) === tier);
+    }
+    return results.slice(0, limit);
   } catch (err) {
     console.warn('[question-bank] Unexpected error, using fallbacks:', err);
     return FALLBACK_QUESTIONS.filter((q) => q.stage === stage);
