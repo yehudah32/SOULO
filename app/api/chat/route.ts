@@ -13,7 +13,14 @@ import { runPostAssessmentEvaluation } from '@/lib/evaluator';
 import { selectTritype, CENTER_MAP } from '@/lib/enneagram-lines';
 import { findPairForTypes, getTopTwoTypes } from '@/lib/differentiation-pairs';
 import { scoreResponse, hasTypeSignatures } from '@/lib/vector-scorer';
+import { evaluatePhaseTransition } from '@/lib/phase-manager';
+import { selectNextQuestion, selectTier2Question, formatQuestionResponse, getTransitionText } from '@/lib/decision-tree';
 import type { SessionData } from '@/lib/session-store';
+
+// Feature flag: set to true to enable hybrid vector+LLM assessment
+// When true, phases 1-2 (center_id, type_narrowing, instinct_probing) use vector scoring
+// When false, Claude handles 100% of the assessment (current behavior)
+const HYBRID_MODE_ENABLED = false;
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -417,6 +424,87 @@ export async function POST(req: NextRequest) {
       ? String(session.internalState.hypothesis.needs_differentiation[0])
       : null;
     const allowedFormats = getAllowedFormats(stage);
+
+    // ── HYBRID MODE: Vector-scored early phases ──
+    if (HYBRID_MODE_ENABLED && session.useVectorScoring && session.vectorScores) {
+      const phaseResult = evaluatePhaseTransition(
+        session.vectorScores,
+        session.exchangeCount,
+        session.vectorScores.phase
+      );
+
+      // If still in vector-scorable phases, handle without Claude
+      if (!phaseResult.shouldEscalateToClaude) {
+        console.log(`[chat/hybrid] Vector phase: ${phaseResult.currentPhase} — ${phaseResult.reason}`);
+
+        // Score the user's response with vector system
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const questionId = String((session.internalState as any)?.selected_question_id ?? session.exchangeCount);
+        const vectorResult = await scoreResponse(
+          latestUserMessage.content,
+          questionId,
+          session.vectorScores,
+          session.exchangeCount
+        );
+
+        // Select next question based on phase
+        let nextQuestion;
+        if (phaseResult.currentPhase === 'instinct_probing') {
+          nextQuestion = await selectTier2Question(
+            vectorResult.typeScores,
+            vectorResult.topTypes[0] ?? 0,
+            (session.allQuestionsAsked ?? []).map(q => String(q.questionId)),
+            lastFormat
+          );
+        } else {
+          nextQuestion = await selectNextQuestion(
+            vectorResult,
+            phaseResult.currentPhase as 'center_id' | 'type_narrowing',
+            (session.allQuestionsAsked ?? []).map(q => String(q.questionId)),
+            lastFormat
+          );
+        }
+
+        if (nextQuestion) {
+          const guideText = session.exchangeCount === 0
+            ? getTransitionText('opening')
+            : phaseResult.currentPhase === 'instinct_probing'
+              ? ''
+              : getTransitionText('center_to_narrowing');
+
+          const response = formatQuestionResponse(
+            nextQuestion, guideText, vectorResult, session.exchangeCount + 1
+          );
+
+          // Update session
+          setSession(sessionId, {
+            vectorScores: vectorResult,
+            exchangeCount: session.exchangeCount + 1,
+            lastQuestionFormat: nextQuestion.format,
+            currentStage: stage,
+            conversationHistory: [
+              ...session.conversationHistory,
+              { role: 'user', content: latestUserMessage.content },
+              { role: 'assistant', content: response.message },
+            ],
+            allQuestionsAsked: [
+              ...(session.allQuestionsAsked ?? []),
+              { exchange: session.exchangeCount + 1, questionId: nextQuestion.id, questionText: nextQuestion.question_text },
+            ],
+            llmCallCount: session.llmCallCount, // No LLM call used
+          });
+
+          console.log(`[chat/hybrid] Vector response: "${nextQuestion.question_text.substring(0, 60)}..." | Type ${vectorResult.topTypes[0]} @ ${(vectorResult.confidence * 100).toFixed(0)}%`);
+          return NextResponse.json(response);
+        }
+        // If no question found, fall through to Claude
+        console.log('[chat/hybrid] No vector question available, falling through to Claude');
+      } else {
+        // Escalating to Claude — disable vector scoring for rest of session
+        console.log(`[chat/hybrid] Escalating to Claude: ${phaseResult.reason}`);
+        setSession(sessionId, { useVectorScoring: false });
+      }
+    }
 
     // ── Conversation history compression ──
     const compressed = compressHistory(messages, session.internalState);

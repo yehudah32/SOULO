@@ -3,8 +3,12 @@ import Anthropic from '@anthropic-ai/sdk';
 import { ENNEAGRAM_SYSTEM_PROMPT } from '@/lib/system-prompt';
 import { initSession, setSession } from '@/lib/session-store';
 import { parseAIResponse } from '@/lib/parse-response';
+import { hasTypeSignatures } from '@/lib/vector-scorer';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+// Must match the flag in chat/route.ts
+const HYBRID_MODE_ENABLED = false;
 
 export async function POST(request: Request) {
   try {
@@ -21,6 +25,15 @@ export async function POST(request: Request) {
     };
     const sessionId = crypto.randomUUID();
     initSession(sessionId);
+
+    // Check if hybrid mode should be enabled for this session
+    if (HYBRID_MODE_ENABLED) {
+      const signaturesReady = await hasTypeSignatures();
+      if (signaturesReady) {
+        setSession(sessionId, { useVectorScoring: true });
+        console.log(`[init] Hybrid mode enabled for session ${sessionId}`);
+      }
+    }
 
     // Store email if provided
     if (body.email && typeof body.email === 'string' && body.email.trim()) {
