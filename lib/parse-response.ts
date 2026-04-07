@@ -127,6 +127,35 @@ export function getResponseParts(internal: any): ResponseParts | null {
     }
   }
 
+  // ── Grammatical form rescue for agree_disagree ──
+  // The agree_disagree format expects a DECLARATIVE STATEMENT — the user
+  // reads "I push back when I disagree" and picks Strongly Agree...
+  // Strongly Disagree. Claude sometimes generates a QUESTION instead
+  // ("Is your gut instinct to push back?"), which is gibberish next to
+  // agree/disagree options ("Strongly agree" doesn't grammatically connect
+  // to "Is your gut instinct to push back?").
+  //
+  // Detection: agree_disagree question_text that ends with "?" or starts
+  // with a question word.
+  //
+  // Rescue: convert to forced_choice with Yes/No, since "Yes/No" grammatically
+  // connects to a question. This is a structural downgrade (less granular
+  // than 5-point) but grammatically correct, and the user can actually answer.
+  // Logged loudly so we can fix the system prompt drift.
+  if (format === 'agree_disagree' && rp.question_text) {
+    const text = String(rp.question_text).trim();
+    // The strongest signal that an agree_disagree is malformed is a trailing
+    // "?" — declarative statements don't end in question marks. Words like
+    // "When/How/What" can legitimately start declarative clauses ("When
+    // something goes wrong, I look inward"), so we don't flag on opener
+    // alone. The trailing "?" is unambiguous.
+    if (text.endsWith('?')) {
+      console.error(`[parse-response] agree_disagree with question-form text — downgrading to forced_choice [Yes,No]. Original: "${text.slice(0, 120)}"`);
+      format = 'forced_choice';
+      answer_options = ['Yes', 'No'];
+    }
+  }
+
   // Strip context_note if:
   //   1. The format doesn't legitimately need one, OR
   //   2. It contains internal reasoning markers (AI processing leak)

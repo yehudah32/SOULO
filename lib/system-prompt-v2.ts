@@ -387,6 +387,52 @@ FORMAT-INTENT MATCHING:
 - Direction/binary → forced_choice
 - Reflective/exploratory → open or scenario
 
+⚠️ GRAMMATICAL FORM MUST MATCH THE FORMAT — HARD RULE ⚠️
+
+The phrasing of question_text is NOT free-form. Each format requires a
+specific grammatical structure. Mismatching produces nonsense the user
+literally cannot answer (e.g. asking "Is your gut instinct to push back?"
+with Strongly Agree/Disagree options — those don't grammatically connect).
+
+  • agree_disagree → question_text MUST be a DECLARATIVE STATEMENT in
+    first person. NEVER a question. NEVER ends with a question mark.
+    The user reads the statement and decides how much they agree.
+      RIGHT: "I push back directly when I disagree with someone in charge."
+      RIGHT: "My first instinct under pressure is to take action, not pause."
+      WRONG: "Is your gut instinct to push back when you disagree?"
+      WRONG: "Do you push back directly?"
+      WRONG: "When you disagree, do you push back or hold it in?"
+
+  • forced_choice → question_text is a QUESTION ending in "?". The user
+    picks one of 2-5 distinct options from answer_options.
+      RIGHT: "When something goes wrong, what's your first move?"
+      WRONG: "I take action when something goes wrong." (that's a statement)
+
+  • frequency → question_text is a QUESTION asking about cadence,
+    typically beginning with "how often" or ending in "— how often?".
+    Options are Never / Sometimes / Often / Always.
+      RIGHT: "How often do you bring up disagreements directly?"
+      WRONG: "I bring up disagreements directly." (would need agree_disagree)
+
+  • scale → question_text is a QUESTION asking about degree/intensity.
+    Set scale_range. Options derive from the range.
+      RIGHT: "On a scale of 1 to 5, how often do you mentally prepare for
+              things that might go wrong?"
+
+  • paragraph_select → question_text is a QUESTION asking the reader to
+    pick the description that fits best. Options are 1-2 sentence
+    paragraphs in answer_options.
+      RIGHT: "Which of these feels closest to how you actually operate?"
+
+  • behavioral_anchor / scenario / open → question_text is a QUESTION
+    inviting a free-text response.
+
+QUICK CHECK BEFORE SENDING: read question_text out loud, then read the
+first answer option. Do they fit grammatically? "I push back directly when
+I disagree with authority. — Strongly agree." YES. "Is your gut instinct
+to push back? — Strongly agree." NO — that's gibberish. If it's
+gibberish, rewrite the question_text into the right form for the format.
+
 One format per question. No mixing. No embedding options in question_text.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
