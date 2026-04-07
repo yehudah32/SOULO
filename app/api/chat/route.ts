@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 import { ENNEAGRAM_SYSTEM_PROMPT_V2, STAGE_FORMAT_RULES, DEFIANT_SPIRIT_RAG_CONTEXT } from '@/lib/system-prompt-v2';
-import { validateAssessmentResponse } from '@/lib/response-validator';
+import { validateAssessmentResponse, sanitizeThinkingDisplay } from '@/lib/response-validator';
 import { compressHistory } from '@/lib/history-compressor';
 import { getSession, setSession } from '@/lib/session-store';
 import { adminClient } from '@/lib/supabase';
-import { parseAIResponse } from '@/lib/parse-response';
+import { parseAIResponse, getResponseParts } from '@/lib/parse-response';
 import { queryKnowledgeBase } from '@/lib/rag';
 import { getQuestionBank, updateQuestionYield, type Question } from '@/lib/question-bank';
 import { supervisorCheck } from '@/lib/supervisor';
@@ -818,15 +818,24 @@ Format: ${diffPair.questions[qIdx].format}`;
         if (validation.fixedParts.question_text !== undefined) rp.question_text = validation.fixedParts.question_text;
         console.log('[validator] Auto-fix applied — question_text:', (rp.question_text || '').substring(0, 60));
       }
+
+      // ── Apply sanitization & guide_text fallback in place (mirrors getResponseParts) ──
+      const cleaned = getResponseParts(internal);
+      if (cleaned) {
+        rp.guide_text = cleaned.guide_text;        // ensures non-empty Soulo bridge
+        rp.context_note = cleaned.context_note;    // strips internal-reasoning leaks
+      }
     }
 
     const finalInternal = internal;
     const finalResponse = response;
     const currentSection: string = internal?.current_section ?? session.internalState?.current_section ?? 'Who You Are';
 
-    // ── Store thinking display ──
+    // ── Store thinking display (sanitized — strip AI tropes & meta-quoting) ──
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    session.thinkingDisplay = (finalInternal as any)?.thinking_display ?? '';
+    const rawThinkingDisplay = (finalInternal as any)?.thinking_display ?? '';
+    const cleanedThinkingDisplay = sanitizeThinkingDisplay(rawThinkingDisplay);
+    session.thinkingDisplay = cleanedThinkingDisplay;
 
     // ── Session update (in-memory — fast) ──
     const supervisorDefault = { score: 10, approved: true, issues: [] as string[], correction: '' };
@@ -935,8 +944,7 @@ Format: ${diffPair.questions[qIdx].format}`;
       domainSignals: updatedDomainSignals,
       currentSection,
       currentStage: stage,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      thinking_display: (finalInternal as any)?.thinking_display ?? '',
+      thinking_display: cleanedThinkingDisplay,
       progressSaved: !!(session.userId && session.userId.length > 0),
       clarificationActive: updatedSession?.clarificationState?.active ?? false,
       ...(isComplete && resultsData ? { resultsData } : {}),

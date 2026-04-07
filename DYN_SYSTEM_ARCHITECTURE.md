@@ -270,10 +270,10 @@ Triads group the nine types into sets of three based on shared strategies. The *
 | Group | Types |
 |---|---|
 | Assertive | 3, 7, 8 |
-| Compliant | 1, 2, 6 |
+| Compliant / Dutiful / Dependent | 1, 2, 6 |
 | Withdrawn | 4, 5, 9 |
 
-> **Note:** IEQ9 has renamed "Compliant" to a different term. Look up current IEQ9 naming.
+> **Note:** IEQ9 uses "Compliant," "Dutiful," and "Dependent" interchangeably for this triad. All three refer to types 1, 2, and 6 — types that are compliant to their own superego/conscience, not necessarily compliant to others. Source: integrative9.com sample reports. Use whichever term best fits the context; "Compliant" is the most widely recognized.
 
 ### Harmonic Triad (Conflict Strategy)
 
@@ -282,10 +282,12 @@ Triads group the nine types into sets of three based on shared strategies. The *
 | Group | Types |
 |---|---|
 | Reactive | 4, 6, 8 |
-| Competency | 1, 3, 5 |
+| Competency / Methodical | 1, 3, 5 |
 | Positive Outlook | 2, 7, 9 |
 
-> **Note:** IEQ9 has also renamed "Positive Outlook." Look up current IEQ9 naming.
+> **Note on Competency / Methodical:** IEQ9 uses both terms interchangeably. "Competency" is the historical Riso-Hudson name; "Methodical" is the IEQ9 alternate. Both refer to types 1, 3, 5.
+
+> **Note on Positive Outlook (2, 7, 9):** This triad has been renamed multiple times. Originally "Positive Outlook" (Riso-Hudson), then briefly "Avoidant" (IEQ9), and IEQ9 has reportedly renamed it again. The current IEQ9 internal term is in their accreditation materials but not on their public website. **ACTION:** Confirm with an IEQ9-accredited practitioner before publishing this triad publicly. Until confirmed, use "Positive Outlook" — it remains the most widely recognized term across Enneagram literature.
 
 ### Tier 4 Build Note
 

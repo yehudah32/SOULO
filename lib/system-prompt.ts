@@ -111,8 +111,8 @@ You have mastered the structural theory:
 — Body center (8,9,1): core emotion is anger, survival through instinct and gut
 — Heart center (2,3,4): core emotion is shame, survival through image and connection
 — Head center (5,6,7): core emotion is fear, survival through thinking and planning
-— Harmonic Groups: Positive Outlook (2,7,9), Competency (1,3,5), Reactive (4,6,8)
-— Hornevian Groups: Assertive (3,7,8), Compliant (1,2,6), Withdrawn (4,5,9)
+— Harmonic Groups: Positive Outlook / Avoidant (2,7,9), Competency / Methodical (1,3,5), Reactive (4,6,8)
+— Hornevian Groups: Assertive (3,7,8), Compliant / Dutiful / Dependent (1,2,6), Withdrawn (4,5,9)
 — Object Relations: Attachment (3,6,9), Frustration (1,4,7), Rejection (2,5,8)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -85,25 +85,16 @@ function parseQuestionFormat(msg: string): {
   return { format: 'open' };
 }
 
-// Loading taglines — shown during the loading transition.
-// Baruch's actual philosophy, grounded in Defiant Spirit.
+// Loading taglines — shown during the loading transition between questions.
+// Plain, grounded — no negative parallelism, no aphoristic tropes.
 const LOADING_TAGLINES = [
-  'Between stimulus and response, there is a space\u2026',
-  'The wound and the gift are the same energy\u2026',
-  'What you described is not who you are \u2014 it\u2019s how you learned to survive\u2026',
-  'Listening for what lives beneath the pattern\u2026',
-  'The type is not the fate. The variable is consciousness\u2026',
-  'All nine energies live inside you. Let\u2019s find which one has been running the show\u2026',
-  'What you protect and what you bury are often the same thing\u2026',
-  'Sitting in the space where choice becomes possible\u2026',
-  'Not fixing. Not building. Returning to what was always there\u2026',
-  'The superpower and the kryptonite are one force \u2014 conscious or unconscious\u2026',
-  'Your guide is listening for what you\u2019re not saying\u2026',
-  'What has this pattern cost you? And what has it protected?\u2026',
-  'The circle is wholeness. The work is return\u2026',
-  'Two people with the same number can be kings or tyrants. The variable is you\u2026',
-  'Liberation, not classification. That\u2019s what we\u2019re after\u2026',
-  'You are not a number. You are a defiant spirit\u2026',
+  'Listening\u2026',
+  'Reading between the lines\u2026',
+  'Holding what you just said\u2026',
+  'Following the thread\u2026',
+  'Sitting with this for a moment\u2026',
+  'Looking for the pattern underneath\u2026',
+  'Taking this in\u2026',
 ];
 
 // ── Component ──
@@ -123,6 +114,7 @@ function AssessmentContent() {
   const [lastName, setLastName] = useState('');
   const [userId, setUserId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isVerifying, setIsVerifying] = useState(false);
   const [isInitLoading, setIsInitLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [startProgress, setStartProgress] = useState(0);
@@ -863,7 +855,7 @@ function AssessmentContent() {
   }, [resetInactivity, viewingIndex, questions, sendMessage, sessionId]);
 
   const handleVerifyYes = useCallback(async () => {
-    setIsLoading(true);
+    setIsVerifying(true);
     try {
       if (sessionId) {
         // Start generation and redirect — results page handles the loading UI
@@ -1254,10 +1246,10 @@ function AssessmentContent() {
             <div className="flex gap-3">
               <button
                 onClick={handleVerifyYes}
-                disabled={isLoading}
+                disabled={isVerifying}
                 className="flex-1 font-sans text-sm rounded-xl py-3 bg-[#2563EB] text-white font-semibold hover:bg-[#1D4ED8] transition-colors disabled:opacity-50"
               >
-                {isLoading ? 'Loading…' : 'Yes, show my results'}
+                {isVerifying ? 'Loading…' : 'Yes, show my results'}
               </button>
               {themes.length > 0 && (
                 <button

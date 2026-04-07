@@ -282,6 +282,35 @@ export function validateAssessmentResponse(
     score -= 3;
   }
 
+  // Rule 10: Format/intent mismatch — open-ended "or" choice questions must NOT use Likert/frequency/scale
+  // Examples: "do you tend to feel X, or more like Y?" cannot pair with Strongly Agree → Strongly Disagree
+  if (qt && format) {
+    const likertLikeFormats = ['agree_disagree', 'frequency', 'scale'];
+    if (likertLikeFormats.includes(format)) {
+      // Detect "or" choice pattern: "..., or X?" or "X or Y?" near the end of the question
+      const orChoicePattern = /\b(more|tend(s|ing)? to|feel|like|do)\b[^?]{3,80}\bor\b[^?]{2,80}\?/i;
+      const startsWithQuestionWord = /^(when|how|do|does|what|why|which|are|is|would|could|should)\b/i.test(qt);
+      const hasOrChoice = orChoicePattern.test(qt) || /,\s*or\s+(more |like |something )?[^?]{2,60}\?/i.test(qt);
+
+      if (hasOrChoice) {
+        issues.push({
+          rule: 'format_intent_mismatch_or_choice',
+          severity: 'critical',
+          message: `Open "or" choice question paired with ${format} scale. Must use forced_choice or open format.`,
+        });
+        score -= 3;
+      } else if (format === 'agree_disagree' && startsWithQuestionWord) {
+        // agree_disagree should be a STATEMENT (e.g. "I tend to..."), not a question (e.g. "When you...?")
+        issues.push({
+          rule: 'agree_disagree_should_be_statement',
+          severity: 'critical',
+          message: 'agree_disagree format requires a statement, not a "When/How/Do you" question.',
+        });
+        score -= 3;
+      }
+    }
+  }
+
   // Clamp score
   score = Math.max(0, Math.min(10, score));
 
@@ -292,6 +321,41 @@ export function validateAssessmentResponse(
     autoFixed,
     fixedParts: autoFixed ? fixedParts : undefined,
   };
+}
+
+/**
+ * Sanitize thinking_display (the per-turn reflection shown during loading).
+ * Strips AI tropes, meta-quoting reflections, and aphoristic garbage.
+ * Returns the cleaned text, or empty string if it should be hidden entirely.
+ */
+const THINKING_DISPLAY_TROPE_PATTERNS: RegExp[] = [
+  // Negative parallelism: "Not X. Not Y. Z..."
+  /\bnot\s+\w+ing[.,]\s*not\s+\w+ing/i,
+  // Aphoristic "X is internal — not borrowed" / "X — not Y" reframes
+  /—\s*not\s+(borrowed|inherited|copied|imitated)\b/i,
+  // Meta-quoting: "the X-part landed clearly", "X really came through"
+  /\bthe\s+[^.]{4,40}-part\b/i,
+  /\b(landed|came through|stood out|registered)\s+(clearly|hard|loud)\b/i,
+  // Generic Frankl-esque aphorisms
+  /\bbetween\s+stimulus\s+and\s+response\b/i,
+  /\breturning\s+to\s+what\s+was\s+(always|already)\s+there\b/i,
+  // Quote-and-reframe formula: starts with quoted answer, then dramatic statement
+  /^["'].{2,40}["']\s*[—–-]/,
+  // Numerical callback: "A 4 out of 5 — that's..."
+  /^a?\s*\d+\s*(out\s+of|\/)\s*\d+\s*[—–-]/i,
+  // "That gap matters", "That tells me", etc.
+  /\bthat\s+(gap|tension|hesitation|space)\s+(matters|is|tells|says)\b/i,
+];
+
+export function sanitizeThinkingDisplay(text: string | null | undefined): string {
+  if (!text) return '';
+  const trimmed = text.trim();
+  if (!trimmed) return '';
+  // If any trope pattern matches, drop the whole thing — fallback will be used
+  if (THINKING_DISPLAY_TROPE_PATTERNS.some(p => p.test(trimmed))) {
+    return '';
+  }
+  return trimmed;
 }
 
 /**

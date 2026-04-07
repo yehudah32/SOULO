@@ -189,12 +189,10 @@ export default function Home() {
 
           {loggedIn && userId ? (
             <button
-              onClick={() => router.push(
-                `/assessment?userId=${encodeURIComponent(userId)}&email=${encodeURIComponent(userEmail)}`
-              )}
+              onClick={() => router.push(`/results?userId=${encodeURIComponent(userId)}`)}
               className="mt-4 inline-block bg-[#2563EB] text-white font-sans font-semibold text-base px-10 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md active:bg-[#1E40AF]"
             >
-              Begin New Assessment
+              My Portal
             </button>
           ) : (
             <button
