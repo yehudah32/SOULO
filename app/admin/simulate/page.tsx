@@ -154,6 +154,24 @@ export default function SimulatePage() {
                   <option key={s} value={s}>Stage {s}</option>
                 ))}
               </select>
+              <a
+                href={`/results?sessionId=${encodeURIComponent(sessionId)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-sans text-xs border border-[#7A9E7E] text-[#7A9E7E] px-4 py-1.5 rounded-lg hover:bg-[#7A9E7E]/10"
+                title="Opens the real /results page using this session — same code path as a real user"
+              >
+                View Results →
+              </a>
+              <a
+                href={`/admin/${encodeURIComponent(sessionId)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-sans text-xs border border-[#E8E4E0] text-[#6B6B6B] px-4 py-1.5 rounded-lg hover:bg-[#FAF8F5]"
+                title="Opens the admin session detail view"
+              >
+                Admin View
+              </a>
             </>
           )}
         </div>
@@ -161,8 +179,16 @@ export default function SimulatePage() {
 
       {!sessionId ? (
         <div className="flex items-center justify-center h-[60vh]">
-          <div className="text-center">
+          <div className="text-center max-w-md">
             <p className="font-sans text-sm text-[#9B9590] mb-4">Click &quot;New Session&quot; to start a simulated assessment.</p>
+            <div className="text-[0.7rem] text-[#9B9590] bg-[#FAF8F5] border border-[#E8E4E0] rounded-lg p-3 text-left leading-relaxed">
+              <strong>This simulator is a thin proxy.</strong> Every session runs the
+              EXACT same code path as a real user assessment — same system prompt
+              (v2 with Whole Type Probing Strategy), same vector v2 shadow logging,
+              same tiebreaker detection, same persistence to Supabase. Anything you
+              do here produces real data in <code>shadow_mode_log</code> and
+              <code>assessment_results</code>. Use it freely for testing.
+            </div>
           </div>
         </div>
       ) : (

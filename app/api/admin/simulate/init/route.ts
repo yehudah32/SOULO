@@ -1,11 +1,23 @@
-import { NextResponse } from 'next/server';
-import Anthropic from '@anthropic-ai/sdk';
-import { ENNEAGRAM_SYSTEM_PROMPT } from '@/lib/system-prompt';
-import { initSession, setSession, getSession } from '@/lib/session-store';
-import { parseAIResponse } from '@/lib/parse-response';
-import { isAdminAuthed } from '@/lib/admin-auth';
+// Admin assessment simulator — INIT proxy.
+//
+// This is a thin wrapper around /api/chat/init. The simulator must run the
+// EXACT same code path as a real user assessment so that:
+//   1. The system prompt v2 (with Whole Type Probing Strategy) is in effect
+//   2. Vector v2 shadow logging fires for every turn
+//   3. Tiebreaker detection runs
+//   4. lastQuestionContext is captured
+//   5. All validation, supervisor, and persistence side effects happen
+//
+// Previously this route had its own parallel Claude call with the OLD
+// system prompt — that drift meant simulator data did NOT reflect what real
+// users got. We now forward to /api/chat/init via fetch and augment the
+// response with sessionState for the inspector panel.
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+export const runtime = 'nodejs';
+
+import { NextResponse } from 'next/server';
+import { getSession } from '@/lib/session-store';
+import { isAdminAuthed } from '@/lib/admin-auth';
 
 export async function POST(request: Request) {
   if (!(await isAdminAuthed(request))) {
@@ -13,44 +25,42 @@ export async function POST(request: Request) {
   }
 
   try {
-    const sessionId = `admin-${crypto.randomUUID()}`;
-    initSession(sessionId);
+    // Forward an empty body to /api/chat/init — same as a real user clicking
+    // "start assessment". The init route handles VECTOR_MODE, hybrid setup,
+    // pre-written opening, etc.
+    const host = request.headers.get('host') || 'localhost:3000';
+    const protocol = host.startsWith('localhost') ? 'http' : 'https';
+    const initUrl = `${protocol}://${host}/api/chat/init`;
 
-    const result = await client.messages.create({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 2048,
-      system: ENNEAGRAM_SYSTEM_PROMPT,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      tools: [{ type: 'web_search_20250305' as any, name: 'web_search' }],
-      messages: [
-        {
-          role: 'user',
-          content:
-            'Begin the Soulo Enneagram assessment now. You are the assessor. You lead this process from start to finish. The user does not direct this conversation — you do.\n\nOutput your INTERNAL block first, then your RESPONSE block.\n\nYour RESPONSE is the opening message. It must do exactly these things in this exact order — no more, no less:\n\n1. Name what this is in one sentence: a structured adaptive assessment, not a quiz, no right or wrong answers, takes 15-20 minutes.\n2. Tell them exactly what to expect: they will be asked different types of questions — some yes/no, some agree/disagree, some scales, some more open — and the experience adapts as it learns more about them.\n3. Ask them one direct question to confirm they are ready to begin.\n\nAfter they confirm, your very next message is your first real assessment question. From that point forward every single message follows this format without exception:\n- Maximum 2-3 sentences total\n- One brief acknowledgment of their answer (optional, skip if it adds nothing)\n- One question in a specific format: forced choice, agree/disagree, yes/no, numeric scale, frequency scale, or behavioral anchor\n- Never open-ended therapy questions\n- Never more than one question\n- Never following the user into tangents\n- You decide where this goes. Always.',
-        },
-      ],
+    const res = await fetch(initUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      // Empty body — admin simulator does not pass email/userId/demographics
+      // so the session is anonymous. This mirrors a brand-new user's flow.
+      body: JSON.stringify({}),
     });
 
-    const rawText = result.content
-      .filter((b) => b.type === 'text')
-      .map((b) => (b as { type: 'text'; text: string }).text)
-      .join('\n');
+    if (!res.ok) {
+      const errBody = await res.text();
+      console.error('[admin/simulate/init] /api/chat/init failed:', res.status, errBody);
+      return NextResponse.json({ error: 'Init failed', detail: errBody }, { status: res.status });
+    }
 
-    const { internal, response } = parseAIResponse(rawText);
+    const data = await res.json();
 
-    setSession(sessionId, {
-      internalState: internal,
-      conversationHistory: [{ role: 'assistant', content: response }],
-    });
-
-    const session = getSession(sessionId);
+    // Augment with full session state so the admin inspector panel can
+    // display internal hypothesis, vector scores, etc. /api/chat/init does
+    // not normally return this — it's an admin-only field.
+    const session = getSession(data.sessionId);
 
     return NextResponse.json({
-      sessionId,
-      response,
-      internal,
+      sessionId: data.sessionId,
+      response: data.response,
+      message: data.message,
+      internal: data.internal,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      response_parts: (internal as any)?.response_parts ?? null,
+      response_parts: (data.internal as any)?.response_parts ?? null,
+      currentSection: data.currentSection,
       sessionState: session,
     });
   } catch (err) {

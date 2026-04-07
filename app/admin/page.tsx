@@ -3,6 +3,10 @@ import Link from 'next/link';
 import SyncButton from './SyncButton';
 import QuestionYieldDashboard from './QuestionYieldDashboard';
 
+// Must match VECTOR_MODE in app/api/chat/route.ts and chat/init/route.ts.
+// Read-only on the dashboard — change requires a code deploy.
+const CURRENT_VECTOR_MODE: 'off' | 'shadow' | 'hybrid' = 'shadow';
+
 const TYPE_NAMES: Record<number, string> = {
   1: 'Reformer', 2: 'Helper', 3: 'Achiever', 4: 'Individualist',
   5: 'Investigator', 6: 'Loyalist', 7: 'Enthusiast', 8: 'Challenger', 9: 'Peacemaker',
@@ -113,6 +117,30 @@ export default async function AdminDashboard() {
         </div>
         <div className="flex items-center gap-4">
           <Link
+            href="/admin/simulate"
+            className="font-sans text-xs text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
+          >
+            Simulate
+          </Link>
+          <Link
+            href="/admin/shadow-mode"
+            className="font-sans text-xs text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
+          >
+            Shadow Mode
+          </Link>
+          <Link
+            href="/admin/preview-results"
+            className="font-sans text-xs text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
+          >
+            Preview Results
+          </Link>
+          <Link
+            href="/admin/users"
+            className="font-sans text-xs text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
+          >
+            Users
+          </Link>
+          <Link
             href="/assessment"
             className="font-sans text-xs text-[#7A9E7E] hover:text-[#5C8060] transition-colors"
           >
@@ -136,6 +164,31 @@ export default async function AdminDashboard() {
             <p className="font-sans text-sm text-gray-700">All completed sessions, quality scores, and outcomes.</p>
           </div>
           <SyncButton />
+        </div>
+
+        {/* Vector mode banner — surfaces the current scoring deployment posture */}
+        <div className={`rounded-2xl border p-4 ${
+          CURRENT_VECTOR_MODE === 'shadow' ? 'bg-blue-50 border-blue-200' :
+          CURRENT_VECTOR_MODE === 'hybrid' ? 'bg-green-50 border-green-200' :
+          'bg-gray-50 border-gray-200'
+        }`}>
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-col gap-0.5">
+              <span className="font-sans text-[0.65rem] uppercase tracking-[0.08em] text-gray-500">Vector mode</span>
+              <span className="font-serif text-base font-semibold text-[#2C2C2C]">{CURRENT_VECTOR_MODE.toUpperCase()}</span>
+            </div>
+            <div className="text-xs text-gray-600 max-w-md text-right">
+              {CURRENT_VECTOR_MODE === 'shadow' && (
+                <>Claude scores assessments. Vector v2 runs in the background and logs predictions for validation. <Link href="/admin/shadow-mode" className="underline hover:text-[#2563EB]">View shadow data →</Link></>
+              )}
+              {CURRENT_VECTOR_MODE === 'hybrid' && (
+                <>Vector v2 in front, Claude for differentiation. Validated for promotion. <Link href="/admin/shadow-mode" className="underline hover:text-[#2563EB]">View metrics →</Link></>
+              )}
+              {CURRENT_VECTOR_MODE === 'off' && (
+                <>Pure Claude. No vector logging.</>
+              )}
+            </div>
+          </div>
         </div>
 
         {fetchError ? (
