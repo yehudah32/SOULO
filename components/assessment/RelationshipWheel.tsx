@@ -16,7 +16,7 @@ interface RelationshipWheelProps {
   wholeTypeTypes?: { body: number; heart: number; head: number } | null;
   energizingType: number;
   resolutionType: number;
-  relationshipDescriptions: Record<string, { label: string; description: string }>;
+  relationshipDescriptions: Record<string, { label?: string; description?: string; embodiment?: string; own_it?: string; defy_practice?: string }>;
   onTypeHover: (type: number | null) => void;
   hoveredType: number | null;
   selectedType?: number | null;

@@ -123,6 +123,7 @@ function SectionFade({ children, sectionIndex, activeSection }: {
       <style>{`
         @keyframes sr-card { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
         .sr-card { animation: sr-card 0.5s ease-out forwards; opacity:0; }
+        @keyframes sr-crossfade { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
         @keyframes domain-pulse { 0%,100% { transform:scale(1); opacity:.8; } 50% { transform:scale(1.08); opacity:1; } }
         @keyframes domain-glow-red { 0%,100% { box-shadow:0 0 20px rgba(220,38,38,.08); } 50% { box-shadow:0 0 30px rgba(220,38,38,.15); } }
         @keyframes domain-glow-blue { 0%,100% { box-shadow:0 0 20px rgba(37,99,235,.08); } 50% { box-shadow:0 0 30px rgba(37,99,235,.15); } }
@@ -2739,9 +2740,9 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         );
       }
 
-      // ── Section 12: Relationship Wheel ──
+      // ── Section 12: The Circle Is Wholeness — Internal Energies ──
       case 12: {
-        const relDesc = (r.relationship_descriptions as Record<string, { label: string; description: string }>) || {};
+        const relDesc = (r.relationship_descriptions as Record<string, { label?: string; description?: string; embodiment?: string; own_it?: string; defy_practice?: string }>) || {};
         const coreType = leadingType;
         const energizingType12 = ENERGIZING_POINTS[coreType] || 4;
         const resolutionType12 = RESOLUTION_POINTS[coreType] || 7;
@@ -2822,11 +2823,11 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
         return (
           <div className="flex flex-col gap-5 max-w-[800px] w-full">
             {/* Section header */}
-            <div className="bg-gradient-to-b from-[#F0F4FF] to-transparent rounded-2xl px-6 pt-6 pb-3 text-center sr-card" style={{ animationDelay: '0.05s' }}>
+            <div className="bg-gradient-to-b from-[#F0F4FF] to-transparent rounded-2xl px-6 pt-6 pb-4 text-center sr-card" style={{ animationDelay: '0.05s' }}>
               <p className="font-mono text-[0.6rem] text-[#2563EB] uppercase tracking-[0.12em] mb-1">The Circle Is Wholeness</p>
-              <h2 className="font-serif text-[1.5rem] font-bold text-[#2C2C2C]">The Energies Within You</h2>
-              <p className="font-sans text-[0.85rem] text-[#6B6B6B] mt-1 max-w-md mx-auto leading-relaxed">
-                You are not a single type — you are the entire circle. Every energy lives in you at different strengths. Tap any point to explore.
+              <h2 className="font-serif text-[1.5rem] font-bold text-[#2C2C2C]">The Nine Energies Within You</h2>
+              <p className="font-sans text-[0.85rem] text-[#6B6B6B] mt-2 max-w-lg mx-auto leading-relaxed">
+                All nine energies live in you. Your type is which one has been running you — not which one you are. The work is to return to the whole circle. Tap any point to explore that energy.
               </p>
             </div>
 
@@ -2865,87 +2866,138 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
               </div>
 
               {/* Energy info card */}
-              <div className="flex-1 min-w-[260px] bg-white border border-[#E8E4E0] rounded-2xl p-7 min-h-[300px] flex flex-col justify-center transition-all duration-200">
+              <div className="flex-1 min-w-[260px] bg-white border border-[#E8E4E0] rounded-2xl p-7 min-h-[340px] flex flex-col justify-center transition-all duration-200">
                 {(selectedRelType || hoveredRelType) === null ? (
                   <div className="text-center">
                     <p className="font-serif text-[1.1rem] text-[#2C2C2C] mb-2">Explore the circle</p>
                     <p className="font-sans text-[0.85rem] text-[#9B9590] leading-relaxed">
-                      Tap or hover any point to see how that energy lives within you. The larger the ring, the stronger the presence.
+                      Tap or hover any energy to see how it lives inside you — the gift it carries, the shadow it casts, and how to channel it consciously.
                     </p>
                   </div>
                 ) : (() => {
                   const activeType = selectedRelType || hoveredRelType;
                   if (!activeType) return null;
+                  const relKey = String(activeType);
+                  const relData = relDesc[relKey] || {};
+                  const energyName = relData.label && !/^(your|home|energizing|resolution|wing|whole type|least active|body center|heart center|head center)/i.test(relData.label)
+                    ? relData.label
+                    : '';
+                  const gift = relData.description || '';
+                  const livesInYou = relData.embodiment || '';
+                  const shadow = relData.own_it || '';
+                  const channel = relData.defy_practice || '';
+                  const activeScore = typeScoresMap[relKey] ?? 0;
+                  const activePct = getNormalizedPct(activeScore);
+                  const activeBar = getBarPct(activeScore);
+                  const isHome = activeType === coreType;
+                  const accent = getEnergyColor(activeType);
                   return (
-                  <div>
+                  <div key={activeType} style={{ animation: 'sr-crossfade 260ms ease-out' }}>
                     {/* Label tags */}
                     <div className="flex flex-wrap gap-1.5 mb-3">
-                      {getEnergyLabel(activeType).split(' · ').map((tag, i) => (
+                      {isHome && (
+                        <span className="font-mono text-[0.55rem] uppercase tracking-widest px-2 py-0.5 rounded-full"
+                          style={{ color: '#FFFFFF', background: '#2563EB', border: '1px solid #2563EB' }}
+                        >HOME ENERGY</span>
+                      )}
+                      {getEnergyLabel(activeType).split(' · ').filter(t => !isHome || t !== 'YOUR HOME BASE').map((tag, i) => (
                         <span key={i} className="font-mono text-[0.55rem] uppercase tracking-widest px-2 py-0.5 rounded-full"
                           style={{
-                            color: activeType === coreType ? '#2563EB' : getEnergyColor(activeType),
-                            background: activeType === coreType ? '#EFF6FF' : `${getEnergyColor(activeType)}10`,
-                            border: `1px solid ${activeType === coreType ? '#DBEAFE' : getEnergyColor(activeType)}20`,
+                            color: accent,
+                            background: `${accent}10`,
+                            border: `1px solid ${accent}20`,
                           }}
                         >{tag}</span>
                       ))}
                     </div>
                     {/* Big number + name */}
-                    <div className="flex items-end gap-3 mb-3">
-                      <span className="font-serif font-bold text-[3rem] leading-none" style={{ color: getEnergyColor(activeType) }}>
+                    <div className="flex items-end gap-3 mb-1">
+                      <span className="font-serif font-bold text-[3rem] leading-none" style={{ color: accent }}>
                         {activeType}
                       </span>
                       <div className="pb-1">
-                        <span className="font-serif text-lg text-[#2C2C2C]">{TYPE_NAMES[activeType]}</span>
-                        {typeScoresMap[String(activeType)] !== undefined && (
-                          <span className="font-sans text-xs text-[#9B9590] ml-2">{getNormalizedPct(typeScoresMap[String(activeType)] ?? 0)}% active</span>
+                        <div className="font-serif text-lg text-[#2C2C2C]">{TYPE_NAMES[activeType]}</div>
+                        {energyName && (
+                          <div className="font-serif italic text-[0.78rem] text-[#6B6B6B] leading-tight">{energyName}</div>
                         )}
                       </div>
                     </div>
-                    {/* Description */}
-                    <p className="font-sans text-[0.88rem] text-[#2C2C2C] leading-[1.7]">
-                      {activeType === coreType
-                        ? ((r.core_type_description as string) || `This is your home base — the pattern you know most intimately. The work isn't to escape it. It's to choose it consciously.`)
-                        : getEnergyDescription(activeType)
-                      }
-                    </p>
 
-                    {/* Practical layer — embodiment + own it (not for core type) */}
-                    {activeType !== coreType && (() => {
-                      const relKey = String(activeType);
-                      const relData = relDesc[relKey] as { label?: string; description?: string; embodiment?: string; own_it?: string } | undefined;
-                      const embodiment = relData?.embodiment || '';
-                      const ownIt = relData?.own_it || '';
-                      if (!embodiment && !ownIt) return null;
-                      return (
-                        <>
-                          <div className="w-full h-px my-3" style={{ background: `linear-gradient(to right, transparent, ${getEnergyColor(activeType)}20, transparent)` }} />
-                          {embodiment && (
-                            <div className="mb-2">
-                              <p className="font-mono text-[0.55rem] uppercase tracking-widest text-[#9B9590] mb-1">What This Looks Like</p>
-                              <p className="font-sans text-[0.82rem] text-[#4B5563] leading-[1.7]">{embodiment}</p>
-                            </div>
-                          )}
-                          {ownIt && (
-                            <div className="rounded-lg px-4 py-3 mt-1" style={{ background: `${getEnergyColor(activeType)}08` }}>
-                              <p className="font-serif italic text-[0.85rem] leading-[1.7]" style={{ color: getEnergyColor(activeType) }}>
-                                {ownIt}
-                              </p>
-                            </div>
-                          )}
-                        </>
-                      );
-                    })()}
+                    {/* Score bar — % active within you */}
+                    {typeScoresMap[relKey] !== undefined && (
+                      <div className="mb-4 mt-2">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="font-mono text-[0.55rem] uppercase tracking-widest text-[#9B9590]">Active within you</span>
+                          <span className="font-mono text-[0.7rem]" style={{ color: accent }}>{activePct}%</span>
+                        </div>
+                        <div className="h-1.5 w-full rounded-full bg-[#F3F0EC] overflow-hidden">
+                          <div
+                            className="h-full rounded-full transition-[width] duration-700 ease-out"
+                            style={{
+                              width: `${Math.max(3, activeBar)}%`,
+                              background: `linear-gradient(to right, ${accent}60, ${accent})`,
+                              boxShadow: `0 0 8px ${accent}40`,
+                            }}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* The gift */}
+                    {gift ? (
+                      <div className="mb-3">
+                        <p className="font-mono text-[0.55rem] uppercase tracking-widest text-[#9B9590] mb-1">The Gift It Carries</p>
+                        <p className="font-sans text-[0.86rem] text-[#2C2C2C] leading-[1.7]">{gift}</p>
+                      </div>
+                    ) : (
+                      <p className="font-sans text-[0.86rem] text-[#2C2C2C] leading-[1.7] mb-3">
+                        {isHome
+                          ? ((r.core_type_description as string) || `This is your home energy — the pattern you know most intimately. The work isn't to escape it. It's to choose it consciously.`)
+                          : getEnergyDescription(activeType)
+                        }
+                      </p>
+                    )}
+
+                    {/* How it lives in you */}
+                    {livesInYou && (
+                      <div className="mb-3">
+                        <p className="font-mono text-[0.55rem] uppercase tracking-widest text-[#9B9590] mb-1">
+                          {isHome ? 'Your Home Energy' : 'How It Lives In You'}
+                        </p>
+                        <p className="font-sans text-[0.84rem] text-[#4B5563] leading-[1.7]">{livesInYou}</p>
+                      </div>
+                    )}
+
+                    {/* Shadow side */}
+                    {shadow && (
+                      <div className="mb-3 rounded-lg px-4 py-3 border-l-2" style={{ background: '#FEF2F2', borderLeftColor: '#DC2626' }}>
+                        <p className="font-mono text-[0.55rem] uppercase tracking-widest mb-1" style={{ color: '#B91C1C' }}>Shadow Side</p>
+                        <p className="font-sans text-[0.82rem] leading-[1.7]" style={{ color: '#7F1D1D' }}>{shadow}</p>
+                      </div>
+                    )}
+
+                    {/* Channel it consciously — the practice */}
+                    {channel && (
+                      <div className="rounded-lg px-4 py-3 border-l-2" style={{ background: '#EFF6FF', borderLeftColor: '#2563EB' }}>
+                        <p className="font-mono text-[0.55rem] uppercase tracking-widest mb-1" style={{ color: '#1D4ED8' }}>
+                          {isHome ? 'Channel It Consciously' : 'Defy Your Number · Channel This Energy'}
+                        </p>
+                        <p className="font-serif italic text-[0.85rem] leading-[1.7]" style={{ color: '#1E3A8A' }}>
+                          {channel}
+                        </p>
+                      </div>
+                    )}
                   </div>
                   );
                 })()}
               </div>
             </div>
 
-            {/* Integration message */}
-            <div className="rounded-2xl p-6 text-center" style={{ background: 'linear-gradient(135deg, #F0F4FF, #FAF8F5)' }}>
-              <p className="font-serif italic text-[0.95rem] text-[#4B5563] leading-[1.8]">
-                The circle is wholeness. The work is return. You are not fixed at any single point — you are the entire wheel, learning to move through it consciously.
+            {/* Integration message — the tenth type / whole circle teaching */}
+            <div className="rounded-2xl p-6 text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #F0F4FF, #FAF8F5)' }}>
+              <p className="font-mono text-[0.55rem] text-[#2563EB] uppercase tracking-[0.15em] mb-2">The Tenth Type</p>
+              <p className="font-serif italic text-[0.95rem] text-[#4B5563] leading-[1.8] max-w-xl mx-auto">
+                The circle is wholeness. All nine energies live in you. Your type is which one has been running you — not which one you are. The work is return. You are not fixed at any single point — you are the entire wheel, learning to move through it consciously.
               </p>
             </div>
 

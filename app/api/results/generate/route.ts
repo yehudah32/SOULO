@@ -434,8 +434,17 @@ This person is one of 1,350+ possible profiles. Make the output SPECIFIC to thei
 FAMOUS EXAMPLES RULES:
 Generate EXACTLY 8 famous examples. ${session.demographics ? `User demographics: age=${session.demographics.ageRange}, gender=${session.demographics.gender}, ethnicity=${session.demographics.ethnicity}, country=${session.demographics.country}, religion=${session.demographics.religion}. Demographic relevance takes top priority — include at least one figure matching EACH demographic they provided.` : ''} AIM FOR WIDE REPRESENTATION across different fields — the list should feel like a cross-section of how this type shows up in the world, not just one industry. After filling demographic matches, actively diversify: science/medicine/technology, politics/activism/social change, sports/athletics, business/entrepreneurship, literature/philosophy/academia, music, art, spiritual leadership, military, journalism. Avoid clustering — if you already have 2+ from entertainment, look elsewhere. Both historical and contemporary figures should be represented. Leave photo_url as empty string — photos are handled separately.
 
-RELATIONSHIP DESCRIPTIONS — ALL 9 REQUIRED:
-You MUST generate a relationship_descriptions entry for EVERY type (1 through 9). Each entry needs label, description (2-3 sentences), embodiment (1-2 sentences), and own_it (1 sentence). Never skip any type.
+ENERGY DESCRIPTIONS — INTERNAL, NOT SOCIAL — ALL 9 REQUIRED:
+The relationship_descriptions field is NOT about how this person relates to OTHER people of each type. It is about how each of the 9 energies lives WITHIN this person — their internal relationship to all 9 energies. This is the "tenth type" / whole circle teaching: all 9 energies live in the person, and the work is to return to wholeness by consciously accessing each.
+
+You MUST generate a relationship_descriptions entry for EVERY type (1 through 9). Each entry must answer FOUR distinct questions about that energy as it lives inside THIS person:
+1. label — a short essence name for the energy (e.g. "The Reformer's Integrity", "The Helper's Warmth", "The Achiever's Drive"). NOT a relationship label.
+2. description — what this energy IS and what GIFT it carries when accessed consciously. 2-3 sentences. Written in second person about the energy itself ("This energy carries the gift of…"), not "a Type X person is…".
+3. embodiment — how this energy lives in YOU SPECIFICALLY given your core type ${leadingType}. What does it look like when it's active in your life, and how active is it (use the type_scores context). For the user's core type ${leadingType}, explicitly frame this as "your home energy". 2-3 sentences, second person.
+4. own_it — the SHADOW SIDE — what this energy looks like when it runs on autopilot, unconscious, fear-driven, inside you. 1-2 sentences. NEVER a social relationship warning — it's about the shadow of this energy WITHIN the person.
+5. defy_practice — the concrete Defiant Spirit practice for channeling this energy consciously. How does THIS user (a ${leadingType}w${wingDominant} ${dominantVariant}) access this particular energy as part of their wholeness? Actionable. 2-3 sentences. Tie back to "defy your number" — stepping outside the home pattern to touch this energy deliberately.
+
+ABSOLUTELY FORBIDDEN in these fields: "how you relate to a Type X", "when you meet a Type X", "in relationship with a Type X", "people of this type", "others who are this type", or any framing that makes it about social relationships. This is the user's INTERNAL circle.
 
 OUTPUT COMPLETENESS — CRITICAL:
 Every single field in the JSON template must have substantive content. No empty strings. No placeholder text. If you're unsure about a field, write the best type-informed response you can. Err on the side of MORE content, not less. The person is paying attention to every word.
@@ -577,15 +586,15 @@ Return this exact JSON structure:
     }
   ],
   "relationship_descriptions": {
-    "1": {"label": "<label>", "description": "<2-3 sentences: analytical>", "embodiment": "<1-2 sentences: concrete behaviors>", "own_it": "<1 sentence: Defiant Spirit framing>", "defy_practice": "<2-3 sentences: SPECIFIC practical advice for this person. Based on their score for this energy — if high (>0.3), how to channel it consciously instead of being run by it. If low (<0.15), what this energy offers that they're missing and one concrete way to practice it. Reference their specific type. Actionable and grounded.>"},
-    "2": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
-    "3": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
-    "4": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
-    "5": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
-    "6": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
-    "7": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
-    "8": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"},
-    "9": {"label": "<label>", "description": "<2-3 sentences>", "embodiment": "<1-2 sentences>", "own_it": "<1 sentence>", "defy_practice": "<2-3 sentences>"}
+    "1": {"label": "<short essence name for this energy — e.g. 'The Reformer's Integrity' — NOT a relationship label>", "description": "<2-3 sentences: what THIS ENERGY is and the GIFT it carries. Second person about the energy, not about people of this type.>", "embodiment": "<2-3 sentences: how this energy lives inside YOU specifically given core type ${leadingType}. For type ${leadingType}, frame as 'your home energy'.>", "own_it": "<1-2 sentences: the SHADOW side — what this energy looks like when it runs on autopilot inside you. Never social framing.>", "defy_practice": "<2-3 sentences: concrete Defiant Spirit practice for channeling this energy consciously as a ${leadingType}w${wingDominant} ${dominantVariant}. Tie to 'defy your number'.>"},
+    "2": {"label": "<energy essence name>", "description": "<gift of this energy, 2-3 sentences>", "embodiment": "<how it lives in you as a ${leadingType}, 2-3 sentences>", "own_it": "<shadow when unconscious, 1-2 sentences>", "defy_practice": "<how to channel it, 2-3 sentences>"},
+    "3": {"label": "<energy essence name>", "description": "<gift of this energy, 2-3 sentences>", "embodiment": "<how it lives in you as a ${leadingType}, 2-3 sentences>", "own_it": "<shadow when unconscious, 1-2 sentences>", "defy_practice": "<how to channel it, 2-3 sentences>"},
+    "4": {"label": "<energy essence name>", "description": "<gift of this energy, 2-3 sentences>", "embodiment": "<how it lives in you as a ${leadingType}, 2-3 sentences>", "own_it": "<shadow when unconscious, 1-2 sentences>", "defy_practice": "<how to channel it, 2-3 sentences>"},
+    "5": {"label": "<energy essence name>", "description": "<gift of this energy, 2-3 sentences>", "embodiment": "<how it lives in you as a ${leadingType}, 2-3 sentences>", "own_it": "<shadow when unconscious, 1-2 sentences>", "defy_practice": "<how to channel it, 2-3 sentences>"},
+    "6": {"label": "<energy essence name>", "description": "<gift of this energy, 2-3 sentences>", "embodiment": "<how it lives in you as a ${leadingType}, 2-3 sentences>", "own_it": "<shadow when unconscious, 1-2 sentences>", "defy_practice": "<how to channel it, 2-3 sentences>"},
+    "7": {"label": "<energy essence name>", "description": "<gift of this energy, 2-3 sentences>", "embodiment": "<how it lives in you as a ${leadingType}, 2-3 sentences>", "own_it": "<shadow when unconscious, 1-2 sentences>", "defy_practice": "<how to channel it, 2-3 sentences>"},
+    "8": {"label": "<energy essence name>", "description": "<gift of this energy, 2-3 sentences>", "embodiment": "<how it lives in you as a ${leadingType}, 2-3 sentences>", "own_it": "<shadow when unconscious, 1-2 sentences>", "defy_practice": "<how to channel it, 2-3 sentences>"},
+    "9": {"label": "<energy essence name>", "description": "<gift of this energy, 2-3 sentences>", "embodiment": "<how it lives in you as a ${leadingType}, 2-3 sentences>", "own_it": "<shadow when unconscious, 1-2 sentences>", "defy_practice": "<how to channel it, 2-3 sentences>"}
   },
   "famous_examples_disclaimer": "Enneagram typing of public figures is interpretive — community observations only."
 }
@@ -740,10 +749,10 @@ Make the content deeply personal, specific, and grounded in the actual conversat
         const relRepairRes = await client.messages.create({
           model: 'claude-sonnet-4-6',
           max_tokens: 4000,
-          system: `You generate Enneagram relationship energy descriptions in Dr. Baruch HaLevi's Defiant Spirit voice. Return ONLY valid JSON. No markdown.`,
+          system: `You generate INTERNAL energy descriptions for the Enneagram "whole circle / tenth type" teaching in Dr. Baruch HaLevi's Defiant Spirit voice. These are NOT about social relationships — they are about how each of the 9 energies lives INSIDE the user. Return ONLY valid JSON. No markdown.`,
           messages: [{
             role: 'user',
-            content: `Generate relationship_descriptions for Enneagram Type ${leadingType} (${leadingType}w${wingDominant}, ${dominantVariant}) showing how this person relates to each of the 9 energies. For each type 1-9, include: label (short name), description (2-3 sentences), embodiment (1-2 sentences of concrete behaviors), own_it (1 sentence in Defiant Spirit voice).\n\nReturn:\n{"1":{"label":"...","description":"...","embodiment":"...","own_it":"..."},"2":{...},...,"9":{...}}`
+            content: `For a ${leadingType}w${wingDominant} ${dominantVariant}, describe how each of the 9 enneagram energies lives WITHIN them (not how they relate to other people). For each type 1-9, include:\n- label: short essence name for the energy (e.g. "The Reformer's Integrity"). NOT a social label.\n- description: what this energy IS and the gift it carries. 2-3 sentences. About the energy, not about "a Type X person".\n- embodiment: how this energy lives inside the user as a type ${leadingType}. 2-3 sentences. For the user's own type (${leadingType}), frame it as "your home energy".\n- own_it: the SHADOW — what this energy looks like when running unconscious inside them. 1-2 sentences.\n- defy_practice: concrete Defiant Spirit practice for channeling this energy as part of their wholeness. 2-3 sentences.\n\nNEVER use social framing like "when you meet a Type X" or "in relationship with a Type X". This is about the user's internal circle.\n\nReturn:\n{"1":{"label":"...","description":"...","embodiment":"...","own_it":"...","defy_practice":"..."},"2":{...},...,"9":{...}}`
           }],
         });
         const relText = relRepairRes.content.filter((b) => b.type === 'text').map((b) => (b as { type: 'text'; text: string }).text).join('').replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
