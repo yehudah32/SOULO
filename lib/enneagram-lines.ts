@@ -66,7 +66,18 @@ export function selectTritype(
     head: number
   }
 } {
-  const sorted = Object.entries(typeScores)
+  // Empty / all-zero input → return neutral defaults rather than NaN-laden fields
+  const entries = Object.entries(typeScores)
+  if (entries.length === 0 || entries.every(([, s]) => !s || s <= 0)) {
+    return {
+      tritype: '', wholeType: '',
+      body: 0, heart: 0, head: 0,
+      depth_scores: { body: 0, heart: 0, head: 0 },
+      depth_ranks: { body: 0, heart: 0, head: 0 },
+    }
+  }
+
+  const sorted = entries
     .map(([t, s]) => ({ type: Number(t), score: s }))
     .sort((a, b) => b.score - a.score)
 

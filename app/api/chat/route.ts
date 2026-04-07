@@ -204,17 +204,26 @@ async function updateSessionFromParsed(
     const typeScores = finalInternal?.hypothesis?.type_scores ?? {};
     const { first, second, gap } = getTopTwoTypes(typeScores);
 
-    // Structural heuristic: any forced_choice or paragraph_select question
-    // from exchange 3+ where the top two types are within 0.40 of each other
-    // counts as disconfirmatory. Check early — by stage 5, confirmatory
-    // questions have already widened the gap past useful thresholds.
-    const isActiveStage = session.exchangeCount >= 3;
-    const isBinaryFormat = questionFormat === 'forced_choice' || questionFormat === 'paragraph_select';
-    const isCloseRace = gap < 0.40 && first > 0 && second > 0;
-
-    if (isActiveStage && isBinaryFormat && isCloseRace) {
+    // Wide-gap escape: when the top type is clearly separated from runner-up
+    // (gap >= 0.40), no disconfirmatory question is needed — the assessment
+    // has already proven the difference. Without this, a clean-winner case
+    // can get stuck in the gate forever because no "close race" ever exists
+    // for a binary question to qualify against.
+    if (gap >= 0.40 && first > 0 && second > 0) {
       disconfirmatoryAsked = true;
-      console.log(`[chat] Disconfirmatory detected: stage ${stage}, format ${questionFormat}, gap ${gap.toFixed(3)} (${first}v${second})`);
+      console.log(`[chat] Disconfirmatory gate: AUTO-CLEARED on wide gap ${gap.toFixed(3)} (${first}v${second})`);
+    } else {
+      // Structural heuristic: any forced_choice or paragraph_select question
+      // from exchange 3+ where the top two types are within 0.40 of each other
+      // counts as disconfirmatory.
+      const isActiveStage = session.exchangeCount >= 3;
+      const isBinaryFormat = questionFormat === 'forced_choice' || questionFormat === 'paragraph_select';
+      const isCloseRace = gap < 0.40 && first > 0 && second > 0;
+
+      if (isActiveStage && isBinaryFormat && isCloseRace) {
+        disconfirmatoryAsked = true;
+        console.log(`[chat] Disconfirmatory detected: stage ${stage}, format ${questionFormat}, gap ${gap.toFixed(3)} (${first}v${second})`);
+      }
     }
   }
 
@@ -227,15 +236,24 @@ async function updateSessionFromParsed(
 
   // Calculate Whole Type from type_scores using center-based algorithm (one per center)
   // Do NOT trust the AI's tritype field — it may use top-3 overall instead of top-per-center (whole type)
+  // Only accept keys that map to a real type 1-9 with a numeric value. This
+  // prevents malformed responses (e.g. {"1":x, "2":y, "note":"..."}) from
+  // passing the >=3 length check while actually only carrying 2 type scores.
   const rawScores = finalInternal?.hypothesis?.type_scores ?? {};
   const numericScores: Record<number, number> = {};
   for (const [k, v] of Object.entries(rawScores)) {
-    numericScores[Number(k)] = v as number;
+    const t = Number(k);
+    if (Number.isInteger(t) && t >= 1 && t <= 9 && typeof v === 'number' && Number.isFinite(v)) {
+      numericScores[t] = v;
+    }
   }
   const computedWholeType = Object.keys(numericScores).length >= 3
     ? selectTritype(numericScores)
     : null;
-  const wholeType: string = computedWholeType?.tritype || finalInternal?.hypothesis?.tritype || session.wholeType || '';
+  // Do NOT fall back to session.wholeType — that may be a value from a prior
+  // session and would silently deliver the wrong result. If we couldn't compute
+  // it from this turn's scores, leave it empty and let the caller decide.
+  const wholeType: string = computedWholeType?.tritype || finalInternal?.hypothesis?.tritype || '';
   const wholeTypeConfidence: number = finalInternal?.hypothesis?.tritype_confidence ?? session.wholeTypeConfidence ?? 0;
   const wholeTypeArchetypeFauvre: string = finalInternal?.hypothesis?.tritype_archetype_fauvre ?? session.wholeTypeArchetypeFauvre ?? '';
   const wholeTypeArchetypeDS: string = finalInternal?.hypothesis?.tritype_archetype_ds ?? session.wholeTypeArchetypeDS ?? '';
@@ -316,10 +334,13 @@ async function updateSessionFromParsed(
       supervisor_scores: supervisorScores,
       exchange_count: session.exchangeCount + 1,
       current_stage: stage,
-    }).then(({ error }) => {
-      if (error) console.error('[chat] Supabase persist error:', error.message);
-      else console.log('[chat] Results persisted to Supabase:', sessionId);
-    });
+    }).then(
+      ({ error }) => {
+        if (error) console.error('[chat] Supabase persist error:', error.message);
+        else console.log('[chat] Results persisted to Supabase:', sessionId);
+      },
+      (err: unknown) => console.error('[chat] Supabase persist threw:', err),
+    );
 
     // Removed: unconditional updateQuestionYield(selectedQuestionId, true)
     // Yield updates now happen in the evaluator with per-question contribution measurement
@@ -382,10 +403,13 @@ async function updateSessionFromParsed(
       last_question_format: newLastFormat,
       is_complete: isComplete,
       updated_at: new Date().toISOString(),
-    }).then(({ error }) => {
-      if (error) console.error('[chat] Progress persist FAILED:', error.message);
-      else console.log('[chat] Progress saved | session:', sessionId);
-    });
+    }).then(
+      ({ error }) => {
+        if (error) console.error('[chat] Progress persist FAILED:', error.message);
+        else console.log('[chat] Progress saved | session:', sessionId);
+      },
+      (err: unknown) => console.error('[chat] Progress persist threw:', err),
+    );
     return { progressSaved: true };
   }
   return { progressSaved: false };
@@ -395,6 +419,40 @@ async function updateSessionFromParsed(
 // Runs ONE Claude call to validate the vector system's hypothesis before
 // Claude takes over for differentiation. If Claude disagrees, silently
 // corrects the hypothesis. Logs everything for manual review.
+//
+// NOTE: when the checkpoint cannot complete (Claude returns malformed JSON,
+// the API errors, etc.) we record the failure to shadow_mode_log with
+// phase='checkpoint_failed' so the admin dashboard can surface stuck or
+// degraded sessions. We do NOT inject an extra differentiation question
+// inline — that path was considered but rejected as too invasive for the
+// current request lifecycle. Tracked as a follow-up.
+function logCheckpointFailure(
+  sessionId: string,
+  exchangeNumber: number,
+  reason: string,
+  vectorTopType: number,
+  vectorConfidence: number,
+  vectorTypeScores: Record<number, number>,
+): void {
+  adminClient.from('shadow_mode_log').insert({
+    session_id: sessionId,
+    exchange_number: exchangeNumber,
+    claude_top_type: 0,
+    claude_confidence: 0,
+    vector_top_type: vectorTopType,
+    vector_confidence: vectorConfidence,
+    vector_type_scores: vectorTypeScores,
+    agreement: false,
+    center_agreement: false,
+    phase: `checkpoint_failed:${reason}`,
+  }).then(
+    ({ error }) => {
+      if (error) console.error('[reverse-shadow] Failure log error:', error.message);
+    },
+    (err: unknown) => console.error('[reverse-shadow] Failure log threw:', err),
+  );
+}
+
 async function runCheckpoint(
   session: SessionData,
   sessionId: string,
@@ -403,6 +461,7 @@ async function runCheckpoint(
   const vectorTopType = vectorScores.topTypes[0] ?? 0;
   const vectorConfidence = vectorScores.confidence;
   const history = session.conversationHistory;
+  const exchangeNumber = session.exchangeCount + 1;
 
   if (history.length === 0) return;
 
@@ -432,6 +491,7 @@ The type_scores must sum to 1.0. Be honest about your confidence.`;
     const jsonMatch = rawText.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
       console.warn('[reverse-shadow] Could not parse checkpoint response');
+      logCheckpointFailure(sessionId, exchangeNumber, 'no_json_match', vectorTopType, vectorConfidence, vectorScores.typeScores);
       return;
     }
 
@@ -440,6 +500,7 @@ The type_scores must sum to 1.0. Be honest about your confidence.`;
       parsed = JSON.parse(jsonMatch[0]);
     } catch (parseErr) {
       console.error('[reverse-shadow] JSON parse failed:', parseErr);
+      logCheckpointFailure(sessionId, exchangeNumber, 'json_parse_failed', vectorTopType, vectorConfidence, vectorScores.typeScores);
       return;
     }
 
@@ -453,11 +514,22 @@ The type_scores must sum to 1.0. Be honest about your confidence.`;
         ? parsed.type_scores as Record<string, number> : {},
     };
 
-    // Validate type_scores sum
-    const scoreValues = Object.values(claudeHypothesis.type_scores).filter(v => typeof v === 'number') as number[];
+    // Validate type_scores sum AND that we actually have enough numeric type
+    // entries to safely build a topTypes list. Fewer than 3 numeric scores
+    // would let a "correction" later produce an empty topTypes array, which
+    // hands Claude `leading_type: undefined` on the next turn.
+    const numericEntries = Object.entries(claudeHypothesis.type_scores)
+      .filter(([k, v]) => typeof v === 'number' && !Number.isNaN(Number(k)));
+    if (numericEntries.length < 3) {
+      console.warn(`[reverse-shadow] Claude returned only ${numericEntries.length} numeric type_scores — keeping vector hypothesis`);
+      logCheckpointFailure(sessionId, exchangeNumber, `too_few_scores_${numericEntries.length}`, vectorTopType, vectorConfidence, vectorScores.typeScores);
+      return;
+    }
+    const scoreValues = numericEntries.map(([, v]) => v as number);
     const scoreTotal = scoreValues.reduce((s, v) => s + v, 0);
     if (scoreTotal < 0.5 || scoreTotal > 1.5) {
       console.warn(`[reverse-shadow] Claude type_scores invalid (total: ${scoreTotal}) — keeping vector hypothesis`);
+      logCheckpointFailure(sessionId, exchangeNumber, `bad_sum_${scoreTotal.toFixed(2)}`, vectorTopType, vectorConfidence, vectorScores.typeScores);
       return;
     }
 
@@ -496,13 +568,17 @@ The type_scores must sum to 1.0. Be honest about your confidence.`;
       agreement,
       center_agreement: agreement, // simplified for checkpoint
       phase: 'checkpoint',
-    }).then(({ error }) => {
-      if (error) console.error('[reverse-shadow] Log error:', error.message);
-    });
+    }).then(
+      ({ error }) => {
+        if (error) console.error('[reverse-shadow] Log error:', error.message);
+      },
+      (err: unknown) => console.error('[reverse-shadow] Log threw:', err),
+    );
 
   } catch (err) {
     console.error('[reverse-shadow] Checkpoint failed:', err);
     // If checkpoint fails, continue without correction — vector hypothesis stands
+    logCheckpointFailure(sessionId, exchangeNumber, 'exception', vectorTopType, vectorConfidence, vectorScores.typeScores);
   }
 }
 
@@ -519,7 +595,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing sessionId or messages.' }, { status: 400 });
     }
 
-    const session = getSession(sessionId);
+    let session = getSession(sessionId);
     if (!session) {
       return NextResponse.json({ error: 'Session not found. Please refresh and start again.' }, { status: 404 });
     }
@@ -683,6 +759,9 @@ export async function POST(req: NextRequest) {
     }
 
     // ── Conversation history compression ──
+    // Re-fetch session: hybrid escalation / checkpoint may have called setSession,
+    // which replaces the stored object — our local `session` reference would be stale.
+    session = getSession(sessionId) ?? session;
     const compressed = compressHistory(messages, session.internalState);
     const anthropicMessages: Anthropic.MessageParam[] = compressed.messages as Anthropic.MessageParam[];
     if (compressed.summaryInjected) {
@@ -899,10 +978,13 @@ Format: ${diffPair.questions[qIdx].format}`;
           agreement,
           center_agreement: centerAgreement,
           phase: vectorResult.phase,
-        }).then(({ error: logErr }) => {
-          if (logErr) console.error('[shadow-mode] Log error:', logErr.message);
-          else console.log(`[shadow-mode] Exchange ${session.exchangeCount + 1}: Claude=Type${claudeTopType} Vector=Type${vectorTopType} | Type agree: ${agreement} | Center agree: ${centerAgreement}`);
-        });
+        }).then(
+          ({ error: logErr }) => {
+            if (logErr) console.error('[shadow-mode] Log error:', logErr.message);
+            else console.log(`[shadow-mode] Exchange ${session.exchangeCount + 1}: Claude=Type${claudeTopType} Vector=Type${vectorTopType} | Type agree: ${agreement} | Center agree: ${centerAgreement}`);
+          },
+          (err: unknown) => console.error('[shadow-mode] Log threw:', err),
+        );
       } catch (err) {
         console.error('[shadow-mode] Error:', err);
       }

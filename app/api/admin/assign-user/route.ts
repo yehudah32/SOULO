@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
+import bcrypt from 'bcryptjs';
 import { adminClient } from '@/lib/supabase';
 import { isAdminAuthed } from '@/lib/admin-auth';
 
 export async function POST(request: Request) {
-  if (!isAdminAuthed(request)) {
+  if (!(await isAdminAuthed(request))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -33,9 +34,11 @@ export async function POST(request: Request) {
     if (existing) {
       userId = existing.id;
     } else {
+      // Hash the passkey before storing — never persist plaintext.
+      const hashedPasskey = await bcrypt.hash(cleanPasskey, 10);
       const { data: created, error: createErr } = await adminClient
         .from('users')
-        .insert({ email: cleanEmail, passkey: cleanPasskey })
+        .insert({ email: cleanEmail, passkey: hashedPasskey, passkey_hashed: true })
         .select('id')
         .single();
 

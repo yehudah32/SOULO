@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { adminClient } from '@/lib/supabase';
+import { verifyUserCookie } from '@/lib/user-session';
 
 export async function GET(req: NextRequest) {
-  const userId = req.cookies.get('soulo_user')?.value;
+  // Cookie is now signed; verifyUserCookie returns the userId only when the
+  // signature matches. This replaces the old "trust the raw cookie value" path.
+  const userId = await verifyUserCookie(req);
 
   if (!userId) {
     return NextResponse.json({ sessions: [], loggedIn: false });

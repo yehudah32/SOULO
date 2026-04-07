@@ -139,7 +139,9 @@ export function evaluatePhaseTransition(
       const topRatio = total > 0 ? topScore / total : 0;
 
       // Check narrowing-to-differentiation conditions
-      const narrowingQuestionsAsked = exchangeCount - THRESHOLDS.centerIdToNarrowing.minQuestions;
+      // Clamp to 0 — exchangeCount can briefly be below minQuestions on early turns
+      // and we don't want a negative number tripping the threshold checks below.
+      const narrowingQuestionsAsked = Math.max(0, exchangeCount - THRESHOLDS.centerIdToNarrowing.minQuestions);
 
       if (
         narrowingQuestionsAsked >= THRESHOLDS.narrowingToDifferentiation.minQuestions &&
@@ -174,8 +176,8 @@ export function evaluatePhaseTransition(
   // ── Phase: instinct_probing (Tier 2 — uses question bank + vector) ──
   if (currentPhase === 'instinct_probing') {
     // Ask 2-3 instinct questions, then move to differentiation
-    const instinctQuestionsAsked = exchangeCount -
-      (THRESHOLDS.centerIdToNarrowing.maxQuestions + THRESHOLDS.narrowingToDifferentiation.maxQuestions);
+    const instinctQuestionsAsked = Math.max(0, exchangeCount -
+      (THRESHOLDS.centerIdToNarrowing.maxQuestions + THRESHOLDS.narrowingToDifferentiation.maxQuestions));
 
     if (instinctQuestionsAsked >= 3) {
       return {
@@ -194,7 +196,7 @@ export function evaluatePhaseTransition(
 
   // ── Phase: differentiation (always uses Claude) ──
   // Enforce a max questions limit to prevent infinite loops
-  const diffQuestionsAsked = exchangeCount - (THRESHOLDS.centerIdToNarrowing.maxQuestions + THRESHOLDS.narrowingToDifferentiation.maxQuestions + 3);
+  const diffQuestionsAsked = Math.max(0, exchangeCount - (THRESHOLDS.centerIdToNarrowing.maxQuestions + THRESHOLDS.narrowingToDifferentiation.maxQuestions + 3));
   if (diffQuestionsAsked >= THRESHOLDS.differentiationMax.maxQuestions) {
     return {
       currentPhase: 'differentiation',

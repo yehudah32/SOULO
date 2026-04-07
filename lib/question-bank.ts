@@ -29,8 +29,15 @@ export async function getQuestionBank(
       let fallbacks = FALLBACK_QUESTIONS.filter((q) => q.stage === stage);
       if (tier) {
         const tierFiltered = fallbacks.filter((q) => (q.tier ?? 1) === tier);
-        // If no tier-specific fallbacks, use any stage-matching fallbacks
-        fallbacks = tierFiltered.length > 0 ? tierFiltered : fallbacks;
+        if (tierFiltered.length === 0) {
+          // No tier-specific fallback exists. Returning a different tier here
+          // would silently corrupt the assessment (e.g. Tier 2 instinct probing
+          // would get Tier 1 center-id questions). Return empty so the caller
+          // escalates to Claude instead.
+          console.error(`[question-bank] No Tier ${tier} fallbacks for stage ${stage} — returning empty so caller escalates`);
+          return [];
+        }
+        fallbacks = tierFiltered;
       }
       // Rotate format in fallback selection
       if (lastFormat && fallbacks.length > 1) {

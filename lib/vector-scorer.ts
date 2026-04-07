@@ -36,6 +36,9 @@ export async function embedText(text: string): Promise<number[]> {
  * Compute cosine similarity between two vectors.
  */
 function cosineSimilarity(a: number[], b: number[]): number {
+  // Dimension mismatch → cannot compute a meaningful similarity. Bail with 0
+  // rather than silently producing NaN from undefined entries.
+  if (!a || !b || a.length === 0 || a.length !== b.length) return 0;
   let dot = 0, magA = 0, magB = 0;
   for (let i = 0; i < a.length; i++) {
     dot += a[i] * b[i];
@@ -127,7 +130,7 @@ function applyCounterTypeAwareness(
       .sort(([, a], [, b]) => b - a);
 
     if (centerTypes.length > 0 && Number(centerTypes[0][0]) === type && typeScore > 0) {
-      adjusted[center] *= 0.85; // 15% discount
+      adjusted[center] = Math.max(0, adjusted[center] * 0.85); // 15% discount, never negative
       console.log(`[vector-scorer] Counter-type awareness: Type ${type} is highest in ${center} center — applying 15% confidence discount`);
     }
   }

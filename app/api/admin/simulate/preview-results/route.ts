@@ -5,7 +5,7 @@ import { initSession, setSession, getSession } from '@/lib/session-store';
 import { isAdminAuthed } from '@/lib/admin-auth';
 
 export async function POST(request: Request) {
-  if (!isAdminAuthed(request)) {
+  if (!(await isAdminAuthed(request))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

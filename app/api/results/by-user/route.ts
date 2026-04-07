@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { adminClient } from '@/lib/supabase';
 import { selectTritype, getWingTypes } from '@/lib/enneagram-lines';
+import { verifyUserCookie } from '@/lib/user-session';
+import { isAdminAuthed } from '@/lib/admin-auth';
 
 export async function GET(req: NextRequest) {
   const userId = req.nextUrl.searchParams.get('userId');
@@ -11,6 +13,21 @@ export async function GET(req: NextRequest) {
 
   if (!validUserId && !validSessionId) {
     return NextResponse.json({ error: 'Missing userId or sessionId parameter' }, { status: 400 });
+  }
+
+  // Auth: caller must either (a) be an admin, or (b) hold a signed user cookie.
+  // For userId queries the cookie userId must match the requested userId.
+  // For sessionId queries the resolved row's user_id must match the cookie userId
+  //   (anonymous sessions with user_id = null are allowed for the original taker).
+  const adminOk = await isAdminAuthed(req);
+  const cookieUserId = adminOk ? null : await verifyUserCookie(req);
+  if (!adminOk) {
+    if (!cookieUserId) {
+      return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
+    }
+    if (validUserId && validUserId !== cookieUserId) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
   }
 
   // List mode: return all sessions for a user (summaries only)
@@ -32,7 +49,7 @@ export async function GET(req: NextRequest) {
   // Get the assessment — by userId (latest) or by specific sessionId
   let query = adminClient
     .from('assessment_results')
-    .select('session_id, leading_type, confidence, tritype, type_scores, wing_signals, variant_signals, whole_type_signals, oyn_dimensions, defiant_spirit, domain_signals, supervisor_scores, exchange_count, generated_results, created_at, reveal_completed');
+    .select('session_id, user_id, leading_type, confidence, tritype, type_scores, wing_signals, variant_signals, whole_type_signals, oyn_dimensions, defiant_spirit, domain_signals, supervisor_scores, exchange_count, generated_results, created_at, reveal_completed');
 
   if (validSessionId) {
     query = query.eq('session_id', validSessionId);
@@ -52,6 +69,16 @@ export async function GET(req: NextRequest) {
 
   if (!result) {
     return NextResponse.json({ error: 'No completed assessments found' }, { status: 404 });
+  }
+
+  // Ownership check for sessionId-mode lookups: a row that already has a user_id
+  // can only be read by that user (or an admin). Anonymous rows (user_id null)
+  // remain accessible because they predate the user-account flow.
+  if (!adminOk && validSessionId) {
+    const rowUserId = (result as { user_id?: string | null }).user_id ?? null;
+    if (rowUserId && rowUserId !== cookieUserId) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
   }
 
   // If generated results are cached, return them with corrected whole type + wing

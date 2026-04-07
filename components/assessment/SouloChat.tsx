@@ -270,7 +270,7 @@ export default function SouloChat({ results, sessionId, activeSection, embedded 
     <div className={
       dk ? "w-full flex flex-col overflow-hidden min-h-[450px]"
       : embedded ? "w-full bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-[#E8E4E0] flex flex-col overflow-hidden min-h-[500px]"
-      : "fixed bottom-6 right-6 z-50 w-[400px] max-h-[560px] bg-white rounded-2xl shadow-2xl border border-[#E8E4E0] flex flex-col overflow-hidden"
+      : "fixed bottom-6 right-3 left-3 sm:left-auto sm:right-6 z-50 w-auto sm:w-[400px] max-w-[400px] max-h-[70vh] sm:max-h-[560px] bg-white rounded-2xl shadow-2xl border border-[#E8E4E0] flex flex-col overflow-hidden"
     }>
       {/* Header */}
       {!dk && (

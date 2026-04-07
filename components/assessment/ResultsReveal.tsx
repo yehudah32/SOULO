@@ -2000,7 +2000,7 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
               <div className="bg-white p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
                 <p className="font-sans text-[0.7rem] uppercase tracking-[0.1em] text-[#2563EB] mb-2">Your Wing</p>
                 <p className="font-serif text-[1.6rem] font-bold text-[#2C2C2C] mb-1 sr-card" style={{ animationDelay: '0.25s' }}>
-                  {leadingType}w{dominantWing}
+                  Type {leadingType}, leaning on Type {dominantWing}
                 </p>
                 <p className="font-sans text-[0.82rem] text-[#6B6B6B] leading-relaxed mb-4">
                   Your wing is the type next to yours on the Enneagram circle that most influences how your core type expresses itself. Think of it as the flavor — you&apos;re a {leadingType}, but with a {dominantWing} lean. It shapes your style, not your motivation.
@@ -2146,7 +2146,15 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                       else if (tn === 5 || tn === 6 || tn === 7) thinkSum += score;
                     }
                     const total = actSum + feelSum + thinkSum;
-                    if (total === 0) return null;
+                    if (total === 0) {
+                      return (
+                        <div className="mt-5 pt-5 border-t border-[#F0EDE8] text-center">
+                          <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#9B9590]">
+                            Center activation still analyzing…
+                          </p>
+                        </div>
+                      );
+                    }
                     const actPct = Math.round((actSum / total) * 100);
                     const feelPct = Math.round((feelSum / total) * 100);
                     const thinkPct = 100 - actPct - feelPct; // ensures total = 100

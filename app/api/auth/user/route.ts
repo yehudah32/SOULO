@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { adminClient } from '@/lib/supabase';
 import bcrypt from 'bcryptjs';
+import { signUserCookie, USER_COOKIE_NAME, USER_COOKIE_MAX_AGE } from '@/lib/user-session';
 
 // ── Rate limiter (in-memory, resets on server restart) ──
 const loginAttempts = new Map<string, { count: number; resetAt: number }>();
@@ -130,7 +131,11 @@ export async function POST(request: Request) {
       .limit(1)
       .maybeSingle();
 
-    return NextResponse.json({
+    // Issue signed httpOnly session cookie. Server-side routes that handle
+    // user-scoped data verify this signature instead of trusting a userId
+    // query parameter from the client.
+    const cookieValue = await signUserCookie(userId);
+    const res = NextResponse.json({
       userId,
       email: cleanEmail,
       firstName: firstName?.trim() || null,
@@ -138,6 +143,14 @@ export async function POST(request: Request) {
       sessions: sessions ?? [],
       inProgressSession: inProgress || null,
     });
+    res.cookies.set(USER_COOKIE_NAME, cookieValue, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: USER_COOKIE_MAX_AGE,
+    });
+    return res;
   } catch (err) {
     console.error('[auth/user] Error:', err);
     return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });

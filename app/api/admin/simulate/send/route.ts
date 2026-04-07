@@ -27,7 +27,7 @@ function getAllowedFormats(stage: number): string {
 }
 
 export async function POST(request: Request) {
-  if (!isAdminAuthed(request)) {
+  if (!(await isAdminAuthed(request))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
