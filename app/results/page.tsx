@@ -186,11 +186,27 @@ function ResultsContent() {
         searchParams.get('sessionId') ||
         (typeof window !== 'undefined' ? localStorage.getItem('soulo_active_session_id') : null);
 
+      // Helper: fetch with hard timeout so a hung server can't pin the loader
+      const fetchWithTimeout = async (url: string, init?: RequestInit, timeoutMs = 120000) => {
+        const controller = new AbortController();
+        const t = setTimeout(() => controller.abort(), timeoutMs);
+        try {
+          return await fetch(url, { ...init, signal: controller.signal });
+        } finally {
+          clearTimeout(t);
+        }
+      };
+
       if (sid) {
         setSessionId(sid);
-        // Try loading existing results first (fast, no generation)
+        // Try loading existing results first (fast, no generation).
+        // Short timeout — this should be a quick cache lookup.
         try {
-          const byUserRes = await fetch(`/api/results/by-user?sessionId=${encodeURIComponent(sid)}`);
+          const byUserRes = await fetchWithTimeout(
+            `/api/results/by-user?sessionId=${encodeURIComponent(sid)}`,
+            undefined,
+            30000,
+          );
           if (byUserRes.ok) {
             const byUserData = await byUserRes.json();
             if (byUserData.results && isValidResults(byUserData.results)) {
@@ -203,15 +219,23 @@ function ResultsContent() {
               return;
             }
           }
-        } catch { /* fall through */ }
+        } catch (err) {
+          console.warn('[results] by-user lookup failed/timed out:', err);
+        }
 
-        // Try generating if not found
+        // Try generating if not found. Longer timeout because Claude can take
+        // up to ~90s for the full report; cap at 150s to bail before the user
+        // gives up.
         try {
-          const res = await fetch('/api/results/generate', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ sessionId: sid }),
-          });
+          const res = await fetchWithTimeout(
+            '/api/results/generate',
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ sessionId: sid }),
+            },
+            150000,
+          );
           if (res.ok) {
             const data = await res.json();
             if (data.results && isValidResults(data.results)) {
@@ -222,7 +246,9 @@ function ResultsContent() {
               return;
             }
           }
-        } catch { /* fall through */ }
+        } catch (err) {
+          console.warn('[results] generate failed/timed out:', err);
+        }
 
         // Session doesn't have results — clear stale localStorage
         if (typeof window !== 'undefined' && !searchParams.get('sessionId')) {
