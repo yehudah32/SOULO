@@ -903,6 +903,13 @@ Format: ${diffPair.questions[qIdx].format}`;
       if (cleaned) {
         rp.guide_text = cleaned.guide_text;        // ensures non-empty Soulo bridge
         rp.context_note = cleaned.context_note;    // strips internal-reasoning leaks
+        // Forced-choice rescue: when Claude leaves answer_options empty,
+        // getResponseParts either recovers them from inline prose or downgrades
+        // the format to 'open'. Both must be propagated, otherwise the client
+        // still receives format='forced_choice' with no options and renders
+        // a bogus Yes/No fallback.
+        rp.question_format = cleaned.question_format;
+        rp.answer_options = cleaned.answer_options;
       }
     }
 

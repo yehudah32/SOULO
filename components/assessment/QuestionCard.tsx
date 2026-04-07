@@ -298,15 +298,19 @@ export default function QuestionCard({
         </div>
       )}
 
-      {/* forced_choice */}
-      {format === 'forced_choice' && (
+      {/* forced_choice — REQUIRES at least 2 answerOptions. The server's
+          getResponseParts() either rescues inline options or downgrades the
+          format to 'open' before sending, so this branch should never run
+          with empty options. If it does (legacy session, stale cache, etc.),
+          show the question without any buttons rather than fabricating Yes/No. */}
+      {format === 'forced_choice' && (!answerOptions || answerOptions.length < 2) && (
+        <div className="font-sans text-sm text-[#9B9590] italic px-1">
+          (No answer choices were generated for this question — please refresh.)
+        </div>
+      )}
+      {format === 'forced_choice' && answerOptions && answerOptions.length >= 2 && (
         <div className="flex flex-col gap-2.5">
-          {(answerOptions && answerOptions.length >= 1
-            ? answerOptions.map((o) => ({ value: o.text, label: o.label ? `${o.label}. ${o.text}` : o.text }))
-            : [
-                { value: 'Yes', label: 'Yes' },
-                { value: 'No', label: 'No' },
-              ]
+          {(answerOptions.map((o) => ({ value: o.text, label: o.label ? `${o.label}. ${o.text}` : o.text }))
           ).map((opt) => (
             <button
               key={opt.value}
