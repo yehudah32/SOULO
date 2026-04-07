@@ -1447,6 +1447,14 @@ function AssessmentContent() {
                   scaleRange={currentQ.scaleRange}
                   visible={cardVisible}
                   questionNumber={viewingIndex}
+                  onRegenerate={() => {
+                    // Recovery path for the rare case where Claude returned a
+                    // forced_choice with no usable answer_options. Reload the
+                    // page — the resume flow re-fetches session state from
+                    // the server, which usually re-asks Claude and lands on
+                    // a properly-structured question.
+                    if (typeof window !== 'undefined') window.location.reload();
+                  }}
                 />
               </div>
             )

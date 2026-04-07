@@ -218,11 +218,25 @@ question_text:
   back directly or keep it inside?"
 
 answer_options:
-  NEVER embed options in question_text. Options go here as an array.
+  ⚠️ HARD RULE — VIOLATIONS BREAK THE UI ⚠️
+  NEVER embed options in question_text. Options ALWAYS go here as a JSON array.
+  If question_format is "forced_choice" or "paragraph_select", answer_options
+  MUST be a non-empty array of 2-5 strings. An empty array, null, or options
+  hidden inside question_text causes the client to render a broken Yes/No
+  fallback or a refresh prompt — the user is blocked.
+
   For agree_disagree: ["Strongly agree","Agree","Neutral","Disagree","Strongly disagree"]
   For frequency: ["Never","Sometimes","Often","Always"]
-  For forced_choice: [the actual choices]
+  For forced_choice: ["actual option A","actual option B"] (or up to 5)
+  For paragraph_select: ["paragraph A text","paragraph B text"]
   For scale/open/scenario: null (use scale_range for scale)
+
+  WRONG (options buried in question_text):
+    question_text: "When stress hits, do you push back, give in, or step away?"
+    answer_options: null
+  RIGHT:
+    question_text: "When stress hits, which is closest to your default?"
+    answer_options: ["Push back","Give in","Step away"]
 
 scale_range:
   Default {"min":1,"max":5}. Only use 1-10 when granularity requires it.

@@ -32,6 +32,7 @@ interface QuestionCardProps {
   visible?: boolean;
   isInitMessage?: boolean;
   questionNumber?: number;
+  onRegenerate?: () => void;
 }
 
 export default function QuestionCard({
@@ -47,6 +48,7 @@ export default function QuestionCard({
   visible = true,
   isInitMessage,
   questionNumber,
+  onRegenerate,
 }: QuestionCardProps) {
   const [selected, setSelected] = useState<string>(existingAnswer ?? '');
   const [scaleValue, setScaleValue] = useState<number>(
@@ -304,8 +306,17 @@ export default function QuestionCard({
           with empty options. If it does (legacy session, stale cache, etc.),
           show the question without any buttons rather than fabricating Yes/No. */}
       {format === 'forced_choice' && (!answerOptions || answerOptions.length < 2) && (
-        <div className="font-sans text-sm text-[#9B9590] italic px-1">
-          (No answer choices were generated for this question — please refresh.)
+        <div className="flex flex-col gap-3">
+          <p className="font-sans text-sm text-[#9B9590] italic">
+            This question didn&apos;t come through with answer choices. Try regenerating it.
+          </p>
+          <button
+            onClick={() => onRegenerate?.()}
+            disabled={!onRegenerate}
+            className="self-start font-sans text-[0.88rem] rounded-full px-5 py-2 border-2 border-[#2563EB] text-[#2563EB] hover:bg-[#EFF6FF] transition disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Regenerate question
+          </button>
         </div>
       )}
       {format === 'forced_choice' && answerOptions && answerOptions.length >= 2 && (

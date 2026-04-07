@@ -103,19 +103,27 @@ export function getResponseParts(internal: any): ResponseParts | null {
 
   // Forced-choice / paragraph_select rescue: Claude sometimes embeds the
   // options inside question_text and leaves answer_options empty. The frontend
-  // would then fall back to Yes/No, which produces nonsense like
-  //   "Choose one: A, B, or C?"  →  [Yes] [No]
-  // Try to recover the options from the prose; if we can't, downgrade the
-  // format to 'open' so the user types a free response rather than picking
-  // from fabricated buttons.
+  // would otherwise fall back to a generic [Yes, No], producing nonsense.
+  //
+  // Strategy: try to recover the options from the prose. If recovery succeeds,
+  // we keep the structured forced_choice (which is what we want — short,
+  // typed answers feed the vector scorer cleanly and avoid LLM round-trips).
+  //
+  // If recovery FAILS, we deliberately do NOT downgrade the format to 'open'.
+  // A text box in an early/structured phase forces every subsequent turn
+  // through Claude and breaks the vector hybrid speed advantage. Instead we
+  // leave the format as forced_choice with empty options and let the client
+  // surface a "regenerate" affordance — the user reloads, Claude tries again,
+  // and the system prompt's "NEVER embed options in question_text" rule
+  // usually wins on retry.
   if ((format === 'forced_choice' || format === 'paragraph_select') && (!answer_options || answer_options.length < 2)) {
     const recovered = extractInlineOptions(rp.question_text);
     if (recovered && recovered.length >= 2) {
       answer_options = recovered;
       console.warn('[parse-response] Recovered inline options for forced_choice:', recovered);
     } else {
-      console.warn('[parse-response] forced_choice with no usable options — downgrading to open. Question:', String(rp.question_text).slice(0, 100));
-      format = 'open';
+      console.error('[parse-response] forced_choice with no usable options — client will show regenerate. Question:', String(rp.question_text).slice(0, 120));
+      answer_options = []; // signal to client; do NOT downgrade format
     }
   }
 
