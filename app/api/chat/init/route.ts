@@ -7,8 +7,17 @@ import { hasTypeSignatures } from '@/lib/vector-scorer';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-// Must match the flag in chat/route.ts
-const HYBRID_MODE_ENABLED = true;
+// Vector mode controls whether the embedding scorer runs in front of Claude
+// or behind. Must match the flag in chat/route.ts.
+//
+//   'off'    — pure Claude, no vector scoring at all
+//   'shadow' — Claude is the primary scorer; vector v2 runs after each turn
+//              and logs its prediction next to Claude's for validation. This
+//              is the safe default until vector v2 reaches >95% agreement
+//              with Claude on real assessments.
+//   'hybrid' — vector v2 in front for early phases, Claude for differentiation
+//              (future state — only after shadow validation passes)
+const VECTOR_MODE: 'off' | 'shadow' | 'hybrid' = 'shadow';
 
 export async function POST(request: Request) {
   try {
@@ -26,8 +35,11 @@ export async function POST(request: Request) {
     const sessionId = crypto.randomUUID();
     initSession(sessionId);
 
-    // Check if hybrid mode should be enabled for this session
-    if (HYBRID_MODE_ENABLED) {
+    // useVectorScoring is the legacy "vector in front" flag. Only set it true
+    // when VECTOR_MODE === 'hybrid' AND signatures exist. Shadow mode does not
+    // touch this flag — it lets Claude run normally and logs vector
+    // predictions afterwards.
+    if (VECTOR_MODE === 'hybrid') {
       try {
         const signaturesReady = await hasTypeSignatures();
         if (signaturesReady) {

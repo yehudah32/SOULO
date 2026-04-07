@@ -13,6 +13,7 @@ import { runPostAssessmentEvaluation } from '@/lib/evaluator';
 import { selectTritype, CENTER_MAP } from '@/lib/enneagram-lines';
 import { findPairForTypes, getTopTwoTypes } from '@/lib/differentiation-pairs';
 import { scoreResponse, hasTypeSignatures } from '@/lib/vector-scorer';
+import { scoreV2, flattenToTypeScores, type QuestionContext as V2QuestionContext, type VectorV2Result } from '@/lib/vector-scorer-v2';
 import { evaluatePhaseTransition } from '@/lib/phase-manager';
 import { selectNextQuestion, selectTier2Question, formatQuestionResponse, getTransitionText } from '@/lib/decision-tree';
 import type { SessionData } from '@/lib/session-store';
@@ -21,7 +22,18 @@ import type { SessionData } from '@/lib/session-store';
 // When true: early phases use vector scoring, Claude checkpoint at handoff,
 // then Claude handles differentiation. Logs agreement/disagreement for review.
 // When false: Claude handles 100% of the assessment.
-const HYBRID_MODE_ENABLED = true;
+//
+// VECTOR_MODE controls deployment posture for the embedding scorer:
+//   'off'    — pure Claude, no vector at all
+//   'shadow' — Claude is primary; vector v2 runs after each turn for logging
+//              and validation only. SAFE DEFAULT.
+//   'hybrid' — vector in front of Claude (the original HYBRID_MODE_ENABLED
+//              behavior). Requires vector v2 to have been validated against
+//              shadow logs first.
+// Must match the flag in chat/init/route.ts.
+type VectorMode = 'off' | 'shadow' | 'hybrid';
+const VECTOR_MODE = 'shadow' as VectorMode;
+const HYBRID_MODE_ENABLED: boolean = VECTOR_MODE === 'hybrid';
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -936,6 +948,33 @@ Format: ${diffPair.questions[qIdx].format}`;
     const updatedDomainSignals = updatedSession?.domainSignals ?? [];
     const resultsData = updatedSession?.resultsData ?? null;
 
+    // Capture the structured question metadata Claude just produced so the
+    // NEXT user response can be shadow-scored against it. Vector v2's Layer 4
+    // (answer-option type weights) needs to know which answer option the user
+    // picked — so it needs the answer_options list and the type_weights map.
+    // type_weights for Claude-generated questions is null today; bank questions
+    // carry it via the Question type. The shadow scorer falls back gracefully.
+    {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const rp = (finalInternal as any)?.response_parts;
+      const matchedBankQuestion = candidateQuestions.find(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (q: any) => q.id === (finalInternal as any)?.selected_question_id,
+      );
+      if (rp?.question_text) {
+        setSession(sessionId, {
+          lastQuestionContext: {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            questionId: (finalInternal as any)?.selected_question_id ?? (session.exchangeCount + 1),
+            questionText: rp.question_text,
+            format: rp.question_format || 'open',
+            answerOptions: Array.isArray(rp.answer_options) ? rp.answer_options : null,
+            typeWeights: matchedBankQuestion?.type_weights ?? null,
+          },
+        });
+      }
+    }
+
     const t5 = performance.now();
 
     // ── SEND RESPONSE IMMEDIATELY — everything below is non-blocking ──
@@ -944,54 +983,117 @@ Format: ${diffPair.questions[qIdx].format}`;
     );
 
     // ── Fire-and-forget: Shadow mode vector scoring (non-blocking) ──
+    // Runs both v1 (legacy) and v2 (multi-signal whole-type-aware) in parallel
+    // and logs each prediction next to Claude's. v2 is the system we're
+    // actually validating; v1 stays for backwards comparability.
     Promise.resolve().then(async () => {
       try {
-        const signaturesExist = await hasTypeSignatures();
-        if (!signaturesExist) return; // Skip if signatures haven't been generated yet
-
         const currentExchange = session.exchangeCount + 1; // Use updated count, not stale
-        const questionId = String(finalInternal?.selected_question_id ?? currentExchange);
-        const vectorResult = await scoreResponse(
-          latestUserMessage.content,
-          questionId,
-          session.vectorScores ?? null,
-          currentExchange
-        );
-
-        // Update session with vector scores for next turn
-        setSession(sessionId, {
-          vectorScores: vectorResult,
-        });
-
-        // Determine agreement
         const claudeTopType = finalInternal?.hypothesis?.leading_type ?? 0;
-        const vectorTopType = vectorResult.topTypes[0] ?? 0;
         const claudeCenter = claudeTopType > 0 ? (CENTER_MAP[claudeTopType] ?? '') : '';
-        const vectorCenter = vectorTopType > 0 ? (CENTER_MAP[vectorTopType] ?? '') : '';
 
-        const agreement = claudeTopType === vectorTopType;
-        const centerAgreement = claudeCenter === vectorCenter;
+        // ── v1: legacy single-hypothesis scorer (only when signatures exist) ──
+        let v1Promise: PromiseLike<unknown> = Promise.resolve();
+        try {
+          const signaturesExist = await hasTypeSignatures();
+          if (signaturesExist) {
+            const questionId = String(finalInternal?.selected_question_id ?? currentExchange);
+            const v1Result = await scoreResponse(
+              latestUserMessage.content,
+              questionId,
+              session.vectorScores ?? null,
+              currentExchange
+            );
+            // Persist v1 vector scores so the legacy hybrid path (when re-enabled)
+            // has continuity. Does not affect Claude's behaviour in shadow mode.
+            setSession(sessionId, { vectorScores: v1Result });
+            const v1Top = v1Result.topTypes[0] ?? 0;
+            const v1Agree = claudeTopType === v1Top;
+            const v1CenterAgree = claudeCenter === (v1Top > 0 ? (CENTER_MAP[v1Top] ?? '') : '');
+            v1Promise = adminClient.from('shadow_mode_log').insert({
+              session_id: sessionId,
+              exchange_number: currentExchange,
+              claude_top_type: claudeTopType,
+              claude_confidence: finalInternal?.hypothesis?.confidence ?? 0,
+              vector_top_type: v1Top,
+              vector_confidence: v1Result.confidence,
+              vector_center_scores: v1Result.centerScores,
+              vector_type_scores: v1Result.typeScores,
+              agreement: v1Agree,
+              center_agreement: v1CenterAgree,
+              phase: `v1:${v1Result.phase}`,
+            }).then(
+              ({ error: logErr }) => {
+                if (logErr) console.error('[shadow-v1] Log error:', logErr.message);
+                else console.log(`[shadow-v1] Ex${currentExchange}: Claude=T${claudeTopType} v1=T${v1Top} | type=${v1Agree?'✓':'✗'} center=${v1CenterAgree?'✓':'✗'}`);
+              },
+              (err: unknown) => console.error('[shadow-v1] Log threw:', err),
+            );
+          }
+        } catch (err) {
+          console.warn('[shadow-v1] Skipping v1:', err);
+        }
 
-        // Log to shadow_mode_log table
-        adminClient.from('shadow_mode_log').insert({
-          session_id: sessionId,
-          exchange_number: session.exchangeCount + 1,
-          claude_top_type: claudeTopType,
-          claude_confidence: finalInternal?.hypothesis?.confidence ?? 0,
-          vector_top_type: vectorTopType,
-          vector_confidence: vectorResult.confidence,
-          vector_center_scores: vectorResult.centerScores,
-          vector_type_scores: vectorResult.typeScores,
-          agreement,
-          center_agreement: centerAgreement,
-          phase: vectorResult.phase,
-        }).then(
-          ({ error: logErr }) => {
-            if (logErr) console.error('[shadow-mode] Log error:', logErr.message);
-            else console.log(`[shadow-mode] Exchange ${session.exchangeCount + 1}: Claude=Type${claudeTopType} Vector=Type${vectorTopType} | Type agree: ${agreement} | Center agree: ${centerAgreement}`);
-          },
-          (err: unknown) => console.error('[shadow-mode] Log threw:', err),
-        );
+        // ── v2: multi-signal whole-type-aware scorer ──
+        // Pull the structured question metadata for the question the user
+        // just answered. This was captured into session.lastQuestionContext
+        // BEFORE this turn (when Claude wrote the previous question). Without
+        // it, Layer 4 (answer-weights) can't fire and v2 only has lexical +
+        // embedding to work with.
+        try {
+          const lqc = session.lastQuestionContext;
+          const priorAssistant = [...messages]
+            .reverse()
+            .find((m) => m.role === 'assistant');
+          const v2Question: V2QuestionContext = lqc
+            ? {
+                questionId: lqc.questionId,
+                questionText: lqc.questionText,
+                format: lqc.format,
+                answerOptions: lqc.answerOptions,
+                typeWeights: lqc.typeWeights,
+              }
+            : {
+                // Fallback: no captured context (first exchange or migration).
+                // v2 will run lexical + embedding only.
+                questionId: String(finalInternal?.selected_question_id ?? currentExchange),
+                questionText: priorAssistant?.content ?? '',
+                format: lastFormat || 'open',
+                answerOptions: null,
+                typeWeights: null,
+              };
+          const v2Result = await scoreV2(
+            latestUserMessage.content,
+            v2Question,
+            (session.vectorScoresV2 as VectorV2Result | null) ?? null,
+          );
+          setSession(sessionId, { vectorScoresV2: v2Result });
+          const v2CoreAgree = claudeTopType === v2Result.coreType;
+          const v2CenterAgree = claudeCenter === (v2Result.coreType > 0 ? (CENTER_MAP[v2Result.coreType] ?? '') : '');
+          await adminClient.from('shadow_mode_log').insert({
+            session_id: sessionId,
+            exchange_number: currentExchange,
+            claude_top_type: claudeTopType,
+            claude_confidence: finalInternal?.hypothesis?.confidence ?? 0,
+            vector_top_type: v2Result.coreType,
+            vector_confidence: v2Result.confidence,
+            vector_center_scores: v2Result.centers as unknown as Record<string, unknown>,
+            vector_type_scores: flattenToTypeScores(v2Result.centers),
+            agreement: v2CoreAgree,
+            center_agreement: v2CenterAgree,
+            phase: `v2:wholeType=${v2Result.wholeType}`,
+          }).then(
+            ({ error: logErr }) => {
+              if (logErr) console.error('[shadow-v2] Log error:', logErr.message);
+              else console.log(`[shadow-v2] Ex${currentExchange}: Claude=T${claudeTopType} v2=T${v2Result.coreType} (whole=${v2Result.wholeType}) | core=${v2CoreAgree?'✓':'✗'} center=${v2CenterAgree?'✓':'✗'}`);
+            },
+            (err: unknown) => console.error('[shadow-v2] Log threw:', err),
+          );
+        } catch (err) {
+          console.warn('[shadow-v2] v2 scoring failed:', err);
+        }
+
+        await v1Promise;
       } catch (err) {
         console.error('[shadow-mode] Error:', err);
       }

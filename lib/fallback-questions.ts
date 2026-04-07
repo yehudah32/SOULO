@@ -14,6 +14,12 @@ export interface Question {
   avg_information_yield: number;
   is_baruch_sourced?: boolean;
   tier?: number; // 1=Core/Whole, 2=Instinct/Subtype, 3=Wings/Lines
+  // Layer 4 of vector v2 scoring: maps each answer_options index to a
+  // {type → weight} map. When the user picks option N, we add those weights
+  // directly to the running per-center scores. This is the highest-reliability
+  // signal in vector v2 because it's a structured input — no embedding noise.
+  // Optional because open-text and scenario questions don't have it.
+  type_weights?: Record<number, Record<number, number>>;
 }
 
 export const FALLBACK_QUESTIONS: Question[] = [
@@ -29,6 +35,12 @@ export const FALLBACK_QUESTIONS: Question[] = [
     target_types: [],
     times_used: 0,
     avg_information_yield: 0.8,
+    // "Looking inward" is the superego/inner-critic move — strongest for 1, 4, 6.
+    // "Looking outward" is the externalizing move — strongest for 8, 7, 3.
+    type_weights: {
+      0: { 1: 0.4, 4: 0.25, 6: 0.25, 5: 0.1 },
+      1: { 8: 0.4, 7: 0.25, 3: 0.25, 9: 0.1 },
+    },
   },
   {
     id: -2,
@@ -42,6 +54,13 @@ export const FALLBACK_QUESTIONS: Question[] = [
     target_types: [2, 9],
     times_used: 0,
     avg_information_yield: 0.75,
+    // Self-effacement under another's needs is core 2 and 9. Disagreeing
+    // strongly is 8-coded (no one rolls over me). Middle = mild signal.
+    type_weights: {
+      0: { 2: 0.4, 9: 0.3, 6: 0.1 },
+      1: { 1: 0.05, 4: 0.05 },
+      2: { 8: 0.4, 5: 0.2, 3: 0.1 },
+    },
   },
   {
     id: -3,
@@ -55,6 +74,16 @@ export const FALLBACK_QUESTIONS: Question[] = [
     target_types: [6, 5, 1],
     times_used: 0,
     avg_information_yield: 0.75,
+    // Anticipating-what-could-go-wrong is core 6, with 1 (preventing the
+    // mistake) and 5 (knowing all variables) close behind. High end = strong
+    // 6 evidence. Low end = 7 (don't dwell), 9 (don't worry).
+    type_weights: {
+      0: { 7: 0.3, 9: 0.2 },
+      1: { 7: 0.15, 9: 0.1 },
+      2: { 6: 0.1 },
+      3: { 6: 0.3, 1: 0.15, 5: 0.15 },
+      4: { 6: 0.5, 1: 0.2, 5: 0.2 },
+    },
   },
   {
     id: -4,
@@ -68,6 +97,15 @@ export const FALLBACK_QUESTIONS: Question[] = [
     target_types: [8, 2, 9],
     times_used: 0,
     avg_information_yield: 0.8,
+    // Always direct = 8 (and 1 with the "fairness" justification).
+    // Never direct = 9 (avoid conflict), 2 (preserve the relationship), 5 (withdraw).
+    // Sometimes/rarely = the middle ground; weakly distinguishing.
+    type_weights: {
+      0: { 8: 0.45, 1: 0.2, 3: 0.1 },
+      1: { 1: 0.1, 3: 0.1, 6: 0.1 },
+      2: { 9: 0.2, 4: 0.15, 5: 0.15 },
+      3: { 9: 0.45, 2: 0.25, 5: 0.15 },
+    },
   },
   {
     id: -5,
@@ -98,6 +136,14 @@ export const FALLBACK_QUESTIONS: Question[] = [
     target_types: [1, 3, 4, 6, 7],
     times_used: 0,
     avg_information_yield: 0.85,
+    // (A) Mistakes = 1's superego, with 3 and 6 secondary
+    // (B) Overlooked = 3 (image), 4 (specialness), 7 (FOMO)
+    // (C) Safety/control = 6 (safety), 8 (control), 5 (knowing enough)
+    type_weights: {
+      0: { 1: 0.5, 3: 0.15, 6: 0.15 },
+      1: { 3: 0.35, 4: 0.3, 7: 0.2 },
+      2: { 6: 0.35, 8: 0.3, 5: 0.2 },
+    },
   },
   {
     id: -7,

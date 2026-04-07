@@ -102,13 +102,33 @@ export interface SessionData {
     completedWithLowConfidence: boolean;
   } | null;
 
-  // Per-session question tracking for yield optimization
-  allQuestionsAsked?: Array<{ exchange: number; questionId: number; questionText: string }>;
+  // Per-session question tracking for yield optimization AND vector v2
+  // shadow scoring. format/answer_options/type_weights are optional because
+  // open-ended questions and Claude-generated questions don't have them.
+  allQuestionsAsked?: Array<{
+    exchange: number;
+    questionId: number;
+    questionText: string;
+    format?: string;
+    answerOptions?: string[] | null;
+    typeWeights?: Record<number, Record<number, number>> | null;
+  }>;
+  // Most recently asked question's structured metadata. Updated by both the
+  // hybrid path (when serving a bank question) and the Claude path (parsed
+  // from response_parts). Used by the shadow scorer to apply Layer 4
+  // answer-weights against the next user response.
+  lastQuestionContext?: {
+    questionId: string | number;
+    questionText: string;
+    format: string;
+    answerOptions: string[] | null;
+    typeWeights: Record<number, Record<number, number>> | null;
+  } | null;
 
   // Disconfirmatory gate — must ask at least one disconfirmatory question before closing
   disconfirmatoryAsked: boolean;
 
-  // Vector scoring state (hybrid assessment flow)
+  // Vector scoring state (hybrid assessment flow — legacy v1)
   vectorScores: {
     typeScores: Record<number, number>;
     centerScores: Record<string, number>;
@@ -116,6 +136,11 @@ export interface SessionData {
     topTypes: number[];
     phase: 'center_id' | 'type_narrowing' | 'instinct_probing' | 'differentiation';
   } | null;
+  // Vector v2 running state — multi-signal whole-type-aware scorer.
+  // Lives alongside vectorScores so v2 can shadow v1 for validation.
+  // Stored as `unknown` here to avoid a circular import with vector-scorer-v2.
+  // Cast at consumer sites.
+  vectorScoresV2: unknown;
   useVectorScoring: boolean;
   llmCallCount: number;
 }
@@ -163,8 +188,10 @@ export function initSession(id: string): void {
     allQuestionsAsked: [],
     disconfirmatoryAsked: false,
     vectorScores: null,
+    vectorScoresV2: null,
     useVectorScoring: false,
     llmCallCount: 0,
+    lastQuestionContext: null,
   });
 }
 
