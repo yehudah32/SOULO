@@ -15,17 +15,21 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Missing userId or sessionId parameter' }, { status: 400 });
   }
 
-  // Auth: caller must either (a) be an admin, or (b) hold a signed user cookie.
-  // For userId queries the cookie userId must match the requested userId.
-  // For sessionId queries the resolved row's user_id must match the cookie userId
-  //   (anonymous sessions with user_id = null are allowed for the original taker).
+  // Auth model:
+  //   - Admin cookie → always allowed.
+  //   - userId query mode → caller MUST hold a signed user cookie matching
+  //     the requested userId. Cross-user access is forbidden.
+  //   - sessionId query mode → no pre-check; the row-ownership check after
+  //     the row is loaded handles it. This lets the post-assessment results
+  //     page work for both anonymous rows (user_id null) and logged-in users
+  //     who completed the assessment before the signed cookie existed.
   const adminOk = await isAdminAuthed(req);
   const cookieUserId = adminOk ? null : await verifyUserCookie(req);
-  if (!adminOk) {
+  if (!adminOk && validUserId) {
     if (!cookieUserId) {
       return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
     }
-    if (validUserId && validUserId !== cookieUserId) {
+    if (validUserId !== cookieUserId) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
   }
