@@ -248,7 +248,13 @@ export async function POST(req: NextRequest) {
 
     const wholeTypeResult = Object.keys(typeScores).length
       ? selectTritype(typeScores)
-      : { wholeType: session.wholeType || '', body: 0, heart: 0, head: 0 };
+      : {
+          wholeType: session.wholeType || '',
+          tritype: session.wholeType || '',
+          body: 0, heart: 0, head: 0,
+          depth_scores: { body: 0, heart: 0, head: 0 },
+          depth_ranks: { body: 0, heart: 0, head: 0 },
+        };
 
     const lowestType = Object.keys(typeScores).length
       ? getLowestType(typeScores)
@@ -329,9 +335,10 @@ Confidence: ${Math.round(confidence * 100)}%
 Wing: ${leadingType}w${wingDominant}
 Instinctual Variant: ${dominantVariant}
 Whole Type: ${wholeTypeResult.wholeType}
-  Body center type: ${wholeTypeResult.body}
-  Heart center type: ${wholeTypeResult.heart}
-  Head center type: ${wholeTypeResult.head}
+  Body center type: ${wholeTypeResult.body} (rank #${wholeTypeResult.depth_ranks?.body ?? '?'} of 9, depth score ${wholeTypeResult.depth_scores?.body?.toFixed(2) ?? '?'})
+  Heart center type: ${wholeTypeResult.heart} (rank #${wholeTypeResult.depth_ranks?.heart ?? '?'} of 9, depth score ${wholeTypeResult.depth_scores?.heart?.toFixed(2) ?? '?'})
+  Head center type: ${wholeTypeResult.head} (rank #${wholeTypeResult.depth_ranks?.head ?? '?'} of 9, depth score ${wholeTypeResult.depth_scores?.head?.toFixed(2) ?? '?'})
+  Depth-of-access note: A depth score of 1.0 means that center's representative is the dominant type (strongest signal). A score below 0.5 means the center is "buried" — this person has weaker access to that center and may need more guidance reclaiming it.
 Energizing Point: Type ${energizingPointType} (${TYPE_NAMES[energizingPointType || 1]})
 Resolution Point: Type ${resolutionPointType} (${TYPE_NAMES[resolutionPointType || 7]})
 Lowest scoring type: ${lowestType}

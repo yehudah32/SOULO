@@ -41,6 +41,12 @@ export const CLOCKWISE_ORDER: number[] = [9, 1, 2, 3, 4, 5, 6, 7, 8]
 // Selects the Whole Type (one dominant type per center, ordered by score)
 // Note: function retains "selectTritype" name for Supabase compatibility
 // but the return includes both `tritype` and `wholeType` (same value)
+//
+// DEPTH-OF-ACCESS (per DYN_SYSTEM_ARCHITECTURE.md):
+// Tracks the rank position of each center's representative. A Type 5 in
+// 2nd place is a far stronger "thinking center" signal than a Type 5 in
+// 6th place. This data is exposed via depth_scores so results generation
+// can apply differential weighting.
 export function selectTritype(
   typeScores: Record<number, number>
 ): {
@@ -49,19 +55,43 @@ export function selectTritype(
   body: number
   heart: number
   head: number
+  depth_scores: {
+    body: number   // 1.0 = ranked 1st, decreases toward 0 as rank deepens
+    heart: number
+    head: number
+  }
+  depth_ranks: {
+    body: number   // 1-9, the actual rank position (1=highest)
+    heart: number
+    head: number
+  }
 } {
   const sorted = Object.entries(typeScores)
     .map(([t, s]) => ({ type: Number(t), score: s }))
     .sort((a, b) => b.score - a.score)
 
-  const body = sorted.find(t => CENTER_MAP[t.type] === 'Body')
-  const heart = sorted.find(t => CENTER_MAP[t.type] === 'Heart')
-  const head = sorted.find(t => CENTER_MAP[t.type] === 'Head')
+  // Find the index of each center's first representative
+  const bodyIdx = sorted.findIndex(t => CENTER_MAP[t.type] === 'Body')
+  const heartIdx = sorted.findIndex(t => CENTER_MAP[t.type] === 'Heart')
+  const headIdx = sorted.findIndex(t => CENTER_MAP[t.type] === 'Head')
 
-  if (!body || !heart || !head) {
+  if (bodyIdx === -1 || heartIdx === -1 || headIdx === -1) {
     console.error('[tritype] could not find type for all centers', { typeScores })
-    return { tritype: '', wholeType: '', body: 0, heart: 0, head: 0 }
+    return {
+      tritype: '', wholeType: '',
+      body: 0, heart: 0, head: 0,
+      depth_scores: { body: 0, heart: 0, head: 0 },
+      depth_ranks: { body: 0, heart: 0, head: 0 },
+    }
   }
+
+  const body = sorted[bodyIdx]
+  const heart = sorted[heartIdx]
+  const head = sorted[headIdx]
+
+  // Depth scores: 1.0 if found at rank 1, decreasing as rank deepens
+  // Formula: 1 - (rank_index / 9), so rank 0 = 1.0, rank 1 = 0.89, ... rank 8 = 0.11
+  const computeDepthScore = (idx: number) => Math.max(0, 1 - (idx / 9))
 
   // Core type (overall highest) goes first, then the other two by score
   const coreType = sorted[0] // Overall highest scoring type
@@ -73,12 +103,26 @@ export function selectTritype(
   const ordered = [coreType, ...others].map(t => t.type)
 
   const result = ordered.join('-')
+
+  // Log depth-of-access info — useful for results generation
+  console.log(`[whole-type] Depth-of-access: Body=Type${body.type}@rank${bodyIdx + 1}, Heart=Type${heart.type}@rank${heartIdx + 1}, Head=Type${head.type}@rank${headIdx + 1}`)
+
   return {
     tritype: result, // Supabase column compatibility
     wholeType: result, // DYN Architecture terminology
     body: body.type,
     heart: heart.type,
-    head: head.type
+    head: head.type,
+    depth_scores: {
+      body: computeDepthScore(bodyIdx),
+      heart: computeDepthScore(heartIdx),
+      head: computeDepthScore(headIdx),
+    },
+    depth_ranks: {
+      body: bodyIdx + 1,
+      heart: heartIdx + 1,
+      head: headIdx + 1,
+    },
   }
 }
 

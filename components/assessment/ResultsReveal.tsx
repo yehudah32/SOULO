@@ -2131,6 +2131,57 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                       );
                     })}
                   </div>
+
+                  {/* Act / Think / Feel percentage allocation (per DYN_SYSTEM_ARCHITECTURE.md) */}
+                  {(() => {
+                    // Compute act/think/feel allocation from type scores
+                    const allTypeScoresMap = (r.type_scores as Record<string, number>) ?? {};
+                    let actSum = 0, feelSum = 0, thinkSum = 0;
+                    for (const [t, s] of Object.entries(allTypeScoresMap)) {
+                      const tn = Number(t);
+                      const score = Number(s);
+                      if (tn === 8 || tn === 9 || tn === 1) actSum += score;
+                      else if (tn === 2 || tn === 3 || tn === 4) feelSum += score;
+                      else if (tn === 5 || tn === 6 || tn === 7) thinkSum += score;
+                    }
+                    const total = actSum + feelSum + thinkSum;
+                    if (total === 0) return null;
+                    const actPct = Math.round((actSum / total) * 100);
+                    const feelPct = Math.round((feelSum / total) * 100);
+                    const thinkPct = 100 - actPct - feelPct; // ensures total = 100
+                    return (
+                      <div className="mt-5 pt-5 border-t border-[#F0EDE8]">
+                        <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#9B9590] mb-3 text-center">
+                          How You Act, Think & Feel
+                        </p>
+                        <div className="flex h-3 rounded-full overflow-hidden">
+                          <div
+                            className="flex items-center justify-center text-[0.55rem] font-bold text-white"
+                            style={{ width: `${actPct}%`, background: '#92400E' }}
+                          >
+                            {actPct >= 12 ? `${actPct}%` : ''}
+                          </div>
+                          <div
+                            className="flex items-center justify-center text-[0.55rem] font-bold text-white"
+                            style={{ width: `${feelPct}%`, background: '#9D174D' }}
+                          >
+                            {feelPct >= 12 ? `${feelPct}%` : ''}
+                          </div>
+                          <div
+                            className="flex items-center justify-center text-[0.55rem] font-bold text-white"
+                            style={{ width: `${thinkPct}%`, background: '#1E40AF' }}
+                          >
+                            {thinkPct >= 12 ? `${thinkPct}%` : ''}
+                          </div>
+                        </div>
+                        <div className="flex justify-between mt-2 text-[0.65rem]">
+                          <span style={{ color: '#92400E' }}>✊ Act ({actPct}%)</span>
+                          <span style={{ color: '#9D174D' }}>♡ Feel ({feelPct}%)</span>
+                          <span style={{ color: '#1E40AF' }}>◔ Think ({thinkPct}%)</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
                 </>
               ) : (
                 <p className="font-sans text-sm text-[#9B9590]">
@@ -3213,18 +3264,62 @@ export default function ResultsReveal({ results: initialResults, sessionId, onCo
                 <SectionHeader title="Type Scores" chatKey="Type Scores" />
                 <div className="flex flex-col gap-2.5">
                   {(() => {
+                    // Center icons + colors per DYN_SYSTEM_ARCHITECTURE.md
+                    // Body=8,9,1 (fist) | Heart=2,3,4 (heart) | Head=5,6,7 (head)
+                    const getCenter = (t: number): 'Body' | 'Heart' | 'Head' => {
+                      if (t === 8 || t === 9 || t === 1) return 'Body';
+                      if (t === 2 || t === 3 || t === 4) return 'Heart';
+                      return 'Head';
+                    };
+                    const centerMeta: Record<string, { icon: string; color: string; lightColor: string; label: string }> = {
+                      Body: { icon: '✊', color: '#92400E', lightColor: '#FEF3C7', label: 'Gut' },
+                      Heart: { icon: '♡', color: '#9D174D', lightColor: '#FCE7F3', label: 'Heart' },
+                      Head: { icon: '◔', color: '#1E40AF', lightColor: '#DBEAFE', label: 'Head' },
+                    };
                     const maxSc = Math.max(...sortedScores.map(([, s]) => s), 1);
                     return sortedScores.map(([type, score], idx) => {
                     const pct = Math.round((score / maxSc) * 100);
-                    const isLead = Number(type) === coreType;
+                    const typeNum = Number(type);
+                    const isLead = typeNum === coreType;
+                    const center = getCenter(typeNum);
+                    const meta = centerMeta[center];
                     return (
                       <div key={type} className="flex items-center gap-3">
-                        <span className={`font-sans text-sm w-16 ${isLead ? 'font-bold text-[#2563EB]' : 'text-[#6B6B6B]'}`}>Type {type}</span>
-                        <AnimatedBar percent={pct} color={isLead ? '#2563EB' : '#93C5FD'} delay={200 + idx * 80} numberClassName={isLead ? 'font-bold text-[#2563EB]' : 'text-[#9B9590]'} />
+                        <span
+                          className="flex items-center justify-center w-7 h-7 rounded-full text-base flex-shrink-0"
+                          style={{ background: meta.lightColor, color: meta.color }}
+                          title={`${meta.label} center`}
+                        >
+                          {meta.icon}
+                        </span>
+                        <span className={`font-sans text-sm w-16 ${isLead ? 'font-bold' : 'text-[#6B6B6B]'}`} style={isLead ? { color: meta.color } : {}}>
+                          Type {type}
+                        </span>
+                        <AnimatedBar
+                          percent={pct}
+                          color={isLead ? meta.color : meta.lightColor}
+                          delay={200 + idx * 80}
+                          numberClassName={isLead ? 'font-bold' : 'text-[#9B9590]'}
+                        />
                       </div>
                     );
                   });
                   })()}
+                </div>
+                {/* Legend */}
+                <div className="flex items-center justify-center gap-4 mt-4 pt-4 border-t border-[#F0EDE8]">
+                  <span className="flex items-center gap-1.5 text-[0.7rem] text-[#9B9590]">
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center text-sm" style={{ background: '#FEF3C7', color: '#92400E' }}>✊</span>
+                    Gut
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[0.7rem] text-[#9B9590]">
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center text-sm" style={{ background: '#FCE7F3', color: '#9D174D' }}>♡</span>
+                    Heart
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[0.7rem] text-[#9B9590]">
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center text-sm" style={{ background: '#DBEAFE', color: '#1E40AF' }}>◔</span>
+                    Head
+                  </span>
                 </div>
               </div>
               </ScrollReveal>
