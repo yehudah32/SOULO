@@ -14,6 +14,7 @@ import { selectTritype, CENTER_MAP } from '@/lib/enneagram-lines';
 import { findPairForTypes, getTopTwoTypes } from '@/lib/differentiation-pairs';
 import { scoreResponse, hasTypeSignatures } from '@/lib/vector-scorer';
 import { scoreV2, flattenToTypeScores, type QuestionContext as V2QuestionContext, type VectorV2Result } from '@/lib/vector-scorer-v2';
+import { detectTiebreakerNeeded } from '@/lib/tiebreakers';
 import { evaluatePhaseTransition } from '@/lib/phase-manager';
 import { selectNextQuestion, selectTier2Question, formatQuestionResponse, getTransitionText } from '@/lib/decision-tree';
 import type { SessionData } from '@/lib/session-store';
@@ -1070,6 +1071,21 @@ Format: ${diffPair.questions[qIdx].format}`;
           setSession(sessionId, { vectorScoresV2: v2Result });
           const v2CoreAgree = claudeTopType === v2Result.coreType;
           const v2CenterAgree = claudeCenter === (v2Result.coreType > 0 ? (CENTER_MAP[v2Result.coreType] ?? '') : '');
+
+          // Tiebreaker detection: when two centers have comparable confidence,
+          // passive scoring can't resolve the core type. Log when this fires
+          // so we can see how often it'd help on real assessments.
+          const tiebreakerCandidates = detectTiebreakerNeeded(
+            v2Result.centerWinners,
+            v2Result.centerConfidences,
+            v2Result.exchangeCount,
+          );
+          if (tiebreakerCandidates) {
+            console.log(`[shadow-v2] ⚠️ Tiebreaker recommended at ex${currentExchange}: competing types ${tiebreakerCandidates.join(', ')}`);
+          }
+          const phaseTag = tiebreakerCandidates
+            ? `v2:wholeType=${v2Result.wholeType}:tiebreaker=${tiebreakerCandidates.join('-')}`
+            : `v2:wholeType=${v2Result.wholeType}`;
           await adminClient.from('shadow_mode_log').insert({
             session_id: sessionId,
             exchange_number: currentExchange,
@@ -1081,7 +1097,7 @@ Format: ${diffPair.questions[qIdx].format}`;
             vector_type_scores: flattenToTypeScores(v2Result.centers),
             agreement: v2CoreAgree,
             center_agreement: v2CenterAgree,
-            phase: `v2:wholeType=${v2Result.wholeType}`,
+            phase: phaseTag,
           }).then(
             ({ error: logErr }) => {
               if (logErr) console.error('[shadow-v2] Log error:', logErr.message);

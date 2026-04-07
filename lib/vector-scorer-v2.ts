@@ -79,10 +79,21 @@ export interface VectorV2Result {
   centers: CenterRace;
   /** Winning type per center after normalization. */
   centerWinners: { Body: number; Heart: number; Head: number };
+  /** Per-center winner confidence within its race [0-1]. Used for tiebreaker
+   *  detection — when two centers have comparable confidences, the
+   *  assessment cannot resolve the core type from passive observation. */
+  centerConfidences: { Body: number; Heart: number; Head: number };
   /** Whole type as a "core-by-other-by-other" string, e.g. "1-4-5". */
   wholeType: string;
-  /** Core type — highest-confidence center winner. */
+  /** Core type — usually the highest-confidence center winner, but
+   *  OVERRIDDEN by userDeclaredCoreType when the user has answered a
+   *  tiebreaker question. The user's direct answer is always more reliable
+   *  than accumulated passive signal. */
   coreType: number;
+  /** When the user answered a tiebreaker question, this holds the type they
+   *  picked. This is the ground-truth core type and overrides the math-
+   *  derived choice. Stays null until a tiebreaker is answered. */
+  userDeclaredCoreType: number | null;
   /** Confidence in the core type [0-1]. */
   confidence: number;
   /** Per-layer signal contributions for this turn (for debugging). */
@@ -169,6 +180,7 @@ function pickCenterWinner(scores: Record<number, number>): { type: number; confi
 
 function deriveWholeType(centers: CenterRace): {
   centerWinners: { Body: number; Heart: number; Head: number };
+  centerConfidences: { Body: number; Heart: number; Head: number };
   wholeType: string;
   coreType: number;
   confidence: number;
@@ -204,6 +216,7 @@ function deriveWholeType(centers: CenterRace): {
 
   return {
     centerWinners: { Body: bodyWin.type, Heart: heartWin.type, Head: headWin.type },
+    centerConfidences: { Body: bodyWin.confidence, Heart: heartWin.confidence, Head: headWin.confidence },
     wholeType: ordered.filter((t) => t > 0).join('-'),
     coreType: core.type,
     confidence: core.conf,
@@ -348,6 +361,10 @@ async function applyEmbeddingSignal(
  * @param prior        - Previous v2 result for this session, or null on first turn
  * @returns Updated v2 result with new center scores, winners, and core type
  */
+// Reserved ID range for runtime-generated tiebreaker questions. Must match
+// the constant in lib/tiebreakers.ts.
+const TIEBREAKER_QUESTION_ID = -100;
+
 export async function scoreV2(
   userResponse: string,
   question: QuestionContext,
@@ -359,14 +376,66 @@ export async function scoreV2(
   const lexicalDelta = applyLexicalSignal(centers, userResponse);
   const embedDelta = await applyEmbeddingSignal(centers, userResponse, question);
 
+  // Tiebreaker handling: if the user just answered a tiebreaker question,
+  // their picked option directly DECLARES their core type. We capture which
+  // type they picked and store it as ground truth, overriding any math-
+  // derived core. Tiebreaker questions are tagged with the reserved ID.
+  let userDeclaredCoreType: number | null = prior?.userDeclaredCoreType ?? null;
+  if (
+    question.questionId === TIEBREAKER_QUESTION_ID ||
+    String(question.questionId) === String(TIEBREAKER_QUESTION_ID)
+  ) {
+    if (question.answerOptions && question.typeWeights) {
+      // Find which option the user picked
+      const trimmed = userResponse.trim();
+      let pickedIdx = question.answerOptions.findIndex((opt) => opt === trimmed);
+      if (pickedIdx === -1) {
+        pickedIdx = question.answerOptions.findIndex((opt) =>
+          trimmed.toLowerCase().includes(opt.toLowerCase()) ||
+          opt.toLowerCase().includes(trimmed.toLowerCase()),
+        );
+      }
+      if (pickedIdx >= 0) {
+        // The picked option's strongest type weight IS their declared core
+        const weights = question.typeWeights[pickedIdx] ?? {};
+        const sorted = Object.entries(weights)
+          .map(([t, w]) => [Number(t), Number(w)] as const)
+          .sort((a, b) => b[1] - a[1]);
+        if (sorted.length > 0 && sorted[0][1] > 0) {
+          userDeclaredCoreType = sorted[0][0];
+          console.log(`[vector-v2] Tiebreaker resolved: user declared core type = ${userDeclaredCoreType}`);
+        }
+      }
+    }
+  }
+
   const derived = deriveWholeType(centers);
+
+  // The user's tiebreaker pick is ground truth — override the math.
+  // We also rebuild the wholeType string with the declared core in front
+  // (followed by the other two center winners in their natural order).
+  let coreType = derived.coreType;
+  let wholeType = derived.wholeType;
+  if (userDeclaredCoreType !== null) {
+    coreType = userDeclaredCoreType;
+    const center = centerOfType(userDeclaredCoreType);
+    if (center) {
+      const others = (['Body', 'Heart', 'Head'] as const)
+        .filter((c) => c !== center)
+        .map((c) => derived.centerWinners[c])
+        .filter((t) => t > 0 && t !== userDeclaredCoreType);
+      wholeType = [userDeclaredCoreType, ...others].join('-');
+    }
+  }
 
   return {
     centers,
     centerWinners: derived.centerWinners,
-    wholeType: derived.wholeType,
-    coreType: derived.coreType,
-    confidence: derived.confidence,
+    centerConfidences: derived.centerConfidences,
+    wholeType,
+    coreType,
+    userDeclaredCoreType,
+    confidence: userDeclaredCoreType !== null ? 0.95 : derived.confidence,
     signalContributions: {
       answer_weights: answerDelta,
       lexical: lexicalDelta,

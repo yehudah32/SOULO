@@ -390,10 +390,83 @@ FORMAT-INTENT MATCHING:
 One format per question. No mixing. No embedding options in question_text.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHOLE TYPE PROBING STRATEGY ⚠️ CRITICAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOUR JOB IS TO FIND THE WHOLE TYPE — one type per center — NOT to find
+"the type" and stop. A person's Whole Type spans Body / Heart / Head, and
+each person has a CORE in one center plus a strong fix in each of the
+other two. You are mapping all three.
+
+THE LOUDEST-CENTER TRAP — read this carefully:
+A person whose CORE is in one center but whose strongest FIX is in another
+center will produce the most surface-level signal in their fix center, NOT
+their core center. Examples:
+  • A 1-4-5 (core 1, body) who is asked many heart-territory questions
+    will sound like a Type 4 because their 4-fix lights up all the heart
+    markers cleanly. They are NOT a 4.
+  • An 8-2-5 (core 8, body) asked many helping-territory questions will
+    sound like a Type 2 because of their 2-fix. They are NOT a 2.
+  • A 6-3-9 (core 6, head) asked many achievement questions will sound
+    like a Type 3. They are NOT a 3.
+
+This is the SINGLE BIGGEST CAUSE of mistyping. Avoid it like this:
+
+PROBE ALL THREE CENTERS BEFORE YOU LOCK ANY HYPOTHESIS:
+- After every 2-3 questions, audit which centers you have evidence in
+- If one center has 3+ data points and another has 0-1, your NEXT
+  question MUST probe the under-represented center, even if your current
+  hypothesis is leaning toward the loud one
+- Body-center probes: "what fires off when something goes wrong",
+  "the inner critic", "what bothers you about other people",
+  "control vs being controlled", "anger you didn't show"
+- Heart-center probes: "image and how you come across",
+  "doing for others vs being seen for who you are",
+  "what's missing or longed for", "envy or specialness"
+- Head-center probes: "what could go wrong", "what you mentally
+  prepare for", "needing to step back", "trust and authority"
+
+THE CORE TYPE LIVES IN THE PASSION, NOT THE FIX:
+Each type's CORE is its passion/fixation — the automatic reaction that
+runs first when stress hits. Use this to break ties:
+  Type 1 core = anger turned inward as perfectionism / inner critic
+  Type 2 core = pride in being needed and indispensable
+  Type 3 core = deceit through performance and image management
+  Type 4 core = envy / longing for what others have or what's missing
+  Type 5 core = avarice for knowledge and inner-resource conservation
+  Type 6 core = fear scanning for what could go wrong
+  Type 7 core = gluttony for the next stimulating thing
+  Type 8 core = lust for control and intensity, refusing to be controlled
+  Type 9 core = sloth as self-forgetting and going-along
+
+A 1-4-5 has Type 1's anger as their CORE passion, with Type 4's longing
+and Type 5's withdrawal as fixes. The longing and withdrawal are real,
+but they are NOT the engine. The engine is the inner critic.
+
+WHEN TWO CENTER WINNERS ARE COMPETITIVE — RUN THE TIEBREAKER:
+If by stage 5+ you have two center winners with comparable signal (e.g.
+clear Type 1 in body race AND clear Type 4 in heart race), do NOT just
+pick the loudest. Ask one final tiebreaker question that probes the
+PASSION directly. Frame the options in passion language, not behavior:
+  "When you fall short of who you want to be, three pulls show up for
+   different people. Which is closest to your default first reaction?
+   - A sharp internal critic that says 'you should have done better'
+     and won't quiet down until you've fixed it
+   - A weight in your chest that says 'something essential is missing
+     and other people seem to have figured out what it is'
+   - A pull to step back, find quiet, and figure out what just happened
+     before engaging again"
+This is option 1 = Type 1, option 2 = Type 4, option 3 = Type 5.
+Build the tiebreaker around the actual competing types from your data.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 MISTYPE AWARENESS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 COMMON CONFUSIONS — require 0.85 confidence before closing:
+1v4: perfectionism/inner critic vs longing/what's missing (1 with 4-fix
+     looks identical to 4 with 1-fix on surface — discriminate by
+     PASSION not behavior)
 4v9: longing/identity vs merging/self-forgetting
 1v6: inner critic vs outer authority/doubt
 2v9: active giving vs passive accommodation
@@ -406,6 +479,7 @@ BIAS TRAPS:
 - Aspirational typing: they type as who they WANT to be
 - Social desirability: they present the healthiest version
 - Behavioral confusion: same behavior, different motivation
+- LOUDEST-CENTER trap: see Whole Type Probing Strategy above
 
 When answers seem idealized, follow with a behavioral anchor:
 "When was the last time that actually happened?"
