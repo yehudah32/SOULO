@@ -2,6 +2,7 @@ import { adminClient } from '@/lib/supabase';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getWingTypes } from '@/lib/enneagram-lines';
+import { questionsToFreeTierConfidence, FREE_TIER_CONFIDENCE_THRESHOLD } from '@/lib/confidence-metrics';
 
 const TYPE_NAMES: Record<number, string> = {
   1: 'The Reformer', 2: 'The Helper', 3: 'The Achiever', 4: 'The Individualist',
@@ -133,6 +134,10 @@ export default async function SessionDetailPage({
   const v2WholeType = v2FinalEntry?.phase?.match(/wholeType=([0-9-]+)/)?.[1] ?? null;
   const v2TiebreakerCount = shadowRows.filter((s) => /tiebreaker=/.test(s.phase || '')).length;
 
+  // Questions-to-free-tier-confidence metric for this session.
+  // Computed from Claude's claude_confidence per turn in shadow_mode_log.
+  const questionsToFreeTier = questionsToFreeTierConfidence(shadowRows);
+
   const leadingType = r.leading_type;
   const confPct = Math.round(r.confidence * 100);
   const typeName = TYPE_NAMES[leadingType] ?? `Type ${leadingType}`;
@@ -219,6 +224,17 @@ export default async function SessionDetailPage({
                   SP {Math.round((r.variant_signals?.SP ?? 0) * 100)}%
                   &nbsp;·&nbsp;SO {Math.round((r.variant_signals?.SO ?? 0) * 100)}%
                   &nbsp;·&nbsp;SX {Math.round((r.variant_signals?.SX ?? 0) * 100)}%
+                </span>
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <Label>Q&apos;s to Free-Tier</Label>
+                <span className={`font-serif text-[1.4rem] font-bold leading-none ${questionsToFreeTier !== null ? 'text-[#2563EB]' : 'text-[#9B9590]'}`}>
+                  {questionsToFreeTier !== null ? questionsToFreeTier : '—'}
+                </span>
+                <span className="font-sans text-[0.68rem] text-[#9B9590]">
+                  {questionsToFreeTier !== null
+                    ? `to reach ${Math.round(FREE_TIER_CONFIDENCE_THRESHOLD * 100)}% confidence`
+                    : `never reached ${Math.round(FREE_TIER_CONFIDENCE_THRESHOLD * 100)}%`}
                 </span>
               </div>
             </div>

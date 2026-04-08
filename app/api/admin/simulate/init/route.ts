@@ -62,6 +62,7 @@ export async function POST(request: Request) {
       response_parts: (data.internal as any)?.response_parts ?? null,
       currentSection: data.currentSection,
       sessionState: session,
+      vectorV2State: session?.vectorScoresV2 ?? null,
     });
   } catch (err) {
     console.error('[admin/simulate/init] Error:', err);

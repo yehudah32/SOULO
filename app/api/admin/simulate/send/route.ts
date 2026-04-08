@@ -98,6 +98,10 @@ export async function POST(request: Request) {
       exchangeCount: updatedSession?.exchangeCount ?? 0,
       sessionState: updatedSession,
       shadowEntries: shadowRows ?? [],
+      // The current vector v2 running state — used by the simulator inspector
+      // to show per-center races and signal contributions live. Stored on the
+      // session by the chat route's shadow path.
+      vectorV2State: updatedSession?.vectorScoresV2 ?? null,
     });
   } catch (err) {
     console.error('[admin/simulate/send] Error:', err);

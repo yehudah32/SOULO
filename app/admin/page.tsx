@@ -2,6 +2,11 @@ import { adminClient } from '@/lib/supabase';
 import Link from 'next/link';
 import SyncButton from './SyncButton';
 import QuestionYieldDashboard from './QuestionYieldDashboard';
+import {
+  questionsToFreeTierConfidence,
+  aggregateFreeTierStats,
+  FREE_TIER_CONFIDENCE_THRESHOLD,
+} from '@/lib/confidence-metrics';
 
 // Must match VECTOR_MODE in app/api/chat/route.ts and chat/init/route.ts.
 // Read-only on the dashboard — change requires a code deploy.
@@ -16,19 +21,6 @@ const CENTER_COLOR: Record<number, string> = {
   1: '#2563EB', 2: '#B5726D', 3: '#B5726D', 4: '#B5726D',
   5: '#7A9E7E', 6: '#7A9E7E', 7: '#7A9E7E', 8: '#2563EB', 9: '#2563EB',
 };
-
-function ScoreBadge({ score }: { score: number | null }) {
-  if (score === null) return <span className="font-sans text-xs text-gray-500">—</span>;
-  const color =
-    score >= 7.5 ? 'bg-[#7A9E7E]/15 text-[#4A7A52]' :
-    score >= 5   ? 'bg-[#F5E6B0]/60 text-[#7A6A20]' :
-                   'bg-red-50 text-red-600';
-  return (
-    <span className={`font-sans text-xs font-semibold px-2 py-0.5 rounded-full ${color}`}>
-      {score.toFixed(1)}
-    </span>
-  );
-}
 
 function formatDate(iso: string) {
   const d = new Date(iso);
@@ -83,33 +75,68 @@ export default async function AdminDashboard() {
     fetchError = String(err);
   }
 
-  // Pull live shadow data for the v2 sessions stat card. We compute the
-  // final-exchange agreement rate (the same metric the shadow-mode dashboard
-  // uses for the promotion gate).
+  // Pull live shadow data for v2 stats AND the questions-to-confidence metric.
+  // Single query, two derived stats.
   let v2Sessions = 0;
   let v2CoreAgreementPct: number | null = null;
   let v2TiebreakerCount = 0;
+  // Per-session map: session_id → exchanges to first crossing of free-tier threshold
+  const questionsToConfidenceBySession = new Map<string, number | null>();
   try {
     const { data: shadowRows } = await adminClient
       .from('shadow_mode_log')
-      .select('session_id, exchange_number, agreement, phase')
-      .like('phase', 'v2:%')
+      .select('session_id, exchange_number, agreement, phase, claude_top_type, claude_confidence')
       .order('created_at', { ascending: false })
-      .limit(2000);
-    const lastBySession = new Map<string, { exchange_number: number; agreement: boolean; phase: string }>();
+      .limit(5000);
+
+    // Group all rows by session
+    const rowsBySession = new Map<string, Array<{
+      exchange_number: number;
+      agreement: boolean;
+      phase: string;
+      claude_top_type: number;
+      claude_confidence: number;
+    }>>();
     for (const r of shadowRows ?? []) {
-      const ex = lastBySession.get(r.session_id);
-      if (!ex || r.exchange_number > ex.exchange_number) {
-        lastBySession.set(r.session_id, r as { exchange_number: number; agreement: boolean; phase: string });
-      }
-      if (/tiebreaker=/.test(r.phase || '')) v2TiebreakerCount++;
+      const list = rowsBySession.get(r.session_id) ?? [];
+      list.push(r as {
+        exchange_number: number;
+        agreement: boolean;
+        phase: string;
+        claude_top_type: number;
+        claude_confidence: number;
+      });
+      rowsBySession.set(r.session_id, list);
     }
-    v2Sessions = lastBySession.size;
+
+    // For each session compute (a) latest v2 entry for agreement stats,
+    // (b) questions-to-confidence metric.
+    const lastV2BySession = new Map<string, { agreement: boolean }>();
+    for (const [sessionId, sessionRows] of rowsBySession) {
+      // v2 final exchange for agreement
+      const v2Rows = sessionRows.filter((r) => r.phase?.startsWith('v2:'));
+      if (v2Rows.length > 0) {
+        const latest = v2Rows.reduce((acc, r) => r.exchange_number > acc.exchange_number ? r : acc);
+        lastV2BySession.set(sessionId, { agreement: latest.agreement });
+      }
+      for (const r of v2Rows) {
+        if (/tiebreaker=/.test(r.phase || '')) v2TiebreakerCount++;
+      }
+
+      // Questions-to-confidence (uses Claude's confidence regardless of v1/v2)
+      questionsToConfidenceBySession.set(sessionId, questionsToFreeTierConfidence(sessionRows));
+    }
+
+    v2Sessions = lastV2BySession.size;
     if (v2Sessions > 0) {
-      const agreed = [...lastBySession.values()].filter((r) => r.agreement).length;
+      const agreed = [...lastV2BySession.values()].filter((r) => r.agreement).length;
       v2CoreAgreementPct = Math.round((agreed / v2Sessions) * 100);
     }
   } catch { /* non-fatal — leave shadow stats empty */ }
+
+  // Aggregate free-tier confidence stats across all sessions that have any
+  // shadow data (which is most sessions since we started logging).
+  const freeTierStats = aggregateFreeTierStats([...questionsToConfidenceBySession.values()]);
 
   // Stats
   const total = rows.length;
@@ -179,7 +206,7 @@ export default async function AdminDashboard() {
         ) : (
           <>
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {[
                 {
                   label: 'Total Sessions',
@@ -196,7 +223,16 @@ export default async function AdminDashboard() {
                 {
                   label: 'Avg Confidence',
                   value: total > 0 ? `${avgConf}%` : '—',
-                  sub: 'across all sessions',
+                  sub: `${avgExchanges} avg exchanges`,
+                },
+                {
+                  label: `Q's to Free-Tier`,
+                  value: freeTierStats.avgQuestions !== null
+                    ? freeTierStats.avgQuestions.toString()
+                    : '—',
+                  sub: freeTierStats.reached > 0
+                    ? `avg · median ${freeTierStats.medianQuestions} · range ${freeTierStats.minQuestions}-${freeTierStats.maxQuestions}`
+                    : `${Math.round(FREE_TIER_CONFIDENCE_THRESHOLD * 100)}% threshold not yet reached`,
                 },
                 {
                   label: 'Vector v2 Agreement',
@@ -236,7 +272,7 @@ export default async function AdminDashboard() {
 
                 {/* Table header */}
                 <div className="hidden md:grid grid-cols-[160px_140px_180px_90px_70px_60px_70px_32px] gap-4 items-center px-5 py-3 border-b border-[#F0EBE6]">
-                  {['Date', 'Type', 'DS Type Name', 'Whole Type', 'Conf.', 'Exch.', 'Score', ''].map((h) => (
+                  {['Date', 'Type', 'DS Type Name', 'Whole Type', 'Conf.', 'Exch.', 'Q→75%', ''].map((h) => (
                     <span key={h} className="font-sans text-[0.65rem] uppercase tracking-[0.08em] text-gray-500">{h}</span>
                   ))}
                 </div>
@@ -247,6 +283,7 @@ export default async function AdminDashboard() {
                     const { date, time } = formatDate(row.created_at);
                     const typeColor = CENTER_COLOR[row.leading_type] ?? '#2563EB';
                     const confPct = Math.round(row.confidence * 100);
+                    const qToConf = questionsToConfidenceBySession.get(row.session_id) ?? null;
                     return (
                       <Link
                         key={row.session_id}
@@ -270,10 +307,11 @@ export default async function AdminDashboard() {
                                 <span className="font-sans text-xs text-gray-500">{row.tritype}</span>
                               )}
                             </div>
-                            <span className="font-sans text-xs text-gray-500">{date} · {time}</span>
+                            <span className="font-sans text-xs text-gray-500">
+                              {date} · {time}{qToConf !== null ? ` · ${qToConf} q's to free-tier` : ''}
+                            </span>
                           </div>
                           <div className="flex items-center gap-2 flex-shrink-0">
-                            <ScoreBadge score={row.overall_score} />
                             <span className="text-[#D0CAC4] group-hover:text-soulo-purple transition-colors">→</span>
                           </div>
                         </div>
@@ -324,8 +362,15 @@ export default async function AdminDashboard() {
                             {row.exchange_count}
                           </span>
 
-                          {/* Score */}
-                          <ScoreBadge score={row.overall_score} />
+                          {/* Q's to Free-Tier confidence */}
+                          <span
+                            className={`font-mono text-sm ${qToConf !== null ? 'text-[#2563EB] font-semibold' : 'text-[#9B9590]'}`}
+                            title={qToConf !== null
+                              ? `Reached ${Math.round(FREE_TIER_CONFIDENCE_THRESHOLD * 100)}% confidence at exchange ${qToConf}`
+                              : `Never reached ${Math.round(FREE_TIER_CONFIDENCE_THRESHOLD * 100)}% confidence`}
+                          >
+                            {qToConf !== null ? qToConf : '—'}
+                          </span>
 
                           {/* Arrow */}
                           <span className="text-[#D0CAC4] group-hover:text-soulo-purple transition-colors text-sm">→</span>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { FREE_TIER_CONFIDENCE_THRESHOLD } from '@/lib/confidence-metrics';
 
 interface ShadowEntry {
   phase: string;
@@ -13,6 +14,27 @@ interface ShadowEntry {
   exchange_number: number;
   claude_top_type: number;
   claude_confidence: number;
+}
+
+// Vector v2 running state shape (mirrors lib/vector-scorer-v2.ts VectorV2Result).
+interface VectorV2State {
+  centers: {
+    Body: { 8: number; 9: number; 1: number };
+    Heart: { 2: number; 3: number; 4: number };
+    Head: { 5: number; 6: number; 7: number };
+  };
+  centerWinners: { Body: number; Heart: number; Head: number };
+  centerConfidences: { Body: number; Heart: number; Head: number };
+  wholeType: string;
+  coreType: number;
+  userDeclaredCoreType: number | null;
+  confidence: number;
+  signalContributions: {
+    answer_weights: number;
+    lexical: number;
+    embedding: number;
+  };
+  exchangeCount: number;
 }
 
 interface Message {
@@ -44,6 +66,7 @@ export default function SimulatePage() {
   const [showDiagnostic, setShowDiagnostic] = useState(false);
   const [resultsLoading, setResultsLoading] = useState(false);
   const [resultsError, setResultsError] = useState('');
+  const [vectorV2State, setVectorV2State] = useState<VectorV2State | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -68,12 +91,14 @@ export default function SimulatePage() {
     setMessages([]);
     setSelectedInternal(null);
     setSessionState(null);
+    setVectorV2State(null);
     try {
       const res = await fetch('/api/admin/simulate/init', { method: 'POST' });
       const data = await res.json();
       if (data.error) throw new Error(data.error);
       setSessionId(data.sessionId);
       setSessionState(data.sessionState);
+      setVectorV2State(data.vectorV2State ?? null);
       setMessages([{
         role: 'assistant',
         content: data.response,
@@ -103,6 +128,7 @@ export default function SimulatePage() {
       const data = await res.json();
       if (data.error) throw new Error(data.error);
       setSessionState(data.sessionState);
+      setVectorV2State(data.vectorV2State ?? null);
       const msg: Message = {
         role: 'assistant',
         content: data.response,
@@ -440,6 +466,281 @@ export default function SimulatePage() {
                 </details>
               </div>
             )}
+
+            {/* ═══ VECTOR V2 — PER-CENTER RACES (live) ═══ */}
+            {vectorV2State && (
+              <div className="bg-white border border-[#E8E4E0] rounded-xl p-3 space-y-3">
+                <div className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590]">v2 Per-Center Races</div>
+                {(['Body', 'Heart', 'Head'] as const).map((center) => {
+                  const scores = vectorV2State.centers[center] as Record<string, number>;
+                  const winner = vectorV2State.centerWinners[center];
+                  const conf = vectorV2State.centerConfidences[center];
+                  const colors: Record<string, string> = { Body: '#2563EB', Heart: '#B5726D', Head: '#7A9E7E' };
+                  const total = Object.values(scores).reduce((s, v) => s + v, 0);
+                  return (
+                    <div key={center}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-mono text-[0.6rem] text-[#2C2C2C]" style={{ color: colors[center] }}>{center.toUpperCase()}</span>
+                        <span className="font-mono text-[0.6rem] text-[#9B9590]">winner T{winner} · {(conf * 100).toFixed(0)}%</span>
+                      </div>
+                      <div className="space-y-0.5">
+                        {Object.entries(scores).sort(([, a], [, b]) => b - a).map(([t, s]) => {
+                          const pct = total > 0 ? Math.round((s / total) * 100) : 0;
+                          const isWin = Number(t) === winner;
+                          return (
+                            <div key={t} className="flex items-center gap-2">
+                              <span className={`font-mono text-[0.6rem] w-3 text-right ${isWin ? 'font-bold' : 'text-[#9B9590]'}`} style={isWin ? { color: colors[center] } : {}}>{t}</span>
+                              <div className="flex-1 h-1.5 bg-[#F0EBE6] rounded-full overflow-hidden">
+                                <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: isWin ? colors[center] : '#D0CAC4' }} />
+                              </div>
+                              <span className="font-mono text-[0.55rem] w-7 text-right text-[#9B9590]">{pct}%</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+                <div className="pt-2 border-t border-[#F0EBE6] flex items-center justify-between text-[0.6rem] font-mono">
+                  <span className="text-[#9B9590]">Whole Type</span>
+                  <span className="font-bold text-[#2C2C2C]">{vectorV2State.wholeType || '—'}</span>
+                </div>
+                {vectorV2State.userDeclaredCoreType !== null && (
+                  <div className="text-[0.55rem] font-mono text-yellow-700 bg-yellow-50 px-2 py-1 rounded">
+                    Tiebreaker fired — user declared core type T{vectorV2State.userDeclaredCoreType}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* ═══ VECTOR V2 — SIGNAL CONTRIBUTIONS (this turn) ═══ */}
+            {vectorV2State && (() => {
+              const sc = vectorV2State.signalContributions;
+              const total = sc.answer_weights + sc.lexical + sc.embedding;
+              if (total <= 0) return null;
+              return (
+                <div className="bg-white border border-[#E8E4E0] rounded-xl p-3">
+                  <div className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590] mb-2">v2 Signal Contributions (this turn)</div>
+                  <div className="space-y-1.5">
+                    {[
+                      { label: 'Answer weights (L4)', val: sc.answer_weights, color: '#2563EB' },
+                      { label: 'Lexical (L3)', val: sc.lexical, color: '#7A9E7E' },
+                      { label: 'Embedding (L2)', val: sc.embedding, color: '#B5726D' },
+                    ].map((row) => {
+                      const pct = total > 0 ? Math.round((row.val / total) * 100) : 0;
+                      return (
+                        <div key={row.label} className="flex items-center gap-2">
+                          <span className="font-sans text-[0.6rem] text-[#6B6B6B] w-28">{row.label}</span>
+                          <div className="flex-1 h-2 bg-[#F0EBE6] rounded-full overflow-hidden">
+                            <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: row.color }} />
+                          </div>
+                          <span className="font-mono text-[0.6rem] w-8 text-right text-[#9B9590]">{pct}%</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* ═══ FREE-TIER CONFIDENCE GAUGE ═══ */}
+            {hypothesis && (() => {
+              const conf = hypothesis.confidence ?? 0;
+              const threshold = FREE_TIER_CONFIDENCE_THRESHOLD;
+              const reached = conf >= threshold;
+              const pct = Math.min(100, Math.round((conf / threshold) * 100));
+              return (
+                <div className={`rounded-xl p-3 ${reached ? 'bg-[#7A9E7E]/10 border border-[#7A9E7E]/30' : 'bg-[#FAF8F5] border border-[#E8E4E0]'}`}>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590]">Free-Tier Threshold</span>
+                    <span className={`font-mono text-[0.6rem] ${reached ? 'text-[#7A9E7E] font-bold' : 'text-[#9B9590]'}`}>
+                      {(conf * 100).toFixed(0)}% / {Math.round(threshold * 100)}%
+                    </span>
+                  </div>
+                  <div className="h-2 bg-[#E8E4E0] rounded-full overflow-hidden">
+                    <div
+                      className="h-full rounded-full transition-all duration-500"
+                      style={{ width: `${pct}%`, backgroundColor: reached ? '#7A9E7E' : '#2563EB' }}
+                    />
+                  </div>
+                  <div className="font-sans text-[0.6rem] text-[#9B9590] mt-1">
+                    {reached
+                      ? `✓ Reached at exchange ${sessionState?.exchangeCount ?? '?'} — free version could ship`
+                      : 'Need more confidence before free-tier core type can ship'}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* ═══ TIER 2 — VARIANT STACK (live) ═══ */}
+            {sessionState?.internalState?.variant_signals && (() => {
+              const vs = sessionState.internalState.variant_signals as Record<string, number>;
+              const sp = vs.SP ?? 0, so = vs.SO ?? 0, sx = vs.SX ?? 0;
+              const total = sp + so + sx;
+              const dominant = total > 0 ? (Object.entries(vs).sort(([, a], [, b]) => b - a)[0]?.[0]) : '?';
+              return (
+                <div className="bg-white border border-[#E8E4E0] rounded-xl p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590]">Tier 2 — Instinct Stack</span>
+                    <span className="font-mono text-[0.6rem] font-bold text-[#2C2C2C]">{total > 0 ? `${dominant}-dominant` : '—'}</span>
+                  </div>
+                  {(['SP', 'SO', 'SX'] as const).map((v) => {
+                    const val = vs[v] ?? 0;
+                    const pct = total > 0 ? Math.round((val / total) * 100) : 0;
+                    const colors: Record<string, string> = { SP: '#7A9E7E', SO: '#2563EB', SX: '#B5726D' };
+                    return (
+                      <div key={v} className="flex items-center gap-2 mb-1">
+                        <span className="font-mono text-[0.6rem] w-6" style={{ color: colors[v] }}>{v}</span>
+                        <div className="flex-1 h-1.5 bg-[#F0EBE6] rounded-full overflow-hidden">
+                          <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: colors[v] }} />
+                        </div>
+                        <span className="font-mono text-[0.55rem] w-7 text-right text-[#9B9590]">{pct}%</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })()}
+
+            {/* ═══ TIER 3 — WING SIGNALS (live) ═══ */}
+            {sessionState?.internalState?.wing_signals && (() => {
+              const ws = sessionState.internalState.wing_signals as { left: number; right: number };
+              const left = ws.left ?? 0;
+              const right = ws.right ?? 0;
+              const lead = sessionState.internalState?.hypothesis?.leading_type ?? 0;
+              const total = left + right;
+              const dominantSide = total > 0 ? (left > right ? 'left' : 'right') : null;
+              return (
+                <div className="bg-white border border-[#E8E4E0] rounded-xl p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590]">Tier 3 — Wing Signals</span>
+                    {lead > 0 && dominantSide && (
+                      <span className="font-mono text-[0.6rem] font-bold text-[#2C2C2C]">
+                        {lead}w{dominantSide === 'left' ? ((lead - 2 + 9) % 9) + 1 : (lead % 9) + 1}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="font-mono text-[0.6rem] w-12 text-[#6B6B6B]">left</span>
+                    <div className="flex-1 h-1.5 bg-[#F0EBE6] rounded-full overflow-hidden">
+                      <div className="h-full rounded-full bg-[#2563EB]" style={{ width: `${Math.round(left * 100)}%` }} />
+                    </div>
+                    <span className="font-mono text-[0.55rem] w-7 text-right text-[#9B9590]">{Math.round(left * 100)}%</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-[0.6rem] w-12 text-[#6B6B6B]">right</span>
+                    <div className="flex-1 h-1.5 bg-[#F0EBE6] rounded-full overflow-hidden">
+                      <div className="h-full rounded-full bg-[#2563EB]" style={{ width: `${Math.round(right * 100)}%` }} />
+                    </div>
+                    <span className="font-mono text-[0.55rem] w-7 text-right text-[#9B9590]">{Math.round(right * 100)}%</span>
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* ═══ CLOSING CRITERIA (live) ═══ */}
+            {sessionState?.internalState?.conversation?.closing_criteria && (() => {
+              const cc = sessionState.internalState.conversation.closing_criteria as Record<string, boolean>;
+              const total = Object.keys(cc).length;
+              const met = Object.values(cc).filter(Boolean).length;
+              return (
+                <div className="bg-white border border-[#E8E4E0] rounded-xl p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590]">Closing Criteria</span>
+                    <span className="font-mono text-[0.6rem] text-[#9B9590]">{met}/{total} met</span>
+                  </div>
+                  <div className="space-y-0.5">
+                    {Object.entries(cc).map(([k, v]) => (
+                      <div key={k} className="flex items-center gap-2 font-mono text-[0.6rem]">
+                        <span className={v ? 'text-[#7A9E7E]' : 'text-[#D0CAC4]'}>{v ? '✓' : '○'}</span>
+                        <span className={v ? 'text-[#2C2C2C]' : 'text-[#9B9590]'}>{k.replace(/_/g, ' ')}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* ═══ CENTER COVERAGE (live) ═══ */}
+            {sessionState?.internalState?.centers && (() => {
+              const c = sessionState.internalState.centers as Record<string, unknown>;
+              return (
+                <div className="bg-white border border-[#E8E4E0] rounded-xl p-3">
+                  <div className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590] mb-2">Center Coverage</div>
+                  <div className="grid grid-cols-3 gap-2">
+                    {(['body_probed', 'heart_probed', 'head_probed'] as const).map((k) => {
+                      const probed = !!c[k];
+                      const label = k.replace('_probed', '').toUpperCase();
+                      return (
+                        <div key={k} className={`text-center py-2 rounded ${probed ? 'bg-[#7A9E7E]/15' : 'bg-[#F0EBE6]'}`}>
+                          <div className={`font-mono text-[0.6rem] ${probed ? 'text-[#4A7A52] font-bold' : 'text-[#9B9590]'}`}>{label}</div>
+                          <div className={`text-xs ${probed ? 'text-[#7A9E7E]' : 'text-[#D0CAC4]'}`}>{probed ? '✓' : '○'}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* ═══ DEFIANT SPIRIT — REACT/RESPOND (live) ═══ */}
+            {sessionState?.internalState?.defiant_spirit && (() => {
+              const ds = sessionState.internalState.defiant_spirit as { react_pattern_observed?: string; respond_glimpsed?: string; domain_signals?: string[] };
+              if (!ds.react_pattern_observed && !ds.respond_glimpsed && !(ds.domain_signals?.length ?? 0)) return null;
+              return (
+                <div className="bg-white border border-[#E8E4E0] rounded-xl p-3 space-y-2">
+                  <div className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590]">Defiant Spirit Signals</div>
+                  {ds.react_pattern_observed && (
+                    <div>
+                      <div className="font-mono text-[0.55rem] text-[#2563EB] mb-0.5">REACT</div>
+                      <div className="font-sans text-[0.7rem] text-[#2C2C2C] leading-snug">{ds.react_pattern_observed}</div>
+                    </div>
+                  )}
+                  {ds.respond_glimpsed && (
+                    <div>
+                      <div className="font-mono text-[0.55rem] text-[#7A9E7E] mb-0.5">RESPOND</div>
+                      <div className="font-sans text-[0.7rem] text-[#2C2C2C] leading-snug">{ds.respond_glimpsed}</div>
+                    </div>
+                  )}
+                  {(ds.domain_signals?.length ?? 0) > 0 && (
+                    <div className="flex flex-wrap gap-1 pt-1">
+                      {ds.domain_signals!.map((d) => (
+                        <span key={d} className="font-mono text-[0.55rem] bg-[#FAF8F5] text-[#6B6B6B] px-2 py-0.5 rounded">{d}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+
+            {/* ═══ OYN DIMENSIONS (live) ═══ */}
+            {sessionState?.internalState?.oyn_dimensions && (() => {
+              const oyn = sessionState.internalState.oyn_dimensions as Record<string, string>;
+              const dims = ['who', 'what', 'why', 'how', 'when', 'where'] as const;
+              const filled = dims.filter((d) => (oyn[d] || '').trim().length > 0);
+              return (
+                <div className="bg-white border border-[#E8E4E0] rounded-xl p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590]">OYN Dimensions</span>
+                    <span className="font-mono text-[0.6rem] text-[#9B9590]">{filled.length}/6 filled</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-1">
+                    {dims.map((d) => {
+                      const isFilled = (oyn[d] || '').trim().length > 0;
+                      return (
+                        <div
+                          key={d}
+                          title={isFilled ? oyn[d] : 'not yet probed'}
+                          className={`text-center py-1 rounded font-mono text-[0.6rem] ${isFilled ? 'bg-[#2563EB]/15 text-[#2563EB] font-bold' : 'bg-[#F0EBE6] text-[#9B9590]'}`}
+                        >
+                          {d.toUpperCase()}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* ═══ VISUAL DASHBOARD ═══ */}
             {hypothesis && (() => {
