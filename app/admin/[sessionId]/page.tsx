@@ -93,15 +93,45 @@ export default async function SessionDetailPage({
 }) {
   const { sessionId } = await params;
 
-  const [{ data: result }, { data: evaluation }] = await Promise.all([
+  const [{ data: result }, { data: evaluation }, { data: shadowData }] = await Promise.all([
     adminClient.from('assessment_results').select('*').eq('session_id', sessionId).single(),
     adminClient.from('assessment_evaluations').select('*').eq('session_id', sessionId).single(),
+    adminClient
+      .from('shadow_mode_log')
+      .select('phase, vector_top_type, vector_confidence, agreement, center_agreement, exchange_number, claude_top_type, claude_confidence')
+      .eq('session_id', sessionId)
+      .order('exchange_number', { ascending: true }),
   ]);
 
   if (!result) notFound();
 
   const r = result as ResultRow;
   const e = evaluation as EvalRow | null;
+
+  // Build a per-exchange v1 vs v2 view from the shadow log so the session
+  // detail page shows EXACTLY which turns the systems agreed/disagreed on.
+  type ShadowRow = {
+    phase: string;
+    vector_top_type: number;
+    vector_confidence: number;
+    agreement: boolean;
+    center_agreement: boolean;
+    exchange_number: number;
+    claude_top_type: number;
+    claude_confidence: number;
+  };
+  const shadowRows = (shadowData ?? []) as ShadowRow[];
+  const shadowByExchange = new Map<number, { v1?: ShadowRow; v2?: ShadowRow }>();
+  for (const row of shadowRows) {
+    const slot = shadowByExchange.get(row.exchange_number) ?? {};
+    if (row.phase?.startsWith('v1:')) slot.v1 = row;
+    else if (row.phase?.startsWith('v2:')) slot.v2 = row;
+    shadowByExchange.set(row.exchange_number, slot);
+  }
+  const v2Entries = shadowRows.filter((s) => s.phase?.startsWith('v2:'));
+  const v2FinalEntry = v2Entries[v2Entries.length - 1];
+  const v2WholeType = v2FinalEntry?.phase?.match(/wholeType=([0-9-]+)/)?.[1] ?? null;
+  const v2TiebreakerCount = shadowRows.filter((s) => /tiebreaker=/.test(s.phase || '')).length;
 
   const leadingType = r.leading_type;
   const confPct = Math.round(r.confidence * 100);
@@ -133,25 +163,26 @@ export default async function SessionDetailPage({
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF8F5]">
 
-      {/* Nav */}
-      <nav className="flex-shrink-0 flex items-center justify-between px-6 bg-white border-b border-[#E8E4E0]" style={{ height: '56px' }}>
-        <div className="flex items-center gap-3">
-          <Link href="/admin" className="font-sans text-sm text-[#9B9590] hover:text-[#6B6B6B] transition-colors">
-            ← Dashboard
-          </Link>
-          <span className="text-[#D0CAC4]">/</span>
-          <span className="font-sans text-sm text-[#2C2C2C]">Session Detail</span>
-        </div>
-        <span className="font-sans text-[0.72rem] text-[#9B9590] hidden sm:block">{formattedDate}</span>
-      </nav>
+      {/* Top nav lives in app/admin/layout.tsx — do not duplicate */}
 
       <div className="flex-1 max-w-[960px] w-full mx-auto px-5 py-8 flex flex-col gap-6">
 
-        {/* Session meta */}
-        <div className="flex items-center gap-2">
+        {/* Session meta + View Results action */}
+        <div className="flex items-center gap-3 flex-wrap">
           <span className="font-sans text-[0.7rem] text-[#9B9590] font-mono">{sessionId}</span>
           <span className="text-[#D0CAC4]">·</span>
           <span className="font-sans text-[0.7rem] text-[#9B9590]">{r.exchange_count} exchanges · Stage {r.current_stage}</span>
+          <span className="text-[#D0CAC4]">·</span>
+          <span className="font-sans text-[0.7rem] text-[#9B9590]">{formattedDate}</span>
+          <a
+            href={`/results?sessionId=${encodeURIComponent(sessionId)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-auto font-sans text-xs border border-[#7A9E7E] text-[#7A9E7E] px-3 py-1 rounded-lg hover:bg-[#7A9E7E]/10"
+            title="Opens the real /results page for this session — same view a real user gets"
+          >
+            View Results →
+          </a>
         </div>
 
         {/* Type Hero */}
@@ -230,64 +261,120 @@ export default async function SessionDetailPage({
             </div>
           </Card>
 
-          {/* Quality Evaluation */}
+          {/* Vector v2 Shadow Performance */}
           <Card>
             <div className="flex flex-col gap-4">
-              <Label>Quality Evaluation</Label>
-              {e ? (
+              <div className="flex items-center justify-between">
+                <Label>Vector v2 — Shadow Performance</Label>
+                {v2TiebreakerCount > 0 && (
+                  <span className="font-mono text-[0.6rem] bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">
+                    ⚠ {v2TiebreakerCount} tiebreaker{v2TiebreakerCount === 1 ? '' : 's'}
+                  </span>
+                )}
+              </div>
+              {v2FinalEntry ? (
                 <>
-                  {/* Score rings */}
-                  <div className="flex justify-around flex-wrap gap-4">
-                    <ScoreRing score={e.overall_score} label="Overall" />
-                    <ScoreRing score={e.format_compliance_score} label="Format" />
-                    <ScoreRing score={e.differentiation_score} label="Differentiation" />
-                    <ScoreRing score={e.closing_criteria_score} label="Closing" />
+                  {/* Final v2 result */}
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="flex flex-col gap-0.5 p-3 bg-[#FAF8F5] rounded-xl">
+                      <span className="font-sans text-[0.6rem] uppercase tracking-wide text-[#9B9590]">v2 Core</span>
+                      <span className="font-serif text-[1.4rem] font-bold text-[#2C2C2C] leading-none">T{v2FinalEntry.vector_top_type}</span>
+                      <span className="font-sans text-xs text-[#9B9590]">{(v2FinalEntry.vector_confidence * 100).toFixed(0)}%</span>
+                    </div>
+                    <div className="flex flex-col gap-0.5 p-3 bg-[#FAF8F5] rounded-xl">
+                      <span className="font-sans text-[0.6rem] uppercase tracking-wide text-[#9B9590]">v2 Whole</span>
+                      <span className="font-serif text-[1.4rem] font-bold text-[#2C2C2C] leading-none">{v2WholeType ?? '—'}</span>
+                    </div>
+                    <div className="flex flex-col gap-0.5 p-3 bg-[#FAF8F5] rounded-xl">
+                      <span className="font-sans text-[0.6rem] uppercase tracking-wide text-[#9B9590]">vs Claude</span>
+                      <span className={`font-serif text-[1.4rem] font-bold leading-none ${v2FinalEntry.agreement ? 'text-[#7A9E7E]' : 'text-[#C06060]'}`}>
+                        {v2FinalEntry.agreement ? '✓ Match' : '✗ Diff'}
+                      </span>
+                      <span className="font-sans text-xs text-[#9B9590]">center {v2FinalEntry.center_agreement ? '✓' : '✗'}</span>
+                    </div>
                   </div>
 
                   <div className="h-px bg-[#F0EBE6]" />
 
-                  {/* Strengths */}
-                  {e.strengths?.length > 0 && (
-                    <div className="flex flex-col gap-2">
-                      <span className="font-sans text-xs text-[#7A9E7E] font-semibold">Strengths</span>
-                      <ul className="flex flex-col gap-1">
-                        {e.strengths.map((s, i) => (
-                          <li key={i} className="font-sans text-xs text-[#2C2C2C] leading-relaxed flex gap-1.5">
-                            <span className="text-[#7A9E7E] flex-shrink-0">✓</span>
-                            <span>{s}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  {/* Per-exchange v1 vs v2 trail */}
+                  <div className="flex flex-col gap-1.5">
+                    <span className="font-sans text-[0.65rem] uppercase tracking-wide text-[#9B9590]">Per-exchange agreement trail</span>
+                    <div className="flex flex-col gap-1 max-h-[200px] overflow-y-auto font-mono text-[0.65rem]">
+                      {[...shadowByExchange.entries()].sort((a, b) => a[0] - b[0]).map(([ex, slot]) => {
+                        const tb = slot.v2?.phase?.match(/tiebreaker=([0-9-]+)/)?.[1];
+                        return (
+                          <div key={ex} className="flex items-center gap-2 px-2 py-1 rounded bg-[#FAF8F5]">
+                            <span className="text-[#9B9590] w-8">Ex {ex}</span>
+                            <span className="text-[#9B9590]">claude T{slot.v1?.claude_top_type ?? slot.v2?.claude_top_type ?? '?'}</span>
+                            {slot.v1 && (
+                              <span className={slot.v1.agreement ? 'text-[#7A9E7E]' : 'text-[#C06060]'}>
+                                v1:T{slot.v1.vector_top_type} {slot.v1.agreement ? '✓' : '✗'}
+                              </span>
+                            )}
+                            {slot.v2 && (
+                              <span className={slot.v2.agreement ? 'text-[#7A9E7E] font-bold' : 'text-[#C06060] font-bold'}>
+                                v2:T{slot.v2.vector_top_type} {slot.v2.agreement ? '✓' : '✗'}
+                              </span>
+                            )}
+                            {tb && <span className="text-yellow-600">⚠ {tb}</span>}
+                          </div>
+                        );
+                      })}
                     </div>
-                  )}
-
-                  {/* Weaknesses */}
-                  {e.weaknesses?.length > 0 && (
-                    <div className="flex flex-col gap-2">
-                      <span className="font-sans text-xs text-[#2563EB] font-semibold">Areas for improvement</span>
-                      <ul className="flex flex-col gap-1">
-                        {e.weaknesses.map((w, i) => (
-                          <li key={i} className="font-sans text-xs text-[#2C2C2C] leading-relaxed flex gap-1.5">
-                            <span className="text-[#2563EB] flex-shrink-0">·</span>
-                            <span>{w}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  </div>
                 </>
               ) : (
                 <div className="flex flex-col items-center justify-center py-6 gap-2">
-                  <div className="w-6 h-6 rounded-full border-2 border-[#D0CAC4] border-t-[#2563EB] animate-spin" />
-                  <p className="font-sans text-xs text-[#9B9590]">Evaluation pending…</p>
+                  <p className="font-sans text-xs text-[#9B9590]">No vector v2 shadow data for this session.</p>
                   <p className="font-sans text-[0.65rem] text-[#B0AAA4] text-center">
-                    Fires async after session close. Check back shortly.
+                    Either VECTOR_MODE was off when this assessment ran, or the session predates the v2 logging.
                   </p>
                 </div>
               )}
             </div>
           </Card>
         </div>
+
+        {/* Legacy quality evaluation — collapsed by default */}
+        {e && (
+          <details className="bg-[#FAF8F5] rounded-2xl p-4">
+            <summary className="cursor-pointer font-sans text-xs text-[#9B9590] uppercase tracking-wide">
+              Legacy quality evaluation (post-assessment evaluator)
+            </summary>
+            <div className="mt-4 flex justify-around flex-wrap gap-4">
+              <ScoreRing score={e.overall_score} label="Overall" />
+              <ScoreRing score={e.format_compliance_score} label="Format" />
+              <ScoreRing score={e.differentiation_score} label="Differentiation" />
+              <ScoreRing score={e.closing_criteria_score} label="Closing" />
+            </div>
+            {e.strengths?.length > 0 && (
+              <div className="mt-4 flex flex-col gap-2">
+                <span className="font-sans text-xs text-[#7A9E7E] font-semibold">Strengths</span>
+                <ul className="flex flex-col gap-1">
+                  {e.strengths.map((s, i) => (
+                    <li key={i} className="font-sans text-xs text-[#2C2C2C] leading-relaxed flex gap-1.5">
+                      <span className="text-[#7A9E7E] flex-shrink-0">✓</span>
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {e.weaknesses?.length > 0 && (
+              <div className="mt-4 flex flex-col gap-2">
+                <span className="font-sans text-xs text-[#2563EB] font-semibold">Areas for improvement</span>
+                <ul className="flex flex-col gap-1">
+                  {e.weaknesses.map((w, i) => (
+                    <li key={i} className="font-sans text-xs text-[#2C2C2C] leading-relaxed flex gap-1.5">
+                      <span className="text-[#2563EB] flex-shrink-0">·</span>
+                      <span>{w}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </details>
+        )}
 
         {/* Whole Type */}
         {r.tritype && (
