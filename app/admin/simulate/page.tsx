@@ -2,6 +2,19 @@
 
 import { useState, useRef, useEffect } from 'react';
 
+interface ShadowEntry {
+  phase: string;
+  vector_top_type: number;
+  vector_confidence: number;
+  agreement: boolean;
+  center_agreement: boolean;
+  vector_type_scores?: Record<string, number>;
+  vector_center_scores?: Record<string, unknown>;
+  exchange_number: number;
+  claude_top_type: number;
+  claude_confidence: number;
+}
+
 interface Message {
   role: 'user' | 'assistant';
   content: string;
@@ -14,6 +27,7 @@ interface Message {
     scale_range?: { min: number; max: number };
     context_note?: string;
   };
+  shadowEntries?: ShadowEntry[];
 }
 
 export default function SimulatePage() {
@@ -27,11 +41,27 @@ export default function SimulatePage() {
   const [showStateEditor, setShowStateEditor] = useState(false);
   const [stateJson, setStateJson] = useState('');
   const [stateError, setStateError] = useState('');
+  const [showDiagnostic, setShowDiagnostic] = useState(false);
+  const [resultsLoading, setResultsLoading] = useState(false);
+  const [resultsError, setResultsError] = useState('');
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Roll up all shadow entries across the whole conversation, by exchange.
+  const allShadowEntries: ShadowEntry[] = messages.flatMap((m) => m.shadowEntries ?? []);
+  const shadowByExchange = new Map<number, { v1?: ShadowEntry; v2?: ShadowEntry }>();
+  for (const e of allShadowEntries) {
+    const slot = shadowByExchange.get(e.exchange_number) ?? {};
+    if (e.phase?.startsWith('v1:')) slot.v1 = e;
+    else if (e.phase?.startsWith('v2:')) slot.v2 = e;
+    shadowByExchange.set(e.exchange_number, slot);
+  }
+  const tiebreakerFirings = allShadowEntries.filter((e) => /tiebreaker=/.test(e.phase || '')).length;
+  const latestV2 = [...allShadowEntries].reverse().find((e) => e.phase?.startsWith('v2:'));
+  const v2WholeType = latestV2?.phase?.match(/wholeType=([0-9-]+)/)?.[1] ?? null;
 
   async function handleNewSession() {
     setIsLoading(true);
@@ -78,6 +108,7 @@ export default function SimulatePage() {
         content: data.response,
         internal: data.internal,
         responseParts: data.response_parts,
+        shadowEntries: data.shadowEntries ?? [],
       };
       setMessages((prev) => [...prev, msg]);
       setSelectedInternal(data.internal);
@@ -86,6 +117,99 @@ export default function SimulatePage() {
     } finally {
       setIsLoading(false);
     }
+  }
+
+  // Generate results for the simulated session and open the user-facing
+  // results page in a new tab. Calls /api/results/generate first to ensure
+  // a row exists in assessment_results, then routes to the same /results
+  // page real users see.
+  async function handleViewResults() {
+    if (!sessionId) return;
+    setResultsLoading(true);
+    setResultsError('');
+    try {
+      const genRes = await fetch('/api/results/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionId, forceRegenerate: true }),
+      });
+      if (!genRes.ok) {
+        const err = await genRes.json().catch(() => ({}));
+        throw new Error(err.error || `Generate failed (${genRes.status})`);
+      }
+      // Open the real results page in a new tab — same code path as a real user
+      window.open(`/results?sessionId=${encodeURIComponent(sessionId)}`, '_blank', 'noopener');
+    } catch (err) {
+      setResultsError(String(err));
+    } finally {
+      setResultsLoading(false);
+    }
+  }
+
+  // Build a single text dump of everything the user might want to share
+  // with us for diagnosis. Includes session id, every turn, every shadow
+  // entry, current hypothesis, vector v2 state, and vector mode.
+  function buildDiagnostic(): string {
+    const lines: string[] = [];
+    lines.push('═══════════════════════════════════════════════════════════');
+    lines.push('SOULO ASSESSMENT DIAGNOSTIC EXPORT');
+    lines.push('═══════════════════════════════════════════════════════════');
+    lines.push(`session_id:     ${sessionId || '(none)'}`);
+    lines.push(`exchanges:      ${sessionState?.exchangeCount ?? 0}`);
+    lines.push(`current_stage:  ${sessionState?.currentStage ?? '?'}`);
+    lines.push(`isComplete:     ${sessionState?.isComplete ?? false}`);
+    lines.push('');
+    const h = sessionState?.internalState?.hypothesis;
+    if (h) {
+      lines.push('--- CLAUDE HYPOTHESIS ---');
+      lines.push(`leading_type: ${h.leading_type ?? '?'}`);
+      lines.push(`confidence:   ${((h.confidence ?? 0) * 100).toFixed(0)}%`);
+      if (h.type_scores) {
+        lines.push('type_scores:');
+        const sorted = Object.entries(h.type_scores)
+          .map(([t, s]) => [Number(t), Number(s)] as const)
+          .sort((a, b) => b[1] - a[1]);
+        for (const [t, s] of sorted) {
+          lines.push(`  ${t}: ${(s * 100).toFixed(0)}%`);
+        }
+      }
+      lines.push('');
+    }
+    if (latestV2 && v2WholeType) {
+      lines.push('--- VECTOR V2 (latest) ---');
+      lines.push(`whole_type:   ${v2WholeType}`);
+      lines.push(`core_type:    ${latestV2.vector_top_type}`);
+      lines.push(`confidence:   ${(latestV2.vector_confidence * 100).toFixed(0)}%`);
+      lines.push(`tiebreakers:  ${tiebreakerFirings} fired`);
+      lines.push('');
+    }
+    lines.push('--- CONVERSATION ---');
+    messages.forEach((m, i) => {
+      const tag = m.role === 'user' ? 'USER ' : 'SOULO';
+      const text = (m.responseParts?.question_text || m.content || '').replace(/\s+/g, ' ');
+      lines.push(`[${String(i + 1).padStart(2, '0')}] ${tag}: ${text}`);
+      if (m.responseParts?.question_format) {
+        lines.push(`     format=${m.responseParts.question_format}${m.responseParts.answer_options ? ` options=[${m.responseParts.answer_options.join(' | ')}]` : ''}`);
+      }
+    });
+    lines.push('');
+    lines.push('--- SHADOW MODE LOG (per exchange) ---');
+    const sortedExchanges = [...shadowByExchange.entries()].sort((a, b) => a[0] - b[0]);
+    for (const [ex, slot] of sortedExchanges) {
+      lines.push(`Exchange ${ex}:`);
+      if (slot.v1) {
+        lines.push(`  v1: T${slot.v1.vector_top_type} @ ${(slot.v1.vector_confidence * 100).toFixed(0)}% | claude=T${slot.v1.claude_top_type} | core ${slot.v1.agreement ? '✓' : '✗'} center ${slot.v1.center_agreement ? '✓' : '✗'}`);
+      }
+      if (slot.v2) {
+        const tb = slot.v2.phase?.match(/tiebreaker=([0-9-]+)/)?.[1];
+        const wt = slot.v2.phase?.match(/wholeType=([0-9-]+)/)?.[1];
+        lines.push(`  v2: T${slot.v2.vector_top_type} @ ${(slot.v2.vector_confidence * 100).toFixed(0)}% | whole=${wt || '?'} | core ${slot.v2.agreement ? '✓' : '✗'} center ${slot.v2.center_agreement ? '✓' : '✗'}${tb ? ` | TIEBREAKER ${tb}` : ''}`);
+      }
+    }
+    lines.push('');
+    lines.push('--- RAW SESSION STATE ---');
+    lines.push(JSON.stringify(sessionState, null, 2));
+    return lines.join('\n');
   }
 
   async function handleSetState() {
@@ -106,19 +230,6 @@ export default function SimulatePage() {
     } catch (err) {
       setStateError(String(err));
     }
-  }
-
-  async function handleJumpToStage(targetStage: number) {
-    if (!sessionId) return;
-    const exchangeMap: Record<number, number> = { 1: 0, 2: 3, 3: 6, 4: 9, 5: 12, 6: 14, 7: 16 };
-    const patch = { exchangeCount: exchangeMap[targetStage] ?? 0, currentStage: targetStage };
-    const res = await fetch('/api/admin/simulate/set-state', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ sessionId, patch }),
-    });
-    const data = await res.json();
-    if (!data.error) setSessionState(data.sessionState);
   }
 
   const hypothesis = sessionState?.internalState?.hypothesis;
@@ -142,37 +253,29 @@ export default function SimulatePage() {
               <button
                 onClick={() => { setShowStateEditor(true); setStateJson(JSON.stringify(sessionState?.internalState ?? {}, null, 2)); }}
                 className="font-sans text-xs border border-[#E8E4E0] px-4 py-1.5 rounded-lg hover:bg-[#FAF8F5]"
+                title="Edit the session's internal state JSON for testing edge cases"
               >
-                Set State
+                Edit State
               </button>
-              <select
-                onChange={(e) => handleJumpToStage(Number(e.target.value))}
-                value={sessionState?.currentStage ?? 1}
-                className="font-sans text-xs border border-[#E8E4E0] px-2 py-1.5 rounded-lg bg-white"
+              <button
+                onClick={handleViewResults}
+                disabled={resultsLoading || messages.length < 2}
+                className="font-sans text-xs border border-[#7A9E7E] text-[#7A9E7E] px-4 py-1.5 rounded-lg hover:bg-[#7A9E7E]/10 disabled:opacity-40 disabled:cursor-not-allowed"
+                title="Generates results for this session and opens the real /results page in a new tab"
               >
-                {[1, 2, 3, 4, 5, 6, 7].map((s) => (
-                  <option key={s} value={s}>Stage {s}</option>
-                ))}
-              </select>
-              <a
-                href={`/results?sessionId=${encodeURIComponent(sessionId)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-sans text-xs border border-[#7A9E7E] text-[#7A9E7E] px-4 py-1.5 rounded-lg hover:bg-[#7A9E7E]/10"
-                title="Opens the real /results page using this session — same code path as a real user"
+                {resultsLoading ? 'Generating…' : 'View Results →'}
+              </button>
+              <button
+                onClick={() => setShowDiagnostic(true)}
+                className="font-sans text-xs border border-[#2563EB] text-[#2563EB] px-4 py-1.5 rounded-lg hover:bg-[#2563EB]/10"
+                title="Open a copyable text dump of every signal — useful for sharing diagnostic data"
               >
-                View Results →
-              </a>
-              <a
-                href={`/admin/${encodeURIComponent(sessionId)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-sans text-xs border border-[#E8E4E0] text-[#6B6B6B] px-4 py-1.5 rounded-lg hover:bg-[#FAF8F5]"
-                title="Opens the admin session detail view"
-              >
-                Admin View
-              </a>
+                Copy Diagnostic
+              </button>
             </>
+          )}
+          {resultsError && (
+            <span className="font-sans text-xs text-red-600 ml-2">{resultsError}</span>
           )}
         </div>
       </div>
@@ -274,6 +377,70 @@ export default function SimulatePage() {
 
           {/* Right: Inspector */}
           <div className="w-[420px] flex-shrink-0 overflow-y-auto bg-white p-4 space-y-4">
+            {/* ═══ VECTOR SHADOW MODE PANEL ═══ */}
+            {(latestV2 || allShadowEntries.length > 0) && (
+              <div className="bg-[#0F172A] text-white rounded-xl p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[0.6rem] uppercase tracking-widest opacity-70">Vector v2 — Shadow Mode</span>
+                  <span className="font-mono text-[0.55rem] uppercase tracking-widest text-[#7A9E7E]">LIVE</span>
+                </div>
+                {latestV2 && (
+                  <div className="space-y-2">
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-serif text-[2rem] font-bold leading-none">{latestV2.vector_top_type || '?'}</span>
+                      <div className="flex flex-col">
+                        <span className="font-sans text-base font-semibold">{(latestV2.vector_confidence * 100).toFixed(0)}%</span>
+                        <span className="font-mono text-[0.55rem] opacity-60">v2 core</span>
+                      </div>
+                      <div className="ml-auto text-right">
+                        <div className="font-mono text-[0.6rem] opacity-60">whole</div>
+                        <div className="font-mono text-sm font-bold">{v2WholeType || '—'}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 text-[0.6rem] font-mono">
+                      <span className={`px-2 py-0.5 rounded ${latestV2.agreement ? 'bg-[#7A9E7E]/30 text-[#A4D4A8]' : 'bg-red-900/40 text-red-300'}`}>
+                        Core {latestV2.agreement ? '✓' : '✗'}
+                      </span>
+                      <span className={`px-2 py-0.5 rounded ${latestV2.center_agreement ? 'bg-[#7A9E7E]/30 text-[#A4D4A8]' : 'bg-red-900/40 text-red-300'}`}>
+                        Center {latestV2.center_agreement ? '✓' : '✗'}
+                      </span>
+                      {tiebreakerFirings > 0 && (
+                        <span className="px-2 py-0.5 rounded bg-yellow-900/40 text-yellow-300">
+                          ⚠ {tiebreakerFirings} tiebreaker{tiebreakerFirings > 1 ? 's' : ''}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Per-exchange v1 vs v2 history */}
+                <details className="text-[0.65rem] font-mono">
+                  <summary className="cursor-pointer opacity-70 hover:opacity-100">
+                    Shadow log — {shadowByExchange.size} exchange{shadowByExchange.size === 1 ? '' : 's'}
+                  </summary>
+                  <div className="mt-2 space-y-1 max-h-[200px] overflow-y-auto">
+                    {[...shadowByExchange.entries()].sort((a, b) => a[0] - b[0]).map(([ex, slot]) => {
+                      const tb = slot.v2?.phase?.match(/tiebreaker=([0-9-]+)/)?.[1];
+                      return (
+                        <div key={ex} className="border-t border-white/10 pt-1">
+                          <div className="flex justify-between">
+                            <span className="opacity-60">Ex {ex}</span>
+                            {tb && <span className="text-yellow-300">tiebreak {tb}</span>}
+                          </div>
+                          {slot.v1 && (
+                            <div className="opacity-70">v1: T{slot.v1.vector_top_type} {(slot.v1.vector_confidence * 100).toFixed(0)}% {slot.v1.agreement ? '✓' : '✗'}</div>
+                          )}
+                          {slot.v2 && (
+                            <div className="text-[#A4D4A8]">v2: T{slot.v2.vector_top_type} {(slot.v2.vector_confidence * 100).toFixed(0)}% {slot.v2.agreement ? '✓' : '✗'}</div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </details>
+              </div>
+            )}
+
             {/* ═══ VISUAL DASHBOARD ═══ */}
             {hypothesis && (() => {
               const conf = Math.round((hypothesis.confidence ?? 0) * 100);
@@ -386,6 +553,45 @@ export default function SimulatePage() {
                 </pre>
               </details>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Diagnostic copy modal */}
+      {showDiagnostic && (
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-5">
+          <div className="bg-white rounded-2xl p-6 max-w-[800px] w-full max-h-[85vh] flex flex-col gap-4 shadow-2xl">
+            <div className="flex justify-between items-center">
+              <h3 className="font-serif text-lg font-semibold text-[#2C2C2C]">Diagnostic Export</h3>
+              <button onClick={() => setShowDiagnostic(false)} className="text-[#9B9590] hover:text-[#2C2C2C]">&#10005;</button>
+            </div>
+            <p className="font-sans text-xs text-[#9B9590]">
+              Copy this entire block when reporting an issue. It contains the session id,
+              every exchange, the v1+v2 shadow log per turn, current hypothesis, and full
+              session state.
+            </p>
+            <textarea
+              readOnly
+              value={buildDiagnostic()}
+              className="w-full flex-1 font-mono text-[0.7rem] p-3 rounded-xl border border-[#E8E4E0] bg-[#FAF8F5] resize-none focus:border-[#2563EB] focus:outline-none min-h-[400px]"
+              onClick={(e) => e.currentTarget.select()}
+            />
+            <div className="flex gap-2 justify-end">
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(buildDiagnostic()).catch(() => {});
+                }}
+                className="font-sans text-sm bg-[#2563EB] text-white px-4 py-2 rounded-lg hover:bg-[#1D4ED8]"
+              >
+                Copy to Clipboard
+              </button>
+              <button
+                onClick={() => setShowDiagnostic(false)}
+                className="font-sans text-sm px-4 py-2 rounded-lg border border-[#E8E4E0] hover:bg-[#FAF8F5]"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}

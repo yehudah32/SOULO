@@ -24,6 +24,7 @@ export const runtime = 'nodejs';
 import { NextResponse } from 'next/server';
 import { getSession } from '@/lib/session-store';
 import { isAdminAuthed } from '@/lib/admin-auth';
+import { adminClient } from '@/lib/supabase';
 
 export async function POST(request: Request) {
   if (!(await isAdminAuthed(request))) {
@@ -75,6 +76,18 @@ export async function POST(request: Request) {
     // route doesn't return this in its normal response — it's admin-only.
     const updatedSession = getSession(sessionId);
 
+    // Pull the most recent shadow_mode_log entries for THIS exchange so the
+    // simulator can show v1 + v2 predictions side-by-side in real time.
+    // The shadow logger writes asynchronously after the chat returns; we
+    // give it a tiny grace period before fetching.
+    await new Promise((r) => setTimeout(r, 250));
+    const { data: shadowRows } = await adminClient
+      .from('shadow_mode_log')
+      .select('phase, vector_top_type, vector_confidence, agreement, center_agreement, vector_type_scores, vector_center_scores, exchange_number, claude_top_type, claude_confidence')
+      .eq('session_id', sessionId)
+      .eq('exchange_number', updatedSession?.exchangeCount ?? 0)
+      .order('id', { ascending: false });
+
     return NextResponse.json({
       response: data.response ?? data.message,
       message: data.message,
@@ -84,6 +97,7 @@ export async function POST(request: Request) {
       stage: data.currentStage ?? data.stage,
       exchangeCount: updatedSession?.exchangeCount ?? 0,
       sessionState: updatedSession,
+      shadowEntries: shadowRows ?? [],
     });
   } catch (err) {
     console.error('[admin/simulate/send] Error:', err);

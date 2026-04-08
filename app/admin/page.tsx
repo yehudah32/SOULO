@@ -83,6 +83,34 @@ export default async function AdminDashboard() {
     fetchError = String(err);
   }
 
+  // Pull live shadow data for the v2 sessions stat card. We compute the
+  // final-exchange agreement rate (the same metric the shadow-mode dashboard
+  // uses for the promotion gate).
+  let v2Sessions = 0;
+  let v2CoreAgreementPct: number | null = null;
+  let v2TiebreakerCount = 0;
+  try {
+    const { data: shadowRows } = await adminClient
+      .from('shadow_mode_log')
+      .select('session_id, exchange_number, agreement, phase')
+      .like('phase', 'v2:%')
+      .order('created_at', { ascending: false })
+      .limit(2000);
+    const lastBySession = new Map<string, { exchange_number: number; agreement: boolean; phase: string }>();
+    for (const r of shadowRows ?? []) {
+      const ex = lastBySession.get(r.session_id);
+      if (!ex || r.exchange_number > ex.exchange_number) {
+        lastBySession.set(r.session_id, r as { exchange_number: number; agreement: boolean; phase: string });
+      }
+      if (/tiebreaker=/.test(r.phase || '')) v2TiebreakerCount++;
+    }
+    v2Sessions = lastBySession.size;
+    if (v2Sessions > 0) {
+      const agreed = [...lastBySession.values()].filter((r) => r.agreement).length;
+      v2CoreAgreementPct = Math.round((agreed / v2Sessions) * 100);
+    }
+  } catch { /* non-fatal — leave shadow stats empty */ }
+
   // Stats
   const total = rows.length;
   const avgConf = total > 0
@@ -95,10 +123,6 @@ export default async function AdminDashboard() {
   const mostCommonType = total > 0
     ? Number(Object.entries(typeCounts).sort(([, a], [, b]) => b - a)[0]?.[0])
     : null;
-  const scoredRows = rows.filter((r) => r.overall_score !== null);
-  const avgScore = scoredRows.length > 0
-    ? scoredRows.reduce((s, r) => s + (r.overall_score ?? 0), 0) / scoredRows.length
-    : null;
   const avgExchanges = total > 0
     ? Math.round(rows.reduce((s, r) => s + r.exchange_count, 0) / total)
     : 0;
@@ -106,54 +130,7 @@ export default async function AdminDashboard() {
   return (
     <div className="flex flex-col min-h-screen bg-white/40">
 
-      {/* Nav */}
-      <nav className="flex-shrink-0 flex items-center justify-between px-6 bg-white border-b border-white/40" style={{ height: '56px' }}>
-        <div className="flex items-center gap-3">
-          <Link href="/" className="font-serif text-[1.1rem] font-semibold text-soulo-purple hover:opacity-80 transition-opacity">
-            Soulo Enneagram
-          </Link>
-          <span className="text-[#D0CAC4]">/</span>
-          <span className="font-sans text-sm text-gray-700">Admin</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <Link
-            href="/admin/simulate"
-            className="font-sans text-xs text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
-          >
-            Simulate
-          </Link>
-          <Link
-            href="/admin/shadow-mode"
-            className="font-sans text-xs text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
-          >
-            Shadow Mode
-          </Link>
-          <Link
-            href="/admin/preview-results"
-            className="font-sans text-xs text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
-          >
-            Preview Results
-          </Link>
-          <Link
-            href="/admin/users"
-            className="font-sans text-xs text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
-          >
-            Users
-          </Link>
-          <Link
-            href="/assessment"
-            className="font-sans text-xs text-[#7A9E7E] hover:text-[#5C8060] transition-colors"
-          >
-            New Assessment →
-          </Link>
-          <Link
-            href="/api/admin/logout"
-            className="font-sans text-xs text-gray-500 hover:text-gray-700 transition-colors"
-          >
-            Sign out
-          </Link>
-        </div>
-      </nav>
+      {/* Top nav lives in app/admin/layout.tsx — do not duplicate here */}
 
       <div className="flex-1 max-w-[1100px] w-full mx-auto px-6 py-8 flex flex-col gap-8">
 
@@ -222,9 +199,11 @@ export default async function AdminDashboard() {
                   sub: 'across all sessions',
                 },
                 {
-                  label: 'Avg Quality Score',
-                  value: avgScore !== null ? avgScore.toFixed(1) : '—',
-                  sub: `/ 10 · ${avgExchanges} avg exchanges`,
+                  label: 'Vector v2 Agreement',
+                  value: v2CoreAgreementPct !== null ? `${v2CoreAgreementPct}%` : '—',
+                  sub: v2Sessions > 0
+                    ? `${v2Sessions} v2 session${v2Sessions === 1 ? '' : 's'} · ${v2TiebreakerCount} tiebreaker${v2TiebreakerCount === 1 ? '' : 's'}`
+                    : 'no shadow data yet',
                 },
               ].map(({ label, value, sub }) => (
                 <div key={label} className="bg-white rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.05)] p-5 flex flex-col gap-1">

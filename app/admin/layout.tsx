@@ -11,6 +11,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <Link href="/admin/simulate" className="font-sans text-xs text-[#D8E4F0] hover:text-white">
           Simulate
         </Link>
+        <Link href="/admin/shadow-mode" className="font-sans text-xs text-[#D8E4F0] hover:text-white">
+          Shadow Mode
+        </Link>
         <Link href="/admin/preview-results" className="font-sans text-xs text-[#D8E4F0] hover:text-white">
           Preview Results
         </Link>
