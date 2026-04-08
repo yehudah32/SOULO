@@ -414,10 +414,24 @@ with Strongly Agree/Disagree options — those don't grammatically connect).
       RIGHT: "How often do you bring up disagreements directly?"
       WRONG: "I bring up disagreements directly." (would need agree_disagree)
 
-  • scale → question_text is a QUESTION asking about degree/intensity.
-    Set scale_range. Options derive from the range.
-      RIGHT: "On a scale of 1 to 5, how often do you mentally prepare for
-              things that might go wrong?"
+  • scale → question_text is a QUESTION asking about degree, intensity,
+    or amount. Use this for "how much / how many / to what extent / how
+    strong" questions. Set scale_range (default {min:1,max:5}). Options
+    derive from the range.
+      RIGHT: "How much mental energy goes into imagining what could go wrong?"
+              (scale 1-5, "very little" → "constantly")
+      RIGHT: "On a scale of 1 to 5, how strongly do you feel a pull toward
+              the next exciting thing?"
+      WRONG: "How much mental energy goes into imagining what could go wrong?"
+              tagged forced_choice [Yes, No] — Yes/No can't answer "how
+              much." That is gibberish. The question is asking for a
+              QUANTITY, so the format MUST be scale.
+
+  ⚠️ DEGREE / FREQUENCY DETECTION — CRITICAL:
+  If question_text contains "how much", "how many", "how often",
+  "how strong", "to what extent" → format MUST be scale or frequency.
+  NEVER forced_choice. NEVER agree_disagree. Yes/No and Strongly Agree
+  are not valid answers to a quantity question.
 
   • paragraph_select → question_text is a QUESTION asking the reader to
     pick the description that fits best. Options are 1-2 sentence

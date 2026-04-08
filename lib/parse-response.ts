@@ -116,6 +116,26 @@ export function getResponseParts(internal: any): ResponseParts | null {
   // surface a "regenerate" affordance — the user reloads, Claude tries again,
   // and the system prompt's "NEVER embed options in question_text" rule
   // usually wins on retry.
+  // ── Wrong-format rescue for forced_choice on degree/cadence questions ──
+  // Claude sometimes tags a "how much / how often" question as forced_choice
+  // and either gives Yes/No options or none at all. Yes/No can't answer
+  // "how much" — the right format is scale or frequency. Catch this BEFORE
+  // the empty-options rescue below so we don't fall into the [Yes,No] path.
+  if (format === 'forced_choice' && rp.question_text) {
+    const lower = String(rp.question_text).toLowerCase();
+    if (/\bhow often\b/.test(lower)) {
+      console.error(`[parse-response] forced_choice → frequency (cadence question). Original: "${String(rp.question_text).slice(0, 120)}"`);
+      format = 'frequency';
+      answer_options = ['Never', 'Sometimes', 'Often', 'Always'];
+    } else if (/\bhow much\b|\bhow many\b|\bto what extent\b|\bhow strong/.test(lower)) {
+      console.error(`[parse-response] forced_choice → scale (degree question). Original: "${String(rp.question_text).slice(0, 120)}"`);
+      format = 'scale';
+      answer_options = null;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (rp as any).scale_range = { min: 1, max: 5 };
+    }
+  }
+
   if ((format === 'forced_choice' || format === 'paragraph_select') && (!answer_options || answer_options.length < 2)) {
     const recovered = extractInlineOptions(rp.question_text);
     if (recovered && recovered.length >= 2) {
@@ -150,9 +170,44 @@ export function getResponseParts(internal: any): ResponseParts | null {
     // something goes wrong, I look inward"), so we don't flag on opener
     // alone. The trailing "?" is unambiguous.
     if (text.endsWith('?')) {
-      console.error(`[parse-response] agree_disagree with question-form text — downgrading to forced_choice [Yes,No]. Original: "${text.slice(0, 120)}"`);
-      format = 'forced_choice';
-      answer_options = ['Yes', 'No'];
+      // Smart downgrade: don't blindly default to Yes/No. Inspect the
+      // question text to figure out what kind of answer it's actually
+      // asking for.
+      const lower = text.toLowerCase();
+      if (/\bhow often\b/.test(lower)) {
+        // "How often do you ..." → frequency format
+        console.error(`[parse-response] agree_disagree → frequency (cadence question). Original: "${text.slice(0, 120)}"`);
+        format = 'frequency';
+        answer_options = ['Never', 'Sometimes', 'Often', 'Always'];
+      } else if (/\bhow much\b|\bhow many\b|\bto what extent\b|\bhow strong/.test(lower)) {
+        // "How much / to what extent / how strong" → degree question → scale
+        console.error(`[parse-response] agree_disagree → scale (degree question). Original: "${text.slice(0, 120)}"`);
+        format = 'scale';
+        answer_options = null;
+        // Tell the client to render a 1-5 scale; the chat route's downstream
+        // code reads this from rp.scale_range so we set it here too
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (rp as any).scale_range = { min: 1, max: 5 };
+      } else if (/\b(or|vs\.?|versus)\b/.test(lower) && /\?/.test(text)) {
+        // "X or Y?" → forced_choice; the existing inline-options extractor
+        // (run earlier in this function for forced_choice) will catch the
+        // options if they're inline. Re-run extraction here.
+        const recovered = extractInlineOptions(text);
+        if (recovered && recovered.length >= 2) {
+          console.error(`[parse-response] agree_disagree → forced_choice (binary question with options). Original: "${text.slice(0, 120)}"`);
+          format = 'forced_choice';
+          answer_options = recovered;
+        } else {
+          console.error(`[parse-response] agree_disagree → forced_choice [Yes,No] (binary question, no extractable options). Original: "${text.slice(0, 120)}"`);
+          format = 'forced_choice';
+          answer_options = ['Yes', 'No'];
+        }
+      } else {
+        // Generic yes/no question → forced_choice [Yes, No]
+        console.error(`[parse-response] agree_disagree → forced_choice [Yes,No] (yes/no question). Original: "${text.slice(0, 120)}"`);
+        format = 'forced_choice';
+        answer_options = ['Yes', 'No'];
+      }
     }
   }
 
