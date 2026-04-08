@@ -97,6 +97,24 @@ export function getResponseParts(internal: any): ResponseParts | null {
   const rp = internal?.response_parts;
   if (!rp || !rp.question_text) return null;
 
+  // Defensive: if Claude's reasoning has somehow landed in question_text or
+  // guide_text, treat the entire response_parts as invalid. The chat route
+  // will catch the null return and either retry or surface an error to the
+  // user, rather than rendering Claude's internal monologue as a question.
+  if (looksLikeReasoningLeak(rp.question_text) || looksLikeReasoningLeak(rp.guide_text)) {
+    console.error('[parse-response] Reasoning leak in response_parts; rejecting. question_text:', String(rp.question_text).slice(0, 200));
+    return null;
+  }
+
+  // Also reject question_text that's absurdly long — legitimate questions
+  // are 1-3 sentences. A multi-paragraph "question" is almost certainly a
+  // reasoning leak that didn't trip the pattern matcher.
+  const QUESTION_TEXT_MAX = 600;
+  if (typeof rp.question_text === 'string' && rp.question_text.length > QUESTION_TEXT_MAX) {
+    console.error(`[parse-response] question_text exceeds ${QUESTION_TEXT_MAX} chars (${rp.question_text.length}); rejecting as likely leak.`);
+    return null;
+  }
+
   let format = rp.question_format || 'open';
   let context_note: string | null = rp.context_note || null;
   let answer_options: string[] | null = Array.isArray(rp.answer_options) ? rp.answer_options : null;
@@ -234,13 +252,95 @@ export function getResponseParts(internal: any): ResponseParts | null {
   };
 }
 
+// Tags Claude sometimes generates inline as part of chain-of-thought output.
+// These are NOT part of our INTERNAL/RESPONSE protocol — they are leaks from
+// Claude's training on reasoning traces. They MUST be stripped before any
+// downstream parsing or rendering, because if even one slips through it
+// becomes the user-facing question.
+const REASONING_TAGS = [
+  'thinking', 'thought', 'thoughts',
+  'analysis', 'analyze', 'analyzing',
+  'reflection', 'reflect', 'reflecting',
+  'reasoning', 'reason',
+  'scratchpad', 'scratch_pad', 'scratch',
+  'chain_of_thought', 'chain-of-thought', 'cot',
+  'plan', 'planning',
+  'consideration', 'considering',
+  'meta', 'meta_analysis',
+  'inner_monologue', 'monologue',
+  'workspace',
+];
+
+/**
+ * Strip ALL known reasoning/thinking tag content from raw Claude output.
+ * Handles both closed (`<thinking>...</thinking>`) and unclosed/truncated
+ * (`<thinking>...` to end of string) variants. Case-insensitive.
+ *
+ * Run this BEFORE any INTERNAL/RESPONSE extraction so the leaked content
+ * cannot end up in question_text via fallback paths.
+ */
+export function stripReasoningTags(rawText: string): string {
+  if (!rawText) return rawText;
+  let out = rawText;
+  for (const tag of REASONING_TAGS) {
+    // Closed pair: <tag>...</tag>
+    const closed = new RegExp(`<\\s*${tag}\\s*>[\\s\\S]*?<\\s*/\\s*${tag}\\s*>`, 'gi');
+    out = out.replace(closed, '');
+    // Unclosed (truncated): <tag>...EOF
+    const unclosed = new RegExp(`<\\s*${tag}\\s*>[\\s\\S]*$`, 'gi');
+    out = out.replace(unclosed, '');
+  }
+  return out.trim();
+}
+
+// Phrases that indicate Claude's internal reasoning has leaked into a
+// user-facing field. These are not exhaustive — they're high-precision
+// markers that almost never appear in legitimate user-facing copy.
+const REASONING_LEAK_PATTERNS = [
+  /\bexchange\s*\d+\b/i,
+  /\bcandidate\s+questions?\b/i,
+  /\bclosing\s+criteria\b/i,
+  /\bcurrent\s+hypothesis\b/i,
+  /\bdifferentiation\s+(needed|asked|question)\b/i,
+  /\bdisconfirmatory\b/i,
+  /\bthe\s+user\s+answered\b/i,
+  /\blet\s+me\s+(think|analyze|consider|figure)/i,
+  /\bi\s+need\s+to\s+(probe|differentiate|ask|figure)/i,
+  /\bstage\s+[1-7]\b.{0,40}\b(format|rule|allowed)/i,
+  /\bbody\s+center\b.{0,30}\b(probe|signal|hypothesis)/i,
+  /\btype\s+\d\s+(at|signal|hypothesis|lean)/i,
+  /\b(strong|weak)\s+type\s+\d/i,
+  /\bconfidence:?\s*\d+%/i,
+  /\bclose_next\b/i,
+  /\bvariant_signals\b/i,
+  /\bwhole_type_signals\b/i,
+  /\binternal\s*state\b/i,
+  /\bresponse_parts\b/i,
+];
+
+/**
+ * Detect whether a piece of user-facing text contains reasoning leak.
+ * Returns true if the text looks like Claude's internal thinking
+ * accidentally landed in a field meant for the user.
+ */
+export function looksLikeReasoningLeak(text: string | null | undefined): boolean {
+  if (!text) return false;
+  return REASONING_LEAK_PATTERNS.some((p) => p.test(text));
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function parseAIResponse(rawText: string): { internal: any | null; response: string } {
   let internal = null;
-  let response = rawText;
 
-  // Extract INTERNAL block
-  const internalMatch = rawText.match(/<INTERNAL>([\s\S]*?)<\/INTERNAL>/);
+  // STEP 1: Strip ALL reasoning/thinking tag content first. This is the
+  // critical defense — without this, a `<thinking>` block from Claude can
+  // flow through the fallback paths and become the user-facing question.
+  const stripped = stripReasoningTags(rawText);
+
+  let response = stripped;
+
+  // STEP 2: Extract INTERNAL block
+  const internalMatch = stripped.match(/<INTERNAL>([\s\S]*?)<\/INTERNAL>/);
   if (internalMatch) {
     try {
       internal = JSON.parse(internalMatch[1].trim());
@@ -249,13 +349,13 @@ export function parseAIResponse(rawText: string): { internal: any | null; respon
     }
   }
 
-  // Extract RESPONSE block
-  const responseMatch = rawText.match(/<RESPONSE>\s*([\s\S]*?)(?:<\/RESPONSE>|$)/i);
+  // STEP 3: Extract RESPONSE block
+  const responseMatch = stripped.match(/<RESPONSE>\s*([\s\S]*?)(?:<\/RESPONSE>|$)/i);
   if (responseMatch) {
     response = responseMatch[1].trim();
   } else {
     // Fallback: strip INTERNAL block if present (including unclosed/truncated ones)
-    response = rawText
+    response = stripped
       .replace(/<INTERNAL>[\s\S]*?<\/INTERNAL>/g, '')  // closed blocks
       .replace(/<INTERNAL>[\s\S]*/g, '')                // truncated/unclosed blocks
       .replace(/<RESPONSE>\s*/i, '')                    // open response tags
@@ -266,6 +366,15 @@ export function parseAIResponse(rawText: string): { internal: any | null; respon
       console.warn('[parseAIResponse] Response was entirely INTERNAL block (likely truncated)');
       response = '';
     }
+  }
+
+  // STEP 4: Final safety check — if reasoning leak markers are present in
+  // what we're about to return as the user-facing response, blank it out.
+  // The chat route will handle the empty response by either retrying or
+  // surfacing an error to the user.
+  if (looksLikeReasoningLeak(response)) {
+    console.error('[parseAIResponse] Reasoning leak detected in response after stripping; blanking. First 200 chars:', response.slice(0, 200));
+    response = '';
   }
 
   return { internal, response };

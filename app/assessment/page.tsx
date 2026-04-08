@@ -690,7 +690,45 @@ function AssessmentContent() {
       }
 
       // Fallback B: no response_parts at all — parse from raw text
-      const msgText: string = data.message || data.response || '';
+      // CRITICAL: this path handles raw Claude output. We must NEVER let
+      // reasoning content (`<thinking>` tags, "Exchange N", "candidate
+      // questions", etc.) reach the user. Strip aggressively, and if the
+      // result still looks like reasoning, fail to a safe placeholder.
+      let msgText: string = data.message || data.response || '';
+
+      // Strip any reasoning tag content the server might have missed
+      const REASONING_TAG_RE = /<\s*(thinking|thought|thoughts|analysis|reflection|reasoning|scratchpad|chain[_-]?of[_-]?thought|cot|plan|planning|inner_monologue)\s*>[\s\S]*?(<\s*\/\s*\1\s*>|$)/gi;
+      msgText = msgText.replace(REASONING_TAG_RE, '').trim();
+
+      // Detect reasoning leak markers — high-precision phrases that almost
+      // never appear in legitimate user-facing copy
+      const LEAK_MARKERS = [
+        /\bexchange\s*\d+\b/i,
+        /\bcandidate\s+questions?\b/i,
+        /\bclosing\s+criteria\b/i,
+        /\bcurrent\s+hypothesis\b/i,
+        /\bdifferentiation\s+(needed|asked|question)\b/i,
+        /\bdisconfirmatory\b/i,
+        /\bthe\s+user\s+answered\b/i,
+        /\blet\s+me\s+(think|analyze|consider|figure)/i,
+        /\bi\s+need\s+to\s+(probe|differentiate|ask)/i,
+        /\bstage\s+[1-7]\b.{0,40}\b(format|rule|allowed)/i,
+        /\btype\s+\d\s+(at|signal|hypothesis|lean)/i,
+        /\bclose_next\b|\bvariant_signals\b|\bresponse_parts\b|\binternal\s*state\b/i,
+      ];
+      const looksLikeLeak = LEAK_MARKERS.some((p) => p.test(msgText));
+
+      if (looksLikeLeak || msgText.length > 600) {
+        console.error('[assessment] Reasoning leak in raw message; failing to safe placeholder. First 200 chars:', msgText.slice(0, 200));
+        // Surface a regenerate-style placeholder rather than rendering garbage
+        return {
+          question: 'Something went wrong generating that question. Please refresh to continue.',
+          format: 'open' as QuestionFormat,
+          isComplete: false,
+          progressSaved: false,
+          currentStage: data.currentStage,
+        };
+      }
 
       // Try to separate commentary from actual questions
       const allSentences = msgText.split(/(?<=[.!?])\s+/);

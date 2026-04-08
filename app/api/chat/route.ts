@@ -5,7 +5,7 @@ import { validateAssessmentResponse, sanitizeThinkingDisplay } from '@/lib/respo
 import { compressHistory } from '@/lib/history-compressor';
 import { getSession, setSession } from '@/lib/session-store';
 import { adminClient } from '@/lib/supabase';
-import { parseAIResponse, getResponseParts } from '@/lib/parse-response';
+import { parseAIResponse, getResponseParts, looksLikeReasoningLeak, stripReasoningTags } from '@/lib/parse-response';
 import { queryKnowledgeBase } from '@/lib/rag';
 import { getQuestionBank, updateQuestionYield, type Question } from '@/lib/question-bank';
 import { supervisorCheck } from '@/lib/supervisor';
@@ -1140,12 +1140,34 @@ Format: ${diffPair.questions[qIdx].format}`;
       }
     });
 
+    // ── FINAL SAFETY GATE ──
+    // No matter what happened upstream, the server must NEVER ship raw
+    // Claude reasoning to the client. This block is the last chance to
+    // catch leaked thinking/analysis content before it reaches the user.
+    let safeMessage = stripReasoningTags(finalResponse || '');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const safeRp = (finalInternal as any)?.response_parts ?? null;
+    if (safeRp) {
+      if (looksLikeReasoningLeak(safeRp.question_text) || looksLikeReasoningLeak(safeRp.guide_text)) {
+        console.error('[chat] FINAL GATE: reasoning leak detected in response_parts; clearing');
+        safeRp.question_text = '';
+        safeRp.guide_text = '';
+      }
+      if (typeof safeRp.question_text === 'string' && safeRp.question_text.length > 600) {
+        console.error(`[chat] FINAL GATE: question_text too long (${safeRp.question_text.length}); clearing`);
+        safeRp.question_text = '';
+      }
+    }
+    if (looksLikeReasoningLeak(safeMessage) || safeMessage.length > 2000) {
+      console.error('[chat] FINAL GATE: reasoning leak in finalResponse; clearing');
+      safeMessage = '';
+    }
+
     return NextResponse.json({
-      message: finalResponse,
-      response: finalResponse,
+      message: safeMessage,
+      response: safeMessage,
       internal: finalInternal,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      response_parts: (finalInternal as any)?.response_parts ?? null,
+      response_parts: safeRp,
       isComplete,
       domainSignals: updatedDomainSignals,
       currentSection,
