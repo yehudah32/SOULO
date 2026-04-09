@@ -661,24 +661,62 @@ export default function SimulatePage() {
               );
             })()}
 
-            {/* ═══ CENTER COVERAGE (live) ═══ */}
-            {sessionState?.internalState?.centers && (() => {
-              const c = sessionState.internalState.centers as Record<string, unknown>;
+            {/* ═══ CENTER COVERAGE (live) — Phase 9 ═══ */}
+            {/* Reads from sessionState.allQuestionsAsked (real question coverage),
+                NOT from internalState.centers.*_probed which were vector-derived
+                ghosts. Shows actual count of questions asked per center, with
+                a steering hint about which center the next question is being
+                pulled toward. */}
+            {sessionState?.allQuestionsAsked && (() => {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              const asked = (sessionState.allQuestionsAsked || []) as Array<{ targetCenter?: string | null }>;
+              const cov = { Body: 0, Heart: 0, Head: 0, Cross: 0 };
+              for (const q of asked) {
+                const c = (q.targetCenter ?? 'Cross') as 'Body' | 'Heart' | 'Head' | 'Cross';
+                cov[c]++;
+              }
+              const total = cov.Body + cov.Heart + cov.Head;
+              // Most-covered (steered AWAY from)
+              const ranked = [
+                { c: 'Body' as const, n: cov.Body },
+                { c: 'Heart' as const, n: cov.Heart },
+                { c: 'Head' as const, n: cov.Head },
+              ].sort((a, b) => b.n - a.n);
+              const mostCovered = ranked[0].n > ranked[1].n ? ranked[0].c : null;
+              const leastCovered = [...ranked].sort((a, b) => a.n - b.n)[0].c;
+
+              const colors: Record<string, string> = { Body: '#2563EB', Heart: '#B5726D', Head: '#7A9E7E' };
               return (
-                <div className="bg-white border border-[#E8E4E0] rounded-xl p-3">
-                  <div className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590] mb-2">Center Coverage</div>
+                <div className="bg-white border border-[#E8E4E0] rounded-xl p-3 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="font-mono text-[0.6rem] uppercase tracking-widest text-[#9B9590]">Center Coverage</div>
+                    <div className="font-mono text-[0.55rem] text-[#9B9590]">{total} targeted · {cov.Cross} cross</div>
+                  </div>
                   <div className="grid grid-cols-3 gap-2">
-                    {(['body_probed', 'heart_probed', 'head_probed'] as const).map((k) => {
-                      const probed = !!c[k];
-                      const label = k.replace('_probed', '').toUpperCase();
+                    {(['Body', 'Heart', 'Head'] as const).map((center) => {
+                      const n = cov[center];
+                      const probed = n > 0;
+                      const isSteered = leastCovered === center && total > 0;
                       return (
-                        <div key={k} className={`text-center py-2 rounded ${probed ? 'bg-[#7A9E7E]/15' : 'bg-[#F0EBE6]'}`}>
-                          <div className={`font-mono text-[0.6rem] ${probed ? 'text-[#4A7A52] font-bold' : 'text-[#9B9590]'}`}>{label}</div>
-                          <div className={`text-xs ${probed ? 'text-[#7A9E7E]' : 'text-[#D0CAC4]'}`}>{probed ? '✓' : '○'}</div>
+                        <div
+                          key={center}
+                          className={`text-center py-2 rounded ${probed ? '' : 'bg-[#F0EBE6]'}`}
+                          style={probed ? { backgroundColor: `${colors[center]}15` } : {}}
+                        >
+                          <div className={`font-mono text-[0.6rem] font-bold`} style={{ color: probed ? colors[center] : '#9B9590' }}>{center.toUpperCase()}</div>
+                          <div className={`font-serif text-base font-bold`} style={{ color: probed ? colors[center] : '#D0CAC4' }}>{n}</div>
+                          {isSteered && (
+                            <div className="font-mono text-[0.5rem] text-[#9B9590]">next ↑</div>
+                          )}
                         </div>
                       );
                     })}
                   </div>
+                  {mostCovered && total >= 2 && (
+                    <div className="font-mono text-[0.55rem] text-[#9B9590]">
+                      Steering away from {mostCovered}, toward {leastCovered}
+                    </div>
+                  )}
                 </div>
               );
             })()}

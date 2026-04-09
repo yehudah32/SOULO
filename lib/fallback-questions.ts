@@ -1,6 +1,9 @@
 // Fallback questions used when the DB question bank returns empty results.
 // IDs are negative (-1 to -7) so updateQuestionYield can skip DB calls for them.
 
+/** Phase 9 — center this question primarily probes. */
+export type TargetCenter = 'Body' | 'Heart' | 'Head' | 'Cross';
+
 export interface Question {
   id: number;
   question_text: string;
@@ -20,6 +23,12 @@ export interface Question {
   // signal in vector v2 because it's a structured input — no embedding noise.
   // Optional because open-text and scenario questions don't have it.
   type_weights?: Record<number, Record<number, number>>;
+  // Phase 9 — which center this question primarily probes. Used by the
+  // selection rerank in lib/decision-tree.ts to balance per-center coverage.
+  // Optional because (a) the DB column may not be migrated yet and (b)
+  // questions returned without this field are treated as 'Cross' (no
+  // steering effect either way).
+  target_center?: TargetCenter;
 }
 
 export const FALLBACK_QUESTIONS: Question[] = [
@@ -41,6 +50,8 @@ export const FALLBACK_QUESTIONS: Question[] = [
       0: { 1: 0.4, 4: 0.25, 6: 0.25, 5: 0.1 },
       1: { 8: 0.4, 7: 0.25, 3: 0.25, 9: 0.1 },
     },
+    // Cross — picks up signal from all three centers (1=Body, 4=Heart, 6=Head).
+    target_center: 'Cross',
   },
   {
     id: -2,
@@ -61,6 +72,9 @@ export const FALLBACK_QUESTIONS: Question[] = [
       1: { 1: 0.05, 4: 0.05 },
       2: { 8: 0.4, 5: 0.2, 3: 0.1 },
     },
+    // Heart — "putting needs on hold for someone you care about" probes 2/9
+    // primarily, with weak signal into Body (8 disagrees) and Head (6).
+    target_center: 'Heart',
   },
   {
     id: -3,
@@ -84,6 +98,9 @@ export const FALLBACK_QUESTIONS: Question[] = [
       3: { 6: 0.3, 1: 0.15, 5: 0.15 },
       4: { 6: 0.5, 1: 0.2, 5: 0.2 },
     },
+    // Head — "mentally preparing for what could go wrong" is core 6 with
+    // 5 (knowing variables) close behind.
+    target_center: 'Head',
   },
   {
     id: -4,
@@ -106,6 +123,9 @@ export const FALLBACK_QUESTIONS: Question[] = [
       2: { 9: 0.2, 4: 0.15, 5: 0.15 },
       3: { 9: 0.45, 2: 0.25, 5: 0.15 },
     },
+    // Body — "bringing up disagreement directly" is core 8 (Body action),
+    // with 9 (Body avoidance) and 1 (Body justification) at the other ends.
+    target_center: 'Body',
   },
   {
     id: -5,
@@ -119,6 +139,8 @@ export const FALLBACK_QUESTIONS: Question[] = [
     target_types: [],
     times_used: 0,
     avg_information_yield: 0.85,
+    // Heart — pride / self-image / "how you handled something" probes 2/3/4.
+    target_center: 'Heart',
   },
   {
     id: -6,
@@ -144,6 +166,8 @@ export const FALLBACK_QUESTIONS: Question[] = [
       1: { 3: 0.35, 4: 0.3, 7: 0.2 },
       2: { 6: 0.35, 8: 0.3, 5: 0.2 },
     },
+    // Cross — three options span all three centers (1=Body, 4=Heart, 6=Head).
+    target_center: 'Cross',
   },
   {
     id: -7,
@@ -157,5 +181,9 @@ export const FALLBACK_QUESTIONS: Question[] = [
     target_types: [],
     times_used: 0,
     avg_information_yield: 0.9,
+    // Cross — final-stage open question that any type could answer in
+    // their own center's language (1: standards, 4: identity, 8: control,
+    // etc.). Tagged Cross so it doesn't bias the rerank.
+    target_center: 'Cross',
   },
 ];

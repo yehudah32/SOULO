@@ -127,25 +127,11 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  // Otherwise, trigger generation via the generate endpoint
-  const host = req.headers.get('host') || 'localhost:3000';
-  const protocol = host.startsWith('localhost') ? 'http' : 'https';
-  const res = await fetch(`${protocol}://${host}/api/results/generate`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ sessionId: result.session_id }),
-  });
-
-  if (!res.ok) {
-    return NextResponse.json({
-      error: 'Results not yet generated. Please complete the assessment first.',
-      sessionId: result.session_id,
-    }, { status: 404 });
-  }
-
-  const data = await res.json();
+  // No cached results — fast 404 so the client can call /api/results/generate
+  // directly with its own (longer) timeout. Triggering generation here would
+  // cause a 30s hang on the client and a duplicate parallel generation.
   return NextResponse.json({
+    error: 'Results not yet generated.',
     sessionId: result.session_id,
-    results: data.results,
-  });
+  }, { status: 404 });
 }

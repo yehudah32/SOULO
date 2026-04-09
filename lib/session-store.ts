@@ -105,6 +105,8 @@ export interface SessionData {
   // Per-session question tracking for yield optimization AND vector v2
   // shadow scoring. format/answer_options/type_weights are optional because
   // open-ended questions and Claude-generated questions don't have them.
+  // targetCenter (Phase 9) is optional because untagged questions are
+  // treated as 'Cross' by the coverage helper and rerank logic.
   allQuestionsAsked?: Array<{
     exchange: number;
     questionId: number;
@@ -112,6 +114,7 @@ export interface SessionData {
     format?: string;
     answerOptions?: string[] | null;
     typeWeights?: Record<number, Record<number, number>> | null;
+    targetCenter?: 'Body' | 'Heart' | 'Head' | 'Cross' | null;
   }>;
   // Most recently asked question's structured metadata. Updated by both the
   // hybrid path (when serving a bank question) and the Claude path (parsed
@@ -123,6 +126,7 @@ export interface SessionData {
     format: string;
     answerOptions: string[] | null;
     typeWeights: Record<number, Record<number, number>> | null;
+    targetCenter?: 'Body' | 'Heart' | 'Head' | 'Cross' | null;
   } | null;
 
   // Disconfirmatory gate — must ask at least one disconfirmatory question before closing

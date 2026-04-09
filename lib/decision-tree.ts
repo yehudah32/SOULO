@@ -38,6 +38,77 @@ export function getTransitionText(transition: keyof typeof PHASE_TRANSITIONS): s
 }
 
 /**
+ * Phase 9 — penalty applied to a candidate question whose target_center
+ * matches the most-covered center so far. Mildly skewed bank treatment per
+ * the Step 0 audit. Cross questions get a small bonus instead.
+ */
+const CENTER_REPEAT_PENALTY = 0.25;
+const CROSS_BONUS = 0.05;
+/** Hard cap: if the LAST 2 questions both targeted the same center, refuse
+ *  any further candidate from that center on this turn unless nothing else
+ *  is available. */
+const MAX_CONSECUTIVE_FROM_SAME_CENTER = 2;
+
+interface AskedWithCenter {
+  targetCenter?: 'Body' | 'Heart' | 'Head' | 'Cross' | null;
+}
+
+/**
+ * Phase 9 rerank — reorders candidates so the most-covered center is
+ * deprioritized and Cross questions get a small bonus. Does NOT exclude;
+ * the disconfirmatory gate still works because all candidates remain
+ * eligible if nothing else is available. Hard cap on consecutive
+ * same-center runs is applied separately.
+ */
+function applyCenterRerank<T extends { avg_information_yield?: number; target_center?: string | null }>(
+  candidates: T[],
+  asked: AskedWithCenter[],
+): T[] {
+  if (!candidates || candidates.length === 0) return candidates;
+
+  // Tally coverage from asked
+  let body = 0, heart = 0, head = 0;
+  for (const q of asked ?? []) {
+    if (q.targetCenter === 'Body') body++;
+    else if (q.targetCenter === 'Heart') heart++;
+    else if (q.targetCenter === 'Head') head++;
+  }
+  let mostCovered: 'Body' | 'Heart' | 'Head' | null = null;
+  if (body > heart && body > head) mostCovered = 'Body';
+  else if (heart > body && heart > head) mostCovered = 'Heart';
+  else if (head > body && head > heart) mostCovered = 'Head';
+
+  // 2-consecutive cap: if the last 2 asked questions are the same target
+  // center, blacklist that center from THIS turn unless nothing else is left.
+  let blacklisted: string | null = null;
+  if (asked && asked.length >= MAX_CONSECUTIVE_FROM_SAME_CENTER) {
+    const tail = asked.slice(-MAX_CONSECUTIVE_FROM_SAME_CENTER);
+    const first = tail[0]?.targetCenter;
+    if (first && first !== 'Cross' && tail.every((q) => q.targetCenter === first)) {
+      blacklisted = first;
+    }
+  }
+
+  const reranked = candidates.map((q) => {
+    const baseYield = q.avg_information_yield ?? 0.5;
+    let adjusted = baseYield;
+    const tc = q.target_center ?? null;
+    if (mostCovered && tc === mostCovered) adjusted -= CENTER_REPEAT_PENALTY;
+    if (tc === 'Cross') adjusted += CROSS_BONUS;
+    return { q, adjusted, tc };
+  });
+
+  // Apply blacklist first if there are any non-blacklisted alternatives
+  const allowed = blacklisted
+    ? reranked.filter((r) => r.tc !== blacklisted)
+    : reranked;
+  const pool = allowed.length > 0 ? allowed : reranked;
+
+  pool.sort((a, b) => b.adjusted - a.adjusted);
+  return pool.map((r) => r.q);
+}
+
+/**
  * Select the best next question for the current assessment phase.
  *
  * Strategy:
@@ -45,12 +116,16 @@ export function getTransitionText(transition: keyof typeof PHASE_TRANSITIONS): s
  * - type_narrowing: Pick questions that discriminate between types within the identified center
  *
  * Avoids repeating questions already asked and rotates question formats.
+ * Phase 9: applies center coverage rerank to balance Body/Heart/Head.
  */
 export async function selectNextQuestion(
   scores: VectorScorerResult,
   phase: 'center_id' | 'type_narrowing',
   questionsAsked: string[],
-  lastFormat: string
+  lastFormat: string,
+  /** Optional — pass session.allQuestionsAsked for Phase 9 center rerank.
+   *  If omitted (legacy callers), no rerank is applied. */
+  askedWithCenter?: AskedWithCenter[],
 ): Promise<Question | null> {
   // Determine which types we need to discriminate between
   let targetTypes: number[] = [];
@@ -107,7 +182,9 @@ export async function selectNextQuestion(
     const { data: fallbackData } = await fallbackQuery;
 
     if (!fallbackData || fallbackData.length === 0) return null;
-    return fallbackData[0] as Question;
+    // Apply center rerank to the fallback set too
+    const reranked = applyCenterRerank(fallbackData as Question[], askedWithCenter ?? []);
+    return reranked[0] as Question;
   }
 
   // If we have target types, prefer questions that target those types
@@ -116,11 +193,16 @@ export async function selectNextQuestion(
       if (!q.target_types || (q.target_types as number[]).length === 0) return false;
       return (q.target_types as number[]).some((t: number) => targetTypes.includes(t));
     });
-    if (targeted.length > 0) return targeted[0] as Question;
+    if (targeted.length > 0) {
+      // Phase 9 rerank inside the targeted subset
+      const reranked = applyCenterRerank(targeted as Question[], askedWithCenter ?? []);
+      return reranked[0] as Question;
+    }
   }
 
-  // Otherwise return the highest-yield question
-  return data[0] as Question;
+  // Otherwise apply rerank to the full candidate set and return top
+  const reranked = applyCenterRerank(data as Question[], askedWithCenter ?? []);
+  return reranked[0] as Question;
 }
 
 /**
@@ -239,7 +321,9 @@ export async function selectTier2Question(
   typeScores: Record<number, number>,
   leadingType: number,
   questionsAsked: string[],
-  lastFormat: string
+  lastFormat: string,
+  /** Phase 9 — pass session.allQuestionsAsked for center rerank. */
+  askedWithCenter?: AskedWithCenter[],
 ): Promise<Question | null> {
   const inferred = inferInstinctFromTier1(typeScores, leadingType);
   console.log(`[tier-cascade] Inferred instinct leanings from Tier 1: SP=${inferred.likelySP.toFixed(2)} SX=${inferred.likelySX.toFixed(2)} SO=${inferred.likelySO.toFixed(2)}`);
@@ -253,7 +337,11 @@ export async function selectTier2Question(
     const available = candidates.filter(q =>
       !questionsAsked.includes(String(q.id))
     );
-    if (available.length > 0) return available[0];
+    if (available.length > 0) {
+      // Phase 9 — apply center coverage rerank
+      const reranked = applyCenterRerank(available, askedWithCenter ?? []);
+      return reranked[0];
+    }
   }
 
   // Fallback: get any stage 5-6 question not yet asked
@@ -261,7 +349,9 @@ export async function selectTier2Question(
   const availableFallback = fallback.filter(q =>
     !questionsAsked.includes(String(q.id))
   );
-  return availableFallback.length > 0 ? availableFallback[0] : null;
+  if (availableFallback.length === 0) return null;
+  const rerankedFallback = applyCenterRerank(availableFallback, askedWithCenter ?? []);
+  return rerankedFallback[0];
 }
 
 /**

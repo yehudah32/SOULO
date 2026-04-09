@@ -15,6 +15,7 @@ import { findPairForTypes, getTopTwoTypes } from '@/lib/differentiation-pairs';
 import { scoreResponse, hasTypeSignatures } from '@/lib/vector-scorer';
 import { scoreV2, flattenToTypeScores, type QuestionContext as V2QuestionContext, type VectorV2Result } from '@/lib/vector-scorer-v2';
 import { detectTiebreakerNeeded } from '@/lib/tiebreakers';
+import { getCenterCoverage, allCentersProbed } from '@/lib/center-coverage';
 import { evaluatePhaseTransition } from '@/lib/phase-manager';
 import { selectNextQuestion, selectTier2Question, formatQuestionResponse, getTransitionText } from '@/lib/decision-tree';
 import type { SessionData } from '@/lib/session-store';
@@ -177,7 +178,8 @@ async function updateSessionFromParsed(
   stage: number,
   lastFormat: string,
   latestUserMessage: { role: string; content: string },
-  supervisorResult: { score: number; approved: boolean; issues: string[]; correction: string }
+  supervisorResult: { score: number; approved: boolean; issues: string[]; correction: string },
+  matchedBankQuestion?: Question | null,
 ): Promise<{ progressSaved: boolean }> {
   if (!session) return { progressSaved: false };
 
@@ -199,13 +201,17 @@ async function updateSessionFromParsed(
   const supervisorScores = [...(session.supervisorScores ?? []), supervisorResult.score];
   const selectedQuestionId: number | null = finalInternal?.selected_question_id ?? null;
 
-  // Track question asked this turn for yield optimization
+  // Track question asked this turn for yield optimization AND for Phase 9
+  // per-center coverage tracking. The matched bank question (if any) carries
+  // target_center; otherwise this is a Claude-generated question and we
+  // record null (which the coverage helper treats as 'Cross').
   const allQuestionsAsked = [...(session.allQuestionsAsked || [])];
   if (selectedQuestionId && selectedQuestionId > 0) {
     allQuestionsAsked.push({
       exchange: session.exchangeCount + 1,
       questionId: selectedQuestionId,
       questionText: ((finalInternal as Record<string, unknown>)?.response_parts as Record<string, unknown>)?.question_text as string || '',
+      targetCenter: matchedBankQuestion?.target_center ?? null,
     });
   }
 
@@ -656,20 +662,24 @@ export async function POST(req: NextRequest) {
           );
 
           // Select next question based on phase
+          // Phase 9: pass session.allQuestionsAsked so the selector can apply
+          // per-center coverage rerank.
           let nextQuestion;
           if (phaseResult.currentPhase === 'instinct_probing') {
             nextQuestion = await selectTier2Question(
               vectorResult.typeScores,
               vectorResult.topTypes[0] ?? 0,
               (session.allQuestionsAsked ?? []).map(q => String(q.questionId)),
-              lastFormat
+              lastFormat,
+              session.allQuestionsAsked ?? [],
             );
           } else {
             nextQuestion = await selectNextQuestion(
               vectorResult,
               phaseResult.currentPhase as 'center_id' | 'type_narrowing',
               (session.allQuestionsAsked ?? []).map(q => String(q.questionId)),
-              lastFormat
+              lastFormat,
+              session.allQuestionsAsked ?? [],
             );
           }
 
@@ -702,7 +712,15 @@ export async function POST(req: NextRequest) {
               ],
               allQuestionsAsked: [
                 ...(session.allQuestionsAsked ?? []),
-                { exchange: session.exchangeCount + 1, questionId: nextQuestion.id, questionText: nextQuestion.question_text },
+                {
+                  exchange: session.exchangeCount + 1,
+                  questionId: nextQuestion.id,
+                  questionText: nextQuestion.question_text,
+                  format: nextQuestion.format,
+                  answerOptions: nextQuestion.answer_options ?? null,
+                  typeWeights: nextQuestion.type_weights ?? null,
+                  targetCenter: nextQuestion.target_center ?? null,
+                },
               ],
             });
 
@@ -757,7 +775,11 @@ export async function POST(req: NextRequest) {
               closing_criteria: {
                 min_exchanges_met: session.exchangeCount >= 8,
                 confidence_met: vs.confidence >= 0.75,
-                all_centers_probed: true,
+                // Phase 9 — was hardcoded to true. Now reads from real
+                // per-session coverage data so Claude can see whether the
+                // body/heart/head centers have all been probed at least
+                // once before allowing the close.
+                all_centers_probed: allCentersProbed(getCenterCoverage(session.allQuestionsAsked)),
                 differentiation_asked: false,
                 react_respond_identified: false,
                 disconfirmatory_asked: session.disconfirmatoryAsked || false,
@@ -785,7 +807,24 @@ export async function POST(req: NextRequest) {
     const t1 = performance.now();
     const currentConfidence = session.internalState?.hypothesis?.confidence ?? 0;
     const ragCacheKey = `rag-${leadingType}-${stage}-${Math.floor(currentConfidence * 10)}`;
-    const qbCacheKey = `qb-${leadingType}-${stage}`;
+    // Phase 9: include the least-covered center in the question bank cache
+    // key. Without this, the cache returns the same set of candidates even
+    // after the rerank steers toward a different center — silent corruption.
+    // Computed inline because importing center-coverage here would create a
+    // circular dep with the existing helpers; the same shape is used.
+    const _coverage = (session.allQuestionsAsked ?? []).reduce(
+      (acc, q) => {
+        if (q.targetCenter === 'Body') acc.Body++;
+        else if (q.targetCenter === 'Heart') acc.Heart++;
+        else if (q.targetCenter === 'Head') acc.Head++;
+        return acc;
+      },
+      { Body: 0, Heart: 0, Head: 0 },
+    );
+    const _leastCovered = (['Body', 'Heart', 'Head'] as const)
+      .map((c) => ({ c, n: _coverage[c] }))
+      .sort((a, b) => a.n - b.n)[0].c;
+    const qbCacheKey = `qb-${leadingType}-${stage}-${_leastCovered}`;
     if (!session.ragCache) session.ragCache = {};
 
     const [ragResults, candidateQuestions] = await Promise.all([
@@ -937,10 +976,18 @@ Format: ${diffPair.questions[qIdx].format}`;
 
     // ── Session update (in-memory — fast) ──
     const supervisorDefault = { score: 10, approved: true, issues: [] as string[], correction: '' };
+    // Look up the matched bank question once so we can pass it both to the
+    // session updater (for allQuestionsAsked.targetCenter) and the
+    // lastQuestionContext write below.
+    const matchedBankQuestionForUpdate = candidateQuestions.find(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (q: Question) => q.id === (finalInternal as any)?.selected_question_id,
+    ) ?? null;
     await updateSessionFromParsed(
       session, sessionId,
       { internal: finalInternal, response: finalResponse },
-      stage, lastFormat, latestUserMessage, supervisorDefault
+      stage, lastFormat, latestUserMessage, supervisorDefault,
+      matchedBankQuestionForUpdate,
     );
 
     const updatedSession = getSession(sessionId);
@@ -957,10 +1004,8 @@ Format: ${diffPair.questions[qIdx].format}`;
     {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const rp = (finalInternal as any)?.response_parts;
-      const matchedBankQuestion = candidateQuestions.find(
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (q: any) => q.id === (finalInternal as any)?.selected_question_id,
-      );
+      // Reuse the lookup from above instead of doing it twice.
+      const matchedBankQuestion = matchedBankQuestionForUpdate;
       if (rp?.question_text) {
         setSession(sessionId, {
           lastQuestionContext: {
@@ -970,6 +1015,7 @@ Format: ${diffPair.questions[qIdx].format}`;
             format: rp.question_format || 'open',
             answerOptions: Array.isArray(rp.answer_options) ? rp.answer_options : null,
             typeWeights: matchedBankQuestion?.type_weights ?? null,
+            targetCenter: matchedBankQuestion?.target_center ?? null,
           },
         });
       }
